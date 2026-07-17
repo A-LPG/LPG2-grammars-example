@@ -1,0 +1,6 @@
+{
+  "package": "lpg.grammars.python.python2_7_18",
+  "lexer": "PythonLexer",
+  "parser": "PythonParser",
+  "example_globs": ["examples/**/*.py"]
+}

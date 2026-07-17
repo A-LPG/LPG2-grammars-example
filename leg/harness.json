@@ -1,0 +1,9 @@
+{
+  "package": "lpg.grammars.leg",
+  "lexer": "LEGLexer",
+  "parser": "LEGParser",
+  "kwlexer": "LEGKWLexer.gi",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

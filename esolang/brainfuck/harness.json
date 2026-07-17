@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.brainfuck",
+  "lexer": "BrainfuckLexer",
+  "parser": "BrainfuckParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

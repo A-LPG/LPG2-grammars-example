@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.csharp.v7",
+  "lexer": "V7Lexer",
+  "parser": "V7Parser",
+  "example_globs": [
+    "examples/smoke.cs"
+  ]
+}

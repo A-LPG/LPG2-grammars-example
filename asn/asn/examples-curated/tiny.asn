@@ -1,0 +1,3 @@
+Foo DEFINITIONS ::= BEGIN
+  Bar ::= INTEGER
+END

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.icon",
+  "lexer": "IconLexer",
+  "parser": "IconParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

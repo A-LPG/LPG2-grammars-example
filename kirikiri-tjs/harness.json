@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.kirikiri_tjs",
+  "lexer": "KirikiriTjsLexer",
+  "parser": "KirikiriTjsParser",
+  "example_globs": [
+    "examples/smoke.tjs"
+  ]
+}

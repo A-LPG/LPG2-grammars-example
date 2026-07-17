@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.php",
+  "lexer": "PhpLexer",
+  "parser": "PhpParser",
+  "example_globs": [
+    "examples-curated/**/*.php"
+  ]
+}

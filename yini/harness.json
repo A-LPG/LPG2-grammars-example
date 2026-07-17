@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.yini",
+  "lexer": "YiniLexer",
+  "parser": "YiniParser",
+  "example_globs": [
+    "examples/**/*.yini"
+  ]
+}

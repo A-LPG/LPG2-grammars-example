@@ -1,0 +1,10 @@
+{
+  "package": "lpg.grammars.odin",
+  "lexer": "OdinLexer",
+  "parser": "OdinParser",
+  "example_globs": [
+    "examples/smoke.odin",
+    "examples/demo.odin",
+    "examples/test.odin"
+  ]
+}

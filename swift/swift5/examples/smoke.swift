@@ -1,0 +1,1 @@
+func main ( ) { let x = 1 }

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.gff3",
+  "lexer": "Gff3Lexer",
+  "parser": "Gff3Parser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

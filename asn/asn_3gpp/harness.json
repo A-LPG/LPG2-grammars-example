@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.asn.asn_3gpp",
+  "lexer": "AsnAsn_3gppLexer",
+  "parser": "AsnAsn_3gppParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

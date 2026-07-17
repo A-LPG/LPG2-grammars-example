@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.v",
+  "lexer": "VLexer",
+  "parser": "VParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

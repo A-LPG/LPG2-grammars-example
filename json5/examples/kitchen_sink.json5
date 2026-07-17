@@ -1,0 +1,12 @@
+{
+  // kitchen sink
+  unquoted: 'single',
+  "quoted": "double",
+  hex: 0xCAFE,
+  lead: .5,
+  trail: 5.,
+  pos: +2,
+  inf: Infinity,
+  nan: NaN,
+  nested: { a: 1, b: [true, false, null,], },
+}

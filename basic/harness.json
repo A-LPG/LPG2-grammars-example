@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.basic",
+  "lexer": "BasicLexer",
+  "parser": "BasicParser",
+  "example_globs": [
+    "examples/smoke.bas"
+  ]
+}

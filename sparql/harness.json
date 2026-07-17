@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.sparql",
+  "lexer": "SparqlLexer",
+  "parser": "SparqlParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

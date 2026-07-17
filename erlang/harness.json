@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.erlang",
+  "lexer": "ErlangLexer",
+  "parser": "ErlangParser",
+  "example_globs": [
+    "examples/tiny.erl"
+  ]
+}

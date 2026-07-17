@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.sql.teradata",
+  "lexer": "TeradataLexer",
+  "parser": "TeradataParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

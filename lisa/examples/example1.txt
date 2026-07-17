@@ -1,0 +1,11 @@
+declare{
+ dfa my_dfa;
+ nfa my_nfa;
+ int index;
+}
+
+program{
+ index = 2+3;
+ my_dfa = readfile(dfa,"~/dfa.txt");
+ print(my_dfa);
+}

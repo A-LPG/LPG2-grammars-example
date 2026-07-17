@@ -1,0 +1,6 @@
+{
+  "package": "lpg.grammars.useragent",
+  "lexer": "UseragentLexer",
+  "parser": "UseragentParser",
+  "example_globs": ["examples/**/*"]
+}

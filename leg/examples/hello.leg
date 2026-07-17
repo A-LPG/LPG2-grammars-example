@@ -1,0 +1,13 @@
+int add(int a, int b) {
+    return a + b;
+}
+
+void main() {
+    int x;
+    x = add(1, 2);
+    if (x > 0) {
+        return x;
+    } else {
+        return 0;
+    }
+}

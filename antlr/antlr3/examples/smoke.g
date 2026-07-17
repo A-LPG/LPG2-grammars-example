@@ -1,0 +1,2 @@
+grammar T ;
+expr : ID ;

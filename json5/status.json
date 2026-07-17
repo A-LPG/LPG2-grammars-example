@@ -1,0 +1,11 @@
+{
+  "id": "json5",
+  "parse_ok": true,
+  "example_count": 6,
+  "status": "ported",
+  "blockers": [],
+  "tier": "A",
+  "quality": "language_port",
+  "quality_notes": [],
+  "parser_bytes": 1082
+}

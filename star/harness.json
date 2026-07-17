@@ -1,0 +1,10 @@
+{
+  "package": "lpg.grammars.star",
+  "lexer": "StarLexer",
+  "parser": "StarParser",
+  "example_globs": [
+    "examples/example1.txt",
+    "examples/example3.txt",
+    "examples/example4.txt"
+  ]
+}

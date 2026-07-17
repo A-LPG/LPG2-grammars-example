@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.fortran.fortran77",
+  "lexer": "FortranFortran77Lexer",
+  "parser": "FortranFortran77Parser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

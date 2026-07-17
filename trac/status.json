@@ -1,0 +1,11 @@
+{
+  "id": "trac",
+  "parse_ok": true,
+  "example_count": 4,
+  "status": "ported",
+  "blockers": [],
+  "tier": "A",
+  "quality": "language_subset",
+  "quality_notes": [],
+  "parser_bytes": 780
+}

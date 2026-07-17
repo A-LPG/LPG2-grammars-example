@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.restructuredtext",
+  "lexer": "RestructuredtextLexer",
+  "parser": "RestructuredtextParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.glsl",
+  "lexer": "GlslLexer",
+  "parser": "GlslParser",
+  "example_globs": [
+    "examples/smoke.glsl"
+  ]
+}

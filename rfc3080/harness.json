@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.rfc3080",
+  "lexer": "BeepLexer",
+  "parser": "BeepParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

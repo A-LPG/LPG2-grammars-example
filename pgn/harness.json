@@ -1,0 +1,6 @@
+{
+  "package": "lpg.grammars.pgn",
+  "lexer": "PgnLexer",
+  "parser": "PgnParser",
+  "example_globs": ["examples/tiny.pgn"]
+}

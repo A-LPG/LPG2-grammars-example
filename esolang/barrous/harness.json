@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.esolang.barrous",
+  "lexer": "BarrousLexer",
+  "parser": "BarrousParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

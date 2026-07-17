@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.objc",
+  "lexer": "ObjcLexer",
+  "parser": "ObjcParser",
+  "example_globs": [
+    "examples/smoke.m"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "package": "lpg.grammars.lpc",
+  "lexer": "LpcLexer",
+  "parser": "LpcParser",
+  "example_globs": [
+    "examples/smoke.c",
+    "examples/example1.c",
+    "examples/example2.c"
+  ]
+}

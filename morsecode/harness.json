@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.morsecode",
+  "lexer": "MorsecodeLexer",
+  "parser": "MorsecodeParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "vba/vba_like",
+  "parse_ok": true,
+  "example_count": 2,
+  "status": "ported",
+  "blockers": [],
+  "tier": "A",
+  "quality": "language_port",
+  "quality_notes": [],
+  "parser_bytes": 1832
+}

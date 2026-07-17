@@ -1,0 +1,1 @@
+local names = {"John", "Paul"}

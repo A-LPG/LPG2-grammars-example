@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.tcpheader",
+  "lexer": "TcpLexer",
+  "parser": "TcpParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.tinyc",
+  "lexer": "TinycLexer",
+  "parser": "TinycParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

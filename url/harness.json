@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.url",
+  "lexer": "UrlLexer",
+  "parser": "UrlParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

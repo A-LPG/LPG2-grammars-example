@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.bison",
+  "lexer": "BisonLexer",
+  "parser": "BisonParser",
+  "example_globs": [
+    "examples/smoke.y"
+  ]
+}

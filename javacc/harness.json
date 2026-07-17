@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.javacc",
+  "lexer": "JavaccLexer",
+  "parser": "JavaccParser",
+  "example_globs": [
+    "examples/tiny.jj"
+  ]
+}

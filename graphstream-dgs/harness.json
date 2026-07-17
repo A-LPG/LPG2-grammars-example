@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.graphstream_dgs",
+  "lexer": "GraphstreamDgsLexer",
+  "parser": "GraphstreamDgsParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

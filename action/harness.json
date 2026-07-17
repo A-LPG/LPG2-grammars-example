@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.action",
+  "lexer": "ActionLexer",
+  "parser": "ActionParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

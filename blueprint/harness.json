@@ -1,0 +1,6 @@
+{
+  "package": "lpg.grammars.blueprint",
+  "lexer": "BlueprintLexer",
+  "parser": "BlueprintParser",
+  "example_globs": ["examples/**/*"]
+}

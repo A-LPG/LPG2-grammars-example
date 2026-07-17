@@ -1,0 +1,6 @@
+{
+  "package": "lpg.grammars.scala.scala2",
+  "lexer": "Scala2Lexer",
+  "parser": "Scala2Parser",
+  "example_globs": ["examples/**/*.scala"]
+}

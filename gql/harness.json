@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.gql",
+  "lexer": "GqlLexer",
+  "parser": "GqlParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

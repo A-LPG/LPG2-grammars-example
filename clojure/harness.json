@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.clojure",
+  "lexer": "ClojureLexer",
+  "parser": "ClojureParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

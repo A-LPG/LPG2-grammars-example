@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.sdl",
+  "lexer": "SdlLexer",
+  "parser": "SdlParser",
+  "example_globs": [
+    "examples/smoke.sdl"
+  ]
+}

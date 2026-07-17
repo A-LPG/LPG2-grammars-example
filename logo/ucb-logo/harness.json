@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.logo.ucb_logo",
+  "lexer": "UcbLogoLexer",
+  "parser": "UcbLogoParser",
+  "example_globs": [
+    "examples/smoke.txt"
+  ]
+}

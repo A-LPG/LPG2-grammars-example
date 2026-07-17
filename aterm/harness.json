@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.aterm",
+  "lexer": "AtermLexer",
+  "parser": "AtermParser",
+  "example_globs": [
+    "examples/**/*.txt"
+  ]
+}

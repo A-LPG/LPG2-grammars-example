@@ -1,0 +1,13 @@
+{
+  "id": "kuka",
+  "tier": "B",
+  "parse_ok": true,
+  "status": "ported",
+  "example_count": 2,
+  "blockers": [],
+  "quality": "token_stream_smoke",
+  "quality_notes": [
+    "generic_nested_token_stream"
+  ],
+  "parser_bytes": 1147
+}

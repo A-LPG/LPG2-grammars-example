@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.modelica",
+  "lexer": "ModelicaLexer",
+  "parser": "ModelicaParser",
+  "example_globs": [
+    "examples/tiny.mo"
+  ]
+}

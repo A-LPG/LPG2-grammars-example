@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.geekcode",
+  "lexer": "GeekcodeLexer",
+  "parser": "GeekcodeParser",
+  "example_globs": [
+    "examples/**/*.txt"
+  ]
+}

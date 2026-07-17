@@ -1,0 +1,3 @@
+.version 1.0
+.target sm_10
+.entry main { .reg .u32 r1 ; mov.u32 r1 , 1 ; ret ; }

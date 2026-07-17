@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.lisp",
+  "lexer": "LispLexer",
+  "parser": "LispParser",
+  "example_globs": [
+    "examples/**/*.txt"
+  ]
+}

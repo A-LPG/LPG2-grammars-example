@@ -1,0 +1,13 @@
+{
+  "id": "asm/nasm",
+  "tier": "D",
+  "parse_ok": true,
+  "status": "ported",
+  "example_count": 1,
+  "blockers": [],
+  "quality": "token_stream_smoke",
+  "quality_notes": [
+    "generic_nested_token_stream"
+  ],
+  "parser_bytes": 1173
+}

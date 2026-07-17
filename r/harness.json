@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.r",
+  "lexer": "RLexer",
+  "parser": "RParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

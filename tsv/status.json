@@ -1,0 +1,11 @@
+{
+  "id": "tsv",
+  "parse_ok": true,
+  "example_count": 1,
+  "status": "ported",
+  "blockers": [],
+  "tier": "A",
+  "quality": "language_port",
+  "quality_notes": [],
+  "parser_bytes": 618
+}

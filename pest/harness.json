@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.pest",
+  "lexer": "PestLexer",
+  "parser": "PestParser",
+  "example_globs": [
+    "examples/tiny.pest"
+  ]
+}

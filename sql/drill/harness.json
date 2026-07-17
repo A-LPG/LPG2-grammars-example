@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.sql.drill",
+  "lexer": "DrillLexer",
+  "parser": "DrillParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

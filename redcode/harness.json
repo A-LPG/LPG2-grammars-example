@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.redcode",
+  "lexer": "RedcodeLexer",
+  "parser": "RedcodeParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.sql.hive.v2",
+  "lexer": "V2Lexer",
+  "parser": "V2Parser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

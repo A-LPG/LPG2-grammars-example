@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.iri",
+  "lexer": "IriLexer",
+  "parser": "IriParser",
+  "example_globs": [
+    "examples/tiny.iri"
+  ]
+}

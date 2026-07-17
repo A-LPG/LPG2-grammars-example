@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.elixir",
+  "lexer": "ElixirLexer",
+  "parser": "ElixirParser",
+  "example_globs": [
+    "examples/tiny.ex"
+  ]
+}

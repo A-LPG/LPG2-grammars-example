@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.gvpr",
+  "lexer": "GvprLexer",
+  "parser": "GvprParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

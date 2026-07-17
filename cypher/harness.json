@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.cypher",
+  "lexer": "CypherLexer",
+  "parser": "CypherParser",
+  "example_globs": [
+    "examples/tiny.cypher"
+  ]
+}

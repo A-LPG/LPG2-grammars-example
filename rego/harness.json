@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.rego",
+  "lexer": "RegoLexer",
+  "parser": "RegoParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

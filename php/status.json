@@ -1,0 +1,11 @@
+{
+  "id": "php",
+  "tier": "D",
+  "parse_ok": true,
+  "status": "ported",
+  "example_count": 4,
+  "blockers": [],
+  "quality": "language_port",
+  "quality_notes": [],
+  "parser_bytes": 2421
+}

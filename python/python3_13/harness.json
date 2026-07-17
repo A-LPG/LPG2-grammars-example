@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.python.python3_13",
+  "lexer": "Python313Lexer",
+  "parser": "Python313Parser",
+  "example_globs": [
+    "examples/smoke.py"
+  ]
+}

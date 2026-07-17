@@ -1,0 +1,6 @@
+{
+  "package": "lpg.grammars.maml",
+  "lexer": "MamlLexer",
+  "parser": "MamlParser",
+  "example_globs": ["examples/**/*"]
+}

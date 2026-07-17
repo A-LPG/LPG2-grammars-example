@@ -1,0 +1,6 @@
+{
+  "package": "lpg.grammars.istc",
+  "lexer": "IstcLexer",
+  "parser": "IstcParser",
+  "example_globs": ["examples/**/*"]
+}

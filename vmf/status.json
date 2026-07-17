@@ -1,0 +1,13 @@
+{
+  "id": "vmf",
+  "parse_ok": true,
+  "example_count": 1,
+  "status": "ported",
+  "blockers": [],
+  "tier": "A",
+  "quality": "language_subset",
+  "quality_notes": [
+    "heuristic_default_subset"
+  ],
+  "parser_bytes": 910
+}

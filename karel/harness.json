@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.karel",
+  "lexer": "KarelLexer",
+  "parser": "KarelParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

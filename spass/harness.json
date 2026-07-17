@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.spass",
+  "lexer": "SpassLexer",
+  "parser": "SpassParser",
+  "example_globs": [
+    "examples/smoke.spass"
+  ]
+}

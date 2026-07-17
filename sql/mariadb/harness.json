@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.sql.mariadb",
+  "lexer": "MariadbLexer",
+  "parser": "MariadbParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

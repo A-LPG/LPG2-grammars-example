@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.javascript.typescript",
+  "lexer": "TypescriptLexer",
+  "parser": "TypescriptParser",
+  "example_globs": [
+    "examples-curated/**/*.ts"
+  ]
+}

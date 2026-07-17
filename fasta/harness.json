@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.fasta",
+  "lexer": "FastaLexer",
+  "parser": "FastaParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

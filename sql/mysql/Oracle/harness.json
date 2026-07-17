@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.sql.mysql.Oracle",
+  "lexer": "OracleLexer",
+  "parser": "OracleParser",
+  "example_globs": [
+    "examples/smoke.sql"
+  ]
+}

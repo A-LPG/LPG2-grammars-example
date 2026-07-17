@@ -1,0 +1,13 @@
+{
+  "id": "aql",
+  "tier": "B",
+  "parse_ok": true,
+  "status": "ported",
+  "example_count": 24,
+  "blockers": [],
+  "quality": "language_subset",
+  "quality_notes": [
+    "heuristic_default_subset"
+  ],
+  "parser_bytes": 1522
+}

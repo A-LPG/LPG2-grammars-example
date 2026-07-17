@@ -1,0 +1,11 @@
+{
+  "id": "tnt",
+  "parse_ok": true,
+  "example_count": 11,
+  "status": "ported",
+  "blockers": [],
+  "tier": "A",
+  "quality": "language_port",
+  "quality_notes": [],
+  "parser_bytes": 1018
+}

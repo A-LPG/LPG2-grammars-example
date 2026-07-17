@@ -1,3 +1,4 @@
+%options package=lpg.grammars.lpg
 %options la=15
 %options single-productions
 %options template=LexerTemplateF.gi

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.scss",
+  "lexer": "ScssLexer",
+  "parser": "ScssParser",
+  "example_globs": [
+    "examples/smoke.scss"
+  ]
+}

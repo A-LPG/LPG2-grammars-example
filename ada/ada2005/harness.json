@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.ada.ada2005",
+  "lexer": "AdaAda2005Lexer",
+  "parser": "AdaAda2005Parser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

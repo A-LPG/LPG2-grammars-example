@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.wren",
+  "lexer": "WrenLexer",
+  "parser": "WrenParser",
+  "example_globs": [
+    "examples/tiny.wren"
+  ]
+}

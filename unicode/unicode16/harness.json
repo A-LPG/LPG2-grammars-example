@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.unicode.unicode16",
+  "lexer": "Unicode16Lexer",
+  "parser": "Unicode16Parser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

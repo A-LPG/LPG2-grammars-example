@@ -1,0 +1,13 @@
+{
+  "id": "rfc822/rfc822-emailaddress",
+  "parse_ok": true,
+  "example_count": 9,
+  "status": "ported",
+  "blockers": [],
+  "tier": "A",
+  "quality": "language_subset",
+  "quality_notes": [
+    "heuristic_default_subset"
+  ],
+  "parser_bytes": 953
+}

@@ -1,0 +1,6 @@
+{
+  "package": "lpg.grammars.rfc1035",
+  "lexer": "DomainLexer",
+  "parser": "DomainParser",
+  "example_globs": ["examples/**/*"]
+}

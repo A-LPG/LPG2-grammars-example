@@ -1,0 +1,6 @@
+{
+  "package": "lpg.grammars.srt",
+  "lexer": "SrtLexer",
+  "parser": "SrtParser",
+  "example_globs": ["examples/**/*"]
+}

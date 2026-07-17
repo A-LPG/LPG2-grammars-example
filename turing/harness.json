@@ -1,0 +1,9 @@
+{
+  "package": "lpg.grammars.turing",
+  "lexer": "TuringLexer",
+  "parser": "TuringParser",
+  "example_globs": [
+    "examples/hello.t",
+    "examples/vars.t"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "edn",
+  "parse_ok": true,
+  "example_count": 27,
+  "status": "ported",
+  "blockers": [],
+  "tier": "A",
+  "quality": "language_port",
+  "quality_notes": [],
+  "parser_bytes": 1226
+}

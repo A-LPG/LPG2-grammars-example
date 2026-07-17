@@ -1,0 +1,13 @@
+{
+  "id": "propcalc",
+  "parse_ok": true,
+  "example_count": 8,
+  "status": "ported",
+  "blockers": [],
+  "tier": "B",
+  "quality": "language_subset",
+  "quality_notes": [
+    "limited_examples_or_rules"
+  ],
+  "parser_bytes": 860
+}

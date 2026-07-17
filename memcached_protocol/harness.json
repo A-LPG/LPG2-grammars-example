@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.memcached_protocol",
+  "lexer": "MemcachedLexer",
+  "parser": "MemcachedParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

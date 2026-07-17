@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.antlr.antlr3",
+  "lexer": "Antlr3Lexer",
+  "parser": "Antlr3Parser",
+  "example_globs": [
+    "examples/smoke.g"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.graphql",
+  "lexer": "GraphqlLexer",
+  "parser": "GraphqlParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

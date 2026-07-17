@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.ada.ada95",
+  "lexer": "AdaAda95Lexer",
+  "parser": "AdaAda95Parser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

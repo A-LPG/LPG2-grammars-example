@@ -1,0 +1,7 @@
+USE lib
+PROGRAM main
+LET a = 0
+IF a = a
+LET a > 0
+END IF
+END main

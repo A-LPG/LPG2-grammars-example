@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.powerbuilder",
+  "lexer": "PowerbuilderLexer",
+  "parser": "PowerbuilderParser",
+  "example_globs": [
+    "examples/smoke.txt"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.vb6",
+  "lexer": "Vb6Lexer",
+  "parser": "Vb6Parser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.aql",
+  "lexer": "AqlLexer",
+  "parser": "AqlParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

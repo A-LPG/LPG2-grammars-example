@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.rust",
+  "lexer": "RustLexer",
+  "parser": "RustParser",
+  "example_globs": [
+    "examples-curated/**/*.rs"
+  ]
+}

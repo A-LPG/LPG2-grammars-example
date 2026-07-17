@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.esolang.lolcode",
+  "lexer": "LolcodeLexer",
+  "parser": "LolcodeParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

@@ -1,18 +1,14 @@
+%options package=lpg.grammars.lpg
 %options la=6
-%options automatic_ast=toplevel,ast_type=ASTNode,visitor=preorder,parent_saved
-%options template= btParserTemplateF.gi
+%options automatic_ast=nested
+%options template=dtParserTemplateF.gi
 %options import_terminals=LPGLexer.gi
+--
+-- Legacy LPG meta-grammar; C++ host actions stripped for Java harness.
+--
 
-%Globals
-    /.
-        #include <unordered_map>
-   
-     ./
-%End
-
-%Define
-    $ast_class /.Object./
-   
+%Eof
+    EOF_TOKEN
 %End
 
 %Terminals
@@ -34,27 +30,9 @@
     LPG
 %End
 
-%Headers
-    /.
-
- std::unordered_multimap<std::wstring, LPGParser_top_level_ast::terminal_symbol0*>  terminal_symbol_produce_SYMBOL;
- std::unordered_multimap<std::wstring, LPGParser_top_level_ast::recover_symbol*>  _recover_symbols;
- std::unordered_multimap<std::wstring, LPGParser_top_level_ast::defineSpec*>  _define_specs;
- 
- std::unordered_multimap<std::wstring, LPGParser_top_level_ast::nonTerm*>  _non_terms;
- std::unordered_multimap<std::wstring, LPGParser_top_level_ast::terminal*>  _terms;
- std::vector<LPGParser_top_level_ast::ASTNodeToken*>  _macro_name_symbo;
-     ./
-%End
-
 %Rules
     LPG ::= options_segment LPG_INPUT
-    /.
-       
-        void initialize() {
-            
-        }
-     ./
+
 
     LPG_INPUT$$LPG_item ::= %empty
                                 |   LPG_INPUT LPG_item
@@ -120,12 +98,7 @@
     -- $define
     define_segment$$defineSpec ::= defineSpec | define_segment defineSpec
     defineSpec ::= macro_name_symbol macro_segment
-    /.
-        void initialize() {
-	environment->_define_specs.insert({getmacro_name_symbol()->toString(), this});
-	environment->_macro_name_symbo.push_back(static_cast<ASTNodeToken*>(getmacro_name_symbol()));
-        }
-     ./
+
 
     macro_name_symbol ::= MACRO_NAME
     macro_name_symbol ::= SYMBOL -- warning: escape prefix missing...
@@ -195,11 +168,7 @@
     nonTermList$$nonTerm ::= %empty | nonTermList nonTerm
 
     nonTerm ::= ruleNameWithAttributes produces ruleList
-    /.
-        void initialize() {
-         environment->_non_terms.insert({getruleNameWithAttributes()->getSYMBOL()->toString(), this});
-        }
-     ./
+
 
     -- TODO Rename to nonTermNameWithAttributes
     ruleNameWithAttributes$RuleName ::= SYMBOL -- ruleNameAttributes
@@ -239,32 +208,11 @@
     opt_action_segment ::= %empty | action_segment
 
     action_segment ::= BLOCK 
-    /.
-    ./
 
-    -- $start
-    start_segment$$start_symbol ::= start_symbol | start_segment start_symbol
-    start_symbol  ::= SYMBOL 
-    start_symbol  ::= MACRO_NAME
-
-    -- $terminals
-    terminals_segment$$terminal ::= terminal | terminals_segment terminal
---  terminals_segment ::= terminals_segment terminal_symbol produces name
-
-    terminal ::= terminal_symbol optTerminalAlias
-    /.
-        void initialize() {
-         	environment->_terms.insert({getterminal_symbol()->toString(), this});
-        }
-     ./
     optTerminalAlias ::= %empty | produces name
 
     terminal_symbol ::= SYMBOL
-    /.
-        void initialize() {
-            environment->terminal_symbol_produce_SYMBOL.insert({getSYMBOL()->toString(), this});
-        }
-     ./
+
     terminal_symbol ::= MACRO_NAME -- warning: escape prefix used in symbol
 
     -- $trailers
@@ -285,11 +233,7 @@
     recover_segment$$SYMBOL ::= %empty | recover_segment recover_symbol
     
     recover_symbol ::= SYMBOL
-    /.
-        void initialize() {
-            environment->_recover_symbols.insert({ getSYMBOL()->toString(), this });
-        }
-     ./
+
 
     END_KEY_OPT ::= %empty
     END_KEY_OPT ::= END_KEY 

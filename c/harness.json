@@ -1,0 +1,6 @@
+{
+  "package": "lpg.grammars.c",
+  "lexer": "CLexer",
+  "parser": "CParser",
+  "example_globs": ["examples/**/*.c"]
+}

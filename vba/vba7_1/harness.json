@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.vba.vba7_1",
+  "lexer": "Vba71Lexer",
+  "parser": "Vba71Parser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.modula2pim4",
+  "lexer": "Modula2pim4Lexer",
+  "parser": "Modula2pim4Parser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "package": "lpg.grammars.java.java",
+  "lexer": "JavaLexer",
+  "parser": "JavaParser",
+  "example_globs": ["examples/**/*.java"]
+}

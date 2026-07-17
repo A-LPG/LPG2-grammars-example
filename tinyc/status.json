@@ -1,0 +1,11 @@
+{
+  "id": "tinyc",
+  "tier": "A",
+  "status": "ported",
+  "parse_ok": true,
+  "blockers": [],
+  "example_count": 5,
+  "quality": "language_port",
+  "quality_notes": [],
+  "parser_bytes": 1091
+}

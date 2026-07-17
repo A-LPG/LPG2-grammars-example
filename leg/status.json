@@ -1,0 +1,13 @@
+{
+  "id": "leg",
+  "tier": "legacy",
+  "parse_ok": true,
+  "status": "ported",
+  "example_count": 2,
+  "blockers": [],
+  "quality": "legacy",
+  "quality_notes": [
+    "legacy_harness"
+  ],
+  "parser_bytes": 3343
+}

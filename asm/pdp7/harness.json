@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.asm.pdp7",
+  "lexer": "Pdp7Lexer",
+  "parser": "Pdp7Parser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

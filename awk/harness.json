@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.awk",
+  "lexer": "AwkLexer",
+  "parser": "AwkParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

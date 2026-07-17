@@ -1,0 +1,9 @@
+{
+  "package": "lpg.grammars.kuka",
+  "lexer": "KukaLexer",
+  "parser": "KukaParser",
+  "example_globs": [
+    "examples/smoke.txt",
+    "examples/example1.txt"
+  ]
+}

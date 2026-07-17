@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.gedcom",
+  "lexer": "GedcomLexer",
+  "parser": "GedcomParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

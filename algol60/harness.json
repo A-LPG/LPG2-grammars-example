@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.algol60",
+  "lexer": "Algol60Lexer",
+  "parser": "Algol60Parser",
+  "example_globs": [
+    "examples/smoke.a60"
+  ]
+}

@@ -1,3 +1,4 @@
+%options package=lpg.grammars.lpg
 %Options fp=LPGKWLexer
 %options single-productions
 %options template=KeywordTemplateF.gi
@@ -43,11 +44,6 @@
 %End
 %Globals
     /.
-#pragma once
-#include "LPGLexerprs.h"
-#include "tuple.h"
-#include "LPGKWLexerprs.h"
-#include "LPGParsersym.h"
     ./
 %End
 %Start

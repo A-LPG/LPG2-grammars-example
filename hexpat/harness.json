@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.hexpat",
+  "lexer": "HexpatLexer",
+  "parser": "HexpatParser",
+  "example_globs": [
+    "examples/tiny.hexpat"
+  ]
+}

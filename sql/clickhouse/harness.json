@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.sql.clickhouse",
+  "lexer": "ClickhouseLexer",
+  "parser": "ClickhouseParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

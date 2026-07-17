@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.dart2",
+  "lexer": "Dart2Lexer",
+  "parser": "Dart2Parser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

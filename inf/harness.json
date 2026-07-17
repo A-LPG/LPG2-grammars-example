@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.inf",
+  "lexer": "InfLexer",
+  "parser": "InfParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

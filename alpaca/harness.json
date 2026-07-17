@@ -1,0 +1,6 @@
+{
+  "package": "lpg.grammars.alpaca",
+  "lexer": "AlpacaLexer",
+  "parser": "AlpacaParser",
+  "example_globs": ["examples/**/*"]
+}

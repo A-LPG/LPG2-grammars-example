@@ -1,0 +1,5 @@
+module M {
+  interface I {
+    void f();
+  };
+};

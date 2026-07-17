@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.peoplecode",
+  "lexer": "PeoplecodeLexer",
+  "parser": "PeoplecodeParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

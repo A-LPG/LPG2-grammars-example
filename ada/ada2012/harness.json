@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.ada.ada2012",
+  "lexer": "Ada2012Lexer",
+  "parser": "Ada2012Parser",
+  "example_globs": [
+    "examples/smoke.ads"
+  ]
+}

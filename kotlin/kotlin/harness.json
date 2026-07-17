@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.kotlin.kotlin",
+  "lexer": "KotlinLexer",
+  "parser": "KotlinParser",
+  "example_globs": [
+    "examples-curated/**/*.kt"
+  ]
+}

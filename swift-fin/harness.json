@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.swift_fin",
+  "lexer": "Swift_finLexer",
+  "parser": "Swift_finParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

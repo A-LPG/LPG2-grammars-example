@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.lucene",
+  "lexer": "LuceneLexer",
+  "parser": "LuceneParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

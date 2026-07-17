@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.datalog",
+  "lexer": "DatalogLexer",
+  "parser": "DatalogParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

@@ -1,18 +1,17 @@
-%options package=org.eclipse.imp.leg.parser
+%options package=lpg.grammars.leg
 %options template=LexerTemplateF.gi
 %options filter=LEGKWLexer.gi
 --
 -- This is just a sample lexer and not a real lexer for LEG
+-- (Eclipse IMP deps removed for grammars-example Java harness.)
 --
 
 %Globals
     /.import java.util.*;
-    import org.eclipse.imp.parser.ILexer;
     ./
 %End
 
 %Define
-    $additional_interfaces /., ILexer./
     $kw_lexer_class /.$LEGKWLexer./
 %End
 

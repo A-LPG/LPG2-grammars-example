@@ -1,0 +1,4 @@
+json = { "{" ~ "}" }
+value = { string | number }
+string = { "\"" }
+number = { ASCII_DIGIT+ }

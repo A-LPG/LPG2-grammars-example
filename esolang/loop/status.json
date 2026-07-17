@@ -1,0 +1,13 @@
+{
+  "id": "esolang/loop",
+  "parse_ok": true,
+  "example_count": 3,
+  "status": "ported",
+  "blockers": [],
+  "tier": "A",
+  "quality": "language_subset",
+  "quality_notes": [
+    "limited_examples_or_rules"
+  ],
+  "parser_bytes": 793
+}

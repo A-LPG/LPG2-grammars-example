@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.informix",
+  "lexer": "InformixLexer",
+  "parser": "InformixParser",
+  "example_globs": [
+    "examples/smoke.sql"
+  ]
+}

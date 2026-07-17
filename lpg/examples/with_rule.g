@@ -1,0 +1,3 @@
+%Rules
+    S ::= %empty
+%End

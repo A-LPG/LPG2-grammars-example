@@ -1,0 +1,13 @@
+{
+  "id": "clu",
+  "tier": "B",
+  "parse_ok": true,
+  "status": "ported",
+  "example_count": 1,
+  "blockers": [],
+  "quality": "token_stream_smoke",
+  "quality_notes": [
+    "tiny_parser_single_example"
+  ],
+  "parser_bytes": 347
+}

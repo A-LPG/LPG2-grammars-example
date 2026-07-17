@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.pii",
+  "lexer": "PiiLexer",
+  "parser": "PiiParser",
+  "example_globs": [
+    "examples/**/*.txt"
+  ]
+}

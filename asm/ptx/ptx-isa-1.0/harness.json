@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.asm.ptx.ptx_isa_1_0",
+  "lexer": "PtxIsa10Lexer",
+  "parser": "PtxIsa10Parser",
+  "example_globs": [
+    "examples/smoke.ptx"
+  ]
+}

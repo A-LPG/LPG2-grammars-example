@@ -1,0 +1,11 @@
+{
+  "id": "esolang/bio",
+  "parse_ok": true,
+  "example_count": 4,
+  "status": "ported",
+  "blockers": [],
+  "tier": "A",
+  "quality": "language_port",
+  "quality_notes": [],
+  "parser_bytes": 1091
+}

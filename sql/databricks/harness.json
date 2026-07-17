@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.sql.databricks",
+  "lexer": "DatabricksLexer",
+  "parser": "DatabricksParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

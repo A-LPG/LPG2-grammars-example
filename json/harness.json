@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.json",
+  "lexer": "JsonLexer",
+  "parser": "JsonParser",
+  "example_globs": [
+    "examples/**/*.json"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.pike",
+  "lexer": "PikeLexer",
+  "parser": "PikeParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

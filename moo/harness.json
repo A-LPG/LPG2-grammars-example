@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.moo",
+  "lexer": "MooLexer",
+  "parser": "MooParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

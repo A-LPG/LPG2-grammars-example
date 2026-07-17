@@ -1,0 +1,6 @@
+{
+  "package": "lpg.grammars.d2",
+  "lexer": "D2Lexer",
+  "parser": "D2Parser",
+  "example_globs": ["examples/**/*"]
+}

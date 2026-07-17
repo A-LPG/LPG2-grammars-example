@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.icalendar",
+  "lexer": "IcalendarLexer",
+  "parser": "IcalendarParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

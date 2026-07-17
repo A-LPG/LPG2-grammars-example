@@ -1,0 +1,1 @@
+rule1 if (temperature are about 98) then status are increased;

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.rfc822.rfc822_datetime",
+  "lexer": "DatetimeLexer",
+  "parser": "DatetimeParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

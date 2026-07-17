@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.ttm",
+  "lexer": "TtmLexer",
+  "parser": "TtmParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

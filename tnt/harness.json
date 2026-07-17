@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.tnt",
+  "lexer": "TntLexer",
+  "parser": "TntParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

@@ -1,0 +1,55 @@
+-- JSON5 Parser (LPG)
+%Options la=2
+%Options fp=Json5Parser
+%options package=lpg.grammars.json5
+%options template=dtParserTemplateF.gi
+%options import_terminals=Json5Lexer.gi
+%options automatic_ast=nested
+%Eof
+    EOF_TOKEN
+%End
+%Start
+    json5
+%End
+%Rules
+    json5 ::= json
+    json ::= $empty
+           | value
+
+    value ::= STRING
+            | number
+            | obj
+            | arr
+            | TRUE
+            | FALSE
+            | NULLLITERAL
+
+    obj ::= LBRACE RBRACE
+          | LBRACE pair_list opt_comma RBRACE
+
+    pair_list ::= pair
+                | pair_list COMMA pair
+
+    pair ::= key COLON value
+
+    key ::= STRING
+          | IDENTIFIER
+          | TRUE
+          | FALSE
+          | NULLLITERAL
+          | INFINITY
+          | NAN
+
+    arr ::= LBRACKET RBRACKET
+          | LBRACKET value_list opt_comma RBRACKET
+
+    value_list ::= value
+                 | value_list COMMA value
+
+    opt_comma ::= $empty
+                | COMMA
+
+    number ::= opt_sign numeric
+    opt_sign ::= $empty | PLUS | MINUS
+    numeric ::= NUMBER | INFINITY | NAN
+%End

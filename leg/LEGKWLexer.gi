@@ -1,7 +1,7 @@
 --
 -- The LEG Keyword Lexer
 --
-%options package=org.eclipse.imp.leg.parser
+%options package=lpg.grammars.leg
 %options template=KeywordTemplateF.gi
 
 %Include

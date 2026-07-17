@@ -1,0 +1,6 @@
+{
+  "package": "lpg.grammars.b",
+  "lexer": "BLexer",
+  "parser": "BParser",
+  "example_globs": ["examples/**/*"]
+}

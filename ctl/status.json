@@ -1,0 +1,13 @@
+{
+  "id": "ctl",
+  "tier": "A",
+  "status": "ported",
+  "parse_ok": true,
+  "blockers": [],
+  "example_count": 1,
+  "quality": "token_stream_smoke",
+  "quality_notes": [
+    "tiny_parser_single_example"
+  ],
+  "parser_bytes": 805
+}

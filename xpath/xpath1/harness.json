@@ -1,0 +1,11 @@
+{
+  "package": "lpg.grammars.xpath.xpath1",
+  "lexer": "Xpath1Lexer",
+  "parser": "Xpath1Parser",
+  "example_globs": [
+    "examples/tiny.txt",
+    "examples/tiny2.txt",
+    "examples/tiny3.txt",
+    "examples/example1.txt"
+  ]
+}

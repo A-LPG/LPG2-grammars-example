@@ -1,0 +1,11 @@
+{
+  "id": "matlab",
+  "tier": "B",
+  "parse_ok": true,
+  "status": "ported",
+  "example_count": 3,
+  "blockers": [],
+  "quality": "language_port",
+  "quality_notes": [],
+  "parser_bytes": 1013
+}

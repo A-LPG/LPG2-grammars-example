@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.z",
+  "lexer": "ZLexer",
+  "parser": "ZParser",
+  "example_globs": [
+    "examples/smoke.zed"
+  ]
+}

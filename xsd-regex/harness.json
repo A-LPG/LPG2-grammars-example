@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.xsd_regex",
+  "lexer": "XsdRegexLexer",
+  "parser": "XsdRegexParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

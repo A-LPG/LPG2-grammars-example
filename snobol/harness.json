@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.snobol",
+  "lexer": "SnobolLexer",
+  "parser": "SnobolParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

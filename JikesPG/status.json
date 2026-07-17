@@ -1,0 +1,10 @@
+{
+  "id": "JikesPG",
+  "tier": "legacy",
+  "quality": "legacy",
+  "parse_ok": false,
+  "status": "reference_only",
+  "harness_skip": true,
+  "blockers": ["monolithic_bootstrap_grammar_no_java_harness"],
+  "example_count": 0
+}

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.muparser",
+  "lexer": "MuparserLexer",
+  "parser": "MuparserParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "lpg",
+  "tier": "legacy",
+  "parse_ok": true,
+  "status": "ported",
+  "example_count": 4,
+  "blockers": [],
+  "quality": "legacy",
+  "quality_notes": [
+    "legacy_harness"
+  ],
+  "parser_bytes": 8354
+}

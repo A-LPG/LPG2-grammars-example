@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.stringtemplate",
+  "lexer": "StringtemplateLexer",
+  "parser": "StringtemplateParser",
+  "example_globs": [
+    "examples/smoke.st"
+  ]
+}

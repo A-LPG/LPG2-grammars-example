@@ -1,0 +1,11 @@
+{
+  "id": "toml",
+  "tier": "D",
+  "parse_ok": true,
+  "status": "ported",
+  "example_count": 1,
+  "blockers": [],
+  "quality": "language_port",
+  "quality_notes": [],
+  "parser_bytes": 961
+}

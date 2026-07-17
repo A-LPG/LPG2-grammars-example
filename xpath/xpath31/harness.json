@@ -1,0 +1,9 @@
+{
+  "package": "lpg.grammars.xpath.xpath31",
+  "lexer": "Xpath31Lexer",
+  "parser": "Xpath31Parser",
+  "example_globs": [
+    "examples/smoke.txt",
+    "examples/expressions.txt"
+  ]
+}
