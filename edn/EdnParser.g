@@ -1,5 +1,6 @@
--- EDN Parser (LPG)
--- Ported from antlr/grammars-v4 edn/edn.g4
+-- EdnParser (LPG) — structural port of grammars-v4 edn/edn.g4
+-- Nonterminals: program / value / tag / keyword / list_ / vector / map_ / set_
+-- IDENTIFIER token = g4 Symbol
 
 %Options la=2
 %Options fp=EdnParser
@@ -17,6 +18,7 @@
 %End
 
 %Rules
+    -- program: value* EOF
     program ::= $empty
               | values
 
@@ -51,7 +53,7 @@
             | LPAREN values RPAREN
 
     vector ::= LBRACKET RBRACKET
-             | LBRACKET values RBRACKET
+            | LBRACKET values RBRACKET
 
     map_ ::= LBRACE RBRACE
            | LBRACE pairs RBRACE

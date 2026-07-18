@@ -1,8 +1,8 @@
 {
   "package": "lpg.grammars.sql.plsql",
-  "lexer": "PlsqlLexer",
-  "parser": "PlsqlParser",
+  "lexer": "SqlPlsqlLexer",
+  "parser": "SqlPlsqlParser",
   "example_globs": [
-    "examples/smoke.sql"
+    "examples/**/*"
   ]
 }

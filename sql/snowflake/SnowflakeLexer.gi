@@ -137,7 +137,7 @@
     NotSQ -> Letter | Digit | Special | Space | HT | FF | '"' | Escape | AfterASCII
     Escape ::= '\' EscapeChar
     EscapeChar -> '"' | "'" | '\' | '/' | 'b' | 'f' | 'n' | 'r' | 't' | Letter | Digit
-    Special -> '+' | '-' | '/' | '(' | ')' | '*' | '!' | '@' | '`' | '~' | '%' | '&' | '^' | ':' | ';' | '|' | '{' | '}' | '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_'
+    Special -> '+' | '-' | '/' | '(' | ')' | '*' | '!' | '@' | '~' | '%' | '&' | '^' | ':' | ';' | '|' | '{' | '}' | '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_'
     NUMBER ::= DigitPlus OptFrac
     DigitPlus ::= Digit | DigitPlus Digit
     OptFrac -> $empty | '.' DigitPlus

@@ -1,5 +1,5 @@
--- CSV Parser (LPG)
--- Ported from antlr/grammars-v4 csv/CSV.g4 for parse-level examples.
+-- CSV Parser (LPG) — structural port of grammars-v4 csv/CSV.g4
+-- Nonterminals mirror g4: csvFile / hdr / row / field (not token-stream soup).
 
 %Options la=2
 %Options fp=CsvParser

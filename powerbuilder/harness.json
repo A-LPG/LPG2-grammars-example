@@ -3,6 +3,6 @@
   "lexer": "PowerbuilderLexer",
   "parser": "PowerbuilderParser",
   "example_globs": [
-    "examples/smoke.txt"
+    "examples/**/*"
   ]
 }

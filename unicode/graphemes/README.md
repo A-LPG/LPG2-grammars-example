@@ -1,7 +1,6 @@
 # unicode/graphemes
 
-Parse-level LPG port of antlr/grammars-v4 `unicode/graphemes` (Wave D ice-break).
+Auto-ported from antlr/grammars-v4 `unicode/graphemes` via `tools/antlr2lpg.py`.
 
-```bash
-bash harness/run-one.sh unicode/graphemes
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `emoji_sequence`.

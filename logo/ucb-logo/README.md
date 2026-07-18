@@ -1,11 +1,10 @@
 # logo/ucb-logo
 
-**Quality: `token_stream_smoke` — not a language grammar.**
+Structural subset of grammars-v4 `logo/ucb-logo/UCBLogo.g4`
+(`parse` / `instruction` / `procedure_def` / layered `expression` / `list_` / `array_`).
 
-Scaffold / nested token-stream smoke for antlr/grammars-v4 `logo/ucb-logo`. Harness may report `parse_ok`; that does **not** mean a real LPG language port.
-
-See `status.json` and `catalog.json` → `quality_schema`.
+Arity table and semantic predicates omitted (language_subset).
 
 ```bash
-bash harness/run-one.sh logo/ucb-logo
+bash ../harness/run-one.sh logo/ucb-logo
 ```

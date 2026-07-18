@@ -1,13 +1,6 @@
 # rego
 
-**Quality: `token_stream_smoke` — not a language grammar.**
+Structural LPG port of grammars-v4 `rego/RegoParser.g4` + `RegoLexer.g4`
+(`root` / `stmt` / `regoRules` / `query`).
 
-Scaffold / nested token-stream smoke for antlr/grammars-v4 `rego`. Harness may report `parse_ok`; that does **not** mean a real LPG language port.
-
-See `status.json` and `catalog.json` → `quality_schema`.
-
-```bash
-bash harness/run-one.sh rego
-```
-
-Unused upstream examples live in `examples-upstream-unused/` (not harnessed); full corpus: https://github.com/antlr/grammars-v4/tree/master/rego.
+Lexer emits `Name` / `String` / `UnsignedNumber` / `EqOper` (not generic IDENTIFIER soup).

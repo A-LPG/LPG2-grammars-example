@@ -3,7 +3,6 @@
   "lexer": "KukaLexer",
   "parser": "KukaParser",
   "example_globs": [
-    "examples/smoke.txt",
-    "examples/example1.txt"
+    "examples-curated/**/*"
   ]
 }

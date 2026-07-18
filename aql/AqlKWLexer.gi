@@ -1,4 +1,6 @@
--- Keyword filter
+-- Keyword filter for ArangoDB AQL (case-insensitive)
+-- Source: antlr/grammars-v4 aql/ArangoDbLexer.g4
+
 %options package=lpg.grammars.aql
 %options template=KeywordTemplateF.gi
 %options fp=AqlKWLexer
@@ -39,12 +41,10 @@
     INBOUND
     ANY
     GRAPH
-    SHORTEST
-    PATH
-    K_SHORTEST
-    PATHS
     PRUNE
     TO
+    NEW
+    OLD
 %End
 %Terminals
     a b c d e f g h i j k l m n o p q r s t u v w x y z
@@ -88,10 +88,8 @@
               | i n b o u n d /.$setResult($_INBOUND);./
               | a n y /.$setResult($_ANY);./
               | g r a p h /.$setResult($_GRAPH);./
-              | s h o r t e s t /.$setResult($_SHORTEST);./
-              | p a t h /.$setResult($_PATH);./
-              | k _ s h o r t e s t /.$setResult($_K_SHORTEST);./
-              | p a t h s /.$setResult($_PATHS);./
               | p r u n e /.$setResult($_PRUNE);./
               | t o /.$setResult($_TO);./
+              | n e w /.$setResult($_NEW);./
+              | o l d /.$setResult($_OLD);./
 %End

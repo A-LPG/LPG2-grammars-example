@@ -1,5 +1,6 @@
 # kquery
 
-Scaffold from antlr/grammars-v4 `kquery`.
+Auto-ported from antlr/grammars-v4 `kquery` via `tools/antlr2lpg.py`.
 
-Status: see `status.json`.
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `kqueryExpression`.

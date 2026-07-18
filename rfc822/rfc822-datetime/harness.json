@@ -3,6 +3,6 @@
   "lexer": "DatetimeLexer",
   "parser": "DatetimeParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

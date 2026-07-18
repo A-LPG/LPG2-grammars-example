@@ -3,6 +3,6 @@
   "lexer": "TracLexer",
   "parser": "TracParser",
   "example_globs": [
-    "examples/**/*.txt"
+    "examples-curated/**/*"
   ]
 }

@@ -3,6 +3,6 @@
   "lexer": "AslLexer",
   "parser": "AslParser",
   "example_globs": [
-    "examples/smoke.txt"
+    "examples-curated/**/*"
   ]
 }

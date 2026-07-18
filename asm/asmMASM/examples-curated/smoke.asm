@@ -1,2 +1,2 @@
-mov ax, 1
-ret
+.code
+end

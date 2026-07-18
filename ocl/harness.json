@@ -3,6 +3,6 @@
   "lexer": "OclLexer",
   "parser": "OclParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

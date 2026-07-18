@@ -3,6 +3,6 @@
   "lexer": "SmalltalkLexer",
   "parser": "SmalltalkParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

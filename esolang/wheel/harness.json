@@ -3,6 +3,6 @@
   "lexer": "WheelLexer",
   "parser": "WheelParser",
   "example_globs": [
-    "examples/**/*.txt"
+    "examples-curated/**/*"
   ]
 }

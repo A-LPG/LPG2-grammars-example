@@ -3,6 +3,6 @@
   "lexer": "CayenneLexer",
   "parser": "CayenneParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

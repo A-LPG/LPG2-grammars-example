@@ -3,6 +3,6 @@
   "lexer": "KirikiriTjsLexer",
   "parser": "KirikiriTjsParser",
   "example_globs": [
-    "examples/smoke.tjs"
+    "examples-curated/**/*"
   ]
 }

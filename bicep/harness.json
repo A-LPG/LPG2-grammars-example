@@ -3,6 +3,6 @@
   "lexer": "BicepLexer",
   "parser": "BicepParser",
   "example_globs": [
-    "examples/tiny.bicep"
+    "examples-curated/**/*"
   ]
 }

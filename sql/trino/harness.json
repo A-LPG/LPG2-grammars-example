@@ -1,7 +1,7 @@
 {
   "package": "lpg.grammars.sql.trino",
-  "lexer": "TrinoLexer",
-  "parser": "TrinoParser",
+  "lexer": "SqlTrinoLexer",
+  "parser": "SqlTrinoParser",
   "example_globs": [
     "examples-curated/**/*"
   ]

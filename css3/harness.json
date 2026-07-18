@@ -3,6 +3,6 @@
   "lexer": "Css3Lexer",
   "parser": "Css3Parser",
   "example_globs": [
-    "examples/tiny.css"
+    "examples-curated/**/*"
   ]
 }

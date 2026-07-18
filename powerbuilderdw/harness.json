@@ -3,6 +3,6 @@
   "lexer": "PowerbuilderdwLexer",
   "parser": "PowerbuilderdwParser",
   "example_globs": [
-    "examples/tiny.srd"
+    "examples-curated/**/*"
   ]
 }

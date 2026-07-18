@@ -1,8 +1,6 @@
 # r
 
-LPG port of antlr/grammars-v4 `r` (R language expressions).
+Auto-ported from antlr/grammars-v4 `r` via `tools/antlr2lpg.py`.
 
-Newlines and `#` comments are skipped like whitespace (RFilter-like), so `else`
-binds without NL tokens. Covers the four upstream examples under `examples/`.
-
-Status: see `status.json`.
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `prog`.

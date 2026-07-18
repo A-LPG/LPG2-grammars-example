@@ -3,6 +3,6 @@
   "lexer": "CapnprotoLexer",
   "parser": "CapnprotoParser",
   "example_globs": [
-    "examples/tiny.capnp"
+    "examples-curated/**/*"
   ]
 }

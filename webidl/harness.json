@@ -3,8 +3,6 @@
   "lexer": "WebidlLexer",
   "parser": "WebidlParser",
   "example_globs": [
-    "examples/smoke.idl",
-    "examples/document.idl",
-    "examples/html_link_element.idl"
+    "examples-curated/**/*"
   ]
 }

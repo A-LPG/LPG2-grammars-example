@@ -1,13 +1,13 @@
 {
   "id": "javacc",
-  "tier": "B",
-  "parse_ok": true,
-  "status": "ported",
-  "example_count": 1,
-  "blockers": [],
   "quality": "language_subset",
+  "parse_ok": false,
+  "status": "regenerated_from_g4",
+  "blockers": [],
   "quality_notes": [
-    "curated_subset"
+    "antlr2lpg_structural_port"
   ],
-  "parser_bytes": 552
+  "parser_bytes": 21989,
+  "rule_approx": 384,
+  "start": "javacc_input"
 }

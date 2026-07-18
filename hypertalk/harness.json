@@ -3,6 +3,6 @@
   "lexer": "HypertalkLexer",
   "parser": "HypertalkParser",
   "example_globs": [
-    "examples/smoke.ht"
+    "examples/**/*"
   ]
 }

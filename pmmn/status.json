@@ -1,13 +1,18 @@
 {
   "id": "pmmn",
-  "parse_ok": true,
-  "example_count": 6,
-  "status": "ported",
-  "blockers": [],
-  "tier": "A",
   "quality": "language_subset",
-  "quality_notes": [
-    "heuristic_default_subset"
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [
+    "tiny_upstream_g4_approx_82_lines"
   ],
-  "parser_bytes": 768
+  "quality_notes": [
+    "real_g4_port",
+    "curated_multiline_inc_if_while"
+  ],
+  "notes": "PMMN inc/dec/if/while counter language from PMMN.g4.",
+  "example_count": 3,
+  "tier": "A",
+  "parser_bytes": 768,
+  "parser_lines": 37
 }

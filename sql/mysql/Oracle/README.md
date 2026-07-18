@@ -1,7 +1,6 @@
 # sql/mysql/Oracle
 
-Parse-level LPG port of antlr/grammars-v4 `sql/mysql/Oracle` (Wave D ice-break).
+Auto-ported from antlr/grammars-v4 `sql/mysql/Oracle` via `tools/antlr2lpg.py`.
 
-```bash
-bash harness/run-one.sh sql/mysql/Oracle
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `queries`.

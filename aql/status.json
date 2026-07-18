@@ -3,11 +3,12 @@
   "tier": "B",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 24,
+  "example_count": 3,
   "blockers": [],
   "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port",
+    "language_subset"
   ],
-  "parser_bytes": 1522
+  "notes": "real_g4_port of ArangoDbParser.g4 FOR/LET/FILTER/RETURN/INSERT subset"
 }

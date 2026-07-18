@@ -1,7 +1,7 @@
 {
   "package": "lpg.grammars.asm.ptx.ptx_isa_2_1",
-  "lexer": "PtxIsa21Lexer",
-  "parser": "PtxIsa21Parser",
+  "lexer": "AsmPtxPtxIsa21Lexer",
+  "parser": "AsmPtxPtxIsa21Parser",
   "example_globs": [
     "examples-curated/**/*"
   ]

@@ -114,6 +114,18 @@ gen "$PARSER_FILE" "$TPL_JAVA/$PARSER_TEMPLATE"
 # Generated *exp.java may emit Java keywords as field names; drop if present
 rm -f "$OUT"/*exp.java
 
+# automatic_ast=none still emits Ast return types in dtParserTemplateF; stub if missing
+if [[ ! -f "$OUT/Ast.java" ]]; then
+  if compgen -G "$OUT/*Parser.java" >/dev/null && grep -q "public Ast parser" "$OUT"/*Parser.java 2>/dev/null; then
+    echo "==> stub Ast.java for automatic_ast=none"
+    cat > "$OUT/Ast.java" <<EOF
+package ${PKG};
+/** Stub for grammars with automatic_ast=none (template still references Ast). */
+public class Ast {}
+EOF
+  fi
+fi
+
 echo "==> compile"
 CLASSPATH="$RUNTIME_CLASSES:$OUT"
 javac -encoding UTF-8 -cp "$CLASSPATH" -d "$OUT" "$OUT"/*.java "$SCRIPT_DIR/ParseDriver.java"

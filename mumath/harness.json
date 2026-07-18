@@ -3,6 +3,6 @@
   "lexer": "MumathLexer",
   "parser": "MumathParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

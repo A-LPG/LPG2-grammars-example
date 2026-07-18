@@ -1,13 +1,19 @@
 {
   "id": "fusion-tables",
-  "tier": "B",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
+  "quality": "language_subset",
   "blockers": [],
-  "quality": "token_stream_smoke",
+  "example_count": 3,
+  "parser_lines": 65,
+  "parser_bytes": 1913,
   "quality_notes": [
-    "generic_nested_token_stream"
+    "antlr2lpg_structural_port",
+    "real_g4_port",
+    "language_subset",
+    "harsh3_real_multiline_examples",
+    "no_token_stream_soup",
+    "repair3_fixed_kwlexer"
   ],
-  "parser_bytes": 1190
+  "tier": "A"
 }

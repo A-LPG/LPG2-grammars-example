@@ -1,7 +1,6 @@
 # sql/postgresql
 
-Parse-level LPG port of antlr/grammars-v4 `sql/postgresql` (Wave D ice-break).
+Auto-ported from antlr/grammars-v4 `sql/postgresql` via `tools/antlr2lpg.py`.
 
-```bash
-bash harness/run-one.sh sql/postgresql
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `root`.

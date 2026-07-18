@@ -1,13 +1,13 @@
 {
   "id": "ada/ada83",
-  "tier": "B",
-  "parse_ok": true,
-  "status": "ported",
-  "example_count": 3,
+  "quality": "language_subset",
+  "parse_ok": false,
+  "status": "regenerated_from_g4",
   "blockers": [],
-  "quality": "token_stream_smoke",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "antlr2lpg_structural_port"
   ],
-  "parser_bytes": 1164
+  "parser_bytes": 22092,
+  "rule_approx": 353,
+  "start": "identifier"
 }

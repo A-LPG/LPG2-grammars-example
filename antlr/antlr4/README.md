@@ -1,11 +1,5 @@
 # antlr/antlr4
 
-**Quality: `token_stream_smoke` — not a language grammar.**
+Structural LPG port of grammars-v4 `ANTLRv4Parser.g4` + lexer keywords (~416 parser lines / 67 rules), **not** the nested `examples/**` dump (that tree embeds other languages and inflates line counts to ~329k).
 
-Scaffold / nested token-stream smoke for antlr/grammars-v4 `antlr/antlr4`. Harness may report `parse_ok`; that does **not** mean a real LPG language port.
-
-See `status.json` and `catalog.json` → `quality_schema`.
-
-```bash
-bash harness/run-one.sh antlr/antlr4
-```
+Quality: `language_subset` + `real_g4_port`. Lexer approximates RULE_REF/TOKEN_REF as IDENTIFIER; OPTIONS/TOKENS/CHANNELS are soft identifiers; nested ACTION / lexer char-sets are not fully lexed — curated examples avoid those constructs.

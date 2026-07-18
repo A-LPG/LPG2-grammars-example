@@ -1,5 +1,6 @@
 # capnproto
 
-Scaffold from antlr/grammars-v4 `capnproto`.
+Auto-ported from antlr/grammars-v4 `capnproto` via `tools/antlr2lpg.py`.
 
-Status: see `status.json`.
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `document`.

@@ -3,6 +3,6 @@
   "lexer": "TcpLexer",
   "parser": "TcpParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

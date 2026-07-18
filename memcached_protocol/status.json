@@ -1,13 +1,15 @@
 {
   "id": "memcached_protocol",
   "parse_ok": true,
-  "example_count": 1,
+  "example_count": 3,
   "status": "ported",
   "blockers": [],
   "tier": "A",
   "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port",
+    "protocol_session_examples"
   ],
-  "parser_bytes": 1816
+  "parser_bytes": 1816,
+  "parser_lines": 67
 }

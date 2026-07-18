@@ -3,6 +3,6 @@
   "lexer": "OrwellLexer",
   "parser": "OrwellParser",
   "example_globs": [
-    "examples/tiny.orwell"
+    "examples-curated/**/*"
   ]
 }

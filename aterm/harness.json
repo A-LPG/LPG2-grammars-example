@@ -3,6 +3,6 @@
   "lexer": "AtermLexer",
   "parser": "AtermParser",
   "example_globs": [
-    "examples/**/*.txt"
+    "examples-curated/**/*"
   ]
 }

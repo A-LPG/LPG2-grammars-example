@@ -1,11 +1,5 @@
 # kotlin/kotlin-formal
 
-**Quality: `token_stream_smoke` — not a language grammar.**
-
-Scaffold / nested token-stream smoke for antlr/grammars-v4 `kotlin/kotlin-formal`. Harness may report `parse_ok`; that does **not** mean a real LPG language port.
-
-See `status.json` and `catalog.json` → `quality_schema`.
-
-```bash
-bash harness/run-one.sh kotlin/kotlin-formal
-```
+Structural language_subset port from grammars-v4 `kotlin/kotlin-formal`.
+Full antlr2lpg LALR/AST-conflicted; this subset keeps kotlinFile entry + real declarations.
+Not token-stream soup.

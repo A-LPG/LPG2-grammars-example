@@ -1,10 +1,8 @@
 {
   "package": "lpg.grammars.ada.ada83",
-  "lexer": "Ada83Lexer",
-  "parser": "Ada83Parser",
+  "lexer": "AdaAda83Lexer",
+  "parser": "AdaAda83Parser",
   "example_globs": [
-    "examples/smoke.adb",
-    "examples/pkg1.adb",
-    "examples/pkg1.ads"
+    "examples/**/*"
   ]
 }

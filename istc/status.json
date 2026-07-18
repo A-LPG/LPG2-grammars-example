@@ -1,13 +1,15 @@
 {
   "id": "istc",
   "parse_ok": true,
-  "example_count": 1,
+  "example_count": 3,
   "status": "ported",
   "blockers": [],
   "tier": "A",
-  "quality": "token_stream_smoke",
+  "quality": "language_subset",
   "quality_notes": [
-    "tiny_parser_single_example"
+    "real_g4_port",
+    "istc_registration_year_work_check_from_g4"
   ],
-  "parser_bytes": 553
+  "parser_bytes": 553,
+  "parser_lines": 32
 }

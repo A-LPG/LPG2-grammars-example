@@ -1,2 +1,2 @@
-mov eax, 1
+mov ax, 1
 ret

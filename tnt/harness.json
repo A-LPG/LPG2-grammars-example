@@ -3,6 +3,6 @@
   "lexer": "TntLexer",
   "parser": "TntParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

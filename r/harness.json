@@ -3,6 +3,6 @@
   "lexer": "RLexer",
   "parser": "RParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

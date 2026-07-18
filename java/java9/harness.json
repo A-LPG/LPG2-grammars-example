@@ -3,6 +3,6 @@
   "lexer": "Java9Lexer",
   "parser": "Java9Parser",
   "example_globs": [
-    "examples-curated/**/*"
+    "examples-curated/**/*.java"
   ]
 }

@@ -1,13 +1,19 @@
 {
   "id": "asn/asn",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
   "blockers": [],
-  "quality": "token_stream_smoke",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "antlr2lpg_structural_port",
+    "real_g4_port",
+    "language_subset",
+    "lexer_token_remap"
   ],
-  "parser_bytes": 1176
+  "parser_bytes": 17216,
+  "rule_approx": 321,
+  "start": "modules",
+  "parser_lines": 724,
+  "tier": "A",
+  "example_count": 2
 }

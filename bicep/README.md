@@ -1,7 +1,6 @@
 # bicep
 
-Parse-level port of antlr/grammars-v4 `bicep/`.
+Auto-ported from antlr/grammars-v4 `bicep` via `tools/antlr2lpg.py`.
 
-```bash
-../harness/run-one.sh bicep
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `program`.

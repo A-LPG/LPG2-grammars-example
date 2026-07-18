@@ -2,5 +2,7 @@
   "package": "lpg.grammars.pgn",
   "lexer": "PgnLexer",
   "parser": "PgnParser",
-  "example_globs": ["examples/tiny.pgn"]
+  "example_globs": [
+    "examples-curated/**/*.pgn"
+  ]
 }

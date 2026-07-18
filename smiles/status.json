@@ -1,13 +1,21 @@
 {
   "id": "smiles",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 12,
   "blockers": [],
-  "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "antlr2lpg_structural_port",
+    "real_g4_port",
+    "language_subset",
+    "clear2_multiline_examples",
+    "no_token_stream_soup"
   ],
-  "parser_bytes": 704
+  "parser_bytes": 6125,
+  "rule_approx": 42,
+  "start": "smiles_file",
+  "example_count": 3,
+  "tier": "A",
+  "parser_lines": 349,
+  "notes": "element letter tokens; multi-molecule curated files; real_g4_port"
 }

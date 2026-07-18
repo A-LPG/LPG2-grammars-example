@@ -3,6 +3,6 @@
   "lexer": "MatlabLexer",
   "parser": "MatlabParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

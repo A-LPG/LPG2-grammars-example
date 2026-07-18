@@ -1,11 +1,6 @@
-# DCM (LPG)
+# dcm
 
-Parse-level port of [antlr/grammars-v4 `dcm/`](https://github.com/antlr/grammars-v4/tree/master/dcm).
+Auto-ported from antlr/grammars-v4 `dcm` via `tools/antlr2lpg.py`.
 
-Upstream has no examples; `examples/` are synthesized.
-
-## Verify
-
-```bash
-../harness/run-one.sh dcm
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `konservierung`.

@@ -1,8 +1,8 @@
 {
   "package": "lpg.grammars.csharp.v6",
-  "lexer": "V6Lexer",
-  "parser": "V6Parser",
+  "lexer": "CsharpV6Lexer",
+  "parser": "CsharpV6Parser",
   "example_globs": [
-    "examples/smoke.cs"
+    "examples-curated/**/*"
   ]
 }

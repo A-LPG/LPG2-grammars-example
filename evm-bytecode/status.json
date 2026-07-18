@@ -1,13 +1,16 @@
 {
   "id": "evm-bytecode",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
   "blockers": [],
-  "quality": "token_stream_smoke",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "antlr2lpg_structural_port",
+    "language_subset",
+    "harsh1_true_port_fix"
   ],
-  "parser_bytes": 1171
+  "parser_lines": 185,
+  "example_count": 3,
+  "tier": "A",
+  "start": "program"
 }

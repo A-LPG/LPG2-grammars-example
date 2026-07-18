@@ -1,8 +1,9 @@
 {
   "package": "lpg.grammars.sql.postgresql",
-  "lexer": "PostgresqlLexer",
-  "parser": "PostgresqlParser",
+  "lexer": "SqlPostgresqlLexer",
+  "parser": "SqlPostgresqlParser",
   "example_globs": [
-    "examples/smoke.sql"
-  ]
+    "examples-curated/**/*"
+  ],
+  "parser_template": "btParserTemplateF.gi"
 }

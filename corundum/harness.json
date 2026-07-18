@@ -3,6 +3,6 @@
   "lexer": "CorundumLexer",
   "parser": "CorundumParser",
   "example_globs": [
-    "examples/tiny.rb"
+    "examples-curated/**/*"
   ]
 }

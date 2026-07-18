@@ -3,6 +3,6 @@
   "lexer": "Modula2pim4Lexer",
   "parser": "Modula2pim4Parser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

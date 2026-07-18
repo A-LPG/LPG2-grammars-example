@@ -1,13 +1,15 @@
 {
   "id": "apt",
   "parse_ok": true,
-  "example_count": 2,
   "status": "ported",
-  "blockers": [],
   "tier": "A",
   "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port",
+    "mirrors_apt.g4_record_optionsR_uri_components",
+    "lexer_deb_deb-src_OptionName_WSS"
   ],
-  "parser_bytes": 782
+  "blockers": [],
+  "start": "record",
+  "example_count": 3
 }

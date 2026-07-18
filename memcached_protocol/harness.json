@@ -3,6 +3,6 @@
   "lexer": "MemcachedLexer",
   "parser": "MemcachedParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

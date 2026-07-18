@@ -1,13 +1,14 @@
 {
   "id": "caql",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 8,
   "blockers": [],
-  "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port",
+    "antlr2lpg_structural_port",
+    "curated_smoke"
   ],
-  "parser_bytes": 1040
+  "parser_bytes": 3780,
+  "example_count": 1
 }

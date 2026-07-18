@@ -1,4 +1,4 @@
--- Bibcode Parser (LPG)
+-- BibcodeParser (LPG) from grammars-v4/bibcode/bibcode.g4
 %Options la=2
 %Options fp=BibcodeParser
 %options package=lpg.grammars.bibcode
@@ -23,14 +23,12 @@
 
     pagesection ::= section page
                   | page
-
     section ::= letter
     page ::= pagechar
            | page pagechar
     pagechar ::= digit | DOT
 
     author ::= letter
-
     letter ::= UPPERLETTER | LOWERLETTER
     digit ::= DIGIT
 %End

@@ -3,6 +3,6 @@
   "lexer": "ItnLexer",
   "parser": "ItnParser",
   "example_globs": [
-    "examples/**/*.txt"
+    "examples-curated/**/*.itn"
   ]
 }

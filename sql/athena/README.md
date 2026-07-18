@@ -1,11 +1,6 @@
 # sql/athena
 
-**Quality: `token_stream_smoke` — not a language grammar.**
+Auto-ported from antlr/grammars-v4 `sql/athena` via `tools/antlr2lpg.py`.
 
-Scaffold / nested token-stream smoke for antlr/grammars-v4 `sql/athena`. Harness may report `parse_ok`; that does **not** mean a real LPG language port.
-
-See `status.json` and `catalog.json` → `quality_schema`.
-
-```bash
-bash harness/run-one.sh sql/athena
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `stmt`.

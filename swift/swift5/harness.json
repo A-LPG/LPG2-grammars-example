@@ -3,6 +3,6 @@
   "lexer": "Swift5Lexer",
   "parser": "Swift5Parser",
   "example_globs": [
-    "examples/smoke.swift"
+    "examples-curated/**/*"
   ]
 }

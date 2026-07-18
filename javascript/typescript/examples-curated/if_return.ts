@@ -1,7 +1,1 @@
-function abs(n: number): number {
-    if (n < 0) {
-        return 0 - n;
-    } else {
-        return n;
-    }
-}
+function g(a) { if (a) { return a; } return 0; }

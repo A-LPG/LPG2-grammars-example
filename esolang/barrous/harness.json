@@ -3,6 +3,6 @@
   "lexer": "BarrousLexer",
   "parser": "BarrousParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

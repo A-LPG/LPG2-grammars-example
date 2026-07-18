@@ -1,0 +1,11 @@
+set foo 0 60 3
+add bar 0 60 3
+replace foo 0 60 5
+get foo bar
+gets foo
+delete bar
+incr foo 1
+decr foo 1
+stats items
+version
+quit

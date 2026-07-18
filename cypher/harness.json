@@ -3,6 +3,6 @@
   "lexer": "CypherLexer",
   "parser": "CypherParser",
   "example_globs": [
-    "examples/tiny.cypher"
+    "examples-curated/**/*"
   ]
 }

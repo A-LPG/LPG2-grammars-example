@@ -1,8 +1,8 @@
 {
   "package": "lpg.grammars.logo.ucb_logo",
-  "lexer": "UcbLogoLexer",
-  "parser": "UcbLogoParser",
+  "lexer": "LogoLexer",
+  "parser": "LogoParser",
   "example_globs": [
-    "examples/smoke.txt"
+    "examples-curated/**/*"
   ]
 }

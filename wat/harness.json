@@ -3,6 +3,6 @@
   "lexer": "WatLexer",
   "parser": "WatParser",
   "example_globs": [
-    "examples/tiny.wat"
+    "examples-curated/**/*"
   ]
 }

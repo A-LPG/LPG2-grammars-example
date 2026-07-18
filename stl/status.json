@@ -1,13 +1,16 @@
 {
   "id": "stl",
   "parse_ok": true,
-  "example_count": 1,
+  "example_count": 3,
   "status": "ported",
   "blockers": [],
   "tier": "A",
-  "quality": "token_stream_smoke",
+  "quality": "language_port",
   "quality_notes": [
-    "tiny_parser_single_example"
+    "real_g4_port",
+    "mirrors_STL.g4_header_triangle_vertex_triple_footer",
+    "lexer_signed_FLOAT"
   ],
-  "parser_bytes": 691
+  "parser_bytes": 763,
+  "start": "file_"
 }

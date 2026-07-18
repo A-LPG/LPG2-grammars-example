@@ -1,11 +1,14 @@
 {
   "id": "pl0",
-  "tier": "A",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 3,
-  "blockers": [],
+  "tier": "A",
   "quality": "language_port",
-  "quality_notes": [],
-  "parser_bytes": 1557
+  "quality_notes": [
+    "real_g4_port",
+    "mirrors_pl0.g4_program_block_assignstmt_callstmt"
+  ],
+  "blockers": [],
+  "start": "program",
+  "example_count": 3
 }

@@ -3,6 +3,6 @@
   "lexer": "SexpressionLexer",
   "parser": "SexpressionParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

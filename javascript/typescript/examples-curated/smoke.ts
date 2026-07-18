@@ -1,3 +1,2 @@
-function f(x: number): number {
-    return x + 1;
-}
+var x = 1;
+function f() { return x; }

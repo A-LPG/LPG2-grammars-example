@@ -1,13 +1,13 @@
 {
   "id": "elixir",
-  "tier": "B",
-  "parse_ok": true,
-  "status": "ported",
-  "example_count": 1,
-  "blockers": [],
   "quality": "language_subset",
+  "parse_ok": false,
+  "status": "regenerated_from_g4",
+  "blockers": [],
   "quality_notes": [
-    "curated_subset"
+    "antlr2lpg_structural_port"
   ],
-  "parser_bytes": 484
+  "parser_bytes": 11230,
+  "rule_approx": 191,
+  "start": "parse"
 }

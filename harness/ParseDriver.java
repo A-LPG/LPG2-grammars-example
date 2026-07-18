@@ -1,5 +1,5 @@
-import java.io.File;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -8,6 +8,9 @@ import java.nio.file.Path;
  * Reflective lexer+parser driver for grammars-example Java backends.
  *
  * Usage: ParseDriver <package> <LexerClass> <ParserClass> <input-file>
+ *
+ * Success is determined by DeterministicParser.parse() not throwing
+ * BadParseException. This works for automatic_ast=none (null Ast) and nested.
  */
 public class ParseDriver {
     public static void main(String[] args) throws Exception {
@@ -67,22 +70,34 @@ public class ParseDriver {
         }
         lexerMethod.invoke(lexer, null, prsStream);
 
-        Method parserMethod = parserClass.getMethod("parser");
-        Object ast = parserMethod.invoke(parser);
+        // Prefer raw DeterministicParser.parse so automatic_ast=none success
+        // (null sym) is not confused with BadParseException swallowed by parser().
+        try {
+            Method getParser = parserClass.getMethod("getParser");
+            Object dtParser = getParser.invoke(parser);
+            Method parse = dtParser.getClass().getMethod("parse");
+            parse.invoke(dtParser);
+            System.out.println("PARSE OK: " + input.getFileName());
+            return;
+        } catch (NoSuchMethodException e) {
+            // fall through to parser()
+        } catch (InvocationTargetException e) {
+            Throwable c = e.getCause();
+            String cn = c != null ? c.getClass().getName() : "";
+            if (cn.contains("BadParse")) {
+                // Use template diagnose path for messages
+                try {
+                    parserClass.getMethod("parser").invoke(parser);
+                } catch (Throwable ignored) {
+                }
+                System.err.println("PARSE FAIL: " + input);
+                System.exit(1);
+            }
+            throw e;
+        }
+
+        Object ast = parserClass.getMethod("parser").invoke(parser);
         if (ast == null) {
-            // Empty input (EOF only): automatic_ast often yields null after a
-            // successful empty reduction — treat as OK when the token stream
-            // has at most the initial + EOF tokens.
-            int n = 0;
-            try {
-                Method getSize = prsStream.getClass().getMethod("getSize");
-                n = ((Number) getSize.invoke(prsStream)).intValue();
-            } catch (NoSuchMethodException ignored) {
-            }
-            if (n <= 2) {
-                System.out.println("PARSE OK: " + input.getFileName());
-                return;
-            }
             System.err.println("PARSE FAIL: " + input);
             System.exit(1);
         }

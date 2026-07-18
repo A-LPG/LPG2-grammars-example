@@ -3,6 +3,6 @@
   "lexer": "PowerqueryLexer",
   "parser": "PowerqueryParser",
   "example_globs": [
-    "examples/tiny.pq"
+    "examples-curated/**/*"
   ]
 }

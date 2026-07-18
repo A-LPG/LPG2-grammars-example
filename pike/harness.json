@@ -3,6 +3,6 @@
   "lexer": "PikeLexer",
   "parser": "PikeParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

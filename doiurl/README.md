@@ -1,9 +1,6 @@
-# doiurl (LPG)
+# doiurl
 
-Parse-level port of antlr/grammars-v4 `doiurl/`.
+Auto-ported from antlr/grammars-v4 `doiurl` via `tools/antlr2lpg.py`.
 
-## Verify
-
-```bash
-bash grammars-example/harness/run-one.sh doiurl
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `doiuri`.

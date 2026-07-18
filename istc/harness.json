@@ -2,5 +2,7 @@
   "package": "lpg.grammars.istc",
   "lexer": "IstcLexer",
   "parser": "IstcParser",
-  "example_globs": ["examples/**/*"]
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
 }

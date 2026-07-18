@@ -1,0 +1,2 @@
+module Families2Persons;
+create OUT : Persons from IN : Families;

@@ -1,13 +1,15 @@
 {
   "id": "muparser",
-  "tier": "A",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
-  "blockers": [],
+  "tier": "A",
   "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port",
+    "mirrors_MuParser.g4_prog_expr_atom_layered_precedence",
+    "lexer_FUNCTION_FUNCTIONMULTI_assign_ops_constants"
   ],
-  "parser_bytes": 1372
+  "blockers": [],
+  "start": "prog",
+  "example_count": 3
 }

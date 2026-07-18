@@ -3,6 +3,6 @@
   "lexer": "ScssLexer",
   "parser": "ScssParser",
   "example_globs": [
-    "examples/smoke.scss"
+    "examples/**/*"
   ]
 }

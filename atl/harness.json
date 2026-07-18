@@ -3,6 +3,6 @@
   "lexer": "AtlLexer",
   "parser": "AtlParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

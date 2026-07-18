@@ -1,13 +1,13 @@
 {
   "id": "swift-fin",
-  "tier": "D",
-  "parse_ok": true,
-  "status": "ported",
-  "example_count": 1,
+  "quality": "language_subset",
+  "parse_ok": false,
+  "status": "regenerated_from_g4",
   "blockers": [],
-  "quality": "token_stream_smoke",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "antlr2lpg_structural_port"
   ],
-  "parser_bytes": 1184
+  "parser_bytes": 2075,
+  "rule_approx": 39,
+  "start": "messages"
 }

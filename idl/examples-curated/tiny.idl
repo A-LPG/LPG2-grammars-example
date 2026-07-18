@@ -1,5 +1,5 @@
 module M {
   interface I {
-    void f();
+    attribute long x;
   };
 };

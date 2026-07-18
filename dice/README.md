@@ -1,9 +1,6 @@
-# dice (LPG)
+# dice
 
-Parse-level port of [antlr/grammars-v4 `dice/`](https://github.com/antlr/grammars-v4/tree/master/dice).
+Auto-ported from antlr/grammars-v4 `dice` via `tools/antlr2lpg.py`.
 
-## Verify
-
-```bash
-../harness/run-one.sh dice
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `file_`.

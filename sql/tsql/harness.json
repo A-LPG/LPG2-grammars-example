@@ -1,8 +1,9 @@
 {
   "package": "lpg.grammars.sql.tsql",
-  "lexer": "TsqlLexer",
-  "parser": "TsqlParser",
+  "lexer": "SqlTsqlLexer",
+  "parser": "SqlTsqlParser",
   "example_globs": [
     "examples-curated/**/*"
-  ]
+  ],
+  "parser_template": "dtParserTemplateF.gi"
 }

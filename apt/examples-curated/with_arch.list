@@ -1,0 +1,4 @@
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu
+jammy
+main
+restricted

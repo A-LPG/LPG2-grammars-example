@@ -3,6 +3,6 @@
   "lexer": "ModelicaLexer",
   "parser": "ModelicaParser",
   "example_globs": [
-    "examples/tiny.mo"
+    "examples-curated/**/*"
   ]
 }

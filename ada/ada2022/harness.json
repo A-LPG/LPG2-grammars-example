@@ -1,8 +1,8 @@
 {
   "package": "lpg.grammars.ada.ada2022",
-  "lexer": "Ada2022Lexer",
-  "parser": "Ada2022Parser",
+  "lexer": "AdaAda2022Lexer",
+  "parser": "AdaAda2022Parser",
   "example_globs": [
-    "examples/smoke.ads"
+    "examples/**/*"
   ]
 }

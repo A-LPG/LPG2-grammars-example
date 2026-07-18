@@ -1,0 +1,5 @@
+typeMap ::= [
+  "int": "Integer",
+  "bool": "Boolean",
+  default: "Object"
+]

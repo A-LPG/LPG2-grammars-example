@@ -1,0 +1,2 @@
+one = proc () returns (int)
+end one

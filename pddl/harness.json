@@ -3,6 +3,6 @@
   "lexer": "PddlLexer",
   "parser": "PddlParser",
   "example_globs": [
-    "examples/tiny.pddl"
+    "examples-curated/**/*"
   ]
 }

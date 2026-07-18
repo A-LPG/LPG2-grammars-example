@@ -1,56 +1,44 @@
--- Generated parse-level parser (nested token stream)
-%Options la=2
+-- Structural subset of grammars-v4 agc.g4:
+-- prog / line / comment_line / instruction_line / erase_line
+
+%Options la=3
 %Options fp=AgcParser
 %options package=lpg.grammars.agc
 %options template=dtParserTemplateF.gi
 %options import_terminals=AgcLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
+%options conflicts
+
 %Eof
     EOF_TOKEN
 %End
+
 %Start
-    start_
+    prog
 %End
+
 %Rules
-    start_ ::= items
-            | $empty
-    items ::= item
-            | items item
-    item ::= atom
-           | paren
-           | brace
-           | bracket
-    paren ::= LPAREN RPAREN
-            | LPAREN items RPAREN
-    brace ::= LBRACE RBRACE
-            | LBRACE items RBRACE
-    bracket ::= LBRACKET RBRACKET
-              | LBRACKET items RBRACKET
-    atom ::= IDENTIFIER
-           | NUMBER
-           | STRING
-           | COMMA
-           | DOT
-           | COLON
-           | EQ
-           | PLUS
-           | MINUS
-           | STAR
-           | SLASH
-           | AMP
-           | BAR
-           | CARET
-           | BANG
-           | QUEST
-           | AT
-           | DOLLAR
-           | PERCENT
-           | TILDE
-           | BACKTICK
-           | LANGLE
-           | RANGLE
-           | BACKSLASH
-           | QUOTE
-           | SEMI
-           | HASH
+    prog ::= line_list
+
+    line_list ::= line
+                | line_list line
+
+    line ::= comment_line
+           | instruction_line
+           | erase_line
+           | blank_line
+
+    blank_line ::= EOL
+                 | WS EOL
+
+    comment_line ::= COMMENT EOL
+                   | WS COMMENT EOL
+
+    instruction_line ::= WS opcode EOL
+                       | WS opcode WS NUMBER EOL
+
+    erase_line ::= WS ERASE WS NUMBER EOL
+                 | WS ERASE EOL
+
+    opcode ::= NOOP
 %End

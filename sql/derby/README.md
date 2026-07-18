@@ -1,7 +1,6 @@
 # sql/derby
 
-Parse-level LPG port of antlr/grammars-v4 `sql/derby` (Wave D ice-break).
+Auto-ported from antlr/grammars-v4 `sql/derby` via `tools/antlr2lpg.py`.
 
-```bash
-bash harness/run-one.sh sql/derby
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `derby_file`.

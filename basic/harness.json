@@ -3,6 +3,6 @@
   "lexer": "BasicLexer",
   "parser": "BasicParser",
   "example_globs": [
-    "examples/smoke.bas"
+    "examples-curated/**/*"
   ]
 }

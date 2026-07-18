@@ -3,6 +3,6 @@
   "lexer": "SpassLexer",
   "parser": "SpassParser",
   "example_globs": [
-    "examples/smoke.spass"
+    "examples/**/*"
   ]
 }

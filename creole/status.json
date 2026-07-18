@@ -1,11 +1,14 @@
 {
   "id": "creole",
   "parse_ok": true,
-  "example_count": 7,
   "status": "ported",
-  "blockers": [],
   "tier": "A",
   "quality": "language_port",
-  "quality_notes": [],
-  "parser_bytes": 1606
+  "quality_notes": [
+    "real_g4_port",
+    "mirrors_creole.g4_document_line_markup"
+  ],
+  "blockers": [],
+  "start": "document",
+  "example_count": 3
 }

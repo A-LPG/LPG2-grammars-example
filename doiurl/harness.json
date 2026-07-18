@@ -3,6 +3,6 @@
   "lexer": "DoiurlLexer",
   "parser": "DoiurlParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

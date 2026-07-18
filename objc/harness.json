@@ -3,6 +3,7 @@
   "lexer": "ObjcLexer",
   "parser": "ObjcParser",
   "example_globs": [
-    "examples/smoke.m"
+    "examples-curated/**/*.m",
+    "examples-curated/**/*.h"
   ]
 }

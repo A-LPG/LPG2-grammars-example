@@ -3,7 +3,6 @@
   "lexer": "UnrealAngelscriptLexer",
   "parser": "UnrealAngelscriptParser",
   "example_globs": [
-    "examples/smoke.as",
-    "examples/Example_Actor.as"
+    "examples-curated/**/*"
   ]
 }

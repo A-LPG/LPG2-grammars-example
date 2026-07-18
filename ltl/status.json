@@ -1,13 +1,15 @@
 {
   "id": "ltl",
   "parse_ok": true,
-  "example_count": 1,
   "status": "ported",
-  "blockers": [],
   "tier": "A",
-  "quality": "token_stream_smoke",
+  "quality": "language_subset",
   "quality_notes": [
-    "tiny_parser_single_example"
+    "real_g4_port",
+    "mirrors_ltl.g4_file_proposition",
+    "ascii_digraphs_for_unicode_ops"
   ],
-  "parser_bytes": 671
+  "blockers": [],
+  "start": "file_",
+  "example_count": 5
 }

@@ -1,7 +1,6 @@
-# graphql (LPG)
+# graphql
 
-Port of antlr/grammars-v4 `graphql`.
+Auto-ported from antlr/grammars-v4 `graphql` via `tools/antlr2lpg.py`.
 
-```bash
-bash grammars-example/harness/run-one.sh graphql
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `document`.

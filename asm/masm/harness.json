@@ -1,7 +1,7 @@
 {
   "package": "lpg.grammars.asm.masm",
-  "lexer": "MasmLexer",
-  "parser": "MasmParser",
+  "lexer": "AsmMasmLexer",
+  "parser": "AsmMasmParser",
   "example_globs": [
     "examples-curated/**/*"
   ]

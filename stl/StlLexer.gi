@@ -99,10 +99,13 @@
 
     Digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
-    -- FLOAT: prefer digits.digits so "0.0" is not split into "0." + "0"
+    -- FLOAT with optional leading sign; prefer digits.digits so "0.0" is not "0." + "0"
     FLOAT ::= Digits '.' Digits OptExponent
             | Digits ExponentPart
             | Digits '.' OptExponent
+            | Sign Digits '.' Digits OptExponent
+            | Sign Digits ExponentPart
+            | Sign Digits '.' OptExponent
 
     Digits -> Digit
             | Digits Digit
@@ -110,13 +113,12 @@
     OptExponent -> $empty
                  | ExponentPart
 
-    ExponentPart ::= LetterEe OptSign Digits
+    ExponentPart ::= LetterEe OptExpSign Digits
 
     LetterEe -> e | E
 
-    OptSign -> $empty
-             | '+'
-             | '-'
+    Sign -> '+' | '-'
+    OptExpSign -> $empty | Sign
 
     white -> WSChar
            | white WSChar

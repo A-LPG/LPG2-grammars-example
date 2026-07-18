@@ -1,13 +1,17 @@
 {
   "id": "cayenne",
+  "quality": "language_subset",
   "parse_ok": true,
-  "example_count": 1,
   "status": "ported",
   "blockers": [],
-  "tier": "A",
-  "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port",
+    "left_factored_app_and_dot",
+    "curated_multiline_cayenne"
   ],
-  "parser_bytes": 1863
+  "notes": "Structural subset of cayenne.g4 (lambda/data/case/sig/struct/dot); not full Cayenne.",
+  "example_count": 3,
+  "tier": "A",
+  "parser_bytes": 1682,
+  "parser_lines": 72
 }

@@ -3,6 +3,6 @@
   "lexer": "RomanLexer",
   "parser": "RomanParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

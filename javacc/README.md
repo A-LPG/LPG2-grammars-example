@@ -1,7 +1,6 @@
 # javacc
 
-Parse-level port of antlr/grammars-v4 `javacc/`.
+Auto-ported from antlr/grammars-v4 `javacc` via `tools/antlr2lpg.py`.
 
-```bash
-../harness/run-one.sh javacc
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `javacc_input`.

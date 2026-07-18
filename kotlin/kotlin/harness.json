@@ -3,6 +3,6 @@
   "lexer": "KotlinLexer",
   "parser": "KotlinParser",
   "example_globs": [
-    "examples-curated/**/*.kt"
+    "examples-curated/**/*"
   ]
 }

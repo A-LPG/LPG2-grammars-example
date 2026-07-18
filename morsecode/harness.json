@@ -3,6 +3,6 @@
   "lexer": "MorsecodeLexer",
   "parser": "MorsecodeParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

@@ -1,0 +1,315 @@
+{
+  "hard": [
+    {
+      "id": "stringtemplate",
+      "why": [
+        "THIN",
+        "UNDERSIZED",
+        "WEAK_EX"
+      ],
+      "lpg": 104,
+      "g4": 1421,
+      "ex": 2
+    },
+    {
+      "id": "unicode/unicode16",
+      "why": [
+        "THIN",
+        "UNDERSIZED"
+      ],
+      "lpg": 61,
+      "g4": 3100,
+      "ex": 3
+    },
+    {
+      "id": "logo/ucb-logo",
+      "why": [
+        "THIN",
+        "UNDERSIZED"
+      ],
+      "lpg": 88,
+      "g4": 877,
+      "ex": 3
+    },
+    {
+      "id": "asm/ptx/ptx-isa-2.1",
+      "why": [
+        "WEAK_EX"
+      ],
+      "lpg": 1909,
+      "g4": 3505,
+      "ex": 2
+    },
+    {
+      "id": "python/python2-js",
+      "why": [
+        "WEAK_EX"
+      ],
+      "lpg": 633,
+      "g4": 693,
+      "ex": 2
+    },
+    {
+      "id": "iri",
+      "why": [
+        "WEAK_EX"
+      ],
+      "lpg": 408,
+      "g4": 614,
+      "ex": 2
+    },
+    {
+      "id": "iso8601",
+      "why": [
+        "WEAK_EX"
+      ],
+      "lpg": 378,
+      "g4": 551,
+      "ex": 2
+    },
+    {
+      "id": "smiles",
+      "why": [
+        "WEAK_EX"
+      ],
+      "lpg": 323,
+      "g4": 549,
+      "ex": 2
+    },
+    {
+      "id": "r",
+      "why": [
+        "THIN"
+      ],
+      "lpg": 120,
+      "g4": 484,
+      "ex": 3
+    },
+    {
+      "id": "jpa",
+      "why": [
+        "WEAK_EX"
+      ],
+      "lpg": 487,
+      "g4": 475,
+      "ex": 2
+    },
+    {
+      "id": "asm/asm6502",
+      "why": [
+        "THIN"
+      ],
+      "lpg": 75,
+      "g4": 438,
+      "ex": 3
+    },
+    {
+      "id": "argus",
+      "why": [
+        "WEAK_EX"
+      ],
+      "lpg": 776,
+      "g4": 433,
+      "ex": 2
+    },
+    {
+      "id": "turtle-doc",
+      "why": [
+        "THIN"
+      ],
+      "lpg": 115,
+      "g4": 417,
+      "ex": 3
+    },
+    {
+      "id": "powerbuilderdw",
+      "why": [
+        "WEAK_EX"
+      ],
+      "lpg": 248,
+      "g4": 389,
+      "ex": 2
+    },
+    {
+      "id": "orwell",
+      "why": [
+        "WEAK_EX"
+      ],
+      "lpg": 326,
+      "g4": 381,
+      "ex": 2
+    },
+    {
+      "id": "rego",
+      "why": [
+        "TRIVIAL_EX"
+      ],
+      "lpg": 219,
+      "g4": 373,
+      "ex": 1
+    },
+    {
+      "id": "xpath/xpath1",
+      "why": [
+        "TRIVIAL_EX"
+      ],
+      "lpg": 177,
+      "g4": 369,
+      "ex": 1
+    },
+    {
+      "id": "smalltalk",
+      "why": [
+        "TRIVIAL_EX"
+      ],
+      "lpg": 300,
+      "g4": 359,
+      "ex": 1
+    },
+    {
+      "id": "lucene",
+      "why": [
+        "WEAK_EX"
+      ],
+      "lpg": 126,
+      "g4": 356,
+      "ex": 2
+    },
+    {
+      "id": "matlab",
+      "why": [
+        "WEAK_EX"
+      ],
+      "lpg": 154,
+      "g4": 352,
+      "ex": 2
+    },
+    {
+      "id": "xsd-regex",
+      "why": [
+        "TRIVIAL_EX"
+      ],
+      "lpg": 108,
+      "g4": 269,
+      "ex": 1
+    },
+    {
+      "id": "gtin",
+      "why": [
+        "WEAK_EX"
+      ],
+      "lpg": 45,
+      "g4": 261,
+      "ex": 2
+    },
+    {
+      "id": "morsecode",
+      "why": [
+        "WEAK_EX"
+      ],
+      "lpg": 60,
+      "g4": 239,
+      "ex": 2
+    },
+    {
+      "id": "romannumerals",
+      "why": [
+        "TRIVIAL_EX"
+      ],
+      "lpg": 68,
+      "g4": 188,
+      "ex": 1
+    },
+    {
+      "id": "wln",
+      "why": [
+        "TRIVIAL_EX"
+      ],
+      "lpg": 26,
+      "g4": 170,
+      "ex": 1
+    },
+    {
+      "id": "metric",
+      "why": [
+        "TRIVIAL_EX"
+      ],
+      "lpg": 43,
+      "g4": 121,
+      "ex": 1
+    },
+    {
+      "id": "ltl",
+      "why": [
+        "TRIVIAL_EX"
+      ],
+      "lpg": 28,
+      "g4": 103,
+      "ex": 1
+    }
+  ],
+  "batches": {
+    "CLEAR_1": [
+      "stringtemplate",
+      "unicode/unicode16",
+      "logo/ucb-logo",
+      "asm/ptx/ptx-isa-2.1",
+      "python/python2-js"
+    ],
+    "CLEAR_2": [
+      "iri",
+      "iso8601",
+      "smiles",
+      "r",
+      "jpa"
+    ],
+    "CLEAR_3": [
+      "asm/asm6502",
+      "argus",
+      "turtle-doc",
+      "powerbuilderdw",
+      "orwell"
+    ],
+    "CLEAR_4": [
+      "rego",
+      "xpath/xpath1",
+      "smalltalk",
+      "lucene",
+      "matlab"
+    ],
+    "CLEAR_5": [
+      "xsd-regex",
+      "gtin",
+      "morsecode",
+      "romannumerals",
+      "wln"
+    ],
+    "CLEAR_6": [
+      "metric",
+      "ltl"
+    ]
+  },
+  "quick_fixed": [
+    "robotwars",
+    "pl0",
+    "logo/logo",
+    "calculator",
+    "edn",
+    "creole",
+    "abnf",
+    "d2",
+    "json5",
+    "gff3",
+    "datalog",
+    "tinyc",
+    "microc",
+    "gml",
+    "esolang/bio",
+    "tsv",
+    "csv",
+    "esolang/cool",
+    "html",
+    "xml",
+    "esolang/dgol"
+  ]
+}

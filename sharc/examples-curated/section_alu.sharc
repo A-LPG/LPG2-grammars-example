@@ -1,0 +1,4 @@
+SIZE EQU 16;
+BASE EQU 0;
+R5 = R0 + R1, R2 = R3 - R4;
+R0 = R5 + R2, R1 = R3 - R4;

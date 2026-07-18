@@ -1,7 +1,6 @@
 # powerquery
 
-Parse-level port of antlr/grammars-v4 `powerquery/`.
+Auto-ported from antlr/grammars-v4 `powerquery` via `tools/antlr2lpg.py`.
 
-```bash
-../harness/run-one.sh powerquery
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `document`.

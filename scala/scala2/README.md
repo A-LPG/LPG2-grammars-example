@@ -1,3 +1,6 @@
 # scala/scala2
 
-Parse-level LPG port of antlr/grammars-v4 `scala/scala2` (Wave C curated subset).
+Auto-ported from antlr/grammars-v4 `scala/scala2` via `tools/antlr2lpg.py`.
+
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `compilationUnit`.

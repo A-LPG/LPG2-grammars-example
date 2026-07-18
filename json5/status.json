@@ -1,11 +1,15 @@
 {
   "id": "json5",
   "parse_ok": true,
-  "example_count": 6,
   "status": "ported",
-  "blockers": [],
   "tier": "A",
   "quality": "language_port",
-  "quality_notes": [],
-  "parser_bytes": 1082
+  "quality_notes": [
+    "real_g4_port",
+    "mirrors_JSON5.g4_json5_obj_pair_key_value_arr_number",
+    "lexer_comments_single_double_STRING_hex_Infinity_NaN_unquoted_keys"
+  ],
+  "blockers": [],
+  "start": "json5",
+  "example_count": 11
 }

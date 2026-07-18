@@ -1,13 +1,16 @@
 {
   "id": "smalltalk",
-  "tier": "B",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
-  "blockers": [],
-  "quality": "token_stream_smoke",
+  "tier": "A",
+  "quality": "language_subset",
   "quality_notes": [
-    "tiny_parser_single_example"
+    "real_g4_port",
+    "mirrors_Smalltalk.g4_script_sequence_temps_expression",
+    "lexer_skips_ws_NUMBER_for_DIGIT_plus",
+    "block_pipe_separator_amber_style"
   ],
-  "parser_bytes": 434
+  "blockers": [],
+  "start": "script",
+  "example_count": 3
 }

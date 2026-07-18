@@ -1,13 +1,18 @@
 {
   "id": "xsd-regex",
-  "tier": "D",
   "parse_ok": true,
+  "example_count": 4,
   "status": "ported",
-  "example_count": 1,
   "blockers": [],
-  "quality": "token_stream_smoke",
+  "tier": "A",
+  "quality": "language_subset",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "real_g4_port",
+    "mirrors_regexParser_g4_structure",
+    "mode_free_lexer_subset",
+    "v4_examples_any_chargroup_quant_alt"
   ],
-  "parser_bytes": 1182
+  "parser_bytes": 2748,
+  "parser_lines": 114,
+  "start": "root"
 }

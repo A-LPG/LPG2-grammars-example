@@ -1,13 +1,17 @@
 {
   "id": "argus",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
-  "blockers": [],
-  "quality": "token_stream_smoke",
+  "tier": "A",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "real_g4_port",
+    "antlr2lpg_structural_port",
+    "left_factored_file_start",
+    "curated_proc_iter_equates"
   ],
-  "parser_bytes": 1148
+  "blockers": [],
+  "example_count": 4,
+  "parser_lines": 937,
+  "start": "file_"
 }

@@ -3,6 +3,6 @@
   "lexer": "LispLexer",
   "parser": "LispParser",
   "example_globs": [
-    "examples/**/*.txt"
+    "examples-curated/**/*"
   ]
 }

@@ -1,11 +1,15 @@
 {
   "id": "trac",
   "parse_ok": true,
-  "example_count": 4,
+  "example_count": 3,
   "status": "ported",
   "blockers": [],
   "tier": "A",
   "quality": "language_subset",
-  "quality_notes": [],
-  "parser_bytes": 780
+  "quality_notes": [
+    "real_g4_port",
+    "trac_active_neutral_macro_arglist_from_g4"
+  ],
+  "parser_bytes": 780,
+  "parser_lines": 41
 }

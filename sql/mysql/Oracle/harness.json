@@ -1,8 +1,9 @@
 {
   "package": "lpg.grammars.sql.mysql.Oracle",
-  "lexer": "OracleLexer",
-  "parser": "OracleParser",
+  "lexer": "SqlMysqlOracleLexer",
+  "parser": "SqlMysqlOracleParser",
   "example_globs": [
-    "examples/smoke.sql"
-  ]
+    "examples-curated/**/*"
+  ],
+  "parser_template": "dtParserTemplateF.gi"
 }

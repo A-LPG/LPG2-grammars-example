@@ -1,7 +1,6 @@
 # xpath/xpath20
 
-Parse-level port of antlr/grammars-v4 `xpath/xpath20/`.
+Auto-ported from antlr/grammars-v4 `xpath/xpath20` via `tools/antlr2lpg.py`.
 
-```bash
-../harness/run-one.sh xpath/xpath20
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `xpath`.

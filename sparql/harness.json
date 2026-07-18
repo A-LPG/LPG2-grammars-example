@@ -3,6 +3,6 @@
   "lexer": "SparqlLexer",
   "parser": "SparqlParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

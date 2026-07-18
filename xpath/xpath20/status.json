@@ -1,13 +1,17 @@
 {
   "id": "xpath/xpath20",
-  "tier": "B",
-  "parse_ok": true,
-  "status": "ported",
-  "example_count": 2,
-  "blockers": [],
   "quality": "language_subset",
-  "quality_notes": [
-    "curated_subset"
+  "parse_ok": false,
+  "status": "failed",
+  "blockers": [
+    "parse_examples_failed"
   ],
-  "parser_bytes": 967
+  "quality_notes": [
+    "antlr2lpg_structural_port"
+  ],
+  "parser_bytes": 8617,
+  "rule_approx": 139,
+  "start": "xpath",
+  "example_count": 1,
+  "tier": "A"
 }

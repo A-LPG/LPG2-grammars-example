@@ -3,6 +3,6 @@
   "lexer": "EvmBytecodeLexer",
   "parser": "EvmBytecodeParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

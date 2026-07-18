@@ -3,11 +3,14 @@
   "tier": "B",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
+  "example_count": 3,
   "blockers": [],
-  "quality": "token_stream_smoke",
+  "quality": "language_subset",
   "quality_notes": [
-    "tiny_parser_single_example"
+    "real_g4_port",
+    "mirrors_PGN.g4_tags_movetext_san_rav_termination",
+    "san_move_optional_SUFFIX_ANNOTATION"
   ],
-  "parser_bytes": 887
+  "parser_bytes": 1637,
+  "start": "parse"
 }

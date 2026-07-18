@@ -1,0 +1,4 @@
+module EmptyMod {
+}
+implementation {
+}

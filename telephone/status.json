@@ -1,13 +1,19 @@
 {
   "id": "telephone",
-  "parse_ok": true,
-  "example_count": 4,
-  "status": "ported",
-  "blockers": [],
-  "tier": "A",
   "quality": "language_subset",
-  "quality_notes": [
-    "heuristic_default_subset"
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [
+    "tiny_upstream_g4_approx_80_lines",
+    "nanp_japan_prefixes_only"
   ],
-  "parser_bytes": 771
+  "quality_notes": [
+    "real_g4_port",
+    "curated_multiline_nanp_japan"
+  ],
+  "notes": "NANP 011 / Japan 010 telephone numbers from telephone.g4.",
+  "example_count": 3,
+  "tier": "A",
+  "parser_bytes": 771,
+  "parser_lines": 42
 }

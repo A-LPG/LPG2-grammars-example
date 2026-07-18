@@ -1,13 +1,18 @@
 {
   "id": "asm/ptx/ptx-isa-2.1",
-  "tier": "D",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
-  "blockers": [],
-  "quality": "token_stream_smoke",
+  "tier": "A",
+  "quality": "language_subset",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "real_g4_port",
+    "antlr2lpg_structural_port",
+    "lexer_dotted_K_keywords_T_word_literals",
+    "package_ptx_isa_2_1",
+    "empty_alts_i_ret_i_bra_i_call"
   ],
-  "parser_bytes": 1192
+  "blockers": [],
+  "start": "prog",
+  "example_count": 3,
+  "parser_lines": 1908
 }

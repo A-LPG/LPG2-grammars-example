@@ -3,6 +3,6 @@
   "lexer": "PbmLexer",
   "parser": "PbmParser",
   "example_globs": [
-    "examples/**/*.txt"
+    "examples-curated/**/*.pbm"
   ]
 }

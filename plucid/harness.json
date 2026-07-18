@@ -3,6 +3,6 @@
   "lexer": "PlucidLexer",
   "parser": "PlucidParser",
   "example_globs": [
-    "examples/tiny.plu"
+    "examples-curated/**/*"
   ]
 }

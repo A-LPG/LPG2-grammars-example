@@ -1,11 +1,9 @@
 # unicode/unicode16
 
-**Quality: `token_stream_smoke` — not a language grammar.**
-
-Scaffold / nested token-stream smoke for antlr/grammars-v4 `unicode/unicode16`. Harness may report `parse_ok`; that does **not** mean a real LPG language port.
-
-See `status.json` and `catalog.json` → `quality_schema`.
+Subset port of grammars-v4 `unicode/unicode16/classify.g4`.
+Parser: `file_` / `codepoint` GC tokens. Lexer: ASCII general-category slice
+(not the full ~3k-line BMP table).
 
 ```bash
-bash harness/run-one.sh unicode/unicode16
+bash ../harness/run-one.sh unicode/unicode16
 ```

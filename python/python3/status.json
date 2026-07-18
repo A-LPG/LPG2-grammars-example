@@ -1,13 +1,17 @@
 {
   "id": "python/python3",
-  "tier": "C",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 5,
   "blockers": [],
-  "quality": "language_subset",
   "quality_notes": [
-    "curated_subset"
+    "antlr2lpg_structural_port",
+    "real_g4_port"
   ],
-  "parser_bytes": 2644
+  "parser_bytes": 17400,
+  "rule_approx": 376,
+  "start": "file_input",
+  "example_count": 5,
+  "tier": "A",
+  "parser_lines": 865
 }

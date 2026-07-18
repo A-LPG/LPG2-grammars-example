@@ -1,0 +1,3 @@
+z * z = a * a + b * b
+c = a + b
+hyp = (a * a + b * b) ^ 0.5

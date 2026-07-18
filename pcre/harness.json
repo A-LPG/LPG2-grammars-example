@@ -3,6 +3,6 @@
   "lexer": "PcreLexer",
   "parser": "PcreParser",
   "example_globs": [
-    "examples/smoke.txt"
+    "examples-curated/**/*"
   ]
 }

@@ -1,13 +1,16 @@
 {
   "id": "rust",
-  "tier": "C",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 4,
   "blockers": [],
-  "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port"
   ],
-  "parser_bytes": 2620
+  "parser_bytes": 33191,
+  "rule_approx": 573,
+  "start": "crate",
+  "example_count": 4,
+  "tier": "A",
+  "parser_lines": 1445
 }

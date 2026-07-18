@@ -1,13 +1,15 @@
 {
   "id": "javadoc",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 2,
   "blockers": [],
-  "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "antlr2lpg_structural_port"
   ],
-  "parser_bytes": 515
+  "parser_bytes": 3367,
+  "rule_approx": 51,
+  "start": "documentation",
+  "example_count": 1,
+  "tier": "A"
 }

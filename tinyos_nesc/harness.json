@@ -3,6 +3,6 @@
   "lexer": "TinyosNescLexer",
   "parser": "TinyosNescParser",
   "example_globs": [
-    "examples/tiny.nc"
+    "examples-curated/**/*"
   ]
 }

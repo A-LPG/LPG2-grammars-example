@@ -1,9 +1,6 @@
-# propcalc (LPG)
+# propcalc
 
-Parse-level port of [antlr/grammars-v4 `propcalc/`](https://github.com/antlr/grammars-v4/tree/master/propcalc).
+Auto-ported from antlr/grammars-v4 `propcalc` via `tools/antlr2lpg.py`.
 
-## Verify
-
-```bash
-../harness/run-one.sh propcalc
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `proposition`.

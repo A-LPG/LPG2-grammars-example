@@ -1,5 +1,5 @@
--- asm6502 Parser (LPG)
--- Ported from antlr/grammars-v4 asm/asm6502 for parse-level examples.
+-- 6502 assembler parser — structural port of grammars-v4 asm/asm6502/asm6502.g4
+-- Nonterminals: prog / line / instruction / assemblerinstruction / lbl / argument…
 
 %Options la=2
 %Options fp=Asm6502Parser
@@ -17,48 +17,53 @@
 %End
 
 %Rules
-    prog ::= line_list
+    prog ::= $empty
+           | lines
 
-    line_list ::= $empty
-                | line_list line
+    lines ::= line
+            | lines line
 
-    line ::= opt_content EOL
+    line ::= instruction EOL
+           | assemblerinstruction EOL
+           | lbl EOL
+           | EOL
 
-    opt_content ::= $empty
-                  | instruction
-                  | assemblerinstruction
-                  | lbl
+    instruction ::= opcode
+                  | opcode argumentlist
+                  | label opcode
+                  | label opcode argumentlist
 
-    instruction ::= opt_label OPCODE opt_argumentlist
+    assemblerinstruction ::= assembleropcode
+                           | assembleropcode argumentlist
+                           | argument assembleropcode
+                           | argument assembleropcode argumentlist
 
-    assemblerinstruction ::= opt_argument ASSEMBLER_INSTRUCTION opt_argumentlist
+    assembleropcode ::= ASSEMBLER_INSTRUCTION
 
-    opt_label ::= $empty
-                | NAME
-
-    lbl ::= NAME COLON
-
-    opt_argumentlist ::= $empty
-                       | argumentlist
+    lbl ::= label COLON
 
     argumentlist ::= argument
                    | argument COMMA argumentlist
 
-    opt_argument ::= $empty
-                   | argument
+    label ::= name
 
-    argument ::= opt_hash atom opt_offset
+    argument ::= number
+               | name
+               | string_
+               | STAR
+               | HASH number
+               | HASH name
+               | number PLUS number
+               | number MINUS number
+               | name PLUS number
+               | name MINUS number
                | LPAREN argument RPAREN
 
-    opt_hash ::= $empty
-               | HASH
+    string_ ::= STRING
 
-    atom ::= NUMBER
-           | NAME
-           | STRING
-           | STAR
+    name ::= NAME
 
-    opt_offset ::= $empty
-                 | PLUS NUMBER
-                 | MINUS NUMBER
+    number ::= NUMBER
+
+    opcode ::= OPCODE
 %End

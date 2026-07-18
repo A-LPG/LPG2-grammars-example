@@ -1,7 +1,6 @@
 # powerbuilderdw
 
-Parse-level port of antlr/grammars-v4 `powerbuilderdw/`.
+Auto-ported from antlr/grammars-v4 `powerbuilderdw` via `tools/antlr2lpg.py`.
 
-```bash
-../harness/run-one.sh powerbuilderdw
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `start_rule`.

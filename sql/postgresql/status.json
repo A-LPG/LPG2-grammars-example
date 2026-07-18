@@ -1,13 +1,18 @@
 {
   "id": "sql/postgresql",
-  "tier": "D",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
   "blockers": [],
-  "quality": "language_subset",
   "quality_notes": [
-    "curated_subset"
+    "antlr2lpg_structural_port",
+    "real_g4_port",
+    "honest_subset: curated SELECT/INSERT examples only; not full dialect coverage"
   ],
-  "parser_bytes": 2112
+  "parser_bytes": 142538,
+  "rule_approx": 1738,
+  "start": "root",
+  "parser_lines": 5482,
+  "example_count": 3,
+  "tier": "A"
 }

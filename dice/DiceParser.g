@@ -1,21 +1,16 @@
--- DiceNotation Parser (LPG)
--- Ported from antlr/grammars-v4 dice/DiceNotationParser.g4
-
+-- DiceParser (LPG) from grammars-v4/dice DiceNotationParser.g4
 %Options la=2
 %Options fp=DiceParser
 %options package=lpg.grammars.dice
 %options template=dtParserTemplateF.gi
 %options import_terminals=DiceLexer.gi
 %options automatic_ast=nested
-
 %Eof
     EOF_TOKEN
 %End
-
 %Start
     file_
 %End
-
 %Rules
     file_ ::= notation
 

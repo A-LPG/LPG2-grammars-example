@@ -1,13 +1,16 @@
 {
   "id": "morsecode",
-  "tier": "A",
   "parse_ok": true,
+  "example_count": 5,
   "status": "ported",
-  "example_count": 2,
   "blockers": [],
-  "quality": "language_subset",
+  "tier": "A",
+  "quality": "language_port",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port",
+    "mirrors_morsecode.g4_letter_DOT_DASH"
   ],
-  "parser_bytes": 1594
+  "parser_bytes": 1766,
+  "parser_lines": 66,
+  "start": "morsecode"
 }

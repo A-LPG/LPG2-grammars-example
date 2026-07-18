@@ -1,0 +1,4 @@
+M = equates
+  X = int
+  Y = bool
+end M

@@ -3,6 +3,6 @@
   "lexer": "BrainflakLexer",
   "parser": "BrainflakParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

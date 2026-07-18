@@ -3,6 +3,6 @@
   "lexer": "ErlangLexer",
   "parser": "ErlangParser",
   "example_globs": [
-    "examples/tiny.erl"
+    "examples-curated/**/*"
   ]
 }

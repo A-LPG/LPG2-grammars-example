@@ -3,6 +3,6 @@
   "lexer": "ClojureLexer",
   "parser": "ClojureParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

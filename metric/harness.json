@@ -3,6 +3,6 @@
   "lexer": "MetricLexer",
   "parser": "MetricParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

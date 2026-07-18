@@ -1,7 +1,6 @@
-# tnt (LPG)
+# tnt
 
-Port of antlr/grammars-v4 `tnt`.
+Auto-ported from antlr/grammars-v4 `tnt` via `tools/antlr2lpg.py`.
 
-```bash
-bash grammars-example/harness/run-one.sh tnt
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `equation`.

@@ -1,13 +1,17 @@
 {
   "id": "mdx",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 3,
   "blockers": [],
-  "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port",
+    "antlr2lpg_structural_port"
   ],
-  "parser_bytes": 1174
+  "parser_bytes": 5261,
+  "rule_approx": 103,
+  "start": "mdx_statement",
+  "example_count": 1,
+  "notes": "real_g4_port",
+  "tier": "A"
 }

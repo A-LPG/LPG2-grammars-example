@@ -1,7 +1,6 @@
 # sql/plsql
 
-Parse-level LPG port of antlr/grammars-v4 `sql/plsql` (Wave D ice-break).
+Auto-ported from antlr/grammars-v4 `sql/plsql` via `tools/antlr2lpg.py`.
 
-```bash
-bash harness/run-one.sh sql/plsql
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `sql_script`.

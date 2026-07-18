@@ -1,13 +1,16 @@
 {
   "id": "lucene",
-  "tier": "D",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
   "blockers": [],
-  "quality": "language_subset",
   "quality_notes": [
-    "curated_subset"
+    "real_g4_port",
+    "query_boolean_field_quoted_fuzzy"
   ],
-  "parser_bytes": 644
+  "parser_bytes": 2012,
+  "start": "topLevelQuery",
+  "example_count": 5,
+  "notes": "real_g4_port",
+  "tier": "A"
 }

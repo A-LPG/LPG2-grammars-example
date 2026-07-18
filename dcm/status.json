@@ -1,13 +1,15 @@
 {
   "id": "dcm",
+  "quality": "language_subset",
   "parse_ok": true,
-  "example_count": 1,
   "status": "ported",
   "blockers": [],
-  "tier": "A",
-  "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "antlr2lpg_structural_port"
   ],
-  "parser_bytes": 1409
+  "parser_bytes": 6165,
+  "rule_approx": 123,
+  "start": "konservierung",
+  "example_count": 1,
+  "tier": "A"
 }

@@ -3,6 +3,6 @@
   "lexer": "GolangLexer",
   "parser": "GolangParser",
   "example_globs": [
-    "examples-curated/**/*.go"
+    "examples-curated/**/*"
   ]
 }

@@ -25,8 +25,12 @@
     COMMENT_MARK
     DEB
     DEB_SRC
-    X
+    ARCH
+    LANG
+    TARGET
+    TRUSTED
 %End
+
 %Terminals
     CtlCharNotWS
     LF   CR   HT   FF
@@ -88,7 +92,7 @@
             | '#' /. makeToken($_COMMENT_MARK); ./
             | DEB_SRC /. makeToken($_DEB_SRC); ./
             | DEB /. makeToken($_DEB); ./
-            | identifier /. makeToken($_IDENTIFIER); ./
+            | identifier /. checkForKeyWord(); ./
             | WSS /. makeToken($_WSS); ./
 
     DEB_SRC ::= 'd' 'e' 'b' '-' 's' 'r' 'c'

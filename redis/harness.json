@@ -3,6 +3,6 @@
   "lexer": "RedisLexer",
   "parser": "RedisParser",
   "example_globs": [
-    "examples/smoke.txt"
+    "examples-curated/**/*"
   ]
 }

@@ -3,6 +3,6 @@
   "lexer": "ThriftLexer",
   "parser": "ThriftParser",
   "example_globs": [
-    "examples/tiny.thrift"
+    "examples-curated/**/*"
   ]
 }

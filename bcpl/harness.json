@@ -3,6 +3,6 @@
   "lexer": "BcplLexer",
   "parser": "BcplParser",
   "example_globs": [
-    "examples/tiny.b"
+    "examples-curated/**/*"
   ]
 }

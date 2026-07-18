@@ -3,6 +3,6 @@
   "lexer": "TealLexer",
   "parser": "TealParser",
   "example_globs": [
-    "examples/tiny.tl"
+    "examples-curated/**/*"
   ]
 }

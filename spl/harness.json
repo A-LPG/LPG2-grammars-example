@@ -3,6 +3,6 @@
   "lexer": "SplLexer",
   "parser": "SplParser",
   "example_globs": [
-    "examples/tiny.spl"
+    "examples-curated/**/*"
   ]
 }

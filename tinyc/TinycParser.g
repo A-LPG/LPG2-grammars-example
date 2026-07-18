@@ -1,5 +1,5 @@
--- TinycParser (LPG)
--- Ported from antlr/grammars-v4 for parse-level examples.
+-- TinycParser (LPG) — structural port of grammars-v4 tinyc/tinyc.g4
+-- Nonterminals: program / statement / paren_expr / expr / test / sum_ / term / id_ / integer
 
 %Options la=2
 %Options fp=TinycParser
@@ -17,11 +17,13 @@
 %End
 
 %Rules
+    -- program: statement+ EOF
     program ::= statements
 
     statements ::= statement
                  | statements statement
 
+    -- statement: if / if-else / while / do-while / block / expr; / ;
     statement ::= IF paren_expr statement
                 | IF paren_expr statement ELSE statement
                 | WHILE paren_expr statement
@@ -37,7 +39,7 @@
     paren_expr ::= LPAREN expr RPAREN
 
     expr ::= test
-           | IDENTIFIER EQ expr
+           | id_ EQ expr
 
     test ::= sum_
            | sum_ LT sum_
@@ -46,7 +48,11 @@
            | sum_ PLUS term
            | sum_ MINUS term
 
-    term ::= IDENTIFIER
-           | INT
+    term ::= id_
+           | integer
            | paren_expr
+
+    id_ ::= IDENTIFIER
+
+    integer ::= INT
 %End

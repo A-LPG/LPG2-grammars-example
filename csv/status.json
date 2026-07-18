@@ -1,11 +1,15 @@
 {
   "id": "csv",
   "parse_ok": true,
-  "example_count": 1,
   "status": "ported",
-  "blockers": [],
   "tier": "A",
   "quality": "language_port",
-  "quality_notes": [],
-  "parser_bytes": 667
+  "quality_notes": [
+    "real_g4_port",
+    "mirrors_CSV.g4_csvFile_hdr_row_field",
+    "lexer_TEXT_STRING_COMMA_NL_empty_fields"
+  ],
+  "blockers": [],
+  "start": "csvFile",
+  "example_count": 8
 }

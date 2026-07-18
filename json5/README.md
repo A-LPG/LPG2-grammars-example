@@ -1,8 +1,10 @@
-# json5 (LPG)
+# json5
 
-Ported from antlr/grammars-v4 `json5` — language-shaped JSON5 subset (comments,
-unquoted keys, single quotes, hex/Inf/NaN, trailing commas).
+Structural LPG port of grammars-v4 `json5/JSON5.g4`
+(`json5` / `obj` / `pair` / `key` / `value` / `arr` / `number`).
+
+Lexer: comments, single/double strings, hex, `Infinity`/`NaN`, unquoted keys.
 
 ```bash
-LPG_BIN=../lpg2/build/lpg-v2.2.03 bash harness/run-one.sh json5
+bash ../harness/run-one.sh json5
 ```

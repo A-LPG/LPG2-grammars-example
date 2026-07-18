@@ -1,5 +1,4 @@
-package main
+package demo
 
-func main() {
-    x := 1
+func hello() {
 }

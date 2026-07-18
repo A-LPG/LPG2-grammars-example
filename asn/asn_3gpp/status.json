@@ -1,13 +1,19 @@
 {
   "id": "asn/asn_3gpp",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
   "blockers": [],
-  "quality": "token_stream_smoke",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "antlr2lpg_structural_port",
+    "real_g4_port",
+    "language_subset",
+    "lexer_token_remap"
   ],
-  "parser_bytes": 1191
+  "parser_bytes": 17593,
+  "rule_approx": 329,
+  "start": "modules",
+  "parser_lines": 742,
+  "tier": "A",
+  "example_count": 2
 }

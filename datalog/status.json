@@ -1,11 +1,16 @@
 {
   "id": "datalog",
-  "tier": "A",
-  "status": "ported",
   "parse_ok": true,
+  "example_count": 3,
+  "status": "ported",
   "blockers": [],
-  "example_count": 4,
+  "tier": "A",
   "quality": "language_port",
-  "quality_notes": [],
-  "parser_bytes": 1265
+  "quality_notes": [
+    "real_g4_port",
+    "mirrors_datalog.g4_assertion_retraction_query_clause",
+    "curated_paths_socrates_genealogy"
+  ],
+  "parser_bytes": 1605,
+  "parser_lines": 67
 }

@@ -1,9 +1,8 @@
-# Roman numerals (LPG)
+# romannumerals
 
-Parse-level port of [antlr/grammars-v4 `romannumerals`](https://github.com/antlr/grammars-v4/tree/master/romannumerals).
-
-## Verify
+Full structural LPG port of grammars-v4 `romannumerals/romannumerals.g4`
+(thousands / hundreds / tens / ones subtractive notation).
 
 ```bash
-../harness/run-one.sh romannumerals
+bash ../harness/run-one.sh romannumerals
 ```

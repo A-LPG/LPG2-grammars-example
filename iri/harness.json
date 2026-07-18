@@ -3,6 +3,6 @@
   "lexer": "IriLexer",
   "parser": "IriParser",
   "example_globs": [
-    "examples/tiny.iri"
+    "examples-curated/**/*"
   ]
 }

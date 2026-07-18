@@ -1,11 +1,5 @@
 # smalltalk
 
-**Quality: `token_stream_smoke` — not a language grammar.**
+LPG structural port of grammars-v4 `Smalltalk.g4` (`script` / `sequence` / `temps` / `expression` / …).
 
-Scaffold / nested token-stream smoke for antlr/grammars-v4 `smalltalk`. Harness may report `parse_ok`; that does **not** mean a real LPG language port.
-
-See `status.json` and `catalog.json` → `quality_schema`.
-
-```bash
-bash harness/run-one.sh smalltalk
-```
+Harness: `examples-curated/` (temps+assign, cascade+keyword, block+return).

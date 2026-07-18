@@ -1,13 +1,19 @@
 {
   "id": "powerquery",
-  "tier": "B",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
-  "blockers": [],
   "quality": "language_subset",
+  "blockers": [],
+  "example_count": 3,
+  "parser_lines": 349,
+  "parser_bytes": 9893,
   "quality_notes": [
-    "curated_subset"
+    "antlr2lpg_structural_port",
+    "real_g4_port",
+    "language_subset",
+    "harsh3_real_multiline_examples",
+    "no_token_stream_soup",
+    "repair3_fixed_kwlexer"
   ],
-  "parser_bytes": 562
+  "tier": "A"
 }

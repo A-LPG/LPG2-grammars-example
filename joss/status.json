@@ -1,13 +1,20 @@
 {
   "id": "joss",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
-  "blockers": [],
-  "quality": "token_stream_smoke",
-  "quality_notes": [
-    "generic_nested_token_stream"
+  "blockers": [
+    "kw_rule_name_collision_fixed_goCMD_etc"
   ],
-  "parser_bytes": 1143
+  "quality_notes": [
+    "real_g4_port",
+    "antlr2lpg_structural_port",
+    "curated_type_set_go_page_line_cancel"
+  ],
+  "parser_bytes": 4518,
+  "rule_approx": 74,
+  "start": "prog",
+  "example_count": 3,
+  "tier": "A",
+  "parser_lines": 244
 }

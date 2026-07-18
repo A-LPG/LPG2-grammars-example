@@ -3,6 +3,6 @@
   "lexer": "AqlLexer",
   "parser": "AqlParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*.aql"
   ]
 }

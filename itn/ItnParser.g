@@ -1,5 +1,5 @@
--- ITN Parser (LPG)
--- Ported from antlr/grammars-v4 itn/itn.g4 for parse-level examples.
+-- ITN Parser (LPG) — structural port of grammars-v4 itn/itn.g4
+-- Nonterminals: itinerary / line / longitude / latitude / descr / flag
 
 %Options la=2
 %Options fp=ItnParser

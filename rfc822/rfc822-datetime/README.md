@@ -1,9 +1,6 @@
-# rfc822/rfc822-datetime (LPG)
+# rfc822/rfc822-datetime
 
-Parse-level port of antlr/grammars-v4 `rfc822/rfc822-datetime/`.
+Auto-ported from antlr/grammars-v4 `rfc822/rfc822-datetime` via `tools/antlr2lpg.py`.
 
-## Verify
-
-```bash
-bash grammars-example/harness/run-one.sh rfc822/rfc822-datetime
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `date_time`.

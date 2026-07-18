@@ -1,8 +1,8 @@
 {
   "package": "lpg.grammars.javascript.ecmascript",
-  "lexer": "EcmascriptLexer",
-  "parser": "EcmascriptParser",
+  "lexer": "JavascriptEcmascriptLexer",
+  "parser": "JavascriptEcmascriptParser",
   "example_globs": [
-    "examples/smoke.js"
+    "examples-curated/**/*.js"
   ]
 }

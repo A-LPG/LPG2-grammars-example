@@ -1,8 +1,8 @@
 {
   "package": "lpg.grammars.sql.snowflake",
-  "lexer": "SnowflakeLexer",
-  "parser": "SnowflakeParser",
+  "lexer": "SqlSnowflakeLexer",
+  "parser": "SqlSnowflakeParser",
   "example_globs": [
-    "examples/smoke.sql"
+    "examples/**/*.sql"
   ]
 }

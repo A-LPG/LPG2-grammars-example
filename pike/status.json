@@ -1,13 +1,14 @@
 {
   "id": "pike",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 2,
   "blockers": [],
-  "quality": "token_stream_smoke",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "real_g4_port",
+    "antlr2lpg_structural_port",
+    "curated_smoke"
   ],
-  "parser_bytes": 1145
+  "parser_bytes": 7391,
+  "example_count": 1
 }

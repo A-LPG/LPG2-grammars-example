@@ -1,13 +1,18 @@
 {
   "id": "antlr/antlr3",
-  "tier": "D",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
   "blockers": [],
-  "quality": "token_stream_smoke",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "antlr2lpg_structural_port",
+    "real_g4_port",
+    "language_subset"
   ],
-  "parser_bytes": 1181
+  "parser_bytes": 6345,
+  "rule_approx": 116,
+  "start": "grammarDef",
+  "example_count": 1,
+  "tier": "A",
+  "notes": "real_g4_port"
 }

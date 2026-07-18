@@ -1,13 +1,17 @@
 {
   "id": "scotty",
+  "quality": "language_subset",
   "parse_ok": true,
-  "example_count": 1,
   "status": "ported",
   "blockers": [],
-  "tier": "A",
-  "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port",
+    "lexer_identifier_number",
+    "curated_multiline_prefix_programs"
   ],
-  "parser_bytes": 992
+  "notes": "Prefix-arithmetic / fun / assign from scotty.g4; IDENTIFIER/NUMBER lexed for LALR.",
+  "example_count": 3,
+  "tier": "A",
+  "parser_bytes": 946,
+  "parser_lines": 34
 }

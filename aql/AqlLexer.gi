@@ -1,4 +1,6 @@
--- Aql Lexer (LPG)
+-- AQL Lexer (LPG) — hand tokens for ArangoDB AQL
+-- Keeps IDENTIFIER in %Export for KW filter (TK_IDENTIFIER).
+
 %Options list
 %Options fp=AqlLexer
 %options single_productions
@@ -16,7 +18,13 @@
     IDENTIFIER
     NUMBER
     STRING
-    EQ
+    ASSIGN
+    EQEQ
+    NE
+    LE
+    GE
+    LT
+    GT
     COLON
     COMMA
     DOT
@@ -30,11 +38,13 @@
     MINUS
     STAR
     SLASH
-    LT
-    GT
+    PERCENT
     BANG
     QUESTION
     AT
+    AND_OP
+    OR_OP
+    RANGE
 %End
 %Terminals
     CtlCharNotWS
@@ -94,8 +104,16 @@
 %Rules
     Token ::= lineComment /. skipToken(); ./
             | blockComment /. skipToken(); ./
-            | hashComment /. skipToken(); ./
-            | '=' /. makeToken($_EQ); ./
+            | '=' '=' /. makeToken($_EQEQ); ./
+            | '!' '=' /. makeToken($_NE); ./
+            | '<' '=' /. makeToken($_LE); ./
+            | '>' '=' /. makeToken($_GE); ./
+            | '&' '&' /. makeToken($_AND_OP); ./
+            | '|' '|' /. makeToken($_OR_OP); ./
+            | '.' '.' /. makeToken($_RANGE); ./
+            | '=' /. makeToken($_ASSIGN); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | ':' /. makeToken($_COLON); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
@@ -109,8 +127,7 @@
             | '-' /. makeToken($_MINUS); ./
             | '*' /. makeToken($_STAR); ./
             | '/' /. makeToken($_SLASH); ./
-            | '<' /. makeToken($_LT); ./
-            | '>' /. makeToken($_GT); ./
+            | '%' /. makeToken($_PERCENT); ./
             | '!' /. makeToken($_BANG); ./
             | '?' /. makeToken($_QUESTION); ./
             | '@' /. makeToken($_AT); ./
@@ -132,25 +149,31 @@
 
     Digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
-    number ::= OptSign Digits OptFrac OptExp
-    OptSign -> $empty | '+' | '-'
+    number ::= Digits OptFrac OptExp
     Digits ::= Digit | Digits Digit
     OptFrac -> $empty | '.' Digits
     OptExp -> $empty | Exp
     Exp ::= LetterEe OptSign Digits
     LetterEe -> e | E
+    OptSign -> $empty | '+' | '-'
 
     string ::= '"' DQBody '"'
              | "'" SQBody "'"
+             | '`' BQBody '`'
     DQBody -> $empty | DQBody NotDQ
     SQBody -> $empty | SQBody NotSQ
+    BQBody -> $empty | BQBody NotBQ
     NotDQ -> Letter | Digit | SpecialNotDQ | Space | HT | FF | AfterASCII
     NotSQ -> Letter | Digit | SpecialNotSQ | Space | HT | FF | AfterASCII
+    NotBQ -> Letter | Digit | SpecialNotBQ | Space | HT | FF | AfterASCII
     SpecialNotDQ -> '+' | '-' | '/' | '(' | ')' | '*' | '!' | '@' | '`' | '~' |
                     '%' | '&' | '^' | ':' | ';' | "'" | '|' | '{' | '}' |
                     '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_' | BackSlash
     SpecialNotSQ -> '+' | '-' | '/' | '(' | ')' | '*' | '!' | '@' | '`' | '~' |
                     '%' | '&' | '^' | ':' | ';' | '"' | '|' | '{' | '}' |
+                    '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_' | BackSlash
+    SpecialNotBQ -> '+' | '-' | '/' | '(' | ')' | '*' | '!' | '@' | '~' |
+                    '%' | '&' | '^' | ':' | ';' | '"' | "'" | '|' | '{' | '}' |
                     '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_' | BackSlash
 
     lineComment ::= '/' '/' NotNLs
@@ -168,8 +191,6 @@
                       '%' | '&' | '^' | ':' | ';' | '"' | "'" | '|' | '{' | '}' |
                       '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_' | BackSlash
                  | '/' | '*'
-
-    hashComment ::= '#' NotNLs
 
     white -> WSChar | white WSChar
     WSChar -> Space | LF | CR | HT | FF

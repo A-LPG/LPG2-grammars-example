@@ -1,13 +1,15 @@
 {
   "id": "redis",
-  "tier": "B",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
+  "quality": "language_subset",
   "blockers": [],
-  "quality": "token_stream_smoke",
+  "example_count": 3,
   "quality_notes": [
-    "generic_nested_token_stream"
+    "real_g4_port",
+    "language_subset",
+    "folded_case_kw_lexer",
+    "no_token_stream_soup"
   ],
-  "parser_bytes": 1164
+  "tier": "A"
 }

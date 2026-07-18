@@ -3,6 +3,6 @@
   "lexer": "BisonLexer",
   "parser": "BisonParser",
   "example_globs": [
-    "examples/smoke.y"
+    "examples-curated/**/*"
   ]
 }

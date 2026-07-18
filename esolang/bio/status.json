@@ -1,11 +1,14 @@
 {
   "id": "esolang/bio",
   "parse_ok": true,
-  "example_count": 4,
   "status": "ported",
-  "blockers": [],
   "tier": "A",
   "quality": "language_port",
-  "quality_notes": [],
-  "parser_bytes": 1091
+  "quality_notes": [
+    "real_g4_port",
+    "mirrors_bio.g4_program_instruction_inc_dec_while_output_block"
+  ],
+  "blockers": [],
+  "start": "program",
+  "example_count": 4
 }

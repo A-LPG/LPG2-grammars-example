@@ -1,8 +1,8 @@
 {
   "package": "lpg.grammars.verilog.systemverilog",
-  "lexer": "SystemverilogLexer",
-  "parser": "SystemverilogParser",
+  "lexer": "VerilogSystemverilogLexer",
+  "parser": "VerilogSystemverilogParser",
   "example_globs": [
-    "examples/smoke.sv"
+    "examples/**/*"
   ]
 }

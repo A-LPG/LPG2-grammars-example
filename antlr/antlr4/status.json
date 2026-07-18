@@ -1,13 +1,20 @@
 {
   "id": "antlr/antlr4",
-  "tier": "D",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
   "blockers": [],
-  "quality": "token_stream_smoke",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "antlr2lpg_structural_port",
+    "real_g4_port",
+    "language_subset",
+    "antlr4_parser_g4_subset_not_examples_dump"
   ],
-  "parser_bytes": 1181
+  "parser_bytes": 8515,
+  "rule_approx": 146,
+  "start": "grammarSpec",
+  "example_count": 4,
+  "notes": "real_g4_port of ANTLRv4Parser.g4 (~416 lines); not the nested examples/** dump (~329k lines)",
+  "tier": "A",
+  "parser_lines": 422
 }

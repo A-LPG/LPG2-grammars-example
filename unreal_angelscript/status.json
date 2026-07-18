@@ -1,13 +1,22 @@
 {
   "id": "unreal_angelscript",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 2,
   "blockers": [],
-  "quality": "token_stream_smoke",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "antlr2lpg_structural_port",
+    "real_g4_port",
+    "language_subset",
+    "ClassKw_ast_fix",
+    "curated_examples_import_subset_class_body_still_lalr_hard",
+    "import_only_subset",
+    "examples_still_too_thin_for_harsh_bar"
   ],
-  "parser_bytes": 1187
+  "parser_bytes": 18676,
+  "rule_approx": 307,
+  "start": "script",
+  "parser_lines": 780,
+  "tier": "A",
+  "example_count": 2
 }

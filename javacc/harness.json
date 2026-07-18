@@ -3,6 +3,6 @@
   "lexer": "JavaccLexer",
   "parser": "JavaccParser",
   "example_globs": [
-    "examples/tiny.jj"
+    "examples-curated/**/*"
   ]
 }

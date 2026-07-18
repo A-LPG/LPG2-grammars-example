@@ -1,2 +1,2 @@
 MODULE tiny;
-END;
+END MODULE;

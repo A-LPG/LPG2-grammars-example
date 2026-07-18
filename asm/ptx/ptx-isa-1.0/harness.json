@@ -1,8 +1,8 @@
 {
   "package": "lpg.grammars.asm.ptx.ptx_isa_1_0",
-  "lexer": "PtxIsa10Lexer",
-  "parser": "PtxIsa10Parser",
+  "lexer": "AsmPtxPtxIsa10Lexer",
+  "parser": "AsmPtxPtxIsa10Parser",
   "example_globs": [
-    "examples/smoke.ptx"
+    "examples-curated/**/*"
   ]
 }

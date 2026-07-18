@@ -3,6 +3,6 @@
   "lexer": "YiniLexer",
   "parser": "YiniParser",
   "example_globs": [
-    "examples/**/*.yini"
+    "examples-curated/**/*"
   ]
 }

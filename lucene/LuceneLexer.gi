@@ -1,4 +1,6 @@
--- Lucene Lexer (LPG) — Wave D parse-level
+-- Lucene Lexer (LPG)
+-- Ported from antlr/grammars-v4 lucene/LuceneLexer.g4 (DEFAULT mode subset).
+
 %Options list
 %Options fp=LuceneLexer
 %options single_productions
@@ -6,31 +8,56 @@
 %options package=lpg.grammars.lucene
 %options template=LexerTemplateF.gi
 %options filter=LuceneKWLexer.gi
+
 %Define
     $kw_lexer_class /.$LuceneKWLexer./
 %End
+
 %Include
     LexerBasicMapF.gi
 %End
+
 %Export
     IDENTIFIER
-    STRING NUMBER
-    LPAREN RPAREN LBRACE RBRACE LBRACKET RBRACKET
-    COMMA DOT COLON SEMI EQ PLUS MINUS STAR SLASH LT GT
     AND
     OR
     NOT
     TO
+    NUMBER
+    QUOTED
+    REGEXPTERM
+    PLUS
+    MINUS
+    LPAREN
+    RPAREN
+    OP_COLON
+    OP_EQUAL
+    OP_LESSTHAN
+    OP_LESSTHANEQ
+    OP_MORETHAN
+    OP_MORETHANEQ
+    CARAT
+    TILDE
+    RANGEIN_START
+    RANGEEX_START
+    RANGEIN_END
+    RANGEEX_END
 %End
+
 %Terminals
     CtlCharNotWS
+
     LF   CR   HT   FF
+
     a    b    c    d    e    f    g    h    i    j    k    l    m
     n    o    p    q    r    s    t    u    v    w    x    y    z
     _
+
     A    B    C    D    E    F    G    H    I    J    K    L    M
     N    O    P    Q    R    S    T    U    V    W    X    Y    Z
+
     0    1    2    3    4    5    6    7    8    9
+
     AfterASCII   ::= '\u0080..\ufffe'
     Space        ::= ' '
     LF           ::= NewLine
@@ -69,59 +96,87 @@
     LeftParen    ::= '('
     RightParen   ::= ')'
 %End
+
 %Start
     Token
 %End
+
 %Rules
+    Token ::= term_tok   /. checkForKeyWord(); ./
+            | number     /. makeToken($_NUMBER); ./
+            | quoted     /. makeToken($_QUOTED); ./
+            | regexp     /. makeToken($_REGEXPTERM); ./
+            | white      /. skipToken(); ./
+            | '&' '&'    /. makeToken($_AND); ./
+            | '|' '|'    /. makeToken($_OR); ./
+            | '!'        /. makeToken($_NOT); ./
+            | '+'        /. makeToken($_PLUS); ./
+            | '-'        /. makeToken($_MINUS); ./
+            | '('        /. makeToken($_LPAREN); ./
+            | ')'        /. makeToken($_RPAREN); ./
+            | ':'        /. makeToken($_OP_COLON); ./
+            | '='        /. makeToken($_OP_EQUAL); ./
+            | '<' '='    /. makeToken($_OP_LESSTHANEQ); ./
+            | '>' '='    /. makeToken($_OP_MORETHANEQ); ./
+            | '<'        /. makeToken($_OP_LESSTHAN); ./
+            | '>'        /. makeToken($_OP_MORETHAN); ./
+            | '^'        /. makeToken($_CARAT); ./
+            | '~'        /. makeToken($_TILDE); ./
+            | '['        /. makeToken($_RANGEIN_START); ./
+            | '{'        /. makeToken($_RANGEEX_START); ./
+            | ']'        /. makeToken($_RANGEIN_END); ./
+            | '}'        /. makeToken($_RANGEEX_END); ./
 
-    Token ::= '(' /. makeToken($_LPAREN); ./
-            | ')' /. makeToken($_RPAREN); ./
-            | '{' /. makeToken($_LBRACE); ./
-            | '}' /. makeToken($_RBRACE); ./
-            | '[' /. makeToken($_LBRACKET); ./
-            | ']' /. makeToken($_RBRACKET); ./
-            | ',' /. makeToken($_COMMA); ./
-            | '.' /. makeToken($_DOT); ./
-            | ':' /. makeToken($_COLON); ./
-            | ';' /. makeToken($_SEMI); ./
-            | '=' /. makeToken($_EQ); ./
-            | '+' /. makeToken($_PLUS); ./
-            | '-' /. makeToken($_MINUS); ./
-            | '*' /. makeToken($_STAR); ./
-            | '/' /. makeToken($_SLASH); ./
-            | '<' /. makeToken($_LT); ./
-            | '>' /. makeToken($_GT); ./
-            | STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
-            | identifier /. checkForKeyWord(); ./
-            | white /. skipToken(); ./
-            | line_comment /. skipToken(); ./
-            | hash_comment /. skipToken(); ./
-            | dash_comment /. skipToken(); ./
+    term_tok ::= TermStart
+               | term_tok TermChar
 
-    identifier ::= Letter LetterOrDigitStar
-    Letter -> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z | _
-    LetterOrDigitStar -> $empty | LetterOrDigitStar LetterOrDigit
-    LetterOrDigit -> Letter | Digit
+    TermStart -> Letter | '_' | '*' | '?'
+
+    TermChar -> Letter | Digit | '_' | '*' | '?' | '.' | '-'
+
+    Letter -> LowerCaseLetter | UpperCaseLetter | AfterASCII
+
+    LowerCaseLetter -> a | b | c | d | e | f | g | h | i | j | k | l | m |
+                       n | o | p | q | r | s | t | u | v | w | x | y | z
+
+    UpperCaseLetter -> A | B | C | D | E | F | G | H | I | J | K | L | M |
+                       N | O | P | Q | R | S | T | U | V | W | X | Y | Z
+
     Digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
-    STRING ::= '"' SLBody '"' | "'" SQBody "'"
-    SLBody -> $empty | SLBody NotDQ
-    SQBody -> $empty | SQBody NotSQ
-    NotDQ -> Letter | Digit | Special | Space | HT | FF | Escape | AfterASCII
-    NotSQ -> Letter | Digit | Special | Space | HT | FF | '"' | Escape | AfterASCII
-    Escape ::= '\' EscapeChar
-    EscapeChar -> '"' | "'" | '\' | '/' | 'b' | 'f' | 'n' | 'r' | 't' | Letter | Digit
-    Special -> '+' | '-' | '/' | '(' | ')' | '*' | '!' | '@' | '`' | '~' | '%' | '&' | '^' | ':' | ';' | '|' | '{' | '}' | '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_'
-    NUMBER ::= DigitPlus OptFrac
-    DigitPlus ::= Digit | DigitPlus Digit
-    OptFrac -> $empty | '.' DigitPlus
-    line_comment ::= '/' '/' NotNLStar
-    hash_comment ::= '#' NotNLStar
-    dash_comment ::= '-' '-' NotNLStar
-    NotNLStar -> $empty | NotNLStar NotNL
-    NotNL -> Letter | Digit | Special | Space | HT | FF | AfterASCII | '"' | "'" | '\'
+    number ::= Digit
+             | number Digit
+             | number '.' Digit
+             | number '.' Digits
 
-    white ::= WSChar | white WSChar
-    WSChar -> Space | HT | FF | LF | CR
+    Digits ::= Digit
+             | Digits Digit
+
+    quoted ::= '"' QBody '"'
+
+    QBody -> $empty
+           | QBody QChar
+
+    QChar -> Letter | Digit | Space | HT | "'" | ',' | '.' | ':' | ';' | '+' | '-' |
+             '*' | '/' | '=' | '_' | '!' | '?' | '@' | '#' | '$' | '%' | '&' | '|' |
+             '^' | '~' | '`' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' |
+             Escape
+
+    Escape ::= BackSlash EscapeChar
+    EscapeChar -> DoubleQuote | SingleQuote | BackSlash | '/' | n | r | t | b | f
+
+    regexp ::= '/' RBody '/'
+
+    RBody -> $empty
+           | RBody RChar
+
+    RChar -> Letter | Digit | Space | HT | "'" | DoubleQuote | ',' | '.' | ':' | ';' |
+             '+' | '-' | '*' | '=' | '_' | '!' | '?' | '@' | '#' | '$' | '%' | '&' |
+             '|' | '^' | '~' | '`' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' |
+             Escape
+
+    white -> WSChar
+           | white WSChar
+
+    WSChar -> Space | LF | CR | HT | FF
 %End

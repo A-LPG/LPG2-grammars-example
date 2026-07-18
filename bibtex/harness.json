@@ -2,5 +2,5 @@
   "package": "lpg.grammars.bibtex",
   "lexer": "BibtexLexer",
   "parser": "BibtexParser",
-  "example_globs": ["examples/simple.bib"]
+  "example_globs": ["examples-curated/**/*"]
 }

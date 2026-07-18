@@ -1,13 +1,14 @@
 {
   "id": "bibcode",
+  "quality": "language_subset",
   "parse_ok": true,
-  "example_count": 4,
   "status": "ported",
   "blockers": [],
-  "tier": "A",
-  "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port"
   ],
-  "parser_bytes": 754
+  "parser_bytes": 787,
+  "start": "bibcode",
+  "example_count": 3,
+  "tier": "A"
 }

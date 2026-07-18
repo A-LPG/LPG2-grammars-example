@@ -1,11 +1,6 @@
 # java/java9
 
-**Quality: `token_stream_smoke` — not a language grammar.**
+Auto-ported from antlr/grammars-v4 `java/java9` via `tools/antlr2lpg.py`.
 
-Scaffold / nested token-stream smoke for antlr/grammars-v4 `java/java9`. Harness may report `parse_ok`; that does **not** mean a real LPG language port.
-
-See `status.json` and `catalog.json` → `quality_schema`.
-
-```bash
-bash harness/run-one.sh java/java9
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `literal`.

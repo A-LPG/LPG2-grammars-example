@@ -1,13 +1,14 @@
 {
   "id": "ctl",
-  "tier": "A",
-  "status": "ported",
+  "quality": "language_subset",
   "parse_ok": true,
+  "status": "ported",
   "blockers": [],
-  "example_count": 1,
-  "quality": "token_stream_smoke",
   "quality_notes": [
-    "tiny_parser_single_example"
+    "real_g4_port"
   ],
-  "parser_bytes": 805
+  "parser_bytes": 977,
+  "start": "file_",
+  "example_count": 3,
+  "tier": "A"
 }

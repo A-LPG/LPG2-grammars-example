@@ -3,6 +3,6 @@
   "lexer": "HttpLexer",
   "parser": "HttpParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

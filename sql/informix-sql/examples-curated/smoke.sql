@@ -1,1 +1,1 @@
-SELECT 1 FROM dual;
+COMMIT;

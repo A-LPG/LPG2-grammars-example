@@ -1,5 +1,6 @@
--- DatalogParser (LPG)
--- Ported from antlr/grammars-v4 for parse-level examples.
+-- DatalogParser (LPG) — structural port of grammars-v4 datalog/datalog.g4
+-- Nonterminals: program / statement / assertion / retraction / query / requirement /
+--   clause / body / literal / predicate_sym / terms_ / term_ / constant / external_sym
 
 %Options la=2
 %Options fp=DatalogParser
@@ -17,13 +18,17 @@
 %End
 
 %Rules
+    -- program: statement* EOF
     program ::= $empty
               | statements
 
     statements ::= statement
                  | statements statement
 
-    statement ::= assertion | retraction | query | requirement
+    statement ::= assertion
+                | retraction
+                | query
+                | requirement
 
     assertion ::= clause DOT
     retraction ::= clause TILDE
@@ -43,14 +48,20 @@
               | term_ NE term_
               | VARIABLE COLON_MINUS external_sym LPAREN terms_ RPAREN
 
-    predicate_sym ::= IDENTIFIER | STRING
+    predicate_sym ::= IDENTIFIER
+                    | STRING
 
     terms_ ::= term_
              | term_ COMMA terms_
 
-    term_ ::= VARIABLE | constant
+    term_ ::= VARIABLE
+            | constant
 
-    constant ::= IDENTIFIER | STRING | INTEGER | TRUE | FALSE
+    constant ::= IDENTIFIER
+               | STRING
+               | INTEGER
+               | TRUE
+               | FALSE
 
     external_sym ::= IDENTIFIER
 %End

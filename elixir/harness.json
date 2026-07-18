@@ -3,6 +3,6 @@
   "lexer": "ElixirLexer",
   "parser": "ElixirParser",
   "example_globs": [
-    "examples/tiny.ex"
+    "examples-curated/**/*"
   ]
 }

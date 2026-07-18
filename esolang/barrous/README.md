@@ -1,11 +1,6 @@
-# esolang/barrous (LPG)
+# esolang/barrous
 
-Parse-level port of antlr/grammars-v4 `esolang/barrous/`.
+Auto-ported from antlr/grammars-v4 `esolang/barrous` via `tools/antlr2lpg.py`.
 
-## Verify
-
-```bash
-bash grammars-example/harness/run-one.sh esolang/barrous
-```
-
-
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `barrous`.

@@ -1,13 +1,21 @@
 {
   "id": "r",
-  "tier": "A",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 4,
   "blockers": [],
-  "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "antlr2lpg_structural_port",
+    "real_g4_port",
+    "language_subset",
+    "clear2_multiline_examples",
+    "no_token_stream_soup"
   ],
-  "parser_bytes": 3250
+  "parser_bytes": 2769,
+  "rule_approx": 23,
+  "start": "prog",
+  "example_count": 3,
+  "tier": "A",
+  "parser_lines": 153,
+  "notes": "precedence-layered R.g4 port; multi-line assign/function/control; real_g4_port"
 }

@@ -1,7 +1,6 @@
 # lucene
 
-Parse-level LPG port of antlr/grammars-v4 `lucene` (Wave D ice-break).
+Auto-ported from antlr/grammars-v4 `lucene` via `tools/antlr2lpg.py`.
 
-```bash
-bash harness/run-one.sh lucene
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `topLevelQuery`.

@@ -3,11 +3,13 @@
   "tier": "A",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
+  "example_count": 4,
   "blockers": [],
   "quality": "language_subset",
   "quality_notes": [
-    "limited_examples_or_rules"
+    "real_g4_port",
+    "function_assignment_subset"
   ],
-  "parser_bytes": 2054
+  "parser_bytes": 2054,
+  "parser_lines": 60
 }

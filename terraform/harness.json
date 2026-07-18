@@ -3,6 +3,6 @@
   "lexer": "TerraformLexer",
   "parser": "TerraformParser",
   "example_globs": [
-    "examples/tiny.tf"
+    "examples-curated/**/*"
   ]
 }

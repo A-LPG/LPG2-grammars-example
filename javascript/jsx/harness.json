@@ -1,8 +1,8 @@
 {
   "package": "lpg.grammars.javascript.jsx",
-  "lexer": "JsxLexer",
-  "parser": "JsxParser",
+  "lexer": "JavascriptJsxLexer",
+  "parser": "JavascriptJsxParser",
   "example_globs": [
-    "examples/smoke.jsx"
+    "examples-curated/**/*.js"
   ]
 }

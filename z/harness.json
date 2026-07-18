@@ -3,6 +3,6 @@
   "lexer": "ZLexer",
   "parser": "ZParser",
   "example_globs": [
-    "examples/smoke.zed"
+    "examples-curated/**/*"
   ]
 }

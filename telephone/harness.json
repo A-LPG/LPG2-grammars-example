@@ -3,6 +3,6 @@
   "lexer": "TelephoneLexer",
   "parser": "TelephoneParser",
   "example_globs": [
-    "examples/**/*.txt"
+    "examples-curated/**/*"
   ]
 }

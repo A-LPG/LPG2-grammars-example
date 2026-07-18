@@ -1,0 +1,3 @@
+area =
+  pi * r^2
+  + sin(theta)

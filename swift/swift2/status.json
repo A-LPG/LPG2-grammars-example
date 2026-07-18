@@ -1,13 +1,16 @@
 {
   "id": "swift/swift2",
-  "tier": "C",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
-  "blockers": [],
-  "quality": "token_stream_smoke",
+  "tier": "C",
+  "quality": "language_subset",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "real_g4_port",
+    "structural_subset_from_g4",
+    "curated_func_struct_class_control"
   ],
-  "parser_bytes": 1181
+  "parser_bytes": 10839,
+  "parser_lines": 314,
+  "example_count": 3,
+  "blockers": []
 }

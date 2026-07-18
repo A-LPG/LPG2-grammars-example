@@ -1,13 +1,14 @@
 {
   "id": "xpath/xpath1",
-  "tier": "B",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 4,
-  "blockers": [],
+  "tier": "A",
   "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port",
+    "mirrors_xpath.g4_main_locationPath_orExpr"
   ],
-  "parser_bytes": 3140
+  "blockers": [],
+  "start": "main",
+  "example_count": 3
 }

@@ -3,6 +3,6 @@
   "lexer": "TlLexer",
   "parser": "TlParser",
   "example_globs": [
-    "examples/**/*.txt"
+    "examples-curated/**/*"
   ]
 }

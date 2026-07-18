@@ -1,5 +1,5 @@
--- JSON Parser (LPG)
--- Ported from antlr/grammars-v4 json/JSON.g4 for parse-level examples.
+-- JSON Parser (LPG) — structural port of grammars-v4 json/JSON.g4
+-- Nonterminals mirror g4: json / obj / pair / arr / value (not token-stream soup).
 
 %Options la=2
 %Options fp=JsonParser
@@ -17,27 +17,32 @@
 %End
 
 %Rules
+    -- json: value EOF
     json ::= value
 
-    value ::= STRING
-            | NUMBER
-            | object
-            | array
-            | TRUE
-            | FALSE
-            | NULLLITERAL
-
-    object ::= LBRACE RBRACE
-             | LBRACE pair_list RBRACE
+    -- obj: '{' pair (',' pair)* '}' | '{' '}'
+    obj ::= LBRACE RBRACE
+          | LBRACE pair_list RBRACE
 
     pair_list ::= pair
                 | pair_list COMMA pair
 
+    -- pair: STRING ':' value
     pair ::= STRING COLON value
 
-    array ::= LBRACKET RBRACKET
-            | LBRACKET value_list RBRACKET
+    -- arr: '[' value (',' value)* ']' | '[' ']'
+    arr ::= LBRACKET RBRACKET
+          | LBRACKET value_list RBRACKET
 
     value_list ::= value
                  | value_list COMMA value
+
+    -- value: STRING | NUMBER | obj | arr | true | false | null
+    value ::= STRING
+            | NUMBER
+            | obj
+            | arr
+            | TRUE
+            | FALSE
+            | NULLLITERAL
 %End

@@ -1,7 +1,7 @@
 {
   "package": "lpg.grammars.asm.nasm",
-  "lexer": "NasmLexer",
-  "parser": "NasmParser",
+  "lexer": "AsmNasmLexer",
+  "parser": "AsmNasmParser",
   "example_globs": [
     "examples-curated/**/*"
   ]

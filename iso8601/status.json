@@ -1,13 +1,21 @@
 {
   "id": "iso8601",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 66,
   "blockers": [],
-  "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "antlr2lpg_structural_port",
+    "real_g4_port",
+    "language_subset",
+    "clear2_multiline_examples",
+    "no_token_stream_soup"
   ],
-  "parser_bytes": 626
+  "parser_bytes": 8629,
+  "rule_approx": 147,
+  "start": "iso",
+  "example_count": 3,
+  "tier": "A",
+  "parser_lines": 415,
+  "notes": "Digit-per-char lexer; date/datetime/interval examples; real_g4_port"
 }

@@ -3,6 +3,6 @@
   "lexer": "WrenLexer",
   "parser": "WrenParser",
   "example_globs": [
-    "examples/tiny.wren"
+    "examples-curated/**/*"
   ]
 }

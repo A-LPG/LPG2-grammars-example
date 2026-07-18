@@ -1,4 +1,7 @@
--- Ltl Parser (LPG)
+-- LTL Parser (LPG) — structural port of grammars-v4 ltl/ltl.g4
+-- Nonterminals: file_ / proposition / binop / unaryop.
+-- Subset: lexer uses ASCII digraphs -> && || ~ for g4 →∧∨¬ (LexerBasicMapF).
+
 %Options la=2
 %Options fp=LtlParser
 %options package=lpg.grammars.ltl

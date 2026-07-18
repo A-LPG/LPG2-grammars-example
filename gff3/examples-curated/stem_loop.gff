@@ -1,0 +1,6 @@
+##gff-version 3
+##sequence-region NC_demo 1 120
+NC_demo	RefSeq	region	1	120	.	+	.	ID=id0
+NC_demo	RefSeq	stem_loop	1	20	.	+	.	ID=sl1;part=1
+NC_demo	RefSeq	stem_loop	100	120	.	+	.	ID=sl1;part=2
+###

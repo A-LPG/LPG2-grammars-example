@@ -3,6 +3,6 @@
   "lexer": "AlefLexer",
   "parser": "AlefParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

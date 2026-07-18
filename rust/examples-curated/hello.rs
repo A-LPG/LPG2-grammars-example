@@ -1,3 +1,3 @@
 fn main() {
-    print!("Hello world!");
+    let x = 1;
 }

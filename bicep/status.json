@@ -1,13 +1,17 @@
 {
   "id": "bicep",
-  "tier": "B",
-  "parse_ok": true,
-  "status": "ported",
-  "example_count": 1,
-  "blockers": [],
   "quality": "language_subset",
-  "quality_notes": [
-    "curated_subset"
+  "parse_ok": false,
+  "status": "failed",
+  "blockers": [
+    "parse_examples_failed"
   ],
-  "parser_bytes": 753
+  "quality_notes": [
+    "antlr2lpg_structural_port"
+  ],
+  "parser_bytes": 7440,
+  "rule_approx": 114,
+  "start": "program",
+  "example_count": 1,
+  "tier": "A"
 }

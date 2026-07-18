@@ -1,11 +1,17 @@
 {
   "id": "d2",
   "parse_ok": true,
-  "example_count": 12,
+  "example_count": 3,
   "status": "ported",
   "blockers": [],
   "tier": "A",
-  "quality": "language_port",
-  "quality_notes": [],
-  "parser_bytes": 1467
+  "quality": "language_subset",
+  "quality_notes": [
+    "real_g4_port",
+    "tiny_D2.g4_node_edge_block_subset_not_full_d2_lang",
+    "comments_skipped_in_lexer",
+    "curated_service_cloud_sql_diagrams"
+  ],
+  "parser_bytes": 1741,
+  "parser_lines": 73
 }

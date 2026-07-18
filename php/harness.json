@@ -3,6 +3,6 @@
   "lexer": "PhpLexer",
   "parser": "PhpParser",
   "example_globs": [
-    "examples-curated/**/*.php"
+    "examples-curated/**/*"
   ]
 }

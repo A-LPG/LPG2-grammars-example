@@ -6,6 +6,9 @@
   "example_count": 5,
   "blockers": [],
   "quality": "language_port",
-  "quality_notes": [],
+  "quality_notes": [
+    "real_g4_port",
+    "mirrors_small_upstream_g4"
+  ],
   "parser_bytes": 682
 }

@@ -1,11 +1,17 @@
 {
   "id": "edn",
   "parse_ok": true,
-  "example_count": 27,
+  "example_count": 3,
   "status": "ported",
   "blockers": [],
   "tier": "A",
   "quality": "language_port",
-  "quality_notes": [],
-  "parser_bytes": 1226
+  "quality_notes": [
+    "real_g4_port",
+    "mirrors_edn.g4_value_list_vector_map_set_tag_keyword",
+    "IDENTIFIER_is_Symbol",
+    "curated_deps_serializability_config"
+  ],
+  "parser_bytes": 1365,
+  "parser_lines": 66
 }

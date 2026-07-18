@@ -1,7 +1,6 @@
 # cypher
 
-Parse-level port of antlr/grammars-v4 `cypher/`.
+Auto-ported from antlr/grammars-v4 `cypher` via `tools/antlr2lpg.py`.
 
-```bash
-../harness/run-one.sh cypher
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `script`.

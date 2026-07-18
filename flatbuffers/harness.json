@@ -3,6 +3,6 @@
   "lexer": "FlatbuffersLexer",
   "parser": "FlatbuffersParser",
   "example_globs": [
-    "examples/**/*.fbs"
+    "examples-curated/**/*.fbs"
   ]
 }

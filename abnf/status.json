@@ -1,11 +1,16 @@
 {
   "id": "abnf",
   "parse_ok": true,
-  "example_count": 4,
+  "example_count": 3,
   "status": "ported",
   "blockers": [],
   "tier": "B",
   "quality": "language_port",
-  "quality_notes": [],
-  "parser_bytes": 1464
+  "quality_notes": [
+    "real_g4_port",
+    "mirrors_Abnf.g4_rulelist_alternation_repetition",
+    "curated_core_postal_datetime_rfc_style"
+  ],
+  "parser_bytes": 1591,
+  "parser_lines": 64
 }

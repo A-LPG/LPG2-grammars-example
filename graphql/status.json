@@ -1,13 +1,20 @@
 {
   "id": "graphql",
+  "quality": "language_subset",
   "parse_ok": true,
-  "example_count": 1,
   "status": "ported",
   "blockers": [],
-  "tier": "B",
-  "quality": "language_subset",
   "quality_notes": [
-    "limited_examples_or_rules"
+    "antlr2lpg_structural_port",
+    "real_g4_port",
+    "NAME_to_IDENTIFIER",
+    "language_subset",
+    "examples_still_too_thin_for_harsh_bar"
   ],
-  "parser_bytes": 2266
+  "parser_bytes": 9030,
+  "rule_approx": 151,
+  "start": "document",
+  "example_count": 1,
+  "tier": "A",
+  "parser_lines": 382
 }

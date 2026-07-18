@@ -1,7 +1,6 @@
 # tinyos_nesc
 
-Parse-level port of antlr/grammars-v4 `tinyos_nesc/`.
+Auto-ported from antlr/grammars-v4 `tinyos_nesc` via `tools/antlr2lpg.py`.
 
-```bash
-../harness/run-one.sh tinyos_nesc
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `compilationUnit`.

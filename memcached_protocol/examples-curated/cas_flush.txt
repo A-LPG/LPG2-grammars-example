@@ -1,0 +1,4 @@
+cas key 0 100 5 1
+flush_all
+verbosity 1
+quit

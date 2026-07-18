@@ -3,6 +3,6 @@
   "lexer": "GlslLexer",
   "parser": "GlslParser",
   "example_globs": [
-    "examples/smoke.glsl"
+    "examples-curated/**/*"
   ]
 }

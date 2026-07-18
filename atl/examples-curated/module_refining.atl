@@ -1,0 +1,2 @@
+module RefineSample;
+create OUT : Target refining IN : Source;

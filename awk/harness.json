@@ -3,6 +3,6 @@
   "lexer": "AwkLexer",
   "parser": "AwkParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

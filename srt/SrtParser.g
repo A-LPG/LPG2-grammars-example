@@ -1,5 +1,5 @@
--- SRT Parser (LPG)
--- Ported from antlr/grammars-v4 srt/srt.g4
+-- SRT Parser (LPG) — structural port of grammars-v4 srt/srt.g4
+-- Nonterminals: file_ / subtitles / subtitle / text_lines
 
 %Options la=2
 %Options fp=SrtParser

@@ -1,0 +1,721 @@
+{
+  "need": [
+    {
+      "id": "sexpression",
+      "pri": 100,
+      "g4": 96,
+      "lpg": 37,
+      "ov": 0,
+      "why": [
+        "SOUP"
+      ]
+    },
+    {
+      "id": "unicode/unicode16",
+      "pri": 90,
+      "g4": 3100,
+      "lpg": 56,
+      "ov": 0,
+      "why": [
+        "THIN",
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "logo/ucb-logo",
+      "pri": 90,
+      "g4": 877,
+      "lpg": 68,
+      "ov": 0,
+      "why": [
+        "THIN",
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "c",
+      "pri": 85,
+      "g4": 1694,
+      "lpg": 793,
+      "ov": 0,
+      "why": [
+        "LOW_OV",
+        "WEAK_EX"
+      ]
+    },
+    {
+      "id": "javascript/ecmascript",
+      "pri": 65,
+      "g4": 9481,
+      "lpg": 393,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "swift/swift3",
+      "pri": 65,
+      "g4": 2392,
+      "lpg": 315,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "swift/swift5",
+      "pri": 65,
+      "g4": 2219,
+      "lpg": 315,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "swift/swift2",
+      "pri": 65,
+      "g4": 2027,
+      "lpg": 315,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "scala/scala2",
+      "pri": 65,
+      "g4": 1383,
+      "lpg": 789,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "python/python",
+      "pri": 65,
+      "g4": 1155,
+      "lpg": 582,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "javascript/jsx",
+      "pri": 65,
+      "g4": 980,
+      "lpg": 673,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "codeql",
+      "pri": 65,
+      "g4": 883,
+      "lpg": 685,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "javascript/javascript",
+      "pri": 65,
+      "g4": 869,
+      "lpg": 650,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "agc",
+      "pri": 60,
+      "g4": 1154,
+      "lpg": 344,
+      "ov": 0,
+      "why": [
+        "LOW_OV",
+        "WEAK_EX"
+      ]
+    },
+    {
+      "id": "kirikiri-tjs",
+      "pri": 60,
+      "g4": 935,
+      "lpg": 386,
+      "ov": 0,
+      "why": [
+        "LOW_OV",
+        "WEAK_EX"
+      ]
+    },
+    {
+      "id": "lpc",
+      "pri": 60,
+      "g4": 891,
+      "lpg": 308,
+      "ov": 0,
+      "why": [
+        "LOW_OV",
+        "WEAK_EX"
+      ]
+    },
+    {
+      "id": "pcre",
+      "pri": 60,
+      "g4": 844,
+      "lpg": 404,
+      "ov": 0,
+      "why": [
+        "LOW_OV",
+        "WEAK_EX"
+      ]
+    },
+    {
+      "id": "bison",
+      "pri": 50,
+      "g4": 592,
+      "lpg": 196,
+      "ov": 0,
+      "why": [
+        "THIN"
+      ]
+    },
+    {
+      "id": "squirrel",
+      "pri": 50,
+      "g4": 591,
+      "lpg": 26,
+      "ov": 0,
+      "why": [
+        "THIN"
+      ]
+    },
+    {
+      "id": "tinyos_nesc",
+      "pri": 50,
+      "g4": 587,
+      "lpg": 20,
+      "ov": 0,
+      "why": [
+        "THIN"
+      ]
+    },
+    {
+      "id": "graphql",
+      "pri": 50,
+      "g4": 571,
+      "lpg": 62,
+      "ov": 0,
+      "why": [
+        "THIN"
+      ]
+    },
+    {
+      "id": "wren",
+      "pri": 50,
+      "g4": 566,
+      "lpg": 25,
+      "ov": 0,
+      "why": [
+        "THIN"
+      ]
+    },
+    {
+      "id": "spl",
+      "pri": 50,
+      "g4": 553,
+      "lpg": 23,
+      "ov": 0,
+      "why": [
+        "THIN"
+      ]
+    },
+    {
+      "id": "sparql",
+      "pri": 50,
+      "g4": 551,
+      "lpg": 81,
+      "ov": 0,
+      "why": [
+        "THIN"
+      ]
+    },
+    {
+      "id": "iso8601",
+      "pri": 50,
+      "g4": 551,
+      "lpg": 42,
+      "ov": 0,
+      "why": [
+        "THIN"
+      ]
+    },
+    {
+      "id": "smiles",
+      "pri": 50,
+      "g4": 549,
+      "lpg": 44,
+      "ov": 0,
+      "why": [
+        "THIN"
+      ]
+    },
+    {
+      "id": "evm-bytecode",
+      "pri": 50,
+      "g4": 544,
+      "lpg": 185,
+      "ov": 0,
+      "why": [
+        "THIN"
+      ]
+    },
+    {
+      "id": "wavefront",
+      "pri": 50,
+      "g4": 532,
+      "lpg": 72,
+      "ov": 0,
+      "why": [
+        "THIN"
+      ]
+    },
+    {
+      "id": "kquery",
+      "pri": 50,
+      "g4": 526,
+      "lpg": 58,
+      "ov": 0,
+      "why": [
+        "THIN"
+      ]
+    },
+    {
+      "id": "cpp",
+      "pri": 45,
+      "g4": 1477,
+      "lpg": 1185,
+      "ov": 0,
+      "why": [
+        "WEAK_EX"
+      ]
+    },
+    {
+      "id": "antlr/antlr4",
+      "pri": 40,
+      "g4": 329545,
+      "lpg": 356,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "ruleworks",
+      "pri": 40,
+      "g4": 2024,
+      "lpg": 783,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "solidity",
+      "pri": 40,
+      "g4": 1961,
+      "lpg": 781,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "bcpl",
+      "pri": 40,
+      "g4": 1784,
+      "lpg": 559,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "asm/masm",
+      "pri": 40,
+      "g4": 1547,
+      "lpg": 435,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "vaxscan",
+      "pri": 40,
+      "g4": 1544,
+      "lpg": 667,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "apex",
+      "pri": 40,
+      "g4": 1472,
+      "lpg": 742,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "stringtemplate",
+      "pri": 40,
+      "g4": 1421,
+      "lpg": 257,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "idl",
+      "pri": 40,
+      "g4": 1346,
+      "lpg": 694,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "v",
+      "pri": 40,
+      "g4": 1341,
+      "lpg": 378,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "asn/asn_3gpp",
+      "pri": 40,
+      "g4": 1337,
+      "lpg": 746,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "asn/asn",
+      "pri": 40,
+      "g4": 1254,
+      "lpg": 728,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "zig",
+      "pri": 40,
+      "g4": 1207,
+      "lpg": 745,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "smtlibv2",
+      "pri": 40,
+      "g4": 1171,
+      "lpg": 499,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "unreal_angelscript",
+      "pri": 40,
+      "g4": 1121,
+      "lpg": 789,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "glsl",
+      "pri": 40,
+      "g4": 1113,
+      "lpg": 605,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "asm/asm8086",
+      "pri": 40,
+      "g4": 1112,
+      "lpg": 324,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "sdl",
+      "pri": 40,
+      "g4": 1089,
+      "lpg": 407,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "asl",
+      "pri": 40,
+      "g4": 1071,
+      "lpg": 635,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "basic",
+      "pri": 40,
+      "g4": 1042,
+      "lpg": 497,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "z",
+      "pri": 40,
+      "g4": 954,
+      "lpg": 611,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "algol60",
+      "pri": 40,
+      "g4": 929,
+      "lpg": 289,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "kuka",
+      "pri": 40,
+      "g4": 863,
+      "lpg": 443,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "rexx",
+      "pri": 40,
+      "g4": 859,
+      "lpg": 535,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "pascal",
+      "pri": 40,
+      "g4": 830,
+      "lpg": 415,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "tnsnames",
+      "pri": 40,
+      "g4": 828,
+      "lpg": 357,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "xpath/xpath31",
+      "pri": 40,
+      "g4": 813,
+      "lpg": 578,
+      "ov": 0,
+      "why": [
+        "LOW_OV"
+      ]
+    },
+    {
+      "id": "webidl",
+      "pri": 20,
+      "g4": 757,
+      "lpg": 417,
+      "ov": 0,
+      "why": [
+        "WEAK_EX"
+      ]
+    },
+    {
+      "id": "antlr/antlr2",
+      "pri": 20,
+      "g4": 701,
+      "lpg": 344,
+      "ov": 0,
+      "why": [
+        "WEAK_EX"
+      ]
+    },
+    {
+      "id": "less",
+      "pri": 20,
+      "g4": 677,
+      "lpg": 225,
+      "ov": 0,
+      "why": [
+        "WEAK_EX"
+      ]
+    },
+    {
+      "id": "mumps",
+      "pri": 20,
+      "g4": 565,
+      "lpg": 293,
+      "ov": 0,
+      "why": [
+        "WEAK_EX"
+      ]
+    },
+    {
+      "id": "awk",
+      "pri": 20,
+      "g4": 532,
+      "lpg": 319,
+      "ov": 0,
+      "why": [
+        "WEAK_EX"
+      ]
+    }
+  ],
+  "batches": {
+    "FIX_1": [
+      "sexpression",
+      "unicode/unicode16",
+      "logo/ucb-logo",
+      "c",
+      "javascript/ecmascript",
+      "swift/swift3",
+      "swift/swift5",
+      "swift/swift2",
+      "scala/scala2",
+      "python/python"
+    ],
+    "FIX_2": [
+      "javascript/jsx",
+      "codeql",
+      "javascript/javascript",
+      "agc",
+      "kirikiri-tjs",
+      "lpc",
+      "pcre",
+      "bison",
+      "squirrel",
+      "tinyos_nesc"
+    ],
+    "FIX_3": [
+      "graphql",
+      "wren",
+      "spl",
+      "sparql",
+      "iso8601",
+      "smiles",
+      "evm-bytecode",
+      "wavefront",
+      "kquery",
+      "cpp"
+    ],
+    "FIX_4": [
+      "antlr/antlr4",
+      "ruleworks",
+      "solidity",
+      "bcpl",
+      "asm/masm",
+      "vaxscan",
+      "apex",
+      "stringtemplate",
+      "idl",
+      "v"
+    ],
+    "FIX_5": [
+      "asn/asn_3gpp",
+      "asn/asn",
+      "zig",
+      "smtlibv2",
+      "unreal_angelscript",
+      "glsl",
+      "asm/asm8086",
+      "sdl",
+      "asl",
+      "basic"
+    ],
+    "FIX_6": [
+      "z",
+      "algol60",
+      "kuka",
+      "rexx",
+      "pascal",
+      "tnsnames",
+      "xpath/xpath31",
+      "webidl",
+      "antlr/antlr2",
+      "less"
+    ],
+    "FIX_7": [
+      "mumps",
+      "awk",
+      "kotlin/kotlin",
+      "kotlin/kotlin-formal",
+      "csharp/v6",
+      "csharp/v7",
+      "csharp/v8-spec",
+      "scala/scala3",
+      "sql/snowflake",
+      "sql/derby"
+    ],
+    "FIX_8": [
+      "sql/sqlite",
+      "golang"
+    ]
+  }
+}

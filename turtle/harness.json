@@ -3,6 +3,6 @@
   "lexer": "TurtleLexer",
   "parser": "TurtleParser",
   "example_globs": [
-    "examples/**/*.ttl"
+    "examples-curated/**/*"
   ]
 }

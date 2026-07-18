@@ -120,18 +120,21 @@
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
             | REGISTER /. makeToken($_REGISTER); ./
+            -- opcodes before ADDR/BYTE so ADD/AND are not eaten as hex
+            | identifier /. checkForKeyWord(); ./
             | ADDR /. makeToken($_ADDR); ./
             | BYTE /. makeToken($_BYTE); ./
             | DIGIT /. makeToken($_DIGIT); ./
-            | identifier /. checkForKeyWord(); ./
             | white /. skipToken(); ./
 
-    -- V0..VF (hex digit); V0 also via KW when spelled as identifier
+    -- V0..VF (hex digit)
     REGISTER ::= LetterVv HexDigit
 
-    ADDR ::= HexDigit HexDigit HexDigit
-    BYTE ::= HexDigit HexDigit
+    -- Leading digit so AA/ADD are not forced through hex tokens
+    ADDR ::= Digit HexDigit HexDigit
+    BYTE ::= Digit HexDigit
     DIGIT ::= HexDigit
+
 
     identifier ::= Letter
                  | identifier Letter

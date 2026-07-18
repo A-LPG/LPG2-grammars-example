@@ -3,6 +3,6 @@
   "lexer": "AmazonStatesLanguageLexer",
   "parser": "AmazonStatesLanguageParser",
   "example_globs": [
-    "examples/smoke.json"
+    "examples-curated/**/*"
   ]
 }

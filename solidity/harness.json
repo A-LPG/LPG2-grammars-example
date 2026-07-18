@@ -3,6 +3,6 @@
   "lexer": "SolidityLexer",
   "parser": "SolidityParser",
   "example_globs": [
-    "examples/smoke.sol"
+    "examples-curated/**/*"
   ]
 }

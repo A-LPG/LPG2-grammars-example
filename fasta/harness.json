@@ -3,6 +3,6 @@
   "lexer": "FastaLexer",
   "parser": "FastaParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

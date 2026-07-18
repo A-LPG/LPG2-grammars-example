@@ -7,7 +7,10 @@
   "tier": "A",
   "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port",
+    "rfc1035_domain_subdomain_label_from_g4",
+    "lexer_skips_ht_lf_cr_for_curated_multiline"
   ],
-  "parser_bytes": 433
+  "parser_bytes": 433,
+  "parser_lines": 25
 }

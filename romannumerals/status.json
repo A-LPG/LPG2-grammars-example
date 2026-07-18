@@ -6,6 +6,12 @@
   "blockers": [],
   "tier": "A",
   "quality": "language_port",
-  "quality_notes": [],
-  "parser_bytes": 1030
+  "quality_notes": [
+    "real_g4_port",
+    "mirrors_thousands_hundreds_tens_ones",
+    "examples_year_subtractive_large"
+  ],
+  "parser_bytes": 1394,
+  "parser_lines": 68,
+  "start": "expression"
 }

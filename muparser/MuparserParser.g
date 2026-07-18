@@ -31,7 +31,7 @@
                | rel_expr LTEQ add_expr | rel_expr GTEQ add_expr
     add_expr ::= mul_expr | add_expr ADD mul_expr | add_expr SUB mul_expr
     mul_expr ::= unary | mul_expr MUL unary | mul_expr DIV unary
-    unary ::= pow | SUB unary
+    unary ::= pow | SUB unary | NOT unary
     pow ::= ite | ite POW unary
     ite ::= primary | primary QUESTION expr COLON expr
 

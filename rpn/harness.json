@@ -3,6 +3,6 @@
   "lexer": "RpnLexer",
   "parser": "RpnParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

@@ -1,13 +1,18 @@
 {
   "id": "algol60",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
   "blockers": [],
-  "quality": "token_stream_smoke",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "antlr2lpg_structural_port",
+    "real_g4_port",
+    "language_subset"
   ],
-  "parser_bytes": 1158
+  "parser_bytes": 7835,
+  "rule_approx": 89,
+  "start": "empty_",
+  "example_count": 1,
+  "tier": "A",
+  "notes": "real_g4_port"
 }

@@ -1,18 +1,25 @@
--- Morsecode Parser (LPG)
+-- Morsecode Parser (LPG) — structural port of grammars-v4 morsecode/morsecode.g4
+-- Nonterminals mirror g4: morsecode / letter / a..z / one..zero (DOT/DASH table).
+-- Not token-stream soup.
+
 %Options la=2
 %Options fp=MorsecodeParser
 %options package=lpg.grammars.morsecode
 %options template=dtParserTemplateF.gi
 %options import_terminals=MorsecodeLexer.gi
 %options automatic_ast=nested
+
 %Eof
     EOF_TOKEN
 %End
+
 %Start
     morsecode
 %End
+
 %Rules
     morsecode ::= letter letter_tail
+
     letter_tail ::= SPACE letter
                   | letter_tail SPACE letter
 

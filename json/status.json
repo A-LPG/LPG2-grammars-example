@@ -1,11 +1,15 @@
 {
   "id": "json",
   "parse_ok": true,
-  "example_count": 2,
   "status": "ported",
-  "blockers": [],
   "tier": "A",
   "quality": "language_port",
-  "quality_notes": [],
-  "parser_bytes": 811
+  "quality_notes": [
+    "real_g4_port",
+    "mirrors_JSON.g4_json_obj_pair_arr_value",
+    "lexer_STRING_escapes_NUMBER_no_bare_IDENTIFIER_export"
+  ],
+  "blockers": [],
+  "start": "json",
+  "example_count": 5
 }

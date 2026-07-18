@@ -3,6 +3,6 @@
   "lexer": "ArdenLexer",
   "parser": "ArdenParser",
   "example_globs": [
-    "examples/smoke.mlm"
+    "examples/**/*"
   ]
 }

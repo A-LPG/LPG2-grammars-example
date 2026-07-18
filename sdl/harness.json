@@ -3,6 +3,6 @@
   "lexer": "SdlLexer",
   "parser": "SdlParser",
   "example_globs": [
-    "examples/smoke.sdl"
+    "examples-curated/**/*"
   ]
 }

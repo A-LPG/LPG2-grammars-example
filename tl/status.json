@@ -1,13 +1,16 @@
 {
   "id": "tl",
   "parse_ok": true,
-  "example_count": 8,
+  "example_count": 3,
   "status": "ported",
   "blockers": [],
   "tier": "A",
   "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port",
+    "tl_proposition_G_H_or_not_from_g4",
+    "ascii_standins_for_unicode_ops_in_lexer"
   ],
-  "parser_bytes": 624
+  "parser_bytes": 624,
+  "parser_lines": 30
 }

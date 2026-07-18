@@ -1,13 +1,20 @@
 {
   "id": "lpc",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 3,
   "blockers": [],
-  "quality": "token_stream_smoke",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "real_g4_port",
+    "antlr2lpg_structural_port",
+    "empty_argument_and_optional_semi_fixed",
+    "curated_func_return_args_init"
   ],
-  "parser_bytes": 1146
+  "parser_bytes": 8719,
+  "rule_approx": 78,
+  "start": "lpc_program",
+  "example_count": 3,
+  "tier": "A",
+  "parser_lines": 305,
+  "notes": "inherit/functions/class; optional trailing semi fixed"
 }

@@ -1,13 +1,20 @@
 {
   "id": "sql/snowflake",
-  "tier": "D",
-  "parse_ok": true,
-  "status": "ported",
-  "example_count": 1,
-  "blockers": [],
   "quality": "language_subset",
-  "quality_notes": [
-    "curated_subset"
+  "parse_ok": false,
+  "status": "failed",
+  "blockers": [
+    "parse_examples_failed"
   ],
-  "parser_bytes": 2108
+  "quality_notes": [
+    "real_g4_port",
+    "antlr2lpg_structural_port",
+    "language_subset"
+  ],
+  "parser_bytes": 215225,
+  "rule_approx": 2911,
+  "start": "snowflake_file",
+  "parser_lines": 9286,
+  "example_count": 3,
+  "tier": "A"
 }

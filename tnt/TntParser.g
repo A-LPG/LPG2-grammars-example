@@ -1,10 +1,11 @@
--- Tnt Parser (LPG)
+-- TntParser (LPG) from grammars-v4/tnt/tnt.g4
 %Options la=2
 %Options fp=TntParser
 %options package=lpg.grammars.tnt
 %options template=dtParserTemplateF.gi
 %options import_terminals=TntLexer.gi
 %options automatic_ast=nested
+%options conflicts
 %Eof
     EOF_TOKEN
 %End
@@ -12,7 +13,7 @@
     equation
 %End
 %Rules
-    equation ::= expression EQUAL expression
+    equation ::= expression EQ expression
 
     expression ::= atom
                  | expression PLUS expression
@@ -26,7 +27,6 @@
 
     number ::= ZERO
              | successors ZERO
-
     successors ::= SUCCESSOR
                  | successors SUCCESSOR
 
@@ -36,7 +36,6 @@
                | successors var primes
 
     var ::= VAR_A | VAR_B | VAR_C | VAR_D | VAR_E
-
     primes ::= PRIME | primes PRIME
 
     forevery ::= FOREVERY variable COLON

@@ -1,13 +1,19 @@
 {
   "id": "idl",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
   "blockers": [],
-  "quality": "token_stream_smoke",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "antlr2lpg_structural_port",
+    "real_g4_port",
+    "language_subset"
   ],
-  "parser_bytes": 1166
+  "parser_bytes": 19321,
+  "rule_approx": 304,
+  "start": "specification",
+  "example_count": 2,
+  "notes": "real_g4_port",
+  "tier": "A",
+  "parser_lines": 844
 }

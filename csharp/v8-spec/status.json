@@ -1,13 +1,19 @@
 {
   "id": "csharp/v8-spec",
-  "tier": "D",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 4,
   "blockers": [],
-  "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port",
+    "language_subset",
+    "structural_subset_from_g4",
+    "antlr2lpg_structural_port"
   ],
-  "parser_bytes": 3268
+  "parser_bytes": 4010,
+  "rule_approx": 751,
+  "start": "prog",
+  "parser_lines": 103,
+  "example_count": 4,
+  "tier": "A"
 }

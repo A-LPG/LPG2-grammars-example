@@ -3,6 +3,6 @@
   "lexer": "CodeqlLexer",
   "parser": "CodeqlParser",
   "example_globs": [
-    "examples/smoke.ql"
+    "examples-curated/**/*"
   ]
 }

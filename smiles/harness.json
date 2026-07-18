@@ -3,6 +3,6 @@
   "lexer": "SmilesLexer",
   "parser": "SmilesParser",
   "example_globs": [
-    "examples/**/*.txt"
+    "examples-curated/**/*"
   ]
 }

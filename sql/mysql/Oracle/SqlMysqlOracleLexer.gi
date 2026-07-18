@@ -1,0 +1,1102 @@
+-- Real lexer for SqlMysqlOracleParser (not token-stream soup). Keywords via SqlMysqlOracleKWLexer.
+%Options list
+%Options fp=SqlMysqlOracleLexer
+%options single_productions
+%options conflicts
+%options package=lpg.grammars.sql.mysql.Oracle
+%options template=LexerTemplateF.gi
+%options filter=SqlMysqlOracleKWLexer.gi
+
+%Define
+    $kw_lexer_class /.$SqlMysqlOracleKWLexer./
+%End
+
+%Include
+    LexerBasicMapF.gi
+%End
+
+%Export
+    ACCOUNT_SYMBOL
+    ACTION_SYMBOL
+    ACTIVE_SYMBOL
+    ADDDATE_SYMBOL
+    ADD_SYMBOL
+    ADMIN_SYMBOL
+    AFTER_SYMBOL
+    AGAINST_SYMBOL
+    AGGREGATE_SYMBOL
+    ALGORITHM_SYMBOL
+    ALL_SYMBOL
+    ALTER_SYMBOL
+    ALWAYS_SYMBOL
+    AMP
+    AMPEQ
+    ANALYZE_SYMBOL
+    ANDAND
+    AND_SYMBOL
+    ANY_SYMBOL
+    ARRAY_SYMBOL
+    ARROW
+    ARROWSTAR
+    ASCII_SYMBOL
+    ASC_SYMBOL
+    ASSIGN_GTIDS_TO_ANONYMOUS_TRANSACTIONS_SYMBOL
+    ASSIGN_OPERATOR
+    AS_SYMBOL
+    AT
+    ATEQ
+    ATTRIBUTE_SYMBOL
+    AT_AT_SIGN_SYMBOL
+    AT_SIGN_SYMBOL
+    AT_SYMBOL
+    AT_TEXT_SUFFIX
+    AUTHENTICATION_SYMBOL
+    AUTOEXTEND_SIZE_SYMBOL
+    AUTO_INCREMENT_SYMBOL
+    AUTO_SYMBOL
+    AVG_ROW_LENGTH_SYMBOL
+    AVG_SYMBOL
+    BACKSLASH
+    BACKTICK
+    BACKUP_SYMBOL
+    BACK_TICK_QUOTED_ID
+    BANG
+    BEFORE_SYMBOL
+    BEGIN_SYMBOL
+    BERNOULLI_SYMBOL
+    BETWEEN_SYMBOL
+    BIGINT_SYMBOL
+    BINARY_SYMBOL
+    BINLOG_SYMBOL
+    BIN_NUMBER
+    BITCLEAR
+    BITWISE_AND_OPERATOR
+    BITWISE_NOT_OPERATOR
+    BITWISE_OR_OPERATOR
+    BITWISE_XOR_OPERATOR
+    BIT_AND_SYMBOL
+    BIT_OR_SYMBOL
+    BIT_SYMBOL
+    BIT_XOR_SYMBOL
+    BLOB_SYMBOL
+    BLOCK_SYMBOL
+    BOOLEAN_SYMBOL
+    BOOL_SYMBOL
+    BOTH_SYMBOL
+    BTREE_SYMBOL
+    BUCKETS_SYMBOL
+    BULK_SYMBOL
+    BYTE_SYMBOL
+    BY_SYMBOL
+    CACHE_SYMBOL
+    CALL_SYMBOL
+    CARET
+    CARETEQ
+    CASCADED_SYMBOL
+    CASCADE_SYMBOL
+    CASE_SYMBOL
+    CAST_SYMBOL
+    CATALOG_NAME_SYMBOL
+    CHAIN_SYMBOL
+    CHALLENGE_RESPONSE_SYMBOL
+    CHANGED_SYMBOL
+    CHANGE_SYMBOL
+    CHANNEL_SYMBOL
+    CHARSET_SYMBOL
+    CHAR_LITERAL
+    CHAR_SYMBOL
+    CHECKSUM_SYMBOL
+    CHECK_SYMBOL
+    CIPHER_SYMBOL
+    CLASS_ORIGIN_SYMBOL
+    CLIENT_SYMBOL
+    CLONE_SYMBOL
+    CLOSE_CURLY_SYMBOL
+    CLOSE_PAR_SYMBOL
+    CLOSE_SYMBOL
+    COALESCE_SYMBOL
+    CODE_SYMBOL
+    COLLATE_SYMBOL
+    COLLATION_SYMBOL
+    COLON
+    COLONCOLON
+    COLONEQ
+    COLON_SYMBOL
+    COLUMNS_SYMBOL
+    COLUMN_FORMAT_SYMBOL
+    COLUMN_NAME_SYMBOL
+    COLUMN_SYMBOL
+    COMMA
+    COMMA_SYMBOL
+    COMMENT_SYMBOL
+    COMMITTED_SYMBOL
+    COMMIT_SYMBOL
+    COMPACT_SYMBOL
+    COMPLETION_SYMBOL
+    COMPONENT_SYMBOL
+    COMPRESSED_SYMBOL
+    COMPRESSION_SYMBOL
+    CONCAT_PIPES_SYMBOL
+    CONCURRENT_SYMBOL
+    CONDITION_SYMBOL
+    CONNECTION_SYMBOL
+    CONSISTENT_SYMBOL
+    CONSTRAINT_CATALOG_SYMBOL
+    CONSTRAINT_NAME_SYMBOL
+    CONSTRAINT_SCHEMA_SYMBOL
+    CONSTRAINT_SYMBOL
+    CONTAINS_SYMBOL
+    CONTEXT_SYMBOL
+    CONTINUE_SYMBOL
+    CONVERT_SYMBOL
+    COUNT_SYMBOL
+    CPU_SYMBOL
+    CREATE_SYMBOL
+    CROSS_SYMBOL
+    CUBE_SYMBOL
+    CUME_DIST_SYMBOL
+    CURDATE_SYMBOL
+    CURRENT_SYMBOL
+    CURRENT_USER_SYMBOL
+    CURSOR_NAME_SYMBOL
+    CURSOR_SYMBOL
+    CURTIME_SYMBOL
+    DATABASES_SYMBOL
+    DATABASE_SYMBOL
+    DATAFILE_SYMBOL
+    DATA_SYMBOL
+    DATETIME_SYMBOL
+    DATE_ADD_SYMBOL
+    DATE_SUB_SYMBOL
+    DATE_SYMBOL
+    DAY_HOUR_SYMBOL
+    DAY_MICROSECOND_SYMBOL
+    DAY_MINUTE_SYMBOL
+    DAY_SECOND_SYMBOL
+    DAY_SYMBOL
+    DEALLOCATE_SYMBOL
+    DECIMAL_NUMBER
+    DECIMAL_SYMBOL
+    DECLARE_SYMBOL
+    DEFAULT_AUTH_SYMBOL
+    DEFAULT_SYMBOL
+    DEFINER_SYMBOL
+    DEFINITION_SYMBOL
+    DELAYED_SYMBOL
+    DELAY_KEY_WRITE_SYMBOL
+    DELETE_SYMBOL
+    DENSE_RANK_SYMBOL
+    DESCRIBE_SYMBOL
+    DESCRIPTION_SYMBOL
+    DESC_SYMBOL
+    DETERMINISTIC_SYMBOL
+    DIAGNOSTICS_SYMBOL
+    DIRECTORY_SYMBOL
+    DISABLE_SYMBOL
+    DISCARD_SYMBOL
+    DISK_SYMBOL
+    DISTINCT_SYMBOL
+    DIV_OPERATOR
+    DIV_SYMBOL
+    DOLLAR
+    DOLLAR_QUOTED_STRING_TEXT
+    DOT
+    DOTDOT
+    DOTSTAR
+    DOT_SYMBOL
+    DOUBLE_QUOTED_TEXT
+    DOUBLE_SYMBOL
+    DO_SYMBOL
+    DQUOTE
+    DROP_SYMBOL
+    DUAL_SYMBOL
+    DUMPFILE_SYMBOL
+    DUPLICATE_SYMBOL
+    DYNAMIC_SYMBOL
+    EACH_SYMBOL
+    ELLIPSIS
+    ELSEIF_SYMBOL
+    ELSE_SYMBOL
+    EMPTY_SYMBOL
+    ENABLE_SYMBOL
+    ENCLOSED_SYMBOL
+    ENCRYPTION_SYMBOL
+    ENDS_SYMBOL
+    END_SYMBOL
+    ENFORCED_SYMBOL
+    ENGINES_SYMBOL
+    ENGINE_ATTRIBUTE_SYMBOL
+    ENGINE_SYMBOL
+    ENUM_SYMBOL
+    EQ
+    EQEQ
+    EQEQEQ
+    EQUAL_OPERATOR
+    ERRORS_SYMBOL
+    ERROR_SYMBOL
+    ESCAPED_SYMBOL
+    ESCAPE_SYMBOL
+    EVENTS_SYMBOL
+    EVENT_SYMBOL
+    EVERY_SYMBOL
+    EXCEPT_SYMBOL
+    EXCHANGE_SYMBOL
+    EXCLUDE_SYMBOL
+    EXECUTE_SYMBOL
+    EXISTS_SYMBOL
+    EXIT_SYMBOL
+    EXPANSION_SYMBOL
+    EXPIRE_SYMBOL
+    EXPLAIN_SYMBOL
+    EXPORT_SYMBOL
+    EXTENDED_SYMBOL
+    EXTENT_SIZE_SYMBOL
+    EXTRACT_SYMBOL
+    FACTOR_SYMBOL
+    FAILED_LOGIN_ATTEMPTS_SYMBOL
+    FALSE_SYMBOL
+    FAST_SYMBOL
+    FATARROW
+    FAULTS_SYMBOL
+    FETCH_SYMBOL
+    FILE_BLOCK_SIZE_SYMBOL
+    FILE_SYMBOL
+    FILTER_SYMBOL
+    FINISH_SYMBOL
+    FIRST_SYMBOL
+    FIRST_VALUE_SYMBOL
+    FIXED_SYMBOL
+    FLOAT_NUMBER
+    FLOAT_SYMBOL
+    FLUSH_SYMBOL
+    FOLLOWING_SYMBOL
+    FOLLOWS_SYMBOL
+    FORCE_SYMBOL
+    FOREIGN_SYMBOL
+    FORMAT_SYMBOL
+    FOR_SYMBOL
+    FOUND_SYMBOL
+    FROM_SYMBOL
+    FULLTEXT_SYMBOL
+    FULL_SYMBOL
+    FUNCTION_SYMBOL
+    GENERAL_SYMBOL
+    GENERATED_SYMBOL
+    GENERATE_SYMBOL
+    GEOMETRYCOLLECTION_SYMBOL
+    GEOMETRY_SYMBOL
+    GET_FORMAT_SYMBOL
+    GET_MASTER_PUBLIC_KEY_SYMBOL
+    GET_SOURCE_PUBLIC_KEY_SYMBOL
+    GET_SYMBOL
+    GLOBAL_SYMBOL
+    GRANTS_SYMBOL
+    GRANT_SYMBOL
+    GREATER_OR_EQUAL_OPERATOR
+    GREATER_THAN_OPERATOR
+    GROUPING_SYMBOL
+    GROUPS_SYMBOL
+    GROUP_CONCAT_SYMBOL
+    GROUP_REPLICATION_SYMBOL
+    GROUP_SYMBOL
+    GT
+    GTEQ
+    GTIDS_SYMBOL
+    GTID_ONLY_SYMBOL
+    HANDLER_SYMBOL
+    HASH
+    HASH_SYMBOL
+    HAVING_SYMBOL
+    HELP_SYMBOL
+    HEX_NUMBER
+    HIGH_PRIORITY_SYMBOL
+    HISTOGRAM_SYMBOL
+    HISTORY_SYMBOL
+    HOSTS_SYMBOL
+    HOST_SYMBOL
+    HOUR_MICROSECOND_SYMBOL
+    HOUR_MINUTE_SYMBOL
+    HOUR_SECOND_SYMBOL
+    HOUR_SYMBOL
+    IDENTIFIED_SYMBOL
+    IDENTIFIER
+    IF_SYMBOL
+    IGNORE_SERVER_IDS_SYMBOL
+    IGNORE_SYMBOL
+    IMPORT_SYMBOL
+    INACTIVE_SYMBOL
+    INDEXES_SYMBOL
+    INDEX_SYMBOL
+    INFILE_SYMBOL
+    INITIAL_SIZE_SYMBOL
+    INITIAL_SYMBOL
+    INITIATE_SYMBOL
+    INNER_SYMBOL
+    INOUT_SYMBOL
+    INSERT_METHOD_SYMBOL
+    INSERT_SYMBOL
+    INSTALL_SYMBOL
+    INSTANCE_SYMBOL
+    INTERSECT_SYMBOL
+    INTERVAL_SYMBOL
+    INTO_SYMBOL
+    INT_NUMBER
+    INT_SYMBOL
+    INVISIBLE_SYMBOL
+    INVOKER_SYMBOL
+    IN_SYMBOL
+    IO_SYMBOL
+    IPC_SYMBOL
+    ISOLATION_SYMBOL
+    ISSUER_SYMBOL
+    IS_SYMBOL
+    ITERATE_SYMBOL
+    JOIN_SYMBOL
+    JSON_ARRAYAGG_SYMBOL
+    JSON_OBJECTAGG_SYMBOL
+    JSON_SEPARATOR_SYMBOL
+    JSON_SYMBOL
+    JSON_TABLE_SYMBOL
+    JSON_UNQUOTED_SEPARATOR_SYMBOL
+    JSON_VALUE_SYMBOL
+    KEYRING_SYMBOL
+    KEYS_SYMBOL
+    KEY_BLOCK_SIZE_SYMBOL
+    KEY_SYMBOL
+    KILL_SYMBOL
+    LAG_SYMBOL
+    LANGUAGE_SYMBOL
+    LAST_SYMBOL
+    LAST_VALUE_SYMBOL
+    LATERAL_SYMBOL
+    LBRACE
+    LBRACKET
+    LEADING_SYMBOL
+    LEAD_SYMBOL
+    LEAVES_SYMBOL
+    LEAVE_SYMBOL
+    LEFT_SYMBOL
+    LESS_OR_EQUAL_OPERATOR
+    LESS_SYMBOL
+    LESS_THAN_OPERATOR
+    LEVEL_SYMBOL
+    LIKE_SYMBOL
+    LIMIT_SYMBOL
+    LINEAR_SYMBOL
+    LINESTRING_SYMBOL
+    LINES_SYMBOL
+    LIST_SYMBOL
+    LOAD_SYMBOL
+    LOCAL_SYMBOL
+    LOCKED_SYMBOL
+    LOCKS_SYMBOL
+    LOCK_SYMBOL
+    LOGFILE_SYMBOL
+    LOGICAL_AND_OPERATOR
+    LOGICAL_NOT_OPERATOR
+    LOGICAL_OR_OPERATOR
+    LOGS_SYMBOL
+    LOG_SYMBOL
+    LONGBLOB_SYMBOL
+    LONGTEXT_SYMBOL
+    LONG_NUMBER
+    LONG_SYMBOL
+    LOOP_SYMBOL
+    LOW_PRIORITY_SYMBOL
+    LPAREN
+    LSHIFT
+    LSHIFTEQ
+    LT
+    LTEQ
+    LTGT
+    MANUAL_SYMBOL
+    MASTER_AUTO_POSITION_SYMBOL
+    MASTER_BIND_SYMBOL
+    MASTER_COMPRESSION_ALGORITHM_SYMBOL
+    MASTER_CONNECT_RETRY_SYMBOL
+    MASTER_DELAY_SYMBOL
+    MASTER_HEARTBEAT_PERIOD_SYMBOL
+    MASTER_HOST_SYMBOL
+    MASTER_LOG_FILE_SYMBOL
+    MASTER_LOG_POS_SYMBOL
+    MASTER_PASSWORD_SYMBOL
+    MASTER_PORT_SYMBOL
+    MASTER_PUBLIC_KEY_PATH_SYMBOL
+    MASTER_RETRY_COUNT_SYMBOL
+    MASTER_SSL_CAPATH_SYMBOL
+    MASTER_SSL_CA_SYMBOL
+    MASTER_SSL_CERT_SYMBOL
+    MASTER_SSL_CIPHER_SYMBOL
+    MASTER_SSL_CRLPATH_SYMBOL
+    MASTER_SSL_CRL_SYMBOL
+    MASTER_SSL_KEY_SYMBOL
+    MASTER_SSL_SYMBOL
+    MASTER_SSL_VERIFY_SERVER_CERT_SYMBOL
+    MASTER_SYMBOL
+    MASTER_TLS_CIPHERSUITES_SYMBOL
+    MASTER_TLS_VERSION_SYMBOL
+    MASTER_USER_SYMBOL
+    MASTER_ZSTD_COMPRESSION_LEVEL_SYMBOL
+    MATCH_SYMBOL
+    MAXVALUE_SYMBOL
+    MAX_CONNECTIONS_PER_HOUR_SYMBOL
+    MAX_QUERIES_PER_HOUR_SYMBOL
+    MAX_ROWS_SYMBOL
+    MAX_SIZE_SYMBOL
+    MAX_SYMBOL
+    MAX_UPDATES_PER_HOUR_SYMBOL
+    MAX_USER_CONNECTIONS_SYMBOL
+    MEDIUMBLOB_SYMBOL
+    MEDIUMINT_SYMBOL
+    MEDIUMTEXT_SYMBOL
+    MEDIUM_SYMBOL
+    MEMBER_SYMBOL
+    MEMORY_SYMBOL
+    MERGE_SYMBOL
+    MESSAGE_TEXT_SYMBOL
+    MICROSECOND_SYMBOL
+    MIGRATE_SYMBOL
+    MINUS
+    MINUSEQ
+    MINUSMINUS
+    MINUS_OPERATOR
+    MINUTE_MICROSECOND_SYMBOL
+    MINUTE_SECOND_SYMBOL
+    MINUTE_SYMBOL
+    MIN_ROWS_SYMBOL
+    MIN_SYMBOL
+    MODE_SYMBOL
+    MODIFIES_SYMBOL
+    MODIFY_SYMBOL
+    MOD_OPERATOR
+    MOD_SYMBOL
+    MONTH_SYMBOL
+    MULTILINESTRING_SYMBOL
+    MULTIPOINT_SYMBOL
+    MULTIPOLYGON_SYMBOL
+    MULT_OPERATOR
+    MUTEX_SYMBOL
+    MYSQL_ERRNO_SYMBOL
+    NAMES_SYMBOL
+    NAME_SYMBOL
+    NATIONAL_SYMBOL
+    NATURAL_SYMBOL
+    NCHAR_SYMBOL
+    NCHAR_TEXT
+    NDBCLUSTER_SYMBOL
+    NESTED_SYMBOL
+    NETWORK_NAMESPACE_SYMBOL
+    NEVER_SYMBOL
+    NEW_SYMBOL
+    NEXT_SYMBOL
+    NODEGROUP_SYMBOL
+    NONE_SYMBOL
+    NOT2_SYMBOL
+    NOTEQ
+    NOTEQEQ
+    NOT_EQUAL_OPERATOR
+    NOT_SYMBOL
+    NOWAIT_SYMBOL
+    NOW_SYMBOL
+    NO_SYMBOL
+    NO_WAIT_SYMBOL
+    NO_WRITE_TO_BINLOG_SYMBOL
+    NTH_VALUE_SYMBOL
+    NTILE_SYMBOL
+    NULL2_SYMBOL
+    NULLS_SYMBOL
+    NULL_SAFE_EQUAL_OPERATOR
+    NULL_SYMBOL
+    NUMBER
+    NUMBER_SYMBOL
+    NUMERIC_SYMBOL
+    NVARCHAR_SYMBOL
+    OFFLINE_SYMBOL
+    OFFSET_SYMBOL
+    OFF_SYMBOL
+    OF_SYMBOL
+    OJ_SYMBOL
+    OLD_SYMBOL
+    ONE_SYMBOL
+    ONLINE_SYMBOL
+    ONLY_SYMBOL
+    ON_SYMBOL
+    OPEN_CURLY_SYMBOL
+    OPEN_PAR_SYMBOL
+    OPEN_SYMBOL
+    OPTIMIZER_COSTS_SYMBOL
+    OPTIMIZE_SYMBOL
+    OPTIONALLY_SYMBOL
+    OPTIONAL_SYMBOL
+    OPTIONS_SYMBOL
+    OPTION_SYMBOL
+    ORDER_SYMBOL
+    ORDINALITY_SYMBOL
+    ORGANIZATION_SYMBOL
+    OROR
+    OR_SYMBOL
+    OTHERS_SYMBOL
+    OUTER_SYMBOL
+    OUTFILE_SYMBOL
+    OUT_SYMBOL
+    OVER_SYMBOL
+    OWNER_SYMBOL
+    PACK_KEYS_SYMBOL
+    PAGE_SYMBOL
+    PARALLEL_SYMBOL
+    PARAM_MARKER
+    PARSER_SYMBOL
+    PARSE_TREE_SYMBOL
+    PARTIAL_SYMBOL
+    PARTITIONING_SYMBOL
+    PARTITIONS_SYMBOL
+    PARTITION_SYMBOL
+    PASSWORD_LOCK_TIME_SYMBOL
+    PASSWORD_SYMBOL
+    PATH_SYMBOL
+    PERCENT
+    PERCENTEQ
+    PERCENT_RANK_SYMBOL
+    PERSIST_ONLY_SYMBOL
+    PERSIST_SYMBOL
+    PHASE_SYMBOL
+    PIPE
+    PIPEEQ
+    PLUGINS_SYMBOL
+    PLUGIN_DIR_SYMBOL
+    PLUGIN_SYMBOL
+    PLUS
+    PLUSEQ
+    PLUSPLUS
+    PLUS_OPERATOR
+    POINT_SYMBOL
+    POLYGON_SYMBOL
+    PORT_SYMBOL
+    POSITION_SYMBOL
+    PRECEDES_SYMBOL
+    PRECEDING_SYMBOL
+    PRECISION_SYMBOL
+    PREPARE_SYMBOL
+    PRESERVE_SYMBOL
+    PREV_SYMBOL
+    PRIMARY_SYMBOL
+    PRIVILEGES_SYMBOL
+    PRIVILEGE_CHECKS_USER_SYMBOL
+    PROCEDURE_SYMBOL
+    PROCESSLIST_SYMBOL
+    PROCESS_SYMBOL
+    PROFILES_SYMBOL
+    PROFILE_SYMBOL
+    PROXY_SYMBOL
+    PURGE_SYMBOL
+    QUALIFY_SYMBOL
+    QUARTER_SYMBOL
+    QUERY_SYMBOL
+    QUESTDOT
+    QUESTION
+    QUESTQUEST
+    QUESTQUESTEQ
+    QUICK_SYMBOL
+    RANDOM_SYMBOL
+    RANGE_SYMBOL
+    RANK_SYMBOL
+    RBRACE
+    RBRACKET
+    READS_SYMBOL
+    READ_ONLY_SYMBOL
+    READ_SYMBOL
+    REAL_SYMBOL
+    REBUILD_SYMBOL
+    RECEIVE
+    RECOVER_SYMBOL
+    RECURSIVE_SYMBOL
+    REDO_BUFFER_SIZE_SYMBOL
+    REDUNDANT_SYMBOL
+    REFERENCES_SYMBOL
+    REFERENCE_SYMBOL
+    REGEXP_SYMBOL
+    REGISTRATION_SYMBOL
+    RELAYLOG_SYMBOL
+    RELAY_LOG_FILE_SYMBOL
+    RELAY_LOG_POS_SYMBOL
+    RELAY_SYMBOL
+    RELAY_THREAD_SYMBOL
+    RELEASE_SYMBOL
+    RELOAD_SYMBOL
+    REMOTE_SYMBOL
+    REMOVE_SYMBOL
+    RENAME_SYMBOL
+    REORGANIZE_SYMBOL
+    REPAIR_SYMBOL
+    REPEATABLE_SYMBOL
+    REPEAT_SYMBOL
+    REPLACE_SYMBOL
+    REPLICAS_SYMBOL
+    REPLICATE_DO_DB_SYMBOL
+    REPLICATE_DO_TABLE_SYMBOL
+    REPLICATE_IGNORE_DB_SYMBOL
+    REPLICATE_IGNORE_TABLE_SYMBOL
+    REPLICATE_REWRITE_DB_SYMBOL
+    REPLICATE_WILD_DO_TABLE_SYMBOL
+    REPLICATE_WILD_IGNORE_TABLE_SYMBOL
+    REPLICATION_SYMBOL
+    REPLICA_SYMBOL
+    REQUIRE_ROW_FORMAT_SYMBOL
+    REQUIRE_SYMBOL
+    REQUIRE_TABLE_PRIMARY_KEY_CHECK_SYMBOL
+    RESET_SYMBOL
+    RESIGNAL_SYMBOL
+    RESOURCE_SYMBOL
+    RESPECT_SYMBOL
+    RESTART_SYMBOL
+    RESTORE_SYMBOL
+    RESTRICT_SYMBOL
+    RESUME_SYMBOL
+    RETAIN_SYMBOL
+    RETURNED_SQLSTATE_SYMBOL
+    RETURNING_SYMBOL
+    RETURNS_SYMBOL
+    RETURN_SYMBOL
+    REUSE_SYMBOL
+    REVERSE_SYMBOL
+    REVOKE_SYMBOL
+    RIGHT_SYMBOL
+    ROLE_SYMBOL
+    ROLLBACK_SYMBOL
+    ROLLUP_SYMBOL
+    ROTATE_SYMBOL
+    ROUTINE_SYMBOL
+    ROWS_SYMBOL
+    ROW_COUNT_SYMBOL
+    ROW_FORMAT_SYMBOL
+    ROW_NUMBER_SYMBOL
+    ROW_SYMBOL
+    RPAREN
+    RSHIFT
+    RSHIFTEQ
+    RTREE_SYMBOL
+    S3_SYMBOL
+    SAVEPOINT_SYMBOL
+    SCHEDULE_SYMBOL
+    SCHEMA_NAME_SYMBOL
+    SECONDARY_ENGINE_ATTRIBUTE_SYMBOL
+    SECONDARY_ENGINE_SYMBOL
+    SECONDARY_LOAD_SYMBOL
+    SECONDARY_SYMBOL
+    SECONDARY_UNLOAD_SYMBOL
+    SECOND_MICROSECOND_SYMBOL
+    SECOND_SYMBOL
+    SECURITY_SYMBOL
+    SELECT_SYMBOL
+    SEMI
+    SEMICOLON_SYMBOL
+    SEPARATOR_SYMBOL
+    SERIALIZABLE_SYMBOL
+    SERIAL_SYMBOL
+    SERVER_SYMBOL
+    SESSION_SYMBOL
+    SET_SYMBOL
+    SHARE_SYMBOL
+    SHIFT_LEFT_OPERATOR
+    SHIFT_RIGHT_OPERATOR
+    SHOW_SYMBOL
+    SHUTDOWN_SYMBOL
+    SIGNAL_SYMBOL
+    SIGNED_SYMBOL
+    SIMPLE_SYMBOL
+    SINGLE_QUOTED_TEXT
+    SKIP_SYMBOL
+    SLASH
+    SLASHEQ
+    SLASHSLASH
+    SLASHSLASHEQ
+    SLAVE_SYMBOL
+    SLOW_SYMBOL
+    SMALLINT_SYMBOL
+    SNAPSHOT_SYMBOL
+    SOCKET_SYMBOL
+    SONAME_SYMBOL
+    SOUNDS_SYMBOL
+    SOURCE_AUTO_POSITION_SYMBOL
+    SOURCE_BIND_SYMBOL
+    SOURCE_COMPRESSION_ALGORITHM_SYMBOL
+    SOURCE_CONNECTION_AUTO_FAILOVER_SYMBOL
+    SOURCE_CONNECT_RETRY_SYMBOL
+    SOURCE_DELAY_SYMBOL
+    SOURCE_HEARTBEAT_PERIOD_SYMBOL
+    SOURCE_HOST_SYMBOL
+    SOURCE_LOG_FILE_SYMBOL
+    SOURCE_LOG_POS_SYMBOL
+    SOURCE_PASSWORD_SYMBOL
+    SOURCE_PORT_SYMBOL
+    SOURCE_PUBLIC_KEY_PATH_SYMBOL
+    SOURCE_RETRY_COUNT_SYMBOL
+    SOURCE_SSL_CAPATH_SYMBOL
+    SOURCE_SSL_CA_SYMBOL
+    SOURCE_SSL_CERT_SYMBOL
+    SOURCE_SSL_CIPHER_SYMBOL
+    SOURCE_SSL_CRLPATH_SYMBOL
+    SOURCE_SSL_CRL_SYMBOL
+    SOURCE_SSL_KEY_SYMBOL
+    SOURCE_SSL_SYMBOL
+    SOURCE_SSL_VERIFY_SERVER_CERT_SYMBOL
+    SOURCE_SYMBOL
+    SOURCE_TLS_CIPHERSUITES_SYMBOL
+    SOURCE_TLS_VERSION_SYMBOL
+    SOURCE_USER_SYMBOL
+    SOURCE_ZSTD_COMPRESSION_LEVEL_SYMBOL
+    SPATIAL_SYMBOL
+    SQLEXCEPTION_SYMBOL
+    SQLSTATE_SYMBOL
+    SQLWARNING_SYMBOL
+    SQL_AFTER_GTIDS_SYMBOL
+    SQL_AFTER_MTS_GAPS_SYMBOL
+    SQL_BEFORE_GTIDS_SYMBOL
+    SQL_BIG_RESULT_SYMBOL
+    SQL_BUFFER_RESULT_SYMBOL
+    SQL_CALC_FOUND_ROWS_SYMBOL
+    SQL_NO_CACHE_SYMBOL
+    SQL_SMALL_RESULT_SYMBOL
+    SQL_SYMBOL
+    SQL_THREAD_SYMBOL
+    SQUOTE
+    SRID_SYMBOL
+    SSL_SYMBOL
+    STACKED_SYMBOL
+    STAR
+    STAREQ
+    STARSTAR
+    STARSTAREQ
+    STARTING_SYMBOL
+    STARTS_SYMBOL
+    START_SYMBOL
+    STATS_AUTO_RECALC_SYMBOL
+    STATS_PERSISTENT_SYMBOL
+    STATS_SAMPLE_PAGES_SYMBOL
+    STATUS_SYMBOL
+    STDDEV_SAMP_SYMBOL
+    STD_SYMBOL
+    STOP_SYMBOL
+    STORAGE_SYMBOL
+    STORED_SYMBOL
+    STRAIGHT_JOIN_SYMBOL
+    STREAM_SYMBOL
+    STRING
+    STRING_SYMBOL
+    ST_COLLECT_SYMBOL
+    SUBCLASS_ORIGIN_SYMBOL
+    SUBDATE_SYMBOL
+    SUBJECT_SYMBOL
+    SUBPARTITIONS_SYMBOL
+    SUBPARTITION_SYMBOL
+    SUBSTRING_SYMBOL
+    SUM_SYMBOL
+    SUPER_SYMBOL
+    SUSPEND_SYMBOL
+    SWAPS_SYMBOL
+    SWITCHES_SYMBOL
+    SYSDATE_SYMBOL
+    SYSTEM_SYMBOL
+    TABLESAMPLE_SYMBOL
+    TABLESPACE_SYMBOL
+    TABLES_SYMBOL
+    TABLE_CHECKSUM_SYMBOL
+    TABLE_NAME_SYMBOL
+    TABLE_SYMBOL
+    TEMPORARY_SYMBOL
+    TEMPTABLE_SYMBOL
+    TERMINATED_SYMBOL
+    TEXT_SYMBOL
+    THAN_SYMBOL
+    THEN_SYMBOL
+    THREAD_PRIORITY_SYMBOL
+    TIES_SYMBOL
+    TILDE
+    TIMESTAMPADD_SYMBOL
+    TIMESTAMPDIFF_SYMBOL
+    TIMESTAMP_SYMBOL
+    TIME_SYMBOL
+    TINYBLOB_SYMBOL
+    TINYINT_SYMBOL
+    TINYTEXT_SYMBOL
+    TLS_SYMBOL
+    TO_SYMBOL
+    TRAILING_SYMBOL
+    TRANSACTION_SYMBOL
+    TRIGGERS_SYMBOL
+    TRIGGER_SYMBOL
+    TRIM_SYMBOL
+    TRUE_SYMBOL
+    TRUNCATE_SYMBOL
+    TYPES_SYMBOL
+    TYPE_SYMBOL
+    UDF_RETURNS_SYMBOL
+    ULONGLONG_NUMBER
+    UNBOUNDED_SYMBOL
+    UNCOMMITTED_SYMBOL
+    UNDEFINED_SYMBOL
+    UNDERSCORE
+    UNDERSCORE_CHARSET
+    UNDOFILE_SYMBOL
+    UNDO_BUFFER_SIZE_SYMBOL
+    UNDO_SYMBOL
+    UNICODE_SYMBOL
+    UNINSTALL_SYMBOL
+    UNION_SYMBOL
+    UNIQUE_SYMBOL
+    UNKNOWN_SYMBOL
+    UNLOCK_SYMBOL
+    UNREGISTER_SYMBOL
+    UNSIGNED_SYMBOL
+    UNTIL_SYMBOL
+    UPDATE_SYMBOL
+    UPGRADE_SYMBOL
+    URL_SYMBOL
+    URSHIFT
+    URSHIFTEQ
+    USAGE_SYMBOL
+    USER_RESOURCES_SYMBOL
+    USER_SYMBOL
+    USE_FRM_SYMBOL
+    USE_SYMBOL
+    USING_SYMBOL
+    UTC_DATE_SYMBOL
+    UTC_TIMESTAMP_SYMBOL
+    UTC_TIME_SYMBOL
+    VALIDATION_SYMBOL
+    VALUES_SYMBOL
+    VALUE_SYMBOL
+    VARBINARY_SYMBOL
+    VARCHAR_SYMBOL
+    VARIABLES_SYMBOL
+    VARIANCE_SYMBOL
+    VARYING_SYMBOL
+    VAR_SAMP_SYMBOL
+    VCPU_SYMBOL
+    VIEW_SYMBOL
+    VIRTUAL_SYMBOL
+    VISIBLE_SYMBOL
+    WAIT_SYMBOL
+    WARNINGS_SYMBOL
+    WEEK_SYMBOL
+    WEIGHT_STRING_SYMBOL
+    WHEN_SYMBOL
+    WHERE_SYMBOL
+    WHILE_SYMBOL
+    WINDOW_SYMBOL
+    WITHOUT_SYMBOL
+    WITH_SYMBOL
+    WORK_SYMBOL
+    WRAPPER_SYMBOL
+    WRITE_SYMBOL
+    X509_SYMBOL
+    XA_SYMBOL
+    XID_SYMBOL
+    XML_SYMBOL
+    XOR_SYMBOL
+    YEAR_MONTH_SYMBOL
+    YEAR_SYMBOL
+    YIELDSTAR
+    ZEROFILL_SYMBOL
+    ZONE_SYMBOL
+%End
+
+%Terminals
+    CtlCharNotWS
+
+    LF   CR   HT   FF
+
+    a    b    c    d    e    f    g    h    i    j    k    l    m
+    n    o    p    q    r    s    t    u    v    w    x    y    z
+    _
+
+    A    B    C    D    E    F    G    H    I    J    K    L    M
+    N    O    P    Q    R    S    T    U    V    W    X    Y    Z
+
+    0    1    2    3    4    5    6    7    8    9
+
+    AfterASCII   ::= '\u0080..\ufffe'
+    Space        ::= ' '
+    LF           ::= NewLine
+    CR           ::= Return
+    HT           ::= HorizontalTab
+    FF           ::= FormFeed
+    DoubleQuote  ::= '"'
+    SingleQuote  ::= "'"
+    Percent      ::= '%'
+    VerticalBar  ::= '|'
+    Exclamation  ::= '!'
+    AtSign       ::= '@'
+    BackQuote    ::= '`'
+    Tilde        ::= '~'
+    Sharp        ::= '#'
+    DollarSign   ::= '$'
+    Ampersand    ::= '&'
+    Caret        ::= '^'
+    Colon        ::= ':'
+    SemiColon    ::= ';'
+    BackSlash    ::= '\'
+    LeftBrace    ::= '{'
+    RightBrace   ::= '}'
+    LeftBracket  ::= '['
+    RightBracket ::= ']'
+    QuestionMark ::= '?'
+    Comma        ::= ','
+    Dot          ::= '.'
+    LessThan     ::= '<'
+    GreaterThan  ::= '>'
+    Plus         ::= '+'
+    Minus        ::= '-'
+    Slash        ::= '/'
+    Star         ::= '*'
+    Equal        ::= '='
+    LeftParen    ::= '('
+    RightParen   ::= ')'
+%End
+
+%Start
+    Token
+%End
+
+%Rules
+    Token ::= identifier /. checkForKeyWord(); ./
+            | number     /. makeToken($_INT_NUMBER); ./
+            | string     /. makeToken($_SINGLE_QUOTED_TEXT); ./
+            | LineComment /. skipToken(); ./
+            | white /. skipToken(); ./
+            | 'y' 'i' 'e' 'l' 'd' '*' /. makeToken($_YIELDSTAR); ./
+            | '>' '>' '>' '=' /. makeToken($_URSHIFTEQ); ./
+            | '!' '=' '=' /. makeToken($_NOTEQEQ); ./
+            | '*' '*' '=' /. makeToken($_STARSTAREQ); ./
+            | '-' '>' '*' /. makeToken($_ARROWSTAR); ./
+            | '.' '.' '.' /. makeToken($_ELLIPSIS); ./
+            | '/' '/' '=' /. makeToken($_SLASHSLASHEQ); ./
+            | '<' '<' '=' /. makeToken($_LSHIFTEQ); ./
+            | '=' '=' '=' /. makeToken($_EQEQEQ); ./
+            | '>' '>' '=' /. makeToken($_RSHIFTEQ); ./
+            | '>' '>' '>' /. makeToken($_URSHIFT); ./
+            | '?' '?' '=' /. makeToken($_QUESTQUESTEQ); ./
+            | '!' '=' /. makeToken($_NOTEQ); ./
+            | '%' '=' /. makeToken($_PERCENTEQ); ./
+            | '&' '&' /. makeToken($_ANDAND); ./
+            | '&' '=' /. makeToken($_AMPEQ); ./
+            | '&' '^' /. makeToken($_BITCLEAR); ./
+            | '*' '*' /. makeToken($_STARSTAR); ./
+            | '*' '=' /. makeToken($_STAREQ); ./
+            | '+' '+' /. makeToken($_PLUSPLUS); ./
+            | '+' '=' /. makeToken($_PLUSEQ); ./
+            | '-' '-' /. makeToken($_MINUSMINUS); ./
+            | '-' '=' /. makeToken($_MINUSEQ); ./
+            | '-' '>' /. makeToken($_ARROW); ./
+            | '.' '*' /. makeToken($_DOTSTAR); ./
+            | '.' '.' /. makeToken($_DOTDOT); ./
+            | '/' '/' /. makeToken($_SLASHSLASH); ./
+            | '/' '=' /. makeToken($_SLASHEQ); ./
+            | ':' ':' /. makeToken($_COLONCOLON); ./
+            | ':' '=' /. makeToken($_COLONEQ); ./
+            | '<' '-' /. makeToken($_RECEIVE); ./
+            | '<' '<' /. makeToken($_LSHIFT); ./
+            | '<' '=' /. makeToken($_LTEQ); ./
+            | '<' '>' /. makeToken($_LTGT); ./
+            | '=' '=' /. makeToken($_EQEQ); ./
+            | '=' '>' /. makeToken($_FATARROW); ./
+            | '>' '=' /. makeToken($_GTEQ); ./
+            | '>' '>' /. makeToken($_RSHIFT); ./
+            | '?' '.' /. makeToken($_QUESTDOT); ./
+            | '?' '?' /. makeToken($_QUESTQUEST); ./
+            | '@' '=' /. makeToken($_ATEQ); ./
+            | '^' '=' /. makeToken($_CARETEQ); ./
+            | '|' '=' /. makeToken($_PIPEEQ); ./
+            | '|' '|' /. makeToken($_OROR); ./
+            | '!' /. makeToken($_LOGICAL_NOT_OPERATOR); ./
+            | '"' /. makeToken($_DQUOTE); ./
+            | '#' /. makeToken($_HASH); ./
+            | '%' /. makeToken($_MOD_OPERATOR); ./
+            | '&' /. makeToken($_BITWISE_AND_OPERATOR); ./
+            | '(' /. makeToken($_OPEN_PAR_SYMBOL); ./
+            | ')' /. makeToken($_CLOSE_PAR_SYMBOL); ./
+            | '*' /. makeToken($_MULT_OPERATOR); ./
+            | '+' /. makeToken($_PLUS_OPERATOR); ./
+            | ',' /. makeToken($_COMMA_SYMBOL); ./
+            | '-' /. makeToken($_MINUS_OPERATOR); ./
+            | '.' /. makeToken($_DOT_SYMBOL); ./
+            | '/' /. makeToken($_DIV_OPERATOR); ./
+            | ':' /. makeToken($_COLON); ./
+            | ';' /. makeToken($_SEMICOLON_SYMBOL); ./
+            | '<' /. makeToken($_LESS_THAN_OPERATOR); ./
+            | '=' /. makeToken($_EQUAL_OPERATOR); ./
+            | '>' /. makeToken($_GREATER_THAN_OPERATOR); ./
+            | '?' /. makeToken($_QUESTION); ./
+            | '@' /. makeToken($_AT_SIGN_SYMBOL); ./
+            | '[' /. makeToken($_LBRACKET); ./
+            | '\' /. makeToken($_BACKSLASH); ./
+            | ']' /. makeToken($_RBRACKET); ./
+            | '^' /. makeToken($_BITWISE_XOR_OPERATOR); ./
+            | '`' /. makeToken($_BACKTICK); ./
+            | '{' /. makeToken($_LBRACE); ./
+            | '|' /. makeToken($_BITWISE_OR_OPERATOR); ./
+            | '}' /. makeToken($_RBRACE); ./
+            | '~' /. makeToken($_BITWISE_NOT_OPERATOR); ./
+
+    identifier -> Letter
+                | identifier Letter
+                | identifier Digit
+
+    Letter -> LowerCaseLetter
+            | UpperCaseLetter
+            | _
+            | AfterASCII
+            | DollarSign
+
+    LowerCaseLetter -> a | b | c | d | e | f | g | h | i | j | k | l | m |
+                       n | o | p | q | r | s | t | u | v | w | x | y | z
+
+    UpperCaseLetter -> A | B | C | D | E | F | G | H | I | J | K | L | M |
+                       N | O | P | Q | R | S | T | U | V | W | X | Y | Z
+
+    Digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+
+    number ::= Digit
+             | number Digit
+             | number '_' Digit
+             | number '.' Digit
+             | number '.' Digits
+             | '.' Digits
+
+    Digits ::= Digit
+             | Digits Digit
+
+    string ::= '"' SLBody '"'
+             | SingleQuote SLBodySQ SingleQuote
+
+    SLBody -> $empty
+            | SLBody NotDQ
+
+    SLBodySQ -> $empty
+              | SLBodySQ NotSQ
+
+    NotDQ -> Letter | Digit | Space | HT | SingleQuote | ',' | '.' | ':' | ';' | '+' | '-' |
+             '*' | '/' | '=' | '_' | '!' | '?' | '@' | '#' | '$' | '%' | '&' | '|' |
+             '^' | '~' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' | Escape
+
+    NotSQ -> Letter | Digit | Space | HT | DoubleQuote | ',' | '.' | ':' | ';' | '+' | '-' |
+             '*' | '/' | '=' | '_' | '!' | '?' | '@' | '#' | '$' | '%' | '&' | '|' |
+             '^' | '~' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' | Escape
+
+    Escape ::= BackSlash EscapeChar
+    EscapeChar -> DoubleQuote | SingleQuote | BackSlash | '/' | n | r | t | b | f
+
+    charlit ::= SingleQuote NotSQ SingleQuote
+
+    LineComment ::= '/' '/' LineCommentBody
+    LineCommentBody -> $empty
+                     | LineCommentBody NotNL
+    NotNL -> Letter | Digit | Space | HT | SpecialNotNL
+    SpecialNotNL -> '+' | '-' | '/' | '*' | '(' | ')' | '!' | '@' | '~' |
+                    '%' | '&' | '^' | ':' | ';' | DoubleQuote | SingleQuote | '|' | '{' | '}' |
+                    '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_' | BackSlash
+
+    white -> WSChar
+           | white WSChar
+    WSChar -> Space | LF | CR | HT | FF
+%End

@@ -1,0 +1,5 @@
+interface HTMLLinkElement : HTMLElement {
+    attribute boolean disabled;
+    attribute DOMString href;
+    attribute DOMString rel;
+};

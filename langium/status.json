@@ -1,13 +1,13 @@
 {
   "id": "langium",
-  "tier": "B",
-  "parse_ok": true,
-  "status": "ported",
-  "example_count": 1,
+  "quality": "language_subset",
+  "parse_ok": false,
+  "status": "regenerated_from_g4",
   "blockers": [],
-  "quality": "token_stream_smoke",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "antlr2lpg_structural_port"
   ],
-  "parser_bytes": 1154
+  "parser_bytes": 8505,
+  "rule_approx": 180,
+  "start": "file_"
 }

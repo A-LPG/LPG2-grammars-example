@@ -1,11 +1,15 @@
 {
   "id": "robotwars",
-  "tier": "A",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 9,
+  "tier": "A",
+  "quality": "language_subset",
+  "quality_notes": [
+    "real_g4_port",
+    "mirrors_robotwar.g4_program_line_statement_regs",
+    "expression_lalr_layered"
+  ],
   "blockers": [],
-  "quality": "language_port",
-  "quality_notes": [],
-  "parser_bytes": 2029
+  "start": "program",
+  "example_count": 9
 }

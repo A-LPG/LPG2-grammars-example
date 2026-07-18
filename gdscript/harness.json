@@ -3,6 +3,6 @@
   "lexer": "GdscriptLexer",
   "parser": "GdscriptParser",
   "example_globs": [
-    "examples/tiny.gd"
+    "examples-curated/**/*"
   ]
 }

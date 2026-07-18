@@ -1,5 +1,7 @@
--- D2 Parser (LPG)
--- Ported from antlr/grammars-v4 d2/D2.g4
+-- D2Parser (LPG) — structural port of grammars-v4 d2/D2.g4 (tiny diagram subset)
+-- Nonterminals: diagram / statement / nodeDeclaration / edgeDeclaration /
+--   block / label / attributeBlock / attributeEntry / expression / edgeOp / name
+-- Comments skipped in lexer (g4 exposes COMMENT as statement).
 
 %Options la=2
 %Options fp=D2Parser
@@ -17,6 +19,7 @@
 %End
 
 %Rules
+    -- diagram: statement* EOF
     diagram ::= $empty
               | statements
 

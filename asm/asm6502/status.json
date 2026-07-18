@@ -1,13 +1,17 @@
 {
   "id": "asm/asm6502",
-  "tier": "D",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
-  "blockers": [],
-  "quality": "language_subset",
+  "tier": "A",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port",
+    "clear3_shelf_cleared",
+    "mirrors_asm6502.g4_prog_line_instruction_argument",
+    "lexer_OPCODE_ASSEMBLER_INSTRUCTION_EOL_NAME_NUMBER"
   ],
-  "parser_bytes": 1303
+  "blockers": [],
+  "example_count": 3,
+  "parser_lines": 69,
+  "start": "prog"
 }

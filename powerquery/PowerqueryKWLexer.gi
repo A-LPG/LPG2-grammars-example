@@ -7,6 +7,7 @@
 %End
 %Export
     SECTION
+    SHARED
     LET
     IN
     IF
@@ -28,6 +29,7 @@
 %End
 %Rules
     Keyword ::= s e c t i o n /.$setResult($_SECTION);./
+              | s h a r e d /.$setResult($_SHARED);./
               | l e t /.$setResult($_LET);./
               | i n /.$setResult($_IN);./
               | i f /.$setResult($_IF);./

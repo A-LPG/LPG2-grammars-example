@@ -1,11 +1,16 @@
 {
   "id": "rpn",
   "parse_ok": true,
-  "example_count": 13,
+  "example_count": 3,
   "status": "ported",
   "blockers": [],
   "tier": "A",
   "quality": "language_subset",
-  "quality_notes": [],
-  "parser_bytes": 628
+  "quality_notes": [
+    "real_g4_port",
+    "micro_language",
+    "curated_multiline_framed"
+  ],
+  "parser_bytes": 628,
+  "parser_lines": 24
 }

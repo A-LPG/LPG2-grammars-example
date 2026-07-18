@@ -1,8 +1,8 @@
 {
   "package": "lpg.grammars.sql.derby",
-  "lexer": "DerbyLexer",
-  "parser": "DerbyParser",
+  "lexer": "SqlDerbyLexer",
+  "parser": "SqlDerbyParser",
   "example_globs": [
-    "examples/smoke.sql"
+    "examples/**/*.sql"
   ]
 }

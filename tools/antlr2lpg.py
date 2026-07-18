@@ -112,6 +112,15 @@ PUNCT = {
 
 NAME_OVERRIDE = {
     "java/java8": "Java8",
+    "kotlin/kotlin-formal": "KotlinFormal",
+    "scala/scala2": "Scala2",
+    "scala/scala3": "Scala3",
+    "swift/swift2": "Swift2",
+    "swift/swift3": "Swift3",
+    "swift/swift5": "Swift5",
+    "csharp/v6": "CsharpV6",
+    "csharp/v7": "CsharpV7",
+    "csharp/v8-spec": "CsharpV8Spec",
 }
 
 
@@ -127,8 +136,11 @@ def java_name(uid: str) -> str:
 
 # Prefer file/module start rules over REPL/single-line entry points.
 PREFERRED_START = {
+    "javascript/typescript": "program",
     "java/java": "compilationUnit",
     "java/java8": "compilationUnit",
+    "java/java9": "compilationUnit",
+    "java/java20": "compilationUnit",
     "javascript/javascript": "program",
     "python/python3": "file_input",
     "python/python": "file_input",
@@ -136,6 +148,35 @@ PREFERRED_START = {
     "rust": "crate",
     "cpp": "translationUnit",
     "html": "htmlDocument",
+    "wat": "module",
+    "erlang": "forms",
+    "bicep": "program",
+    "cypher": "script",
+    "javacc": "javacc_input",
+    "xpath/xpath20": "xpath",
+    "iri": "parse",
+    "pddl": "pddlDoc",
+    "hexpat": "hexpat",
+    "sql/drill": "drill_file",
+    "asm/asmMASM": "prog",
+    "asm/ptx/ptx-isa-1.0": "prog",
+    "scala/scala3": "compilationUnit",
+    "scala/scala2": "compilationUnit",
+    "logo/ucb-logo": "parse",
+    "php": "htmlDocument",
+    "sql/sqlite": "parse",
+    "sql/teradata": "sql_script",
+    "sql/trino": "parse",
+    "stringtemplate": "group",
+    "v": "sourceFile",
+    "antlr/antlr4": "grammarSpec",
+    "solidity": "sourceUnit",
+    "bcpl": "program",
+    "ruleworks": "program",
+    "asm/masm": "compilationUnit",
+    "vaxscan": "program",
+    "apex": "compilationUnit",
+    "idl": "specification",
 }
 
 
@@ -188,7 +229,14 @@ MULTI_OPS = {
 
 
 def pkg_name(uid: str) -> str:
-    return "lpg.grammars." + uid.replace("/", ".").replace("-", "_")
+    # Java package segments cannot start with a digit (e.g. ptx-isa-1.0 → …ptx_isa_1_0).
+    parts = []
+    for seg in uid.replace("-", "_").split("/"):
+        seg = seg.replace(".", "_")
+        if seg and seg[0].isdigit():
+            seg = "v" + seg
+        parts.append(seg)
+    return "lpg.grammars." + ".".join(parts)
 
 
 def _protect_quoted(text: str) -> tuple[str, list[str]]:
@@ -204,8 +252,9 @@ def _protect_quoted(text: str) -> tuple[str, list[str]]:
 
 
 def _restore_quoted(text: str, held: list[str]) -> str:
-    for i, lit in enumerate(held):
-        text = text.replace(f"__Q{i}__", lit)
+    # Highest index first so __Q1__ cannot corrupt __Q10__/__Q11__/…
+    for i in range(len(held) - 1, -1, -1):
+        text = text.replace(f"__Q{i}__", held[i])
     return text
 
 
@@ -245,11 +294,38 @@ def _strip_line_comments(text: str) -> str:
     return "".join(out)
 
 
+def _strip_balanced_at_members(text: str) -> str:
+    """Remove @parser::members { ... } / @lexer::members { ... } (nested braces)."""
+    out: list[str] = []
+    i = 0
+    n = len(text)
+    while i < n:
+        m = re.match(r"@(?:parser|lexer)\s*::\s*members\s*\{", text[i:], re.I)
+        if not m:
+            out.append(text[i])
+            i += 1
+            continue
+        i += m.end()  # past opening '{'
+        depth = 1
+        while i < n and depth:
+            c = text[i]
+            if c == "{":
+                depth += 1
+            elif c == "}":
+                depth -= 1
+            i += 1
+    return "".join(out)
+
+
 def strip_antlr_noise(text: str) -> str:
     # Comments first (quote-aware for //), then protect literals, then actions.
     text = re.sub(r"/\*.*?\*/", "", text, flags=re.S)
     text = _strip_line_comments(text)
     text, held = _protect_quoted(text)
+    # Drop @parser::members / @lexer::members before generic @header stripping,
+    # otherwise leftover `::members` + partial brace deletion invents fake rules
+    # (seen on v/V.g4 → bogus `members` swallowing `sourceFile`).
+    text = _strip_balanced_at_members(text)
     text = re.sub(r"@\w+(\s*\([^)]*\))?", "", text)
     # Options/tokens/channels blocks are brace-balanced and often omit the
     # trailing ';' — do not use non-greedy .*? which can swallow rules until
@@ -288,27 +364,145 @@ def find_g4_files(v4_unit: Path) -> tuple[list[Path], list[Path]]:
     if not parser_files and combined:
         parser_files = combined
         lexer_files = combined
+    # Prefer a single primary parser when grammars-v4 ships sibling dialects
+    # (e.g. stringtemplate STGParser+STParser) to avoid merged dual starts.
+    if len(parser_files) > 1:
+        prefer_names = ("ANTLRv4Parser.g4", "STGParser.g4")
+        for want in prefer_names:
+            picked = [p for p in parser_files if p.name == want]
+            if picked:
+                parser_files = picked
+                break
+        else:
+            parser_files = [sorted(parser_files, key=lambda p: (0 if "Parser" in p.name else 1, len(p.name)))[0]]
     return parser_files, lexer_files
 
 
 def split_rules(body: str) -> list[tuple[str, str]]:
     """Return list of (name, rhs) for parser rules (lowercase start) and lexer (UPPER).
 
-    Quote-aware: semicolons inside '...' / \"...\" are not rule terminators.
+    Scanner is quote- and character-class-aware so lexer rules like
+    `~[\\']` / `CHARACTER_LITERAL` cannot swallow the rest of a combined .g4.
     """
     rules: list[tuple[str, str]] = []
-    body = re.sub(r"\s+", " ", body)
-    # Protect quotes so ';' inside ';' / ";" cannot end a rule.
-    body, held = _protect_quoted(body)
-    for m in re.finditer(
-        r"([A-Za-z_][\w]*)\s*(returns\s*\[[^\]]*\])?\s*(locals\s*\[[^\]]*\])?\s*:\s*(.*?)\s*;",
-        body,
-    ):
-        name = m.group(1)
-        rhs = _restore_quoted(m.group(4).strip(), held)
-        if name == "fragment" or name.startswith("$"):
+    # Keep newlines: rule headers are line-oriented in grammars-v4.
+    n = len(body)
+    i = 0
+
+    def skip_ws_comments(pos: int) -> int:
+        while pos < n:
+            if body[pos] in " \t\r\n\f":
+                pos += 1
+                continue
+            if body.startswith("//", pos):
+                while pos < n and body[pos] not in "\r\n":
+                    pos += 1
+                continue
+            if body.startswith("/*", pos):
+                end = body.find("*/", pos + 2)
+                pos = n if end < 0 else end + 2
+                continue
+            break
+        return pos
+
+    while i < n:
+        i = skip_ws_comments(i)
+        if i >= n:
+            break
+        # optional fragment keyword
+        if body.startswith("fragment", i) and (i + 8 >= n or not (body[i + 8].isalnum() or body[i + 8] == "_")):
+            i = skip_ws_comments(i + 8)
+        m = re.match(r"[A-Za-z_][\w]*", body[i:])
+        if not m:
+            i += 1
             continue
-        rules.append((name, rhs))
+        name = m.group(0)
+        j = skip_ws_comments(i + len(name))
+        # skip returns/locals clauses
+        while j < n and body.startswith(("returns", "locals"), j):
+            br = body.find("[", j)
+            if br < 0:
+                break
+            depth = 0
+            k = br
+            while k < n:
+                if body[k] == "[":
+                    depth += 1
+                elif body[k] == "]":
+                    depth -= 1
+                    if depth == 0:
+                        k += 1
+                        break
+                k += 1
+            j = skip_ws_comments(k)
+        if j >= n or body[j] != ":":
+            i += 1
+            continue
+        j += 1  # skip ':'
+        # scan RHS to semicolon
+        rhs_chars: list[str] = []
+        in_sq = False
+        in_dq = False
+        in_class = False
+        while j < n:
+            c = body[j]
+            if in_sq:
+                rhs_chars.append(c)
+                if c == "\\" and j + 1 < n:
+                    rhs_chars.append(body[j + 1])
+                    j += 2
+                    continue
+                if c == "'":
+                    in_sq = False
+                j += 1
+                continue
+            if in_dq:
+                rhs_chars.append(c)
+                if c == "\\" and j + 1 < n:
+                    rhs_chars.append(body[j + 1])
+                    j += 2
+                    continue
+                if c == '"':
+                    in_dq = False
+                j += 1
+                continue
+            if in_class:
+                rhs_chars.append(c)
+                if c == "\\" and j + 1 < n:
+                    rhs_chars.append(body[j + 1])
+                    j += 2
+                    continue
+                if c == "]":
+                    in_class = False
+                j += 1
+                continue
+            if c == "'":
+                in_sq = True
+                rhs_chars.append(c)
+                j += 1
+                continue
+            if c == '"':
+                in_dq = True
+                rhs_chars.append(c)
+                j += 1
+                continue
+            if c == "[":
+                in_class = True
+                rhs_chars.append(c)
+                j += 1
+                continue
+            if c == ";":
+                j += 1
+                break
+            rhs_chars.append(c)
+            j += 1
+        if name != "fragment" and not name.startswith("$"):
+            rhs = "".join(rhs_chars).strip()
+            rhs = re.sub(r"\s+", " ", rhs)
+            # Drop channel/skip commands leftover on lexer rules
+            rhs = re.sub(r"->\s*\w+(\s*\([^)]*\))?", "", rhs).strip()
+            rules.append((name, rhs))
+        i = j
     return rules
 
 
@@ -598,6 +792,11 @@ def split_top_alts(rhs: str) -> list[str]:
             cur.append(c)
         i += 1
     alts.append("".join(cur).strip())
+    # Keep empty alternatives when multiple alts exist — Antlr often writes
+    # `/* empty */ | foo` and comment-stripping leaves a leading empty alt.
+    # Dropping those made left-recursive `opt_*` rules non-nullable (ruleworks).
+    if len(alts) > 1:
+        return alts
     return [a for a in alts if a]
 
 
@@ -1196,6 +1395,93 @@ def lalr_fix_rules(uid: str, rules_block: str) -> str:
             ("Static_cast", "STATIC_CAST"),
         ]:
             rules_block = re.sub(rf"\b{a}\b", b, rules_block)
+        # LALR: optional NestedName before * / theTypeName steals IDENTIFIER from
+        # declarators (`int x;`). Prefer builtinDeclSeq left-factor for decls/defs.
+        rules_block = re.sub(
+            r"    pointerOperator ::= grp_\d+ opt_\d+\n           \| opt_\d+ STAR opt_\d+ opt_\d+\n",
+            "    pointerOperator ::= grp_po_ref opt_po_attr\n"
+            "           | STAR opt_po_cv_attr opt_po_cv\n\n"
+            "    grp_po_ref ::= AMP | ANDAND\n\n"
+            "    opt_po_attr ::= attributeSpecifierSeq | $empty\n\n"
+            "    opt_po_cv_attr ::= attributeSpecifierSeq | $empty\n\n"
+            "    opt_po_cv ::= cvQualifierSeq | $empty\n",
+            rules_block,
+            count=1,
+        )
+        rules_block = re.sub(
+            r"    simpleTypeSpecifier ::= opt_\d+ theTypeName\n",
+            "    simpleTypeSpecifier ::= theTypeName\n"
+            "           | nestedNameSpecifier theTypeName\n",
+            rules_block,
+            count=1,
+        )
+        rules_block = re.sub(
+            r"    theTypeName ::= className\n           \| enumName\n           \| typedefName\n           \| simpleTemplateId\n",
+            "    theTypeName ::= IDENTIFIER\n           | simpleTemplateId\n",
+            rules_block,
+            count=1,
+        )
+        rules_block = re.sub(
+            r"    declarator ::= pointerDeclarator\n           \| noPointerDeclarator parametersAndQualifiers opt_\w+\n",
+            "    declarator ::= pointerDeclarator\n",
+            rules_block,
+            count=1,
+        )
+        rules_block = re.sub(
+            r"    initializer ::= braceOrEqualInitializer\n           \| LPAREN expressionList RPAREN\n",
+            "    initializer ::= EQ initializerClause\n"
+            "           | LPAREN expressionList RPAREN\n",
+            rules_block,
+            count=1,
+        )
+        if "builtinDeclSeq ::=" not in rules_block:
+            rules_block = re.sub(
+                r"    simpleDeclaration ::= opt_\d+ opt_\d+ SEMI\n           \| attributeSpecifierSeq opt_\d+ initDeclaratorList SEMI\n",
+                "    simpleDeclaration ::= builtinDeclSeq initDeclaratorList SEMI\n"
+                "           | builtinDeclSeq SEMI\n"
+                "           | IDENTIFIER initDeclaratorList SEMI\n"
+                "           | IDENTIFIER SEMI\n"
+                "           | attributeSpecifierSeq opt_104 initDeclaratorList SEMI\n\n"
+                "    builtinDeclSeq ::= builtinDecl\n"
+                "           | builtinDeclSeq builtinDecl\n\n"
+                "    builtinDecl ::= storageClassSpecifier\n"
+                "           | cvQualifier\n"
+                "           | functionSpecifier\n"
+                "           | FRIEND_\n"
+                "           | TYPEDEF_\n"
+                "           | CONSTEXPR_\n"
+                "           | CHAR_\n"
+                "           | Char16\n"
+                "           | Char32\n"
+                "           | Wchar\n"
+                "           | BOOL_\n"
+                "           | SHORT_\n"
+                "           | INT_\n"
+                "           | LONG_\n"
+                "           | FLOAT_\n"
+                "           | SIGNED_\n"
+                "           | UNSIGNED_\n"
+                "           | DOUBLE_\n"
+                "           | VOID_\n"
+                "           | AUTO_\n"
+                "           | decltypeSpecifier\n",
+                rules_block,
+                count=1,
+            )
+            rules_block = re.sub(
+                r"    functionDefinition ::= opt_\d+ opt_\d+ declarator opt_\d+ functionBody\n",
+                "    functionDefinition ::= builtinDeclSeq declarator opt_208 functionBody\n"
+                "           | IDENTIFIER declarator opt_208 functionBody\n"
+                "           | attributeSpecifierSeq builtinDeclSeq declarator opt_208 functionBody\n",
+                rules_block,
+                count=1,
+            )
+        rules_block = re.sub(
+            r"    idExpression ::= unqualifiedId\n",
+            "    idExpression ::= unqualifiedId\n           | qualifiedId\n",
+            rules_block,
+            count=1,
+        )
     elif uid == "html":
         # Lexer skips whitespace — drop SEA_WS alts (nullable cycles if $empty).
         rules_block = re.sub(
@@ -1215,6 +1501,170 @@ def lalr_fix_rules(uid: str, rules_block: str) -> str:
             "    htmlMisc ::= htmlComment\n",
             rules_block,
         )
+    elif uid == "antlr/antlr4":
+        # Map ANTLRv4Lexer vocabulary onto the generic LPG lexer emissions.
+        for a, b in [
+            ("STRING_LITERAL", "STRING"),
+            ("INT", "NUMBER"),
+            ("ASSIGN", "EQ"),
+            ("RARROW", "ARROW"),
+            ("PLUS_ASSIGN", "PLUSEQ"),
+            ("RULE_REF", "IDENTIFIER"),
+            ("TOKEN_REF", "IDENTIFIER"),
+            ("LEXER_CHAR_SET", "STRING"),
+            ("ARGUMENT_CONTENT", "IDENTIFIER"),
+            ("BEGIN_ARGUMENT", "LBRACKET"),
+            ("END_ARGUMENT", "RBRACKET"),
+            ("ACTION", "LBRACE"),
+            ("OPTIONS", "IDENTIFIER"),
+            ("TOKENS", "IDENTIFIER"),
+            ("CHANNELS", "IDENTIFIER"),
+            ("POUND", "HASH"),
+            ("OR", "PIPE"),
+        ]:
+            rules_block = re.sub(rf"\b{a}\b", b, rules_block)
+        rules_block = re.sub(
+            r"    identifier ::= IDENTIFIER\n(?:           \| IDENTIFIER\n)+",
+            "    identifier ::= IDENTIFIER\n",
+            rules_block,
+        )
+        # options/tokens/channels in upstream are keyword+'{'; accept soft form.
+        rules_block = re.sub(
+            r"    optionsSpec ::= IDENTIFIER list_(\d+) RBRACE",
+            r"    optionsSpec ::= IDENTIFIER LBRACE list_\1 RBRACE",
+            rules_block,
+        )
+        rules_block = re.sub(
+            r"    tokensSpec ::= IDENTIFIER opt_(\d+) RBRACE",
+            r"    tokensSpec ::= IDENTIFIER LBRACE opt_\1 RBRACE",
+            rules_block,
+        )
+        rules_block = re.sub(
+            r"    channelsSpec ::= IDENTIFIER opt_(\d+) RBRACE",
+            r"    channelsSpec ::= IDENTIFIER LBRACE opt_\1 RBRACE",
+            rules_block,
+        )
+    elif uid == "v":
+        for a, b in [
+            ("STRING_LIT", "STRING"),
+            ("INT_LIT", "NUMBER"),
+            ("FLOAT_LIT", "NUMBER"),
+            ("RAW_STRING_LIT", "STRING"),
+            ("INTERPRETED_STRING_LIT", "STRING"),
+            ("RUNE_LIT", "CHAR_LITERAL"),
+            ("EOS", "SEMI"),
+        ]:
+            rules_block = re.sub(rf"\b{a}\b", b, rules_block)
+        # eos is often NL or ';' — allow empty / SEMI / IDENTIFIER noise drop
+        if "eos ::=" in rules_block:
+            rules_block = re.sub(
+                r"    eos ::= .*\n(?:           \| .*\n)*",
+                "    eos ::= SEMI\n           | $empty\n",
+                rules_block,
+                count=1,
+            )
+    elif uid in {"solidity", "apex", "idl", "bcpl", "ruleworks", "asm/masm", "vaxscan", "stringtemplate"}:
+        for a, b in [
+            ("StringLiteral", "STRING"),
+            ("STRINGLITERAL", "STRING"),
+            ("STRING_LITERAL", "STRING"),
+            ("BooleanLiteral", "IDENTIFIER"),
+            ("DecimalNumber", "NUMBER"),
+            ("DecimalLiteral", "NUMBER"),
+            ("IntegerLiteral", "NUMBER"),
+            ("HexLiteral", "NUMBER"),
+            ("HEX_LITERAL", "NUMBER"),
+            ("NUMBER_LITERAL", "NUMBER"),
+            ("Identifier", "IDENTIFIER"),
+            ("IDENT", "IDENTIFIER"),
+            ("NAME", "IDENTIFIER"),
+            ("ID", "IDENTIFIER"),
+            ("ASSIGN", "EQ"),
+            ("EQUALS", "EQ"),
+            ("EQUAL", "EQ"),
+            ("RARROW", "ARROW"),
+            ("LARROW", "RECEIVE"),
+            ("LEFT_BRACE", "LBRACE"),
+            ("RIGHT_BRACE", "RBRACE"),
+            ("LEFT_BRACKET", "LBRACKET"),
+            ("RIGHT_BRACKET", "RBRACKET"),
+            ("LEFT_SQUARE_BRACKET", "LBRACKET"),
+            ("RIGHT_SQUARE_BRACKET", "RBRACKET"),
+            ("LEFT_PAREN", "LPAREN"),
+            ("RIGHT_PAREN", "RPAREN"),
+            ("LEFT_ANG_BRACKET", "LT"),
+            ("RIGHT_ANG_BRACKET", "GT"),
+            ("SEMICOLON", "SEMI"),
+            ("COLONCOLON", "COLONCOLON"),
+            ("TOK_LPAREN", "LPAREN"),
+            ("TOK_RPAREN", "RPAREN"),
+            ("TOK_ARROW", "ARROW"),
+            ("TOK_HAT", "CARET"),
+            ("LBrace", "LBRACE"),
+            ("RBrace", "RBRACE"),
+            ("LParen", "LPAREN"),
+            ("RParen", "RPAREN"),
+            ("LBrack", "LBRACKET"),
+            ("RBrack", "RBRACKET"),
+            ("String_constant", "STRING"),
+            ("Number_constant", "NUMBER"),
+            ("Name", "IDENTIFIER"),
+            ("WS", ""),  # drop stray WS refs
+        ]:
+            if b:
+                rules_block = re.sub(rf"\b{a}\b", b, rules_block)
+            else:
+                rules_block = re.sub(rf"\s*\b{a}\b", "", rules_block)
+        if uid == "bcpl":
+            # bcplLexer uses K-prefixed keyword tokens (KLET, KAND, …)
+            for a, b in [
+                ("LET", "KLET"),
+                ("AND", "KAND"),
+                ("VALOF", "KVALOF"),
+                ("RESULTIS", "KRESULTIS"),
+                ("BE", "KBE"),
+                ("DO", "KDO"),
+                ("TO", "KTO"),
+                ("FOR", "KFOR"),
+                ("IF", "KIF"),
+                ("UNLESS", "KUNLESS"),
+                ("WHILE", "KWHILE"),
+                ("UNTIL", "KUNTIL"),
+                ("REPEAT", "KREPEAT"),
+                ("BREAK", "KBREAK"),
+                ("LOOP", "KLOOP"),
+                ("ENDCASE", "KENDCASE"),
+                ("CASE", "KCASE"),
+                ("DEFAULT", "KDEFAULT"),
+                ("INTO", "KINTO"),
+                ("OR", "KOR"),
+                ("GET", "KGET"),
+                ("GLOBAL", "KGLOBAL"),
+                ("MANIFEST", "KMANIFEST"),
+                ("STATIC", "KSTATIC"),
+                ("TRUE", "KTRUE"),
+                ("FALSE", "KFALSE"),
+            ]:
+                rules_block = re.sub(rf"\b{a}\b", b, rules_block)
+        if uid == "solidity" and "list_pragma_rest ::=" not in rules_block:
+            # Pragma line is lexer-special in g4; accept identifier form for subset.
+            rules_block = re.sub(
+                r"    pragmaDirective ::= .*\n(?:           \| .*\n)*",
+                "    pragmaDirective ::= Pragma IDENTIFIER list_pragma_rest SEMI\n\n"
+                "    list_pragma_rest ::= $empty | list_pragma_rest IDENTIFIER\n"
+                "           | list_pragma_rest NUMBER\n"
+                "           | list_pragma_rest CARET\n"
+                "           | list_pragma_rest DOT\n"
+                "           | list_pragma_rest GT\n"
+                "           | list_pragma_rest LT\n"
+                "           | list_pragma_rest EQ\n"
+                "           | list_pragma_rest STRING\n",
+                rules_block,
+                count=1,
+            )
+        if uid == "stringtemplate":
+            rules_block = re.sub(r"\bTMPL_ASSIGN\b", "COLONCOLON EQ", rules_block)
+            # COLONCOLON EQ is two tokens for '::='
     return rules_block
 
 
@@ -1231,18 +1681,19 @@ def dedupe_rule_alts(rules_block: str) -> str:
             i += 1
             continue
         indent, name, first = m.group(1), m.group(2), m.group(3).strip()
-        alts = [first] if first else []
+        # Split same-line alts: `grp ::= EQ | EQ`
+        alts = [a.strip() for a in first.split("|")] if first else []
         i += 1
         while i < len(lines):
             cont = re.match(r"^\s+\|\s*(.*)$", lines[i].rstrip("\n"))
             if not cont:
                 break
-            alts.append(cont.group(1).strip())
+            alts.extend(a.strip() for a in cont.group(1).split("|"))
             i += 1
         seen: set[str] = set()
         uniq: list[str] = []
         for a in alts:
-            if a not in seen:
+            if a and a not in seen:
                 seen.add(a)
                 uniq.append(a)
         if not uniq:
@@ -1310,6 +1761,18 @@ def extract_lexer_keywords(lexer_files: list[Path]) -> list[tuple[str, str]]:
             if a.isalpha() and b.isalpha():
                 out.append((tok, a))
                 out.append((tok, b))
+        # Java/Apex case-insensitive style: PUBLIC : P U B L I C ;
+        for m in re.finditer(
+            r"^([A-Z][A-Z0-9_]*)\s*:\s*((?:[A-Z]\s+)+[A-Z])\s*;",
+            text,
+            flags=re.M,
+        ):
+            tok = m.group(1)
+            letters = m.group(2).split()
+            if letters and all(len(x) == 1 and x.isalpha() for x in letters):
+                spell = "".join(letters).lower()
+                if spell.isalpha():
+                    out.append((tok, spell))
     # dedupe preserve order
     seen: set[tuple[str, str]] = set()
     uniq: list[tuple[str, str]] = []
@@ -1326,17 +1789,18 @@ def emit_kwlexer(name: str, pkg: str, kw_pairs: list[tuple[str, str]]) -> str:
         kw_pairs = [("X", "xxx")]
     # Dedupe by normalized spelling (one Keyword rule per word); first token wins.
     # Allow multiple spellings → same token (true/false → BOOL_LITERAL).
+    # Keep hyphens (ruleworks OBJECT-CLASS) as literal '-' in the keyword pattern.
     by_spell: dict[str, str] = {}
     for tok, spell in kw_pairs:
-        body = spell.lower().replace("-", "")
-        if not body.isalpha():
+        body = spell.lower()
+        if not re.fullmatch(r"[a-z][a-z0-9]*(?:-[a-z0-9]+)*", body):
             continue
         by_spell.setdefault(body, tok)
     exports = sorted(set(by_spell.values()))
     export_block = "\n".join(f"    {e}" for e in exports)
     rule_lines = []
     for body, tok in sorted(by_spell.items(), key=lambda x: (-len(x[0]), x[0])):
-        chars = " ".join(list(body))
+        chars = " ".join("Minus" if ch == "-" else ch for ch in body)
         rule_lines.append(f"    Keyword ::= {chars} /.$setResult($_{tok});./")
     if not rule_lines:
         rule_lines = ["    Keyword ::= x x x /.$setResult($_X);./"]
@@ -1358,6 +1822,7 @@ def emit_kwlexer(name: str, pkg: str, kw_pairs: list[tuple[str, str]]) -> str:
 
 %Terminals
     {letters}
+    Minus ::= '-'
 %End
 
 %Start
@@ -1447,10 +1912,10 @@ def emit_lexer(
         ws_rule = f"""            | SpaceSpace /. skipToken(); ./
             | LF /. makeToken($_{newline_token}); ./
             | CR /. makeToken($_{newline_token}); ./"""
-        white_def = """    whiteSpace -> Space | HT | FF
-                   | whiteSpace Space
-                   | whiteSpace HT
-                   | whiteSpace FF
+        white_def = """    white -> Space | HT | FF
+           | white Space
+           | white HT
+           | white FF
 """
     else:
         ws_rule = "            | white /. skipToken(); ./"
@@ -1541,8 +2006,8 @@ def emit_lexer(
     Token ::= identifier /. checkForKeyWord(); ./
             | number     /. makeToken($_{number_token}); ./
             | string     /. makeToken($_{string_token}); ./
-            | charlit    /. makeToken($_CHAR_LITERAL); ./
             | LineComment /. skipToken(); ./
+            | HashComment /. skipToken(); ./
 {ws_rule}
 {chr(10).join(op_lines)}
 {chr(10).join(single_lines)}
@@ -1550,6 +2015,8 @@ def emit_lexer(
     identifier -> Letter
                 | identifier Letter
                 | identifier Digit
+                | identifier '-' Letter
+                | identifier '-' Digit
 
     Letter -> LowerCaseLetter
             | UpperCaseLetter
@@ -1595,9 +2062,10 @@ def emit_lexer(
     Escape ::= BackSlash EscapeChar
     EscapeChar -> DoubleQuote | SingleQuote | BackSlash | '/' | n | r | t | b | f
 
-    charlit ::= SingleQuote NotSQ SingleQuote
-
     LineComment ::= '/' '/' LineCommentBody
+    HashComment ::= Sharp HashCommentBody
+    HashCommentBody -> $empty
+                     | HashCommentBody NotNL
     LineCommentBody -> $empty
                      | LineCommentBody NotNL
     NotNL -> Letter | Digit | Space | HT | SpecialNotNL
@@ -1646,6 +2114,7 @@ def convert_unit(uid: str, v4_root: Path, dest_root: Path, force: bool = True) -
     number_token = "NUMBER"
     string_token = "STRING"
     keep_newlines = False
+    newline_token = "NEWLINE"
     if uid.startswith("java/"):
         number_token = "DECIMAL_LITERAL"
         string_token = "STRING_LITERAL"
@@ -1732,13 +2201,23 @@ def convert_unit(uid: str, v4_root: Path, dest_root: Path, force: bool = True) -
         kw_pairs = [(("CLASS_" if tok == "Class" else tok), s) for tok, s in kw_pairs]
     elif uid.startswith("python/"):
         rules_block = re.sub(r"\bNAME\b", "IDENTIFIER", rules_block)
-        number_token = "NUMBER"
+        number_token = "DECIMAL_INTEGER" if uid == "python/python" else "NUMBER"
         string_token = "STRING"
         keep_newlines = True
+        # python/python g4 uses LINE_BREAK; others use NEWLINE
+        newline_token = "LINE_BREAK" if uid == "python/python" else "NEWLINE"
         # INDENT/DEDENT not emitted by lexer — make them optional in parser rules
         rules_block = re.sub(r"\bINDENT\b", "indent_opt", rules_block)
         rules_block = re.sub(r"\bDEDENT\b", "dedent_opt", rules_block)
         rules_block += "\n    indent_opt ::= $empty\n\n    dedent_opt ::= $empty\n"
+        rules_block = re.sub(r"\s*\bENDMARKER\b", "", rules_block)
+        # Lexer keyword rules named *_stmt must not become terminals (clash with parser NTs)
+        _kw_fix = {"pass_stmt": "PASS", "break_stmt": "BREAK", "continue_stmt": "CONTINUE",
+                     "print_stmt": "PRINT", "exec_stmt": "EXEC", "assert_stmt": "ASSERT",
+                     "global_stmt": "GLOBAL", "nonlocal_stmt": "NONLOCAL",
+                     "return_stmt": "RETURN", "raise_stmt": "RAISE", "yield_stmt": "YIELD",
+                     "import_stmt": "IMPORT", "del_stmt": "DEL"}
+        kw_pairs = [(_kw_fix.get(t, t), s) for t, s in kw_pairs]
     elif uid == "golang":
         number_token = "NUMBER"
         string_token = "STRING"
@@ -1885,6 +2364,7 @@ def convert_unit(uid: str, v4_root: Path, dest_root: Path, force: bool = True) -
                 number_token=number_token,
                 string_token=string_token,
                 keep_newlines=keep_newlines,
+                newline_token=newline_token,
             ),
             encoding="utf-8",
         )

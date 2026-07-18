@@ -1,13 +1,17 @@
 {
   "id": "geekcode",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 4,
   "blockers": [],
-  "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port",
+    "antlr2lpg_structural_port"
   ],
-  "parser_bytes": 462
+  "parser_bytes": 2326,
+  "rule_approx": 23,
+  "start": "file_",
+  "example_count": 1,
+  "notes": "real_g4_port",
+  "tier": "A"
 }

@@ -1,13 +1,17 @@
 {
   "id": "orwell",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
-  "blockers": [],
-  "quality": "token_stream_smoke",
+  "tier": "A",
   "quality_notes": [
-    "tiny_parser_single_example"
+    "real_g4_port",
+    "syndecl_def_pat_rhs_subset",
+    "curated_multiline_def_synonym",
+    "application_limits_multi_def"
   ],
-  "parser_bytes": 475
+  "blockers": [],
+  "example_count": 4,
+  "parser_lines": 78,
+  "start": "program"
 }

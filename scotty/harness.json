@@ -3,6 +3,6 @@
   "lexer": "ScottyLexer",
   "parser": "ScottyParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

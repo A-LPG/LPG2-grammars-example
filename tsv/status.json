@@ -1,11 +1,15 @@
 {
   "id": "tsv",
   "parse_ok": true,
-  "example_count": 1,
   "status": "ported",
-  "blockers": [],
   "tier": "A",
   "quality": "language_port",
-  "quality_notes": [],
-  "parser_bytes": 618
+  "quality_notes": [
+    "real_g4_port",
+    "mirrors_tsv.g4_tsvFile_hdr_row_field",
+    "lexer_TEXT_STRING_TAB_EOL"
+  ],
+  "blockers": [],
+  "start": "tsvFile",
+  "example_count": 6
 }

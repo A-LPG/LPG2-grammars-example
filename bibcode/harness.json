@@ -3,6 +3,6 @@
   "lexer": "BibcodeLexer",
   "parser": "BibcodeParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

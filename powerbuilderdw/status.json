@@ -1,13 +1,17 @@
 {
   "id": "powerbuilderdw",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
-  "blockers": [],
-  "quality": "language_subset",
+  "tier": "A",
   "quality_notes": [
-    "curated_subset"
+    "real_g4_port",
+    "dw_header_table_column_subset",
+    "folded_case_keywords",
+    "curated_release_header_column"
   ],
-  "parser_bytes": 568
+  "blockers": [],
+  "example_count": 3,
+  "parser_lines": 81,
+  "start": "start_rule"
 }

@@ -1,13 +1,17 @@
 {
   "id": "unicode/unicode16",
-  "tier": "D",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
   "blockers": [],
-  "quality": "token_stream_smoke",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "classify_g4_parser_tiny_by_design",
+    "lexer_ASCII_Latin1_GC_subset",
+    "language_subset",
+    "harsh1_true_port_fix"
   ],
-  "parser_bytes": 1192
+  "parser_lines": 60,
+  "example_count": 5,
+  "tier": "A",
+  "start": "file_"
 }

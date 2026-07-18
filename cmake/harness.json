@@ -3,6 +3,6 @@
   "lexer": "CmakeLexer",
   "parser": "CmakeParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

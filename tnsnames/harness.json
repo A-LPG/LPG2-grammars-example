@@ -3,6 +3,6 @@
   "lexer": "TnsnamesLexer",
   "parser": "TnsnamesParser",
   "example_globs": [
-    "examples/smoke.ora"
+    "examples-curated/**/*"
   ]
 }

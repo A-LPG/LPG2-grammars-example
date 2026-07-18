@@ -3,6 +3,6 @@
   "lexer": "GeekcodeLexer",
   "parser": "GeekcodeParser",
   "example_globs": [
-    "examples/**/*.txt"
+    "examples-curated/**/*"
   ]
 }

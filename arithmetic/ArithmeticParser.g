@@ -1,6 +1,7 @@
--- Arithmetic Parser (LPG)
--- Ported from antlr/grammars-v4 arithmetic/arithmetic.g4
--- Precedence rewritten as layered left-recursion for LALR.
+-- ArithmeticParser (LPG) — structural port of grammars-v4 arithmetic/arithmetic.g4
+-- Precedence rewritten as layered left-recursion for LALR (POW right-assoc).
+-- Nonterminals: file_ / equation / expression / term / factor / power / atom /
+--   scientific / variable / relop
 
 %Options la=2
 %Options fp=ArithmeticParser
@@ -18,6 +19,7 @@
 %End
 
 %Rules
+    -- file_: equation* EOF
     file_ ::= $empty
             | equations
 
@@ -26,14 +28,17 @@
 
     equation ::= expression relop expression
 
+    -- + -  (lowest)
     expression ::= term
                  | expression PLUS term
                  | expression MINUS term
 
+    -- * /
     term ::= factor
            | term TIMES factor
            | term DIV factor
 
+    -- unary +/-
     factor ::= PLUS factor
              | MINUS factor
              | power
@@ -42,9 +47,13 @@
     power ::= atom
             | atom POW factor
 
-    atom ::= SCIENTIFIC_NUMBER
-           | VARIABLE
+    atom ::= scientific
+           | variable
            | LPAREN expression RPAREN
+
+    scientific ::= SCIENTIFIC_NUMBER
+
+    variable ::= VARIABLE
 
     relop ::= EQ
             | GT

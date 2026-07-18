@@ -82,26 +82,22 @@
             | ')'                /. makeToken($_RPAREN); ./
             | BRACKET_ARGUMENT   /. makeToken($_BRACKET_ARGUMENT); ./
             | QUOTED_ARGUMENT    /. makeToken($_QUOTED_ARGUMENT); ./
-            | UNQUOTED_ARGUMENT  /. makeToken($_UNQUOTED_ARGUMENT); ./
             | IDENTIFIER_TOK     /. makeToken($_IDENTIFIER); ./
+            | UNQUOTED_ARGUMENT  /. makeToken($_UNQUOTED_ARGUMENT); ./
             | comment            /. skipToken(); ./
             | white              /. skipToken(); ./
 
+    -- Identifier for [A-Za-z_][A-Za-z0-9_]*. Unquoted must start with a non-id char
+    -- (digit/special/escape) so pure command names stay IDENTIFIER; "world.c" → ID + ".c".
     IDENTIFIER_TOK ::= Letter IdRest
     IdRest -> $empty | IdRest Letter | IdRest Digit
 
-    UNQUOTED_ARGUMENT ::= UnquotedChar | UNQUOTED_ARGUMENT UnquotedChar
+    UNQUOTED_ARGUMENT ::= UnquotedStart UnquotedTailOpt
+    UnquotedStart -> Digit | UnquotedSpecial | EscapeSequence
+    UnquotedTailOpt -> $empty | UnquotedTail
+    UnquotedTail -> UnquotedChar | UnquotedTail UnquotedChar
     UnquotedChar -> Digit | UnquotedSpecial | EscapeSequence | '_'
                   | LowerCaseLetter | UpperCaseLetter
-    -- exclude letters that start IDENTIFIER - actually IDENTIFIER is tried first if Letter.
-    -- Order: BRACKET, QUOTED, IDENTIFIER, UNQUOTED - unquoted won't start with letter if IDENTIFIER matches.
-    -- Unquoted can be world.c (has dot) - IDENTIFIER is [A-Za-z_][A-Za-z0-9_]* so world is ID, .c needs separate?
-    -- In ANTLR: Identifier and Unquoted_argument are both lexer rules; "world.c" - Identifier matches "world", then Unquoted "."? 
-    -- Actually '.' can start Unquoted. "world.c" tokenizes as Identifier "world" + Unquoted ".c"? 
-    -- Unquoted is (~[ \t\r\n()#"\\]|Escape)+ so ".c" is unquoted. Or full "world.c" as unquoted if Identifier doesn't take it.
-    -- Longer match: "world.c" - Identifier matches "world" (5), Unquoted matches "world.c" (7) - unquoted wins!
-    -- So put UNQUOTED before IDENTIFIER, or make IDENTIFIER only when not followed by unquoted chars.
-    -- Simpler: only IDENTIFIER for pure ids; unquoted for paths with dots. Put UNQUOTED first with broader pattern including letters.
 
     UnquotedSpecial -> '+' | '-' | '*' | '!' | '@' | '`' | '~' | '%' | '&' | '^' |
                        ':' | ';' | "'" | '|' | LeftBrace | RightBrace |

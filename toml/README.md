@@ -1,7 +1,6 @@
 # toml
 
-Parse-level LPG port of antlr/grammars-v4 `toml` (Wave D ice-break).
+Auto-ported from antlr/grammars-v4 `toml` via `tools/antlr2lpg.py`.
 
-```bash
-bash harness/run-one.sh toml
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `document`.

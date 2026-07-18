@@ -1,4 +1,6 @@
--- Cto Lexer (LPG)
+-- CTO Lexer (LPG) — hand tokens for Hyperledger Composer CTO
+-- Keeps IDENTIFIER in %Export for KW filter (TK_IDENTIFIER).
+
 %Options list
 %Options fp=CtoLexer
 %options single_productions
@@ -21,6 +23,9 @@
     COLON
     COMMA
     DOT
+    STAR
+    AT
+    REF
     LBRACE
     RBRACE
     LBRACKET
@@ -86,12 +91,14 @@
 %Rules
     Token ::= lineComment /. skipToken(); ./
             | blockComment /. skipToken(); ./
-            | hashComment /. skipToken(); ./
             | ';' /. makeToken($_SEMI); ./
             | '=' /. makeToken($_EQ); ./
             | ':' /. makeToken($_COLON); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
+            | '*' /. makeToken($_STAR); ./
+            | '@' /. makeToken($_AT); ./
+            | refArrow /. makeToken($_REF); ./
             | '{' /. makeToken($_LBRACE); ./
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
@@ -102,6 +109,8 @@
             | number /. makeToken($_NUMBER); ./
             | identifier /. checkForKeyWord(); ./
             | white /. skipToken(); ./
+
+    refArrow ::= '-' '-' '>'
 
     identifier ::= Letter
                  | identifier Letter
@@ -116,13 +125,13 @@
 
     Digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
-    number ::= OptSign Digits OptFrac OptExp
-    OptSign -> $empty | '+' | '-'
+    number ::= Digits OptFrac OptExp
     Digits ::= Digit | Digits Digit
     OptFrac -> $empty | '.' Digits
     OptExp -> $empty | Exp
     Exp ::= LetterEe OptSign Digits
     LetterEe -> e | E
+    OptSign -> $empty | '+' | '-'
 
     string ::= '"' DQBody '"'
              | "'" SQBody "'"
@@ -152,8 +161,6 @@
                       '%' | '&' | '^' | ':' | ';' | '"' | "'" | '|' | '{' | '}' |
                       '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_' | BackSlash
                  | '/' | '*'
-
-    hashComment ::= '#' NotNLs
 
     white -> WSChar | white WSChar
     WSChar -> Space | LF | CR | HT | FF

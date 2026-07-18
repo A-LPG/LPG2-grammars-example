@@ -1,4 +1,6 @@
--- Graphemes Parser (LPG) — Wave D curated subset
+-- Graphemes Parser (LPG) — language_subset of grammars-v4/unicode/graphemes
+-- Full Unicode Grapheme_Cluster_Break / Emoji property classes unsupported in LPG.
+
 %Options la=2
 %Options fp=GraphemesParser
 %options package=lpg.grammars.unicode.graphemes
@@ -12,9 +14,11 @@
     graphemes
 %End
 %Rules
+    graphemes ::= list_clusters
 
-    graphemes ::= cluster_list
-    cluster_list ::= cluster | cluster_list cluster
-    cluster ::= CHAR
+    list_clusters ::= $empty
+                    | list_clusters grapheme_cluster
 
+    grapheme_cluster ::= CRLF
+                       | NonControl
 %End

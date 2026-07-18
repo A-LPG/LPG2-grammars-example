@@ -1,13 +1,15 @@
 {
   "id": "itn",
   "parse_ok": true,
-  "example_count": 1,
+  "example_count": 3,
   "status": "ported",
   "blockers": [],
   "tier": "A",
-  "quality": "token_stream_smoke",
+  "quality": "language_port",
   "quality_notes": [
-    "tiny_parser_single_example"
+    "real_g4_port",
+    "mirrors_itn.g4_itinerary_line_longitude_latitude_descr_flag"
   ],
-  "parser_bytes": 660
+  "parser_bytes": 708,
+  "start": "itinerary"
 }

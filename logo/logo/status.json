@@ -1,11 +1,14 @@
 {
   "id": "logo/logo",
   "parse_ok": true,
-  "example_count": 16,
   "status": "ported",
-  "blockers": [],
   "tier": "A",
   "quality": "language_port",
-  "quality_notes": [],
-  "parser_bytes": 2346
+  "quality_notes": [
+    "real_g4_port",
+    "mirrors_logo.g4_prog_cmd_fd_bk_repeat_procedure"
+  ],
+  "blockers": [],
+  "start": "prog",
+  "example_count": 16
 }

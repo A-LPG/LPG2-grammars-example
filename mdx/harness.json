@@ -3,6 +3,6 @@
   "lexer": "MdxLexer",
   "parser": "MdxParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

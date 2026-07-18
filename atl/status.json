@@ -1,13 +1,18 @@
 {
   "id": "atl",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
   "blockers": [],
-  "quality": "token_stream_smoke",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "real_g4_port",
+    "antlr2lpg_structural_port",
+    "curated_module_library_query_helpers"
   ],
-  "parser_bytes": 1140
+  "parser_bytes": 11780,
+  "rule_approx": 234,
+  "start": "unit",
+  "example_count": 5,
+  "tier": "A",
+  "parser_lines": 532
 }

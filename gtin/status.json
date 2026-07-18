@@ -1,13 +1,17 @@
 {
   "id": "gtin",
   "parse_ok": true,
-  "example_count": 12,
+  "example_count": 7,
   "status": "ported",
   "blockers": [],
   "tier": "A",
-  "quality": "language_subset",
+  "quality": "language_port",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port",
+    "named_gtin_forms_or_length_spine",
+    "hyphen_skip_lexer"
   ],
-  "parser_bytes": 794
+  "parser_bytes": 3415,
+  "parser_lines": 114,
+  "start": "gtin"
 }

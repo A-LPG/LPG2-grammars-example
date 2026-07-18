@@ -3,6 +3,6 @@
   "lexer": "PascalLexer",
   "parser": "PascalParser",
   "example_globs": [
-    "examples/smoke.pas"
+    "examples-curated/**/*"
   ]
 }

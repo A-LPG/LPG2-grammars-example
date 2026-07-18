@@ -3,6 +3,6 @@
   "lexer": "CtlLexer",
   "parser": "CtlParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

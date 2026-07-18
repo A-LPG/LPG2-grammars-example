@@ -3,6 +3,6 @@
   "lexer": "KqueryLexer",
   "parser": "KqueryParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

@@ -1,1 +1,5 @@
-int main() { return 0; }
+namespace N {
+    int x;
+}
+
+using X = int;

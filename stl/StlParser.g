@@ -1,5 +1,5 @@
--- STL Parser (LPG)
--- Ported from antlr/grammars-v4 stl/STL.g4
+-- STL Parser (LPG) — structural port of grammars-v4 stl/STL.g4
+-- Nonterminals: file_ / header / triangle / vertex / triple / footer
 
 %Options la=2
 %Options fp=StlParser

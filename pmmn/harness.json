@@ -3,6 +3,6 @@
   "lexer": "PmmnLexer",
   "parser": "PmmnParser",
   "example_globs": [
-    "examples/**/*.txt"
+    "examples-curated/**/*"
   ]
 }

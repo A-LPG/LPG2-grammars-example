@@ -3,6 +3,6 @@
   "lexer": "BeepLexer",
   "parser": "BeepParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

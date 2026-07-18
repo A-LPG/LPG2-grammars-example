@@ -1,13 +1,21 @@
 {
   "id": "wavefront",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 30,
   "blockers": [],
-  "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "antlr2lpg_structural_port",
+    "real_g4_port",
+    "subset_statements_v_f",
+    "NUMBER_as_decimal",
+    "language_subset",
+    "examples_still_too_thin_for_harsh_bar"
   ],
-  "parser_bytes": 1314
+  "parser_bytes": 5050,
+  "rule_approx": 97,
+  "start": "start_",
+  "example_count": 1,
+  "tier": "A",
+  "parser_lines": 214
 }

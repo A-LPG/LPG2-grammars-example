@@ -1,5 +1,5 @@
--- PBM Parser (LPG)
--- Ported from antlr/grammars-v4 pbm/pbm.g4 for parse-level examples.
+-- PBM Parser (LPG) — structural port of grammars-v4 pbm/pbm.g4
+-- Nonterminals: file_ / magic / width / height / table / number
 
 %Options la=2
 %Options fp=PbmParser

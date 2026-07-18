@@ -1,5 +1,6 @@
 # turtle
 
-Scaffold from antlr/grammars-v4 `turtle`.
+Auto-ported from antlr/grammars-v4 `turtle` via `tools/antlr2lpg.py`.
 
-Status: see `status.json`.
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `turtleDoc`.

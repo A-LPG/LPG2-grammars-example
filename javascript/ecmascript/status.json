@@ -1,13 +1,21 @@
 {
   "id": "javascript/ecmascript",
-  "tier": "D",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
-  "blockers": [],
-  "quality": "token_stream_smoke",
-  "quality_notes": [
-    "generic_nested_token_stream"
+  "blockers": [
+    "full_ecmascript_g4_~9k_lines_incomplete_structural_subset"
   ],
-  "parser_bytes": 1198
+  "quality_notes": [
+    "real_g4_port",
+    "antlr2lpg_structural_port",
+    "curated_examples_multiline_functions_objects_control",
+    "undersized_vs_full_g4_honest_subset"
+  ],
+  "parser_bytes": 9185,
+  "rule_approx": 123,
+  "start": "members",
+  "example_count": 4,
+  "tier": "A",
+  "parser_lines": 392
 }

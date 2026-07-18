@@ -1,13 +1,15 @@
 {
   "id": "chip8",
   "parse_ok": true,
-  "example_count": 1,
   "status": "ported",
-  "blockers": [],
   "tier": "A",
   "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port",
+    "mirrors_chip8.g4_file_instruction_opcodes",
+    "lexer_REGISTER_ADDR_BYTE_DIGIT_mnemonics"
   ],
-  "parser_bytes": 2056
+  "blockers": [],
+  "start": "file_",
+  "example_count": 3
 }

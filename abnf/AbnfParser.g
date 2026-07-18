@@ -1,6 +1,7 @@
--- ABNF Parser (LPG)
--- Ported from antlr/grammars-v4 abnf/Abnf.g4 for parse-level examples.
--- Source grammar: RFC 5234 / RFC 7405 (BSD, Rainer Schuster).
+-- AbnfParser (LPG) — structural port of grammars-v4 abnf/Abnf.g4 (RFC 5234 / 7405)
+-- Nonterminals: rulelist / abnf_rule / elements / alternation / concatenation /
+--   repetition / repeat_ / element / group / option
+-- Lexer tokens NumberValue / ProseValue / STRING / INT / IDENTIFIER
 
 %Options la=2
 %Options fp=AbnfParser
@@ -18,32 +19,32 @@
 %End
 
 %Rules
-    -- rulelist : rule_* EOF
+    -- rulelist: rule_* EOF
     rulelist ::= $empty
                | rule_list
 
     rule_list ::= abnf_rule
                 | rule_list abnf_rule
 
-    -- rule_ : ID '=' '/'? elements
+    -- rule_: ID '=' '/'? elements
     abnf_rule ::= IDENTIFIER EQUAL elements
                 | IDENTIFIER EQUAL SLASH elements
 
     elements ::= alternation
 
-    -- alternation : concatenation ('/' concatenation)*
+    -- alternation: concatenation ('/' concatenation)*
     alternation ::= concatenation
                   | alternation SLASH concatenation
 
-    -- concatenation : repetition+
+    -- concatenation: repetition+
     concatenation ::= repetition
                     | concatenation repetition
 
-    -- repetition : repeat_? element
+    -- repetition: repeat_? element
     repetition ::= element
                  | repeat_ element
 
-    -- repeat_ : INT | INT? '*' INT?
+    -- repeat_: INT | INT? '*' INT?
     repeat_ ::= INT
               | STAR
               | INT STAR

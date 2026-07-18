@@ -1,5 +1,6 @@
 # http
 
-Scaffold from antlr/grammars-v4 `http`.
+Auto-ported from antlr/grammars-v4 `http` via `tools/antlr2lpg.py`.
 
-Status: see `status.json`.
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `http_message`.

@@ -1,13 +1,20 @@
 {
   "id": "tcpheader",
+  "quality": "language_subset",
   "parse_ok": true,
-  "example_count": 1,
   "status": "ported",
-  "blockers": [],
-  "tier": "A",
-  "quality": "token_stream_smoke",
-  "quality_notes": [
-    "tiny_parser_single_example"
+  "blockers": [
+    "tiny_upstream_g4_approx_91_lines",
+    "header_only_no_payload",
+    "payload_must_avoid_ws_bytes"
   ],
-  "parser_bytes": 647
+  "quality_notes": [
+    "real_g4_port",
+    "curated_20byte_tcp_headers"
+  ],
+  "notes": "Fixed 20-octet TCP segment header from tcp.g4; curated octets avoid lexer WS bytes.",
+  "example_count": 3,
+  "tier": "A",
+  "parser_bytes": 647,
+  "parser_lines": 32
 }

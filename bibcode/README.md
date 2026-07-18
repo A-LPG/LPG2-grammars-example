@@ -1,7 +1,6 @@
-# bibcode (LPG)
+# bibcode
 
-Port of antlr/grammars-v4 `bibcode`.
+Auto-ported from antlr/grammars-v4 `bibcode` via `tools/antlr2lpg.py`.
 
-```bash
-bash grammars-example/harness/run-one.sh bibcode
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `bibcode`.

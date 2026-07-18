@@ -1,13 +1,15 @@
 {
   "id": "python/python2-js",
-  "tier": "C",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
-  "blockers": [],
-  "quality": "token_stream_smoke",
+  "tier": "A",
+  "quality": "language_subset",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "real_g4_port",
+    "antlr2lpg_structural_port",
+    "INDENT_DEDENT_optional_no_indent_tracking"
   ],
-  "parser_bytes": 1192
+  "blockers": [],
+  "start": "file_input",
+  "example_count": 3
 }

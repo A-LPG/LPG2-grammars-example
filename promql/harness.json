@@ -3,6 +3,6 @@
   "lexer": "PromqlLexer",
   "parser": "PromqlParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

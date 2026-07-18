@@ -1,7 +1,6 @@
 # elixir
 
-Parse-level port of antlr/grammars-v4 `elixir/`.
+Auto-ported from antlr/grammars-v4 `elixir` via `tools/antlr2lpg.py`.
 
-```bash
-../harness/run-one.sh elixir
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `parse`.

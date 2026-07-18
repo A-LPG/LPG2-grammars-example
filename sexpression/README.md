@@ -1,13 +1,6 @@
-# sexpression (LPG)
+# sexpression
 
-Parse-level port of [antlr/grammars-v4 `sexpression`](https://github.com/antlr/grammars-v4/tree/master/sexpression).
+Auto-ported from antlr/grammars-v4 `sexpression` via `tools/antlr2lpg.py`.
 
-## License
-
-MIT (see original grammar header).
-
-## Verify
-
-```bash
-bash grammars-example/harness/run-one.sh sexpression
-```
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `sexpr`.

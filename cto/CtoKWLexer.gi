@@ -1,9 +1,11 @@
--- Keyword filter
+-- Keyword filter for Hyperledger Composer CTO
+-- Source: antlr/grammars-v4 cto/CtoLexer.g4
+
 %options package=lpg.grammars.cto
 %options template=KeywordTemplateF.gi
 %options fp=CtoKWLexer
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
 %Export
     NAMESPACE
@@ -17,14 +19,18 @@
     ABSTRACT
     EXTENDS
     IDENTIFIED
+    BY
     OPTIONAL
     DEFAULT
-    REGEX
-    RANGE
-    INSTANCE
-    OF
     TRUE
     FALSE
+    BOOLEAN
+    DATETIME
+    DOUBLE
+    INTEGER
+    LONG
+    STRINGTYPE
+    VAR
 %End
 %Terminals
     a b c d e f g h i j k l m n o p q r s t u v w x y z
@@ -46,12 +52,16 @@
               | a b s t r a c t /.$setResult($_ABSTRACT);./
               | e x t e n d s /.$setResult($_EXTENDS);./
               | i d e n t i f i e d /.$setResult($_IDENTIFIED);./
+              | b y /.$setResult($_BY);./
               | o p t i o n a l /.$setResult($_OPTIONAL);./
               | d e f a u l t /.$setResult($_DEFAULT);./
-              | r e g e x /.$setResult($_REGEX);./
-              | r a n g e /.$setResult($_RANGE);./
-              | i n s t a n c e /.$setResult($_INSTANCE);./
-              | o f /.$setResult($_OF);./
               | t r u e /.$setResult($_TRUE);./
               | f a l s e /.$setResult($_FALSE);./
+              | b o o l e a n /.$setResult($_BOOLEAN);./
+              | d a t e t i m e /.$setResult($_DATETIME);./
+              | d o u b l e /.$setResult($_DOUBLE);./
+              | i n t e g e r /.$setResult($_INTEGER);./
+              | l o n g /.$setResult($_LONG);./
+              | s t r i n g /.$setResult($_STRINGTYPE);./
+              | o /.$setResult($_VAR);./
 %End

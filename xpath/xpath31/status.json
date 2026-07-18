@@ -1,13 +1,19 @@
 {
   "id": "xpath/xpath31",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 2,
   "blockers": [],
-  "quality": "token_stream_smoke",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "antlr2lpg_structural_port",
+    "real_g4_port",
+    "language_subset",
+    "abbreviated_//_path_not_yet"
   ],
-  "parser_bytes": 1160
+  "parser_bytes": 13081,
+  "rule_approx": 209,
+  "start": "xpath",
+  "example_count": 1,
+  "tier": "A",
+  "notes": "real_g4_port"
 }

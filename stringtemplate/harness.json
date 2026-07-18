@@ -3,6 +3,6 @@
   "lexer": "StringtemplateLexer",
   "parser": "StringtemplateParser",
   "example_globs": [
-    "examples/smoke.st"
+    "examples-curated/**/*.stg"
   ]
 }

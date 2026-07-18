@@ -1,13 +1,19 @@
 {
   "id": "apex",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
   "blockers": [],
-  "quality": "token_stream_smoke",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "antlr2lpg_structural_port",
+    "real_g4_port",
+    "language_subset"
   ],
-  "parser_bytes": 1169
+  "parser_bytes": 20631,
+  "rule_approx": 298,
+  "start": "compilationUnit",
+  "example_count": 2,
+  "notes": "real_g4_port",
+  "tier": "A",
+  "parser_lines": 910
 }

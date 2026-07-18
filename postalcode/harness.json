@@ -2,5 +2,5 @@
   "package": "lpg.grammars.postalcode",
   "lexer": "PostalcodeLexer",
   "parser": "PostalcodeParser",
-  "example_globs": ["examples/**/*"]
+  "example_globs": ["examples-curated/**/*"]
 }

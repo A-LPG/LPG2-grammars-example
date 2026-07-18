@@ -1,0 +1,4 @@
+deb-src http://archive.ubuntu.com/ubuntu
+jammy
+main
+universe

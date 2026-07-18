@@ -1,11 +1,13 @@
 {
   "id": "php",
-  "tier": "D",
-  "parse_ok": true,
-  "status": "ported",
-  "example_count": 4,
+  "quality": "language_subset",
+  "parse_ok": false,
+  "status": "regenerated_from_g4",
   "blockers": [],
-  "quality": "language_port",
-  "quality_notes": [],
-  "parser_bytes": 2421
+  "quality_notes": [
+    "antlr2lpg_structural_port"
+  ],
+  "parser_bytes": 28840,
+  "rule_approx": 422,
+  "start": "htmlDocument"
 }

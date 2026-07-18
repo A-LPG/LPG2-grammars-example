@@ -3,6 +3,6 @@
   "lexer": "HexpatLexer",
   "parser": "HexpatParser",
   "example_globs": [
-    "examples/tiny.hexpat"
+    "examples-curated/**/*"
   ]
 }

@@ -3,6 +3,6 @@
   "lexer": "MoleculeLexer",
   "parser": "MoleculeParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

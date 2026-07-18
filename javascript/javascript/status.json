@@ -1,11 +1,19 @@
 {
   "id": "javascript/javascript",
-  "tier": "D",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 6,
   "blockers": [],
-  "quality": "language_port",
-  "quality_notes": [],
-  "parser_bytes": 2709
+  "quality_notes": [
+    "antlr2lpg_structural_port",
+    "real_g4_port",
+    "language_subset"
+  ],
+  "parser_bytes": 14852,
+  "rule_approx": 227,
+  "start": "program",
+  "example_count": 5,
+  "tier": "A",
+  "parser_lines": 649,
+  "notes": "functions/control/members"
 }

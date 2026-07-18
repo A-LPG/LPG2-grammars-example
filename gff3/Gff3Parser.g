@@ -1,6 +1,8 @@
--- Gff3Parser (LPG)
--- Ported from antlr/grammars-v4 gff3/gff3.g4
--- Header line is a COMMENTLINE (##gff-version 3).
+-- Gff3Parser (LPG) — structural port of grammars-v4 gff3/gff3.g4
+-- Nonterminals: document / line / dataline / attributes / attribute /
+--   seqid / source / type_ / start / end / score / strand / phase / commentline
+-- g4 HEADER ('##gff-version 3') is lexed as COMMENTLINE (LPG prefix-safe);
+-- document still requires a leading comment line then line+.
 
 %Options la=2
 %Options fp=Gff3Parser
@@ -18,16 +20,19 @@
 %End
 
 %Rules
-    document ::= lines
+    -- document: HEADER line+  (HEADER ≈ first COMMENTLINE, typically ##gff-version 3)
+    document ::= COMMENTLINE lines
 
     lines ::= line
             | lines line
 
-    line ::= commentline | dataline
+    line ::= commentline
+           | dataline
 
     dataline ::= seqid TAB source TAB type_ TAB start TAB end TAB score TAB strand TAB phase TAB opt_attrs EOL
 
-    opt_attrs ::= $empty | attributes
+    opt_attrs ::= $empty
+                | attributes
 
     attributes ::= attribute
                  | attributes SEMI attribute

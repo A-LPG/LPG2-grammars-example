@@ -3,6 +3,6 @@
   "lexer": "PythonPython3Lexer",
   "parser": "PythonPython3Parser",
   "example_globs": [
-    "examples-curated/**/*"
+    "examples-curated/**/*.py"
   ]
 }

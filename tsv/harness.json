@@ -3,6 +3,7 @@
   "lexer": "TsvLexer",
   "parser": "TsvParser",
   "example_globs": [
-    "examples/**/*.txt"
+    "examples-curated/**/*",
+    "examples/**/*"
   ]
 }

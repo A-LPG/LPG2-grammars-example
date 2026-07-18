@@ -1,10 +1,10 @@
 # ltl
 
-**Quality: `token_stream_smoke` — not a language grammar.**
+LPG port of antlr/grammars-v4 `ltl` (`ltl.g4`).
 
-Scaffold / nested token-stream smoke for antlr/grammars-v4 `ltl`. Harness may report `parse_ok`; that does **not** mean a real LPG language port.
+g4-shaped nonterminals: `file_` → `proposition` with `binop` / `unaryop` (U/W/R, G/F/X, true/false, ATOMIC).
 
-See `status.json` and `catalog.json` → `quality_schema`.
+Subset notes: g4 Unicode operators `→ ∧ ∨ ⌐` are ASCII digraphs `->` `&&` `||` `~` (LexerBasicMapF).
 
 ```bash
 bash harness/run-one.sh ltl

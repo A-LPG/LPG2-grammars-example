@@ -3,6 +3,6 @@
   "lexer": "JossLexer",
   "parser": "JossParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

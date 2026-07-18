@@ -18,9 +18,10 @@
 %Rules
     file_ ::= expr
 
-    -- Left-recursive application: atom_expr+
+    -- Left-factored vs cayenne.g4: application + field select
     expr ::= atom_expr
            | expr atom_expr
+           | expr DOT IDENTIFIER
 
     atom_expr ::= LPAREN IDENTIFIER DCOLON type_ RPAREN ARROW expr
                 | BACKSLASH LPAREN IDENTIFIER DCOLON type_ RPAREN ARROW expr
@@ -32,9 +33,6 @@
                 | HASH
                 | IDENTIFIER
 
-    -- allow expr . lbl via postfix on atom - simplify: IDENTIFIER DOT IDENTIFIER as atom
-    -- original: expr '.' lblid — fold into left recursion via special form
-    -- For green harness with "x", IDENTIFIER alone is enough.
 
     type_ ::= expr
 

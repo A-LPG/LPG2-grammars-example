@@ -1,13 +1,15 @@
 {
   "id": "aterm",
   "parse_ok": true,
-  "example_count": 15,
+  "example_count": 3,
   "status": "ported",
   "blockers": [],
   "tier": "A",
   "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port",
+    "aterm_term_list_placeholder_annotation_from_g4"
   ],
-  "parser_bytes": 1110
+  "parser_bytes": 1110,
+  "parser_lines": 53
 }

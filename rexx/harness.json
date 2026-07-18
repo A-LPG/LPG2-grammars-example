@@ -3,9 +3,6 @@
   "lexer": "RexxLexer",
   "parser": "RexxParser",
   "example_globs": [
-    "examples/smoke.rex",
-    "examples/example1.txt",
-    "examples/test_bitstring.rex",
-    "examples/test_concatenation.rex"
+    "examples-curated/**/*"
   ]
 }

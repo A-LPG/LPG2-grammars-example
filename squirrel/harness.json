@@ -3,6 +3,6 @@
   "lexer": "SquirrelLexer",
   "parser": "SquirrelParser",
   "example_globs": [
-    "examples/tiny.nut"
+    "examples-curated/**/*"
   ]
 }

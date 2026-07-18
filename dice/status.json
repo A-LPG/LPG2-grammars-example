@@ -1,13 +1,14 @@
 {
   "id": "dice",
+  "quality": "language_subset",
   "parse_ok": true,
-  "example_count": 12,
   "status": "ported",
   "blockers": [],
-  "tier": "B",
-  "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port"
   ],
-  "parser_bytes": 802
+  "parser_bytes": 773,
+  "start": "file_",
+  "example_count": 3,
+  "tier": "A"
 }

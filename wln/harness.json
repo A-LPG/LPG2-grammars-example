@@ -3,6 +3,6 @@
   "lexer": "WlnLexer",
   "parser": "WlnParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

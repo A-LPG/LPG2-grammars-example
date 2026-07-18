@@ -1,11 +1,9 @@
 # stringtemplate
 
-**Quality: `token_stream_smoke` — not a language grammar.**
+Structural LPG subset of grammars-v4 `stringtemplate/STGParser.g4` (group files).
 
-Scaffold / nested token-stream smoke for antlr/grammars-v4 `stringtemplate`. Harness may report `parse_ok`; that does **not** mean a real LPG language port.
-
-See `status.json` and `catalog.json` → `quality_schema`.
+Covers `group` / `template_` / `dict_` / `delimiters` / `imports`. Not `STParser` template bodies.
 
 ```bash
-bash harness/run-one.sh stringtemplate
+bash ../harness/run-one.sh stringtemplate
 ```

@@ -1,5 +1,6 @@
 # caql
 
-Scaffold from antlr/grammars-v4 `caql`.
+Auto-ported from antlr/grammars-v4 `caql` via `tools/antlr2lpg.py`.
 
-Status: see `status.json`.
+Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
+Start symbol: `start_`.

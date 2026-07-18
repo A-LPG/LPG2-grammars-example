@@ -1,13 +1,20 @@
 {
   "id": "sparql",
-  "tier": "B",
+  "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 6,
   "blockers": [],
-  "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "antlr2lpg_structural_port",
+    "real_g4_port",
+    "explicit_keyword_tokens",
+    "language_subset",
+    "examples_still_too_thin_for_harsh_bar"
   ],
-  "parser_bytes": 1509
+  "parser_bytes": 7618,
+  "rule_approx": 136,
+  "start": "query",
+  "example_count": 1,
+  "tier": "A",
+  "parser_lines": 342
 }

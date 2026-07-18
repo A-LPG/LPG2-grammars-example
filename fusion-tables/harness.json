@@ -3,6 +3,6 @@
   "lexer": "FusionTablesLexer",
   "parser": "FusionTablesParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

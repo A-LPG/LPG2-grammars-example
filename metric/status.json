@@ -1,13 +1,16 @@
 {
   "id": "metric",
-  "tier": "A",
-  "status": "ported",
   "parse_ok": true,
-  "blockers": [],
-  "example_count": 13,
+  "status": "ported",
+  "tier": "A",
   "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port",
+    "mirrors_metric.g4_file_uom_measure_prefix_unit",
+    "ohm_ascii_for_omega",
+    "no_micro_or_celsius"
   ],
-  "parser_bytes": 912
+  "blockers": [],
+  "start": "file_",
+  "example_count": 5
 }

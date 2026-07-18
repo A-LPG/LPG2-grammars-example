@@ -1,13 +1,13 @@
 {
   "id": "gvpr",
-  "tier": "B",
-  "parse_ok": true,
-  "status": "ported",
-  "example_count": 9,
+  "quality": "language_subset",
+  "parse_ok": false,
+  "status": "regenerated_from_g4",
   "blockers": [],
-  "quality": "token_stream_smoke",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "antlr2lpg_structural_port"
   ],
-  "parser_bytes": 1145
+  "parser_bytes": 6063,
+  "rule_approx": 101,
+  "start": "preds"
 }

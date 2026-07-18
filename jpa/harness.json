@@ -3,6 +3,6 @@
   "lexer": "JpaLexer",
   "parser": "JpaParser",
   "example_globs": [
-    "examples/tiny.jpql"
+    "examples-curated/**/*"
   ]
 }
