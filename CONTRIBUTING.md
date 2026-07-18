@@ -3,6 +3,15 @@
 Goal: every grammars-v4 unit eventually lives under this repo with **honest** parse-level acceptance.
 `parse_ok` alone is **not** enough — a green harness on a generic nested token-stream is smoke only, not a language port.
 
+**Agents / AI:** follow [AGENTS.md](AGENTS.md) (LPG counterpart of grammars-v4 `CLAUDE.md`). Terms: [GLOSSARY.md](GLOSSARY.md).
+
+## House rules
+
+- New ports and bug fixes should include examples that exercise the change (grammars-v4 tradition).
+- Prefer `examples-curated/` multi-line inputs over single-token smokes.
+- Resolve name clashes by appending `_` to nonterminals when needed (`id` → `id_`).
+- Do not mark `language_port` without a structural parser + green multi-example harness.
+
 ## Quality levels
 
 Each unit has a `quality` field in `status.json` and `catalog.json` (see `catalog.json` → `quality_schema`).
