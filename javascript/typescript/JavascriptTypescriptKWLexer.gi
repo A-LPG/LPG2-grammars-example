@@ -12,6 +12,7 @@
     Any
     As
     Async
+    AWAIT
     Await
     BOOL_LITERAL
     Boolean
@@ -25,6 +26,7 @@
     Debugger
     Declare
     Default
+    DELETE
     Delete
     Do
     Else
@@ -45,6 +47,7 @@
     KeyOf
     Let
     Module
+    NEW
     NULL_LITERAL
     Namespace
     Never
@@ -64,14 +67,17 @@
     Super
     Switch
     Symbol
+    THIS
     This
     Throw
     Try
     TypeAlias
+    TYPEOF
     Typeof
     Undefined
     Unique
     Var
+    VOID
     Void
     While
     With
@@ -107,7 +113,7 @@
     Keyword ::= p a c k a g e /.$setResult($_Package);./
     Keyword ::= p r i v a t e /.$setResult($_Private);./
     Keyword ::= r e q u i r e /.$setResult($_Require);./
-    Keyword ::= d e l e t e /.$setResult($_Delete);./
+    Keyword ::= d e l e t e /.$setResult($_DELETE);./
     Keyword ::= e x p o r t /.$setResult($_Export);./
     Keyword ::= i m p o r t /.$setResult($_Import);./
     Keyword ::= m o d u l e /.$setResult($_Module);./
@@ -119,10 +125,10 @@
     Keyword ::= s t r i n g /.$setResult($_String);./
     Keyword ::= s w i t c h /.$setResult($_Switch);./
     Keyword ::= s y m b o l /.$setResult($_Symbol);./
-    Keyword ::= t y p e o f /.$setResult($_Typeof);./
+    Keyword ::= t y p e o f /.$setResult($_TYPEOF);./
     Keyword ::= u n i q u e /.$setResult($_Unique);./
     Keyword ::= a s y n c /.$setResult($_Async);./
-    Keyword ::= a w a i t /.$setResult($_Await);./
+    Keyword ::= a w a i t /.$setResult($_AWAIT);./
     Keyword ::= b r e a k /.$setResult($_Break);./
     Keyword ::= c a t c h /.$setResult($_Catch);./
     Keyword ::= c l a s s /.$setResult($_CLASS_);./
@@ -139,15 +145,15 @@
     Keyword ::= e n u m /.$setResult($_Enum);./
     Keyword ::= f r o m /.$setResult($_From);./
     Keyword ::= n u l l /.$setResult($_NULL_LITERAL);./
-    Keyword ::= t h i s /.$setResult($_This);./
+    Keyword ::= t h i s /.$setResult($_THIS);./
     Keyword ::= t r u e /.$setResult($_BOOL_LITERAL);./
     Keyword ::= t y p e /.$setResult($_TypeAlias);./
-    Keyword ::= v o i d /.$setResult($_Void);./
+    Keyword ::= v o i d /.$setResult($_VOID);./
     Keyword ::= w i t h /.$setResult($_With);./
     Keyword ::= a n y /.$setResult($_Any);./
     Keyword ::= f o r /.$setResult($_For);./
     Keyword ::= l e t /.$setResult($_Let);./
-    Keyword ::= n e w /.$setResult($_New);./
+    Keyword ::= n e w /.$setResult($_NEW);./
     Keyword ::= t r y /.$setResult($_Try);./
     Keyword ::= v a r /.$setResult($_Var);./
     Keyword ::= a s /.$setResult($_As);./

@@ -23,6 +23,14 @@
            | CHAR_LITERAL
            | STRING_LITERAL
            | NullLiteral
+           | integerLiteral
+           | floatingPointLiteral
+
+    integerLiteral ::= HEX_LITERAL
+           | OCT_LITERAL
+           | BINARY_LITERAL
+
+    floatingPointLiteral ::= FLOAT_LITERAL
 
     primitiveType ::= list_1 numericType
            | list_2 BOOLEAN

@@ -6,12 +6,14 @@
   "blockers": [],
   "quality_notes": [
     "antlr2lpg_structural_port",
-    "real_g4_port"
+    "real_g4_port",
+    "language_subset"
   ],
-  "parser_bytes": 27110,
+  "parser_bytes": 29453,
   "rule_approx": 451,
-  "start": "initializer",
-  "example_count": 4,
+  "start": "program",
+  "example_count": 8,
   "tier": "A",
-  "parser_lines": 1165
+  "parser_lines": 1241,
+  "notes": "types/interfaces/generics/enums"
 }

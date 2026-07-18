@@ -15,6 +15,19 @@ Parse-level **LPG v2** ports of grammars-v4 units. Acceptance is **not** “harn
 
 Reference unit: `json/` (tiny upstream g4 → short but structural LPG parser).
 
+## Hard rules (non-negotiable)
+
+**No shrinking. No demotion.**
+
+| Forbidden | Allowed |
+|-----------|---------|
+| Delete / rewrite-shorten `*Parser.g` to pass CI | Restore pre-shrink / grammars-v4 structure |
+| Toy examples that drop language structure coverage | Add curated multi-line examples |
+| Lower `quality`, set `parse_ok=false`, or thin subset pretending “done” | KW/lexer terminal-name alignment; `checkForKeyWord()`; literal/operator aliases |
+| Speculative corpus fishing to “make green” by cutting rules | Widen rules toward g4 without removing core nonterminals |
+
+If a unit was previously shrunk (e.g. debt from commit `043a1d6`), restore the fuller parser first, keep legitimate KW/lexer alignment fixes, then re-green with alignment — never by shrinking again.
+
 ## Testing a grammar (LPG harness)
 
 From a full **LPG2** checkout (this tree as the `grammars-example` submodule):

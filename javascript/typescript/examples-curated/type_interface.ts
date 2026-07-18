@@ -1,2 +1,9 @@
-function id(x) { return x; }
-var y = id(1);
+// Interface and type alias composition.
+interface Item {
+    id: number;
+    name: string;
+}
+type ItemId = number;
+function getId(item: Item): ItemId {
+    return item.id;
+}

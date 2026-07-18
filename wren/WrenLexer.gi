@@ -14,10 +14,10 @@
 %End
 %Export
     IDENTIFIER
-    NUMBER STRING
+    DECIMAL_LITERAL STRING
     LPAREN RPAREN LBRACE RBRACE
-    COMMA DOT COLON SEMI ASSIGN PLUS MINUS STAR SLASH
-    CLASS VAR IF ELSE WHILE FOR IN RETURN TRUE FALSE NULLLITERAL IMPORT
+    COMMA DOT COLON SEMI ASSIGN ADD SUB MUL DIV
+    CLASS_T VAR_T IF_T ELSE_T WHILE_T FOR_T IN RETURN_T TRUE_T FALSE_T NULL_T IMPORT_T
 %End
 %Terminals
     CtlCharNotWS
@@ -80,12 +80,12 @@
             | ':' /. makeToken($_COLON); ./
             | ';' /. makeToken($_SEMI); ./
             | '=' /. makeToken($_ASSIGN); ./
-            | '+' /. makeToken($_PLUS); ./
-            | '-' /. makeToken($_MINUS); ./
-            | '*' /. makeToken($_STAR); ./
-            | '/' /. makeToken($_SLASH); ./
+            | '+' /. makeToken($_ADD); ./
+            | '-' /. makeToken($_SUB); ./
+            | '*' /. makeToken($_MUL); ./
+            | '/' /. makeToken($_DIV); ./
             | STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
+            | NUMBER /. makeToken($_DECIMAL_LITERAL); ./
             | identifier /. checkForKeyWord(); ./
             | white /. skipToken(); ./
             | line_comment /. skipToken(); ./

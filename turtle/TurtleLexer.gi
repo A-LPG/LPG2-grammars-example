@@ -14,10 +14,12 @@
 %End
 %Export
     IDENTIFIER
-    STRING NUMBER
+    String NumericLiteral
     DOT SEMI COMMA COLON
-    AT PREFIX BASE A TRUE FALSE
+    LBRACKET RBRACKET LPAREN RPAREN
+    PREFIX BASE A TRUE FALSE
     IRIREF PrefixedName
+    BlankNode LANGTAG OP_40132
 %End
 %Terminals
     CtlCharNotWS
@@ -71,28 +73,46 @@
     Token
 %End
 %Rules
-    Token ::= '@' /. makeToken($_AT); ./
+    Token ::= AtPrefix /. makeToken($_PREFIX); ./
+            | AtBase /. makeToken($_BASE); ./
             | '.' /. makeToken($_DOT); ./
             | ';' /. makeToken($_SEMI); ./
             | ',' /. makeToken($_COMMA); ./
             | ':' /. makeToken($_COLON); ./
+            | '[' /. makeToken($_LBRACKET); ./
+            | ']' /. makeToken($_RBRACKET); ./
+            | '(' /. makeToken($_LPAREN); ./
+            | ')' /. makeToken($_RPAREN); ./
+            | '^' '^' /. makeToken($_OP_40132); ./
             | IRIREF /. makeToken($_IRIREF); ./
+            | BlankNode /. makeToken($_BlankNode); ./
+            | LANGTAG /. makeToken($_LANGTAG); ./
             | PrefixedName /. makeToken($_PrefixedName); ./
-            | STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
+            | Namespace /.
+                  makeToken(getLeftSpan(), getRightSpan() - 1, $_IDENTIFIER);
+                  makeToken(getRightSpan(), getRightSpan(), $_COLON);
+              ./
+            | STRING /. makeToken($_String); ./
+            | NUMBER /. makeToken($_NumericLiteral); ./
             | identifier /. checkForKeyWord(); ./
             | white /. skipToken(); ./
             | hashComment /. skipToken(); ./
+
+    AtPrefix ::= '@' p r e f i x
+    AtBase ::= '@' b a s e
 
     IRIREF ::= '<' IRIBody '>'
     IRIBody -> $empty | IRIBody IRIChar
     IRIChar -> Letter | Digit | '/' | ':' | '.' | '_' | '-' | '#' | '?' | '=' | '&' | '%' | '+'
 
     PrefixedName ::= IDENT_PART ':' IDENT_PART
-                   | IDENT_PART ':'
                    | ':' IDENT_PART
+    Namespace ::= IDENT_PART ':'
     IDENT_PART ::= Letter LetterOrDigitStar
 
+    BlankNode ::= '_' ':' IDENT_PART
+    LANGTAG ::= '@' Letter LangTail
+    LangTail -> $empty | LangTail LetterOrDigit | LangTail '-'
 
     identifier ::= Letter LetterOrDigitStar
     Letter -> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z | _

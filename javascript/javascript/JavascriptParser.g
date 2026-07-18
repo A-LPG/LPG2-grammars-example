@@ -202,19 +202,28 @@
 
     jsAssignment ::= jsConditional
            | jsConditional EQ jsAssignment
-           | jsConditional PLUSEQ jsAssignment
-           | jsConditional MINUSEQ jsAssignment
-           | jsConditional STAREQ jsAssignment
-           | jsConditional SLASHEQ jsAssignment
+           | jsConditional assignmentOperator jsAssignment
 
-    jsConditional ::= jsOr
-           | jsOr QUESTION jsAssignment COLON jsAssignment
+    jsConditional ::= jsCoalesce
+           | jsCoalesce QUESTION jsAssignment COLON jsAssignment
+
+    jsCoalesce ::= jsOr
+           | jsCoalesce QUESTQUEST jsAnd
 
     jsOr ::= jsAnd
            | jsOr OROR jsAnd
 
-    jsAnd ::= jsEq
-           | jsAnd ANDAND jsEq
+    jsAnd ::= jsBitOr
+           | jsAnd ANDAND jsBitOr
+
+    jsBitOr ::= jsBitXor
+           | jsBitOr BAR jsBitXor
+
+    jsBitXor ::= jsBitAnd
+           | jsBitXor CARET jsBitAnd
+
+    jsBitAnd ::= jsEq
+           | jsBitAnd AMP jsEq
 
     jsEq ::= jsRel
            | jsEq EQEQ jsRel
@@ -222,45 +231,103 @@
            | jsEq EQEQEQ jsRel
            | jsEq NOTEQEQ jsRel
 
-    jsRel ::= jsAdd
-           | jsRel LT jsAdd
-           | jsRel GT jsAdd
-           | jsRel LTEQ jsAdd
-           | jsRel GTEQ jsAdd
+    jsRel ::= jsShift
+           | jsRel Instanceof jsShift
+           | jsRel In jsShift
+           | jsRel LT jsShift
+           | jsRel GT jsShift
+           | jsRel LTEQ jsShift
+           | jsRel GTEQ jsShift
+
+    jsShift ::= jsAdd
+           | jsShift LSHIFT jsAdd
+           | jsShift RSHIFT jsAdd
+           | jsShift URSHIFT jsAdd
 
     jsAdd ::= jsMul
            | jsAdd PLUS jsMul
            | jsAdd MINUS jsMul
 
-    jsMul ::= jsUnary
-           | jsMul STAR jsUnary
-           | jsMul SLASH jsUnary
-           | jsMul PERCENT jsUnary
+    jsMul ::= jsPower
+           | jsMul STAR jsPower
+           | jsMul SLASH jsPower
+           | jsMul PERCENT jsPower
+
+    jsPower ::= jsUnary
+           | jsUnary STARSTAR jsPower
 
     jsUnary ::= PLUSPLUS jsUnary
            | MINUSMINUS jsUnary
            | PLUS jsUnary
            | MINUS jsUnary
+           | TILDE jsUnary
            | BANG jsUnary
+           | DELETE jsUnary
+           | VOID jsUnary
            | TYPEOF jsUnary
+           | AWAIT jsUnary
            | jsPostfix
 
     jsPostfix ::= jsPrimary
-           | jsPostfix DOT IDENTIFIER
+           | jsPostfix DOT identifierName
+           | jsPostfix QUESTDOT identifierName
            | jsPostfix arguments
            | jsPostfix LBRACKET expressionSequence RBRACKET
+           | jsPostfix QUESTDOT LBRACKET expressionSequence RBRACKET
            | jsPostfix PLUSPLUS
            | jsPostfix MINUSMINUS
 
     jsPrimary ::= THIS
+           | Super
            | IDENTIFIER
            | literal
            | LPAREN expressionSequence RPAREN
-           | NEW jsPrimary arguments
-           | NEW jsPrimary
+           | newExpression
+           | importExpression
+           | metaExpression
+           | classExpression
            | arrayLiteral
            | objectLiteral
            | anonymousFunction
+
+    classExpression ::= CLASS_ opt_130 classTail
+
+    newExpression ::= NEW jsPrimary arguments
+           | NEW jsPrimary
+
+    importExpression ::= Import LPAREN singleExpression RPAREN
+
+    metaExpression ::= NEW DOT identifierName
+
+    optionalChainExpression ::= jsPostfix QUESTDOT identifierName
+           | jsPostfix QUESTDOT LBRACKET expressionSequence RBRACKET
+
+    memberIndexExpression ::= jsPostfix LBRACKET expressionSequence RBRACKET
+
+    memberDotExpression ::= jsPostfix DOT identifierName
+
+    argumentsExpression ::= jsPostfix arguments
+
+    updateExpression ::= jsPostfix PLUSPLUS
+           | jsPostfix MINUSMINUS
+
+    unaryExpression ::= DELETE jsUnary
+           | VOID jsUnary
+           | TYPEOF jsUnary
+           | AWAIT jsUnary
+
+    powerExpression ::= jsUnary STARSTAR jsPower
+
+    coalesceExpression ::= jsCoalesce QUESTQUEST jsAnd
+
+    relationalExpression ::= jsRel Instanceof jsShift
+           | jsRel In jsShift
+
+    bitwiseExpression ::= jsBitOr
+
+    assignmentExpression ::= jsConditional assignmentOperator jsAssignment
+
+    opt_130 ::= identifier | $empty
 
 
     initializer ::= EQ singleExpression

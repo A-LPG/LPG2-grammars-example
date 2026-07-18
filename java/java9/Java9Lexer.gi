@@ -16,11 +16,36 @@
 %End
 
 %Export
-                    DECIMAL_LITERAL
-STRING_LITERAL
-GT
-LT
-IDENTIFIER
+    DECIMAL_LITERAL
+    HEX_LITERAL
+    OCT_LITERAL
+    BINARY_LITERAL
+    FLOAT_LITERAL
+    STRING_LITERAL
+    CHAR_LITERAL
+    BooleanLiteral
+    NullLiteral
+    ARROW
+    ELLIPSIS
+    EQEQ
+    NOTEQ
+    LTEQ
+    GTEQ
+    AMPEQ
+    CARETEQ
+    LSHIFTEQ
+    MINUSEQ
+    PERCENTEQ
+    PIPEEQ
+    PLUSEQ
+    RSHIFTEQ
+    SLASHEQ
+    STAREQ
+    URSHIFTEQ
+    QUESTION
+    GT
+    LT
+    IDENTIFIER
     NUMBER
     STRING
     LPAREN
@@ -177,8 +202,35 @@ IDENTIFIER
 %End
 
 %Rules
-    Token ::= STRING /. makeToken($_STRING_LITERAL); ./
+    Token ::= ELLIPSIS /. makeToken($_ELLIPSIS); ./
+            | ARROW /. makeToken($_ARROW); ./
+            | EQEQ /. makeToken($_EQEQ); ./
+            | NOTEQ /. makeToken($_NOTEQ); ./
+            | LTEQ /. makeToken($_LTEQ); ./
+            | GTEQ /. makeToken($_GTEQ); ./
+            | PLUSPLUS /. makeToken($_PLUSPLUS); ./
+            | MINUSMINUS /. makeToken($_MINUSMINUS); ./
+            | ANDAND /. makeToken($_ANDAND); ./
+            | OROR /. makeToken($_OROR); ./
+            | COLONCOLON /. makeToken($_COLONCOLON); ./
+            | LSHIFTEQ /. makeToken($_LSHIFTEQ); ./
+            | RSHIFTEQ /. makeToken($_RSHIFTEQ); ./
+            | URSHIFTEQ /. makeToken($_URSHIFTEQ); ./
+            | STAREQ /. makeToken($_STAREQ); ./
+            | SLASHEQ /. makeToken($_SLASHEQ); ./
+            | PERCENTEQ /. makeToken($_PERCENTEQ); ./
+            | PLUSEQ /. makeToken($_PLUSEQ); ./
+            | MINUSEQ /. makeToken($_MINUSEQ); ./
+            | AMPEQ /. makeToken($_AMPEQ); ./
+            | CARETEQ /. makeToken($_CARETEQ); ./
+            | PIPEEQ /. makeToken($_PIPEEQ); ./
+            | FLOAT_LITERAL /. makeToken($_FLOAT_LITERAL); ./
+            | HEX_LITERAL /. makeToken($_HEX_LITERAL); ./
+            | BINARY_LITERAL /. makeToken($_BINARY_LITERAL); ./
+            | OCT_LITERAL /. makeToken($_OCT_LITERAL); ./
             | NUMBER /. makeToken($_DECIMAL_LITERAL); ./
+            | STRING /. makeToken($_STRING_LITERAL); ./
+            | CHARACTER /. makeToken($_CHAR_LITERAL); ./
             | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
@@ -197,10 +249,10 @@ IDENTIFIER
             | '*' /. makeToken($_STAR); ./
             | '/' /. makeToken($_SLASH); ./
             | '&' /. makeToken($_AMP); ./
-            | '|' /. makeToken($_BAR); ./
+            | '|' /. makeToken($_PIPE); ./
             | '^' /. makeToken($_CARET); ./
             | '!' /. makeToken($_BANG); ./
-            | '?' /. makeToken($_QUEST); ./
+            | '?' /. makeToken($_QUESTION); ./
             | '@' /. makeToken($_AT); ./
             | '$' /. makeToken($_DOLLAR); ./
             | '%' /. makeToken($_PERCENT); ./
@@ -228,16 +280,27 @@ IDENTIFIER
     Digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
     NUMBER ::= Digits
-             | Digits '.' Digits
-             | 0 x HexDigits
-             | 0 X HexDigits
+
+    FLOAT_LITERAL ::= Digits '.' Digits
+    HEX_LITERAL ::= 0 x HexDigits
+                  | 0 X HexDigits
+    BINARY_LITERAL ::= 0 b BinaryDigits
+                     | 0 B BinaryDigits
+    OCT_LITERAL ::= 0 OctDigits
 
     HexDigits ::= HexDigit | HexDigits HexDigit
     HexDigit -> Digit | a | b | c | d | e | f | A | B | C | D | E | F
+    BinaryDigits ::= BinaryDigit | BinaryDigits BinaryDigit
+    BinaryDigit -> 0 | 1
+    OctDigits ::= OctDigit | OctDigits OctDigit
+    OctDigit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7
     Digits ::= Digit | Digits Digit
 
     STRING ::= '"' SLBody '"'
+    CHARACTER ::= SingleQuote SQBody SingleQuote
     SLBody -> $empty | SLBody NotDQ | SLBody Escape
+    SQBody -> SQChar | BackSlash EscapeAny
+    SQChar -> Letter | Digit | Space | AfterASCII | '_'
     Escape ::= BackSlash EscapeAny
     EscapeAny -> Letter | Digit | DoubleQuote | SingleQuote | BackSlash | Space | '/' | SpecialEsc
     SpecialEsc -> '+' | '-' | '(' | ')' | '*' | '!' | '@' | '`' | '~' |
@@ -247,6 +310,29 @@ IDENTIFIER
     SpecialNotDQ -> '+' | '-' | '/' | '(' | ')' | '*' | '!' | '@' | '`' | '~' |
                     '%' | '&' | '^' | ':' | ';' | "'" | '|' | '{' | '}' |
                     '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$'
+
+    ELLIPSIS ::= '.' '.' '.'
+    ARROW ::= '-' '>'
+    EQEQ ::= '=' '='
+    NOTEQ ::= '!' '='
+    LTEQ ::= '<' '='
+    GTEQ ::= '>' '='
+    PLUSPLUS ::= '+' '+'
+    MINUSMINUS ::= '-' '-'
+    ANDAND ::= '&' '&'
+    OROR ::= '|' '|'
+    COLONCOLON ::= ':' ':'
+    LSHIFTEQ ::= '<' '<' '='
+    RSHIFTEQ ::= '>' '>' '='
+    URSHIFTEQ ::= '>' '>' '>' '='
+    STAREQ ::= '*' '='
+    SLASHEQ ::= '/' '='
+    PERCENTEQ ::= '%' '='
+    PLUSEQ ::= '+' '='
+    MINUSEQ ::= '-' '='
+    AMPEQ ::= '&' '='
+    CARETEQ ::= '^' '='
+    PIPEEQ ::= '|' '='
 
     SLComment ::= '/' '/' SLCBody
     SLCBody -> $empty | SLCBody NotNL

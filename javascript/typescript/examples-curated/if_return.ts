@@ -1,1 +1,7 @@
-function g(a) { if (a) { return a; } return 0; }
+// Typed control flow with early return.
+function pick(flag: boolean, value: number): number {
+    if (flag) {
+        return value;
+    }
+    return 0;
+}

@@ -9,11 +9,11 @@
     "real_g4_port",
     "language_subset"
   ],
-  "parser_bytes": 14852,
+  "parser_bytes": 16642,
   "rule_approx": 227,
   "start": "program",
-  "example_count": 5,
+  "example_count": 9,
   "tier": "A",
-  "parser_lines": 649,
-  "notes": "functions/control/members"
+  "parser_lines": 716,
+  "notes": "functions/control/members/modules"
 }

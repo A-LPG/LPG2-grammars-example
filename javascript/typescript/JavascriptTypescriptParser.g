@@ -30,7 +30,7 @@
            | identifier EQ typeArgument
            | typeParameters
 
-    constraint ::= EXTENDS type_
+    constraint ::= Extends type_
 
     typeArguments ::= LT opt_6 GT
 
@@ -139,7 +139,7 @@
 
     methodSignature ::= propertyName opt_63 callSignature
 
-    typeAliasDeclaration ::= opt_64 TYPE identifier opt_65 EQ type_ eos
+    typeAliasDeclaration ::= opt_64 TypeAlias identifier opt_65 EQ type_ eos
 
     constructorDeclaration ::= opt_66 Constructor LPAREN opt_67 RPAREN opt_70
 
@@ -250,8 +250,9 @@
            | classDeclaration
            | functionDeclaration
 
+    -- varModifier required: nullable prefixes otherwise let TypeAlias steal type aliases.
     variableStatement ::= bindingPattern opt_121 initializer opt_122
-           | opt_123 opt_124 opt_125 variableDeclarationList opt_126
+           | opt_123 varModifier opt_125 variableDeclarationList opt_126
            | Declare opt_127 variableDeclarationList opt_128
 
     variableDeclarationList ::= variableDeclaration list_130
@@ -403,19 +404,29 @@
 
     jsAssignment ::= jsConditional
            | jsConditional EQ jsAssignment
-           | jsConditional PLUSEQ jsAssignment
-           | jsConditional MINUSEQ jsAssignment
-           | jsConditional STAREQ jsAssignment
-           | jsConditional SLASHEQ jsAssignment
+           | jsConditional assignmentOperator jsAssignment
+           | jsConditional As type_
 
-    jsConditional ::= jsOr
-           | jsOr QUESTION jsAssignment COLON jsAssignment
+    jsConditional ::= jsCoalesce
+           | jsCoalesce QUESTION jsAssignment COLON jsAssignment
+
+    jsCoalesce ::= jsOr
+           | jsCoalesce QUESTQUEST jsAnd
 
     jsOr ::= jsAnd
            | jsOr OROR jsAnd
 
-    jsAnd ::= jsEq
-           | jsAnd ANDAND jsEq
+    jsAnd ::= jsBitOr
+           | jsAnd ANDAND jsBitOr
+
+    jsBitOr ::= jsBitXor
+           | jsBitOr PIPE jsBitXor
+
+    jsBitXor ::= jsBitAnd
+           | jsBitXor CARET jsBitAnd
+
+    jsBitAnd ::= jsEq
+           | jsBitAnd AMP jsEq
 
     jsEq ::= jsRel
            | jsEq EQEQ jsRel
@@ -423,46 +434,102 @@
            | jsEq EQEQEQ jsRel
            | jsEq NOTEQEQ jsRel
 
-    jsRel ::= jsAdd
-           | jsRel LT jsAdd
-           | jsRel GT jsAdd
-           | jsRel LTEQ jsAdd
-           | jsRel GTEQ jsAdd
+    jsRel ::= jsShift
+           | jsRel Instanceof jsShift
+           | jsRel In jsShift
+           | jsRel LT jsShift
+           | jsRel GT jsShift
+           | jsRel LTEQ jsShift
+           | jsRel GTEQ jsShift
+
+    jsShift ::= jsAdd
+           | jsShift LSHIFT jsAdd
+           | jsShift RSHIFT jsAdd
+           | jsShift URSHIFT jsAdd
 
     jsAdd ::= jsMul
            | jsAdd PLUS jsMul
            | jsAdd MINUS jsMul
 
-    jsMul ::= jsUnary
-           | jsMul STAR jsUnary
-           | jsMul SLASH jsUnary
-           | jsMul PERCENT jsUnary
+    jsMul ::= jsPower
+           | jsMul STAR jsPower
+           | jsMul SLASH jsPower
+           | jsMul PERCENT jsPower
+
+    jsPower ::= jsUnary
+           | jsUnary STARSTAR jsPower
 
     jsUnary ::= PLUSPLUS jsUnary
            | MINUSMINUS jsUnary
            | PLUS jsUnary
            | MINUS jsUnary
+           | TILDE jsUnary
            | BANG jsUnary
+           | DELETE jsUnary
+           | VOID jsUnary
            | TYPEOF jsUnary
+           | AWAIT jsUnary
            | jsPostfix
 
     jsPostfix ::= jsPrimary
-           | jsPostfix DOT IDENTIFIER
+           | jsPostfix DOT identifierName
+           | jsPostfix QUESTDOT identifierName
            | jsPostfix arguments
            | jsPostfix LBRACKET expressionSequence RBRACKET
+           | jsPostfix QUESTDOT LBRACKET expressionSequence RBRACKET
+           | jsPostfix BANG
            | jsPostfix PLUSPLUS
            | jsPostfix MINUSMINUS
 
     jsPrimary ::= THIS
+           | Super
            | IDENTIFIER
            | literal
            | LPAREN expressionSequence RPAREN
-           | NEW jsPrimary arguments
-           | NEW jsPrimary
+           | newExpression
+           | classExpression
            | arrayLiteral
            | objectLiteral
            | anonymousFunction
 
+    classExpression ::= CLASS_ opt_283 opt_284 classHeritage classTail
+
+    newExpression ::= NEW jsPrimary opt_285 arguments
+           | NEW jsPrimary opt_285
+
+    optionalChainExpression ::= jsPostfix QUESTDOT identifierName
+           | jsPostfix QUESTDOT LBRACKET expressionSequence RBRACKET
+
+    memberIndexExpression ::= jsPostfix LBRACKET expressionSequence RBRACKET
+
+    memberDotExpression ::= jsPostfix DOT identifierName
+
+    argumentsExpression ::= jsPostfix arguments
+
+    castAsExpression ::= jsConditional As type_
+
+    nonNullAssertionExpression ::= jsPostfix BANG
+
+    genericTypesExpression ::= typeArguments opt_286
+
+    updateExpression ::= jsPostfix PLUSPLUS
+           | jsPostfix MINUSMINUS
+
+    unaryExpression ::= DELETE jsUnary
+           | VOID jsUnary
+           | TYPEOF jsUnary
+           | AWAIT jsUnary
+
+    powerExpression ::= jsUnary STARSTAR jsPower
+
+    coalesceExpression ::= jsCoalesce QUESTQUEST jsAnd
+
+    relationalExpression ::= jsRel Instanceof jsShift
+           | jsRel In jsShift
+
+    bitwiseExpression ::= jsBitOr
+
+    assignmentExpression ::= jsConditional assignmentOperator jsAssignment
 
     asExpression ::= predefinedType opt_274
            | singleExpression
@@ -478,7 +545,8 @@
 
     arrowFunctionDeclaration ::= opt_279 arrowFunctionParameters opt_280 FATARROW arrowFunctionBody
 
-    arrowFunctionParameters ::= propertyName
+    -- identifier only (not propertyName/TypeAlias): bare `type =>` would steal typeAliasDeclaration.
+    arrowFunctionParameters ::= identifier
            | LPAREN opt_281 RPAREN
 
     arrowFunctionBody ::= singleExpression
@@ -527,8 +595,12 @@
 
     setter ::= identifier classElementName
 
+    -- TypeAlias is contextual: keep out of keyword so statement-level `type`
+    -- is typeAliasDeclaration (not arrowFunctionParameters via reservedWord).
     identifierName ::= identifier
            | reservedWord
+           | TypeAlias
+           | Require
 
     identifier ::= IDENTIFIER
 
@@ -588,7 +660,6 @@
            | From
            | As
            | Require
-           | TypeAlias
            | String
            | Boolean
            | Number
@@ -842,8 +913,6 @@
     opt_122 ::= SEMI | $empty
 
     opt_123 ::= accessibilityModifier | $empty
-
-    opt_124 ::= varModifier | $empty
 
     opt_125 ::= ReadOnly | $empty
 
@@ -1160,5 +1229,13 @@
     opt_281 ::= formalParameterList | $empty
 
     list_282 ::= $empty | list_282 templateStringAtom
+
+    opt_283 ::= identifier | $empty
+
+    opt_284 ::= typeParameters | $empty
+
+    opt_285 ::= typeArguments | $empty
+
+    opt_286 ::= expressionSequence | $empty
 
 %End

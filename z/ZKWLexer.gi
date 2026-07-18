@@ -7,8 +7,7 @@
 %End
 %Export
     SECTION
-    Z
-    E
+    PARENTS
     AX
     SCH
     TRUE
@@ -22,10 +21,9 @@
 %End
 %Rules
     Keyword ::= s e c t i o n /.$setResult($_SECTION);./
+              | p a r e n t s /.$setResult($_PARENTS);./
               | f a l s e /.$setResult($_FALSE);./
               | t r u e /.$setResult($_TRUE);./
               | a x /.$setResult($_AX);./
               | s c h /.$setResult($_SCH);./
-              | z /.$setResult($_Z);./
-              | e /.$setResult($_E);./
 %End

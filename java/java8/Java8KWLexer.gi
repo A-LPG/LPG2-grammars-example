@@ -82,6 +82,9 @@
 %End
 
 %Rules
+    Keyword ::= t r u e /.$setResult($_BooleanLiteral);./
+    Keyword ::= f a l s e /.$setResult($_BooleanLiteral);./
+    Keyword ::= n u l l /.$setResult($_NullLiteral);./
     Keyword ::= b o o l e a n l i t e r a l /.$setResult($_BooleanLiteral);./
     Keyword ::= s y n c h r o n i z e d /.$setResult($_SYNCHRONIZED);./
     Keyword ::= n u l l l i t e r a l /.$setResult($_NullLiteral);./

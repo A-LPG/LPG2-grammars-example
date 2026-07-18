@@ -14,7 +14,7 @@
 %End
 %Export
     IDENTIFIER
-    NUMBER STRING_LITERAL
+    INTEGER_LITERAL STRING_LITERAL
     LPAREN RPAREN LBRACE RBRACE
     COMMA COLON SEMI EQ PLUS MINUS STAR SLASH
     KW_FN KW_LET KW_MUT KW_IF KW_ELSE KW_RETURN KW_TRUE KW_FALSE
@@ -84,7 +84,7 @@
             | '*' /. makeToken($_STAR); ./
             | '/' /. makeToken($_SLASH); ./
             | STRING /. makeToken($_STRING_LITERAL); ./
-            | NUMBER /. makeToken($_NUMBER); ./
+            | NUMBER /. makeToken($_INTEGER_LITERAL); ./
             | identifier /. checkForKeyWord(); ./
             | white /. skipToken(); ./
             | SLComment /. skipToken(); ./

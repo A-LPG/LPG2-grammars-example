@@ -60,6 +60,7 @@ IDENTIFIER
     TRUE
     FALSE
     NULLLITERAL
+    ELLIPSIS
     AMPEQ
     AWAIT
     As
@@ -81,6 +82,7 @@ IDENTIFIER
     Debugger
     Default
     Do
+    EQEQ
     EQEQEQ
     Else
     Enum
@@ -101,6 +103,7 @@ IDENTIFIER
     Interface
     LSHIFT
     LSHIFTEQ
+    LTEQ
     MINUSEQ
     NEW
     NOTEQ
@@ -117,6 +120,7 @@ IDENTIFIER
     Protected
     Public
     QUESTDOT
+    QUESTQUEST
     QUESTQUESTEQ
     RSHIFT
     RSHIFTEQ
@@ -124,6 +128,7 @@ IDENTIFIER
     Return
     SLASHEQ
     STAREQ
+    STARSTAR
     STARSTAREQ
     Static
     StrictLet
@@ -138,6 +143,7 @@ IDENTIFIER
     Try
     URSHIFT
     URSHIFTEQ
+    GTEQ
     VOID
     Var
     While
@@ -211,6 +217,37 @@ IDENTIFIER
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
             | identifier /. checkForKeyWord(); ./
+            | '>' '>' '>' '=' /. makeToken($_URSHIFTEQ); ./
+            | '!' '=' '=' /. makeToken($_NOTEQEQ); ./
+            | '*' '*' '=' /. makeToken($_STARSTAREQ); ./
+            | '.' '.' '.' /. makeToken($_ELLIPSIS); ./
+            | '<' '<' '=' /. makeToken($_LSHIFTEQ); ./
+            | '=' '=' '=' /. makeToken($_EQEQEQ); ./
+            | '>' '>' '=' /. makeToken($_RSHIFTEQ); ./
+            | '>' '>' '>' /. makeToken($_URSHIFT); ./
+            | '?' '?' '=' /. makeToken($_QUESTQUESTEQ); ./
+            | '!' '=' /. makeToken($_NOTEQ); ./
+            | '%' '=' /. makeToken($_PERCENTEQ); ./
+            | '&' '&' /. makeToken($_ANDAND); ./
+            | '&' '=' /. makeToken($_AMPEQ); ./
+            | '*' '*' /. makeToken($_STARSTAR); ./
+            | '*' '=' /. makeToken($_STAREQ); ./
+            | '+' '+' /. makeToken($_PLUSPLUS); ./
+            | '+' '=' /. makeToken($_PLUSEQ); ./
+            | '-' '-' /. makeToken($_MINUSMINUS); ./
+            | '-' '=' /. makeToken($_MINUSEQ); ./
+            | '/' '=' /. makeToken($_SLASHEQ); ./
+            | '<' '<' /. makeToken($_LSHIFT); ./
+            | '<' '=' /. makeToken($_LTEQ); ./
+            | '=' '=' /. makeToken($_EQEQ); ./
+            | '=' '>' /. makeToken($_FATARROW); ./
+            | '>' '=' /. makeToken($_GTEQ); ./
+            | '>' '>' /. makeToken($_RSHIFT); ./
+            | '?' '.' /. makeToken($_QUESTDOT); ./
+            | '?' '?' /. makeToken($_QUESTQUEST); ./
+            | '^' '=' /. makeToken($_CARETEQ); ./
+            | '|' '=' /. makeToken($_PIPEEQ); ./
+            | '|' '|' /. makeToken($_OROR); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./

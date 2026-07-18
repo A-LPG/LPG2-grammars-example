@@ -14,6 +14,7 @@
     AT
     BANG
     BOOLEAN
+    BooleanLiteral
     BREAK
     BYTE
     CARET
@@ -47,6 +48,7 @@
     MODULE
     NATIVE
     NEW
+    NullLiteral
     OPEN
     OPENS
     OROR
@@ -99,6 +101,9 @@
 %End
 
 %Rules
+    Keyword ::= t r u e /.$setResult($_BooleanLiteral);./
+    Keyword ::= f a l s e /.$setResult($_BooleanLiteral);./
+    Keyword ::= n u l l /.$setResult($_NullLiteral);./
     Keyword ::= s y n c h r o n i z e d /.$setResult($_SYNCHRONIZED);./
     Keyword ::= c o l o n c o l o n /.$setResult($_COLONCOLON);./
     Keyword ::= i m p l e m e n t s /.$setResult($_IMPLEMENTS);./

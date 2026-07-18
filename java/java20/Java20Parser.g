@@ -19,10 +19,58 @@
 
 %Rules
     identifier ::= IDENTIFIER
+           | contextualKeyword
 
     typeIdentifier ::= IDENTIFIER
+           | contextualKeywordMinusForTypeIdentifier
 
     unqualifiedMethodIdentifier ::= IDENTIFIER
+           | contextualKeywordMinusForUnqualifiedMethodIdentifier
+
+    contextualKeyword ::= EXPORTS
+           | MODULE
+           | NON_SEALED
+           | OPEN
+           | OPENS
+           | PERMITS
+           | PROVIDES
+           | RECORD
+           | REQUIRES
+           | SEALED
+           | TO
+           | TRANSITIVE
+           | USES
+           | VAR
+           | WITH
+           | YIELD
+
+    contextualKeywordMinusForTypeIdentifier ::= EXPORTS
+           | MODULE
+           | NON_SEALED
+           | OPEN
+           | OPENS
+           | PROVIDES
+           | REQUIRES
+           | TO
+           | TRANSITIVE
+           | USES
+           | WITH
+
+    contextualKeywordMinusForUnqualifiedMethodIdentifier ::= EXPORTS
+           | MODULE
+           | NON_SEALED
+           | OPEN
+           | OPENS
+           | PERMITS
+           | PROVIDES
+           | RECORD
+           | REQUIRES
+           | SEALED
+           | TO
+           | TRANSITIVE
+           | USES
+           | VAR
+           | WITH
 
     literal ::= DECIMAL_LITERAL
            | BooleanLiteral
@@ -30,6 +78,14 @@
            | STRING_LITERAL
            | TextBlock
            | NullLiteral
+           | integerLiteral
+           | floatingPointLiteral
+
+    integerLiteral ::= HEX_LITERAL
+           | OCT_LITERAL
+           | BINARY_LITERAL
+
+    floatingPointLiteral ::= FLOAT_LITERAL
 
     primitiveType ::= list_1 grp_2
 

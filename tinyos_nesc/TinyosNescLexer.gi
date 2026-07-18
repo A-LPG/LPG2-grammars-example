@@ -13,10 +13,10 @@
     LexerBasicMapF.gi
 %End
 %Export
-    IDENTIFIER
+    IDENTIFIER ID
     NUMBER STRING
     OBRACE CBRACE OPAR CPAR
-    SEMI COMMA DOT COLON ASSIGN
+    SCOL COMMA DOT COLON ASSIGN
     CONFIGURATION MODULE IMPLEMENTATION COMPONENTS INTERFACE
     USES PROVIDES AS CALL EVENT COMMAND RETURN VOID
 %End
@@ -76,14 +76,14 @@
             | '}' /. makeToken($_CBRACE); ./
             | '(' /. makeToken($_OPAR); ./
             | ')' /. makeToken($_CPAR); ./
-            | ';' /. makeToken($_SEMI); ./
+            | ';' /. makeToken($_SCOL); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./
             | '=' /. makeToken($_ASSIGN); ./
             | STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | identifier /. checkForKeyWord(); ./
+            | identifier /. checkForKeyWord($_ID); ./
             | white /. skipToken(); ./
             | line_comment /. skipToken(); ./
 
