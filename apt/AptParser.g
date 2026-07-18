@@ -1,5 +1,6 @@
 -- APT Parser (LPG) — subset of grammars-v4 apt/apt.g4
--- NTs: record / optionsR / optionR / uriR / components (id_list)
+-- NTs: apt_record / optionsR / optionR / uriR / components (id_list)
+-- Note: NT is apt_record (not record) — Java 14+ forbids type name "record".
 %Options la=2
 %Options fp=AptParser
 %options package=lpg.grammars.apt
@@ -10,11 +11,11 @@
     EOF_TOKEN
 %End
 %Start
-    record
+    apt_record
 %End
 %Rules
-    -- record: TypeR WSS optionsR? uriR WSS wordWithDash componentsR
-    record ::= type_ WSS opt_options uri WSS components opt_wss
+    -- apt_record: TypeR WSS optionsR? uriR WSS wordWithDash componentsR
+    apt_record ::= type_ WSS opt_options uri WSS components opt_wss
 
     opt_wss ::= $empty | WSS
     opt_options ::= $empty | optionsR

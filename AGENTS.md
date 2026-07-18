@@ -28,6 +28,8 @@ Reference unit: `json/` (tiny upstream g4 → short but structural LPG parser).
 
 If a unit was previously shrunk (e.g. debt from commit `043a1d6`), restore the fuller parser first, keep legitimate KW/lexer alignment fixes, then re-green with alignment — never by shrinking again.
 
+**Java type-name ban (CI uses JDK 17):** with `automatic_ast=nested|toplevel`, a single-production NT becomes `static class <name>`. Do **not** use Java-illegal type names as NTs — especially `record`, `var`, `yield`, `sealed`, `permits`, plus classic keywords (`class`, `const`, `enum`, …). Rename (e.g. `record` → `apt_record`); multi-alt NTs that become `name0`/`name1` are fine.
+
 ## Testing a grammar (LPG harness)
 
 From a full **LPG2** checkout (this tree as the `grammars-example` submodule):

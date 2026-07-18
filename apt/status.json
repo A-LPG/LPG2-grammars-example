@@ -10,6 +10,6 @@
     "lexer_deb_deb-src_OptionName_WSS"
   ],
   "blockers": [],
-  "start": "record",
+  "start": "apt_record",
   "example_count": 3
 }

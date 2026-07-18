@@ -20,7 +20,8 @@
 %Rules
     qif ::= list_1
 
-    record ::= list_3 eor
+    -- qif_record (not record): Java 14+ forbids type name "record"
+    qif_record ::= list_3 eor
 
     recordtype ::= TYPE TEXT
 
@@ -44,7 +45,7 @@
 
     eor ::= EOR
 
-    list_1 ::= $empty | list_1 record
+    list_1 ::= $empty | list_1 qif_record
 
     grp_2 ::= recordtype | date | total | check | state_ | memo | payee | accountorcategory
 
