@@ -30,6 +30,8 @@ If a unit was previously shrunk (e.g. debt from commit `043a1d6`), restore the f
 
 **Java type-name ban (CI uses JDK 17):** with `automatic_ast=nested|toplevel`, a single-production NT becomes `static class <name>`. Do **not** use Java-illegal type names as NTs — especially `record`, `var`, `yield`, `sealed`, `permits`, plus classic keywords (`class`, `const`, `enum`, …). Rename (e.g. `record` → `apt_record`); multi-alt NTs that become `name0`/`name1` are fine.
 
+**Linux case sensitivity:** CI is case-sensitive. File names in git must match `harness.json` / `%options fp=` / `import_terminals` exactly (e.g. `ProvNLexer.gi` ≠ `ProvnLexer.gi`). macOS APFS and Docker bind-mounts from macOS often hide this.
+
 ## Testing a grammar (LPG harness)
 
 From a full **LPG2** checkout (this tree as the `grammars-example` submodule):
