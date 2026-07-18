@@ -39,11 +39,19 @@ TEMPLATES="$REPO/lpg-generator-templates-2.1.00"
 TPL_JAVA="$TEMPLATES/templates/java"
 INC_JAVA="$TEMPLATES/include/java"
 RUNTIME_CLASSES="${LPG_RUNTIME_CLASSES:-$REPO/runtime/lpg-runtime/target/classes}"
+RUNTIME_SRC="$REPO/runtime/lpg-runtime/src"
+MESSAGES_SRC="$RUNTIME_SRC/lpg/runtime/messages.properties"
+MESSAGES_DST="$RUNTIME_CLASSES/lpg/runtime/messages.properties"
 if [[ ! -d "$RUNTIME_CLASSES/lpg/runtime" ]]; then
   echo "==> compiling Java runtime into $RUNTIME_CLASSES"
   mkdir -p "$RUNTIME_CLASSES"
   # shellcheck disable=SC2046
-  javac -encoding UTF-8 -d "$RUNTIME_CLASSES" $(find "$REPO/runtime/lpg-runtime/src" -name '*.java')
+  javac -encoding UTF-8 -d "$RUNTIME_CLASSES" $(find "$RUNTIME_SRC" -name '*.java')
+fi
+# ResourceBundle "lpg.runtime.messages" is not produced by javac; copy explicitly.
+if [[ -f "$MESSAGES_SRC" && ! -f "$MESSAGES_DST" ]]; then
+  mkdir -p "$(dirname "$MESSAGES_DST")"
+  cp "$MESSAGES_SRC" "$MESSAGES_DST"
 fi
 
 read_json() {
