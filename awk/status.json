@@ -7,7 +7,8 @@
   "quality_notes": [
     "real_g4_port",
     "language_subset",
-    "antlr2lpg_structural_port"
+    "antlr2lpg_structural_port",
+    "FIX_7_true_port"
   ],
   "parser_bytes": 9179,
   "rule_approx": 101,

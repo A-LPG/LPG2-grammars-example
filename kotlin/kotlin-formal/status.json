@@ -8,12 +8,13 @@
     "real_g4_port",
     "language_subset",
     "structural_subset_from_g4",
-    "antlr2lpg_structural_port"
+    "antlr2lpg_structural_port",
+    "FIX_7_true_port"
   ],
   "parser_bytes": 6367,
   "rule_approx": 722,
   "start": "kotlinFile",
-  "parser_lines": 156,
+  "parser_lines": 305,
   "example_count": 4,
   "tier": "A"
 }

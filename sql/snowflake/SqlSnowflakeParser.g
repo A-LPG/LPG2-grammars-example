@@ -2172,15 +2172,6 @@
            | ID2
            | DOUBLE_QUOTE_ID
            | DOUBLE_QUOTE_BLANK
-           | keyword
-           | non_reserved_words
-           | object_type_plural
-           | data_type
-           | builtin_function
-           | unary_or_binary_builtin_function
-           | binary_builtin_function
-           | binary_or_ternary_builtin_function
-           | ternary_builtin_function
 
     keyword ::= ACCOUNT
            | ACTION

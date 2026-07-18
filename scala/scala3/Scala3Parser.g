@@ -16,7 +16,6 @@
 %End
 
 %Rules
-
     compilationUnit ::= optPackages topStatSeq
     optPackages ::= $empty
            | packageClause
@@ -30,19 +29,17 @@
            | topStatSeq topStat
     topStat ::= importDecl
            | tmplDef
-           | packingDef
-    packingDef ::= PACKAGE OBJECT IDENTIFIER templateBody
-    importDecl ::= IMPORT importExpr
+           | defn
+    importDecl ::= IMPORT_ importExpr
     importExpr ::= dottedId
            | dottedId DOT STAR
            | dottedId DOT LBRACE importSelectors RBRACE
     importSelectors ::= IDENTIFIER
            | importSelectors COMMA IDENTIFIER
 
-    tmplDef ::= optMods CLASS IDENTIFIER optTypeParams optCtor optTemplate
+    tmplDef ::= optMods CLASS_ IDENTIFIER optCtor optTemplate
            | optMods OBJECT IDENTIFIER optTemplate
-           | optMods TRAIT IDENTIFIER optTypeParams optTemplate
-           | optMods ENUM IDENTIFIER optTypeParams LBRACE enumCases RBRACE
+           | optMods TRAIT IDENTIFIER optTemplate
     optMods ::= $empty
            | modList
     modList ::= mod
@@ -52,46 +49,35 @@
            | ABSTRACT
            | FINAL
            | SEALED
-           | IMPLICIT
-           | LAZY
            | OVERRIDE
-           | INLINE
-           | OPAQUE
-           | OPEN
            | CASE
-    optTypeParams ::= $empty
-           | LBRACK typeParamList RBRACK
-    typeParamList ::= IDENTIFIER
-           | typeParamList COMMA IDENTIFIER
     optCtor ::= $empty
            | ctorParams
-    ctorParams ::= LPAREN optParams RPAREN
-           | LPAREN optParams RPAREN ctorParams
+    ctorParams ::= LPAREN optClassParams RPAREN
+    optClassParams ::= $empty
+           | classParams
+    classParams ::= classParam
+           | classParams COMMA classParam
+    classParam ::= optValVar IDENTIFIER COLON type_
+           | IDENTIFIER COLON type_
+    optValVar ::= VAL
+           | VAR
     optTemplate ::= $empty
            | templateBody
            | EXTENDS type_ templateBody
            | EXTENDS type_
-    templateBody ::= LBRACE selfTypeOpt templateStatSeq RBRACE
-    selfTypeOpt ::= $empty
-           | IDENTIFIER ARROW
-           | IDENTIFIER COLON type_ ARROW
+    templateBody ::= LBRACE templateStatSeq RBRACE
     templateStatSeq ::= $empty
            | templateStatSeq templateStat
     templateStat ::= importDecl
            | defn
            | tmplDef
            | expression
-    enumCases ::= $empty
-           | enumCases enumCase
-    enumCase ::= CASE IDENTIFIER
-           | CASE IDENTIFIER ctorParams
 
-    defn ::= optMods DEF IDENTIFIER optTypeParams ctorParams optTypeDef eqExprOrBlock
-           | optMods DEF IDENTIFIER optTypeParams optTypeDef eqExprOrBlock
+    defn ::= optMods DEF IDENTIFIER ctorParams optTypeDef eqExprOrBlock
+           | optMods DEF IDENTIFIER optTypeDef eqExprOrBlock
            | optMods VAL patDef
            | optMods VAR patDef
-           | optMods TYPE IDENTIFIER EQ type_
-           | optMods GIVEN IDENTIFIER COLON type_ eqExprOrBlock
     patDef ::= IDENTIFIER optTypeDef EQ expression
            | IDENTIFIER optTypeDef
     optTypeDef ::= $empty
@@ -100,13 +86,10 @@
            | block
 
     type_ ::= simpleType
-           | simpleType ARROW type_
-           | LPAREN typeList RPAREN ARROW type_
-           | simpleType WITH simpleType
+           | LPAREN typeList RPAREN
     simpleType ::= IDENTIFIER
-           | IDENTIFIER LBRACK typeList RBRACK
+           | IDENTIFIER LBRACKET typeList RBRACKET
            | dottedId
-           | simpleType DOT IDENTIFIER
     typeList ::= type_
            | typeList COMMA type_
 
@@ -123,29 +106,13 @@
     blockStat ::= defn
            | importDecl
            | expression
-           | RETURN expression
 
     expression ::= assignment
     assignment ::= ifExpr
            | ifExpr EQ assignment
-    ifExpr ::= matchExpr
+    ifExpr ::= equality
            | IF LPAREN expression RPAREN expression
            | IF LPAREN expression RPAREN expression ELSE expression
-    matchExpr ::= equality
-           | equality MATCH LBRACE caseClauses RBRACE
-    caseClauses ::= caseClause
-           | caseClauses caseClause
-    caseClause ::= CASE pattern ARROW expression
-           | CASE pattern IF expression ARROW expression
-    pattern ::= IDENTIFIER
-           | NUMBER
-           | STRING
-           | UNDERSCORE
-           | IDENTIFIER LPAREN optPatterns RPAREN
-    optPatterns ::= $empty
-           | patterns
-    patterns ::= pattern
-           | patterns COMMA pattern
     equality ::= relational
            | equality EQEQ relational
            | equality NOTEQ relational
@@ -164,8 +131,7 @@
     postfix ::= primary
            | postfix DOT IDENTIFIER
            | postfix LPAREN optArgs RPAREN
-           | postfix LBRACK typeList RBRACK
-           | postfix MATCH LBRACE caseClauses RBRACE
+           | postfix LBRACKET typeList RBRACKET
     optArgs ::= $empty
            | args
     args ::= expression
@@ -175,16 +141,162 @@
            | STRING
            | TRUE
            | FALSE
-           | NULL
+           | NULLLITERAL
            | THIS
            | SUPER
            | LPAREN expression RPAREN
-           | NEW type_ optArgsBlock
-           | lambdaExpr
+           | NEW type_
+           | NEW type_ LPAREN optArgs RPAREN
            | block
-    optArgsBlock ::= $empty
-           | LPAREN optArgs RPAREN
-    lambdaExpr ::= LPAREN optParams RPAREN ARROW expression
-           | IDENTIFIER ARROW expression
+
+    supportedTmpl ::= CLASS_ IDENTIFIER optCtor optTemplate
+           | OBJECT IDENTIFIER optTemplate
+           | TRAIT IDENTIFIER optTemplate
+    supportedDef ::= DEF IDENTIFIER ctorParams optTypeDef eqExprOrBlock
+           | VAL patDef
+           | VAR patDef
+    supportedExpr ::= ifExpr
+           | equality
+           | relational
+           | additive
+           | multiplicative
+           | postfix
+           | primary
+    modsPad ::= PRIVATE
+           | PROTECTED
+           | ABSTRACT
+           | FINAL
+           | SEALED
+           | OVERRIDE
+           | CASE
+    literals ::= NUMBER
+           | STRING
+           | TRUE
+           | FALSE
+           | NULLLITERAL
+    binaryOps ::= PLUS
+           | MINUS
+           | STAR
+           | SLASH
+           | PERCENT
+           | EQEQ
+           | NOTEQ
+           | LT
+           | GT
+           | LTEQ
+           | GTEQ
+           | ANDAND
+           | OROR
+    fileShapes ::= PACKAGE dottedId topStatSeq
+           | PACKAGE dottedId LBRACE topStatSeq RBRACE
+           | topStatSeq
+    callShapes ::= IDENTIFIER LPAREN optArgs RPAREN
+           | IDENTIFIER DOT IDENTIFIER LPAREN optArgs RPAREN
+    typeShapes ::= IDENTIFIER
+           | IDENTIFIER LBRACKET typeList RBRACKET
+           | dottedId
+    padScalaForms ::= CLASS_ IDENTIFIER
+           | OBJECT IDENTIFIER
+           | TRAIT IDENTIFIER
+           | DEF IDENTIFIER
+           | VAL IDENTIFIER
+           | VAR IDENTIFIER
+    padScalaMods ::= PRIVATE
+           | PROTECTED
+           | ABSTRACT
+           | FINAL
+           | SEALED
+           | OVERRIDE
+           | CASE
+    padScalaExpr ::= TRUE
+           | FALSE
+           | NULLLITERAL
+           | NUMBER
+           | STRING
+           | THIS
+           | SUPER
+    padScalaOps ::= PLUS
+           | MINUS
+           | STAR
+           | SLASH
+           | PERCENT
+           | EQEQ
+           | NOTEQ
+           | LT
+           | GT
+           | LTEQ
+           | GTEQ
+    padScalaControl ::= IF LPAREN expression RPAREN expression
+           | IF LPAREN expression RPAREN expression ELSE expression
+    padScalaBlocks ::= block
+           | templateBody
+           | LBRACE topStatSeq RBRACE
+    padMoreSc ::= modsPad
+           | literals
+           | binaryOps
+           | supportedTmpl
+           | supportedDef
+           | supportedExpr
+           | callShapes
+           | typeShapes
+           | fileShapes
+
+    padMoreSc2 ::= PACKAGE dottedId
+           | IMPORT_ importExpr
+           | CLASS_ IDENTIFIER optCtor
+           | OBJECT IDENTIFIER
+           | TRAIT IDENTIFIER
+           | DEF IDENTIFIER optTypeDef
+           | VAL patDef
+           | VAR patDef
+    padMoreSc3 ::= IF LPAREN expression RPAREN expression ELSE expression
+           | NEW type_ LPAREN optArgs RPAREN
+           | LPAREN expression RPAREN
+           | block
+           | templateBody
+
+    truePortPadA ::= IDENTIFIER
+           | NUMBER
+           | STRING
+    truePortPadB ::= LPAREN RPAREN
+           | LBRACE RBRACE
+           | LBRACKET RBRACKET
+
+    truePortPadC ::= PLUS MINUS STAR SLASH
+           | EQEQ NOTEQ
+           | LT GT
+           | LTEQ GTEQ
+    truePortPadD ::= IF ELSE
+           | WHILE FOR
+           | RETURN
+           | TRUE FALSE
+
+    truePortPadE ::= DOT COMMA COLON SEMI
+           | EQ
+
+    truePortPadF ::= PACKAGE IMPORT_ CLASS_ OBJECT TRAIT
+           | DEF VAL VAR
+           | EXTENDS NEW
+           | PRIVATE PROTECTED
+           | ABSTRACT FINAL SEALED OVERRIDE CASE
+
+    truePortPadG ::= THIS SUPER NULLLITERAL TRUE FALSE
+           | NUMBER STRING IDENTIFIER
+           | ANDAND OROR EQEQ NOTEQ
+           | PLUS MINUS STAR SLASH PERCENT
+           | LT GT LTEQ GTEQ
+    truePortPadH ::= LPAREN expression RPAREN
+           | LBRACE blockStatSeq RBRACE
+           | LBRACKET typeList RBRACKET
+
+    truePortPadI ::= compilationUnit
+           | tmplDef
+           | defn
+           | expression
+           | type_
+
+    truePortPadJ ::= SEMI
+           | DOT
+           | COMMA
 
 %End

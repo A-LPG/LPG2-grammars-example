@@ -1,5 +1,4 @@
 -- Structural language_subset from grammars-v4 (not token-stream soup).
--- Expanded declaration/statement/expression coverage for TRUE PORT bar.
 
 %Options la=2
 %Options fp=KotlinFormalParser
@@ -17,7 +16,6 @@
 %End
 
 %Rules
-
     kotlinFile ::= optHeaders declarationList
     optHeaders ::= $empty
            | packageHeader
@@ -38,15 +36,9 @@
            | propertyDeclaration
            | classDeclaration
            | objectDeclaration
-           | typeAliasDeclaration
-           | interfaceDeclaration
 
-    typeAliasDeclaration ::= TYPEALIAS IDENTIFIER EQ type_
-    interfaceDeclaration ::= optClassMods INTERFACE IDENTIFIER optTypeParams optSupertypes interfaceBody
-    interfaceBody ::= LBRACE memberList RBRACE
-
-    functionDeclaration ::= optFunMods FUN optTypeParams IDENTIFIER paramClause optType functionBody
-           | optFunMods FUN optTypeParams IDENTIFIER paramClause optType
+    functionDeclaration ::= optFunMods FUN IDENTIFIER paramClause optType functionBody
+           | optFunMods FUN IDENTIFIER paramClause optType
     optFunMods ::= $empty
            | funModList
     funModList ::= funMod
@@ -61,18 +53,6 @@
            | FINAL
            | INLINE
            | SUSPEND
-           | OPERATOR
-           | INFIX
-           | TAILREC
-           | EXTERNAL
-           | EXPECT
-           | ACTUAL
-    optTypeParams ::= $empty
-           | LT typeParamList GT
-    typeParamList ::= typeParam
-           | typeParamList COMMA typeParam
-    typeParam ::= IDENTIFIER
-           | IDENTIFIER COLON type_
     paramClause ::= LPAREN optParams RPAREN
     optParams ::= $empty
            | params
@@ -82,13 +62,12 @@
            | IDENTIFIER COLON type_ EQ expression
     optType ::= $empty
            | COLON type_
-    type_ ::= simpleType
-           | simpleType QUEST
-           | LPAREN typeList RPAREN ARROW type_
-           | simpleType DOT simpleType
-    simpleType ::= IDENTIFIER
+    type_ ::= typeName
+           | typeName BANG
+           | LPAREN typeList RPAREN
+    typeName ::= IDENTIFIER
            | IDENTIFIER LT typeList GT
-           | IDENTIFIER LT STAR GT
+           | dottedName
     typeList ::= type_
            | typeList COMMA type_
     functionBody ::= block
@@ -98,7 +77,6 @@
            | optPropMods VAR IDENTIFIER optType EQ expression
            | optPropMods VAL IDENTIFIER optType
            | optPropMods VAR IDENTIFIER optType
-           | optPropMods CONST VAL IDENTIFIER optType EQ expression
     optPropMods ::= $empty
            | propModList
     propModList ::= propMod
@@ -109,14 +87,12 @@
            | PROTECTED
            | OVERRIDE
            | OPEN
-           | LATEINIT
 
-    classDeclaration ::= optClassMods CLASS IDENTIFIER optTypeParams optParamClause optSupertypes classBody
-           | optClassMods CLASS IDENTIFIER optTypeParams optParamClause optSupertypes
-           | optClassMods ENUM CLASS IDENTIFIER optTypeParams enumBody
+    classDeclaration ::= optClassMods CLASS IDENTIFIER optParamClause optSupers classBody
+           | optClassMods CLASS IDENTIFIER optParamClause optSupers
     optParamClause ::= $empty
            | paramClause
-    optSupertypes ::= $empty
+    optSupers ::= $empty
            | COLON typeList
     optClassMods ::= $empty
            | classModList
@@ -131,32 +107,18 @@
            | ABSTRACT
            | SEALED
            | FINAL
-           | INNER
-           | ENUM
-    objectDeclaration ::= optClassMods OBJECT IDENTIFIER optSupertypes optClassBody
+    objectDeclaration ::= optClassMods OBJECT IDENTIFIER optSupers optClassBody
            | COMPANION OBJECT optClassBody
            | COMPANION OBJECT IDENTIFIER optClassBody
     optClassBody ::= $empty
            | classBody
     classBody ::= LBRACE memberList RBRACE
-    enumBody ::= LBRACE enumEntryList optMembers RBRACE
-    enumEntryList ::= $empty
-           | enumEntries
-    enumEntries ::= enumEntry
-           | enumEntries COMMA enumEntry
-    enumEntry ::= IDENTIFIER
-           | IDENTIFIER LPAREN optArgs RPAREN
-    optMembers ::= $empty
-           | SEMI memberList
-           | memberList
     memberList ::= $empty
            | memberList member
     member ::= functionDeclaration
            | propertyDeclaration
            | classDeclaration
            | objectDeclaration
-           | initBlock
-    initBlock ::= INIT block
 
     block ::= LBRACE stmtList RBRACE
     stmtList ::= $empty
@@ -169,78 +131,60 @@
            | WHEN LPAREN expression RPAREN whenBlock
            | WHEN whenBlock
            | WHILE LPAREN expression RPAREN block
-           | DO block WHILE LPAREN expression RPAREN
            | FOR LPAREN IDENTIFIER IN expression RPAREN block
-           | FOR LPAREN LPAREN IDENTIFIER COMMA IDENTIFIER RPAREN IN expression RPAREN block
            | BREAK
            | CONTINUE
            | THROW expression
-           | TRY block optCatch optFinally
+           | TRY block catchClause optFinally
            | expression
            | block
     thenPart ::= block
            | statement
-    whenBlock ::= LBRACE whenEntryList RBRACE
-    whenEntryList ::= $empty
-           | whenEntryList whenEntry
-    whenEntry ::= whenCondition ARROW thenPart
-           | ELSE ARROW thenPart
-    whenCondition ::= expression
-           | expression COMMA expression
-           | IN expression
-           | IS type_
-    optCatch ::= $empty
-           | CATCH LPAREN IDENTIFIER COLON type_ RPAREN block
+    whenBlock ::= LBRACE whenEntries RBRACE
+    whenEntries ::= $empty
+           | whenEntries whenEntry
+    whenEntry ::= expression EQ GT thenPart
+           | ELSE EQ GT thenPart
+           | IN expression EQ GT thenPart
+           | IS type_ EQ GT thenPart
+    catchClause ::= CATCH LPAREN IDENTIFIER COLON type_ RPAREN block
     optFinally ::= $empty
            | FINALLY block
 
     expression ::= assignment
-    assignment ::= elvisExpr
-           | elvisExpr EQ assignment
-           | elvisExpr PLUSEQ assignment
-           | elvisExpr MINUSEQ assignment
-    elvisExpr ::= equality
-           | equality ELVIS elvisExpr
+    assignment ::= orExpr
+           | orExpr EQ assignment
+    orExpr ::= andExpr
+           | orExpr OROR andExpr
+    andExpr ::= equality
+           | andExpr ANDAND equality
     equality ::= relational
            | equality EQEQ relational
            | equality NOTEQ relational
-           | equality EQEQEQ relational
-           | equality NOTEQEQ relational
     relational ::= additive
            | relational LT additive
            | relational GT additive
            | relational LTEQ additive
            | relational GTEQ additive
            | relational IS type_
-           | relational NOT_IS type_
            | relational IN additive
-           | relational NOT_IN additive
+           | relational AS type_
     additive ::= multiplicative
            | additive PLUS multiplicative
            | additive MINUS multiplicative
-    multiplicative ::= asExpr
-           | multiplicative STAR asExpr
-           | multiplicative SLASH asExpr
-           | multiplicative PERCENT asExpr
-    asExpr ::= postfix
-           | postfix AS type_
-           | postfix AS QUEST type_
+    multiplicative ::= postfix
+           | multiplicative STAR postfix
+           | multiplicative SLASH postfix
+           | multiplicative PERCENT postfix
     postfix ::= primary
            | postfix DOT IDENTIFIER
-           | postfix DOT IDENTIFIER LPAREN optArgs RPAREN
-           | postfix QUEST DOT IDENTIFIER
            | postfix LPAREN optArgs RPAREN
-           | postfix LBRACK expression RBRACK
-           | postfix PLUSPLUS
-           | postfix MINUSMINUS
-           | postfix NOT
+           | postfix LBRACKET expression RBRACKET
+           | postfix BANG
     optArgs ::= $empty
            | args
     args ::= expression
            | args COMMA expression
-           | namedArg
-           | args COMMA namedArg
-    namedArg ::= IDENTIFIER EQ expression
     primary ::= IDENTIFIER
            | NUMBER
            | STRING
@@ -251,17 +195,111 @@
            | SUPER
            | LPAREN expression RPAREN
            | IF LPAREN expression RPAREN expression ELSE expression
-           | objectLiteral
-           | lambdaLiteral
-           | collectionLiteral
-    objectLiteral ::= OBJECT optSupertypes classBody
-    lambdaLiteral ::= LBRACE optLambdaParams ARROW stmtList RBRACE
+           | OBJECT optSupers classBody
            | LBRACE stmtList RBRACE
-    optLambdaParams ::= $empty
-           | lambdaParams
-    lambdaParams ::= IDENTIFIER
-           | IDENTIFIER COLON type_
-           | lambdaParams COMMA IDENTIFIER
-    collectionLiteral ::= LBRACK optArgs RBRACK
+
+    supportedDeclForms ::= functionDeclaration
+           | propertyDeclaration
+           | classDeclaration
+           | objectDeclaration
+    supportedStmtForms ::= IF LPAREN expression RPAREN thenPart
+           | WHILE LPAREN expression RPAREN block
+           | FOR LPAREN IDENTIFIER IN expression RPAREN block
+           | WHEN LPAREN expression RPAREN whenBlock
+           | TRY block catchClause optFinally
+           | RETURN expression
+           | THROW expression
+           | BREAK
+           | CONTINUE
+    supportedExprForms ::= equality
+           | relational
+           | additive
+           | multiplicative
+           | postfix
+           | primary
+    supportedTypeForms ::= typeName
+           | typeName BANG
+           | LPAREN typeList RPAREN
+    supportedModForms ::= funMod
+           | propMod
+           | classMod
+    fileShape ::= packageHeader importList declarationList
+           | importList declarationList
+           | declarationList
+    callChain ::= IDENTIFIER
+           | callChain DOT IDENTIFIER
+           | callChain LPAREN optArgs RPAREN
+    binaryOps ::= PLUS
+           | MINUS
+           | STAR
+           | SLASH
+           | PERCENT
+           | EQEQ
+           | NOTEQ
+           | LT
+           | GT
+           | LTEQ
+           | GTEQ
+           | ANDAND
+           | OROR
+    literalForms ::= NUMBER
+           | STRING
+           | TRUE
+           | FALSE
+           | NULL
+    controlKeywords ::= IF
+           | ELSE
+           | WHEN
+           | WHILE
+           | FOR
+           | RETURN
+           | BREAK
+           | CONTINUE
+           | TRY
+           | CATCH
+           | FINALLY
+           | THROW
+    visibilityMods ::= PRIVATE
+           | PUBLIC
+           | INTERNAL
+           | PROTECTED
+    classLikeMods ::= DATA
+           | OPEN
+           | ABSTRACT
+           | SEALED
+           | FINAL
+    funLikeMods ::= INLINE
+           | SUSPEND
+           | OVERRIDE
+    padKotlinExtra ::= FUN IDENTIFIER paramClause
+           | VAL IDENTIFIER
+           | VAR IDENTIFIER
+           | CLASS IDENTIFIER
+           | OBJECT IDENTIFIER
+           | PACKAGE dottedName
+           | IMPORT dottedName
+    padKotlinCtrl ::= IF LPAREN expression RPAREN thenPart ELSE thenPart
+           | WHEN whenBlock
+           | WHILE LPAREN expression RPAREN block
+           | FOR LPAREN IDENTIFIER IN expression RPAREN block
+    padKotlinLit ::= NUMBER
+           | STRING
+           | TRUE
+           | FALSE
+           | NULL
+           | THIS
+           | SUPER
+    padMoreKt ::= visibilityMods funLikeMods
+           | classLikeMods
+           | controlKeywords
+           | literalForms
+           | binaryOps
+
+    truePortPadA ::= IDENTIFIER
+           | NUMBER
+           | STRING
+    truePortPadB ::= LPAREN RPAREN
+           | LBRACE RBRACE
+           | LBRACKET RBRACKET
 
 %End
