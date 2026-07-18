@@ -2452,15 +2452,120 @@ def convert_unit(uid: str, v4_root: Path, dest_root: Path, force: bool = True) -
     }
 
 
+def convert_g4_file(g4_path: Path, dest: Path) -> dict:
+    """One-shot convert of a single Antlr .g4 into dest/*Parser.g (+ lexer stubs).
+
+    Used by `lpg2 from-antlr <file.g4> -o <dir>`. Sibling *Lexer.g4 is picked up
+    when present next to the parser grammar.
+    """
+    g4_path = g4_path.resolve()
+    if not g4_path.is_file():
+        return {"id": str(g4_path), "ok": False, "error": "missing g4 file"}
+    dest = dest.resolve()
+    dest.mkdir(parents=True, exist_ok=True)
+
+    stem = g4_path.stem
+    # FooParser.g4 → uid/name Foo; Foo.g4 → Foo
+    if stem.endswith("Parser"):
+        base = stem[: -len("Parser")]
+    else:
+        base = stem
+    uid = base.lower() or "grammar"
+    name = java_name(uid) if base != java_name(uid) else (base[0].upper() + base[1:] if base else "Grammar")
+    # Prefer a clean PascalCase from the file stem.
+    name = re.sub(r"[^A-Za-z0-9_]", "", stem.replace("Parser", "") or "Grammar")
+    if not name:
+        name = "Grammar"
+    if name[0].isdigit():
+        name = "G" + name
+    pkg = pkg_name(uid)
+
+    lexer_files: list[Path] = []
+    for cand in (
+        g4_path.with_name(f"{name}Lexer.g4"),
+        g4_path.with_name(f"{base}Lexer.g4"),
+        g4_path.with_name(stem.replace("Parser", "Lexer") + ".g4"),
+    ):
+        if cand.is_file() and cand not in lexer_files:
+            lexer_files.append(cand)
+
+    text = g4_path.read_text(encoding="utf-8", errors="replace")
+    body = strip_antlr_noise(text)
+    rules = split_rules(body)
+    lit_map: dict[str, str] = {}
+    rules_block, start = convert_parser_rules(rules, lit_map, None)
+    if not rules_block.strip():
+        return {"id": uid, "ok": False, "error": "no parser rules extracted"}
+
+    kw_pairs = extract_lexer_keywords(lexer_files)
+    for lit, tok in lit_map.items():
+        if re.fullmatch(r"[A-Za-z][A-Za-z0-9_\-]*", lit or ""):
+            kw_pairs.append((tok, lit))
+
+    extra_tokens = sorted(
+        {
+            m
+            for m in re.findall(r"\b([A-Z][A-Za-z0-9_]*)\b", rules_block)
+            if m not in {"EOF", "EOF_TOKEN", "LPG", "AUTO", "GENERATED"}
+        }
+    )
+    keyword_token_names = sorted({t for t, _ in kw_pairs})
+
+    parser_text = emit_parser(uid, name, pkg, start, rules_block)
+    (dest / f"{name}Parser.g").write_text(parser_text, encoding="utf-8")
+    (dest / f"{name}Lexer.gi").write_text(
+        emit_lexer(
+            name,
+            pkg,
+            lit_map,
+            keyword_token_names,
+            extra_tokens,
+        ),
+        encoding="utf-8",
+    )
+    (dest / f"{name}KWLexer.gi").write_text(
+        emit_kwlexer(name, pkg, kw_pairs), encoding="utf-8"
+    )
+    (dest / "README.md").write_text(
+        f"# {name}\n\nConverted from `{g4_path.name}` via `tools/antlr2lpg.py --g4`.\n\n"
+        f"Structural port only. Start symbol: `{start}`.\n",
+        encoding="utf-8",
+    )
+    n_rules = len(re.findall(r"^\s*\w+\s*::=", rules_block, re.M))
+    print(
+        "OK",
+        uid,
+        {
+            "ok": True,
+            "start": start,
+            "rules": n_rules,
+            "parser": str(dest / f"{name}Parser.g"),
+        },
+    )
+    return {
+        "id": uid,
+        "ok": True,
+        "start": start,
+        "rules": n_rules,
+        "parser": str(dest / f"{name}Parser.g"),
+        "literals": len(lit_map),
+    }
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("ids", nargs="*", help="grammar ids; default: under-ported from catalog")
     ap.add_argument("--v4-root", type=Path, default=V4_DEFAULT)
     ap.add_argument("--dest", type=Path, default=ROOT)
+    ap.add_argument("--g4", type=Path, default=None, help="convert a single .g4 file into --dest")
     ap.add_argument("--max-g4-bytes", type=int, default=80_000, help="skip huge grammars unless listed")
     ap.add_argument("--include-huge", action="store_true")
     ap.add_argument("--limit", type=int, default=0)
     args = ap.parse_args()
+
+    if args.g4 is not None:
+        r = convert_g4_file(args.g4, args.dest)
+        return 0 if r.get("ok") else 1
 
     cat = json.loads((ROOT / "catalog.json").read_text(encoding="utf-8"))
     ids = list(args.ids)
