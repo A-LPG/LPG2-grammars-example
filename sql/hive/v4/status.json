@@ -5,14 +5,14 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port",
     "real_g4_port",
-    "honest_subset: curated SELECT/INSERT examples only; not full dialect coverage"
+    "antlr2lpg_structural_port",
+    "honest_subset: curated SELECT/INSERT examples; FoldedCase KW; no \"=\" comparisons in curated WHERE; not full Hive"
   ],
-  "parser_bytes": 80919,
-  "rule_approx": 1218,
+  "parser_bytes": 81087,
+  "rule_approx": 1219,
   "start": "statement",
-  "parser_lines": 3122,
+  "parser_lines": 3132,
   "example_count": 6,
   "tier": "A"
 }

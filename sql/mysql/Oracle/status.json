@@ -5,14 +5,14 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port",
     "real_g4_port",
-    "honest_subset: curated SELECT/INSERT examples only; not full dialect coverage"
+    "antlr2lpg_structural_port",
+    "honest_subset: curated SELECT/INSERT examples; KWLexer rebuilt; punct/number token remap; not full MySQL"
   ],
-  "parser_bytes": 161275,
-  "rule_approx": 2054,
+  "parser_bytes": 161413,
+  "rule_approx": 2055,
   "start": "queries",
-  "parser_lines": 5016,
+  "parser_lines": 5026,
   "example_count": 6,
   "tier": "A"
 }

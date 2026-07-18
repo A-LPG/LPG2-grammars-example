@@ -5,12 +5,12 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port",
     "real_g4_port",
-    "honest_subset: curated SELECT/INSERT examples only; not full dialect coverage"
+    "antlr2lpg_structural_port",
+    "honest_subset: curated SELECT/INSERT examples; simpleId=IDENTIFIER to cut keyword-id conflicts; not full MariaDB"
   ],
-  "parser_bytes": 132942,
-  "rule_approx": 1957,
+  "parser_bytes": 132673,
+  "rule_approx": 1958,
   "start": "root",
   "parser_lines": 5601,
   "example_count": 6,
