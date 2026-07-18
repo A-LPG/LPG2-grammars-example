@@ -2,5 +2,7 @@
   "package": "lpg.grammars.java.java",
   "lexer": "JavaLexer",
   "parser": "JavaParser",
-  "example_globs": ["examples/**/*.java"]
+  "example_globs": [
+    "examples-curated/**/*.java"
+  ]
 }

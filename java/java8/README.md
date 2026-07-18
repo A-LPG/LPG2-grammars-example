@@ -1,11 +1,11 @@
 # java/java8
 
-**Quality: `token_stream_smoke` — not a language grammar.**
+Curated LPG language subset of antlr/grammars-v4 `java/java8` (not nested token-stream smoke).
 
-Scaffold / nested token-stream smoke for antlr/grammars-v4 `java/java8`. Harness may report `parse_ok`; that does **not** mean a real LPG language port.
-
-See `status.json` and `catalog.json` → `quality_schema`.
+- **Start:** `compilationUnit`
+- **Quality:** `language_subset` — class/method/field/control-flow dialect sufficient for harness examples
+- Full structural g4 port remains future work; see `java/java` for a broader Java port
 
 ```bash
-bash harness/run-one.sh java/java8
+bash grammars-example/harness/run-one.sh java/java8
 ```

@@ -1,8 +1,5 @@
 # Origin
 
-- Upstream: [antlr/grammars-v4](https://github.com/antlr/grammars-v4) `java/java8`
-- Source ref: `grammars-v4/java/java8`
-- License: see upstream `.g4` / directory headers (often BSD); this LPG port retains attribution.
-- Quality: `token_stream_smoke` (see `status.json` / `catalog.json` quality schema)
-
-This directory is an LPG2 parse-level adaptation, not a byte-for-byte Antlr grammar.
+Upstream: antlr/grammars-v4 `java/java8`
+Port method: hand-shaped language subset (Lexer+KWLexer+Parser), patterned after `java/java9`
+Verified: `bash grammars-example/harness/run-one.sh java/java8`

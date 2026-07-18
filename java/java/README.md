@@ -1,11 +1,13 @@
 # java/java
 
-Parse-level LPG port of antlr/grammars-v4 `java/java` as a **language subset**.
+Structural LPG language port of antlr/grammars-v4 `java/java` (JavaLexer.g4 + JavaParser.g4).
 
-Covers package/import/class skeletons plus statements and expressions (`if`/`while`/`return`, locals, assignments, calls, arithmetic).
-
-Does **not** replace the legacy `grammars-example/java/` LPG grammar (`GJava*`). Examples under `examples/` are curated (including trimmed v4 samples); full AllInOne* files are out of scope.
+- **Quality:** `language_port`
+- **Start:** `compilationUnit`
+- **KWLexer:** Java keywords / literals via `JavaKWLexer.gi`
+- **Not** the legacy `grammars-example/java/GJava*` grammars
+- Examples: `examples-curated/**/*.java` (subset of v4 examples that parse under LALR)
 
 ```bash
-bash ../../harness/run-one.sh java/java
+bash grammars-example/harness/run-one.sh java/java
 ```

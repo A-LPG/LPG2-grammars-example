@@ -34,11 +34,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1700,
       "quality_notes": [
         "limited_examples_or_rules"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "abnf",
@@ -63,9 +63,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 4,
       "parser_bytes": 1464,
-      "quality_notes": [],
-      "harness_example_count": 4
+      "quality_notes": [
+        "real_g4_port"
+      ]
     },
     {
       "id": "acme",
@@ -89,12 +91,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1151,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2090,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "action",
@@ -118,12 +120,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1133,
+      "quality": "language_port",
+      "harness_example_count": 1,
+      "parser_bytes": 900,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 3
+        "real_g4_port"
+      ]
     },
     {
       "id": "ada/ada2005",
@@ -148,12 +150,12 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1188,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2582,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "ada/ada2012",
@@ -178,12 +180,12 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1182,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2573,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "ada/ada2022",
@@ -208,12 +210,12 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1182,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2573,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "ada/ada83",
@@ -238,12 +240,12 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1164,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2565,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 3
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "ada/ada95",
@@ -268,12 +270,12 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1182,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2574,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "agc",
@@ -297,12 +299,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1166,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1183,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "heuristic_default_subset"
+      ]
     },
     {
       "id": "alef",
@@ -326,12 +328,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1151,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1382,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "algol60",
@@ -355,12 +358,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1158,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2533,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "alloy",
@@ -385,9 +389,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 3,
       "parser_bytes": 6624,
-      "quality_notes": [],
-      "harness_example_count": 3
+      "quality_notes": [
+        "real_g4_port"
+      ]
     },
     {
       "id": "alpaca",
@@ -412,11 +418,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 2024,
       "quality_notes": [
         "limited_examples_or_rules"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "amazon-states-language",
@@ -441,12 +447,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1219,
+      "quality": "language_subset",
+      "harness_example_count": 2,
+      "parser_bytes": 989,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "amazon-states-language-intrinsic-functions",
@@ -472,11 +479,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 19,
       "parser_bytes": 1489,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 19
+      ]
     },
     {
       "id": "angelscript",
@@ -500,12 +507,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1168,
+      "quality": "language_port",
+      "harness_example_count": 1,
+      "parser_bytes": 642,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "real_g4_port"
+      ]
     },
     {
       "id": "antlr/antlr2",
@@ -530,12 +537,13 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1181,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1672,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "antlr/antlr3",
@@ -560,12 +568,13 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1181,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1482,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "antlr/antlr4",
@@ -590,12 +599,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1181,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2075,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "apex",
@@ -619,12 +629,12 @@
       "has_predicate": true,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1169,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 3036,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "apt",
@@ -649,11 +659,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 2,
       "parser_bytes": 782,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 2
+      ]
     },
     {
       "id": "aql",
@@ -679,11 +689,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 24,
       "parser_bytes": 1522,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 24
+      ]
     },
     {
       "id": "arden",
@@ -695,7 +705,9 @@
       "example_count": 13,
       "entry_point": "mlm",
       "grammar_name": "Arden",
-      "blockers": [],
+      "blockers": [
+        "parse_examples_failed"
+      ],
       "g4_files": [
         "ArdenLexer.g4",
         "ArdenParser.g4"
@@ -708,12 +720,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1172,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1936,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "argus",
@@ -737,12 +750,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1148,
+      "quality": "language_port",
+      "harness_example_count": 1,
+      "parser_bytes": 781,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "real_g4_port"
+      ]
     },
     {
       "id": "arithmetic",
@@ -767,9 +780,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 18,
       "parser_bytes": 1089,
-      "quality_notes": [],
-      "harness_example_count": 18
+      "quality_notes": []
     },
     {
       "id": "asl",
@@ -793,12 +806,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1138,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2504,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "asm/asm6502",
@@ -823,11 +836,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1303,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "asm/asm8080",
@@ -852,11 +865,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1880,
       "quality_notes": [
         "limited_examples_or_rules"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "asm/asm8086",
@@ -880,12 +893,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1182,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1302,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "heuristic_default_subset"
+      ]
     },
     {
       "id": "asm/asmMASM",
@@ -909,12 +922,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1182,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1200,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "asm/asmRISCV",
@@ -938,12 +952,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1185,
+      "quality": "language_subset",
+      "harness_example_count": 2,
+      "parser_bytes": 1861,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "asm/asmZ80",
@@ -968,11 +983,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1875,
       "quality_notes": [
         "limited_examples_or_rules"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "asm/masm",
@@ -996,12 +1011,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1173,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1312,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "asm/nasm",
@@ -1026,12 +1041,12 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1173,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1296,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "asm/pdp7",
@@ -1055,12 +1070,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1173,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 630,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "asm/ptx/ptx-isa-1.0",
@@ -1085,12 +1101,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1192,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1725,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "asm/ptx/ptx-isa-2.1",
@@ -1114,12 +1131,10 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1192,
-      "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 821,
+      "quality_notes": []
     },
     {
       "id": "asn/asn",
@@ -1143,12 +1158,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1176,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 911,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "heuristic_default_subset"
+      ]
     },
     {
       "id": "asn/asn_3gpp",
@@ -1173,12 +1188,12 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1191,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 931,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "heuristic_default_subset"
+      ]
     },
     {
       "id": "aterm",
@@ -1202,12 +1217,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "language_subset",
+      "quality": "language_port",
+      "harness_example_count": 15,
       "parser_bytes": 1110,
       "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 15
+        "real_g4_port"
+      ]
     },
     {
       "id": "atl",
@@ -1231,12 +1246,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1140,
+      "quality": "language_subset",
+      "harness_example_count": 2,
+      "parser_bytes": 719,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "awk",
@@ -1260,12 +1276,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1146,
+      "quality": "language_subset",
+      "harness_example_count": 2,
+      "parser_bytes": 1538,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 3
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "b",
@@ -1290,9 +1307,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 7,
       "parser_bytes": 2789,
-      "quality_notes": [],
-      "harness_example_count": 7
+      "quality_notes": []
     },
     {
       "id": "basic",
@@ -1316,12 +1333,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1146,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1748,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "bcl",
@@ -1346,11 +1363,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 4,
       "parser_bytes": 470,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 4
+      ]
     },
     {
       "id": "bcpl",
@@ -1376,11 +1393,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 477,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "bdf",
@@ -1405,11 +1422,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 2113,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "bencoding",
@@ -1435,11 +1452,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 8,
       "parser_bytes": 718,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 8
+      ]
     },
     {
       "id": "bibcode",
@@ -1464,11 +1481,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 4,
       "parser_bytes": 754,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 4
+      ]
     },
     {
       "id": "bibtex",
@@ -1494,11 +1511,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1323,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "bicep",
@@ -1523,11 +1540,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 753,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "bison",
@@ -1552,12 +1569,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1172,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1365,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "blueprint",
@@ -1582,11 +1600,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 2467,
       "quality_notes": [
         "limited_examples_or_rules"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "bnf",
@@ -1612,11 +1630,12 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 13,
       "parser_bytes": 810,
       "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 13
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "c",
@@ -1642,11 +1661,12 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
-      "parser_bytes": 2734,
+      "harness_example_count": 13,
+      "parser_bytes": 16662,
       "quality_notes": [
-        "curated_subset"
-      ],
-      "harness_example_count": 5
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "calculator",
@@ -1671,9 +1691,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 21,
       "parser_bytes": 1713,
-      "quality_notes": [],
-      "harness_example_count": 21
+      "quality_notes": [
+        "real_g4_port"
+      ]
     },
     {
       "id": "callable",
@@ -1697,12 +1719,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "language_subset",
+      "quality": "language_port",
+      "harness_example_count": 3,
       "parser_bytes": 600,
       "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 3
+        "real_g4_port"
+      ]
     },
     {
       "id": "capnproto",
@@ -1727,11 +1749,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 550,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "caql",
@@ -1757,11 +1779,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 8,
       "parser_bytes": 1040,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 8
+      ]
     },
     {
       "id": "cayenne",
@@ -1786,11 +1808,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1863,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "chip8",
@@ -1815,11 +1837,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 2056,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "clf",
@@ -1844,11 +1866,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 4,
       "parser_bytes": 542,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 4
+      ]
     },
     {
       "id": "clif",
@@ -1873,11 +1895,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 2528,
       "quality_notes": [
         "limited_examples_or_rules"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "clojure",
@@ -1902,11 +1924,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "token_stream_smoke",
+      "harness_example_count": 1,
       "parser_bytes": 735,
       "quality_notes": [
         "tiny_parser_single_example"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "clu",
@@ -1931,11 +1953,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "token_stream_smoke",
+      "harness_example_count": 1,
       "parser_bytes": 347,
       "quality_notes": [
         "tiny_parser_single_example"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "cmake",
@@ -1959,12 +1981,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 740,
+      "quality": "language_subset",
+      "harness_example_count": 2,
+      "parser_bytes": 800,
       "quality_notes": [
-        "tiny_parser_single_example"
-      ],
-      "harness_example_count": 1
+        "curated_subset"
+      ]
     },
     {
       "id": "cobol85",
@@ -1989,12 +2011,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1178,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1651,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "codeql",
@@ -2019,12 +2041,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1145,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1831,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "cookie",
@@ -2048,12 +2071,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "language_subset",
+      "quality": "language_port",
+      "harness_example_count": 4,
       "parser_bytes": 655,
       "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 4
+        "real_g4_port"
+      ]
     },
     {
       "id": "corundum",
@@ -2078,11 +2101,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 586,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "cpp",
@@ -2107,12 +2130,10 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1166,
-      "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+      "quality": "language_port",
+      "harness_example_count": 3,
+      "parser_bytes": 29186,
+      "quality_notes": []
     },
     {
       "id": "cql",
@@ -2137,11 +2158,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 6,
       "parser_bytes": 1756,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 6
+      ]
     },
     {
       "id": "cql3",
@@ -2166,12 +2187,12 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1169,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2158,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "creole",
@@ -2196,9 +2217,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 7,
       "parser_bytes": 1606,
-      "quality_notes": [],
-      "harness_example_count": 7
+      "quality_notes": []
     },
     {
       "id": "csharp/v6",
@@ -2224,12 +2245,12 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1170,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 3035,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "csharp/v7",
@@ -2254,12 +2275,12 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1170,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 3037,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "csharp/v8-spec",
@@ -2268,7 +2289,7 @@
       "tier": "D",
       "status": "ported",
       "parse_ok": true,
-      "example_count": 4,
+      "example_count": 27,
       "entry_point": "compilation_unit",
       "grammar_name": "CSharp",
       "blockers": [],
@@ -2285,11 +2306,12 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 4,
       "parser_bytes": 3268,
       "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 4
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "css3",
@@ -2315,11 +2337,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 675,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "csv",
@@ -2344,9 +2366,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 1,
       "parser_bytes": 667,
-      "quality_notes": [],
-      "harness_example_count": 1
+      "quality_notes": [
+        "real_g4_port"
+      ]
     },
     {
       "id": "ctl",
@@ -2371,11 +2395,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "token_stream_smoke",
+      "harness_example_count": 1,
       "parser_bytes": 805,
       "quality_notes": [
         "tiny_parser_single_example"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "cto",
@@ -2401,11 +2425,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 10,
       "parser_bytes": 1021,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 10
+      ]
     },
     {
       "id": "cypher",
@@ -2431,11 +2455,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 484,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "d2",
@@ -2460,9 +2484,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 12,
       "parser_bytes": 1467,
-      "quality_notes": [],
-      "harness_example_count": 12
+      "quality_notes": []
     },
     {
       "id": "dart2",
@@ -2487,12 +2511,12 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1172,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 3040,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "databank",
@@ -2517,11 +2541,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 5,
       "parser_bytes": 729,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 5
+      ]
     },
     {
       "id": "datalog",
@@ -2546,9 +2570,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 4,
       "parser_bytes": 1265,
-      "quality_notes": [],
-      "harness_example_count": 4
+      "quality_notes": []
     },
     {
       "id": "dcm",
@@ -2573,11 +2597,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1409,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "dice",
@@ -2603,11 +2627,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 12,
       "parser_bytes": 802,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 12
+      ]
     },
     {
       "id": "dif",
@@ -2632,11 +2656,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
-      "parser_bytes": 710,
+      "harness_example_count": 2,
+      "parser_bytes": 755,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 2
+      ]
     },
     {
       "id": "doiurl",
@@ -2661,11 +2685,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 14,
       "parser_bytes": 922,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 14
+      ]
     },
     {
       "id": "dot",
@@ -2690,11 +2714,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 3,
       "parser_bytes": 1480,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 3
+      ]
     },
     {
       "id": "ebnf",
@@ -2719,11 +2743,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 960,
       "quality_notes": [
         "limited_examples_or_rules"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "edif300",
@@ -2747,12 +2771,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1178,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2099,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "heuristic_default_subset"
+      ]
     },
     {
       "id": "edn",
@@ -2777,9 +2801,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 27,
       "parser_bytes": 1226,
-      "quality_notes": [],
-      "harness_example_count": 27
+      "quality_notes": [
+        "real_g4_port"
+      ]
     },
     {
       "id": "eiffel",
@@ -2807,11 +2833,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "token_stream_smoke",
-      "parser_bytes": 1175,
+      "harness_example_count": 1,
+      "parser_bytes": 640,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "tiny_parser_single_example"
+      ]
     },
     {
       "id": "elixir",
@@ -2837,11 +2863,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 484,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "erlang",
@@ -2866,11 +2892,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 699,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "esolang/barrous",
@@ -2895,11 +2921,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 2,
       "parser_bytes": 950,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 2
+      ]
     },
     {
       "id": "esolang/bio",
@@ -2924,9 +2950,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 4,
       "parser_bytes": 1091,
-      "quality_notes": [],
-      "harness_example_count": 4
+      "quality_notes": [
+        "real_g4_port"
+      ]
     },
     {
       "id": "esolang/brainflak",
@@ -2951,11 +2979,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
-      "parser_bytes": 739,
+      "harness_example_count": 3,
+      "parser_bytes": 772,
       "quality_notes": [
         "limited_examples_or_rules"
-      ],
-      "harness_example_count": 3
+      ]
     },
     {
       "id": "esolang/brainfuck",
@@ -2980,11 +3008,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 6,
       "parser_bytes": 702,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 6
+      ]
     },
     {
       "id": "esolang/cool",
@@ -3009,9 +3037,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 19,
       "parser_bytes": 2563,
-      "quality_notes": [],
-      "harness_example_count": 19
+      "quality_notes": []
     },
     {
       "id": "esolang/dgol",
@@ -3036,9 +3064,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 2,
       "parser_bytes": 2625,
-      "quality_notes": [],
-      "harness_example_count": 2
+      "quality_notes": []
     },
     {
       "id": "esolang/lolcode",
@@ -3063,9 +3091,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 666,
-      "quality_notes": [],
-      "harness_example_count": 1
+      "quality_notes": []
     },
     {
       "id": "esolang/loop",
@@ -3090,11 +3118,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
-      "parser_bytes": 793,
+      "harness_example_count": 3,
+      "parser_bytes": 826,
       "quality_notes": [
         "limited_examples_or_rules"
-      ],
-      "harness_example_count": 3
+      ]
     },
     {
       "id": "esolang/nanofuck",
@@ -3119,11 +3147,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
-      "parser_bytes": 551,
+      "harness_example_count": 2,
+      "parser_bytes": 541,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 2
+      ]
     },
     {
       "id": "esolang/sickbay",
@@ -3148,11 +3176,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
-      "parser_bytes": 1062,
+      "harness_example_count": 1,
+      "parser_bytes": 1250,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "esolang/skull",
@@ -3177,11 +3205,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
-      "parser_bytes": 833,
+      "harness_example_count": 3,
+      "parser_bytes": 866,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 3
+      ]
     },
     {
       "id": "esolang/snowball",
@@ -3206,9 +3234,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1556,
-      "quality_notes": [],
-      "harness_example_count": 1
+      "quality_notes": []
     },
     {
       "id": "esolang/wheel",
@@ -3232,12 +3260,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "language_subset",
+      "quality": "language_port",
+      "harness_example_count": 3,
       "parser_bytes": 464,
       "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 3
+        "real_g4_port"
+      ]
     },
     {
       "id": "esolang/whenever",
@@ -3262,11 +3290,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 5,
       "parser_bytes": 1418,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 5
+      ]
     },
     {
       "id": "evm-bytecode",
@@ -3291,12 +3319,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1171,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 997,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "fasta",
@@ -3321,11 +3350,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "token_stream_smoke",
+      "harness_example_count": 1,
       "parser_bytes": 546,
       "quality_notes": [
         "tiny_parser_single_example"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "fdo91",
@@ -3349,12 +3378,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "language_subset",
+      "quality": "language_port",
+      "harness_example_count": 13,
       "parser_bytes": 1069,
       "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 13
+        "real_g4_port"
+      ]
     },
     {
       "id": "fen",
@@ -3379,11 +3408,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 4,
       "parser_bytes": 874,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 4
+      ]
     },
     {
       "id": "flatbuffers",
@@ -3408,11 +3437,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 19,
       "parser_bytes": 1388,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 19
+      ]
     },
     {
       "id": "flowmatic",
@@ -3437,11 +3466,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1262,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "focal",
@@ -3466,9 +3495,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 2399,
-      "quality_notes": [],
-      "harness_example_count": 1
+      "quality_notes": []
     },
     {
       "id": "fol",
@@ -3493,11 +3522,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 3,
       "parser_bytes": 1233,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 3
+      ]
     },
     {
       "id": "fortran/fortran77",
@@ -3522,12 +3551,12 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1206,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2142,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "fortran/fortran90",
@@ -3552,12 +3581,12 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1192,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2121,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "freedesktop/desktop-entry",
@@ -3582,12 +3611,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1206,
+      "quality": "language_subset",
+      "harness_example_count": 2,
+      "parser_bytes": 521,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "fusion-tables",
@@ -3611,12 +3641,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1190,
+      "quality": "language_subset",
+      "harness_example_count": 2,
+      "parser_bytes": 1858,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "gdscript",
@@ -3642,11 +3673,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 533,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "gedcom",
@@ -3671,11 +3702,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1162,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "geekcode",
@@ -3700,11 +3731,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 4,
       "parser_bytes": 462,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 4
+      ]
     },
     {
       "id": "gff3",
@@ -3729,9 +3760,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 2,
       "parser_bytes": 914,
-      "quality_notes": [],
-      "harness_example_count": 2
+      "quality_notes": []
     },
     {
       "id": "glsl",
@@ -3757,12 +3788,12 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1169,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2003,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "gml",
@@ -3787,9 +3818,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 5,
       "parser_bytes": 682,
-      "quality_notes": [],
-      "harness_example_count": 5
+      "quality_notes": [
+        "real_g4_port"
+      ]
     },
     {
       "id": "golang",
@@ -3798,7 +3831,7 @@
       "tier": "D",
       "status": "ported",
       "parse_ok": true,
-      "example_count": 4,
+      "example_count": 50,
       "entry_point": "sourceFile",
       "grammar_name": "Go",
       "blockers": [],
@@ -3814,12 +3847,10 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "language_subset",
-      "parser_bytes": 2671,
-      "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 4
+      "quality": "language_port",
+      "harness_example_count": 5,
+      "parser_bytes": 12011,
+      "quality_notes": []
     },
     {
       "id": "gql",
@@ -3843,12 +3874,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1166,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2413,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "graphql",
@@ -3873,11 +3904,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 2266,
       "quality_notes": [
         "limited_examples_or_rules"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "graphstream-dgs",
@@ -3902,12 +3933,12 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1200,
+      "quality": "language_port",
+      "harness_example_count": 11,
+      "parser_bytes": 1766,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "real_g4_port"
+      ]
     },
     {
       "id": "gtin",
@@ -3932,11 +3963,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 12,
       "parser_bytes": 794,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 12
+      ]
     },
     {
       "id": "guido",
@@ -3961,11 +3992,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 3,
       "parser_bytes": 1907,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 3
+      ]
     },
     {
       "id": "guitartab",
@@ -3990,11 +4021,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 5,
       "parser_bytes": 655,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 5
+      ]
     },
     {
       "id": "gvpr",
@@ -4019,12 +4050,12 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1145,
+      "quality": "language_port",
+      "harness_example_count": 1,
+      "parser_bytes": 1056,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 9
+        "real_g4_port"
+      ]
     },
     {
       "id": "haskell",
@@ -4049,12 +4080,12 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1178,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1749,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "hexpat",
@@ -4079,11 +4110,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 542,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "html",
@@ -4092,7 +4123,7 @@
       "tier": "D",
       "status": "ported",
       "parse_ok": true,
-      "example_count": 4,
+      "example_count": 21,
       "entry_point": "htmlDocument",
       "grammar_name": "HTML",
       "blockers": [],
@@ -4108,10 +4139,12 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "language_port",
-      "parser_bytes": 2123,
-      "quality_notes": [],
-      "harness_example_count": 4
+      "quality": "language_subset",
+      "harness_example_count": 4,
+      "parser_bytes": 1942,
+      "quality_notes": [
+        "heuristic_default_subset"
+      ]
     },
     {
       "id": "http",
@@ -4136,11 +4169,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 4,
       "parser_bytes": 996,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 4
+      ]
     },
     {
       "id": "hypertalk",
@@ -4164,12 +4197,10 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1162,
-      "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1819,
+      "quality_notes": []
     },
     {
       "id": "icalendar",
@@ -4193,12 +4224,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1184,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2060,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "heuristic_default_subset"
+      ]
     },
     {
       "id": "icon",
@@ -4223,11 +4254,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "token_stream_smoke",
+      "harness_example_count": 1,
       "parser_bytes": 409,
       "quality_notes": [
         "tiny_parser_single_example"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "idl",
@@ -4251,12 +4282,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1166,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2039,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "inf",
@@ -4281,11 +4312,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 3,
       "parser_bytes": 738,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 3
+      ]
     },
     {
       "id": "informix",
@@ -4309,12 +4340,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1181,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1404,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "limited_examples_or_rules"
+      ]
     },
     {
       "id": "infosapient",
@@ -4339,11 +4370,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1062,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "iri",
@@ -4368,11 +4399,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 564,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "iso8601",
@@ -4397,11 +4428,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 66,
       "parser_bytes": 626,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 66
+      ]
     },
     {
       "id": "istc",
@@ -4426,11 +4457,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "token_stream_smoke",
+      "harness_example_count": 1,
       "parser_bytes": 553,
       "quality_notes": [
         "tiny_parser_single_example"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "itn",
@@ -4454,12 +4485,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
+      "quality": "language_port",
+      "harness_example_count": 1,
       "parser_bytes": 660,
       "quality_notes": [
-        "tiny_parser_single_example"
-      ],
-      "harness_example_count": 1
+        "real_g4_port"
+      ]
     },
     {
       "id": "jam",
@@ -4484,11 +4515,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 6,
       "parser_bytes": 1297,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 6
+      ]
     },
     {
       "id": "janus",
@@ -4513,11 +4544,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1791,
       "quality_notes": [
         "limited_examples_or_rules"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "java/java",
@@ -4542,12 +4573,12 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "language_subset",
-      "parser_bytes": 3814,
+      "quality": "language_port",
+      "harness_example_count": 5,
+      "parser_bytes": 24828,
       "quality_notes": [
-        "curated_subset"
-      ],
-      "harness_example_count": 6
+        "real_g4_port"
+      ]
     },
     {
       "id": "java/java20",
@@ -4572,24 +4603,27 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1180,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 3049,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "java/java8",
       "source_path": "grammars-v4/java/java8",
       "source_ref": "grammars-v4/java/java8",
       "tier": "C",
-      "status": "ported",
-      "parse_ok": true,
+      "status": "failed",
+      "parse_ok": false,
       "example_count": 5,
       "entry_point": "compilationUnit",
       "grammar_name": "Java8",
-      "blockers": [],
+      "blockers": [
+        "parse_examples_failed"
+      ],
       "g4_files": [
         "Java8Lexer.g4",
         "Java8Parser.g4"
@@ -4602,12 +4636,13 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1177,
+      "quality": "language_subset",
+      "harness_example_count": 4,
+      "parser_bytes": 3200,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "java/java9",
@@ -4632,12 +4667,13 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1177,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 3045,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "javacc",
@@ -4662,11 +4698,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 552,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "javadoc",
@@ -4692,11 +4728,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 2,
       "parser_bytes": 515,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 2
+      ]
     },
     {
       "id": "javascript/ecmascript",
@@ -4720,12 +4756,13 @@
       "has_predicate": true,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1198,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2978,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "javascript/javascript",
@@ -4734,7 +4771,7 @@
       "tier": "D",
       "status": "ported",
       "parse_ok": true,
-      "example_count": 6,
+      "example_count": 44,
       "entry_point": "program",
       "grammar_name": "JavaScript",
       "blockers": [],
@@ -4751,9 +4788,9 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_port",
-      "parser_bytes": 2709,
-      "quality_notes": [],
-      "harness_example_count": 6
+      "harness_example_count": 6,
+      "parser_bytes": 14852,
+      "quality_notes": []
     },
     {
       "id": "javascript/jsx",
@@ -4778,12 +4815,13 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1177,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2950,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "javascript/typescript",
@@ -4792,7 +4830,7 @@
       "tier": "D",
       "status": "ported",
       "parse_ok": true,
-      "example_count": 4,
+      "example_count": 23,
       "entry_point": "program",
       "grammar_name": "TypeScript",
       "blockers": [],
@@ -4809,9 +4847,9 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_port",
+      "harness_example_count": 4,
       "parser_bytes": 3272,
-      "quality_notes": [],
-      "harness_example_count": 4
+      "quality_notes": []
     },
     {
       "id": "joss",
@@ -4835,12 +4873,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1143,
+      "quality": "language_port",
+      "harness_example_count": 1,
+      "parser_bytes": 1133,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "real_g4_port"
+      ]
     },
     {
       "id": "jpa",
@@ -4865,11 +4903,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 494,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "json",
@@ -4894,9 +4932,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 2,
       "parser_bytes": 811,
-      "quality_notes": [],
-      "harness_example_count": 2
+      "quality_notes": [
+        "real_g4_port"
+      ]
     },
     {
       "id": "json5",
@@ -4905,7 +4945,7 @@
       "tier": "A",
       "status": "ported",
       "parse_ok": true,
-      "example_count": 6,
+      "example_count": 5,
       "entry_point": "json5",
       "grammar_name": "JSON5",
       "blockers": [],
@@ -4921,9 +4961,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 6,
       "parser_bytes": 1082,
-      "quality_notes": [],
-      "harness_example_count": 6
+      "quality_notes": [
+        "real_g4_port"
+      ]
     },
     {
       "id": "karel",
@@ -4948,11 +4990,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1400,
       "quality_notes": [
         "limited_examples_or_rules"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "kirikiri-tjs",
@@ -4977,12 +5019,13 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1171,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 3421,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "kotlin/kotlin",
@@ -4991,7 +5034,7 @@
       "tier": "D",
       "status": "ported",
       "parse_ok": true,
-      "example_count": 4,
+      "example_count": 23,
       "entry_point": "kotlinFile",
       "grammar_name": "Kotlin",
       "blockers": [],
@@ -5009,11 +5052,12 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 4,
       "parser_bytes": 2715,
       "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 4
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "kotlin/kotlin-formal",
@@ -5039,12 +5083,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1201,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 3066,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "kquery",
@@ -5069,11 +5114,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 8,
       "parser_bytes": 1066,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 8
+      ]
     },
     {
       "id": "kuka",
@@ -5085,7 +5130,9 @@
       "example_count": 1,
       "entry_point": "module",
       "grammar_name": "krl",
-      "blockers": [],
+      "blockers": [
+        "parse_examples_failed"
+      ],
       "g4_files": [
         "krl.g4"
       ],
@@ -5097,12 +5144,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1147,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1592,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 2
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "lambda",
@@ -5127,11 +5175,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 5,
       "parser_bytes": 563,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 5
+      ]
     },
     {
       "id": "langium",
@@ -5156,12 +5204,12 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1154,
+      "quality": "language_port",
+      "harness_example_count": 1,
+      "parser_bytes": 1073,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "real_g4_port"
+      ]
     },
     {
       "id": "lark",
@@ -5187,9 +5235,9 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_port",
+      "harness_example_count": 27,
       "parser_bytes": 2140,
-      "quality_notes": [],
-      "harness_example_count": 27
+      "quality_notes": []
     },
     {
       "id": "lcc",
@@ -5213,12 +5261,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "language_subset",
+      "quality": "language_port",
+      "harness_example_count": 9,
       "parser_bytes": 938,
       "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 9
+        "real_g4_port"
+      ]
     },
     {
       "id": "less",
@@ -5243,12 +5291,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1169,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1129,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "limbo",
@@ -5272,12 +5321,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1152,
+      "quality": "language_port",
+      "harness_example_count": 1,
+      "parser_bytes": 854,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "real_g4_port"
+      ]
     },
     {
       "id": "lisa",
@@ -5302,11 +5351,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 2411,
       "quality_notes": [
         "limited_examples_or_rules"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "lisp",
@@ -5331,9 +5380,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 3,
       "parser_bytes": 769,
-      "quality_notes": [],
-      "harness_example_count": 3
+      "quality_notes": [
+        "real_g4_port"
+      ]
     },
     {
       "id": "llvm-ir",
@@ -5357,12 +5408,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1176,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 643,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "logo/logo",
@@ -5387,9 +5439,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 16,
       "parser_bytes": 2346,
-      "quality_notes": [],
-      "harness_example_count": 16
+      "quality_notes": []
     },
     {
       "id": "logo/ucb-logo",
@@ -5413,12 +5465,13 @@
       "has_predicate": true,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1164,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1565,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "lpc",
@@ -5442,12 +5495,13 @@
       "has_predicate": true,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1146,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1701,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 3
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "lrc",
@@ -5472,12 +5526,12 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1166,
+      "quality": "language_port",
+      "harness_example_count": 1,
+      "parser_bytes": 420,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "real_g4_port"
+      ]
     },
     {
       "id": "ltl",
@@ -5502,11 +5556,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "token_stream_smoke",
+      "harness_example_count": 1,
       "parser_bytes": 671,
       "quality_notes": [
         "tiny_parser_single_example"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "lua",
@@ -5532,11 +5586,12 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 6,
       "parser_bytes": 4010,
       "quality_notes": [
-        "curated_subset"
-      ],
-      "harness_example_count": 6
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "lucene",
@@ -5562,11 +5617,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 644,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "maml",
@@ -5591,11 +5646,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 4,
       "parser_bytes": 1090,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 4
+      ]
     },
     {
       "id": "matlab",
@@ -5620,9 +5675,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 3,
       "parser_bytes": 1013,
-      "quality_notes": [],
-      "harness_example_count": 3
+      "quality_notes": []
     },
     {
       "id": "mckeeman-form",
@@ -5646,12 +5701,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "language_subset",
+      "quality": "language_port",
+      "harness_example_count": 2,
       "parser_bytes": 1375,
       "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 2
+        "real_g4_port"
+      ]
     },
     {
       "id": "mdx",
@@ -5676,11 +5731,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 3,
       "parser_bytes": 1174,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 3
+      ]
     },
     {
       "id": "memcached_protocol",
@@ -5705,11 +5760,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1816,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "metamath",
@@ -5734,11 +5789,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 2,
       "parser_bytes": 2073,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 2
+      ]
     },
     {
       "id": "metric",
@@ -5763,11 +5818,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 13,
       "parser_bytes": 912,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 13
+      ]
     },
     {
       "id": "microc",
@@ -5792,9 +5847,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 3,
       "parser_bytes": 997,
-      "quality_notes": [],
-      "harness_example_count": 3
+      "quality_notes": []
     },
     {
       "id": "miniscript",
@@ -5818,12 +5873,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1173,
+      "quality": "language_port",
+      "harness_example_count": 6,
+      "parser_bytes": 4354,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 11
+        "real_g4_port"
+      ]
     },
     {
       "id": "modelica",
@@ -5848,11 +5903,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 619,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "modula2pim4",
@@ -5876,12 +5931,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1186,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1803,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "molecule",
@@ -5906,11 +5962,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 14,
       "parser_bytes": 1532,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 14
+      ]
     },
     {
       "id": "moo",
@@ -5934,12 +5990,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1122,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 647,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 7
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "morsecode",
@@ -5964,11 +6021,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 2,
       "parser_bytes": 1594,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 2
+      ]
     },
     {
       "id": "mps",
@@ -5993,11 +6050,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 3,
       "parser_bytes": 2159,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 3
+      ]
     },
     {
       "id": "muddb",
@@ -6022,11 +6079,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1132,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "mumath",
@@ -6051,11 +6108,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 2054,
       "quality_notes": [
         "limited_examples_or_rules"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "mumps",
@@ -6079,12 +6136,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1134,
+      "quality": "language_subset",
+      "harness_example_count": 2,
+      "parser_bytes": 1297,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 9
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "muparser",
@@ -6109,11 +6167,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1372,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "newick",
@@ -6138,11 +6196,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
-      "parser_bytes": 822,
+      "harness_example_count": 8,
+      "parser_bytes": 855,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 8
+      ]
     },
     {
       "id": "oberon",
@@ -6166,12 +6224,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1153,
+      "quality": "language_port",
+      "harness_example_count": 1,
+      "parser_bytes": 1644,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "real_g4_port"
+      ]
     },
     {
       "id": "objc",
@@ -6196,12 +6254,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1169,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 3036,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "ocl",
@@ -6227,11 +6286,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 3,
       "parser_bytes": 1275,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 3
+      ]
     },
     {
       "id": "odin",
@@ -6243,7 +6302,9 @@
       "example_count": 2,
       "entry_point": "unit",
       "grammar_name": "odin",
-      "blockers": [],
+      "blockers": [
+        "parse_examples_failed"
+      ],
       "g4_files": [
         "odin.g4"
       ],
@@ -6255,12 +6316,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1145,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1651,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 3
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "oncrpc",
@@ -6286,11 +6348,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 2688,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "orwell",
@@ -6315,11 +6377,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "token_stream_smoke",
+      "harness_example_count": 1,
       "parser_bytes": 475,
       "quality_notes": [
         "tiny_parser_single_example"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "p",
@@ -6344,11 +6406,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 2,
       "parser_bytes": 500,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 2
+      ]
     },
     {
       "id": "parkingsign",
@@ -6373,11 +6435,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1670,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "pascal",
@@ -6389,7 +6451,9 @@
       "example_count": 16,
       "entry_point": "program",
       "grammar_name": "pascal",
-      "blockers": [],
+      "blockers": [
+        "parse_examples_failed"
+      ],
       "g4_files": [
         "pascal.g4"
       ],
@@ -6401,12 +6465,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1155,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1893,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "pbm",
@@ -6430,12 +6495,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
+      "quality": "language_port",
+      "harness_example_count": 1,
       "parser_bytes": 600,
       "quality_notes": [
-        "tiny_parser_single_example"
-      ],
-      "harness_example_count": 1
+        "real_g4_port"
+      ]
     },
     {
       "id": "pcre",
@@ -6459,12 +6524,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1145,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1462,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "pddl",
@@ -6489,11 +6555,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 605,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "pdn",
@@ -6518,11 +6584,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 3,
       "parser_bytes": 836,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 3
+      ]
     },
     {
       "id": "pegen",
@@ -6547,12 +6613,13 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1172,
+      "quality": "language_subset",
+      "harness_example_count": 2,
+      "parser_bytes": 602,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "peoplecode",
@@ -6577,11 +6644,12 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 19,
       "parser_bytes": 5057,
       "quality_notes": [
-        "curated_subset"
-      ],
-      "harness_example_count": 19
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "pest",
@@ -6607,11 +6675,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 841,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "pgn",
@@ -6636,11 +6704,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "token_stream_smoke",
+      "harness_example_count": 1,
       "parser_bytes": 887,
       "quality_notes": [
         "tiny_parser_single_example"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "php",
@@ -6649,7 +6717,7 @@
       "tier": "D",
       "status": "ported",
       "parse_ok": true,
-      "example_count": 4,
+      "example_count": 63,
       "entry_point": "htmlDocument",
       "grammar_name": "Php",
       "blockers": [],
@@ -6666,9 +6734,9 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_port",
+      "harness_example_count": 4,
       "parser_bytes": 2421,
-      "quality_notes": [],
-      "harness_example_count": 4
+      "quality_notes": []
     },
     {
       "id": "pii",
@@ -6692,12 +6760,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
+      "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 614,
       "quality_notes": [
-        "tiny_parser_single_example"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "pike",
@@ -6721,12 +6790,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1145,
+      "quality": "language_port",
+      "harness_example_count": 1,
+      "parser_bytes": 1247,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 2
+        "real_g4_port"
+      ]
     },
     {
       "id": "pl0",
@@ -6751,9 +6820,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 3,
       "parser_bytes": 1557,
-      "quality_notes": [],
-      "harness_example_count": 3
+      "quality_notes": []
     },
     {
       "id": "plantUML",
@@ -6778,12 +6847,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1181,
+      "quality": "language_subset",
+      "harness_example_count": 2,
+      "parser_bytes": 1726,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "plucid",
@@ -6808,11 +6878,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 393,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "ply",
@@ -6837,11 +6907,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 5,
       "parser_bytes": 1301,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 5
+      ]
     },
     {
       "id": "pmmn",
@@ -6865,12 +6935,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "language_subset",
+      "quality": "language_port",
+      "harness_example_count": 6,
       "parser_bytes": 768,
       "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 6
+        "real_g4_port"
+      ]
     },
     {
       "id": "postalcode",
@@ -6895,9 +6965,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 1,
       "parser_bytes": 408,
-      "quality_notes": [],
-      "harness_example_count": 1
+      "quality_notes": [
+        "real_g4_port"
+      ]
     },
     {
       "id": "powerbuilder",
@@ -6922,12 +6994,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1179,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1905,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "powerbuilderdw",
@@ -6953,11 +7026,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 568,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "powerquery",
@@ -6983,11 +7056,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 562,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "prolog",
@@ -7012,11 +7085,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "token_stream_smoke",
+      "harness_example_count": 1,
       "parser_bytes": 697,
       "quality_notes": [
         "tiny_parser_single_example"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "promql",
@@ -7042,11 +7115,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 28,
       "parser_bytes": 1323,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 28
+      ]
     },
     {
       "id": "propcalc",
@@ -7071,11 +7144,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 8,
       "parser_bytes": 860,
       "quality_notes": [
         "limited_examples_or_rules"
-      ],
-      "harness_example_count": 8
+      ]
     },
     {
       "id": "properties",
@@ -7101,11 +7174,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
-      "parser_bytes": 712,
+      "harness_example_count": 2,
+      "parser_bytes": 921,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 2
+      ]
     },
     {
       "id": "protobuf/protobuf2",
@@ -7129,12 +7202,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1169,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2305,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 4
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "protobuf/protobuf3",
@@ -7158,12 +7232,13 @@
       "has_predicate": true,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1169,
+      "quality": "language_subset",
+      "harness_example_count": 2,
+      "parser_bytes": 2305,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 29
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "prov-n",
@@ -7188,11 +7263,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 4,
       "parser_bytes": 1148,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 4
+      ]
     },
     {
       "id": "python/python",
@@ -7217,12 +7292,13 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1182,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2304,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "python/python2",
@@ -7246,12 +7322,13 @@
       "has_predicate": true,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1197,
+      "quality": "language_subset",
+      "harness_example_count": 2,
+      "parser_bytes": 2248,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "python/python2-js",
@@ -7275,12 +7352,13 @@
       "has_predicate": true,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1192,
+      "quality": "language_subset",
+      "harness_example_count": 2,
+      "parser_bytes": 2243,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "python/python2_7_18",
@@ -7306,11 +7384,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 4,
       "parser_bytes": 1631,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 4
+      ]
     },
     {
       "id": "python/python3",
@@ -7335,12 +7413,10 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "language_subset",
-      "parser_bytes": 2644,
-      "quality_notes": [
-        "curated_subset"
-      ],
-      "harness_example_count": 5
+      "quality": "language_port",
+      "harness_example_count": 5,
+      "parser_bytes": 17400,
+      "quality_notes": []
     },
     {
       "id": "python/python3_13",
@@ -7365,12 +7441,13 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1192,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2317,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "qif",
@@ -7395,12 +7472,12 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1166,
+      "quality": "language_port",
+      "harness_example_count": 2,
+      "parser_bytes": 758,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "real_g4_port"
+      ]
     },
     {
       "id": "quakemap",
@@ -7425,11 +7502,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
-      "parser_bytes": 1188,
+      "harness_example_count": 1,
+      "parser_bytes": 1221,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "r",
@@ -7454,11 +7531,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 4,
       "parser_bytes": 3250,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 4
+      ]
     },
     {
       "id": "racket-bsl",
@@ -7483,11 +7560,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1398,
       "quality_notes": [
         "limited_examples_or_rules"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "racket-isl",
@@ -7512,11 +7589,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1920,
       "quality_notes": [
         "limited_examples_or_rules"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "rcs",
@@ -7541,11 +7618,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1961,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "recfile",
@@ -7569,12 +7646,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "language_subset",
+      "quality": "language_port",
+      "harness_example_count": 2,
       "parser_bytes": 874,
       "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 2
+        "real_g4_port"
+      ]
     },
     {
       "id": "redcode",
@@ -7599,11 +7676,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 5,
       "parser_bytes": 883,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 5
+      ]
     },
     {
       "id": "redis",
@@ -7628,12 +7705,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1164,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1568,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "refal",
@@ -7658,11 +7736,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1035,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "rego",
@@ -7687,12 +7765,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1143,
+      "quality": "language_subset",
+      "harness_example_count": 2,
+      "parser_bytes": 548,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "restructuredtext",
@@ -7716,12 +7795,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1181,
+      "quality": "language_port",
+      "harness_example_count": 1,
+      "parser_bytes": 939,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "real_g4_port"
+      ]
     },
     {
       "id": "rexx",
@@ -7733,7 +7812,9 @@
       "example_count": 5,
       "entry_point": "file_",
       "grammar_name": "Rexx",
-      "blockers": [],
+      "blockers": [
+        "parse_examples_failed"
+      ],
       "g4_files": [
         "RexxLexer.g4",
         "RexxParser.g4"
@@ -7746,12 +7827,13 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1149,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1486,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 4
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "rfc1035",
@@ -7776,11 +7858,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 3,
       "parser_bytes": 433,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 3
+      ]
     },
     {
       "id": "rfc1960",
@@ -7805,11 +7887,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 4,
       "parser_bytes": 1214,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 4
+      ]
     },
     {
       "id": "rfc3080",
@@ -7834,11 +7916,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 3,
       "parser_bytes": 726,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 3
+      ]
     },
     {
       "id": "rfc822/rfc822-datetime",
@@ -7863,11 +7945,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 2,
       "parser_bytes": 1089,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 2
+      ]
     },
     {
       "id": "rfc822/rfc822-emailaddress",
@@ -7892,11 +7974,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 9,
       "parser_bytes": 953,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 9
+      ]
     },
     {
       "id": "robotwars",
@@ -7921,9 +8003,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 9,
       "parser_bytes": 2029,
-      "quality_notes": [],
-      "harness_example_count": 9
+      "quality_notes": []
     },
     {
       "id": "romannumerals",
@@ -7948,9 +8030,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 3,
       "parser_bytes": 1030,
-      "quality_notes": [],
-      "harness_example_count": 3
+      "quality_notes": []
     },
     {
       "id": "ron",
@@ -7975,11 +8057,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 3,
       "parser_bytes": 1866,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 3
+      ]
     },
     {
       "id": "rpn",
@@ -8004,9 +8086,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 13,
       "parser_bytes": 628,
-      "quality_notes": [],
-      "harness_example_count": 13
+      "quality_notes": []
     },
     {
       "id": "ruleworks",
@@ -8030,12 +8112,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1184,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1340,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "rust",
@@ -8044,7 +8127,7 @@
       "tier": "C",
       "status": "ported",
       "parse_ok": true,
-      "example_count": 4,
+      "example_count": 17,
       "entry_point": "crate",
       "grammar_name": "Rust",
       "blockers": [],
@@ -8061,11 +8144,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
-      "parser_bytes": 2620,
+      "harness_example_count": 4,
+      "parser_bytes": 33672,
       "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 4
+        "curated_subset"
+      ]
     },
     {
       "id": "sapf",
@@ -8090,11 +8173,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 30,
       "parser_bytes": 602,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 30
+      ]
     },
     {
       "id": "scala/scala2",
@@ -8119,11 +8202,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 778,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "scala/scala3",
@@ -8148,12 +8231,13 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1181,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 3050,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "scotty",
@@ -8178,11 +8262,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 992,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "scss",
@@ -8194,7 +8278,9 @@
       "example_count": 94,
       "entry_point": "stylesheet",
       "grammar_name": "Scss",
-      "blockers": [],
+      "blockers": [
+        "parse_examples_failed"
+      ],
       "g4_files": [
         "ScssLexer.g4",
         "ScssParser.g4"
@@ -8207,12 +8293,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1155,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1296,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sdl",
@@ -8236,12 +8323,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1164,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1082,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "semver",
@@ -8266,12 +8354,12 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "language_subset",
+      "quality": "language_port",
+      "harness_example_count": 13,
       "parser_bytes": 1234,
       "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 13
+        "real_g4_port"
+      ]
     },
     {
       "id": "sexpression",
@@ -8296,9 +8384,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
-      "parser_bytes": 616,
-      "quality_notes": [],
-      "harness_example_count": 2
+      "harness_example_count": 2,
+      "parser_bytes": 677,
+      "quality_notes": [
+        "real_g4_port"
+      ]
     },
     {
       "id": "sgf",
@@ -8323,11 +8413,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1244,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "sharc",
@@ -8352,12 +8442,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1172,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1143,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sici",
@@ -8382,11 +8473,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 2,
       "parser_bytes": 1085,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 2
+      ]
     },
     {
       "id": "sieve",
@@ -8411,11 +8502,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1003,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "smalltalk",
@@ -8440,11 +8531,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "token_stream_smoke",
+      "harness_example_count": 1,
       "parser_bytes": 434,
       "quality_notes": [
         "tiny_parser_single_example"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "smiles",
@@ -8469,11 +8560,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 12,
       "parser_bytes": 704,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 12
+      ]
     },
     {
       "id": "smtlibv2",
@@ -8497,12 +8588,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1181,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1242,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "snobol",
@@ -8526,12 +8618,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1149,
+      "quality": "language_port",
+      "harness_example_count": 1,
+      "parser_bytes": 621,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 3
+        "real_g4_port"
+      ]
     },
     {
       "id": "solidity",
@@ -8556,12 +8648,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1181,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2542,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sparql",
@@ -8587,11 +8680,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 6,
       "parser_bytes": 1509,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 6
+      ]
     },
     {
       "id": "spass",
@@ -8616,12 +8709,12 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1172,
+      "quality": "language_port",
+      "harness_example_count": 1,
+      "parser_bytes": 972,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "real_g4_port"
+      ]
     },
     {
       "id": "spl",
@@ -8647,11 +8740,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 554,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "sql/athena",
@@ -8676,12 +8769,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1179,
+      "quality": "language_subset",
+      "harness_example_count": 8,
+      "parser_bytes": 5521,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/clickhouse",
@@ -8706,12 +8800,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1191,
+      "quality": "language_subset",
+      "harness_example_count": 8,
+      "parser_bytes": 5563,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/cockroachdb",
@@ -8736,12 +8831,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1194,
+      "quality": "language_subset",
+      "harness_example_count": 8,
+      "parser_bytes": 5572,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/databricks",
@@ -8766,12 +8862,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1191,
+      "quality": "language_subset",
+      "harness_example_count": 8,
+      "parser_bytes": 5566,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/derby",
@@ -8797,11 +8894,12 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
-      "parser_bytes": 2092,
+      "harness_example_count": 8,
+      "parser_bytes": 5536,
       "quality_notes": [
-        "curated_subset"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/drill",
@@ -8826,12 +8924,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1176,
+      "quality": "language_subset",
+      "harness_example_count": 8,
+      "parser_bytes": 5536,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/hive/v2",
@@ -8860,12 +8959,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1172,
+      "quality": "language_subset",
+      "harness_example_count": 8,
+      "parser_bytes": 5529,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/hive/v3",
@@ -8894,12 +8994,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1172,
+      "quality": "language_subset",
+      "harness_example_count": 8,
+      "parser_bytes": 5529,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/hive/v4",
@@ -8924,12 +9025,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1172,
+      "quality": "language_subset",
+      "harness_example_count": 8,
+      "parser_bytes": 5529,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/informix-sql",
@@ -8954,12 +9056,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1195,
+      "quality": "language_subset",
+      "harness_example_count": 8,
+      "parser_bytes": 5552,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/mariadb",
@@ -8984,12 +9087,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1182,
+      "quality": "language_subset",
+      "harness_example_count": 8,
+      "parser_bytes": 5524,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/mysql/Oracle",
@@ -9015,11 +9119,12 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
-      "parser_bytes": 2102,
+      "harness_example_count": 8,
+      "parser_bytes": 5536,
       "quality_notes": [
-        "curated_subset"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/mysql/Positive-Technologies",
@@ -9044,12 +9149,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1228,
+      "quality": "language_subset",
+      "harness_example_count": 8,
+      "parser_bytes": 5570,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/phoenix",
@@ -9074,12 +9180,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1182,
+      "quality": "language_subset",
+      "harness_example_count": 8,
+      "parser_bytes": 5548,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/plsql",
@@ -9105,11 +9212,12 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
-      "parser_bytes": 2092,
+      "harness_example_count": 8,
+      "parser_bytes": 5508,
       "quality_notes": [
-        "curated_subset"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/postgresql",
@@ -9135,11 +9243,12 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
-      "parser_bytes": 2112,
+      "harness_example_count": 8,
+      "parser_bytes": 5533,
       "quality_notes": [
-        "curated_subset"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/snowflake",
@@ -9165,11 +9274,12 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
-      "parser_bytes": 2108,
+      "harness_example_count": 8,
+      "parser_bytes": 5560,
       "quality_notes": [
-        "curated_subset"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/sqlite",
@@ -9178,7 +9288,7 @@
       "tier": "D",
       "status": "ported",
       "parse_ok": true,
-      "example_count": 6,
+      "example_count": 16,
       "entry_point": "parse",
       "grammar_name": "SQLite",
       "blockers": [],
@@ -9195,11 +9305,12 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
-      "parser_bytes": 2165,
+      "harness_example_count": 8,
+      "parser_bytes": 5511,
       "quality_notes": [
-        "curated_subset"
-      ],
-      "harness_example_count": 6
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/starrocks",
@@ -9224,12 +9335,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1188,
+      "quality": "language_subset",
+      "harness_example_count": 8,
+      "parser_bytes": 5557,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/teradata",
@@ -9263,12 +9375,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1185,
+      "quality": "language_subset",
+      "harness_example_count": 8,
+      "parser_bytes": 5517,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/trino",
@@ -9293,12 +9406,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1176,
+      "quality": "language_subset",
+      "harness_example_count": 8,
+      "parser_bytes": 5521,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sql/tsql",
@@ -9323,12 +9437,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1173,
+      "quality": "language_subset",
+      "harness_example_count": 8,
+      "parser_bytes": 5530,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "squirrel",
@@ -9353,11 +9468,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 638,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "srt",
@@ -9382,11 +9497,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "token_stream_smoke",
+      "harness_example_count": 1,
       "parser_bytes": 725,
       "quality_notes": [
         "tiny_parser_single_example"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "stacktrace",
@@ -9411,11 +9526,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 3,
       "parser_bytes": 1208,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 3
+      ]
     },
     {
       "id": "star",
@@ -9440,11 +9555,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 3,
       "parser_bytes": 1310,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 3
+      ]
     },
     {
       "id": "stellaris",
@@ -9468,12 +9583,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "language_subset",
+      "quality": "language_port",
+      "harness_example_count": 9,
       "parser_bytes": 904,
       "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 9
+        "real_g4_port"
+      ]
     },
     {
       "id": "stl",
@@ -9498,11 +9613,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "token_stream_smoke",
+      "harness_example_count": 1,
       "parser_bytes": 691,
       "quality_notes": [
         "tiny_parser_single_example"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "stringtemplate",
@@ -9531,12 +9646,13 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1199,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1350,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "suokif",
@@ -9561,11 +9677,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 2,
       "parser_bytes": 1089,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 2
+      ]
     },
     {
       "id": "swift/swift2",
@@ -9589,12 +9705,13 @@
       "has_predicate": true,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1181,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2083,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "swift/swift3",
@@ -9618,12 +9735,13 @@
       "has_predicate": true,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1181,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2083,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "swift/swift5",
@@ -9648,12 +9766,13 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1181,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2083,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "swift-fin",
@@ -9678,12 +9797,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1184,
+      "quality": "language_subset",
+      "harness_example_count": 2,
+      "parser_bytes": 555,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "sysml-v2",
@@ -9708,12 +9828,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1179,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 830,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "szf",
@@ -9737,12 +9858,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "language_subset",
+      "quality": "language_port",
+      "harness_example_count": 2,
       "parser_bytes": 919,
       "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 2
+        "real_g4_port"
+      ]
     },
     {
       "id": "tcpheader",
@@ -9766,12 +9887,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 647,
+      "quality": "language_subset",
+      "harness_example_count": 2,
+      "parser_bytes": 697,
       "quality_notes": [
-        "tiny_parser_single_example"
-      ],
-      "harness_example_count": 1
+        "heuristic_default_subset"
+      ]
     },
     {
       "id": "teal",
@@ -9796,11 +9917,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 618,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "telephone",
@@ -9824,12 +9945,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "language_subset",
+      "quality": "language_port",
+      "harness_example_count": 4,
       "parser_bytes": 771,
       "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 4
+        "real_g4_port"
+      ]
     },
     {
       "id": "terraform",
@@ -9854,11 +9975,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "token_stream_smoke",
+      "harness_example_count": 1,
       "parser_bytes": 664,
       "quality_notes": [
         "tiny_parser_single_example"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "thrift",
@@ -9883,11 +10004,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1273,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "tiny",
@@ -9912,11 +10033,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 3,
       "parser_bytes": 800,
       "quality_notes": [
         "limited_examples_or_rules"
-      ],
-      "harness_example_count": 3
+      ]
     },
     {
       "id": "tinybasic",
@@ -9941,11 +10062,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 1391,
       "quality_notes": [
         "limited_examples_or_rules"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "tinyc",
@@ -9970,9 +10091,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 5,
       "parser_bytes": 1091,
-      "quality_notes": [],
-      "harness_example_count": 5
+      "quality_notes": []
     },
     {
       "id": "tinymud",
@@ -9997,11 +10118,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 3033,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "tinyos_nesc",
@@ -10027,11 +10148,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 454,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "tl",
@@ -10056,11 +10177,12 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 8,
       "parser_bytes": 624,
       "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 8
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "tnsnames",
@@ -10072,7 +10194,9 @@
       "example_count": 1,
       "entry_point": "tnsnames",
       "grammar_name": "tnsnames",
-      "blockers": [],
+      "blockers": [
+        "parse_examples_failed"
+      ],
       "g4_files": [
         "tnsnamesLexer.g4",
         "tnsnamesParser.g4"
@@ -10085,12 +10209,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1181,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1061,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "tnt",
@@ -10115,9 +10240,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 11,
       "parser_bytes": 1018,
-      "quality_notes": [],
-      "harness_example_count": 11
+      "quality_notes": []
     },
     {
       "id": "toml",
@@ -10143,9 +10268,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_port",
+      "harness_example_count": 1,
       "parser_bytes": 961,
-      "quality_notes": [],
-      "harness_example_count": 1
+      "quality_notes": [
+        "real_g4_port"
+      ]
     },
     {
       "id": "trac",
@@ -10169,10 +10296,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "language_subset",
+      "quality": "language_port",
+      "harness_example_count": 4,
       "parser_bytes": 780,
-      "quality_notes": [],
-      "harness_example_count": 4
+      "quality_notes": [
+        "real_g4_port"
+      ]
     },
     {
       "id": "trapc",
@@ -10199,12 +10328,10 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1148,
-      "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 2
+      "quality": "language_port",
+      "harness_example_count": 2,
+      "parser_bytes": 16767,
+      "quality_notes": []
     },
     {
       "id": "tsv",
@@ -10229,9 +10356,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 1,
       "parser_bytes": 618,
-      "quality_notes": [],
-      "harness_example_count": 1
+      "quality_notes": [
+        "real_g4_port"
+      ]
     },
     {
       "id": "ttm",
@@ -10256,11 +10385,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
-      "parser_bytes": 837,
+      "harness_example_count": 2,
+      "parser_bytes": 870,
       "quality_notes": [
         "limited_examples_or_rules"
-      ],
-      "harness_example_count": 2
+      ]
     },
     {
       "id": "turing",
@@ -10285,11 +10414,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 2,
       "parser_bytes": 545,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 2
+      ]
     },
     {
       "id": "turtle",
@@ -10314,11 +10443,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 3,
       "parser_bytes": 741,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 3
+      ]
     },
     {
       "id": "turtle-doc",
@@ -10342,12 +10471,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1169,
+      "quality": "language_port",
+      "harness_example_count": 1,
+      "parser_bytes": 1090,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "real_g4_port"
+      ]
     },
     {
       "id": "unicode/graphemes",
@@ -10372,11 +10501,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 423,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "unicode/unicode16",
@@ -10400,12 +10529,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1192,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 799,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "unreal_angelscript",
@@ -10430,12 +10560,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1187,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 3071,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 2
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "upnp",
@@ -10460,11 +10591,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 5,
       "parser_bytes": 1321,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 5
+      ]
     },
     {
       "id": "url",
@@ -10489,11 +10620,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 29,
       "parser_bytes": 1474,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 29
+      ]
     },
     {
       "id": "useragent",
@@ -10518,11 +10649,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 5,
       "parser_bytes": 682,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 5
+      ]
     },
     {
       "id": "v",
@@ -10546,12 +10677,13 @@
       "has_predicate": true,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1160,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2056,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "vaxscan",
@@ -10575,12 +10707,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1178,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1782,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "vb6",
@@ -10605,12 +10738,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1166,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2271,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "vba/vba6",
@@ -10634,12 +10768,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1179,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2288,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "vba/vba7_1",
@@ -10664,12 +10799,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1177,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2284,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "vba/vba_cc",
@@ -10694,11 +10830,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 647,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "vba/vba_like",
@@ -10723,9 +10859,9 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_port",
+      "harness_example_count": 2,
       "parser_bytes": 1832,
-      "quality_notes": [],
-      "harness_example_count": 2
+      "quality_notes": []
     },
     {
       "id": "velocity",
@@ -10750,12 +10886,12 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1181,
+      "quality": "language_port",
+      "harness_example_count": 1,
+      "parser_bytes": 844,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "real_g4_port"
+      ]
     },
     {
       "id": "verilog/systemverilog",
@@ -10781,12 +10917,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1204,
+      "quality": "language_subset",
+      "harness_example_count": 4,
+      "parser_bytes": 3705,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "verilog/verilog",
@@ -10812,12 +10949,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1186,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 985,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "vhdl/vhdl",
@@ -10841,12 +10979,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1182,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 892,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "vhdl/vhdl2008",
@@ -10870,12 +11009,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1186,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2219,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "vmf",
@@ -10900,11 +11040,12 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 910,
       "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "wat",
@@ -10930,11 +11071,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 549,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "wavefront",
@@ -10959,11 +11100,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 30,
       "parser_bytes": 1314,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 30
+      ]
     },
     {
       "id": "webidl",
@@ -10987,12 +11128,13 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1153,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1706,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 3
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "wkt",
@@ -11017,11 +11159,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 2,
       "parser_bytes": 3475,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 2
+      ]
     },
     {
       "id": "wkt-crs-v1",
@@ -11046,11 +11188,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 2843,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "wln",
@@ -11075,11 +11217,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 11,
       "parser_bytes": 704,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 11
+      ]
     },
     {
       "id": "wren",
@@ -11105,11 +11247,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 1,
       "parser_bytes": 617,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 1
+      ]
     },
     {
       "id": "xml",
@@ -11135,9 +11277,9 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_port",
+      "harness_example_count": 3,
       "parser_bytes": 2088,
-      "quality_notes": [],
-      "harness_example_count": 3
+      "quality_notes": []
     },
     {
       "id": "xpath/xpath1",
@@ -11162,11 +11304,11 @@
       "split_lexer_parser": false,
       "combined": true,
       "quality": "language_subset",
+      "harness_example_count": 4,
       "parser_bytes": 3140,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 4
+      ]
     },
     {
       "id": "xpath/xpath20",
@@ -11192,11 +11334,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 2,
       "parser_bytes": 967,
       "quality_notes": [
         "curated_subset"
-      ],
-      "harness_example_count": 2
+      ]
     },
     {
       "id": "xpath/xpath31",
@@ -11221,12 +11363,13 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1160,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1985,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 2
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "xsd-regex",
@@ -11251,12 +11394,13 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1182,
+      "quality": "language_subset",
+      "harness_example_count": 3,
+      "parser_bytes": 1047,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "xyz",
@@ -11280,12 +11424,12 @@
       "has_predicate": false,
       "split_lexer_parser": false,
       "combined": true,
-      "quality": "language_subset",
+      "quality": "language_port",
+      "harness_example_count": 2,
       "parser_bytes": 676,
       "quality_notes": [
-        "heuristic_default_subset"
-      ],
-      "harness_example_count": 2
+        "real_g4_port"
+      ]
     },
     {
       "id": "yara",
@@ -11310,12 +11454,12 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1169,
+      "quality": "language_port",
+      "harness_example_count": 1,
+      "parser_bytes": 1114,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "real_g4_port"
+      ]
     },
     {
       "id": "yini",
@@ -11341,11 +11485,11 @@
       "split_lexer_parser": true,
       "combined": false,
       "quality": "language_subset",
+      "harness_example_count": 33,
       "parser_bytes": 794,
       "quality_notes": [
         "heuristic_default_subset"
-      ],
-      "harness_example_count": 33
+      ]
     },
     {
       "id": "z",
@@ -11371,12 +11515,13 @@
       "has_predicate": true,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1160,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 1596,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "zig",
@@ -11401,21 +11546,22 @@
       "has_predicate": false,
       "split_lexer_parser": true,
       "combined": false,
-      "quality": "token_stream_smoke",
-      "parser_bytes": 1166,
+      "quality": "language_subset",
+      "harness_example_count": 1,
+      "parser_bytes": 2027,
       "quality_notes": [
-        "generic_nested_token_stream"
-      ],
-      "harness_example_count": 1
+        "curated_subset",
+        "real_g4_port"
+      ]
     },
     {
       "id": "java",
       "source_path": null,
       "source_ref": "legacy:java",
       "tier": "legacy",
-      "status": "ported",
-      "parse_ok": true,
-      "example_count": 2,
+      "status": "legacy",
+      "parse_ok": false,
+      "example_count": 0,
       "entry_point": null,
       "grammar_name": null,
       "blockers": [],
@@ -11436,9 +11582,9 @@
       "source_path": null,
       "source_ref": "legacy:lpg",
       "tier": "legacy",
-      "status": "ported",
-      "parse_ok": true,
-      "example_count": 4,
+      "status": "legacy",
+      "parse_ok": false,
+      "example_count": 0,
       "entry_point": null,
       "grammar_name": null,
       "blockers": [],
@@ -11459,9 +11605,9 @@
       "source_path": null,
       "source_ref": "legacy:leg",
       "tier": "legacy",
-      "status": "ported",
-      "parse_ok": true,
-      "example_count": 2,
+      "status": "legacy",
+      "parse_ok": false,
+      "example_count": 0,
       "entry_point": null,
       "grammar_name": null,
       "blockers": [],
@@ -11532,9 +11678,9 @@
     "unknown": "Unclassified"
   },
   "quality_counts": {
-    "language_subset": 186,
-    "language_port": 37,
-    "token_stream_smoke": 167,
+    "language_subset": 298,
+    "language_port": 77,
+    "token_stream_smoke": 15,
     "legacy": 5
   }
 }

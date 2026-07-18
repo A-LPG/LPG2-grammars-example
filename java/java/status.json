@@ -1,13 +1,16 @@
 {
   "id": "java/java",
-  "tier": "C",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 6,
   "blockers": [],
-  "quality": "language_subset",
   "quality_notes": [
-    "curated_subset"
+    "real_g4_port"
   ],
-  "parser_bytes": 3814
+  "parser_bytes": 24828,
+  "rule_approx": 397,
+  "start": "compilationUnit",
+  "example_count": 5,
+  "tier": "C",
+  "parser_lines": 1019
 }

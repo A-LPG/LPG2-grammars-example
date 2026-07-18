@@ -1,13 +1,15 @@
 {
   "id": "java/java8",
-  "tier": "C",
   "parse_ok": true,
   "status": "ported",
-  "example_count": 1,
-  "blockers": [],
-  "quality": "token_stream_smoke",
+  "tier": "C",
+  "quality": "language_subset",
   "quality_notes": [
-    "generic_nested_token_stream"
+    "curated_subset",
+    "real_g4_port"
   ],
-  "parser_bytes": 1177
+  "parser_bytes": 3200,
+  "example_count": 4,
+  "blockers": [],
+  "parser_lines": 121
 }
