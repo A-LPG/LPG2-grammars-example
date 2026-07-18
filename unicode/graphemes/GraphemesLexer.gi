@@ -1,4 +1,4 @@
--- Graphemes Lexer (LPG) — Wave D parse-level
+-- Graphemes lexer subset: CHAR + CRLF (ASCII/BMP text as clusters)
 %Options list
 %Options fp=GraphemesLexer
 %options single_productions
@@ -14,10 +14,8 @@
 %End
 %Export
     IDENTIFIER
-    STRING NUMBER
-    LPAREN RPAREN LBRACE RBRACE LBRACKET RBRACKET
-    COMMA DOT COLON SEMI EQ PLUS MINUS STAR SLASH LT GT
     CHAR
+    CRLF
 %End
 %Terminals
     CtlCharNotWS
@@ -70,55 +68,13 @@
     Token
 %End
 %Rules
-
-    Token ::= '(' /. makeToken($_LPAREN); ./
-            | ')' /. makeToken($_RPAREN); ./
-            | '{' /. makeToken($_LBRACE); ./
-            | '}' /. makeToken($_RBRACE); ./
-            | '[' /. makeToken($_LBRACKET); ./
-            | ']' /. makeToken($_RBRACKET); ./
-            | ',' /. makeToken($_COMMA); ./
-            | '.' /. makeToken($_DOT); ./
-            | ':' /. makeToken($_COLON); ./
-            | ';' /. makeToken($_SEMI); ./
-            | '=' /. makeToken($_EQ); ./
-            | '+' /. makeToken($_PLUS); ./
-            | '-' /. makeToken($_MINUS); ./
-            | '*' /. makeToken($_STAR); ./
-            | '/' /. makeToken($_SLASH); ./
-            | '<' /. makeToken($_LT); ./
-            | '>' /. makeToken($_GT); ./
-            | STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
-            | identifier /. checkForKeyWord(); ./
-            | white /. skipToken(); ./
-            | line_comment /. skipToken(); ./
-            | hash_comment /. skipToken(); ./
-            | dash_comment /. skipToken(); ./
-
+    Token ::= CR LF /. makeToken($_CRLF); ./
             | CHAR /. makeToken($_CHAR); ./
 
-    identifier ::= Letter LetterOrDigitStar
+    CHAR ::= Letter | Digit | AfterASCII | Space | HT | FF | LF | Special
     Letter -> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z | _
-    LetterOrDigitStar -> $empty | LetterOrDigitStar LetterOrDigit
-    LetterOrDigit -> Letter | Digit
-    Digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
-
-    CHAR ::= Letter | Digit | AfterASCII | Space | Special
-    Letter -> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
     Digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
     Special -> '+' | '-' | '/' | '(' | ')' | '*' | '!' | '@' | '`' | '~' |
                '%' | '&' | '^' | ':' | ';' | "'" | '"' | '|' | '{' | '}' |
-               '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_'
-    STRING ::= '"' SLBody '"'
-    SLBody -> $empty | SLBody CHAR
-    NUMBER ::= Digit | NUMBER Digit
-    line_comment ::= '/' '/' NotNLStar
-    hash_comment ::= '#' NotNLStar
-    dash_comment ::= '-' '-' NotNLStar
-    NotNLStar -> $empty | NotNLStar NotNL
-    NotNL -> CHAR
-
-    white ::= WSChar | white WSChar
-    WSChar -> Space | HT | FF | LF | CR
+               '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | BackSlash
 %End

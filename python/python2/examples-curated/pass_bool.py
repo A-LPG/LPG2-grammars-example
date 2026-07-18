@@ -1,3 +1,2 @@
-def noop(): pass
-flag = 1
-if flag: noop()
+x = True
+y = False

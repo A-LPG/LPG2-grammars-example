@@ -16,7 +16,9 @@
 %End
 
 %Export
-    IDENTIFIER
+            GT
+LT
+IDENTIFIER
     NUMBER
     STRING
     LPAREN
@@ -58,6 +60,94 @@
     TRUE
     FALSE
     NULLLITERAL
+    AMPEQ
+    AWAIT
+    As
+    Async
+    BackTick
+    BigBinaryIntegerLiteral
+    BigDecimalIntegerLiteral
+    BigHexIntegerLiteral
+    BigOctalIntegerLiteral
+    BinaryIntegerLiteral
+    Break
+    CARETEQ
+    CLASS_
+    Case
+    Catch
+    Const
+    Continue
+    DELETE
+    Debugger
+    Default
+    Do
+    EQEQEQ
+    Else
+    Enum
+    Export
+    Extends
+    FATARROW
+    Finally
+    For
+    From
+    Function_
+    HashBangLine
+    HexIntegerLiteral
+    If
+    Implements
+    Import
+    In
+    Instanceof
+    Interface
+    LSHIFT
+    LSHIFTEQ
+    MINUSEQ
+    NEW
+    NOTEQ
+    NOTEQEQ
+    NonStrictLet
+    OctalIntegerLiteral
+    OctalIntegerLiteral2
+    Of
+    PERCENTEQ
+    PIPEEQ
+    PLUSEQ
+    Package
+    Private
+    Protected
+    Public
+    QUESTDOT
+    QUESTQUESTEQ
+    RSHIFT
+    RSHIFTEQ
+    RegularExpressionLiteral
+    Return
+    SLASHEQ
+    STAREQ
+    STARSTAREQ
+    Static
+    StrictLet
+    Super
+    Switch
+    THIS
+    TYPEOF
+    TemplateCloseBrace
+    TemplateStringAtom
+    TemplateStringStartExpression
+    Throw
+    Try
+    URSHIFT
+    URSHIFTEQ
+    VOID
+    Var
+    While
+    With
+    Yield
+    YieldStar
+    ANDAND
+    MINUSMINUS
+    OROR
+    PLUSPLUS
 %End
 
 %Terminals
@@ -127,8 +217,8 @@
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./

@@ -3,10 +3,7 @@
   "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "blockers": [
-    "tiny_upstream_g4_approx_80_lines",
-    "nanp_japan_prefixes_only"
-  ],
+  "blockers": [],
   "quality_notes": [
     "real_g4_port",
     "curated_multiline_nanp_japan"

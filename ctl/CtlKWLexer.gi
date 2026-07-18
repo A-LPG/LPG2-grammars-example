@@ -1,4 +1,4 @@
--- Dummy keyword filter (CtlKWLexer)
+-- Keyword filter for Ctl (aligned to parser terminal names)
 %options package=lpg.grammars.ctl
 %options template=KeywordTemplateF.gi
 %options fp=CtlKWLexer
@@ -8,12 +8,12 @@
 %End
 
 %Export
-    X
+    ATOMIC
 %End
 
 %Terminals
-    a    b    c    d    e    f    g    h    i    j    k    l    m
-    n    o    p    q    r    s    t    u    v    w    x    y    z
+    a b c d e f g h i j k l m n o p q r s t u v w x y z
+    _
 %End
 
 %Start
@@ -21,5 +21,5 @@
 %End
 
 %Rules
-    Keyword ::= x x x /.$setResult($_X);./
+    Keyword ::= a t o m i c /.$setResult($_ATOMIC);./
 %End

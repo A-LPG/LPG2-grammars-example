@@ -16,6 +16,9 @@
 %End
 
 %Export
+
+    LT
+    GT
     IDENTIFIER
     NUMBER
     STRING
@@ -49,6 +52,61 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    ABSTRACT
+    ANDAND
+    BREAK
+    BYTE
+    CATCH
+    CHAR
+    CLASS
+    CONTINUE
+    DEFAULT
+    DO
+    ELSE
+    ENUM
+    EXTENDS
+    FATARROW
+    FINAL
+    FINALLY
+    FLOAT
+    FOR
+    GET
+    GLOBAL
+    IF
+    IMPLEMENTS
+    IMPORT
+    INSTANCEOF
+    INT
+    INTERFACE
+    LTGT
+    MINUSMINUS
+    NATIVE
+    NEW
+    OROR
+    OVERRIDE
+    PACKAGE
+    PIPE
+    PLUSPLUS
+    PRIVATE
+    PROTECTED
+    PUBLIC
+    RETURN
+    RUNAS
+    SET
+    SHORT
+    STATIC
+    SUPER
+    SYNCHRONIZED
+    TESTMETHOD
+    THIS
+    THROW
+    THROWS
+    TRANSIENT
+    TRY
+    VIRTUAL
+    VOID
+    WEBSERVICE
+    WHILE
 %End
 
 %Terminals
@@ -111,15 +169,15 @@
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./

@@ -85,6 +85,7 @@
 
 %Rules
     Token ::= VARIABLE   /. makeToken($_VARIABLE); ./
+            | BackSlash  /. makeToken($_LAMBDA); ./
             | AfterASCII /. makeToken($_LAMBDA); ./
             | '.'       /. makeToken($_DOT); ./
             | '('        /. makeToken($_LPAREN); ./

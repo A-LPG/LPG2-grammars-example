@@ -1,1 +1,1 @@
-(cat)|(dog)+
+(CAT)|(DOG)+

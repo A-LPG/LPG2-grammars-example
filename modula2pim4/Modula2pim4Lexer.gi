@@ -16,7 +16,9 @@
 %End
 
 %Export
-    IDENTIFIER
+        LT
+GT
+IDENTIFIER
     NUMBER
     STRING
     LPAREN
@@ -50,6 +52,52 @@
     QUOTE
     CHARLIT
     BACKSLASH
+    AND
+    ARRAY
+    BEGIN
+    BY
+    CASE
+    CONST
+    DEFINITION
+    DIGIT
+    DIV
+    DO
+    DOTDOT
+    ELSE
+    ELSIF
+    END
+    EXIT
+    EXPORT
+    FOR
+    FROM
+    IF
+    IMPLEMENTATION
+    IMPORT
+    IN
+    INTEGER
+    LOOP
+    LTGT
+    MOD
+    MODULE
+    NOT
+    OF
+    OR
+    PIPE
+    POINTER
+    PROCEDURE
+    QUALIFIED
+    REAL
+    RECORD
+    REPEAT
+    RETURN
+    SET
+    THEN
+    TO
+    TYPE
+    UNTIL
+    VAR
+    WHILE
+    WITH
 %End
 
 %Terminals
@@ -112,15 +160,15 @@
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./

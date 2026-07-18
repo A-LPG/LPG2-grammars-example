@@ -17,6 +17,7 @@
 
 %Export
     IDENTIFIER
+    VAR_SYMBOL
     NUMBER
     STRING
     LPAREN
@@ -49,6 +50,53 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    EOL
+    SEMICOL
+    KWD_IF
+    KWD_THEN
+    KWD_ELSE
+    KWD_SAY
+    KWD_DO
+    KWD_END
+    KWD_EXIT
+    KWD_RETURN
+    KWD_CALL
+    KWD_SELECT
+    KWD_WHEN
+    KWD_OTHERWISE
+    KWD_NOP
+    KWD_DROP
+    KWD_LEAVE
+    KWD_ITERATE
+    KWD_SIGNAL
+    KWD_PARSE
+    KWD_PULL
+    KWD_PUSH
+    KWD_QUEUE
+    KWD_ARG
+    KWD_PROCEDURE
+    KWD_EXPOSE
+    KWD_ADDRESS
+    KWD_NUMERIC
+    KWD_DIGITS
+    KWD_FORM
+    KWD_FUZZ
+    KWD_FOREVER
+    KWD_WHILE
+    KWD_UNTIL
+    KWD_TO
+    KWD_BY
+    KWD_FOR
+    KWD_ON
+    KWD_OFF
+    KWD_ERROR
+    KWD_FAILURE
+    KWD_HALT
+    KWD_VALUE
+    KWD_EXTERNAL
+    KWD_SOURCE
+    KWD_OPTIONS
+    KWD_INTERPRET
 %End
 
 %Terminals
@@ -111,7 +159,7 @@
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | IDENTIFIER /. checkForKeyWord($_VAR_SYMBOL); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
@@ -138,12 +186,15 @@
             | '%' /. makeToken($_PERCENT); ./
             | '~' /. makeToken($_TILDE); ./
             | '`' /. makeToken($_BACKTICK); ./
-            | ';' /. makeToken($_SEMI); ./
+            | ';' /. makeToken($_SEMICOL); ./
             | '#' /. makeToken($_HASH); ./
             | "'" /. makeToken($_QUOTE); ./
             | BackSlash /. makeToken($_BACKSLASH); ./
             | SLComment     /. skipToken(); ./ | MLComment     /. skipToken(); ./
+            | eol /. makeToken($_EOL); ./
             | white /. skipToken(); ./
+
+    eol ::= LF | CR | CR LF
 
     IDENTIFIER ::= IdStart
                  | IDENTIFIER IdStart
@@ -199,5 +250,5 @@
                        '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | BackSlash
 
     white -> WSChar | white WSChar
-    WSChar -> Space | LF | CR | HT | FF
+    WSChar -> Space | HT | FF
 %End

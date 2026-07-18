@@ -3,9 +3,7 @@
   "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "blockers": [
-    "character_class_brackets_still_fragile"
-  ],
+  "blockers": [],
   "quality_notes": [
     "real_g4_port",
     "antlr2lpg_structural_port",

@@ -13,8 +13,11 @@
     CHAR
     IF
     ELSE
-    WHILE
+    While
+    Do
+    For
     RETURN
+    EXTERN
 %End
 
 %Terminals
@@ -33,6 +36,9 @@
               | c h a r /.$setResult($_CHAR);./
               | i f /.$setResult($_IF);./
               | e l s e /.$setResult($_ELSE);./
-              | w h i l e /.$setResult($_WHILE);./
+              | w h i l e /.$setResult($_While);./
+              | d o /.$setResult($_Do);./
+              | f o r /.$setResult($_For);./
               | r e t u r n /.$setResult($_RETURN);./
+              | e x t e r n /.$setResult($_EXTERN);./
 %End

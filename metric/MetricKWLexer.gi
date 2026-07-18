@@ -1,4 +1,4 @@
--- Dummy keyword filter for metric (units are explicit lexer tokens)
+-- Keyword filter for Metric (aligned to parser terminal names)
 %options package=lpg.grammars.metric
 %options template=KeywordTemplateF.gi
 %options fp=MetricKWLexer
@@ -8,12 +8,13 @@
 %End
 
 %Export
-    X
+    CARET
+    INTE
 %End
 
 %Terminals
-    a    b    c    d    e    f    g    h    i    j    k    l    m
-    n    o    p    q    r    s    t    u    v    w    x    y    z
+    a b c d e f g h i j k l m n o p q r s t u v w x y z
+    _
 %End
 
 %Start
@@ -21,5 +22,6 @@
 %End
 
 %Rules
-    Keyword ::= x x x /.$setResult($_X);./
+    Keyword ::= c a r e t /.$setResult($_CARET);./
+    Keyword ::= i n t e /.$setResult($_INTE);./
 %End

@@ -49,6 +49,113 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    Binary
+    CMD_Assert
+    CMD_CheckSat
+    CMD_CheckSatAssuming
+    CMD_DeclareConst
+    CMD_DeclareDatatype
+    CMD_DeclareDatatypes
+    CMD_DeclareFun
+    CMD_DeclareSort
+    CMD_DefineFun
+    CMD_DefineFunRec
+    CMD_DefineFunsRec
+    CMD_DefineSort
+    CMD_Echo
+    CMD_Exit
+    CMD_GetAssertions
+    CMD_GetAssignment
+    CMD_GetInfo
+    CMD_GetModel
+    CMD_GetOption
+    CMD_GetProof
+    CMD_GetUnsatAssumptions
+    CMD_GetUnsatCore
+    CMD_GetValue
+    CMD_Pop
+    CMD_Push
+    CMD_Reset
+    CMD_ResetAssertions
+    CMD_SetInfo
+    CMD_SetLogic
+    CMD_SetOption
+    Colon
+    Decimal
+    GRW_As
+    GRW_Binary
+    GRW_Decimal
+    GRW_Exclamation
+    GRW_Exists
+    GRW_Forall
+    GRW_Hexadecimal
+    GRW_Let
+    GRW_Match
+    GRW_Numeral
+    GRW_Par
+    GRW_String
+    GRW_Underscore
+    HexDecimal
+    Numeral
+    PK_AllStatistics
+    PK_AssertionStackLevels
+    PK_Authors
+    PK_Category
+    PK_Chainable
+    PK_Definition
+    PK_ErrorBehaviour
+    PK_Extension
+    PK_Funs
+    PK_FunsDescription
+    PK_GlobalDeclarations
+    PK_InteractiveMode
+    PK_Language
+    PK_LeftAssoc
+    PK_License
+    PK_Name
+    PK_Named
+    PK_Notes
+    PK_Pattern
+    PK_PrintSuccess
+    PK_ProduceAssertions
+    PK_ProduceAssignments
+    PK_ProduceModels
+    PK_ProduceProofs
+    PK_ProduceUnsatCores
+    PK_RandomSeed
+    PK_ReasonUnknown
+    PK_RegularOutputChannel
+    PK_RightAssoc
+    PK_SmtLibVersion
+    PK_Sorts
+    PK_SortsDescription
+    PK_Source
+    PK_Status
+    PK_Theories
+    PK_Values
+    PK_Verbosity
+    PK_Version
+    PS_Bool
+    PS_ContinuedExecution
+    PS_Error
+    PS_False
+    PS_ImmediateExit
+    PS_Incomplete
+    PS_Logic
+    PS_Memout
+    PS_Not
+    PS_Sat
+    PS_Success
+    PS_Theory
+    PS_True
+    PS_Unknown
+    PS_Unsat
+    PS_Unsupported
+    ParClose
+    ParOpen
+    QuotedSymbol
+    RS_Model
+    String
 %End
 
 %Terminals
@@ -111,9 +218,9 @@
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
-            | '(' /. makeToken($_LPAREN); ./
-            | ')' /. makeToken($_RPAREN); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
+            | '(' /. makeToken($_ParOpen); ./
+            | ')' /. makeToken($_ParClose); ./
             | '{' /. makeToken($_LBRACE); ./
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
@@ -150,6 +257,7 @@
     IDENTIFIER ::= IdStart
                  | IDENTIFIER IdStart
                  | IDENTIFIER Digit
+                 | IDENTIFIER '-' IdStart
 
     IdStart -> Letter | '_' | AfterASCII
     Letter -> LowerCaseLetter | UpperCaseLetter

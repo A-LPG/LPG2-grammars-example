@@ -16,7 +16,9 @@
 %End
 
 %Export
-    IDENTIFIER
+            GT
+LT
+IDENTIFIER
     NUMBER
     STRING
     LPAREN
@@ -49,6 +51,33 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    ANDAND
+    BITCLEAR
+    BREAK
+    CASE
+    CONST
+    CONTINUE
+    DEFAULT
+    ELSE
+    FN
+    FOR
+    IF
+    IMPORT
+    IN
+    INTERFACE
+    LSHIFT
+    MAP
+    MINUSMINUS
+    MODULE
+    MUT
+    OROR
+    PIPE
+    PLUSPLUS
+    PUB
+    RETURN
+    RSHIFT
+    STRUCT
+    SWITCH
 %End
 
 %Terminals
@@ -111,15 +140,15 @@
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./

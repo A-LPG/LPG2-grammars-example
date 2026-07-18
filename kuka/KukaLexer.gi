@@ -16,6 +16,10 @@
 %End
 
 %Export
+    
+    NEWLINE
+    LT
+    GT
     IDENTIFIER
     NUMBER
     STRING
@@ -49,6 +53,71 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    AND
+    ANIN
+    ANOUT
+    BOOL
+    BRAKE
+    CASE
+    CHAR
+    CIRC
+    CONST
+    CONTINUE
+    DECL
+    DEF
+    DEFAULT
+    DEFDAT
+    DEFFCT
+    DELAY
+    DO
+    DOTDOT
+    ELSE
+    END
+    ENDDAT
+    ENDFCT
+    ENDFOR
+    ENDIF
+    ENDLOOP
+    ENDSWITCH
+    ENDWHILE
+    ENUM
+    EXIT
+    EXOR
+    EXT
+    EXTFCT
+    FALSE
+    FOR
+    GLOBAL
+    GOTO
+    HALT
+    IF
+    IMPORT
+    INT
+    INTERRUPT
+    IS
+    LIN
+    LOOP
+    LTGT
+    NOT
+    OR
+    PRIO
+    PTP
+    PUBLIC
+    REAL
+    REPEAT
+    RETURN
+    SEC
+    SIGNAL
+    STRUC
+    SWITCH
+    THEN
+    TO
+    TRIGGER
+    TRUE
+    UNTIL
+    WAIT
+    WHEN
+    WHILE
 %End
 
 %Terminals
@@ -111,15 +180,15 @@
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./
@@ -143,6 +212,7 @@
             | "'" /. makeToken($_QUOTE); ./
             | BackSlash /. makeToken($_BACKSLASH); ./
             | SLComment     /. skipToken(); ./ | MLComment     /. skipToken(); ./
+            | NEWLINE /. makeToken($_NEWLINE); ./
             | white /. skipToken(); ./
 
     IDENTIFIER ::= IdStart
@@ -198,6 +268,8 @@
                        '%' | '&' | '^' | ':' | ';' | "'" | '"' | '|' | '{' | '}' |
                        '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | BackSlash
 
+    NEWLINE ::= CR LF | LF | CR
+
     white -> WSChar | white WSChar
-    WSChar -> Space | LF | CR | HT | FF
+    WSChar -> Space | HT | FF
 %End

@@ -1,2 +1,1 @@
-x = 1
-if x: y = x
+if 1: pass

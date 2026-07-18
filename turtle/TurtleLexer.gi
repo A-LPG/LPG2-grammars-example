@@ -1,4 +1,4 @@
--- Turtle Lexer (LPG)
+-- Turtle lexer subset: @prefix / IRIREF / PrefixedName
 %Options list
 %Options fp=TurtleLexer
 %options single_productions
@@ -14,35 +14,20 @@
 %End
 %Export
     IDENTIFIER
-    NUMBER
-    STRING
-    DOT
-    SEMI
-    COMMA
-    LBRACKET
-    RBRACKET
-    LPAREN
-    RPAREN
-    LT
-    GT
-    CARET
-    AT
-    COLON
+    STRING NUMBER
+    DOT SEMI COMMA COLON
+    AT PREFIX BASE A TRUE FALSE
+    IRIREF PrefixedName
 %End
 %Terminals
     CtlCharNotWS
-
     LF   CR   HT   FF
-
     a    b    c    d    e    f    g    h    i    j    k    l    m
     n    o    p    q    r    s    t    u    v    w    x    y    z
     _
-
     A    B    C    D    E    F    G    H    I    J    K    L    M
     N    O    P    Q    R    S    T    U    V    W    X    Y    Z
-
     0    1    2    3    4    5    6    7    8    9
-
     AfterASCII   ::= '\u0080..\ufffe'
     Space        ::= ' '
     LF           ::= NewLine
@@ -63,7 +48,7 @@
     Caret        ::= '^'
     Colon        ::= ':'
     SemiColon    ::= ';'
-    BackSlash    ::= '\'
+    BackSlash    ::= '\\'
     LeftBrace    ::= '{'
     RightBrace   ::= '}'
     LeftBracket  ::= '['
@@ -81,83 +66,51 @@
     LeftParen    ::= '('
     RightParen   ::= ')'
 %End
+
 %Start
     Token
 %End
 %Rules
-    Token ::= lineComment /. skipToken(); ./
-            | blockComment /. skipToken(); ./
-            | hashComment /. skipToken(); ./
+    Token ::= '@' /. makeToken($_AT); ./
             | '.' /. makeToken($_DOT); ./
             | ';' /. makeToken($_SEMI); ./
             | ',' /. makeToken($_COMMA); ./
-            | '[' /. makeToken($_LBRACKET); ./
-            | ']' /. makeToken($_RBRACKET); ./
-            | '(' /. makeToken($_LPAREN); ./
-            | ')' /. makeToken($_RPAREN); ./
-            | '<' /. makeToken($_LT); ./
-            | '>' /. makeToken($_GT); ./
-            | '^' /. makeToken($_CARET); ./
-            | '@' /. makeToken($_AT); ./
             | ':' /. makeToken($_COLON); ./
-            | string /. makeToken($_STRING); ./
-            | number /. makeToken($_NUMBER); ./
+            | IRIREF /. makeToken($_IRIREF); ./
+            | PrefixedName /. makeToken($_PrefixedName); ./
+            | STRING /. makeToken($_STRING); ./
+            | NUMBER /. makeToken($_NUMBER); ./
             | identifier /. checkForKeyWord(); ./
             | white /. skipToken(); ./
+            | hashComment /. skipToken(); ./
 
-    identifier ::= Letter
-                 | identifier Letter
-                 | identifier Digit
-                 | identifier '_'
+    IRIREF ::= '<' IRIBody '>'
+    IRIBody -> $empty | IRIBody IRIChar
+    IRIChar -> Letter | Digit | '/' | ':' | '.' | '_' | '-' | '#' | '?' | '=' | '&' | '%' | '+'
 
-    Letter -> a | b | c | d | e | f | g | h | i | j | k | l | m |
-              n | o | p | q | r | s | t | u | v | w | x | y | z |
-              A | B | C | D | E | F | G | H | I | J | K | L | M |
-              N | O | P | Q | R | S | T | U | V | W | X | Y | Z |
-              AfterASCII
+    PrefixedName ::= IDENT_PART ':' IDENT_PART
+                   | IDENT_PART ':'
+                   | ':' IDENT_PART
+    IDENT_PART ::= Letter LetterOrDigitStar
 
+
+    identifier ::= Letter LetterOrDigitStar
+    Letter -> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z | _
+    LetterOrDigitStar -> $empty | LetterOrDigitStar LetterOrDigit
+    LetterOrDigit -> Letter | Digit
     Digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
-    number ::= OptSign Digits OptFrac OptExp
-    OptSign -> $empty | '+' | '-'
-    Digits ::= Digit | Digits Digit
-    OptFrac -> $empty | '.' Digits
-    OptExp -> $empty | Exp
-    Exp ::= LetterEe OptSign Digits
-    LetterEe -> e | E
+    STRING ::= '"' SLBody '"'
+    SLBody -> $empty | SLBody NotDQ
+    NotDQ -> Letter | Digit | Special | Space | HT | FF
+    Special -> '+' | '-' | '/' | '(' | ')' | '*' | '!' | '@' | '`' | '~' |
+               '%' | '&' | '^' | ':' | ';' | "'" | '|' | '{' | '}' |
+               '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_'
+    NUMBER ::= Digit | NUMBER Digit
+    white ::= WSChar | white WSChar
+    WSChar -> Space | HT | FF | LF | CR
 
-    string ::= '"' DQBody '"'
-             | "'" SQBody "'"
-    DQBody -> $empty | DQBody NotDQ
-    SQBody -> $empty | SQBody NotSQ
-    NotDQ -> Letter | Digit | SpecialNotDQ | Space | HT | FF | AfterASCII
-    NotSQ -> Letter | Digit | SpecialNotSQ | Space | HT | FF | AfterASCII
-    SpecialNotDQ -> '+' | '-' | '/' | '(' | ')' | '*' | '!' | '@' | '`' | '~' |
-                    '%' | '&' | '^' | ':' | ';' | "'" | '|' | '{' | '}' |
-                    '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_' | BackSlash
-    SpecialNotSQ -> '+' | '-' | '/' | '(' | ')' | '*' | '!' | '@' | '`' | '~' |
-                    '%' | '&' | '^' | ':' | ';' | '"' | '|' | '{' | '}' |
-                    '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_' | BackSlash
-
-    lineComment ::= '/' '/' NotNLs
-    NotNLs -> $empty | NotNLs NotNL
-    NotNL -> Letter | Digit | SpecialAny | Space | HT | FF | AfterASCII
-    SpecialAny -> '+' | '-' | '/' | '(' | ')' | '*' | '!' | '@' | '`' | '~' |
-                  '%' | '&' | '^' | ':' | ';' | '"' | "'" | '|' | '{' | '}' |
-                  '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_' | BackSlash
-
-    blockComment ::= '/' '*' BlockBody StarSlash
-    StarSlash ::= '*' '/'
-    BlockBody -> $empty | BlockBody BlockChar
-    BlockChar -> Letter | Digit | SpecialNotStarSlash | Space | HT | FF | LF | CR | AfterASCII
-    SpecialNotStarSlash -> '+' | '-' | '(' | ')' | '!' | '@' | '`' | '~' |
-                      '%' | '&' | '^' | ':' | ';' | '"' | "'" | '|' | '{' | '}' |
-                      '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_' | BackSlash
-                 | '/' | '*'
-
-    hashComment ::= '#' NotNLs
-
-    white -> WSChar | white WSChar
-    WSChar -> Space | LF | CR | HT | FF
-
+    hashComment ::= '#' NotNLStar
+    NotNLStar -> $empty | NotNLStar NotNL
+    NotNL -> Letter | Digit | Special | Space | HT | FF | DoubleQuote
 %End

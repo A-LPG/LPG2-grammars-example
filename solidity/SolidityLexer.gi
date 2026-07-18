@@ -16,7 +16,9 @@
 %End
 
 %Export
-    IDENTIFIER
+            GT
+LT
+IDENTIFIER
     NUMBER
     STRING
     LPAREN
@@ -49,6 +51,146 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    Abstract
+    Add
+    Address
+    And
+    Anonymous
+    As
+    Assembly
+    AssemblyBlockComma
+    AssemblyBlockLParen
+    AssemblyBlockRParen
+    AssemblyDialect
+    AssemblyFlagString
+    AssemblyLBrace
+    Assign
+    AssignAdd
+    AssignBitAnd
+    AssignBitOr
+    AssignBitXor
+    AssignDiv
+    AssignMod
+    AssignMul
+    AssignSar
+    AssignShl
+    AssignShr
+    AssignSub
+    BitAnd
+    BitNot
+    BitOr
+    BitXor
+    Bool
+    Break
+    Bytes
+    Calldata
+    Catch
+    Colon
+    Comma
+    Conditional
+    Constructor
+    Continue
+    Contract
+    Dec
+    Delete
+    Div
+    Do
+    DoubleArrow
+    Else
+    Emit
+    Enum
+    Equal
+    Error
+    Event
+    Exp
+    External
+    Fallback
+    Fixed
+    FixedBytes
+    For
+    From
+    Function
+    Global
+    GreaterThan
+    GreaterThanOrEqual
+    HexNumber
+    HexString
+    If
+    Immutable
+    Import
+    Inc
+    Indexed
+    Interface
+    Internal
+    Is
+    LessThan
+    LessThanOrEqual
+    Library
+    Mapping
+    Memory
+    Mod
+    Modifier
+    Mul
+    New
+    Not
+    NotEqual
+    Or
+    Override
+    Payable
+    Period
+    Pragma
+    PragmaToken
+    Private
+    Public
+    Pure
+    Receive
+    Return
+    Returns
+    Revert
+    Sar
+    Semicolon
+    Shl
+    Shr
+    SignedIntegerType
+    Storage
+    String
+    Struct
+    Sub
+    SubDenomination
+    Transient
+    Try
+    Type
+    Ufixed
+    Unchecked
+    UnsignedIntegerType
+    Using
+    View
+    Virtual
+    While
+    YulArrow
+    YulAssign
+    YulBreak
+    YulCase
+    YulComma
+    YulContinue
+    YulDecimalNumber
+    YulDefault
+    YulEVMBuiltin
+    YulFalse
+    YulFor
+    YulFunction
+    YulHexNumber
+    YulIdentifier
+    YulIf
+    YulLBrace
+    YulLParen
+    YulLeave
+    YulLet
+    YulPeriod
+    YulRBrace
+    YulRParen
+    YulSwitch
+    YulTrue
 %End
 
 %Terminals
@@ -111,15 +253,15 @@
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./

@@ -16,6 +16,27 @@
 %End
 
 %Export
+    DIGITS_40
+    DIGITS_64
+    HEX20_BYTES
+    HEX32_BYTES
+    COMPRESSED_PUBLIC_KEY
+    WRAPPER_SEQUENCE
+    RIPEMD160
+    HASH160
+    HASH256
+    SHA256
+    MULTI_A
+    PK_H
+    PK_K
+    OR_I
+    OR_D
+    OR_C
+    OR_B
+    AND_N
+    AND_B
+    AND_V
+    POSITIVE_INTEGER
     IDENTIFIER
     NUMBER
     STRING
@@ -50,6 +71,16 @@
     QUOTE
     CHARLIT
     BACKSLASH
+    AFTER
+    ANDOR
+    KEY
+    MULTI
+    OLDER
+    ONE
+    PK
+    PKH
+    THRESH
+    ZERO
 %End
 
 %Terminals
@@ -110,41 +141,15 @@
 %End
 
 %Rules
-    Token ::= STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+    Token ::= '0' /. makeToken($_ZERO); ./
+            | '1' /. makeToken($_ONE); ./
+            | POSITIVE_INTEGER /. makeToken($_POSITIVE_INTEGER); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
-            | '{' /. makeToken($_LBRACE); ./
-            | '}' /. makeToken($_RBRACE); ./
-            | '[' /. makeToken($_LBRACKET); ./
-            | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
             | ',' /. makeToken($_COMMA); ./
-            | '.' /. makeToken($_DOT); ./
-            | ':' /. makeToken($_COLON); ./
-            | '=' /. makeToken($_EQ); ./
-            | '+' /. makeToken($_PLUS); ./
-            | '-' /. makeToken($_MINUS); ./
-            | '*' /. makeToken($_STAR); ./
-            | '/' /. makeToken($_SLASH); ./
-            | '&' /. makeToken($_AMP); ./
-            | '|' /. makeToken($_BAR); ./
-            | '^' /. makeToken($_CARET); ./
-            | '!' /. makeToken($_BANG); ./
-            | '?' /. makeToken($_QUEST); ./
-            | '@' /. makeToken($_AT); ./
-            | '$' /. makeToken($_DOLLAR); ./
-            | '%' /. makeToken($_PERCENT); ./
-            | '~' /. makeToken($_TILDE); ./
-            | '`' /. makeToken($_BACKTICK); ./
-            | ';' /. makeToken($_SEMI); ./
-            | '#' /. makeToken($_HASH); ./
-            | "'" /. makeToken($_QUOTE); ./
-            | BackSlash /. makeToken($_BACKSLASH); ./
-            
             | white /. skipToken(); ./
+
 
     IDENTIFIER ::= IdStart
                  | IDENTIFIER IdStart
@@ -157,6 +162,10 @@
     UpperCaseLetter -> A | B | C | D | E | F | G | H | I | J | K | L | M |
                        N | O | P | Q | R | S | T | U | V | W | X | Y | Z
     Digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+
+    POSITIVE_INTEGER ::= NonZero Digits
+                     | NonZero
+    NonZero -> 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
     NUMBER ::= Digits
              | Digits '.' Digits

@@ -18,14 +18,14 @@
 %End
 
 %Export
+    
     IDENTIFIER
     DOI
     PCHAR
     COLON
     SLASH
-    QMARK
-    SHARP
-    QUERYFRAG
+    QUESTION
+    HASH
 %End
 
 
@@ -91,8 +91,8 @@
     Token ::= d o i /. makeToken($_DOI); ./
             | ':' /. makeToken($_COLON); ./
             | '/' /. makeToken($_SLASH); ./
-            | '?' /. makeToken($_QMARK); ./
-            | '#' /. makeToken($_SHARP); ./
+            | '?' /. makeToken($_QUESTION); ./
+            | '#' /. makeToken($_HASH); ./
             | PCHAR /. makeToken($_PCHAR); ./
             | white /. skipToken(); ./
 

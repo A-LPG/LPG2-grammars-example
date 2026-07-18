@@ -1,2 +1,2 @@
-module RefineSample;
-create OUT : Target refining IN : Source;
+module Refine;
+create OUT : Persons refining INM : Families;

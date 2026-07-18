@@ -37,6 +37,45 @@
     DOLLAR
     SEMI
     CARET
+    ANDAND
+    ANON
+    ASC
+    ASK
+    BASE
+    BOUND
+    BY
+    CONSTRUCT
+    DATATYPE
+    DECIMAL
+    DESC
+    DESCRIBE
+    DISTINCT
+    DOUBLE
+    FALSE
+    FILTER
+    FROM
+    GRAPH
+    INTEGER
+    LANG
+    LANGMATCHES
+    LANGTAG
+    LIMIT
+    NAMED
+    NIL
+    OFFSET
+    OPTIONAL
+    ORDER
+    OROR
+    PREFIX
+    REDUCED
+    REGEX
+    SELECT
+    STR
+    TRUE
+    UNION
+    WHERE
+    VAR1
+    VAR2
 %End
 %Terminals
     CtlCharNotWS
@@ -114,6 +153,8 @@
             | '<' /. makeToken($_LT); ./
             | '>' /. makeToken($_GT); ./
             | '!' /. makeToken($_BANG); ./
+            | '?' varName /. makeToken($_VAR1); ./
+            | '$' varName /. makeToken($_VAR2); ./
             | '?' /. makeToken($_QUESTION); ./
             | '$' /. makeToken($_DOLLAR); ./
             | ';' /. makeToken($_SEMI); ./
@@ -122,6 +163,11 @@
             | number /. makeToken($_NUMBER); ./
             | identifier /. checkForKeyWord(); ./
             | white /. skipToken(); ./
+
+    varName ::= Letter
+              | varName Letter
+              | varName Digit
+              | varName '_'
 
     identifier ::= Letter
                  | identifier Letter

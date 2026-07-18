@@ -1,13 +1,13 @@
--- Provn Lexer (LPG)
+-- ProvN Lexer (LPG)
 %Options list
-%Options fp=ProvnLexer
+%Options fp=ProvNLexer
 %options single_productions
 %options conflicts
 %options package=lpg.grammars.prov_n
 %options template=LexerTemplateF.gi
-%options filter=ProvnKWLexer.gi
+%options filter=ProvNKWLexer.gi
 %Define
-    $kw_lexer_class /.$ProvnKWLexer./
+    $kw_lexer_class /.$ProvNKWLexer./
 %End
 %Include
     LexerBasicMapF.gi
@@ -24,6 +24,32 @@
     EQ
     COLON
     MINUS
+    ACTEDONBEHALFOF
+    ACTIVITY
+    AGENT
+    ALTERNATEOF
+    BUNDLE
+    DATETIME
+    DEFAULT
+    DOCUMENT
+    ENDBUNDLE
+    ENDDOCUMENT
+    ENTITY
+    HADMEMBER
+    IRIREF
+    LANGTAG
+    PREFIX
+    SPECIALIZATIONOF
+    USED
+    WASASSOCIATEDWITH
+    WASATTRIBUTEDTO
+    WASDERIVEDFROM
+    WASENDEDBY
+    WASGENERATEDBY
+    WASINFLUENCEDBY
+    WASINFORMEDBY
+    WASINVALIDATEDBY
+    WASSTARTEDBY
 %End
 %Terminals
     CtlCharNotWS

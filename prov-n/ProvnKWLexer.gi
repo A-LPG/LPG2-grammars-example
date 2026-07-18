@@ -1,7 +1,7 @@
 -- Keyword filter
 %options package=lpg.grammars.prov_n
 %options template=KeywordTemplateF.gi
-%options fp=ProvnKWLexer
+%options fp=ProvNKWLexer
 %Include
     KWLexerFoldedCaseMapF.gi
 %End

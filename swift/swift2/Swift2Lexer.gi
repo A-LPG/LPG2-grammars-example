@@ -16,7 +16,9 @@
 %End
 
 %Export
-    IDENTIFIER
+            GT
+LT
+IDENTIFIER
     NUMBER
     STRING
     LPAREN
@@ -41,6 +43,8 @@
     CARET
     BANG
     QUEST
+    QUESTION
+    ARROW
     AT
     HASH
     DOLLAR
@@ -49,6 +53,66 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    ANDAND
+    AS
+    BREAK
+    CASE
+    CATCH
+    CLASS_
+    CONTINUE
+    DEFAULT
+    DEFER
+    DEINIT
+    DO
+    ELSE
+    ENUM
+    EXTENSION
+    FALLTHROUGH
+    FALSE
+    FILEPRIVATE
+    FINAL
+    FOR
+    FUNC
+    GET
+    GUARD
+    IF
+    IMPORT_
+    IN
+    INFIX
+    INIT
+    INOUT
+    INTERNAL
+    IS
+    LAZY
+    LET
+    MUTATING
+    NIL
+    OPEN
+    OPERATOR
+    OROR
+    OVERRIDE
+    POSTFIX
+    PREFIX
+    PRIVATE
+    PROTOCOL
+    PUBLIC
+    REPEAT
+    RETURN
+    SELF
+    SET
+    STATIC
+    STRUCT
+    SUBSCRIPT
+    SUPER
+    SWITCH
+    THROW
+    THROWS
+    TRUE
+    TRY
+    TYPEALIAS
+    VAR
+    WHERE
+    WHILE
 %End
 
 %Terminals
@@ -111,15 +175,16 @@
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
+            | '-' '>' /. makeToken($_ARROW); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./
@@ -132,7 +197,7 @@
             | '|' /. makeToken($_BAR); ./
             | '^' /. makeToken($_CARET); ./
             | '!' /. makeToken($_BANG); ./
-            | '?' /. makeToken($_QUEST); ./
+            | '?' /. makeToken($_QUESTION); ./
             | '@' /. makeToken($_AT); ./
             | '$' /. makeToken($_DOLLAR); ./
             | '%' /. makeToken($_PERCENT); ./

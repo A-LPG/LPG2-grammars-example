@@ -12,7 +12,7 @@
   "parser_bytes": 15251,
   "rule_approx": 177,
   "start": "program",
-  "example_count": 2,
+  "example_count": 3,
   "notes": "real_g4_port",
   "tier": "A",
   "parser_lines": 702

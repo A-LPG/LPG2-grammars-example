@@ -96,10 +96,13 @@
             | 'X' /. makeToken($_LTL_NEXT); ./
             | 'W' /. makeToken($_LTL_WEAK); ./
             | 'R' /. makeToken($_LTL_RELEASE); ./
+            | '-' '>' /. makeToken($_LTL_ARROW); ./
+            | '&' '&' /. makeToken($_LTL_AND); ./
+            | '|' '|' /. makeToken($_LTL_OR); ./
+            | '~' /. makeToken($_LTL_NOT); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | ATOMIC /. makeToken($_ATOMIC); ./
-            | AfterASCII /. makeToken($_LTL_ARROW); ./
             | white /. skipToken(); ./
 
     ATOMIC ::= LowerCaseLetter | ATOMIC LowerCaseLetter

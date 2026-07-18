@@ -1,4 +1,4 @@
--- Turing Lexer (LPG)
+-- Turing lexer subset
 %Options list
 %Options fp=TuringLexer
 %options single_productions
@@ -14,9 +14,11 @@
 %End
 %Export
     IDENTIFIER
-    STRING
-    COLON COMMA
-    PUT GET VAR STRING_KW INT_KW NAT
+    NUMBER STRING
+    COLON COMMA EQ PLUS MINUS STAR SLASH
+    LPAREN RPAREN
+    PUT GET VAR INT REAL STRING_KW BOOLEAN
+    IF THEN ELSE END LOOP EXIT WHEN TRUE FALSE
 %End
 %Terminals
     CtlCharNotWS
@@ -47,7 +49,7 @@
     Caret        ::= '^'
     Colon        ::= ':'
     SemiColon    ::= ';'
-    BackSlash    ::= '\'
+    BackSlash    ::= '\\'
     LeftBrace    ::= '{'
     RightBrace   ::= '}'
     LeftBracket  ::= '['
@@ -65,18 +67,25 @@
     LeftParen    ::= '('
     RightParen   ::= ')'
 %End
+
 %Start
     Token
 %End
 %Rules
-
     Token ::= ':' /. makeToken($_COLON); ./
             | ',' /. makeToken($_COMMA); ./
+            | '=' /. makeToken($_EQ); ./
+            | '+' /. makeToken($_PLUS); ./
+            | '-' /. makeToken($_MINUS); ./
+            | '*' /. makeToken($_STAR); ./
+            | '/' /. makeToken($_SLASH); ./
+            | '(' /. makeToken($_LPAREN); ./
+            | ')' /. makeToken($_RPAREN); ./
             | STRING /. makeToken($_STRING); ./
+            | NUMBER /. makeToken($_NUMBER); ./
             | identifier /. checkForKeyWord(); ./
             | white /. skipToken(); ./
             | comment /. skipToken(); ./
-
 
     identifier ::= Letter LetterOrDigitStar
     Letter -> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z | _
@@ -84,19 +93,17 @@
     LetterOrDigit -> Letter | Digit
     Digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
-
     STRING ::= '"' SLBody '"'
     SLBody -> $empty | SLBody NotDQ
     NotDQ -> Letter | Digit | Special | Space | HT | FF
     Special -> '+' | '-' | '/' | '(' | ')' | '*' | '!' | '@' | '`' | '~' |
-               '%' | '&' | '^' | ':' | ';' | '|' | '{' | '}' |
-               '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | "'" | '_'
-    comment ::= '%' NotNLStar
-    NotNLStar -> $empty | NotNLStar NotNL
-    NotNL -> Letter | Digit | Special | Space | HT | FF | AfterASCII | '"' | "'" | '\'
-
-
+               '%' | '&' | '^' | ':' | ';' | "'" | '|' | '{' | '}' |
+               '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_'
+    NUMBER ::= Digit | NUMBER Digit
     white ::= WSChar | white WSChar
     WSChar -> Space | HT | FF | LF | CR
 
+    comment ::= '%' NotNLStar
+    NotNLStar -> $empty | NotNLStar NotNL
+    NotNL -> Letter | Digit | Special | Space | HT | FF | DoubleQuote
 %End

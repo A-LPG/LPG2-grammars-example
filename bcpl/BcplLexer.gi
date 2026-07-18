@@ -13,7 +13,9 @@
     LexerBasicMapF.gi
 %End
 %Export
-    IDENTIFIER
+            GT
+LT
+IDENTIFIER
     STRING NUMBER
     LPAREN RPAREN LBRACE RBRACE LBRACKET RBRACKET
     COMMA DOT COLON SEMI EQ PLUS MINUS STAR SLASH LT GT
@@ -29,6 +31,75 @@
     THEN
     ELSE
     BE
+    ABS
+    AT
+    BANG
+    BY
+    Binary_number
+    CB
+    COLONCOLON
+    DOTDOT
+    Digits
+    EQV
+    EVERY
+    EXIT
+    FINISH
+    FIX
+    FLOAT
+    FLT
+    GOTO
+    Hex_number
+    KAND
+    KBE
+    KBREAK
+    KCASE
+    KDEFAULT
+    KDO
+    KENDCASE
+    KFALSE
+    KFOR
+    KGET
+    KGLOBAL
+    KIF
+    KINTO
+    KLET
+    KLOOP
+    KMANIFEST
+    KOR
+    KREPEAT
+    KRESULTIS
+    KSTATIC
+    KTO
+    KTRUE
+    KUNLESS
+    KUNTIL
+    KVALOF
+    KWHILE
+    LSHIFT
+    MATCH
+    MOD
+    NE
+    NEQV
+    NEXT
+    NOT
+    OB
+    OF
+    Octal_number
+    PERCENT
+    PIPE
+    REM
+    REPEATUNTIL
+    REPEATWHILE
+    RETURN
+    RSHIFT
+    SECTION
+    SLCT
+    SWITCHON
+    TABLE
+    TEST
+    TILDE
+    VEC
+    XOR
 %End
 %Terminals
     CtlCharNotWS

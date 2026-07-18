@@ -16,7 +16,8 @@
 %End
 
 %Export
-    IDENTIFIER
+        LT
+IDENTIFIER
     NUMBER
     STRING
     LPAREN
@@ -49,6 +50,59 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    And
+    AndAnd
+    ArrayOpen
+    Arrow
+    Assign
+    BasicType
+    Break
+    Caret
+    Case
+    Catch
+    ClassKw
+    Colon
+    ColonColon
+    Compare
+    Continue
+    Default
+    DefinedName
+    Do
+    Efun
+    Ellipsis
+    Else
+    Equal
+    For
+    Foreach
+    FunctionOpen
+    Identifier
+    If
+    In
+    Inherit
+    LeftShift
+    MappingOpen
+    MinusMinus
+    New
+    Not
+    NotEqual
+    Number
+    Or
+    OrOr
+    PIPE
+    Parameter
+    ParseCommand
+    PlusPlus
+    Question
+    Range
+    Real
+    Return
+    RightShift
+    SScanf
+    String
+    Switch
+    TimeExpression
+    TypeModifier
+    While
 %End
 
 %Terminals
@@ -109,21 +163,36 @@
 %End
 
 %Rules
-    Token ::= STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+    Token ::= STRING /. makeToken($_String); ./
+            | NUMBER /. makeToken($_Number); ./
+            | IDENTIFIER /. checkForKeyWord($_Identifier); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
+            | '<' /. makeToken($_LT); ./
             | '>' /. makeToken($_RANGLE); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./
-            | '=' /. makeToken($_EQ); ./
+            | '+' '+' /. makeToken($_PlusPlus); ./
+            | '-' '-' /. makeToken($_MinusMinus); ./
+            | '&' '&' /. makeToken($_AndAnd); ./
+            | '|' '|' /. makeToken($_OrOr); ./
+            | '=' '=' /. makeToken($_Equal); ./
+            | '!' '=' /. makeToken($_NotEqual); ./
+            | '<' '<' /. makeToken($_LeftShift); ./
+            | '>' '>' /. makeToken($_RightShift); ./
+            | '-' '>' /. makeToken($_Arrow); ./
+            | ':' ':' /. makeToken($_ColonColon); ./
+            | '.' '.' /. makeToken($_Range); ./
+            | '+' '=' /. makeToken($_Assign); ./
+            | '-' '=' /. makeToken($_Assign); ./
+            | '=' /. makeToken($_Assign); ./
+            | '!' /. makeToken($_Not); ./
+
             | '+' /. makeToken($_PLUS); ./
             | '-' /. makeToken($_MINUS); ./
             | '*' /. makeToken($_STAR); ./
@@ -131,7 +200,6 @@
             | '&' /. makeToken($_AMP); ./
             | '|' /. makeToken($_BAR); ./
             | '^' /. makeToken($_CARET); ./
-            | '!' /. makeToken($_BANG); ./
             | '?' /. makeToken($_QUEST); ./
             | '@' /. makeToken($_AT); ./
             | '$' /. makeToken($_DOLLAR); ./

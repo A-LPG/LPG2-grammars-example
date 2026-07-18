@@ -1,4 +1,4 @@
--- Terraform Lexer (LPG)
+-- Terraform lexer subset
 %Options list
 %Options fp=TerraformLexer
 %options single_productions
@@ -15,8 +15,10 @@
 %Export
     IDENTIFIER
     STRING NUMBER
-    LBRACE RBRACE LBRACKET RBRACKET EQ COMMA
-    LOCALS TRUE FALSE NULLLITERAL
+    LCURL RCURL LBRACKET RBRACKET
+    EQ COMMA
+    LOCALS RESOURCE VARIABLE OUTPUT MODULE PROVIDER DATA TERRAFORM
+    TRUE FALSE NULLLITERAL
 %End
 %Terminals
     CtlCharNotWS
@@ -69,9 +71,8 @@
     Token
 %End
 %Rules
-
-    Token ::= '{' /. makeToken($_LBRACE); ./
-            | '}' /. makeToken($_RBRACE); ./
+    Token ::= '{' /. makeToken($_LCURL); ./
+            | '}' /. makeToken($_RCURL); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
             | '=' /. makeToken($_EQ); ./
@@ -82,30 +83,22 @@
             | white /. skipToken(); ./
             | comment /. skipToken(); ./
 
-
     identifier ::= Letter LetterOrDigitStar
     Letter -> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z | _
     LetterOrDigitStar -> $empty | LetterOrDigitStar LetterOrDigit
     LetterOrDigit -> Letter | Digit
     Digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
-
     STRING ::= '"' SLBody '"'
     SLBody -> $empty | SLBody NotDQ
-    NotDQ -> Letter | Digit | Special | Space | HT | FF | Escape
-    Escape ::= '\' EscapeChar
-    EscapeChar -> '"' | '\' | '/' | 'b' | 'f' | 'n' | 'r' | 't' | Letter | Digit
+    NotDQ -> Letter | Digit | Special | Space | HT | FF
     Special -> '+' | '-' | '/' | '(' | ')' | '*' | '!' | '@' | '`' | '~' |
-               '%' | '&' | '^' | ':' | ';' | '|' | '{' | '}' |
-               '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | "'" | '_'
-    NUMBER ::= DigitPlus
-    DigitPlus ::= Digit | DigitPlus Digit
+               '%' | '&' | '^' | ':' | ';' | "'" | '|' | '{' | '}' |
+               '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_'
+    NUMBER ::= Digit | NUMBER Digit
     comment ::= '#' NotNLStar
     NotNLStar -> $empty | NotNLStar NotNL
-    NotNL -> Letter | Digit | Special | Space | HT | FF | AfterASCII | '"' | "'" | '\'
-
-
+    NotNL -> Letter | Digit | Special | Space | HT | FF | DoubleQuote
     white ::= WSChar | white WSChar
     WSChar -> Space | HT | FF | LF | CR
-
 %End

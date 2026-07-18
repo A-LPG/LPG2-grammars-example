@@ -17,7 +17,8 @@
 %End
 
 %Export
-    AMP
+        STRING_LITERAL
+AMP
     AT
     BANG
     CARET
@@ -67,6 +68,56 @@
     TRUE
     VOID
     WHILE
+    ABSTRACT
+    AMPEQ
+    ASSERT
+    BOOLEAN
+    BREAK
+    BYTE
+    BooleanLiteral
+    CARETEQ
+    CASE
+    CATCH
+    CHAR
+    CONTINUE
+    DEFAULT
+    DO
+    DOUBLE
+    ENUM
+    FINAL
+    FINALLY
+    FLOAT
+    INSTANCEOF
+    LONG
+    LSHIFTEQ
+    MINUSEQ
+    NATIVE
+    NOTEQ
+    NullLiteral
+    PERCENTEQ
+    PIPEEQ
+    PLUSEQ
+    PROTECTED
+    RSHIFTEQ
+    SHORT
+    SLASHEQ
+    STAREQ
+    STRICTFP
+    SUPER
+    SWITCH
+    SYNCHRONIZED
+    THIS
+    THROW
+    THROWS
+    TRANSIENT
+    TRY
+    URSHIFTEQ
+    VOLATILE
+    ANDAND
+    COLONCOLON
+    MINUSMINUS
+    OROR
+    PLUSPLUS
 %End
 
 %Terminals
@@ -131,7 +182,7 @@
 %Rules
     Token ::= identifier /. checkForKeyWord(); ./
             | number     /. makeToken($_NUMBER); ./
-            | string     /. makeToken($_STRING); ./
+            | string     /. makeToken($_STRING_LITERAL); ./
             | LineComment /. skipToken(); ./
             | white      /. skipToken(); ./
             | '(' /. makeToken($_LPAREN); ./

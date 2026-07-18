@@ -17,6 +17,7 @@
     FALSE
     NULLLITERAL
     CLASS
+    BREAK
 %End
 %Terminals
     a    b    c    d    e    f    g    h    i    j    k    l    m
@@ -29,12 +30,13 @@
     Keyword ::= f u n c t i o n /.$setResult($_FUNCTION);./
               | l o c a l /.$setResult($_LOCAL);./
               | r e t u r n /.$setResult($_RETURN);./
-              | i f /.$setResult($_IF);./
-              | e l s e /.$setResult($_ELSE);./
               | w h i l e /.$setResult($_WHILE);./
-              | f o r /.$setResult($_FOR);./
-              | t r u e /.$setResult($_TRUE);./
-              | f a l s e /.$setResult($_FALSE);./
-              | n u l l /.$setResult($_NULLLITERAL);./
+              | b r e a k /.$setResult($_BREAK);./
               | c l a s s /.$setResult($_CLASS);./
+              | f a l s e /.$setResult($_FALSE);./
+              | e l s e /.$setResult($_ELSE);./
+              | t r u e /.$setResult($_TRUE);./
+              | n u l l /.$setResult($_NULLLITERAL);./
+              | f o r /.$setResult($_FOR);./
+              | i f /.$setResult($_IF);./
 %End

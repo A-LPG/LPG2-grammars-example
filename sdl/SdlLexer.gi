@@ -16,7 +16,8 @@
 %End
 
 %Export
-    IDENTIFIER
+        STRING_LITERAL
+IDENTIFIER
     NUMBER
     STRING
     LPAREN
@@ -49,6 +50,75 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    ADDRESS
+    AGGREGATE
+    ALIAS
+    ALIGN
+    ANY
+    BASEALIGN
+    BASED
+    BITFIELD
+    BOOLEAN
+    BYTE
+    CHARACTER
+    COMMENT
+    COMMON
+    COMPLEX
+    COUNTER
+    DECIMAL
+    DECLARE
+    DEFAULT
+    DESCRIPTOR
+    DIMENSION
+    ELSE
+    END
+    ENTRY
+    EQUALS
+    FILL
+    GLOBAL
+    IDENT
+    IFLANGUAGE
+    IFSYMBOL
+    IN
+    INCLUDE
+    INCREMENT
+    INTEGER
+    ITEM
+    LENGTH
+    LINKAGE
+    LIST
+    LONGWORD
+    MARKER
+    MASK
+    MODULE
+    NAME
+    NAMED
+    NOALIGN
+    OCTAWORD
+    OPTIONAL
+    ORIGIN
+    OUT
+    PARAMETER
+    POINTER
+    PRECISION
+    PREFIX
+    QUADWORD
+    READ
+    REFERENCE
+    RETURNS
+    SIGNED
+    SIZEOF
+    STRUCTURE
+    TAG
+    TYPEDEF
+    TYPENAME
+    UNION
+    UNSIGNED
+    VALUE
+    VARIABLE
+    VARYING
+    VOID
+    WORD
 %End
 
 %Terminals
@@ -109,9 +179,9 @@
 %End
 
 %Rules
-    Token ::= STRING /. makeToken($_STRING); ./
+    Token ::= STRING /. makeToken($_STRING_LITERAL); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./

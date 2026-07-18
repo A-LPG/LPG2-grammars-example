@@ -1,4 +1,4 @@
--- Scotty Lexer (LPG)
+-- Scotty Lexer (LPG) — IDENTIFIER/NUMBER for LALR-safe prefix arithmetic
 %Options list
 %Options fp=ScottyLexer
 %options single_productions
@@ -17,8 +17,7 @@
 
 %Export
     IDENTIFIER
-    DIGIT
-    LETTER
+    NUMBER
     PLUS
     MINUS
     STAR
@@ -86,25 +85,28 @@
 %End
 
 %Rules
-    Token ::= 'f' 'u' 'n'      /. makeToken($_FUN); ./
-            | Digit            /. makeToken($_DIGIT); ./
-            | LetterChar       /. makeToken($_LETTER); ./
-            | '+'              /. makeToken($_PLUS); ./
+    Token ::= '+'              /. makeToken($_PLUS); ./
             | '-'              /. makeToken($_MINUS); ./
             | '*'              /. makeToken($_STAR); ./
             | '/'              /. makeToken($_SLASH); ./
             | '('              /. makeToken($_LPAREN); ./
             | ')'              /. makeToken($_RPAREN); ./
             | '='              /. makeToken($_EQUAL); ./
+            | NUMBER           /. makeToken($_NUMBER); ./
+            | identifier       /. checkForKeyWord(); ./
             | white            /. skipToken(); ./
 
-    LetterChar -> LowerCaseLetter | UpperCaseLetter
-
-    LowerCaseLetter -> a | b | c | d | e | f | g | h | i | j | k | l | m |
-                       n | o | p | q | r | s | t | u | v | w | x | y | z
-    UpperCaseLetter -> A | B | C | D | E | F | G | H | I | J | K | L | M |
-                       N | O | P | Q | R | S | T | U | V | W | X | Y | Z
+    identifier ::= Letter LetterOrDigitStar
+    Letter -> a | b | c | d | e | f | g | h | i | j | k | l | m |
+              n | o | p | q | r | s | t | u | v | w | x | y | z |
+              A | B | C | D | E | F | G | H | I | J | K | L | M |
+              N | O | P | Q | R | S | T | U | V | W | X | Y | Z | _
+    LetterOrDigitStar -> $empty | LetterOrDigitStar LetterOrDigit
+    LetterOrDigit -> Letter | Digit
     Digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+
+    NUMBER ::= DigitPlus
+    DigitPlus ::= Digit | DigitPlus Digit
 
     white -> WSChar | white WSChar
     WSChar -> Space | LF | CR | HT | FF

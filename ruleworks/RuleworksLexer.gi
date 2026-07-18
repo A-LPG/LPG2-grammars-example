@@ -49,6 +49,9 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    TOK_OBJECT_CLASS
+    TOK_INSTANCE
+    TOK_OF
 %End
 
 %Terminals
@@ -111,7 +114,7 @@
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
@@ -150,6 +153,7 @@
     IDENTIFIER ::= IdStart
                  | IDENTIFIER IdStart
                  | IDENTIFIER Digit
+                 | IDENTIFIER '-' IdStart
 
     IdStart -> Letter | '_' | AfterASCII
     Letter -> LowerCaseLetter | UpperCaseLetter

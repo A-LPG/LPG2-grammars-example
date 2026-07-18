@@ -24,21 +24,21 @@
     STAR
     SLASH
     CARET
-    E
-    P
-    T
-    G
-    CAP_M
-    K
-    H
-    DA
-    D
-    C
-    M
-    N
-    PICO
-    F
-    A_PREFIX
+    PREFIX_E
+    PREFIX_P
+    PREFIX_T
+    PREFIX_G
+    PREFIX_MEGA
+    PREFIX_K
+    PREFIX_H
+    PREFIX_DA
+    PREFIX_D
+    PREFIX_C
+    UNIT_M
+    PREFIX_N
+    PREFIX_PICO
+    PREFIX_F
+    PREFIX_A
     UNIT_G
     UNIT_S
     UNIT_A
@@ -58,6 +58,7 @@
     UNIT_OHM
     UNIT_SIEMENS
     UNIT_WB
+    UNIT_T
     UNIT_H
     UNIT_LM
     UNIT_LX
@@ -129,8 +130,9 @@
             | '/' /. makeToken($_SLASH); ./
             | '^' /. makeToken($_CARET); ./
             | INTE /. makeToken($_INTE); ./
+            | 'o' 'h' 'm' /. makeToken($_UNIT_OHM); ./
             | AfterASCII /. makeToken($_UNIT_OHM); ./
-            | 'd' 'a' /. makeToken($_DA); ./
+            | 'd' 'a' /. makeToken($_PREFIX_DA); ./
             | 'm' 'o' 'l' /. makeToken($_UNIT_MOL); ./
             | 'c' 'd' /. makeToken($_UNIT_CD); ./
             | 'r' 'a' 'd' /. makeToken($_UNIT_RAD); ./
@@ -144,20 +146,20 @@
             | 'G' 'y' /. makeToken($_UNIT_GY); ./
             | 'S' 'v' /. makeToken($_UNIT_SV); ./
             | 'k' 'a' 't' /. makeToken($_UNIT_KAT); ./
-            | 'E' /. makeToken($_E); ./
-            | 'P' /. makeToken($_P); ./
-            | 'T' /. makeToken($_T); ./
-            | 'G' /. makeToken($_G); ./
-            | 'M' /. makeToken($_CAP_M); ./
-            | 'k' /. makeToken($_K); ./
-            | 'h' /. makeToken($_H); ./
-            | 'd' /. makeToken($_D); ./
-            | 'c' /. makeToken($_C); ./
-            | 'm' /. makeToken($_M); ./
-            | 'n' /. makeToken($_N); ./
-            | 'p' /. makeToken($_PICO); ./
-            | 'f' /. makeToken($_F); ./
-            | 'a' /. makeToken($_A_PREFIX); ./
+            | 'E' /. makeToken($_PREFIX_E); ./
+            | 'P' /. makeToken($_PREFIX_P); ./
+            | 'T' /. makeToken($_PREFIX_T); ./
+            | 'G' /. makeToken($_PREFIX_G); ./
+            | 'M' /. makeToken($_PREFIX_MEGA); ./
+            | 'k' /. makeToken($_PREFIX_K); ./
+            | 'h' /. makeToken($_PREFIX_H); ./
+            | 'd' /. makeToken($_PREFIX_D); ./
+            | 'c' /. makeToken($_PREFIX_C); ./
+            | 'm' /. makeToken($_UNIT_M); ./
+            | 'n' /. makeToken($_PREFIX_N); ./
+            | 'p' /. makeToken($_PREFIX_PICO); ./
+            | 'f' /. makeToken($_PREFIX_F); ./
+            | 'a' /. makeToken($_PREFIX_A); ./
             | 'g' /. makeToken($_UNIT_G); ./
             | 's' /. makeToken($_UNIT_S); ./
             | 'A' /. makeToken($_UNIT_A); ./

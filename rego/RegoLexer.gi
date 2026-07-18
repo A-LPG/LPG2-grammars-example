@@ -16,40 +16,38 @@
 %End
 
 %Export
+    
     IDENTIFIER
-    NUMBER
-    STRING
-    LPAREN
-    RPAREN
-    LBRACE
-    RBRACE
-    LBRACKET
-    RBRACKET
-    LANGLE
-    RANGLE
-    COMMA
-    DOT
-    COLON
-    SEMI
-    EQ
-    PLUS
-    MINUS
-    STAR
-    SLASH
-    AMP
-    BAR
-    CARET
-    BANG
-    QUEST
-    AT
-    HASH
-    DOLLAR
-    PERCENT
-    TILDE
-    BACKTICK
-    QUOTE
-    CHARLIT
-    BACKSLASH
+    Name
+    String
+    UnsignedNumber
+    Package
+    Import
+    Default
+    Else
+    As
+    With
+    Not
+    Null
+    Bool
+    EqOper
+    RelationOperator
+    ArithOperator
+    FactorOperator
+    Ampersand
+    Mid
+    Dot
+    Comma
+    Colon
+    Semicolon
+    LParan
+    RParan
+    LCBrace
+    RCBrace
+    LSBrace
+    RSBrace
+    Set
+
 %End
 
 %Terminals
@@ -110,39 +108,35 @@
 %End
 
 %Rules
-    Token ::= STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
-            | '(' /. makeToken($_LPAREN); ./
-            | ')' /. makeToken($_RPAREN); ./
-            | '{' /. makeToken($_LBRACE); ./
-            | '}' /. makeToken($_RBRACE); ./
-            | '[' /. makeToken($_LBRACKET); ./
-            | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
-            | ',' /. makeToken($_COMMA); ./
-            | '.' /. makeToken($_DOT); ./
-            | ':' /. makeToken($_COLON); ./
-            | '=' /. makeToken($_EQ); ./
-            | '+' /. makeToken($_PLUS); ./
-            | '-' /. makeToken($_MINUS); ./
-            | '*' /. makeToken($_STAR); ./
-            | '/' /. makeToken($_SLASH); ./
-            | '&' /. makeToken($_AMP); ./
-            | '|' /. makeToken($_BAR); ./
-            | '^' /. makeToken($_CARET); ./
-            | '!' /. makeToken($_BANG); ./
-            | '?' /. makeToken($_QUEST); ./
-            | '@' /. makeToken($_AT); ./
-            | '$' /. makeToken($_DOLLAR); ./
-            | '%' /. makeToken($_PERCENT); ./
-            | '~' /. makeToken($_TILDE); ./
-            | '`' /. makeToken($_BACKTICK); ./
-            | ';' /. makeToken($_SEMI); ./
-            | '#' /. makeToken($_HASH); ./
-            | "'" /. makeToken($_QUOTE); ./
-            | BackSlash /. makeToken($_BACKSLASH); ./
+    Token ::= STRING /. makeToken($_String); ./
+            | NUMBER /. makeToken($_UnsignedNumber); ./
+            | 's' 'e' 't' '(' /. makeToken($_Set); ./
+            | IDENTIFIER /. checkForKeyWord($_Name); ./
+            | '(' /. makeToken($_LParan); ./
+            | ')' /. makeToken($_RParan); ./
+            | '{' /. makeToken($_LCBrace); ./
+            | '}' /. makeToken($_RCBrace); ./
+            | '[' /. makeToken($_LSBrace); ./
+            | ']' /. makeToken($_RSBrace); ./
+                                    | ',' /. makeToken($_Comma); ./
+            | '.' /. makeToken($_Dot); ./
+            | ':' /. makeToken($_Colon); ./
+            | '=' '=' /. makeToken($_RelationOperator); ./
+            | '!' '=' /. makeToken($_RelationOperator); ./
+            | '<' '=' /. makeToken($_RelationOperator); ./
+            | '>' '=' /. makeToken($_RelationOperator); ./
+            | '<' /. makeToken($_RelationOperator); ./
+            | '>' /. makeToken($_RelationOperator); ./
+            | ':' '=' /. makeToken($_EqOper); ./
+            | '=' /. makeToken($_EqOper); ./
+            | '+' /. makeToken($_ArithOperator); ./
+            | '-' /. makeToken($_ArithOperator); ./
+            | '*' /. makeToken($_FactorOperator); ./
+            | '/' /. makeToken($_FactorOperator); ./
+            | '&' /. makeToken($_Ampersand); ./
+            | '|' /. makeToken($_Mid); ./
+            | '%' /. makeToken($_FactorOperator); ./
+            | ';' /. makeToken($_Semicolon); ./
             | SLComment     /. skipToken(); ./ | MLComment     /. skipToken(); ./
             | white /. skipToken(); ./
 

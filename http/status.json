@@ -11,7 +11,7 @@
   "parser_bytes": 3549,
   "rule_approx": 46,
   "start": "http_message",
-  "example_count": 1,
+  "example_count": 3,
   "notes": "real_g4_port",
   "tier": "A"
 }

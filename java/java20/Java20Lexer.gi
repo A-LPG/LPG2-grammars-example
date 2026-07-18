@@ -16,7 +16,11 @@
 %End
 
 %Export
-    IDENTIFIER
+                DECIMAL_LITERAL
+STRING_LITERAL
+LT
+GT
+IDENTIFIER
     NUMBER
     STRING
     LPAREN
@@ -49,6 +53,80 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    ABSTRACT
+    ANDAND
+    ASSERT
+    BOOLEAN
+    BREAK
+    BYTE
+    CASE
+    CATCH
+    CHAR
+    CLASS
+    COLONCOLON
+    CONTINUE
+    DEFAULT
+    DO
+    DOUBLE
+    ELSE
+    ENUM
+    EXPORTS
+    EXTENDS
+    FINAL
+    FINALLY
+    FLOAT
+    FOR
+    IF
+    IMPLEMENTS
+    IMPORT
+    INSTANCEOF
+    INT
+    INTERFACE
+    LONG
+    LSHIFT
+    LTGT
+    MINUSMINUS
+    MODULE
+    NATIVE
+    NEW
+    OPEN
+    OPENS
+    OROR
+    PACKAGE
+    PERMITS
+    PIPE
+    PLUSPLUS
+    PRIVATE
+    PROTECTED
+    PROVIDES
+    PUBLIC
+    RECORD
+    REQUIRES
+    RETURN
+    RSHIFT
+    SEALED
+    SHORT
+    STATIC
+    STRICTFP
+    SUPER
+    SWITCH
+    SYNCHRONIZED
+    THIS
+    THROW
+    THROWS
+    TO
+    TRANSIENT
+    TRANSITIVE
+    TRY
+    TextBlock
+    URSHIFT
+    USES
+    VAR
+    VOID
+    VOLATILE
+    WHILE
+    WITH
+    YIELD
 %End
 
 %Terminals
@@ -109,17 +187,17 @@
 %End
 
 %Rules
-    Token ::= STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+    Token ::= STRING /. makeToken($_STRING_LITERAL); ./
+            | NUMBER /. makeToken($_DECIMAL_LITERAL); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./

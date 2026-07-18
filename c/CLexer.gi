@@ -17,7 +17,16 @@
 %End
 
 %Export
-    IDENTIFIER
+                                        CharacterConstant
+StringLiteral
+IntegerConstant
+GT
+LT
+EXTERN
+For
+Do
+While
+IDENTIFIER
     INTEGER_LITERAL
     BINARY_LITERAL
     STRING_LITERAL
@@ -112,12 +121,12 @@
             | '-'              /. makeToken($_MINUS); ./
             | '*'              /. makeToken($_STAR); ./
             | '/'              /. makeToken($_SLASH); ./
-            | '<'              /. makeToken($_LANGLE); ./
-            | '>'              /. makeToken($_RANGLE); ./
+            | '<'              /. makeToken($_LT); ./
+            | '>'              /. makeToken($_GT); ./
             | '!'              /. makeToken($_BANG); ./
-            | STRING_LITERAL   /. makeToken($_STRING_LITERAL); ./
-            | BINARY_LITERAL   /. makeToken($_BINARY_LITERAL); ./
-            | INTEGER_LITERAL  /. makeToken($_INTEGER_LITERAL); ./
+            | STRING_LITERAL   /. makeToken($_StringLiteral); ./
+            | BINARY_LITERAL   /. makeToken($_IntegerConstant); ./
+            | INTEGER_LITERAL  /. makeToken($_IntegerConstant); ./
             | identifier       /. checkForKeyWord(); ./
             | comment          /. skipToken(); ./
             | white            /. skipToken(); ./

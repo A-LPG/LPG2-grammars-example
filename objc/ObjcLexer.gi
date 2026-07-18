@@ -16,7 +16,9 @@
 %End
 
 %Export
-    IDENTIFIER
+            GT
+LT
+IDENTIFIER
     NUMBER
     STRING
     LPAREN
@@ -49,6 +51,110 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    AND
+    ASSIGN
+    ATOMIC
+    ATTRIBUTE
+    AUTO
+    BITAND
+    BITOR
+    BITXOR
+    BLOCK
+    BOOL
+    BREAK
+    BRIDGE
+    BYCOPY
+    BYREF
+    CASE
+    CATCH
+    CHAR
+    CONST
+    CONTINUE
+    CONTRAVARIANT
+    COPY
+    COVARIANT
+    DEC
+    DEFAULT
+    DEPRECATED
+    DIRECT
+    DO
+    DOUBLE
+    ELSE
+    ENUM
+    EQUAL
+    EXTERN
+    FALSE
+    FINALLY
+    FLOAT
+    FOR
+    GE
+    GETTER
+    GOTO
+    ID
+    IF
+    IMP
+    IN
+    INC
+    INLINE
+    INOUT
+    INT
+    KINDOF
+    KW_CLASS
+    LBRACK
+    LE
+    LONG
+    LP
+    MINUSMINUS
+    NIL
+    NO
+    NONATOMIC
+    NONNULL
+    NOTEQUAL
+    NULLABLE
+    NULL_
+    ONEWAY
+    OPTIONAL
+    OR
+    OUT
+    PACKAGE
+    PLUSPLUS
+    PRIVATE
+    PROTECTED
+    PROTOCOL_
+    PUBLIC
+    RBRACK
+    READONLY
+    READWRITE
+    REGISTER
+    REQUIRED
+    RESTRICT
+    RETAIN
+    RETURN
+    RP
+    SEL
+    SELF
+    SETTER
+    SHORT
+    SIGNED
+    SIZEOF
+    STATIC
+    STRONG
+    STRUCT
+    SUPER
+    SWITCH
+    TRUE
+    TRY
+    TYPEDEF
+    TYPEOF
+    UNDERSCORE
+    UNION
+    UNSIGNED
+    UNUSED
+    VOID
+    VOLATILE
+    WEAK
+    WHILE
+    YES
 %End
 
 %Terminals
@@ -111,19 +217,19 @@
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./
-            | '=' /. makeToken($_EQ); ./
+            | '=' /. makeToken($_ASSIGN); ./
             | '+' /. makeToken($_PLUS); ./
             | '-' /. makeToken($_MINUS); ./
             | '*' /. makeToken($_STAR); ./

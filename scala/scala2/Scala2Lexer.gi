@@ -17,7 +17,10 @@
 %End
 
 %Export
+    StringLiteral
+    IntegerLiteral
     IDENTIFIER
+    Id
     STRING
     LBRACE
     RBRACE
@@ -29,6 +32,49 @@
     EQ
     DOT
     COMMA
+    PLUS
+    MINUS
+    STAR
+    SLASH
+    LT
+    GT
+    LTEQ
+    GTEQ
+    EQEQ
+    NOTEQ
+    ANDAND
+    BANG
+    CASE
+    CATCH
+    CLASS
+    DEF
+    DO
+    ELSE
+    EXTENDS
+    FATARROW
+    FINALLY
+    IF
+    IMPORT
+    MATCH
+    NEW
+    OBJECT
+    OROR
+    OVERRIDE
+    PACKAGE
+    PERCENT
+    RETURN
+    SUPER
+    THIS
+    THROW
+    TILDE
+    TRAIT
+    TRY
+    TYPE
+    UNDERSCORE
+    VAL
+    VAR
+    WHILE
+    NULL_LITERAL
 %End
 
 %Terminals
@@ -96,17 +142,31 @@
             | '['        /. makeToken($_LBRACKET); ./
             | ']'        /. makeToken($_RBRACKET); ./
             | ':'        /. makeToken($_COLON); ./
+            | '=' '='    /. makeToken($_EQEQ); ./
+            | '!' '='    /. makeToken($_NOTEQ); ./
+            | '<' '='    /. makeToken($_LTEQ); ./
+            | '>' '='    /. makeToken($_GTEQ); ./
             | '='        /. makeToken($_EQ); ./
+            | '<'        /. makeToken($_LT); ./
+            | '>'        /. makeToken($_GT); ./
+            | '+'        /. makeToken($_PLUS); ./
+            | '-'        /. makeToken($_MINUS); ./
+            | '*'        /. makeToken($_STAR); ./
+            | '/'        /. makeToken($_SLASH); ./
             | '.'        /. makeToken($_DOT); ./
             | ','        /. makeToken($_COMMA); ./
-            | STRING     /. makeToken($_STRING); ./
-            | identifier /. checkForKeyWord(); ./
+            | STRING     /. makeToken($_StringLiteral); ./
+            | NUMBER     /. makeToken($_IntegerLiteral); ./
+            | identifier /. checkForKeyWord($_Id); ./
             | comment    /. skipToken(); ./
             | white      /. skipToken(); ./
 
     identifier ::= Letter
                  | identifier Letter
                  | identifier Digit
+
+    NUMBER ::= DigitPlus
+    DigitPlus ::= Digit | DigitPlus Digit
 
     Letter -> LowerCaseLetter | UpperCaseLetter | _
     LowerCaseLetter -> a | b | c | d | e | f | g | h | i | j | k | l | m |

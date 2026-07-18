@@ -28,6 +28,40 @@
     FALSE
     NULLLITERAL
     CLASS
+    AT
+    BREAK
+    CASE
+    CATCH
+    CLONE
+    CMP
+    CONST
+    CONSTRUCTOR
+    CONTINUE
+    DEFAULT
+    DELETE
+    DIV
+    DO
+    ENUM
+    EXTENDS
+    FLOAT
+    FOREACH
+    GREATER
+    IN
+    INSTANCEOF
+    INT
+    LESS
+    MUL
+    NL
+    NOT
+    NULL
+    REMAINDER
+    RESUME
+    STATIC
+    SWITCH
+    THROW
+    TRY
+    TYPEOF
+    YIELD
 %End
 %Terminals
     CtlCharNotWS
@@ -99,7 +133,7 @@
             | '<' /. makeToken($_LT); ./
             | '>' /. makeToken($_GT); ./
             | STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
+            | NUMBER /. makeToken($_INT); ./
             | identifier /. checkForKeyWord(); ./
             | white /. skipToken(); ./
             | line_comment /. skipToken(); ./

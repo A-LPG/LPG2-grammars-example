@@ -16,7 +16,11 @@
 %End
 
 %Export
-    IDENTIFIER
+                    INT_LITERAL
+STRING_LITERAL
+GT
+LT
+IDENTIFIER
     NUMBER
     STRING
     LPAREN
@@ -49,6 +53,84 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    ABSTRACT
+    ADDITIONAL
+    AND
+    ANY
+    AS
+    ASC
+    ATLOWERID
+    AVG
+    BINDINGSET
+    BOOLEAN
+    BY
+    CACHED
+    CLASS
+    COLONCOLON
+    CONCAT
+    COUNT
+    DATE
+    DEFAULT
+    DEPRECATED
+    DESC
+    DONTCARE
+    DOTDOT
+    ELSE
+    EXISTS
+    EXTENDS
+    EXTENSIBLE
+    EXTERNAL
+    FALSE
+    FINAL
+    FLOAT
+    FORALL
+    FOREX
+    FROM
+    IF
+    IMPLEMENTS
+    IMPLIES
+    IMPORT
+    IN
+    INLINE
+    INSTANCEOF
+    INT
+    LANGUAGE
+    LIBRARY
+    LOWERID
+    MAX
+    MIN
+    MODULE
+    MONOTONICAGGREGATES
+    NEWTYPE
+    NOINLINE
+    NOMAGIC
+    NONE
+    NOOPT
+    NOT
+    OR
+    ORDER
+    OVERRIDE
+    PIPE
+    PRAGMA
+    PREDICATE
+    PRIVATE
+    QUERY
+    RANK
+    RESULT
+    SELECT
+    SIGNATURE
+    STRICTCONCAT
+    STRICTCOUNT
+    STRICTSUM
+    SUM
+    SUPER
+    THEN
+    THIS
+    TRANSIENT
+    TRUE
+    UNIQUE
+    UPPERID
+    WHERE
 %End
 
 %Terminals
@@ -109,17 +191,18 @@
 %End
 
 %Rules
-    Token ::= STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+    Token ::= STRING /. makeToken($_STRING_LITERAL); ./
+            | NUMBER /. makeToken($_INT_LITERAL); ./
+            | UPPERID /. makeToken($_UPPERID); ./
+            | LOWERID /. checkForKeyWord($_LOWERID); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./
@@ -145,9 +228,12 @@
             | SLComment     /. skipToken(); ./ | MLComment     /. skipToken(); ./
             | white /. skipToken(); ./
 
-    IDENTIFIER ::= IdStart
-                 | IDENTIFIER IdStart
-                 | IDENTIFIER Digit
+    UPPERID ::= UpperCaseLetter
+              | UPPERID IdChar
+    LOWERID ::= LowerCaseLetter
+              | '_' 
+              | LOWERID IdChar
+    IdChar -> Letter | Digit | '_'
 
     IdStart -> Letter | '_' | AfterASCII
     Letter -> LowerCaseLetter | UpperCaseLetter

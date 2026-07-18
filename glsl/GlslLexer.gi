@@ -49,6 +49,81 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    ANDAND
+    ATTRIBUTE
+    BOOL
+    BREAK
+    BUFFER
+    CASE
+    CENTROID
+    COHERENT
+    CONST
+    CONTINUE
+    DEFAULT
+    DISCARD
+    DO
+    DOUBLE
+    ELSE
+    FALSE
+    FLAT
+    FLOAT
+    FOR
+    HIGHP
+    IF
+    IIMAGEBUFFER
+    IIMAGECUBE
+    IIMAGECUBEARRAY
+    IMAGEBUFFER
+    IMAGECUBE
+    IMAGECUBEARRAY
+    IN
+    INOUT
+    INT
+    INVARIANT
+    ISAMPLERBUFFER
+    ISAMPLERCUBE
+    ISAMPLERCUBEARRAY
+    LAYOUT
+    LOWP
+    LSHIFT
+    MEDIUMP
+    MINUSMINUS
+    NOPERSPECTIVE
+    OROR
+    OUT
+    PATCH
+    PLUSPLUS
+    PRECISE
+    PRECISION
+    READONLY
+    RESTRICT
+    RETURN
+    RSHIFT
+    SAMPLE
+    SAMPLERBUFFER
+    SAMPLERCUBE
+    SAMPLERCUBEARRAY
+    SAMPLERCUBEARRAYSHADOW
+    SAMPLERCUBESHADOW
+    SHARED
+    SMOOTH
+    STRUCT
+    SUBROUTINE
+    SWITCH
+    TRUE
+    UIMAGEBUFFER
+    UIMAGECUBE
+    UIMAGECUBEARRAY
+    UINT
+    UNIFORM
+    USAMPLERBUFFER
+    USAMPLERCUBE
+    USAMPLERCUBEARRAY
+    VARYING
+    VOID
+    VOLATILE
+    WHILE
+    WRITEONLY
 %End
 
 %Terminals
@@ -111,7 +186,7 @@
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./

@@ -16,7 +16,10 @@
 %End
 
 %Export
-    IDENTIFIER
+                StringLiteral
+GT
+LT
+IDENTIFIER
     NUMBER
     STRING
     LPAREN
@@ -49,6 +52,37 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    AND
+    BlockEnd
+    BlockStart
+    COLONCOLON
+    COLOR
+    CSS
+    DIV
+    Ellipsis
+    IMPORTANT
+    INLINE
+    Identifier
+    IdentifierAfter
+    InterpolationStart
+    InterpolationStartAfter
+    LBRACK
+    LESS
+    MULTIPLE
+    NOT
+    Number
+    ONCE
+    PARENTREF
+    PERC
+    RBRACK
+    REFERENCE
+    TIL
+    TIMES
+    Unit
+    Url
+    UrlEnd
+    UrlStart
+    WHEN
 %End
 
 %Terminals
@@ -109,17 +143,18 @@
 %End
 
 %Rules
-    Token ::= STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+    Token ::= STRING /. makeToken($_StringLiteral); ./
+            | NUMBER /. makeToken($_Number); ./
+            | COLOR /. makeToken($_COLOR); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
-            | '{' /. makeToken($_LBRACE); ./
-            | '}' /. makeToken($_RBRACE); ./
+            | '{' /. makeToken($_BlockStart); ./
+            | '}' /. makeToken($_BlockEnd); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./
@@ -145,6 +180,8 @@
             | SLComment     /. skipToken(); ./
             | MLComment     /. skipToken(); ./
             | white /. skipToken(); ./
+
+    COLOR ::= '#' HexDigits
 
     IDENTIFIER ::= IdStart
                  | IDENTIFIER IdStart

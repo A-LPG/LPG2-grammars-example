@@ -16,7 +16,11 @@
 %End
 
 %Export
-    IDENTIFIER
+                    NUM_INT
+STRING_LITERAL
+GT
+LT
+IDENTIFIER
     NUMBER
     STRING
     LPAREN
@@ -49,6 +53,56 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    AND
+    ARRAY
+    BEGIN
+    BOOLEAN
+    CASE
+    CHAR
+    CHR
+    CONST
+    DO
+    DOTDOT
+    DOWNTO
+    ELSE
+    END
+    FALSE
+    FILE
+    FOR
+    FUNCTION
+    GE
+    GOTO
+    IF
+    IMPLEMENTATION
+    IN
+    INTEGER
+    INTERFACE
+    LABEL
+    LBRACK
+    LE
+    NIL
+    NOT
+    OF
+    OR
+    PACKED
+    POINTER
+    PROCEDURE
+    PROGRAM
+    RBRACK
+    REAL
+    RECORD
+    REPEAT
+    SET
+    THEN
+    TO
+    TRUE
+    TYPE
+    UNIT
+    UNTIL
+    USES
+    VAR
+    WHILE
+    WITH
 %End
 
 %Terminals
@@ -109,17 +163,17 @@
 %End
 
 %Rules
-    Token ::= STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+    Token ::= STRING /. makeToken($_STRING_LITERAL); ./
+            | NUMBER /. makeToken($_NUM_INT); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./

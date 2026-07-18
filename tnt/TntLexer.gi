@@ -30,7 +30,7 @@
     RPAREN
     TILDE
     COLON
-    EQUAL
+    EQ
     X
 %End
 %Terminals
@@ -106,7 +106,7 @@
             | ')'   /. makeToken($_RPAREN); ./
             | '~'   /. makeToken($_TILDE); ./
             | ':'   /. makeToken($_COLON); ./
-            | '='   /. makeToken($_EQUAL); ./
+            | '='   /. makeToken($_EQ); ./
             | white /. skipToken(); ./
 
     Letter -> LowerCaseLetter | UpperCaseLetter | _

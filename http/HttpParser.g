@@ -40,6 +40,7 @@
     query ::= list_9
 
     http_version ::= HTTP SLASH DIGIT DOT DIGIT
+           | HTTP SLASH NUMBER DOT NUMBER
            | HTTP SLASH NUMBER
            | IDENTIFIER SLASH NUMBER
            | IDENTIFIER

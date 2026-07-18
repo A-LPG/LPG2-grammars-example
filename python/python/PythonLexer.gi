@@ -16,8 +16,12 @@
 %End
 
 %Export
+    GT
+    LT
     IDENTIFIER
     NUMBER
+    DECIMAL_INTEGER
+    FLOAT_NUMBER
     STRING
     LPAREN
     RPAREN
@@ -25,6 +29,8 @@
     RBRACE
     LBRACKET
     RBRACKET
+    OPEN_BRACKET
+    CLOSE_BRACKET
     LANGLE
     RANGLE
     COMMA
@@ -32,10 +38,13 @@
     COLON
     SEMI
     EQ
+    EQEQ
     PLUS
     MINUS
     STAR
+    STARSTAR
     SLASH
+    SLASHSLASH
     AMP
     BAR
     CARET
@@ -49,6 +58,47 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    LINE_BREAK
+    AND
+    AS
+    ASSERT
+    ASYNC
+    AWAIT
+    BREAK
+    CLASS
+    CONTINUE
+    DEF
+    DEL
+    ELIF
+    ELSE
+    EXCEPT
+    EXEC
+    FALSE
+    FINALLY
+    FOR
+    FROM
+    GLOBAL
+    IF
+    IMPORT
+    IN
+    IS
+    LAMBDA
+    LSHIFT
+    NONE
+    NONLOCAL
+    NOT
+    OR
+    PASS
+    PIPE
+    PRINT
+    RAISE
+    RETURN
+    RSHIFT
+    TRUE
+    TRY
+    WHILE
+    WITH
+    YIELD
 %End
 
 %Terminals
@@ -110,23 +160,26 @@
 
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | NUMBER /. makeToken($_DECIMAL_INTEGER); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
             | '}' /. makeToken($_RBRACE); ./
-            | '[' /. makeToken($_LBRACKET); ./
-            | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
+            | '[' /. makeToken($_OPEN_BRACKET); ./
+            | ']' /. makeToken($_CLOSE_BRACKET); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./
+            | '=' '=' /. makeToken($_EQEQ); ./
             | '=' /. makeToken($_EQ); ./
             | '+' /. makeToken($_PLUS); ./
             | '-' /. makeToken($_MINUS); ./
+            | '*' '*' /. makeToken($_STARSTAR); ./
             | '*' /. makeToken($_STAR); ./
+            | '/' '/' /. makeToken($_SLASHSLASH); ./
             | '/' /. makeToken($_SLASH); ./
             | '&' /. makeToken($_AMP); ./
             | '|' /. makeToken($_BAR); ./
@@ -144,8 +197,10 @@
             | BackSlash /. makeToken($_BACKSLASH); ./
             | SLComment     /. skipToken(); ./
             | MLComment     /. skipToken(); ./
-
+            | eol /. makeToken($_LINE_BREAK); ./
             | white /. skipToken(); ./
+
+    eol ::= LF | CR | CR LF
 
     IDENTIFIER ::= IdStart
                  | IDENTIFIER IdStart
@@ -201,5 +256,5 @@
                        '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | BackSlash
 
     white -> WSChar | white WSChar
-    WSChar -> Space | LF | CR | HT | FF
+    WSChar -> Space | HT | FF
 %End

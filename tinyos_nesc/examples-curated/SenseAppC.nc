@@ -1,6 +1,5 @@
 configuration SenseAppC {
 }
 implementation {
-  components MainC;
-  components SenseC;
+  components MainC, SenseC;
 }

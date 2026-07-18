@@ -26,7 +26,7 @@
            | mixinDefinition
 
     variableName ::= AT variableName
-           | AT Identifier
+           | AT IDENTIFIER
            | AT COLOR
 
     commandStatement ::= list_2 opt_3
@@ -43,7 +43,7 @@
            | identifier IMPORTANT
            | identifier
            | identifier LPAREN opt_4 RPAREN
-           | Color
+           | COLOR
            | StringLiteral
            | url
            | variableName IMPORTANT
@@ -92,11 +92,11 @@
 
     selector ::= list_32 list_33 opt_34
 
-    attrib ::= LBRACKET Identifier opt_37 RBRACKET
+    attrib ::= LBRACKET IDENTIFIER opt_37 RBRACKET
 
     negation ::= COLON NOT LPAREN opt_38 selectors opt_39 RPAREN
 
-    pseudo ::= grp_40 Identifier
+    pseudo ::= grp_40 IDENTIFIER
 
     element ::= selectorPrefix identifier
            | identifier
@@ -112,12 +112,12 @@
            | OP_82812
            | PIPEEQ
 
-    identifier ::= Identifier list_42
+    identifier ::= IDENTIFIER list_42
            | COLOR list_42
            | InterpolationStart identifierVariableName BlockEnd list_43
 
     identifierPart ::= InterpolationStartAfter identifierVariableName BlockEnd
-           | IdentifierAfter
+           | IDENTIFIER
 
     identifierVariableName ::= grp_44
 
@@ -159,11 +159,11 @@
 
     opt_15 ::= mediaTypes | $empty
 
-    seq_16 ::= COMMA Identifier
+    seq_16 ::= COMMA IDENTIFIER
 
     list_17 ::= $empty | list_17 seq_16
 
-    seq_18 ::= Identifier list_17
+    seq_18 ::= IDENTIFIER list_17
 
     grp_19 ::= property_ SEMI | statement | mixinReference
 
@@ -197,7 +197,7 @@
 
     opt_34 ::= pseudo | $empty
 
-    grp_36 ::= StringLiteral | Identifier
+    grp_36 ::= StringLiteral | IDENTIFIER
 
     grp_35 ::= attribRelate grp_36
 
@@ -215,7 +215,7 @@
 
     list_43 ::= $empty | list_43 identifierPart
 
-    grp_44 ::= Identifier | IdentifierAfter
+    grp_44 ::= IDENTIFIER
 
     seq_45 ::= COMMA commandStatement
 

@@ -1,4 +1,4 @@
--- Smalltalk Lexer (LPG)
+-- Smalltalk Lexer (LPG) — tokens aligned to SmalltalkParser
 %Options list
 %Options fp=SmalltalkLexer
 %options single_productions
@@ -17,7 +17,16 @@
     STRING
     NUMBER
     PERIOD PIPE CARROT SEMI_COLON ASSIGNMENT
-    HASH LPAREN RPAREN LBRACKET RBRACKET
+    HASH
+    OPEN_PAREN CLOSE_PAREN
+    BLOCK_START BLOCK_END
+    BLOCK_PARAM
+    KEYWORD
+    BINARY_SELECTOR
+    MINUS LT GT
+    LITARR_START
+    DYNARR_START DYNARR_END
+    DYNDICT_START
 %End
 %Terminals
     CtlCharNotWS
@@ -75,22 +84,36 @@
     Token
 %End
 %Rules
-    Token ::= '.' /. makeToken($_PERIOD); ./
+    Token ::= '#' '(' /. makeToken($_LITARR_START); ./
+            | '#' '{' /. makeToken($_DYNDICT_START); ./
+            | '{' /. makeToken($_DYNARR_START); ./
+            | '}' /. makeToken($_DYNARR_END); ./
+            | '.' /. makeToken($_PERIOD); ./
             | '|' /. makeToken($_PIPE); ./
             | '^' /. makeToken($_CARROT); ./
             | ';' /. makeToken($_SEMI_COLON); ./
             | ':' '=' /. makeToken($_ASSIGNMENT); ./
+            | ':' identifier /. makeToken($_BLOCK_PARAM); ./
             | '#' /. makeToken($_HASH); ./
-            | '(' /. makeToken($_LPAREN); ./
-            | ')' /. makeToken($_RPAREN); ./
-            | '[' /. makeToken($_LBRACKET); ./
-            | ']' /. makeToken($_RBRACKET); ./
+            | '(' /. makeToken($_OPEN_PAREN); ./
+            | ')' /. makeToken($_CLOSE_PAREN); ./
+            | '[' /. makeToken($_BLOCK_START); ./
+            | ']' /. makeToken($_BLOCK_END); ./
+            | '+' /. makeToken($_BINARY_SELECTOR); ./
+            | '-' /. makeToken($_MINUS); ./
+            | '*' /. makeToken($_BINARY_SELECTOR); ./
+            | '/' /. makeToken($_BINARY_SELECTOR); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
+            | '=' /. makeToken($_BINARY_SELECTOR); ./
             | STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | identifier /. makeToken($_IDENTIFIER); ./
+            | keywordId /. makeToken($_KEYWORD); ./
+            | identifier /. checkForKeyWord(); ./
             | white /. skipToken(); ./
             | comment /. skipToken(); ./
 
+    keywordId ::= Letter LetterOrDigitStar ':'
     identifier ::= Letter LetterOrDigitStar
     Letter -> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z | _
     LetterOrDigitStar -> $empty | LetterOrDigitStar LetterOrDigit

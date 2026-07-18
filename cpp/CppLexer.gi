@@ -16,7 +16,9 @@
 %End
 
 %Export
-    IDENTIFIER
+            GT
+LT
+IDENTIFIER
     NUMBER
     STRING
     LPAREN
@@ -49,6 +51,80 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    ALIGNAS_
+    ALIGNOF_
+    ANDAND
+    ARROWSTAR
+    ASM_
+    AUTO_
+    BOOL_
+    BREAK_
+    CASE_
+    CATCH_
+    CHAR_
+    CLASS_
+    COLONCOLON
+    CONSTEXPR_
+    CONST_
+    CONTINUE_
+    DECLTYPE_
+    DEFAULT_
+    DELETE_
+    DOTSTAR
+    DOUBLE_
+    DO_
+    ELSE_
+    ENUM_
+    EXPLICIT_
+    EXTERN_
+    FINAL_
+    FLOAT_
+    FOR_
+    FRIEND_
+    GOTO_
+    GreaterEqual
+    IF_
+    INLINE_
+    INT_
+    LONG_
+    LessEqual
+    MINUSMINUS
+    MUTABLE_
+    NAMESPACE_
+    NEW_
+    NOEXCEPT_
+    OPERATOR_
+    OROR
+    OVERRIDE_
+    PIPE
+    PLUSPLUS
+    PRIVATE_
+    PROTECTED_
+    PUBLIC_
+    REGISTER_
+    RETURN_
+    SHORT_
+    SIGNED_
+    SIZEOF_
+    STATIC_
+    STRUCT_
+    SWITCH_
+    TEMPLATE_
+    THIS_
+    THROW_
+    TRY_
+    TYPEDEF_
+    TYPEID_
+    TYPENAME_
+    Thread_local
+    UNION_
+    UNSIGNED_
+    USING_
+    VIRTUAL_
+    VOID_
+    VOLATILE_
+    WHILE_
+    Wchar
 %End
 
 %Terminals
@@ -111,15 +187,15 @@
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./

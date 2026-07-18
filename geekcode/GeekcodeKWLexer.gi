@@ -1,4 +1,4 @@
--- Dummy keyword filter
+-- Dummy KW filter (geekcode tokens are emitted directly by GeekcodeLexer)
 %options package=lpg.grammars.geekcode
 %options template=KeywordTemplateF.gi
 %options fp=GeekcodeKWLexer
@@ -9,8 +9,7 @@
     X
 %End
 %Terminals
-    a    b    c    d    e    f    g    h    i    j    k    l    m
-    n    o    p    q    r    s    t    u    v    w    x    y    z
+    a b c d e f g h i j k l m n o p q r s t u v w x y z
 %End
 %Start
     Keyword

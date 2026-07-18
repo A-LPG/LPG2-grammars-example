@@ -16,7 +16,10 @@
 %End
 
 %Export
-    IDENTIFIER
+            NEWLINE
+LT
+GT
+IDENTIFIER
     NUMBER
     STRING
     LPAREN
@@ -49,6 +52,42 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    AND
+    AS
+    ASSERT
+    BREAK
+    CLASS
+    CONTINUE
+    DEF
+    DEL
+    ELIF
+    ELSE
+    EXCEPT
+    EXEC
+    FINALLY
+    FOR
+    FROM
+    GLOBAL
+    IF
+    IMPORT
+    IN
+    IS
+    LAMBDA
+    LSHIFT
+    LTGT
+    NOT
+    OR
+    PASS
+    PIPE
+    RAISE
+    RETURN
+    RSHIFT
+    SLASHSLASH
+    STARSTAR
+    TRY
+    WHILE
+    WITH
+    YIELD
 %End
 
 %Terminals
@@ -111,15 +150,15 @@
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./
@@ -145,6 +184,9 @@
             | SLComment     /. skipToken(); ./
             | MLComment     /. skipToken(); ./
 
+            | LF /. makeToken($_NEWLINE); ./
+            | CR /. makeToken($_NEWLINE); ./
+            | CR LF /. makeToken($_NEWLINE); ./
             | white /. skipToken(); ./
 
     IDENTIFIER ::= IdStart
@@ -201,5 +243,5 @@
                        '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | BackSlash
 
     white -> WSChar | white WSChar
-    WSChar -> Space | LF | CR | HT | FF
+    WSChar -> Space | HT | FF
 %End

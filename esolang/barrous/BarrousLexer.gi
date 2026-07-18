@@ -18,7 +18,8 @@
 %End
 
 %Export
-    IDENTIFIER
+        QUESTION
+IDENTIFIER
     INT
     GT
     LT
@@ -35,6 +36,9 @@
     PCT
     CARET
     PIPE
+    HASH
+    INDENTIFIER
+    PERCENT
 %End
 
 
@@ -106,14 +110,14 @@
             | '!' /. makeToken($_BANG); ./
             | '=' /. makeToken($_EQ); ./
             | '@' /. makeToken($_AT); ./
-            | '#' /. makeToken($_SHARP); ./
-            | '?' /. makeToken($_QMARK); ./
+            | '#' /. makeToken($_HASH); ./
+            | '?' /. makeToken($_QUESTION); ./
             | '&' /. makeToken($_AMP); ./
-            | '%' /. makeToken($_PCT); ./
+            | '%' /. makeToken($_PERCENT); ./
             | '^' /. makeToken($_CARET); ./
             | '|' /. makeToken($_PIPE); ./
             | INT /. makeToken($_INT); ./
-            | identifier /. makeToken($_IDENTIFIER); ./
+            | identifier /. makeToken($_INDENTIFIER); ./
             | white /. skipToken(); ./
 
     identifier ::= Letter

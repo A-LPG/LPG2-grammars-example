@@ -1,2 +1,2 @@
 library Helpers;
-helper def : foo() : integer = 1;
+helper def : foo() : oclany = true;

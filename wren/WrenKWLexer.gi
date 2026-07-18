@@ -1,4 +1,4 @@
--- Keyword filter
+-- Wren keyword filter
 %options package=lpg.grammars.wren
 %options template=KeywordTemplateF.gi
 %options fp=WrenKWLexer
@@ -20,23 +20,22 @@
     IMPORT
 %End
 %Terminals
-    a    b    c    d    e    f    g    h    i    j    k    l    m
-    n    o    p    q    r    s    t    u    v    w    x    y    z
+    a b c d e f g h i j k l m n o p q r s t u v w x y z
 %End
 %Start
     Keyword
 %End
 %Rules
-    Keyword ::= c l a s s /.$setResult($_CLASS);./
-              | v a r /.$setResult($_VAR);./
-              | i f /.$setResult($_IF);./
-              | e l s e /.$setResult($_ELSE);./
-              | w h i l e /.$setResult($_WHILE);./
-              | f o r /.$setResult($_FOR);./
-              | i n /.$setResult($_IN);./
+    Keyword ::= i m p o r t /.$setResult($_IMPORT);./
               | r e t u r n /.$setResult($_RETURN);./
-              | t r u e /.$setResult($_TRUE);./
+              | w h i l e /.$setResult($_WHILE);./
+              | c l a s s /.$setResult($_CLASS);./
               | f a l s e /.$setResult($_FALSE);./
+              | t r u e /.$setResult($_TRUE);./
               | n u l l /.$setResult($_NULLLITERAL);./
-              | i m p o r t /.$setResult($_IMPORT);./
+              | e l s e /.$setResult($_ELSE);./
+              | v a r /.$setResult($_VAR);./
+              | f o r /.$setResult($_FOR);./
+              | i f /.$setResult($_IF);./
+              | i n /.$setResult($_IN);./
 %End

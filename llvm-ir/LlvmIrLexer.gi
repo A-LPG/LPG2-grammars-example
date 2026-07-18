@@ -16,7 +16,9 @@
 %End
 
 %Export
-    IDENTIFIER
+            GT
+LT
+IDENTIFIER
     NUMBER
     STRING
     LPAREN
@@ -49,6 +51,381 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    ACQUIRE
+    ADD
+    ADDRSPACE
+    ADDRSPACECAST
+    AFN
+    ALIAS
+    ALIGN
+    ALIGNSTACK
+    ALLOCA
+    ALLOCALIGN
+    ALLOCATED_
+    ALLOCKIND
+    ALLOCPTR
+    ALLOCSIZE
+    ALWAYSINLINE
+    AND
+    ANNOTATIONS_
+    ANY
+    ANYREGCC
+    APINOTES_
+    APPENDING
+    ARCP
+    ARGMEMONLY
+    ARG_
+    ASHR
+    ASM
+    ASSOCIATED_
+    ASYNC
+    ATOMIC
+    ATOMICRMW
+    ATTRIBUTES
+    AttrGroupId
+    BASETYPE_
+    BFLOAT
+    BITCAST
+    BLOCKADDRESS
+    BR
+    BUILTIN
+    BYREF
+    BYVAL
+    CALL
+    CALLBR
+    CALLER
+    CATCH
+    CATCHPAD
+    CATCHRET
+    CATCHSWITCH
+    CC
+    CCC
+    CHECKSUM_
+    CLEANUP
+    CLEANUPPAD
+    CLEANUPRET
+    CMPXCHG
+    COLD
+    COLDCC
+    COLUMN_
+    COMDAT
+    COMMON
+    CONFIGMACROS_
+    CONTAININGTYPE_
+    CONTRACT
+    CONVERGENT
+    COUNT_
+    ChecksumKind
+    ComdatName
+    DATALAYOUT
+    DATALOCATION_
+    DEBUGDIRECTIVESONLY
+    DEBUGINFOFORPROFILING_
+    DECLARATION_
+    DECLARE
+    DEFAULT
+    DEFAULTED_
+    DEFINE
+    DEREFERENCEABLE
+    DIRECTORY_
+    DISCRIMINATOR_
+    DISTINCT
+    DLLEXPORT
+    DLLIMPORT
+    DOUBLE
+    DWARFADDRESSSPACE_
+    DWOID_
+    DiFlag
+    DispFlag
+    DwarfAttEncoding
+    DwarfCc
+    DwarfLang
+    DwarfMacinfo
+    DwarfOp
+    DwarfTag
+    DwarfVirtuality
+    ELEMENTS_
+    ELEMENTTYPE
+    EMISSIONKIND_
+    ENCODING_
+    ENTITY_
+    ENUMS_
+    EXACT
+    EXACTMATCH
+    EXPORTSYMBOLS_
+    EXPR_
+    EXTERNAL
+    EXTRACTELEMENT
+    EXTRACTVALUE
+    EXTRADATA_
+    FADD
+    FALSE
+    FAST
+    FASTCC
+    FCMP
+    FDIV
+    FENCE
+    FILENAME_
+    FILE_
+    FILTER
+    FLAGS_
+    FLOAT
+    FMAX
+    FMIN
+    FMUL
+    FNEG
+    FPEXT
+    FPTOSI
+    FPTOUI
+    FPTRUNC
+    FREEZE
+    FREM
+    FROM
+    FSUB
+    FULLDEBUG
+    FloatLit
+    GC
+    GETELEMENTPTR
+    GETTER_
+    GHCCC
+    GLOBAL
+    GLOBALS_
+    GNU
+    GlobalIdent
+    HALF
+    HEADER_
+    HHVMCC
+    HIDDEN
+    HOT
+    ICMP
+    IDENTIFIER_
+    IFUNC
+    IMMARG
+    IMPORTS_
+    INACCESSIBLEMEMONLY
+    INALLOCA
+    INBOUNDS
+    INCLUDEPATH_
+    INDIRECTBR
+    INITIALEXEC
+    INLINEDAT_
+    INLINEHINT
+    INRANGE
+    INREG
+    INSERTELEMENT
+    INSERTVALUE
+    INTELDIALECT
+    INTERNAL
+    INTTOPTR
+    INVOKE
+    ISDECL_
+    ISDEFINITION_
+    ISIMPLICITCODE_
+    ISLOCAL_
+    ISOPTIMIZED_
+    ISUNSIGNED_
+    IntLit
+    IntType
+    JUMPTABLE
+    LABEL
+    LANDINGPAD
+    LANGUAGE_
+    LARGEST
+    LINETABLESONLY
+    LINE_
+    LINKAGENAME_
+    LINKONCE
+    LOAD
+    LOCALDYNAMIC
+    LOCALEXEC
+    LOWERBOUND_
+    LSHR
+    LabelIdent
+    LocalIdent
+    MACROS_
+    MAX
+    METADATA
+    MIN
+    MINSIZE
+    MODULE
+    MONOTONIC
+    MUL
+    MUSTPROGRESS
+    MUSTTAIL
+    MetadataId
+    MetadataName
+    NAKED
+    NAMETABLEKIND_
+    NAME_
+    NAND
+    NE
+    NEST
+    NINF
+    NNAN
+    NOALIAS
+    NOBUILTIN
+    NOCALLBACK
+    NOCAPTURE
+    NODEBUG
+    NODEDUPLICATE
+    NODES_
+    NODUPLICATE
+    NOFREE
+    NOIMPLICITFLOAT
+    NOINLINE
+    NOMERGE
+    NONE
+    NONLAZYBIND
+    NONNULL
+    NOPROFILE
+    NORECURSE
+    NOREDZONE
+    NORETURN
+    NOSYNC
+    NOTAIL
+    NOUNDEF
+    NOUNWIND
+    NSW
+    NSZ
+    NUW
+    OFFSET_
+    OGE
+    OGT
+    OLE
+    OLT
+    ONE
+    OPAQUE
+    OPERANDS_
+    OPTFORFUZZING
+    OPTNONE
+    OPTSIZE
+    OR
+    ORD
+    PARTITION
+    PERSONALITY
+    PHI
+    PIPE
+    POISON
+    PREALLOCATED
+    PREFIX
+    PRESPLITCOROUTINE
+    PRIVATE
+    PRODUCER_
+    PROLOGUE
+    PROTECTED
+    PTR
+    PTRTOINT
+    RANGESBASEADDRESS_
+    RANK_
+    READNONE
+    READONLY
+    REASSOC
+    RELEASE
+    RESUME
+    RET
+    RETAINEDNODES_
+    RETAINEDTYPES_
+    RETURNED
+    RUNTIMELANG_
+    RUNTIMEVERSION_
+    SAFESTACK
+    SAMESIZE
+    SCOPELINE_
+    SCOPE_
+    SDIV
+    SDK_
+    SECTION
+    SELECT
+    SETTER_
+    SEXT
+    SGE
+    SGT
+    SHADOWCALLSTACK
+    SHL
+    SHUFFLEVECTOR
+    SIDEEFFECT
+    SIGNEXT
+    SITOFP
+    SIZE_
+    SLE
+    SLT
+    SOURCE_
+    SPECULATABLE
+    SPFLAGS_
+    SPLITDEBUGFILENAME_
+    SPLITDEBUGINLINING_
+    SREM
+    SRET
+    SSP
+    SSPSTRONG
+    STORE
+    STRICTFP
+    STRIDE_
+    STRINGLENGTHEXPRESSION_
+    STRINGLENGTH_
+    STRINGLOCATIONEXPRESSION_
+    SUB
+    SWIFTASYNC
+    SWIFTCC
+    SWIFTERROR
+    SWIFTSELF
+    SWIFTTAILCC
+    SWITCH
+    SYNC
+    SYNCSCOPE
+    SYSROOT_
+    StringLit
+    TAG_
+    TAIL
+    TAILCC
+    TARGET
+    TARGETFUNCNAME_
+    TEMPLATEPARAMS_
+    THISADJUSTMENT_
+    THROWNTYPES_
+    TO
+    TOKEN
+    TRIPLE
+    TRUE
+    TRUNC
+    TYPES_
+    TYPE_
+    UDIV
+    UGE
+    UGT
+    UITOFP
+    ULE
+    ULT
+    UMAX
+    UMIN
+    UNDEF
+    UNE
+    UNIT_
+    UNO
+    UNORDERED
+    UNREACHABLE
+    UNWIND
+    UPPERBOUND_
+    UREM
+    USELISTORDER
+    UWTABLE
+    VALUE_
+    VAR_
+    VIRTUALINDEX_
+    VIRTUALITY_
+    VOID
+    VOLATILE
+    VSCALE
+    VTABLEHOLDER_
+    WEAK
+    WILLRETURN
+    WITHIN
+    WRITEONLY
+    XCHG
+    XOR
+    ZEROEXT
+    ZEROINITIALIZER
+    ZEXT
 %End
 
 %Terminals
@@ -109,17 +486,21 @@
 %End
 
 %Rules
-    Token ::= STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+    Token ::= GlobalIdent /. makeToken($_GlobalIdent); ./
+            | LocalIdent /. makeToken($_LocalIdent); ./
+            | IntType /. makeToken($_IntType); ./
+            | IntLit /. makeToken($_IntLit); ./
+            | STRING /. makeToken($_StringLit); ./
+            | NUMBER /. makeToken($_IntLit); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./
@@ -133,10 +514,8 @@
             | '^' /. makeToken($_CARET); ./
             | '!' /. makeToken($_BANG); ./
             | '?' /. makeToken($_QUEST); ./
-            | '@' /. makeToken($_AT); ./
-            | '$' /. makeToken($_DOLLAR); ./
-            | '%' /. makeToken($_PERCENT); ./
-            | '~' /. makeToken($_TILDE); ./
+                        | '$' /. makeToken($_DOLLAR); ./
+                        | '~' /. makeToken($_TILDE); ./
             | '`' /. makeToken($_BACKTICK); ./
             | ';' /. makeToken($_SEMI); ./
             | '#' /. makeToken($_HASH); ./
@@ -146,6 +525,20 @@
             | MLComment     /. skipToken(); ./
 
             | white /. skipToken(); ./
+
+
+    GlobalIdent ::= '@' IdStart
+                  | GlobalIdent IdStart
+                  | GlobalIdent Digit
+                  | '@' Digits
+    LocalIdent ::= '%' IdStart
+                 | LocalIdent IdStart
+                 | LocalIdent Digit
+                 | '%' Digits
+
+    IntType ::= 'i' Digits
+
+    IntLit ::= Digits
 
     IDENTIFIER ::= IdStart
                  | IDENTIFIER IdStart

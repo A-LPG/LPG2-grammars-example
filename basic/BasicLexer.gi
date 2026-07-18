@@ -16,7 +16,9 @@
 %End
 
 %Export
-    IDENTIFIER
+            GT
+LT
+IDENTIFIER
     NUMBER
     STRING
     LPAREN
@@ -49,6 +51,94 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    ABS
+    AND
+    ASC
+    ATN
+    CALL
+    CLEAR
+    CLS
+    COLOR
+    COS
+    DATA
+    DEF
+    DIM
+    DRAW
+    END
+    EXP
+    FLASH
+    FN
+    FOR
+    FRE
+    GET
+    GOSUB
+    GOTO
+    GR
+    HCOLOR
+    HGR
+    HIMEM
+    HLIN
+    HOME
+    HPLOT
+    HTAB
+    IF
+    INCLUDE
+    INPUT
+    INTF
+    INVERSE
+    LEN
+    LET
+    LIST
+    LOAD
+    LOG
+    LOMEM
+    NEXT
+    NORMAL
+    NOT
+    NOTRACE
+    ON
+    ONERR
+    OR
+    PDL
+    PEEK
+    PLOT
+    POKE
+    POP
+    POS
+    PRINT
+    READ
+    RECALL
+    REM
+    RESTORE
+    RETURN
+    RND
+    ROT
+    RUN
+    SAVE
+    SCALE
+    SCRN
+    SGN
+    SHLOAD
+    SIN
+    SPC
+    SPEED
+    SQR
+    STEP
+    STOP
+    STORE
+    TAB
+    TAN
+    TEXT
+    THEN
+    TO
+    TRACE
+    USR
+    VAL
+    VLIN
+    VPLOT
+    VTAB
+    WAIT
+    XDRAW
 %End
 
 %Terminals
@@ -111,15 +201,15 @@
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./

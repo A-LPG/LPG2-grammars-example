@@ -16,7 +16,9 @@
 %End
 
 %Export
-    IDENTIFIER
+            GT
+LT
+IDENTIFIER
     NUMBER
     STRING
     LPAREN
@@ -58,6 +60,34 @@
     FALSE
     NIL
     COLONEQ
+    ANDAND
+    BITCLEAR
+    BREAK
+    CASE
+    CHAN
+    CONST
+    CONTINUE
+    DEFAULT
+    DEFER
+    FALLTHROUGH
+    FOR
+    GO
+    GOTO
+    IMPORT
+    INTERFACE
+    LSHIFT
+    MAP
+    MINUSMINUS
+    OROR
+    PIPE
+    PLUSPLUS
+    RANGE
+    RECEIVE
+    RSHIFT
+    SELECT
+    STRUCT
+    SWITCH
+    TYPE
 %End
 
 %Terminals
@@ -127,8 +157,8 @@
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' '=' /. makeToken($_COLONEQ); ./

@@ -3,9 +3,7 @@
   "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "blockers": [
-    "kw_rule_name_collision_fixed_goCMD_etc"
-  ],
+  "blockers": [],
   "quality_notes": [
     "real_g4_port",
     "antlr2lpg_structural_port",

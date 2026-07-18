@@ -19,7 +19,12 @@
 %End
 
 %Export
-    IDENTIFIER
+        CTL_NOT
+    CTL_LEFT_RIGHT_DOUBLE_ARROW
+    CTL_RIGHTWARDS_DOUBLE_ARROW
+    CTL_OR
+    CTL_AND
+IDENTIFIER
     ATOMIC
     CTL_UNTIL
     CTL_GLOBALLY
@@ -102,6 +107,11 @@
             | ')' /. makeToken($_RPAREN); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
+            | '&' '&' /. makeToken($_CTL_AND); ./
+            | '|' '|' /. makeToken($_CTL_OR); ./
+            | '-' '>' /. makeToken($_CTL_RIGHTWARDS_DOUBLE_ARROW); ./
+            | '<' '-' '>' /. makeToken($_CTL_LEFT_RIGHT_DOUBLE_ARROW); ./
+            | '!' /. makeToken($_CTL_NOT); ./
             | AfterASCII /. makeToken($_CTL_OP); ./
             | ATOMIC /. makeToken($_ATOMIC); ./
             | white /. skipToken(); ./

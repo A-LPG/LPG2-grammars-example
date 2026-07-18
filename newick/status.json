@@ -3,9 +3,7 @@
   "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "blockers": [
-    "tiny_upstream_g4_approx_90_lines"
-  ],
+  "blockers": [],
   "quality_notes": [
     "real_g4_port",
     "left_factored_root_length",

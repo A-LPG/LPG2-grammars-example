@@ -16,7 +16,9 @@
 %End
 
 %Export
-    IDENTIFIER
+            GT
+GT
+IDENTIFIER
     NUMBER
     STRING
     LPAREN
@@ -50,6 +52,66 @@
     QUOTE
     CHARLIT
     BACKSLASH
+    ABSTRACT
+    AND
+    BAG
+    BOOLEAN
+    COLLECTION
+    CONTEXT
+    CREATE
+    DEF
+    DISTINCT
+    DIV
+    DO
+    ELSE
+    ENDIF
+    ENDPOINT
+    ENTRYPOINT
+    EXTENDS
+    FALSE
+    FLOAT
+    FOR
+    FOREACH
+    FROM
+    HELPER
+    IF
+    IMPLIES
+    IN
+    INTEGER
+    ITERATE
+    LAZY
+    LET
+    LIBRARY
+    MAP
+    MAPSTO
+    MOD
+    MODULE
+    NODEFAULT
+    NOT
+    OCLANY
+    OCLTYPE
+    OCLUNDEFINED
+    OR
+    ORDEREDSET
+    QUERY
+    REAL
+    RECEIVE
+    REFINING
+    RULE
+    SEQUENCE
+    SET
+    SUPER
+    THEN
+    TO
+    TRUE
+    TUPLE
+    TUPLETYPE
+    UNIQUE
+    USES
+    USING
+    XOR
+    LTGT
+    PIPE
 %End
 
 %Terminals
@@ -112,7 +174,7 @@
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./

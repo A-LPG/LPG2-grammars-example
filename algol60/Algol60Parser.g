@@ -20,19 +20,19 @@
 %Rules
     empty_ ::= $empty
 
-    integer ::= Unsigned_integer
-           | Plus_ Unsigned_integer
-           | Minus_ Unsigned_integer
+    integer ::= NUMBER
+           | Plus_ NUMBER
+           | Minus_ NUMBER
 
-    number ::= Unsigned_number
-           | Plus_ Unsigned_number
-           | Minus_ Unsigned_number
+    number ::= NUMBER
+           | Plus_ NUMBER
+           | Minus_ NUMBER
 
     expression ::= arithmetic_expression
            | boolean_expression
            | designational_expression
 
-    variable_identifier ::= Identifier
+    variable_identifier ::= IDENTIFIER
 
     simple_variable ::= variable_identifier
 
@@ -41,17 +41,17 @@
     subscript_list ::= subscript_expression
            | subscript_list Comma_ subscript_expression
 
-    array_identifier ::= Identifier
+    array_identifier ::= IDENTIFIER
 
     subscripted_variable ::= array_identifier Lb_ subscript_list Rb_
 
     variable ::= simple_variable
            | subscripted_variable
 
-    procedure_identifier ::= Identifier
+    procedure_identifier ::= IDENTIFIER
 
     parameter_delimiter ::= Comma_
-           | Rp_ Identifier Colon_ LP_
+           | Rp_ IDENTIFIER Colon_ LP_
 
     actual_parameter ::= String
            | expression
@@ -70,7 +70,7 @@
     multiplying_operator ::= Mult_
            | Divide_
 
-    primary ::= Unsigned_number
+    primary ::= NUMBER
            | variable
            | function_designator
            | LP_ arithmetic_expression Rp_
@@ -116,10 +116,10 @@
     boolean_expression ::= simple_boolean
            | if_clause simple_boolean Else_ boolean_expression
 
-    label ::= Identifier
-           | Unsigned_integer
+    label ::= IDENTIFIER
+           | NUMBER
 
-    switch_identifier ::= Identifier
+    switch_identifier ::= IDENTIFIER
 
     switch_designator ::= switch_identifier Lb_ subscript_expression Rb_
 
@@ -248,7 +248,7 @@
 
     switch_declaration ::= Switch_ switch_identifier Assign_ switch_list
 
-    formal_parameter ::= Identifier
+    formal_parameter ::= IDENTIFIER
 
     formal_parameter_list ::= formal_parameter
            | formal_parameter_list parameter_delimiter formal_parameter
@@ -256,8 +256,8 @@
     formal_parameter_part ::= empty_
            | LP_ formal_parameter_list Rp_
 
-    identifier_list ::= Identifier
-           | identifier_list Comma_ Identifier
+    identifier_list ::= IDENTIFIER
+           | identifier_list Comma_ IDENTIFIER
 
     value_part ::= Value_ identifier_list Semi_
            | empty_

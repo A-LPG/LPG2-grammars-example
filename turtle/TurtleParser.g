@@ -1,97 +1,31 @@
--- AUTO-GENERATED from antlr/grammars-v4 turtle by tools/antlr2lpg.py
--- Structural port + LALR fixups (expression layering). Not token-stream soup.
-
-%Options la=3
+-- Turtle subset: @prefix / @base / simple triples
+%Options la=2
 %Options fp=TurtleParser
 %options package=lpg.grammars.turtle
 %options template=dtParserTemplateF.gi
 %options import_terminals=TurtleLexer.gi
-%options automatic_ast=nested
-%options conflicts
-
+%options automatic_ast=none
 %Eof
     EOF_TOKEN
 %End
-
 %Start
     turtleDoc
 %End
-
 %Rules
-    turtleDoc ::= list_1
+    turtleDoc ::= statement_list
+    statement_list ::= $empty | statement_list statement
 
-    statement ::= directive
-           | triples DOT
+    statement ::= directive | triples DOT
 
-    directive ::= prefixID
-           | base
-           | sparqlPrefix
-           | sparqlBase
-
-    prefixID ::= PREFIX IDENTIFIER COLON IRIREF DOT
-           | PREFIX IDENTIFIER IRIREF DOT
-
-    base ::= BASE IRIREF DOT
-
-    sparqlBase ::= BASE IRIREF
-
-    sparqlPrefix ::= PREFIX IDENTIFIER IRIREF
+    directive ::= AT PREFIX PrefixedName IRIREF DOT
+                | AT BASE IRIREF DOT
+                | PREFIX PrefixedName IRIREF
+                | BASE IRIREF
 
     triples ::= subject predicateObjectList
-           | blankNodePropertyList opt_2
-
-    predicateObjectList ::= verb objectList list_6
-
-    objectList ::= object_ list_8
-
-    verb ::= predicate
-           | A
-
-    subject ::= iri
-           | BlankNode
-           | collection
-
-    predicate ::= iri
-
-    object_ ::= iri
-           | BlankNode
-           | collection
-           | blankNodePropertyList
-           | literal
-
-    literal ::= rdfLiteral
-           | NumericLiteral
-           | IDENTIFIER
-
-    blankNodePropertyList ::= LBRACKET predicateObjectList RBRACKET
-
-    collection ::= LPAREN list_9 RPAREN
-
-    rdfLiteral ::= String opt_11
-
-    iri ::= IRIREF
-           | PrefixedName
-
-    list_1 ::= $empty | list_1 statement
-
-    opt_2 ::= predicateObjectList | $empty
-
-    seq_3 ::= verb objectList
-
-    opt_4 ::= seq_3 | $empty
-
-    seq_5 ::= SEMI opt_4
-
-    list_6 ::= $empty | list_6 seq_5
-
-    seq_7 ::= COMMA object_
-
-    list_8 ::= $empty | list_8 seq_7
-
-    list_9 ::= $empty | list_9 object_
-
-    grp_10 ::= LANGTAG | OP_40132 iri
-
-    opt_11 ::= grp_10 | $empty
-
+    subject ::= IRIREF | PrefixedName | IDENTIFIER
+    predicateObjectList ::= verb object_list
+    verb ::= IRIREF | PrefixedName | IDENTIFIER | A
+    object_list ::= object_ | object_list COMMA object_
+    object_ ::= IRIREF | PrefixedName | IDENTIFIER | STRING | NUMBER | TRUE | FALSE
 %End
