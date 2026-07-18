@@ -1,20 +1,18 @@
 {
   "id": "sql/tsql",
   "quality": "language_subset",
-  "parse_ok": false,
-  "status": "failed",
-  "blockers": [
-    "parse_examples_failed"
-  ],
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port",
     "real_g4_port",
-    "honest_subset: curated SELECT/INSERT examples only; not full dialect coverage"
+    "antlr2lpg_structural_port",
+    "honest_subset: curated SELECT/INSERT (VALUES) examples; fixed antlr2lpg list EBNF; FROM/column-list insert still limited; not full TSQL"
   ],
-  "parser_bytes": 228197,
-  "rule_approx": 3463,
+  "parser_bytes": 227930,
+  "rule_approx": 3464,
   "start": "tsql_file",
   "parser_lines": 9018,
-  "example_count": 6,
+  "example_count": 5,
   "tier": "A"
 }
