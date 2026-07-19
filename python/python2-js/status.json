@@ -2,14 +2,14 @@
   "id": "python/python2-js",
   "parse_ok": true,
   "status": "ported",
-  "tier": "A",
+  "tier": "C",
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "antlr2lpg_structural_port",
-    "INDENT_DEDENT_optional_no_indent_tracking"
+    "curated_subset",
+    "real_g4_port"
   ],
   "blockers": [],
   "start": "file_input",
-  "example_count": 3
+  "example_count": 3,
+  "parser_bytes": 12310
 }

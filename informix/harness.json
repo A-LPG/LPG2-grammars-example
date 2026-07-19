@@ -3,6 +3,7 @@
   "lexer": "InformixLexer",
   "parser": "InformixParser",
   "example_globs": [
-    "examples/**/*"
-  ]
+    "examples-curated/**/*"
+  ],
+  "parser_template": "btParserTemplateF.gi"
 }

@@ -5,14 +5,12 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "real_g4_port",
-    "curated_object_class_def_if_expr_subset",
-    "lexer_Id_StringLiteral_IntegerLiteral_fixed"
+    "curated_subset"
   ],
   "parser_bytes": 5353,
   "rule_approx": 339,
   "start": "compilationUnit",
   "example_count": 4,
-  "tier": "A",
+  "tier": "C",
   "parser_lines": 232
 }

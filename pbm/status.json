@@ -7,9 +7,7 @@
   "tier": "A",
   "quality": "language_port",
   "quality_notes": [
-    "real_g4_port",
-    "mirrors_pbm.g4_file_magic_width_height_table",
-    "lexer_ZERO_ONE_for_bit_table"
+    "real_g4_port"
   ],
   "parser_bytes": 641,
   "start": "file_"

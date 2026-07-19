@@ -4,7 +4,7 @@
 %options fp=XpathXpath20KWLexer
 
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
 
 %Export

@@ -49,6 +49,97 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    ACCESS
+    ASSIGN
+    BACKSPACE
+    BLANK
+    BLOCK
+    CALL
+    CHARACTER
+    CLOSE
+    COMMON
+    COMPLEX
+    CONTINUE
+    DATA
+    DIMENSION
+    DIV
+    DO
+    DOUBLE
+    ELSE
+    ELSEIF
+    END
+    ENDDO
+    ENDFILE
+    ENDIF
+    ENTRY
+    EOL
+    EQUIVALENCE
+    EQV
+    ERR
+    EXIST
+    EXTERNAL
+    FALSE
+    FCON
+    FILE
+    FMT
+    FORM
+    FORMAT
+    FORMATTED
+    FUNCTION
+    GE
+    GO
+    GOTO
+    HOLLERITH
+    ICON
+    IF
+    IMPLICIT
+    INQUIRE
+    INTEGER
+    INTRINSIC
+    IOSTART
+    LABEL
+    LAND
+    LE
+    LET
+    LNOT
+    LOGICAL
+    LOR
+    NAME
+    NAMED
+    NE
+    NEQV
+    NEXTREC
+    NONE
+    OPEN
+    OPENED
+    PARAMETER
+    PAUSE
+    PCON
+    POINTER
+    POSITION
+    POWER
+    PRECISION
+    PRINT
+    PROGRAM
+    RCON
+    READ
+    REAL
+    RECL
+    RETURN
+    REWIND
+    SAVE
+    SCON
+    SEQUENTIAL
+    STATUS
+    STOP
+    SUBROUTINE
+    THEN
+    TO
+    TRUE
+    UNFORMATTED
+    UNIT
+    WRITE
+    XCON
 %End
 
 %Terminals
@@ -110,8 +201,8 @@
 
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | NUMBER /. makeToken($_ICON); ./
+            | IDENTIFIER /. checkForKeyWord($_NAME); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
@@ -145,7 +236,11 @@
             | SLComment     /. skipToken(); ./
             | MLComment     /. skipToken(); ./
 
-            | white /. skipToken(); ./
+            | LF /. makeToken($_EOL); ./
+            | CR /. makeToken($_EOL); ./
+            | HT /. skipToken(); ./
+            | FF /. skipToken(); ./
+            | Space /. skipToken(); ./
 
     IDENTIFIER ::= IdStart
                  | IDENTIFIER IdStart
@@ -199,7 +294,4 @@
     SpecialNotSlash -> '+' | '-' | '(' | ')' | '!' | '@' | '`' | '~' |
                        '%' | '&' | '^' | ':' | ';' | "'" | '"' | '|' | '{' | '}' |
                        '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | BackSlash
-
-    white -> WSChar | white WSChar
-    WSChar -> Space | LF | CR | HT | FF
 %End

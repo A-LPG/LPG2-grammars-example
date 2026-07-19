@@ -5,11 +5,10 @@
   "tier": "A",
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "mirrors_MuParser.g4_prog_expr_atom_layered_precedence",
-    "lexer_FUNCTION_FUNCTIONMULTI_assign_ops_constants"
+    "heuristic_default_subset"
   ],
   "blockers": [],
   "start": "prog",
-  "example_count": 3
+  "example_count": 3,
+  "parser_bytes": 1384
 }

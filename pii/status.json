@@ -5,8 +5,8 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "real_g4_port",
-    "curated_multiline_issn_isbn"
+    "curated_subset",
+    "real_g4_port"
   ],
   "notes": "Publisher Item Identifier ISSN/ISBN forms from pii.g4.",
   "example_count": 3,

@@ -3,6 +3,6 @@
   "lexer": "TrapcLexer",
   "parser": "TrapcParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

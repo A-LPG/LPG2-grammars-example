@@ -3,13 +3,12 @@
   "parse_ok": true,
   "status": "ported",
   "tier": "A",
-  "quality": "language_port",
+  "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "mirrors_fasta.g4_sequence_section_sequencelines_descriptionline_commentline",
-    "lexer_DESCRIPTIONLINE_SEQUENCELINE_COMMENTLINE"
+    "heuristic_default_subset"
   ],
   "blockers": [],
   "start": "sequence",
-  "example_count": 3
+  "example_count": 3,
+  "parser_bytes": 756
 }

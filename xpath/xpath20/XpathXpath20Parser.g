@@ -6,7 +6,7 @@
 %options package=lpg.grammars.xpath.xpath20
 %options template=dtParserTemplateF.gi
 %options import_terminals=XpathXpath20Lexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof

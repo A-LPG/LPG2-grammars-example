@@ -4,7 +4,7 @@
 %options fp=SqlPhoenixKWLexer
 
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
 
 %Export

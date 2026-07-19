@@ -5,15 +5,14 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port",
-    "real_g4_port",
-    "language_subset"
+    "curated_subset",
+    "real_g4_port"
   ],
   "parser_bytes": 15877,
   "rule_approx": 238,
   "start": "program",
   "example_count": 4,
-  "tier": "A",
+  "tier": "D",
   "parser_lines": 672,
   "notes": "JS curated subset; JSX tags not harness-green yet"
 }

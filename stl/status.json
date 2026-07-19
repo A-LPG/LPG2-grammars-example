@@ -5,11 +5,9 @@
   "status": "ported",
   "blockers": [],
   "tier": "A",
-  "quality": "language_port",
+  "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "mirrors_STL.g4_header_triangle_vertex_triple_footer",
-    "lexer_signed_FLOAT"
+    "heuristic_default_subset"
   ],
   "parser_bytes": 763,
   "start": "file_"

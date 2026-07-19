@@ -1,12 +1,11 @@
 {
   "id": "pmmn",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "real_g4_port",
-    "curated_multiline_inc_if_while"
+    "real_g4_port"
   ],
   "notes": "PMMN inc/dec/if/while counter language from PMMN.g4.",
   "example_count": 3,

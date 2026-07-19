@@ -22,7 +22,7 @@
 
     domain ::= LPAREN DEFINE domainName opt_2 opt_3 opt_4 opt_5 opt_6 opt_7 list_8 RPAREN
 
-    domainName ::= LPAREN DOMAIN NAME RPAREN
+    domainName ::= LPAREN DOMAIN IDENTIFIER RPAREN
 
     requireDef ::= LPAREN _REQUIREMENTS list_9 RPAREN
 
@@ -35,7 +35,7 @@
     type_ ::= seq_17
            | primType
 
-    primType ::= NAME
+    primType ::= IDENTIFIER
 
     functionsDef ::= LPAREN _FUNCTIONS functionList RPAREN
 
@@ -43,7 +43,7 @@
 
     atomicFunctionSkeleton ::= LPAREN functionSymbol typedVariableList RPAREN
 
-    functionSymbol ::= NAME
+    functionSymbol ::= IDENTIFIER
 
     functionType ::= NUMBER
 
@@ -53,7 +53,7 @@
 
     atomicFormulaSkeleton ::= LPAREN predicate typedVariableList RPAREN
 
-    predicate ::= NAME
+    predicate ::= IDENTIFIER
 
     typedVariableList ::= grp_24
 
@@ -67,7 +67,7 @@
 
     actionDef ::= LPAREN _ACTION actionSymbol _PARAMETERS LPAREN typedVariableList RPAREN actionDefBody RPAREN
 
-    actionSymbol ::= NAME
+    actionSymbol ::= IDENTIFIER
 
     actionDefBody ::= opt_33 opt_37
 
@@ -84,7 +84,7 @@
 
     atomicTermFormula ::= LPAREN predicate list_40 RPAREN
 
-    term ::= NAME
+    term ::= IDENTIFIER
            | VARIABLE
 
     durativeActionDef ::= LPAREN _DURATIVE_ACTION actionSymbol _PARAMETERS LPAREN typedVariableList RPAREN daDefBody RPAREN
@@ -183,9 +183,9 @@
 
     problem ::= LPAREN DEFINE problemDecl problemDomain opt_55 opt_56 init_ goal opt_57 opt_58 RPAREN
 
-    problemDecl ::= LPAREN PROBLEM NAME RPAREN
+    problemDecl ::= LPAREN PROBLEM IDENTIFIER RPAREN
 
-    problemDomain ::= LPAREN _DOMAIN NAME RPAREN
+    problemDomain ::= LPAREN _DOMAIN IDENTIFIER RPAREN
 
     objectDecl ::= LPAREN _OBJECTS typedNameList RPAREN
 
@@ -221,7 +221,7 @@
            | LPAREN functionSymbol list_65 RPAREN
            | functionSymbol
            | TOTAL_TIME
-           | LPAREN IS_VIOLATED NAME RPAREN
+           | LPAREN IS_VIOLATED IDENTIFIER RPAREN
 
     conGD ::= LPAREN AND list_66 RPAREN
            | LPAREN FORALL LPAREN typedVariableList RPAREN conGD RPAREN
@@ -254,15 +254,15 @@
 
     list_9 ::= REQUIRE_KEY | list_9 REQUIRE_KEY
 
-    list_11 ::= $empty | list_11 NAME
+    list_11 ::= $empty | list_11 IDENTIFIER
 
     list_12 ::= singleTypeNameList | list_12 singleTypeNameList
 
-    list_13 ::= $empty | list_13 NAME
+    list_13 ::= $empty | list_13 IDENTIFIER
 
     grp_10 ::= list_11 | list_12 list_13
 
-    list_14 ::= NAME | list_14 NAME
+    list_14 ::= IDENTIFIER | list_14 IDENTIFIER
 
     seq_15 ::= list_14 MINUS type_
 
@@ -326,7 +326,7 @@
 
     list_45 ::= $empty | list_45 daGD
 
-    opt_46 ::= NAME | $empty
+    opt_46 ::= IDENTIFIER | $empty
 
     list_47 ::= $empty | list_47 term
 
@@ -354,17 +354,17 @@
 
     list_59 ::= $empty | list_59 initEl
 
-    list_60 ::= $empty | list_60 NAME
+    list_60 ::= $empty | list_60 IDENTIFIER
 
     list_61 ::= $empty | list_61 prefConGD
 
-    opt_62 ::= NAME | $empty
+    opt_62 ::= IDENTIFIER | $empty
 
     grp_63 ::= STAR | SLASH
 
     list_64 ::= metricFExp | list_64 metricFExp
 
-    list_65 ::= $empty | list_65 NAME
+    list_65 ::= $empty | list_65 IDENTIFIER
 
     list_66 ::= $empty | list_66 conGD
 

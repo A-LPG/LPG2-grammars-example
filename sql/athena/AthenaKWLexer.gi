@@ -3,7 +3,7 @@
 %options template=KeywordTemplateF.gi
 %options fp=AthenaKWLexer
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
 %Export
     X

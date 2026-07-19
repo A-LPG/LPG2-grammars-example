@@ -1,13 +1,13 @@
 {
   "id": "asm/nasm",
-  "quality": "language_subset",
-  "parse_ok": false,
-  "status": "regenerated_from_g4",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
   "blockers": [],
-  "quality_notes": [
-    "antlr2lpg_structural_port"
-  ],
-  "parser_bytes": 63791,
+  "quality_notes": [],
+  "parser_bytes": 63818,
   "rule_approx": 222,
-  "start": "program"
+  "start": "program",
+  "tier": "D",
+  "example_count": 4
 }

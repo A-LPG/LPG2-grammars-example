@@ -5,13 +5,12 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "STGParser_structural_port",
-    "ST_group_files_only",
-    "language_subset",
-    "harsh1_true_port_fix"
+    "curated_subset",
+    "real_g4_port"
   ],
   "parser_lines": 103,
   "example_count": 3,
-  "tier": "A",
-  "start": "group"
+  "tier": "D",
+  "start": "group",
+  "parser_bytes": 2949
 }

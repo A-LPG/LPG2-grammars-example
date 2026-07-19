@@ -1,16 +1,22 @@
 -- AUTO-GENERATED from antlr/grammars-v4 hexpat by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=HexpatParser
 %options package=lpg.grammars.hexpat
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=HexpatLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
     EOF_TOKEN
+%End
+
+
+%Define
+    $ast_class /.Object./
+    $ast_type /.Object./
 %End
 
 %Start
@@ -255,10 +261,10 @@
            | IDENTIFIER
            | DOLLAR
 
-    endian ::= LE
+    nt_endian ::= LE
            | BE
 
-    io ::= IN
+    nt_io ::= IN
            | OUT
 
     literal ::= INTEGER_LITERAL
@@ -268,23 +274,23 @@
            | BOOLEAN_LITERAL
            | CHARACTER_LITERAL
 
-    list_2 ::= importStatements | list_2 importStatements
+    list_2 ::= importStatement | list_2 importStatement
 
-    list_3 ::= usingStatements | list_3 usingStatements
+    list_3 ::= usingStatement | list_3 usingStatement
 
-    list_4 ::= namespaces | list_4 namespaces
+    list_4 ::= namespace | list_4 namespace
 
-    list_5 ::= structs | list_5 structs
+    list_5 ::= struct | list_5 struct
 
-    list_6 ::= enums | list_6 enums
+    list_6 ::= enum | list_6 enum
 
-    list_7 ::= bitfields | list_7 bitfields
+    list_7 ::= bitfield | list_7 bitfield
 
-    list_8 ::= unions | list_8 unions
+    list_8 ::= union | list_8 union
 
-    list_9 ::= fns | list_9 fns
+    list_9 ::= fn | list_9 fn
 
-    list_10 ::= structMemberStatements | list_10 structMemberStatements
+    list_10 ::= structMemberStatement | list_10 structMemberStatement
 
     seq_11 ::= expression SEMI
 
@@ -292,9 +298,9 @@
 
     list_12 ::= $empty | list_12 grp_1
 
-    list_13 ::= parts | list_13 parts
+    list_13 ::= IDENTIFIER | list_13 IDENTIFIER
 
-    list_14 ::= parts | list_14 parts
+    list_14 ::= IDENTIFIER | list_14 IDENTIFIER
 
     seq_15 ::= DOT list_14 IDENTIFIER
 
@@ -312,19 +318,19 @@
 
     grp_17 ::= IDENTIFIER opt_20 opt_21 SEMI | seq_22
 
-    list_24 ::= structs | list_24 structs
+    list_24 ::= struct | list_24 struct
 
-    list_25 ::= structMemberStatements | list_25 structMemberStatements
+    list_25 ::= structMemberStatement | list_25 structMemberStatement
 
-    list_26 ::= enums | list_26 enums
+    list_26 ::= enum | list_26 enum
 
-    list_27 ::= bitfields | list_27 bitfields
+    list_27 ::= bitfield | list_27 bitfield
 
-    list_28 ::= unions | list_28 unions
+    list_28 ::= union | list_28 union
 
-    list_29 ::= fns | list_29 fns
+    list_29 ::= fn | list_29 fn
 
-    list_30 ::= namespaces | list_30 namespaces
+    list_30 ::= namespace | list_30 namespace
 
     grp_23 ::= list_24 struct | list_25 structMemberStatement | list_26 enum | list_27 bitfield | list_28 union | list_29 fn | usingStatement | list_30 namespace
 
@@ -442,7 +448,7 @@
 
     opt_87 ::= CONST | $empty
 
-    opt_88 ::= endian | $empty
+    opt_88 ::= nt_endian | $empty
 
     opt_89 ::= typeArguments | $empty
 
@@ -450,7 +456,7 @@
 
     opt_91 ::= seq_90 | $empty
 
-    opt_92 ::= io | $empty
+    opt_92 ::= nt_io | $empty
 
     grp_93 ::= expression | whileSize
 
@@ -544,7 +550,7 @@
 
     grp_138 ::= expression | primitiveType
 
-    opt_139 ::= endian | $empty
+    opt_139 ::= nt_endian | $empty
 
     grp_140 ::= STAR | SLASH | PERCENT
 

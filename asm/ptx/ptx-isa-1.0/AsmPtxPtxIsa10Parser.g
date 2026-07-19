@@ -20,7 +20,7 @@
 %Rules
     prog ::= version_directive list_1 list_2
 
-    version_directive ::= VERSION VER
+    version_directive ::= VERSION NUMBER
 
     target_directive ::= TARGET target_list
 
@@ -292,190 +292,273 @@
            | DOUBLE_PRECISION_FLOATING_POINT_LITERAL
            | REAL_LITERAL
 
-    list_1 ::= target_directive | list_1 target_directive
+    list_1 ::= target_directive
+           | list_1 target_directive
 
-    list_2 ::= $empty | list_2 line
+    list_2 ::= $empty
+           | list_2 line
 
     seq_3 ::= COMMA target_specifier
 
-    list_4 ::= $empty | list_4 seq_3
+    list_4 ::= $empty
+           | list_4 seq_3
 
-    opt_5 ::= VISIBLE | $empty
+    opt_5 ::= VISIBLE
+           | $empty
 
-    list_6 ::= array_spec | list_6 array_spec
+    list_6 ::= array_spec
+           | list_6 array_spec
 
-    opt_7 ::= param_list | $empty
+    opt_7 ::= param_list
+           | $empty
 
-    opt_8 ::= ret_param | $empty
+    opt_8 ::= ret_param
+           | $empty
 
-    opt_9 ::= reg_list | $empty
+    opt_9 ::= reg_list
+           | $empty
 
-    grp_10 ::= CONST | GLOBAL | LOCAL | SHARED
+    grp_10 ::= CONST
+           | GLOBAL
+           | LOCAL
+           | SHARED
 
-    opt_11 ::= vector_type | $empty
+    opt_11 ::= vector_type
+           | $empty
 
-    opt_12 ::= initializer | $empty
+    opt_12 ::= initializer
+           | $empty
 
-    opt_13 ::= vector_type | $empty
+    opt_13 ::= vector_type
+           | $empty
 
-    opt_14 ::= built_in_type | $empty
+    opt_14 ::= built_in_type
+           | $empty
 
-    opt_15 ::= state_space | $empty
+    opt_15 ::= state_space
+           | $empty
 
-    opt_16 ::= alignment | $empty
+    opt_16 ::= alignment
+           | $empty
 
-    grp_17 ::= LBRACE struct_field_list RBRACE | id_
+    grp_17 ::= LBRACE struct_field_list RBRACE
+           | id_
 
-    opt_18 ::= alignment | $empty
+    opt_18 ::= alignment
+           | $empty
 
-    opt_19 ::= alignment | $empty
+    opt_19 ::= alignment
+           | $empty
 
-    opt_20 ::= vector_type | $empty
+    opt_20 ::= vector_type
+           | $empty
 
-    list_21 ::= $empty | list_21 array_spec
+    list_21 ::= $empty
+           | list_21 array_spec
 
-    opt_22 ::= initializer | $empty
+    opt_22 ::= initializer
+           | $empty
 
     seq_23 ::= COMMA HEXADECIMAL_LITERAL
 
-    list_24 ::= seq_23 | list_24 seq_23
+    list_24 ::= seq_23
+           | list_24 seq_23
 
-    grp_25 ::= integer_constant | IDENTIFIER
+    grp_25 ::= integer_constant
+           | IDENTIFIER
 
-    opt_26 ::= grp_25 | $empty
+    opt_26 ::= grp_25
+           | $empty
 
     seq_27 ::= COMMA id_
 
-    list_28 ::= $empty | list_28 seq_27
+    list_28 ::= $empty
+           | list_28 seq_27
 
-    grp_29 ::= PLUS | MINUS
+    grp_29 ::= PLUS
+           | MINUS
 
-    opt_30 ::= grp_29 | $empty
+    opt_30 ::= grp_29
+           | $empty
 
     seq_31 ::= COMMA initial_value
 
-    list_32 ::= $empty | list_32 seq_31
+    list_32 ::= $empty
+           | list_32 seq_31
 
-    opt_33 ::= LABEL | $empty
+    opt_33 ::= LABEL
+           | $empty
 
-    opt_34 ::= guard | $empty
+    opt_34 ::= guard
+           | $empty
 
     seq_35 ::= COMMA param_decl
 
-    list_36 ::= $empty | list_36 seq_35
+    list_36 ::= $empty
+           | list_36 seq_35
 
-    opt_37 ::= alignment | $empty
+    opt_37 ::= alignment
+           | $empty
 
-    list_38 ::= $empty | list_38 array_spec
+    list_38 ::= $empty
+           | list_38 array_spec
 
     seq_39 ::= COMMA reg_decl
 
-    list_40 ::= $empty | list_40 seq_39
+    list_40 ::= $empty
+           | list_40 seq_39
 
-    list_41 ::= $empty | list_41 line
+    list_41 ::= $empty
+           | list_41 line
 
-    opt_42 ::= BANG | $empty
+    opt_42 ::= BANG
+           | $empty
 
-    opt_43 ::= rounding_mode | $empty
+    opt_43 ::= rounding_mode
+           | $empty
 
-    opt_44 ::= SAT | $empty
+    opt_44 ::= SAT
+           | $empty
 
     seq_45 ::= COMMA operand
 
-    opt_46 ::= seq_45 | $empty
+    opt_46 ::= seq_45
+           | $empty
 
-    opt_47 ::= SYNC | $empty
+    opt_47 ::= SYNC
+           | $empty
 
-    opt_48 ::= UNI | $empty
+    opt_48 ::= UNI
+           | $empty
 
-    opt_49 ::= UNI | $empty
+    opt_49 ::= UNI
+           | $empty
 
     seq_50 ::= LPAREN operand RPAREN COMMA
 
-    opt_51 ::= seq_50 | $empty
+    opt_51 ::= seq_50
+           | $empty
 
     seq_52 ::= COMMA operand
 
-    list_53 ::= $empty | list_53 seq_52
+    list_53 ::= $empty
+           | list_53 seq_52
 
     seq_54 ::= COMMA LPAREN operand list_53 RPAREN
 
-    opt_55 ::= seq_54 | $empty
+    opt_55 ::= seq_54
+           | $empty
 
-    opt_56 ::= rounding_mode | $empty
+    opt_56 ::= rounding_mode
+           | $empty
 
-    opt_57 ::= SAT | $empty
+    opt_57 ::= SAT
+           | $empty
 
-    opt_58 ::= WIDE | $empty
+    opt_58 ::= WIDE
+           | $empty
 
-    opt_59 ::= rounding_mode | $empty
+    opt_59 ::= rounding_mode
+           | $empty
 
-    opt_60 ::= SAT | $empty
+    opt_60 ::= SAT
+           | $empty
 
-    grp_61 ::= HI | LO | WIDE
+    grp_61 ::= HI
+           | LO
+           | WIDE
 
-    opt_62 ::= grp_61 | $empty
+    opt_62 ::= grp_61
+           | $empty
 
-    opt_63 ::= rounding_mode | $empty
+    opt_63 ::= rounding_mode
+           | $empty
 
-    opt_64 ::= SAT | $empty
+    opt_64 ::= SAT
+           | $empty
 
-    grp_65 ::= HI | LO
+    grp_65 ::= HI
+           | LO
 
-    opt_66 ::= grp_65 | $empty
+    opt_66 ::= grp_65
+           | $empty
 
-    opt_67 ::= SAT | $empty
+    opt_67 ::= SAT
+           | $empty
 
-    grp_68 ::= HI | LO | WIDE
+    grp_68 ::= HI
+           | LO
+           | WIDE
 
-    opt_69 ::= grp_68 | $empty
+    opt_69 ::= grp_68
+           | $empty
 
-    opt_70 ::= rounding_mode | $empty
+    opt_70 ::= rounding_mode
+           | $empty
 
-    opt_71 ::= SAT | $empty
+    opt_71 ::= SAT
+           | $empty
 
-    grp_72 ::= HI | LO
+    grp_72 ::= HI
+           | LO
 
-    opt_73 ::= grp_72 | $empty
+    opt_73 ::= grp_72
+           | $empty
 
-    opt_74 ::= WIDE | $empty
+    opt_74 ::= WIDE
+           | $empty
 
-    opt_75 ::= UNI | $empty
+    opt_75 ::= UNI
+           | $empty
 
-    opt_76 ::= rounding_mode | $empty
+    opt_76 ::= rounding_mode
+           | $empty
 
-    opt_77 ::= BANG | $empty
+    opt_77 ::= BANG
+           | $empty
 
     grp_78 ::= PIPE operand
 
-    opt_79 ::= grp_78 | $empty
+    opt_79 ::= grp_78
+           | $empty
 
     grp_80 ::= PIPE operand
 
-    opt_81 ::= grp_80 | $empty
+    opt_81 ::= grp_80
+           | $empty
 
-    opt_82 ::= BANG | $empty
+    opt_82 ::= BANG
+           | $empty
 
-    opt_83 ::= rounding_mode | $empty
+    opt_83 ::= rounding_mode
+           | $empty
 
-    opt_84 ::= SAT | $empty
+    opt_84 ::= SAT
+           | $empty
 
-    opt_85 ::= instruction_list | $empty
+    opt_85 ::= instruction_list
+           | $empty
 
     seq_86 ::= instruction_template SEMI
 
-    list_87 ::= seq_86 | list_87 seq_86
+    list_87 ::= seq_86
+           | list_87 seq_86
 
-    grp_88 ::= PLUS | MINUS
+    grp_88 ::= PLUS
+           | MINUS
 
-    opt_89 ::= grp_88 | $empty
+    opt_89 ::= grp_88
+           | $empty
 
-    grp_90 ::= PLUS | MINUS
+    grp_90 ::= PLUS
+           | MINUS
 
-    opt_91 ::= MINUS | $empty
+    opt_91 ::= MINUS
+           | $empty
 
     seq_92 ::= field_decl SEMI
 
-    list_93 ::= $empty | list_93 seq_92
+    list_93 ::= $empty
+           | list_93 seq_92
 
 %End

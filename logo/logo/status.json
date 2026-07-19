@@ -4,11 +4,9 @@
   "status": "ported",
   "tier": "A",
   "quality": "language_port",
-  "quality_notes": [
-    "real_g4_port",
-    "mirrors_logo.g4_prog_cmd_fd_bk_repeat_procedure"
-  ],
+  "quality_notes": [],
   "blockers": [],
   "start": "prog",
-  "example_count": 16
+  "example_count": 16,
+  "parser_bytes": 3039
 }

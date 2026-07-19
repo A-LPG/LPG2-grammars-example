@@ -166,6 +166,7 @@
     parenthesizedTypeExpression ::= OPAR typeExpression CPAR
 
     identifier ::= IDENTIFIER
+           | STRING_T | INT_T | BOOL_T | OBJECT_T | ARRAY_T
            | IMPORT
            | WITH
            | AS
@@ -315,5 +316,14 @@
     list_62 ::= $empty | list_62 decorator
 
     list_63 ::= NL | list_63 NL
+
+    ASSIGN ::= EQ
+    OPAR ::= LPAREN
+    CPAR ::= RPAREN
+    OBRACE ::= LBRACE
+    CBRACE ::= RBRACE
+    OBRACK ::= LBRACKET
+    CBRACK ::= RBRACKET
+    NULL ::= NULLLITERAL
 
 %End

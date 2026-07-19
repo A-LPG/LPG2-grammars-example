@@ -1,17 +1,14 @@
 {
   "id": "turtle",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
   "blockers": [],
-  "quality_notes": [
-    "real_g4_port",
-    "antlr2lpg_structural_port"
-  ],
+  "quality_notes": [],
   "parser_bytes": 1886,
   "rule_approx": 30,
   "start": "turtleDoc",
   "example_count": 4,
   "notes": "real_g4_port",
-  "tier": "A"
+  "tier": "B"
 }

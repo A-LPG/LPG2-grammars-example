@@ -24,7 +24,7 @@
 %End
 
 %Rules
-    ident ::= IDENT
+    ident ::= IDENTIFIER
 
     qualident ::= opt_2 ident
 

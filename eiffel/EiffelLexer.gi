@@ -49,6 +49,81 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    ACROSS
+    AGENT
+    ALIAS
+    ALL
+    AND
+    AS
+    ASSIGN
+    ATTACHED
+    ATTRIBUTE
+    Basic_manifest_string
+    CHECK
+    CLASS
+    CONVERT
+    CREATE
+    CURRENT
+    DEBUG
+    DEFERRED
+    DETACHABLE
+    DO
+    DOTDOT
+    ELSE
+    ELSEIF
+    END
+    ENSURE
+    EXPANDED
+    EXPORT
+    EXTERNAL
+    FALSE
+    FEATURE
+    FROM
+    FROZEN
+    FreeOperator
+    IF
+    IMPLIES
+    INHERIT
+    INSPECT
+    INVARIANT
+    Identifier
+    Integer
+    Integer_interval
+    LIKE
+    LOCAL
+    LOOP
+    LSHIFT
+    NOT
+    NOTE
+    OBSOLETE
+    OLD
+    ONCE
+    ONLY
+    OR
+    PRECURSOR
+    REDEFINE
+    REFERENCE
+    RENAME
+    REQUIRE
+    RESCUE
+    RESULT
+    RETRY
+    RSHIFT
+    Real
+    SELECT
+    SEPARATE
+    SLASHSLASH
+    SOME
+    THEN
+    TRUE
+    UNDEFINE
+    UNIQUE
+    UNTIL
+    VARIANT
+    VOID
+    Verbatim_string
+    WHEN
+    XOR
 %End
 
 %Terminals
@@ -111,7 +186,7 @@
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | IDENTIFIER /. checkForKeyWord($_Identifier); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./

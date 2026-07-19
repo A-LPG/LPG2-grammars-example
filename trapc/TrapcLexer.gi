@@ -50,6 +50,16 @@
     QUOTE
     CHARLIT
     BACKSLASH
+    BREAK
+    CONTINUE
+    IF
+    RETURN
+    STRUCT
+    TRAP
+    VOLATILE
+    WHILE
+    BARBAR
+    AMPAMP
 %End
 
 %Terminals
@@ -112,7 +122,7 @@
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
@@ -129,6 +139,8 @@
             | '-' /. makeToken($_MINUS); ./
             | '*' /. makeToken($_STAR); ./
             | '/' /. makeToken($_SLASH); ./
+            | '&' '&' /. makeToken($_AMPAMP); ./
+            | '|' '|' /. makeToken($_BARBAR); ./
             | '&' /. makeToken($_AMP); ./
             | '|' /. makeToken($_BAR); ./
             | '^' /. makeToken($_CARET); ./

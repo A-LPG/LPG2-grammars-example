@@ -538,9 +538,9 @@
 %End
 
 %Rules
-    Token ::= identifier /. checkForKeyWord(); ./
-            | number     /. makeToken($_NUMBER); ./
-            | string     /. makeToken($_STRING); ./
+    Token ::= identifier /. checkForKeyWord($_SIMPLE_IDENTIFIER); ./
+            | number     /. makeToken($_UNSIGNED_NUMBER); ./
+            | string     /. makeToken($_STRING_LITERAL); ./
             | charlit    /. makeToken($_CHAR_LITERAL); ./
             | LineComment /. skipToken(); ./
             | white /. skipToken(); ./
@@ -700,7 +700,7 @@
             | '\' /. makeToken($_BACKSLASH); ./
             | ']' /. makeToken($_RBRACKET); ./
             | '^' /. makeToken($_CARET); ./
-            | '`' /. makeToken($_BACKTICK); ./
+            | '`' /. makeToken($_GA); ./
             | '{' /. makeToken($_LBRACE); ./
             | '|' /. makeToken($_PIPE); ./
             | '}' /. makeToken($_RBRACE); ./

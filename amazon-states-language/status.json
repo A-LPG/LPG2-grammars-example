@@ -1,20 +1,17 @@
 {
   "id": "amazon-states-language",
   "quality": "language_subset",
-  "parse_ok": false,
-  "status": "failed",
-  "blockers": [
-    "parse_examples_failed"
-  ],
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port",
-    "real_g4_port",
-    "language_subset"
+    "curated_subset",
+    "real_g4_port"
   ],
-  "parser_bytes": 15736,
+  "parser_bytes": 15743,
   "rule_approx": 150,
   "start": "state_machine",
-  "example_count": 1,
-  "tier": "A",
+  "example_count": 3,
+  "tier": "D",
   "notes": "real_g4_port"
 }

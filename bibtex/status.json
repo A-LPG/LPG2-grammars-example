@@ -2,15 +2,13 @@
   "id": "bibtex",
   "parse_ok": true,
   "status": "ported",
-  "tier": "A",
+  "tier": "B",
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "mirrors_BibTeXParser.g4_bibTex_entry_field_value",
-    "lexer_AtEntry_quoted_STRING_INTEGER",
-    "brace_enclosed_field_values_not_in_subset"
+    "heuristic_default_subset"
   ],
   "blockers": [],
   "start": "bibTex",
-  "example_count": 3
+  "example_count": 3,
+  "parser_bytes": 1323
 }

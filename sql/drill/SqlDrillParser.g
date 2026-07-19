@@ -6,7 +6,7 @@
 %options package=lpg.grammars.sql.drill
 %options template=dtParserTemplateF.gi
 %options import_terminals=SqlDrillLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof

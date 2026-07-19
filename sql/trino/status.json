@@ -5,14 +5,12 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port",
-    "KWLexerFoldedCaseMapF",
-    "punct_IDENTIFIER_INTEGER_VALUE_aligned",
-    "language_subset",
-    "harsh1_true_port_fix"
+    "curated_subset",
+    "real_g4_port"
   ],
   "parser_lines": 2139,
   "example_count": 3,
-  "tier": "A",
-  "start": "parse"
+  "tier": "D",
+  "start": "parse",
+  "parser_bytes": 50010
 }

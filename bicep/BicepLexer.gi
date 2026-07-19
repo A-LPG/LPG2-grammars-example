@@ -17,6 +17,7 @@
     STRING NUMBER
     LPAREN RPAREN LBRACE RBRACE LBRACKET RBRACKET
     COMMA DOT COLON SEMI EQ PLUS MINUS STAR SLASH LT GT
+    NL
     PARAM
     VAR
     RESOURCE
@@ -104,6 +105,7 @@
             | STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
             | identifier /. checkForKeyWord(); ./
+            | Newline /. makeToken($_NL); ./
             | white /. skipToken(); ./
             | line_comment /. skipToken(); ./
             | hash_comment /. skipToken(); ./
@@ -131,5 +133,6 @@
     NotNL -> Letter | Digit | Special | Space | HT | FF | AfterASCII | '"' | "'" | '\'
 
     white ::= WSChar | white WSChar
-    WSChar -> Space | HT | FF | LF | CR
+    WSChar -> Space | HT | FF
+    Newline ::= LF | CR | Newline LF | Newline CR
 %End

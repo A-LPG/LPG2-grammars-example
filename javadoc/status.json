@@ -5,11 +5,11 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port"
+    "heuristic_default_subset"
   ],
-  "parser_bytes": 3367,
+  "parser_bytes": 2333,
   "rule_approx": 51,
   "start": "documentation",
   "example_count": 1,
-  "tier": "A"
+  "tier": "B"
 }

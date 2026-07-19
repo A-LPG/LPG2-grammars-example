@@ -1,0 +1,2 @@
+defmodule Alias do
+end

@@ -5,11 +5,10 @@
   "tier": "A",
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "mirrors_ltl.g4_file_proposition",
-    "ascii_digraphs_for_unicode_ops"
+    "heuristic_default_subset"
   ],
   "blockers": [],
   "start": "file_",
-  "example_count": 5
+  "example_count": 5,
+  "parser_bytes": 859
 }

@@ -3,6 +3,6 @@
   "lexer": "AngelscriptLexer",
   "parser": "AngelscriptParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

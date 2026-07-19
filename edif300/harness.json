@@ -4,5 +4,6 @@
   "parser": "Edif300Parser",
   "example_globs": [
     "examples-curated/**/*"
-  ]
+  ],
+  "parser_template": "btParserTemplateF.gi"
 }

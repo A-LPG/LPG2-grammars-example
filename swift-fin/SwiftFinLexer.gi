@@ -1,4 +1,4 @@
--- Real lexer for SwiftFinParser (not token-stream soup). Keywords via SwiftFinKWLexer.
+-- SwiftFin message format lexer (from grammars-v4 SwiftFinLexer.g4)
 %Options list
 %Options fp=SwiftFinLexer
 %options single_productions
@@ -16,153 +16,68 @@
 %End
 
 %Export
-    AMP
-    AMPEQ
-    ANDAND
-    ARROW
-    ARROWSTAR
-    AT
-    ATEQ
     B4_COLON
     B4_CRLF
     B4_END
     B4_VALUE
-    BACKSLASH
-    BACKTICK
-    BANG
-    BITCLEAR
     BLOCK1
     BLOCK2
     BLOCK3
     BLOCK4_A
     BLOCK4_B
     BLOCK5
-    CARET
-    CARETEQ
-    CHAR_LITERAL
-    COLON
-    COLONCOLON
-    COLONEQ
-    COMMA
-    DOLLAR
-    DOT
-    DOTDOT
-    DOTSTAR
-    DQUOTE
-    ELLIPSIS
-    EQ
-    EQEQ
-    EQEQEQ
-    FATARROW
-    GT
-    GTEQ
-    HASH
     IDENTIFIER
     LBRACE
-    LBRACKET
-    LPAREN
-    LSHIFT
-    LSHIFTEQ
-    LT
-    LTEQ
-    LTGT
-    MINUS
-    MINUSEQ
-    MINUSMINUS
     M_COLON
     M_VALUE
-    NOTEQ
-    NOTEQEQ
-    NUMBER
-    OROR
-    PERCENT
-    PERCENTEQ
-    PIPE
-    PIPEEQ
-    PLUS
-    PLUSEQ
-    PLUSPLUS
-    QUESTDOT
-    QUESTION
-    QUESTQUEST
-    QUESTQUESTEQ
     RBRACE
-    RBRACKET
-    RECEIVE
-    RPAREN
-    RSHIFT
-    RSHIFTEQ
-    SEMI
-    SLASH
-    SLASHEQ
-    SLASHSLASH
-    SLASHSLASHEQ
-    SQUOTE
-    STAR
-    STAREQ
-    STARSTAR
-    STARSTAREQ
-    STRING
-    TILDE
-    UNDERSCORE
-    URSHIFT
-    URSHIFTEQ
     V_END
     V_VALUE
-    YIELDSTAR
 %End
 
 %Terminals
     CtlCharNotWS
-
     LF   CR   HT   FF
-
-    a    b    c    d    e    f    g    h    i    j    k    l    m
-    n    o    p    q    r    s    t    u    v    w    x    y    z
-    _
-
-    A    B    C    D    E    F    G    H    I    J    K    L    M
-    N    O    P    Q    R    S    T    U    V    W    X    Y    Z
-
-    0    1    2    3    4    5    6    7    8    9
-
-    AfterASCII   ::= '\u0080..\ufffe'
+    a b c d e f g h i j k l m n o p q r s t u v w x y z _
+    A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+    0 1 2 3 4 5 6 7 8 9
     Space        ::= ' '
     LF           ::= NewLine
     CR           ::= Return
     HT           ::= HorizontalTab
     FF           ::= FormFeed
-    DoubleQuote  ::= '"'
-    SingleQuote  ::= "'"
-    Percent      ::= '%'
-    VerticalBar  ::= '|'
-    Exclamation  ::= '!'
-    AtSign       ::= '@'
-    BackQuote    ::= '`'
-    Tilde        ::= '~'
-    Sharp        ::= '#'
-    DollarSign   ::= '$'
-    Ampersand    ::= '&'
-    Caret        ::= '^'
-    Colon        ::= ':'
-    SemiColon    ::= ';'
-    BackSlash    ::= '\'
     LeftBrace    ::= '{'
     RightBrace   ::= '}'
-    LeftBracket  ::= '['
-    RightBracket ::= ']'
-    QuestionMark ::= '?'
-    Comma        ::= ','
+    Colon        ::= ':'
+    Minus        ::= '-'
+    Exclamation  ::= '!'
+    AtSign       ::= '@'
+    Sharp        ::= '#'
+    DollarSign   ::= '$'
+    Percent      ::= '%'
+    Ampersand    ::= '&'
+    VerticalBar  ::= '|'
     Dot          ::= '.'
+    Comma        ::= ','
+    Equal        ::= '='
+    Plus         ::= '+'
+    Star         ::= '*'
+    Slash        ::= '/'
     LessThan     ::= '<'
     GreaterThan  ::= '>'
-    Plus         ::= '+'
-    Minus        ::= '-'
-    Slash        ::= '/'
-    Star         ::= '*'
-    Equal        ::= '='
+    SingleQuote  ::= "'"
+    DoubleQuote  ::= '"'
     LeftParen    ::= '('
     RightParen   ::= ')'
+    LeftBracket  ::= '['
+    RightBracket ::= ']'
+    SemiColon    ::= ';'
+    BackSlash    ::= '\'
+    Caret        ::= '^'
+    BackQuote    ::= '`'
+    Tilde        ::= '~'
+    QuestionMark ::= '?'
+    AfterASCII   ::= '\u0080..\ufffe'
 %End
 
 %Start
@@ -170,145 +85,66 @@
 %End
 
 %Rules
-    Token ::= identifier /. checkForKeyWord(); ./
-            | number     /. makeToken($_NUMBER); ./
-            | string     /. makeToken($_STRING); ./
-            | charlit    /. makeToken($_CHAR_LITERAL); ./
-            | LineComment /. skipToken(); ./
+    Token ::= Block1Start /. makeToken($_BLOCK1); ./
+            | Block2Start /. makeToken($_BLOCK2); ./
+            | Block3Start /. makeToken($_BLOCK3); ./
+            | Block4AStart /. makeToken($_BLOCK4_A); ./
+            | Block4BStart /. makeToken($_BLOCK4_B); ./
+            | Block5Start /. makeToken($_BLOCK5); ./
             | white /. skipToken(); ./
-            | 'y' 'i' 'e' 'l' 'd' '*' /. makeToken($_YIELDSTAR); ./
-            | '>' '>' '>' '=' /. makeToken($_URSHIFTEQ); ./
-            | '!' '=' '=' /. makeToken($_NOTEQEQ); ./
-            | '*' '*' '=' /. makeToken($_STARSTAREQ); ./
-            | '-' '>' '*' /. makeToken($_ARROWSTAR); ./
-            | '.' '.' '.' /. makeToken($_ELLIPSIS); ./
-            | '/' '/' '=' /. makeToken($_SLASHSLASHEQ); ./
-            | '<' '<' '=' /. makeToken($_LSHIFTEQ); ./
-            | '=' '=' '=' /. makeToken($_EQEQEQ); ./
-            | '>' '>' '=' /. makeToken($_RSHIFTEQ); ./
-            | '>' '>' '>' /. makeToken($_URSHIFT); ./
-            | '?' '?' '=' /. makeToken($_QUESTQUESTEQ); ./
-            | '!' '=' /. makeToken($_NOTEQ); ./
-            | '%' '=' /. makeToken($_PERCENTEQ); ./
-            | '&' '&' /. makeToken($_ANDAND); ./
-            | '&' '=' /. makeToken($_AMPEQ); ./
-            | '&' '^' /. makeToken($_BITCLEAR); ./
-            | '*' '*' /. makeToken($_STARSTAR); ./
-            | '*' '=' /. makeToken($_STAREQ); ./
-            | '+' '+' /. makeToken($_PLUSPLUS); ./
-            | '+' '=' /. makeToken($_PLUSEQ); ./
-            | '-' '-' /. makeToken($_MINUSMINUS); ./
-            | '-' '=' /. makeToken($_MINUSEQ); ./
-            | '-' '>' /. makeToken($_ARROW); ./
-            | '.' '*' /. makeToken($_DOTSTAR); ./
-            | '.' '.' /. makeToken($_DOTDOT); ./
-            | '/' '/' /. makeToken($_SLASHSLASH); ./
-            | '/' '=' /. makeToken($_SLASHEQ); ./
-            | ':' ':' /. makeToken($_COLONCOLON); ./
-            | ':' '=' /. makeToken($_COLONEQ); ./
-            | '<' '-' /. makeToken($_RECEIVE); ./
-            | '<' '<' /. makeToken($_LSHIFT); ./
-            | '<' '=' /. makeToken($_LTEQ); ./
-            | '<' '>' /. makeToken($_LTGT); ./
-            | '=' '=' /. makeToken($_EQEQ); ./
-            | '=' '>' /. makeToken($_FATARROW); ./
-            | '>' '=' /. makeToken($_GTEQ); ./
-            | '>' '>' /. makeToken($_RSHIFT); ./
-            | '?' '.' /. makeToken($_QUESTDOT); ./
-            | '?' '?' /. makeToken($_QUESTQUEST); ./
-            | '@' '=' /. makeToken($_ATEQ); ./
-            | '^' '=' /. makeToken($_CARETEQ); ./
-            | '|' '=' /. makeToken($_PIPEEQ); ./
-            | '|' '|' /. makeToken($_OROR); ./
-            | '!' /. makeToken($_BANG); ./
-            | '"' /. makeToken($_DQUOTE); ./
-            | '#' /. makeToken($_HASH); ./
-            | '%' /. makeToken($_PERCENT); ./
-            | '&' /. makeToken($_AMP); ./
-            | '(' /. makeToken($_LPAREN); ./
-            | ')' /. makeToken($_RPAREN); ./
-            | '*' /. makeToken($_STAR); ./
-            | '+' /. makeToken($_PLUS); ./
-            | ',' /. makeToken($_COMMA); ./
-            | '-' /. makeToken($_MINUS); ./
-            | '.' /. makeToken($_DOT); ./
-            | '/' /. makeToken($_SLASH); ./
-            | ':' /. makeToken($_COLON); ./
-            | ';' /. makeToken($_SEMI); ./
-            | '<' /. makeToken($_LT); ./
-            | '=' /. makeToken($_EQ); ./
-            | '>' /. makeToken($_GT); ./
-            | '?' /. makeToken($_QUESTION); ./
-            | '@' /. makeToken($_AT); ./
-            | '[' /. makeToken($_LBRACKET); ./
-            | '\' /. makeToken($_BACKSLASH); ./
-            | ']' /. makeToken($_RBRACKET); ./
-            | '^' /. makeToken($_CARET); ./
-            | '`' /. makeToken($_BACKTICK); ./
-            | '{' /. makeToken($_LBRACE); ./
-            | '|' /. makeToken($_PIPE); ./
-            | '}' /. makeToken($_RBRACE); ./
-            | '~' /. makeToken($_TILDE); ./
+            | VValueTok /. makeToken($_V_VALUE); ./
+            | VEndTok /. makeToken($_V_END); ./
+            | B4EndTok /. makeToken($_B4_END); ./
+            | B4ColonTok /. makeToken($_B4_COLON); ./
+            | B4CrlfTok /. makeToken($_B4_CRLF); ./
+            | B4ValueTok /. makeToken($_B4_VALUE); ./
+            | MapLBrace /. makeToken($_LBRACE); ./
+            | MapColon /. makeToken($_M_COLON); ./
+            | MapValue /. makeToken($_M_VALUE); ./
+            | MapRBrace /. makeToken($_RBRACE); ./
 
-    identifier -> Letter
-                | identifier Letter
-                | identifier Digit
+    Block1Start ::= LeftBrace '1' Colon
+    Block2Start ::= LeftBrace '2' Colon
+    Block3Start ::= LeftBrace '3' Colon
+    Block4AStart ::= LeftBrace '4' Colon LF
+    Block4BStart ::= LeftBrace '4' Colon
+    Block5Start ::= LeftBrace '5' Colon
 
-    Letter -> LowerCaseLetter
-            | UpperCaseLetter
-            | _
-            | AfterASCII
-            | DollarSign
+    B4EndTok ::= Minus RightBrace
+    B4ColonTok ::= Colon
+    B4CrlfTok ::= CR LF | CR
+    B4ValueTok ::= NotColon
 
+    MapLBrace ::= LeftBrace
+    MapRBrace ::= RightBrace
+    MapColon ::= Colon
+    MapValue ::= NotColonNotBrace
+
+    VEndTok ::= RightBrace
+    VValueTok ::= NotRBrace
+
+    NotColon -> Letter | Digit | Space | HT | Minus | LeftBrace | RightBrace
+              | Exclamation | AtSign | Sharp | DollarSign | Percent | Ampersand | VerticalBar
+              | LeftParen | RightParen | LeftBracket | RightBracket | Dot | Comma | Equal | Plus
+              | Star | Slash | LessThan | GreaterThan | SingleQuote | DoubleQuote | _
+
+    NotColonNotBrace -> Letter | Digit | Space | HT | Minus | Exclamation | AtSign | Sharp
+                      | DollarSign | Percent | Ampersand | VerticalBar | LeftParen | RightParen
+                      | LeftBracket | RightBracket | Dot | Comma | Equal | Plus | Star | Slash
+                      | LessThan | GreaterThan | SingleQuote | DoubleQuote | _
+
+    NotRBrace -> Letter | Digit | Space | HT | Minus | Colon | Exclamation | AtSign | Sharp
+               | DollarSign | Percent | Ampersand | VerticalBar | LeftParen | RightParen
+               | LeftBracket | RightBracket | Dot | Comma | Equal | Plus | Star | Slash
+               | LessThan | GreaterThan | SingleQuote | DoubleQuote | _ | LeftBrace
+
+    Letter -> LowerCaseLetter | UpperCaseLetter | _
     LowerCaseLetter -> a | b | c | d | e | f | g | h | i | j | k | l | m |
                        n | o | p | q | r | s | t | u | v | w | x | y | z
-
     UpperCaseLetter -> A | B | C | D | E | F | G | H | I | J | K | L | M |
                        N | O | P | Q | R | S | T | U | V | W | X | Y | Z
-
     Digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
-    number ::= Digit
-             | number Digit
-             | number '_' Digit
-             | number '.' Digit
-             | number '.' Digits
-             | '.' Digits
-
-    Digits ::= Digit
-             | Digits Digit
-
-    string ::= '"' SLBody '"'
-             | SingleQuote SLBodySQ SingleQuote
-
-    SLBody -> $empty
-            | SLBody NotDQ
-
-    SLBodySQ -> $empty
-              | SLBodySQ NotSQ
-
-    NotDQ -> Letter | Digit | Space | HT | SingleQuote | ',' | '.' | ':' | ';' | '+' | '-' |
-             '*' | '/' | '=' | '_' | '!' | '?' | '@' | '#' | '$' | '%' | '&' | '|' |
-             '^' | '~' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' | Escape
-
-    NotSQ -> Letter | Digit | Space | HT | DoubleQuote | ',' | '.' | ':' | ';' | '+' | '-' |
-             '*' | '/' | '=' | '_' | '!' | '?' | '@' | '#' | '$' | '%' | '&' | '|' |
-             '^' | '~' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' | Escape
-
-    Escape ::= BackSlash EscapeChar
-    EscapeChar -> DoubleQuote | SingleQuote | BackSlash | '/' | n | r | t | b | f
-
-    charlit ::= SingleQuote NotSQ SingleQuote
-
-    LineComment ::= '/' '/' LineCommentBody
-    LineCommentBody -> $empty
-                     | LineCommentBody NotNL
-    NotNL -> Letter | Digit | Space | HT | SpecialNotNL
-    SpecialNotNL -> '+' | '-' | '/' | '*' | '(' | ')' | '!' | '@' | '~' |
-                    '%' | '&' | '^' | ':' | ';' | DoubleQuote | SingleQuote | '|' | '{' | '}' |
-                    '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_' | BackSlash
-
-    white -> WSChar
-           | white WSChar
-    WSChar -> Space | LF | CR | HT | FF
+    white -> WSChar | white WSChar
+    WSChar -> Space | HT | FF | LF | CR
 %End

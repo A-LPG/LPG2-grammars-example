@@ -6,11 +6,16 @@
 %options package=lpg.grammars.lrc
 %options template=dtParserTemplateF.gi
 %options import_terminals=LrcLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
     EOF_TOKEN
+%End
+
+%Define
+    $ast_class /.Object./
+    $ast_type /.Object./
 %End
 
 %Start
@@ -18,10 +23,11 @@
 %End
 
 %Rules
-    lrc ::= list_1
+    lrc ::= line_list
 
     line ::= LB TIMESTAMP RB TEXT
 
-    list_1 ::= $empty | list_1 line
+    line_list ::= $empty
+           | line_list line
 
 %End

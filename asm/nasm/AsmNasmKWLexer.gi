@@ -4,7 +4,7 @@
 %options fp=AsmNasmKWLexer
 
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
 
 %Export
@@ -65,6 +65,10 @@
     BLSMSK
     BLSR
     BND
+    BND0
+    BND1
+    BND2
+    BND3
     BNDCL
     BNDCN
     BNDCU
@@ -183,6 +187,9 @@
     CMPUNORDSD
     CMPUNORDSS
     CMPXCHG
+    CMPXCHG16B
+    CMPXCHG486
+    CMPXCHG8B
     CMPZXADD
     CODE
     COMDAT
@@ -192,7 +199,46 @@
     CPU
     CPUID
     CQO
+    CR0
+    CR1
+    CR10
+    CR11
+    CR12
+    CR13
+    CR14
+    CR15
+    CR2
+    CR3
+    CR4
+    CR5
+    CR6
+    CR7
+    CR8
+    CR9
+    CRC32
     CS
+    CVTDQ2PD
+    CVTDQ2PS
+    CVTPD2DQ
+    CVTPD2PI
+    CVTPD2PS
+    CVTPI2PD
+    CVTPI2PS
+    CVTPS2DQ
+    CVTPS2PD
+    CVTPS2PI
+    CVTSD2SI
+    CVTSD2SS
+    CVTSI2SD
+    CVTSI2SS
+    CVTSS2SD
+    CVTSS2SI
+    CVTTPD2DQ
+    CVTTPD2PI
+    CVTTPS2DQ
+    CVTTPS2PI
+    CVTTSD2SI
+    CVTTSS2SI
     CWD
     CWDE
     CX
@@ -220,6 +266,22 @@
     DPPD
     DPPS
     DQ
+    DR0
+    DR1
+    DR10
+    DR11
+    DR12
+    DR13
+    DR14
+    DR15
+    DR2
+    DR3
+    DR4
+    DR5
+    DR6
+    DR7
+    DR8
+    DR9
     DS
     DT
     DUP
@@ -239,6 +301,8 @@
     ENCLS
     ENCLU
     ENCLV
+    ENDBR32
+    ENDBR64
     ENQCMD
     ENQCMDS
     ENTER
@@ -251,6 +315,7 @@
     EXTERN
     EXTRACTPS
     EXTRQ
+    F2XM1
     FABS
     FADD
     FADDP
@@ -299,8 +364,13 @@
     FISUBR
     FLAT
     FLD
+    FLD1
     FLDCW
     FLDENV
+    FLDL2E
+    FLDL2T
+    FLDLG2
+    FLDLN2
     FLDPI
     FLDZ
     FLOAT_NAME
@@ -318,6 +388,7 @@
     FOLLOWS
     FPATAN
     FPREM
+    FPREM1
     FPTAN
     FRNDINT
     FRSTOR
@@ -348,9 +419,16 @@
     FXAM
     FXCH
     FXRSTOR
+    FXRSTOR64
     FXSAVE
+    FXSAVE64
     FXTRACT
+    FYL2X
+    FYL2XP1
     GETSEC
+    GF2P8AFFINEINVQB
+    GF2P8AFFINEQB
+    GF2P8MULB
     GLOBAL
     GROUP
     GS
@@ -378,6 +456,10 @@
     INSERTQ
     INSW
     INT
+    INT01
+    INT03
+    INT1
+    INT3
     INTERNAL
     INTO
     INVD
@@ -426,6 +508,14 @@
     JRCXZ
     JS
     JZ
+    K0
+    K1
+    K2
+    K3
+    K4
+    K5
+    K6
+    K7
     KADD
     KADDB
     KADDD
@@ -508,6 +598,7 @@
     LLWPCB
     LMSW
     LOADALL
+    LOADALL286
     LODSB
     LODSD
     LODSQ
@@ -536,6 +627,14 @@
     MINSD
     MINSS
     MIXED
+    MM0
+    MM1
+    MM2
+    MM3
+    MM4
+    MM5
+    MM6
+    MM7
     MONITOR
     MONITORX
     MONTMUL
@@ -545,7 +644,9 @@
     MOVBE
     MOVD
     MOVDDUP
+    MOVDIR64B
     MOVDIRI
+    MOVDQ2Q
     MOVDQA
     MOVDQU
     MOVHLPS
@@ -565,6 +666,7 @@
     MOVNTSD
     MOVNTSS
     MOVQ
+    MOVQ2DQ
     MOVSB
     MOVSD
     MOVSHDUP
@@ -663,6 +765,8 @@
     PEXTRD
     PEXTRQ
     PEXTRW
+    PF2ID
+    PF2IW
     PFACC
     PFADD
     PFCMPEQ
@@ -674,7 +778,10 @@
     PFNACC
     PFPNACC
     PFRCP
+    PFRCPIT1
+    PFRCPIT2
     PFRCPV
+    PFRSQIT1
     PFRSQRT
     PFRSQRTV
     PFSUB
@@ -686,6 +793,8 @@
     PHSUBD
     PHSUBSW
     PHSUBW
+    PI2FD
+    PI2FW
     PINSRB
     PINSRD
     PINSRQ
@@ -745,8 +854,14 @@
     POPFW
     POR
     PREFETCH
+    PREFETCHIT0
+    PREFETCHIT1
     PREFETCHNTA
+    PREFETCHT0
+    PREFETCHT1
+    PREFETCHT2
     PREFETCHW
+    PREFETCHWT1
     PRIVATE
     PROGBITS
     PROTECTED
@@ -801,6 +916,38 @@
     PVALIDATE
     PXOR
     QWORD
+    R10
+    R10B
+    R10D
+    R10W
+    R11
+    R11B
+    R11D
+    R11W
+    R12
+    R12B
+    R12D
+    R12W
+    R13
+    R13B
+    R13D
+    R13W
+    R14
+    R14B
+    R14D
+    R14W
+    R15
+    R15B
+    R15D
+    R15W
+    R8
+    R8B
+    R8D
+    R8W
+    R9
+    R9B
+    R9D
+    R9W
     RAX
     RBP
     RBX
@@ -884,6 +1031,8 @@
     SECTIONS
     SEGMENT
     SEGMENTS
+    SEGR6
+    SEGR7
     SENDUIPI
     SERIALIZE
     SETA
@@ -919,6 +1068,13 @@
     SETZ
     SFENCE
     SGDT
+    SHA1MSG1
+    SHA1MSG2
+    SHA1NEXTE
+    SHA1RNDS4
+    SHA256MSG1
+    SHA256MSG2
+    SHA256RNDS2
     SHL
     SHLD
     SHLX
@@ -944,6 +1100,14 @@
     SQRTSD
     SQRTSS
     SS
+    ST0
+    ST1
+    ST2
+    ST3
+    ST4
+    ST5
+    ST6
+    ST7
     STAC
     STACK
     START
@@ -976,6 +1140,8 @@
     SYSENTER
     SYSEXIT
     SYSRET
+    T1MSKC
+    TDPBF16PS
     TDPBSSD
     TDPBSUD
     TDPBUSD
@@ -984,17 +1150,39 @@
     TESTUI
     TEXT
     TILELOADD
+    TILELOADDT1
     TILERELEASE
     TILESTORED
     TILEZERO
     TIMES
     TLS
+    TMM0
+    TMM1
+    TMM2
+    TMM3
+    TMM4
+    TMM5
+    TMM6
+    TMM7
     TPAUSE
+    TR0
+    TR1
+    TR2
+    TR3
+    TR4
+    TR5
+    TR6
+    TR7
     TWORD
     TZCNT
     TZMSK
     UCOMISD
     UCOMISS
+    UD0
+    UD1
+    UD2
+    UD2A
+    UD2B
     UIRET
     UMONITOR
     UMOV
@@ -1005,6 +1193,14 @@
     UNPCKLPS
     UP
     UPPERCASE
+    USE16
+    USE32
+    V4DPWSSD
+    V4DPWSSDS
+    V4FMADDPS
+    V4FMADDSS
+    V4FNMADDPS
+    V4FNMADDSS
     VADDPD
     VADDPH
     VADDPS
@@ -1025,12 +1221,26 @@
     VANDNPS
     VANDPD
     VANDPS
+    VBCSTNEBF16PS
+    VBCSTNESH2PS
     VBLENDMPD
     VBLENDMPS
     VBLENDPD
     VBLENDPS
     VBLENDVPD
     VBLENDVPS
+    VBROADCASTF128
+    VBROADCASTF32X2
+    VBROADCASTF32X4
+    VBROADCASTF32X8
+    VBROADCASTF64X2
+    VBROADCASTF64X4
+    VBROADCASTI128
+    VBROADCASTI32X2
+    VBROADCASTI32X4
+    VBROADCASTI32X8
+    VBROADCASTI64X2
+    VBROADCASTI64X4
     VBROADCASTSD
     VBROADCASTSS
     VCMPEQPD
@@ -1100,6 +1310,85 @@
     VCOMISS
     VCOMPRESSPD
     VCOMPRESSPS
+    VCVTDQ2PD
+    VCVTDQ2PH
+    VCVTDQ2PS
+    VCVTNE2PS2BF16
+    VCVTNEEBF162PS
+    VCVTNEEPH2PS
+    VCVTNEOBF162PS
+    VCVTNEOPH2PS
+    VCVTNEPS2BF16
+    VCVTPD2DQ
+    VCVTPD2PH
+    VCVTPD2PS
+    VCVTPD2QQ
+    VCVTPD2UDQ
+    VCVTPD2UQQ
+    VCVTPH2DQ
+    VCVTPH2PD
+    VCVTPH2PS
+    VCVTPH2PSX
+    VCVTPH2QQ
+    VCVTPH2UDQ
+    VCVTPH2UQQ
+    VCVTPH2UW
+    VCVTPH2W
+    VCVTPS2DQ
+    VCVTPS2PD
+    VCVTPS2PH
+    VCVTPS2QQ
+    VCVTPS2UDQ
+    VCVTPS2UQQ
+    VCVTQQ2PD
+    VCVTQQ2PH
+    VCVTQQ2PS
+    VCVTSD2SH
+    VCVTSD2SI
+    VCVTSD2SS
+    VCVTSD2USI
+    VCVTSH2SD
+    VCVTSH2SI
+    VCVTSH2SS
+    VCVTSH2USI
+    VCVTSI2SD
+    VCVTSI2SH
+    VCVTSI2SS
+    VCVTSS2SD
+    VCVTSS2SH
+    VCVTSS2SI
+    VCVTSS2USI
+    VCVTTPD2DQ
+    VCVTTPD2QQ
+    VCVTTPD2UDQ
+    VCVTTPD2UQQ
+    VCVTTPH2DQ
+    VCVTTPH2QQ
+    VCVTTPH2UDQ
+    VCVTTPH2UQQ
+    VCVTTPH2UW
+    VCVTTPH2W
+    VCVTTPS2DQ
+    VCVTTPS2QQ
+    VCVTTPS2UDQ
+    VCVTTPS2UQQ
+    VCVTTSD2SI
+    VCVTTSD2USI
+    VCVTTSH2SI
+    VCVTTSH2USI
+    VCVTTSS2SI
+    VCVTTSS2USI
+    VCVTUDQ2PD
+    VCVTUDQ2PH
+    VCVTUDQ2PS
+    VCVTUQQ2PD
+    VCVTUQQ2PH
+    VCVTUQQ2PS
+    VCVTUSI2SD
+    VCVTUSI2SH
+    VCVTUSI2SS
+    VCVTUW2PH
+    VCVTW2PH
     VDBPSADBW
     VDIVPD
     VDIVPH
@@ -1107,14 +1396,27 @@
     VDIVSD
     VDIVSH
     VDIVSS
+    VDPBF16PS
     VDPPD
     VDPPS
     VENDSCALEPH
     VENDSCALESH
     VERR
     VERW
+    VEXP2PD
+    VEXP2PS
     VEXPANDPD
     VEXPANDPS
+    VEXTRACTF128
+    VEXTRACTF32X4
+    VEXTRACTF32X8
+    VEXTRACTF64X2
+    VEXTRACTF64X4
+    VEXTRACTI128
+    VEXTRACTI32X4
+    VEXTRACTI32X8
+    VEXTRACTI64X2
+    VEXTRACTI64X4
     VEXTRACTPS
     VFCMADDCPH
     VFCMADDCSH
@@ -1124,14 +1426,98 @@
     VFIXUPIMMPS
     VFIXUPIMMSD
     VFIXUPIMMSS
+    VFMADD123PD
+    VFMADD123PS
+    VFMADD123SD
+    VFMADD123SS
+    VFMADD132PD
+    VFMADD132PH
+    VFMADD132PS
+    VFMADD132SD
+    VFMADD132SS
+    VFMADD213PD
+    VFMADD213PH
+    VFMADD213PS
+    VFMADD213SD
+    VFMADD213SS
+    VFMADD231PD
+    VFMADD231PH
+    VFMADD231PS
+    VFMADD231SD
+    VFMADD231SS
+    VFMADD312PD
+    VFMADD312PS
+    VFMADD312SD
+    VFMADD312SS
+    VFMADD321PD
+    VFMADD321PS
+    VFMADD321SD
+    VFMADD321SS
     VFMADDCPH
     VFMADDCSH
     VFMADDPD
     VFMADDPS
     VFMADDSD
     VFMADDSS
+    VFMADDSUB123PD
+    VFMADDSUB123PS
+    VFMADDSUB132PD
+    VFMADDSUB132PH
+    VFMADDSUB132PS
+    VFMADDSUB213PD
+    VFMADDSUB213PH
+    VFMADDSUB213PS
+    VFMADDSUB231PD
+    VFMADDSUB231PH
+    VFMADDSUB231PS
+    VFMADDSUB312PD
+    VFMADDSUB312PS
+    VFMADDSUB321PD
+    VFMADDSUB321PS
     VFMADDSUBPD
     VFMADDSUBPS
+    VFMSUB123PD
+    VFMSUB123PS
+    VFMSUB123SD
+    VFMSUB123SS
+    VFMSUB132PD
+    VFMSUB132PH
+    VFMSUB132PS
+    VFMSUB132SD
+    VFMSUB132SS
+    VFMSUB213PD
+    VFMSUB213PH
+    VFMSUB213PS
+    VFMSUB213SD
+    VFMSUB213SS
+    VFMSUB231PD
+    VFMSUB231PH
+    VFMSUB231PS
+    VFMSUB231SD
+    VFMSUB231SS
+    VFMSUB312PD
+    VFMSUB312PS
+    VFMSUB312SD
+    VFMSUB312SS
+    VFMSUB321PD
+    VFMSUB321PS
+    VFMSUB321SD
+    VFMSUB321SS
+    VFMSUBADD123PD
+    VFMSUBADD123PS
+    VFMSUBADD132PD
+    VFMSUBADD132PH
+    VFMSUBADD132PS
+    VFMSUBADD213PD
+    VFMSUBADD213PH
+    VFMSUBADD213PS
+    VFMSUBADD231PD
+    VFMSUBADD231PH
+    VFMSUBADD231PS
+    VFMSUBADD312PD
+    VFMSUBADD312PS
+    VFMSUBADD321PD
+    VFMSUBADD321PS
     VFMSUBADDPD
     VFMSUBADDPS
     VFMSUBPD
@@ -1140,10 +1526,58 @@
     VFMSUBSS
     VFMULCPCH
     VFMULCSH
+    VFNMADD123PD
+    VFNMADD123PS
+    VFNMADD123SD
+    VFNMADD123SS
+    VFNMADD132PD
+    VFNMADD132PS
+    VFNMADD132SD
+    VFNMADD132SS
+    VFNMADD213PD
+    VFNMADD213PS
+    VFNMADD213SD
+    VFNMADD213SS
+    VFNMADD231PD
+    VFNMADD231PS
+    VFNMADD231SD
+    VFNMADD231SS
+    VFNMADD312PD
+    VFNMADD312PS
+    VFNMADD312SD
+    VFNMADD312SS
+    VFNMADD321PD
+    VFNMADD321PS
+    VFNMADD321SD
+    VFNMADD321SS
     VFNMADDPD
     VFNMADDPS
     VFNMADDSD
     VFNMADDSS
+    VFNMSUB123PD
+    VFNMSUB123PS
+    VFNMSUB123SD
+    VFNMSUB123SS
+    VFNMSUB132PD
+    VFNMSUB132PS
+    VFNMSUB132SD
+    VFNMSUB132SS
+    VFNMSUB213PD
+    VFNMSUB213PS
+    VFNMSUB213SD
+    VFNMSUB213SS
+    VFNMSUB231PD
+    VFNMSUB231PS
+    VFNMSUB231SD
+    VFNMSUB231SS
+    VFNMSUB312PD
+    VFNMSUB312PS
+    VFNMSUB312SD
+    VFNMSUB312SS
+    VFNMSUB321PD
+    VFNMSUB321PS
+    VFNMSUB321SD
+    VFNMSUB321SS
     VFNMSUBPD
     VFNMSUBPS
     VFNMSUBSD
@@ -1161,6 +1595,14 @@
     VFRCZSS
     VGATHERDPD
     VGATHERDPS
+    VGATHERPF0DPD
+    VGATHERPF0DPS
+    VGATHERPF0QPD
+    VGATHERPF0QPS
+    VGATHERPF1DPD
+    VGATHERPF1DPS
+    VGATHERPF1QPD
+    VGATHERPF1QPS
     VGATHERQPD
     VGATHERQPS
     VGETEXPPD
@@ -1179,10 +1621,23 @@
     VGETMAXSH
     VGETMINPH
     VGETMINSH
+    VGF2P8AFFINEINVQB
+    VGF2P8AFFINEQB
+    VGF2P8MULB
     VHADDPD
     VHADDPS
     VHSUBPD
     VHSUBPS
+    VINSERTF128
+    VINSERTF32X4
+    VINSERTF32X8
+    VINSERTF64X2
+    VINSERTF64X4
+    VINSERTI128
+    VINSERTI32X4
+    VINSERTI32X8
+    VINSERTI64X2
+    VINSERTI64X4
     VINSERTPS
     VLDDQU
     VLDMXCSR
@@ -1210,7 +1665,13 @@
     VMOVD
     VMOVDDUP
     VMOVDQA
+    VMOVDQA32
+    VMOVDQA64
     VMOVDQU
+    VMOVDQU16
+    VMOVDQU32
+    VMOVDQU64
+    VMOVDQU8
     VMOVHLPS
     VMOVHPD
     VMOVHPS
@@ -1253,6 +1714,7 @@
     VMXON
     VORPD
     VORPS
+    VP2INTERSECTD
     VPABSB
     VPABSD
     VPABSQ
@@ -1287,6 +1749,8 @@
     VPBLENDW
     VPBROADCASTB
     VPBROADCASTD
+    VPBROADCASTMB2Q
+    VPBROADCASTMW2D
     VPBROADCASTQ
     VPBROADCASTW
     VPCLMULHQHQDQ
@@ -1403,13 +1867,27 @@
     VPDPBUUDS
     VPDPWSSD
     VPDPWSSDS
+    VPERM2F128
+    VPERM2I128
     VPERMB
     VPERMD
+    VPERMI2B
+    VPERMI2D
+    VPERMI2PD
+    VPERMI2PS
+    VPERMI2Q
+    VPERMI2W
     VPERMILPD
     VPERMILPS
     VPERMPD
     VPERMPS
     VPERMQ
+    VPERMT2B
+    VPERMT2D
+    VPERMT2PD
+    VPERMT2PS
+    VPERMT2Q
+    VPERMT2W
     VPERMW
     VPEXPANDB
     VPEXPANDD
@@ -1463,6 +1941,14 @@
     VPMACSWW
     VPMADCSSWD
     VPMADCSWD
+    VPMADD132PH
+    VPMADD132SH
+    VPMADD213PH
+    VPMADD213SH
+    VPMADD231PH
+    VPMADD231SH
+    VPMADD52HUQ
+    VPMADD52LUQ
     VPMADDUBSW
     VPMADDWD
     VPMASKMOVD
@@ -1483,9 +1969,16 @@
     VPMINUD
     VPMINUQ
     VPMINUW
+    VPMOVB2M
+    VPMOVD2M
     VPMOVDB
     VPMOVDW
+    VPMOVM2B
+    VPMOVM2D
+    VPMOVM2Q
+    VPMOVM2W
     VPMOVMSKB
+    VPMOVQ2M
     VPMOVQB
     VPMOVQD
     VPMOVQW
@@ -1507,6 +2000,7 @@
     VPMOVUSQD
     VPMOVUSQW
     VPMOVUSWB
+    VPMOVW2M
     VPMOVWB
     VPMOVZXBD
     VPMOVZXBQ
@@ -1514,6 +2008,12 @@
     VPMOVZXDQ
     VPMOVZXWD
     VPMOVZXWQ
+    VPMSUB132PH
+    VPMSUB132SH
+    VPMSUB213PH
+    VPMSUB213SH
+    VPMSUB231PH
+    VPMSUB231SH
     VPMULDQ
     VPMULHRSW
     VPMULHUW
@@ -1523,6 +2023,12 @@
     VPMULLW
     VPMULTISHIFTQB
     VPMULUDQ
+    VPNMADD132SH
+    VPNMADD213SH
+    VPNMADD231SH
+    VPNMSUB132SH
+    VPNMSUB213SH
+    VPNMSUB231SH
     VPOPCNTB
     VPOPCNTD
     VPOPCNTQ
@@ -1630,6 +2136,14 @@
     VRANGEPS
     VRANGESD
     VRANGESS
+    VRCP14PD
+    VRCP14PS
+    VRCP14SD
+    VRCP14SS
+    VRCP28PD
+    VRCP28PS
+    VRCP28SD
+    VRCP28SS
     VRCPPH
     VRCPPS
     VRCPSH
@@ -1648,6 +2162,14 @@
     VROUNDPS
     VROUNDSD
     VROUNDSS
+    VRSQRT14PD
+    VRSQRT14PS
+    VRSQRT14SD
+    VRSQRT14SS
+    VRSQRT28PD
+    VRSQRT28PS
+    VRSQRT28SD
+    VRSQRT28SS
     VRSQRTPH
     VRSQRTPS
     VRSQRTSH
@@ -1660,8 +2182,20 @@
     VSCALEFSS
     VSCATTERDPD
     VSCATTERDPS
+    VSCATTERPF0DPD
+    VSCATTERPF0DPS
+    VSCATTERPF0QPD
+    VSCATTERPF0QPS
+    VSCATTERPF1DPD
+    VSCATTERPF1DPS
+    VSCATTERPF1QPD
+    VSCATTERPF1QPS
     VSCATTERQPD
     VSCATTERQPS
+    VSHUFF32X4
+    VSHUFF64X2
+    VSHUFI32X4
+    VSHUFI64X2
     VSHUFPD
     VSHUFPS
     VSQRTPD
@@ -1723,28 +2257,133 @@
     XGETBV
     XLAT
     XLATB
+    XMM0
+    XMM1
+    XMM10
+    XMM11
+    XMM12
+    XMM13
+    XMM14
+    XMM15
+    XMM16
+    XMM17
+    XMM18
+    XMM19
+    XMM2
+    XMM20
+    XMM21
+    XMM22
+    XMM23
+    XMM24
+    XMM25
+    XMM26
+    XMM27
+    XMM28
+    XMM29
+    XMM3
+    XMM30
+    XMM31
+    XMM4
+    XMM5
+    XMM6
+    XMM7
+    XMM8
+    XMM9
     XOR
     XORPD
     XORPS
     XRESLDTRK
     XRSTOR
+    XRSTOR64
     XRSTORS
+    XRSTORS64
     XSAVE
+    XSAVE64
     XSAVEC
+    XSAVEC64
     XSAVEOPT
+    XSAVEOPT64
     XSAVES
+    XSAVES64
     XSETBV
+    XSHA1
+    XSHA256
     XSTORE
     XSUSLDTRK
     XTEST
+    YMM0
+    YMM1
+    YMM10
+    YMM11
+    YMM12
+    YMM13
+    YMM14
+    YMM15
+    YMM16
+    YMM17
+    YMM18
+    YMM19
+    YMM2
+    YMM20
+    YMM21
+    YMM22
+    YMM23
+    YMM24
+    YMM25
+    YMM26
+    YMM27
+    YMM28
+    YMM29
+    YMM3
+    YMM30
+    YMM31
+    YMM4
+    YMM5
+    YMM6
+    YMM7
+    YMM8
+    YMM9
     YWORD
     ZERO
     ZEROFILL
+    ZMM0
+    ZMM1
+    ZMM10
+    ZMM11
+    ZMM12
+    ZMM13
+    ZMM14
+    ZMM15
+    ZMM16
+    ZMM17
+    ZMM18
+    ZMM19
+    ZMM2
+    ZMM20
+    ZMM21
+    ZMM22
+    ZMM23
+    ZMM24
+    ZMM25
+    ZMM26
+    ZMM27
+    ZMM28
+    ZMM29
+    ZMM3
+    ZMM30
+    ZMM31
+    ZMM4
+    ZMM5
+    ZMM6
+    ZMM7
+    ZMM8
+    ZMM9
     ZWORD
 %End
 
 %Terminals
     a b c d e f g h i j k l m n o p q r s t u v w x y z
+    Minus ::= '-'
 %End
 
 %Start
@@ -1752,9 +2391,87 @@
 %End
 
 %Rules
+    Keyword ::= v g f 2 p 8 a f f i n e i n v q b /.$setResult($_VGF2P8AFFINEINVQB);./
+    Keyword ::= g f 2 p 8 a f f i n e i n v q b /.$setResult($_GF2P8AFFINEINVQB);./
     Keyword ::= v a e s k e y g e n a s s i s t /.$setResult($_VAESKEYGENASSIST);./
     Keyword ::= a e s k e y g e n a s s i s t /.$setResult($_AESKEYGENASSIST);./
+    Keyword ::= v b r o a d c a s t f 3 2 x 2 /.$setResult($_VBROADCASTF32X2);./
+    Keyword ::= v b r o a d c a s t f 3 2 x 4 /.$setResult($_VBROADCASTF32X4);./
+    Keyword ::= v b r o a d c a s t f 3 2 x 8 /.$setResult($_VBROADCASTF32X8);./
+    Keyword ::= v b r o a d c a s t f 6 4 x 2 /.$setResult($_VBROADCASTF64X2);./
+    Keyword ::= v b r o a d c a s t f 6 4 x 4 /.$setResult($_VBROADCASTF64X4);./
+    Keyword ::= v b r o a d c a s t i 3 2 x 2 /.$setResult($_VBROADCASTI32X2);./
+    Keyword ::= v b r o a d c a s t i 3 2 x 4 /.$setResult($_VBROADCASTI32X4);./
+    Keyword ::= v b r o a d c a s t i 3 2 x 8 /.$setResult($_VBROADCASTI32X8);./
+    Keyword ::= v b r o a d c a s t i 6 4 x 2 /.$setResult($_VBROADCASTI64X2);./
+    Keyword ::= v b r o a d c a s t i 6 4 x 4 /.$setResult($_VBROADCASTI64X4);./
+    Keyword ::= v p b r o a d c a s t m b 2 q /.$setResult($_VPBROADCASTMB2Q);./
+    Keyword ::= v p b r o a d c a s t m w 2 d /.$setResult($_VPBROADCASTMW2D);./
+    Keyword ::= v b r o a d c a s t f 1 2 8 /.$setResult($_VBROADCASTF128);./
+    Keyword ::= v b r o a d c a s t i 1 2 8 /.$setResult($_VBROADCASTI128);./
+    Keyword ::= v c v t n e 2 p s 2 b f 1 6 /.$setResult($_VCVTNE2PS2BF16);./
+    Keyword ::= v c v t n e e b f 1 6 2 p s /.$setResult($_VCVTNEEBF162PS);./
+    Keyword ::= v c v t n e o b f 1 6 2 p s /.$setResult($_VCVTNEOBF162PS);./
+    Keyword ::= v f m a d d s u b 1 2 3 p d /.$setResult($_VFMADDSUB123PD);./
+    Keyword ::= v f m a d d s u b 1 2 3 p s /.$setResult($_VFMADDSUB123PS);./
+    Keyword ::= v f m a d d s u b 1 3 2 p d /.$setResult($_VFMADDSUB132PD);./
+    Keyword ::= v f m a d d s u b 1 3 2 p h /.$setResult($_VFMADDSUB132PH);./
+    Keyword ::= v f m a d d s u b 1 3 2 p s /.$setResult($_VFMADDSUB132PS);./
+    Keyword ::= v f m a d d s u b 2 1 3 p d /.$setResult($_VFMADDSUB213PD);./
+    Keyword ::= v f m a d d s u b 2 1 3 p h /.$setResult($_VFMADDSUB213PH);./
+    Keyword ::= v f m a d d s u b 2 1 3 p s /.$setResult($_VFMADDSUB213PS);./
+    Keyword ::= v f m a d d s u b 2 3 1 p d /.$setResult($_VFMADDSUB231PD);./
+    Keyword ::= v f m a d d s u b 2 3 1 p h /.$setResult($_VFMADDSUB231PH);./
+    Keyword ::= v f m a d d s u b 2 3 1 p s /.$setResult($_VFMADDSUB231PS);./
+    Keyword ::= v f m a d d s u b 3 1 2 p d /.$setResult($_VFMADDSUB312PD);./
+    Keyword ::= v f m a d d s u b 3 1 2 p s /.$setResult($_VFMADDSUB312PS);./
+    Keyword ::= v f m a d d s u b 3 2 1 p d /.$setResult($_VFMADDSUB321PD);./
+    Keyword ::= v f m a d d s u b 3 2 1 p s /.$setResult($_VFMADDSUB321PS);./
+    Keyword ::= v f m s u b a d d 1 2 3 p d /.$setResult($_VFMSUBADD123PD);./
+    Keyword ::= v f m s u b a d d 1 2 3 p s /.$setResult($_VFMSUBADD123PS);./
+    Keyword ::= v f m s u b a d d 1 3 2 p d /.$setResult($_VFMSUBADD132PD);./
+    Keyword ::= v f m s u b a d d 1 3 2 p h /.$setResult($_VFMSUBADD132PH);./
+    Keyword ::= v f m s u b a d d 1 3 2 p s /.$setResult($_VFMSUBADD132PS);./
+    Keyword ::= v f m s u b a d d 2 1 3 p d /.$setResult($_VFMSUBADD213PD);./
+    Keyword ::= v f m s u b a d d 2 1 3 p h /.$setResult($_VFMSUBADD213PH);./
+    Keyword ::= v f m s u b a d d 2 1 3 p s /.$setResult($_VFMSUBADD213PS);./
+    Keyword ::= v f m s u b a d d 2 3 1 p d /.$setResult($_VFMSUBADD231PD);./
+    Keyword ::= v f m s u b a d d 2 3 1 p h /.$setResult($_VFMSUBADD231PH);./
+    Keyword ::= v f m s u b a d d 2 3 1 p s /.$setResult($_VFMSUBADD231PS);./
+    Keyword ::= v f m s u b a d d 3 1 2 p d /.$setResult($_VFMSUBADD312PD);./
+    Keyword ::= v f m s u b a d d 3 1 2 p s /.$setResult($_VFMSUBADD312PS);./
+    Keyword ::= v f m s u b a d d 3 2 1 p d /.$setResult($_VFMSUBADD321PD);./
+    Keyword ::= v f m s u b a d d 3 2 1 p s /.$setResult($_VFMSUBADD321PS);./
+    Keyword ::= v g f 2 p 8 a f f i n e q b /.$setResult($_VGF2P8AFFINEQB);./
     Keyword ::= v p m u l t i s h i f t q b /.$setResult($_VPMULTISHIFTQB);./
+    Keyword ::= v s c a t t e r p f 0 d p d /.$setResult($_VSCATTERPF0DPD);./
+    Keyword ::= v s c a t t e r p f 0 d p s /.$setResult($_VSCATTERPF0DPS);./
+    Keyword ::= v s c a t t e r p f 0 q p d /.$setResult($_VSCATTERPF0QPD);./
+    Keyword ::= v s c a t t e r p f 0 q p s /.$setResult($_VSCATTERPF0QPS);./
+    Keyword ::= v s c a t t e r p f 1 d p d /.$setResult($_VSCATTERPF1DPD);./
+    Keyword ::= v s c a t t e r p f 1 d p s /.$setResult($_VSCATTERPF1DPS);./
+    Keyword ::= v s c a t t e r p f 1 q p d /.$setResult($_VSCATTERPF1QPD);./
+    Keyword ::= v s c a t t e r p f 1 q p s /.$setResult($_VSCATTERPF1QPS);./
+    Keyword ::= g f 2 p 8 a f f i n e q b /.$setResult($_GF2P8AFFINEQB);./
+    Keyword ::= v b c s t n e b f 1 6 p s /.$setResult($_VBCSTNEBF16PS);./
+    Keyword ::= v c v t n e p s 2 b f 1 6 /.$setResult($_VCVTNEPS2BF16);./
+    Keyword ::= v e x t r a c t f 3 2 x 4 /.$setResult($_VEXTRACTF32X4);./
+    Keyword ::= v e x t r a c t f 3 2 x 8 /.$setResult($_VEXTRACTF32X8);./
+    Keyword ::= v e x t r a c t f 6 4 x 2 /.$setResult($_VEXTRACTF64X2);./
+    Keyword ::= v e x t r a c t f 6 4 x 4 /.$setResult($_VEXTRACTF64X4);./
+    Keyword ::= v e x t r a c t i 3 2 x 4 /.$setResult($_VEXTRACTI32X4);./
+    Keyword ::= v e x t r a c t i 3 2 x 8 /.$setResult($_VEXTRACTI32X8);./
+    Keyword ::= v e x t r a c t i 6 4 x 2 /.$setResult($_VEXTRACTI64X2);./
+    Keyword ::= v e x t r a c t i 6 4 x 4 /.$setResult($_VEXTRACTI64X4);./
+    Keyword ::= v g a t h e r p f 0 d p d /.$setResult($_VGATHERPF0DPD);./
+    Keyword ::= v g a t h e r p f 0 d p s /.$setResult($_VGATHERPF0DPS);./
+    Keyword ::= v g a t h e r p f 0 q p d /.$setResult($_VGATHERPF0QPD);./
+    Keyword ::= v g a t h e r p f 0 q p s /.$setResult($_VGATHERPF0QPS);./
+    Keyword ::= v g a t h e r p f 1 d p d /.$setResult($_VGATHERPF1DPD);./
+    Keyword ::= v g a t h e r p f 1 d p s /.$setResult($_VGATHERPF1DPS);./
+    Keyword ::= v g a t h e r p f 1 q p d /.$setResult($_VGATHERPF1QPD);./
+    Keyword ::= v g a t h e r p f 1 q p s /.$setResult($_VGATHERPF1QPS);./
+    Keyword ::= v p 2 i n t e r s e c t d /.$setResult($_VP2INTERSECTD);./
     Keyword ::= v p c l m u l h q h q d q /.$setResult($_VPCLMULHQHQDQ);./
     Keyword ::= v p c l m u l h q l q d q /.$setResult($_VPCLMULHQLQDQ);./
     Keyword ::= v p c l m u l l q h q d q /.$setResult($_VPCLMULLQHQDQ);./
@@ -1763,15 +2480,87 @@
     Keyword ::= p c l m u l h q l q d q /.$setResult($_PCLMULHQLQDQ);./
     Keyword ::= p c l m u l l q h q d q /.$setResult($_PCLMULLQHQDQ);./
     Keyword ::= p c l m u l l q l q d q /.$setResult($_PCLMULLQLQDQ);./
+    Keyword ::= v b c s t n e s h 2 p s /.$setResult($_VBCSTNESH2PS);./
     Keyword ::= v b r o a d c a s t s d /.$setResult($_VBROADCASTSD);./
     Keyword ::= v b r o a d c a s t s s /.$setResult($_VBROADCASTSS);./
+    Keyword ::= v c v t n e e p h 2 p s /.$setResult($_VCVTNEEPH2PS);./
+    Keyword ::= v c v t n e o p h 2 p s /.$setResult($_VCVTNEOPH2PS);./
+    Keyword ::= v e x t r a c t f 1 2 8 /.$setResult($_VEXTRACTF128);./
+    Keyword ::= v e x t r a c t i 1 2 8 /.$setResult($_VEXTRACTI128);./
+    Keyword ::= v f n m a d d 1 2 3 p d /.$setResult($_VFNMADD123PD);./
+    Keyword ::= v f n m a d d 1 2 3 p s /.$setResult($_VFNMADD123PS);./
+    Keyword ::= v f n m a d d 1 2 3 s d /.$setResult($_VFNMADD123SD);./
+    Keyword ::= v f n m a d d 1 2 3 s s /.$setResult($_VFNMADD123SS);./
+    Keyword ::= v f n m a d d 1 3 2 p d /.$setResult($_VFNMADD132PD);./
+    Keyword ::= v f n m a d d 1 3 2 p s /.$setResult($_VFNMADD132PS);./
+    Keyword ::= v f n m a d d 1 3 2 s d /.$setResult($_VFNMADD132SD);./
+    Keyword ::= v f n m a d d 1 3 2 s s /.$setResult($_VFNMADD132SS);./
+    Keyword ::= v f n m a d d 2 1 3 p d /.$setResult($_VFNMADD213PD);./
+    Keyword ::= v f n m a d d 2 1 3 p s /.$setResult($_VFNMADD213PS);./
+    Keyword ::= v f n m a d d 2 1 3 s d /.$setResult($_VFNMADD213SD);./
+    Keyword ::= v f n m a d d 2 1 3 s s /.$setResult($_VFNMADD213SS);./
+    Keyword ::= v f n m a d d 2 3 1 p d /.$setResult($_VFNMADD231PD);./
+    Keyword ::= v f n m a d d 2 3 1 p s /.$setResult($_VFNMADD231PS);./
+    Keyword ::= v f n m a d d 2 3 1 s d /.$setResult($_VFNMADD231SD);./
+    Keyword ::= v f n m a d d 2 3 1 s s /.$setResult($_VFNMADD231SS);./
+    Keyword ::= v f n m a d d 3 1 2 p d /.$setResult($_VFNMADD312PD);./
+    Keyword ::= v f n m a d d 3 1 2 p s /.$setResult($_VFNMADD312PS);./
+    Keyword ::= v f n m a d d 3 1 2 s d /.$setResult($_VFNMADD312SD);./
+    Keyword ::= v f n m a d d 3 1 2 s s /.$setResult($_VFNMADD312SS);./
+    Keyword ::= v f n m a d d 3 2 1 p d /.$setResult($_VFNMADD321PD);./
+    Keyword ::= v f n m a d d 3 2 1 p s /.$setResult($_VFNMADD321PS);./
+    Keyword ::= v f n m a d d 3 2 1 s d /.$setResult($_VFNMADD321SD);./
+    Keyword ::= v f n m a d d 3 2 1 s s /.$setResult($_VFNMADD321SS);./
+    Keyword ::= v f n m s u b 1 2 3 p d /.$setResult($_VFNMSUB123PD);./
+    Keyword ::= v f n m s u b 1 2 3 p s /.$setResult($_VFNMSUB123PS);./
+    Keyword ::= v f n m s u b 1 2 3 s d /.$setResult($_VFNMSUB123SD);./
+    Keyword ::= v f n m s u b 1 2 3 s s /.$setResult($_VFNMSUB123SS);./
+    Keyword ::= v f n m s u b 1 3 2 p d /.$setResult($_VFNMSUB132PD);./
+    Keyword ::= v f n m s u b 1 3 2 p s /.$setResult($_VFNMSUB132PS);./
+    Keyword ::= v f n m s u b 1 3 2 s d /.$setResult($_VFNMSUB132SD);./
+    Keyword ::= v f n m s u b 1 3 2 s s /.$setResult($_VFNMSUB132SS);./
+    Keyword ::= v f n m s u b 2 1 3 p d /.$setResult($_VFNMSUB213PD);./
+    Keyword ::= v f n m s u b 2 1 3 p s /.$setResult($_VFNMSUB213PS);./
+    Keyword ::= v f n m s u b 2 1 3 s d /.$setResult($_VFNMSUB213SD);./
+    Keyword ::= v f n m s u b 2 1 3 s s /.$setResult($_VFNMSUB213SS);./
+    Keyword ::= v f n m s u b 2 3 1 p d /.$setResult($_VFNMSUB231PD);./
+    Keyword ::= v f n m s u b 2 3 1 p s /.$setResult($_VFNMSUB231PS);./
+    Keyword ::= v f n m s u b 2 3 1 s d /.$setResult($_VFNMSUB231SD);./
+    Keyword ::= v f n m s u b 2 3 1 s s /.$setResult($_VFNMSUB231SS);./
+    Keyword ::= v f n m s u b 3 1 2 p d /.$setResult($_VFNMSUB312PD);./
+    Keyword ::= v f n m s u b 3 1 2 p s /.$setResult($_VFNMSUB312PS);./
+    Keyword ::= v f n m s u b 3 1 2 s d /.$setResult($_VFNMSUB312SD);./
+    Keyword ::= v f n m s u b 3 1 2 s s /.$setResult($_VFNMSUB312SS);./
+    Keyword ::= v f n m s u b 3 2 1 p d /.$setResult($_VFNMSUB321PD);./
+    Keyword ::= v f n m s u b 3 2 1 p s /.$setResult($_VFNMSUB321PS);./
+    Keyword ::= v f n m s u b 3 2 1 s d /.$setResult($_VFNMSUB321SD);./
+    Keyword ::= v f n m s u b 3 2 1 s s /.$setResult($_VFNMSUB321SS);./
+    Keyword ::= v i n s e r t f 3 2 x 4 /.$setResult($_VINSERTF32X4);./
+    Keyword ::= v i n s e r t f 3 2 x 8 /.$setResult($_VINSERTF32X8);./
+    Keyword ::= v i n s e r t f 6 4 x 2 /.$setResult($_VINSERTF64X2);./
+    Keyword ::= v i n s e r t f 6 4 x 4 /.$setResult($_VINSERTF64X4);./
+    Keyword ::= v i n s e r t i 3 2 x 4 /.$setResult($_VINSERTI32X4);./
+    Keyword ::= v i n s e r t i 3 2 x 8 /.$setResult($_VINSERTI32X8);./
+    Keyword ::= v i n s e r t i 6 4 x 2 /.$setResult($_VINSERTI64X2);./
+    Keyword ::= v i n s e r t i 6 4 x 4 /.$setResult($_VINSERTI64X4);./
     Keyword ::= v p b r o a d c a s t b /.$setResult($_VPBROADCASTB);./
     Keyword ::= v p b r o a d c a s t d /.$setResult($_VPBROADCASTD);./
     Keyword ::= v p b r o a d c a s t q /.$setResult($_VPBROADCASTQ);./
     Keyword ::= v p b r o a d c a s t w /.$setResult($_VPBROADCASTW);./
+    Keyword ::= v p n m a d d 1 3 2 s h /.$setResult($_VPNMADD132SH);./
+    Keyword ::= v p n m a d d 2 1 3 s h /.$setResult($_VPNMADD213SH);./
+    Keyword ::= v p n m a d d 2 3 1 s h /.$setResult($_VPNMADD231SH);./
+    Keyword ::= v p n m s u b 1 3 2 s h /.$setResult($_VPNMSUB132SH);./
+    Keyword ::= v p n m s u b 2 1 3 s h /.$setResult($_VPNMSUB213SH);./
+    Keyword ::= v p n m s u b 2 3 1 s h /.$setResult($_VPNMSUB231SH);./
     Keyword ::= v p s h u f b i t q m b /.$setResult($_VPSHUFBITQMB);./
+    Keyword ::= p r e f e t c h i t 0 /.$setResult($_PREFETCHIT0);./
+    Keyword ::= p r e f e t c h i t 1 /.$setResult($_PREFETCHIT1);./
     Keyword ::= p r e f e t c h n t a /.$setResult($_PREFETCHNTA);./
+    Keyword ::= p r e f e t c h w t 1 /.$setResult($_PREFETCHWT1);./
     Keyword ::= s a v e p r e v s s p /.$setResult($_SAVEPREVSSP);./
+    Keyword ::= s h a 2 5 6 r n d s 2 /.$setResult($_SHA256RNDS2);./
+    Keyword ::= t i l e l o a d d t 1 /.$setResult($_TILELOADDT1);./
     Keyword ::= t i l e r e l e a s e /.$setResult($_TILERELEASE);./
     Keyword ::= v a e s d e c l a s t /.$setResult($_VAESDECLAST);./
     Keyword ::= v a e s e n c l a s t /.$setResult($_VAESENCLAST);./
@@ -1785,16 +2574,81 @@
     Keyword ::= v c m p u n o r d s s /.$setResult($_VCMPUNORDSS);./
     Keyword ::= v c o m p r e s s p d /.$setResult($_VCOMPRESSPD);./
     Keyword ::= v c o m p r e s s p s /.$setResult($_VCOMPRESSPS);./
+    Keyword ::= v c v t t p d 2 u d q /.$setResult($_VCVTTPD2UDQ);./
+    Keyword ::= v c v t t p d 2 u q q /.$setResult($_VCVTTPD2UQQ);./
+    Keyword ::= v c v t t p h 2 u d q /.$setResult($_VCVTTPH2UDQ);./
+    Keyword ::= v c v t t p h 2 u q q /.$setResult($_VCVTTPH2UQQ);./
+    Keyword ::= v c v t t p s 2 u d q /.$setResult($_VCVTTPS2UDQ);./
+    Keyword ::= v c v t t p s 2 u q q /.$setResult($_VCVTTPS2UQQ);./
+    Keyword ::= v c v t t s d 2 u s i /.$setResult($_VCVTTSD2USI);./
+    Keyword ::= v c v t t s h 2 u s i /.$setResult($_VCVTTSH2USI);./
+    Keyword ::= v c v t t s s 2 u s i /.$setResult($_VCVTTSS2USI);./
     Keyword ::= v e n d s c a l e p h /.$setResult($_VENDSCALEPH);./
     Keyword ::= v e n d s c a l e s h /.$setResult($_VENDSCALESH);./
     Keyword ::= v f i x u p i m m p d /.$setResult($_VFIXUPIMMPD);./
     Keyword ::= v f i x u p i m m p s /.$setResult($_VFIXUPIMMPS);./
     Keyword ::= v f i x u p i m m s d /.$setResult($_VFIXUPIMMSD);./
     Keyword ::= v f i x u p i m m s s /.$setResult($_VFIXUPIMMSS);./
+    Keyword ::= v f m a d d 1 2 3 p d /.$setResult($_VFMADD123PD);./
+    Keyword ::= v f m a d d 1 2 3 p s /.$setResult($_VFMADD123PS);./
+    Keyword ::= v f m a d d 1 2 3 s d /.$setResult($_VFMADD123SD);./
+    Keyword ::= v f m a d d 1 2 3 s s /.$setResult($_VFMADD123SS);./
+    Keyword ::= v f m a d d 1 3 2 p d /.$setResult($_VFMADD132PD);./
+    Keyword ::= v f m a d d 1 3 2 p h /.$setResult($_VFMADD132PH);./
+    Keyword ::= v f m a d d 1 3 2 p s /.$setResult($_VFMADD132PS);./
+    Keyword ::= v f m a d d 1 3 2 s d /.$setResult($_VFMADD132SD);./
+    Keyword ::= v f m a d d 1 3 2 s s /.$setResult($_VFMADD132SS);./
+    Keyword ::= v f m a d d 2 1 3 p d /.$setResult($_VFMADD213PD);./
+    Keyword ::= v f m a d d 2 1 3 p h /.$setResult($_VFMADD213PH);./
+    Keyword ::= v f m a d d 2 1 3 p s /.$setResult($_VFMADD213PS);./
+    Keyword ::= v f m a d d 2 1 3 s d /.$setResult($_VFMADD213SD);./
+    Keyword ::= v f m a d d 2 1 3 s s /.$setResult($_VFMADD213SS);./
+    Keyword ::= v f m a d d 2 3 1 p d /.$setResult($_VFMADD231PD);./
+    Keyword ::= v f m a d d 2 3 1 p h /.$setResult($_VFMADD231PH);./
+    Keyword ::= v f m a d d 2 3 1 p s /.$setResult($_VFMADD231PS);./
+    Keyword ::= v f m a d d 2 3 1 s d /.$setResult($_VFMADD231SD);./
+    Keyword ::= v f m a d d 2 3 1 s s /.$setResult($_VFMADD231SS);./
+    Keyword ::= v f m a d d 3 1 2 p d /.$setResult($_VFMADD312PD);./
+    Keyword ::= v f m a d d 3 1 2 p s /.$setResult($_VFMADD312PS);./
+    Keyword ::= v f m a d d 3 1 2 s d /.$setResult($_VFMADD312SD);./
+    Keyword ::= v f m a d d 3 1 2 s s /.$setResult($_VFMADD312SS);./
+    Keyword ::= v f m a d d 3 2 1 p d /.$setResult($_VFMADD321PD);./
+    Keyword ::= v f m a d d 3 2 1 p s /.$setResult($_VFMADD321PS);./
+    Keyword ::= v f m a d d 3 2 1 s d /.$setResult($_VFMADD321SD);./
+    Keyword ::= v f m a d d 3 2 1 s s /.$setResult($_VFMADD321SS);./
     Keyword ::= v f m a d d s u b p d /.$setResult($_VFMADDSUBPD);./
     Keyword ::= v f m a d d s u b p s /.$setResult($_VFMADDSUBPS);./
+    Keyword ::= v f m s u b 1 2 3 p d /.$setResult($_VFMSUB123PD);./
+    Keyword ::= v f m s u b 1 2 3 p s /.$setResult($_VFMSUB123PS);./
+    Keyword ::= v f m s u b 1 2 3 s d /.$setResult($_VFMSUB123SD);./
+    Keyword ::= v f m s u b 1 2 3 s s /.$setResult($_VFMSUB123SS);./
+    Keyword ::= v f m s u b 1 3 2 p d /.$setResult($_VFMSUB132PD);./
+    Keyword ::= v f m s u b 1 3 2 p h /.$setResult($_VFMSUB132PH);./
+    Keyword ::= v f m s u b 1 3 2 p s /.$setResult($_VFMSUB132PS);./
+    Keyword ::= v f m s u b 1 3 2 s d /.$setResult($_VFMSUB132SD);./
+    Keyword ::= v f m s u b 1 3 2 s s /.$setResult($_VFMSUB132SS);./
+    Keyword ::= v f m s u b 2 1 3 p d /.$setResult($_VFMSUB213PD);./
+    Keyword ::= v f m s u b 2 1 3 p h /.$setResult($_VFMSUB213PH);./
+    Keyword ::= v f m s u b 2 1 3 p s /.$setResult($_VFMSUB213PS);./
+    Keyword ::= v f m s u b 2 1 3 s d /.$setResult($_VFMSUB213SD);./
+    Keyword ::= v f m s u b 2 1 3 s s /.$setResult($_VFMSUB213SS);./
+    Keyword ::= v f m s u b 2 3 1 p d /.$setResult($_VFMSUB231PD);./
+    Keyword ::= v f m s u b 2 3 1 p h /.$setResult($_VFMSUB231PH);./
+    Keyword ::= v f m s u b 2 3 1 p s /.$setResult($_VFMSUB231PS);./
+    Keyword ::= v f m s u b 2 3 1 s d /.$setResult($_VFMSUB231SD);./
+    Keyword ::= v f m s u b 2 3 1 s s /.$setResult($_VFMSUB231SS);./
+    Keyword ::= v f m s u b 3 1 2 p d /.$setResult($_VFMSUB312PD);./
+    Keyword ::= v f m s u b 3 1 2 p s /.$setResult($_VFMSUB312PS);./
+    Keyword ::= v f m s u b 3 1 2 s d /.$setResult($_VFMSUB312SD);./
+    Keyword ::= v f m s u b 3 1 2 s s /.$setResult($_VFMSUB312SS);./
+    Keyword ::= v f m s u b 3 2 1 p d /.$setResult($_VFMSUB321PD);./
+    Keyword ::= v f m s u b 3 2 1 p s /.$setResult($_VFMSUB321PS);./
+    Keyword ::= v f m s u b 3 2 1 s d /.$setResult($_VFMSUB321SD);./
+    Keyword ::= v f m s u b 3 2 1 s s /.$setResult($_VFMSUB321SS);./
     Keyword ::= v f m s u b a d d p d /.$setResult($_VFMSUBADDPD);./
     Keyword ::= v f m s u b a d d p s /.$setResult($_VFMSUBADDPS);./
+    Keyword ::= v i n s e r t f 1 2 8 /.$setResult($_VINSERTF128);./
+    Keyword ::= v i n s e r t i 1 2 8 /.$setResult($_VINSERTI128);./
     Keyword ::= v m a s k m o v d q u /.$setResult($_VMASKMOVDQU);./
     Keyword ::= v p c o m p r e s s b /.$setResult($_VPCOMPRESSB);./
     Keyword ::= v p c o m p r e s s d /.$setResult($_VPCOMPRESSD);./
@@ -1803,6 +2657,20 @@
     Keyword ::= v p c o n f l i c t d /.$setResult($_VPCONFLICTD);./
     Keyword ::= v p c o n f l i c t q /.$setResult($_VPCONFLICTQ);./
     Keyword ::= v p h m i n p o s u w /.$setResult($_VPHMINPOSUW);./
+    Keyword ::= v p m a d d 1 3 2 p h /.$setResult($_VPMADD132PH);./
+    Keyword ::= v p m a d d 1 3 2 s h /.$setResult($_VPMADD132SH);./
+    Keyword ::= v p m a d d 2 1 3 p h /.$setResult($_VPMADD213PH);./
+    Keyword ::= v p m a d d 2 1 3 s h /.$setResult($_VPMADD213SH);./
+    Keyword ::= v p m a d d 2 3 1 p h /.$setResult($_VPMADD231PH);./
+    Keyword ::= v p m a d d 2 3 1 s h /.$setResult($_VPMADD231SH);./
+    Keyword ::= v p m a d d 5 2 h u q /.$setResult($_VPMADD52HUQ);./
+    Keyword ::= v p m a d d 5 2 l u q /.$setResult($_VPMADD52LUQ);./
+    Keyword ::= v p m s u b 1 3 2 p h /.$setResult($_VPMSUB132PH);./
+    Keyword ::= v p m s u b 1 3 2 s h /.$setResult($_VPMSUB132SH);./
+    Keyword ::= v p m s u b 2 1 3 p h /.$setResult($_VPMSUB213PH);./
+    Keyword ::= v p m s u b 2 1 3 s h /.$setResult($_VPMSUB213SH);./
+    Keyword ::= v p m s u b 2 3 1 p h /.$setResult($_VPMSUB231PH);./
+    Keyword ::= v p m s u b 2 3 1 s h /.$setResult($_VPMSUB231SH);./
     Keyword ::= v p s c a t t e r d d /.$setResult($_VPSCATTERDD);./
     Keyword ::= v p s c a t t e r d q /.$setResult($_VPSCATTERDQ);./
     Keyword ::= v p s c a t t e r q d /.$setResult($_VPSCATTERQD);./
@@ -1824,15 +2692,54 @@
     Keyword ::= c m p u n o r d p s /.$setResult($_CMPUNORDPS);./
     Keyword ::= c m p u n o r d s d /.$setResult($_CMPUNORDSD);./
     Keyword ::= c m p u n o r d s s /.$setResult($_CMPUNORDSS);./
+    Keyword ::= c m p x c h g 1 6 b /.$setResult($_CMPXCHG16B);./
+    Keyword ::= c m p x c h g 4 8 6 /.$setResult($_CMPXCHG486);./
+    Keyword ::= l o a d a l l 2 8 6 /.$setResult($_LOADALL286);./
     Keyword ::= m a s k m o v d q u /.$setResult($_MASKMOVDQU);./
     Keyword ::= p h m i n p o s u w /.$setResult($_PHMINPOSUW);./
+    Keyword ::= p r e f e t c h t 0 /.$setResult($_PREFETCHT0);./
+    Keyword ::= p r e f e t c h t 1 /.$setResult($_PREFETCHT1);./
+    Keyword ::= p r e f e t c h t 2 /.$setResult($_PREFETCHT2);./
     Keyword ::= p u n p c k h q d q /.$setResult($_PUNPCKHQDQ);./
     Keyword ::= p u n p c k l q d q /.$setResult($_PUNPCKLQDQ);./
+    Keyword ::= s h a 2 5 6 m s g 1 /.$setResult($_SHA256MSG1);./
+    Keyword ::= s h a 2 5 6 m s g 2 /.$setResult($_SHA256MSG2);./
     Keyword ::= t i l e s t o r e d /.$setResult($_TILESTORED);./
+    Keyword ::= v 4 f n m a d d p s /.$setResult($_V4FNMADDPS);./
+    Keyword ::= v 4 f n m a d d s s /.$setResult($_V4FNMADDSS);./
     Keyword ::= v c m p t r u e p d /.$setResult($_VCMPTRUEPD);./
     Keyword ::= v c m p t r u e p s /.$setResult($_VCMPTRUEPS);./
     Keyword ::= v c m p t r u e s d /.$setResult($_VCMPTRUESD);./
     Keyword ::= v c m p t r u e s s /.$setResult($_VCMPTRUESS);./
+    Keyword ::= v c v t p d 2 u d q /.$setResult($_VCVTPD2UDQ);./
+    Keyword ::= v c v t p d 2 u q q /.$setResult($_VCVTPD2UQQ);./
+    Keyword ::= v c v t p h 2 p s x /.$setResult($_VCVTPH2PSX);./
+    Keyword ::= v c v t p h 2 u d q /.$setResult($_VCVTPH2UDQ);./
+    Keyword ::= v c v t p h 2 u q q /.$setResult($_VCVTPH2UQQ);./
+    Keyword ::= v c v t p s 2 u d q /.$setResult($_VCVTPS2UDQ);./
+    Keyword ::= v c v t p s 2 u q q /.$setResult($_VCVTPS2UQQ);./
+    Keyword ::= v c v t s d 2 u s i /.$setResult($_VCVTSD2USI);./
+    Keyword ::= v c v t s h 2 u s i /.$setResult($_VCVTSH2USI);./
+    Keyword ::= v c v t s s 2 u s i /.$setResult($_VCVTSS2USI);./
+    Keyword ::= v c v t t p d 2 d q /.$setResult($_VCVTTPD2DQ);./
+    Keyword ::= v c v t t p d 2 q q /.$setResult($_VCVTTPD2QQ);./
+    Keyword ::= v c v t t p h 2 d q /.$setResult($_VCVTTPH2DQ);./
+    Keyword ::= v c v t t p h 2 q q /.$setResult($_VCVTTPH2QQ);./
+    Keyword ::= v c v t t p h 2 u w /.$setResult($_VCVTTPH2UW);./
+    Keyword ::= v c v t t p s 2 d q /.$setResult($_VCVTTPS2DQ);./
+    Keyword ::= v c v t t p s 2 q q /.$setResult($_VCVTTPS2QQ);./
+    Keyword ::= v c v t t s d 2 s i /.$setResult($_VCVTTSD2SI);./
+    Keyword ::= v c v t t s h 2 s i /.$setResult($_VCVTTSH2SI);./
+    Keyword ::= v c v t t s s 2 s i /.$setResult($_VCVTTSS2SI);./
+    Keyword ::= v c v t u d q 2 p d /.$setResult($_VCVTUDQ2PD);./
+    Keyword ::= v c v t u d q 2 p h /.$setResult($_VCVTUDQ2PH);./
+    Keyword ::= v c v t u d q 2 p s /.$setResult($_VCVTUDQ2PS);./
+    Keyword ::= v c v t u q q 2 p d /.$setResult($_VCVTUQQ2PD);./
+    Keyword ::= v c v t u q q 2 p h /.$setResult($_VCVTUQQ2PH);./
+    Keyword ::= v c v t u q q 2 p s /.$setResult($_VCVTUQQ2PS);./
+    Keyword ::= v c v t u s i 2 s d /.$setResult($_VCVTUSI2SD);./
+    Keyword ::= v c v t u s i 2 s h /.$setResult($_VCVTUSI2SH);./
+    Keyword ::= v c v t u s i 2 s s /.$setResult($_VCVTUSI2SS);./
     Keyword ::= v e x t r a c t p s /.$setResult($_VEXTRACTPS);./
     Keyword ::= v f c m a d d c p h /.$setResult($_VFCMADDCPH);./
     Keyword ::= v f c m a d d c s h /.$setResult($_VFCMADDCSH);./
@@ -1853,6 +2760,7 @@
     Keyword ::= v g e t m a n t s d /.$setResult($_VGETMANTSD);./
     Keyword ::= v g e t m a n t s h /.$setResult($_VGETMANTSH);./
     Keyword ::= v g e t m a n t s s /.$setResult($_VGETMANTSS);./
+    Keyword ::= v g f 2 p 8 m u l b /.$setResult($_VGF2P8MULB);./
     Keyword ::= v m a s k m o v p d /.$setResult($_VMASKMOVPD);./
     Keyword ::= v m a s k m o v p s /.$setResult($_VMASKMOVPS);./
     Keyword ::= v p c l m u l q d q /.$setResult($_VPCLMULQDQ);./
@@ -1876,6 +2784,8 @@
     Keyword ::= v p c m p n l t u d /.$setResult($_VPCMPNLTUD);./
     Keyword ::= v p c m p n l t u q /.$setResult($_VPCMPNLTUQ);./
     Keyword ::= v p c m p n l t u w /.$setResult($_VPCMPNLTUW);./
+    Keyword ::= v p e r m 2 f 1 2 8 /.$setResult($_VPERM2F128);./
+    Keyword ::= v p e r m 2 i 1 2 8 /.$setResult($_VPERM2I128);./
     Keyword ::= v p g a t h e r d d /.$setResult($_VPGATHERDD);./
     Keyword ::= v p g a t h e r d q /.$setResult($_VPGATHERDQ);./
     Keyword ::= v p g a t h e r q d /.$setResult($_VPGATHERQD);./
@@ -1894,12 +2804,35 @@
     Keyword ::= v p u n p c k l b w /.$setResult($_VPUNPCKLBW);./
     Keyword ::= v p u n p c k l d q /.$setResult($_VPUNPCKLDQ);./
     Keyword ::= v p u n p c k l w d /.$setResult($_VPUNPCKLWD);./
+    Keyword ::= v r s q r t 1 4 p d /.$setResult($_VRSQRT14PD);./
+    Keyword ::= v r s q r t 1 4 p s /.$setResult($_VRSQRT14PS);./
+    Keyword ::= v r s q r t 1 4 s d /.$setResult($_VRSQRT14SD);./
+    Keyword ::= v r s q r t 1 4 s s /.$setResult($_VRSQRT14SS);./
+    Keyword ::= v r s q r t 2 8 p d /.$setResult($_VRSQRT28PD);./
+    Keyword ::= v r s q r t 2 8 p s /.$setResult($_VRSQRT28PS);./
+    Keyword ::= v r s q r t 2 8 s d /.$setResult($_VRSQRT28SD);./
+    Keyword ::= v r s q r t 2 8 s s /.$setResult($_VRSQRT28SS);./
+    Keyword ::= v s h u f f 3 2 x 4 /.$setResult($_VSHUFF32X4);./
+    Keyword ::= v s h u f f 6 4 x 2 /.$setResult($_VSHUFF64X2);./
+    Keyword ::= v s h u f i 3 2 x 4 /.$setResult($_VSHUFI32X4);./
+    Keyword ::= v s h u f i 6 4 x 2 /.$setResult($_VSHUFI64X2);./
     Keyword ::= v z e r o u p p e r /.$setResult($_VZEROUPPER);./
+    Keyword ::= x s a v e o p t 6 4 /.$setResult($_XSAVEOPT64);./
     Keyword ::= c m p n p x a d d /.$setResult($_CMPNPXADD);./
     Keyword ::= c m p n s x a d d /.$setResult($_CMPNSXADD);./
     Keyword ::= c m p n z x a d d /.$setResult($_CMPNZXADD);./
+    Keyword ::= c m p x c h g 8 b /.$setResult($_CMPXCHG8B);./
+    Keyword ::= c v t t p d 2 d q /.$setResult($_CVTTPD2DQ);./
+    Keyword ::= c v t t p d 2 p i /.$setResult($_CVTTPD2PI);./
+    Keyword ::= c v t t p s 2 d q /.$setResult($_CVTTPS2DQ);./
+    Keyword ::= c v t t p s 2 p i /.$setResult($_CVTTPS2PI);./
+    Keyword ::= c v t t s d 2 s i /.$setResult($_CVTTSD2SI);./
+    Keyword ::= c v t t s s 2 s i /.$setResult($_CVTTSS2SI);./
     Keyword ::= e x t r a c t p s /.$setResult($_EXTRACTPS);./
+    Keyword ::= f x r s t o r 6 4 /.$setResult($_FXRSTOR64);./
+    Keyword ::= g f 2 p 8 m u l b /.$setResult($_GF2P8MULB);./
     Keyword ::= l d t i l e c f g /.$setResult($_LDTILECFG);./
+    Keyword ::= m o v d i r 6 4 b /.$setResult($_MOVDIR64B);./
     Keyword ::= p c l m u l q d q /.$setResult($_PCLMULQDQ);./
     Keyword ::= p c m p e s t r i /.$setResult($_PCMPESTRI);./
     Keyword ::= p c m p e s t r m /.$setResult($_PCMPESTRM);./
@@ -1918,9 +2851,15 @@
     Keyword ::= r d m s r l i s t /.$setResult($_RDMSRLIST);./
     Keyword ::= r m p a d j u s t /.$setResult($_RMPADJUST);./
     Keyword ::= s e r i a l i z e /.$setResult($_SERIALIZE);./
+    Keyword ::= s h a 1 n e x t e /.$setResult($_SHA1NEXTE);./
+    Keyword ::= s h a 1 r n d s 4 /.$setResult($_SHA1RNDS4);./
     Keyword ::= s t t i l e c f g /.$setResult($_STTILECFG);./
+    Keyword ::= t d p b f 1 6 p s /.$setResult($_TDPBF16PS);./
     Keyword ::= t i l e l o a d d /.$setResult($_TILELOADD);./
     Keyword ::= u p p e r c a s e /.$setResult($_UPPERCASE);./
+    Keyword ::= v 4 d p w s s d s /.$setResult($_V4DPWSSDS);./
+    Keyword ::= v 4 f m a d d p s /.$setResult($_V4FMADDPS);./
+    Keyword ::= v 4 f m a d d s s /.$setResult($_V4FMADDSS);./
     Keyword ::= v a d d s u b p d /.$setResult($_VADDSUBPD);./
     Keyword ::= v a d d s u b p s /.$setResult($_VADDSUBPS);./
     Keyword ::= v b l e n d m p d /.$setResult($_VBLENDMPD);./
@@ -1951,7 +2890,41 @@
     Keyword ::= v c m p o r d p s /.$setResult($_VCMPORDPS);./
     Keyword ::= v c m p o r d s d /.$setResult($_VCMPORDSD);./
     Keyword ::= v c m p o r d s s /.$setResult($_VCMPORDSS);./
+    Keyword ::= v c v t d q 2 p d /.$setResult($_VCVTDQ2PD);./
+    Keyword ::= v c v t d q 2 p h /.$setResult($_VCVTDQ2PH);./
+    Keyword ::= v c v t d q 2 p s /.$setResult($_VCVTDQ2PS);./
+    Keyword ::= v c v t p d 2 d q /.$setResult($_VCVTPD2DQ);./
+    Keyword ::= v c v t p d 2 p h /.$setResult($_VCVTPD2PH);./
+    Keyword ::= v c v t p d 2 p s /.$setResult($_VCVTPD2PS);./
+    Keyword ::= v c v t p d 2 q q /.$setResult($_VCVTPD2QQ);./
+    Keyword ::= v c v t p h 2 d q /.$setResult($_VCVTPH2DQ);./
+    Keyword ::= v c v t p h 2 p d /.$setResult($_VCVTPH2PD);./
+    Keyword ::= v c v t p h 2 p s /.$setResult($_VCVTPH2PS);./
+    Keyword ::= v c v t p h 2 q q /.$setResult($_VCVTPH2QQ);./
+    Keyword ::= v c v t p h 2 u w /.$setResult($_VCVTPH2UW);./
+    Keyword ::= v c v t p s 2 d q /.$setResult($_VCVTPS2DQ);./
+    Keyword ::= v c v t p s 2 p d /.$setResult($_VCVTPS2PD);./
+    Keyword ::= v c v t p s 2 p h /.$setResult($_VCVTPS2PH);./
+    Keyword ::= v c v t p s 2 q q /.$setResult($_VCVTPS2QQ);./
+    Keyword ::= v c v t q q 2 p d /.$setResult($_VCVTQQ2PD);./
+    Keyword ::= v c v t q q 2 p h /.$setResult($_VCVTQQ2PH);./
+    Keyword ::= v c v t q q 2 p s /.$setResult($_VCVTQQ2PS);./
+    Keyword ::= v c v t s d 2 s h /.$setResult($_VCVTSD2SH);./
+    Keyword ::= v c v t s d 2 s i /.$setResult($_VCVTSD2SI);./
+    Keyword ::= v c v t s d 2 s s /.$setResult($_VCVTSD2SS);./
+    Keyword ::= v c v t s h 2 s d /.$setResult($_VCVTSH2SD);./
+    Keyword ::= v c v t s h 2 s i /.$setResult($_VCVTSH2SI);./
+    Keyword ::= v c v t s h 2 s s /.$setResult($_VCVTSH2SS);./
+    Keyword ::= v c v t s i 2 s d /.$setResult($_VCVTSI2SD);./
+    Keyword ::= v c v t s i 2 s h /.$setResult($_VCVTSI2SH);./
+    Keyword ::= v c v t s i 2 s s /.$setResult($_VCVTSI2SS);./
+    Keyword ::= v c v t s s 2 s d /.$setResult($_VCVTSS2SD);./
+    Keyword ::= v c v t s s 2 s h /.$setResult($_VCVTSS2SH);./
+    Keyword ::= v c v t s s 2 s i /.$setResult($_VCVTSS2SI);./
+    Keyword ::= v c v t t p h 2 w /.$setResult($_VCVTTPH2W);./
+    Keyword ::= v c v t u w 2 p h /.$setResult($_VCVTUW2PH);./
     Keyword ::= v d b p s a d b w /.$setResult($_VDBPSADBW);./
+    Keyword ::= v d p b f 1 6 p s /.$setResult($_VDPBF16PS);./
     Keyword ::= v e x p a n d p d /.$setResult($_VEXPANDPD);./
     Keyword ::= v e x p a n d p s /.$setResult($_VEXPANDPS);./
     Keyword ::= v f c m u l c s h /.$setResult($_VFCMULCSH);./
@@ -1977,6 +2950,11 @@
     Keyword ::= v g e t m i n p h /.$setResult($_VGETMINPH);./
     Keyword ::= v g e t m i n s h /.$setResult($_VGETMINSH);./
     Keyword ::= v i n s e r t p s /.$setResult($_VINSERTPS);./
+    Keyword ::= v m o v d q a 3 2 /.$setResult($_VMOVDQA32);./
+    Keyword ::= v m o v d q a 6 4 /.$setResult($_VMOVDQA64);./
+    Keyword ::= v m o v d q u 1 6 /.$setResult($_VMOVDQU16);./
+    Keyword ::= v m o v d q u 3 2 /.$setResult($_VMOVDQU32);./
+    Keyword ::= v m o v d q u 6 4 /.$setResult($_VMOVDQU64);./
     Keyword ::= v m o v m s k p d /.$setResult($_VMOVMSKPD);./
     Keyword ::= v m o v m s k p s /.$setResult($_VMOVMSKPS);./
     Keyword ::= v m o v n t d q a /.$setResult($_VMOVNTDQA);./
@@ -2032,8 +3010,12 @@
     Keyword ::= v p d p b u s d s /.$setResult($_VPDPBUSDS);./
     Keyword ::= v p d p b u u d s /.$setResult($_VPDPBUUDS);./
     Keyword ::= v p d p w s s d s /.$setResult($_VPDPWSSDS);./
+    Keyword ::= v p e r m i 2 p d /.$setResult($_VPERMI2PD);./
+    Keyword ::= v p e r m i 2 p s /.$setResult($_VPERMI2PS);./
     Keyword ::= v p e r m i l p d /.$setResult($_VPERMILPD);./
     Keyword ::= v p e r m i l p s /.$setResult($_VPERMILPS);./
+    Keyword ::= v p e r m t 2 p d /.$setResult($_VPERMT2PD);./
+    Keyword ::= v p e r m t 2 p s /.$setResult($_VPERMT2PS);./
     Keyword ::= v p e x p a n d b /.$setResult($_VPEXPANDB);./
     Keyword ::= v p e x p a n d d /.$setResult($_VPEXPANDD);./
     Keyword ::= v p e x p a n d q /.$setResult($_VPEXPANDQ);./
@@ -2097,6 +3079,7 @@
     Keyword ::= x c r y p t e c b /.$setResult($_XCRYPTECB);./
     Keyword ::= x c r y p t o f b /.$setResult($_XCRYPTOFB);./
     Keyword ::= x r e s l d t r k /.$setResult($_XRESLDTRK);./
+    Keyword ::= x r s t o r s 6 4 /.$setResult($_XRSTORS64);./
     Keyword ::= x s u s l d t r k /.$setResult($_XSUSLDTRK);./
     Keyword ::= a b s o l u t e /.$setResult($_ABSOLUTE);./
     Keyword ::= a d d s u b p d /.$setResult($_ADDSUBPD);./
@@ -2125,8 +3108,25 @@
     Keyword ::= c m p p x a d d /.$setResult($_CMPPXADD);./
     Keyword ::= c m p s x a d d /.$setResult($_CMPSXADD);./
     Keyword ::= c m p z x a d d /.$setResult($_CMPZXADD);./
+    Keyword ::= c v t d q 2 p d /.$setResult($_CVTDQ2PD);./
+    Keyword ::= c v t d q 2 p s /.$setResult($_CVTDQ2PS);./
+    Keyword ::= c v t p d 2 d q /.$setResult($_CVTPD2DQ);./
+    Keyword ::= c v t p d 2 p i /.$setResult($_CVTPD2PI);./
+    Keyword ::= c v t p d 2 p s /.$setResult($_CVTPD2PS);./
+    Keyword ::= c v t p i 2 p d /.$setResult($_CVTPI2PD);./
+    Keyword ::= c v t p i 2 p s /.$setResult($_CVTPI2PS);./
+    Keyword ::= c v t p s 2 d q /.$setResult($_CVTPS2DQ);./
+    Keyword ::= c v t p s 2 p d /.$setResult($_CVTPS2PD);./
+    Keyword ::= c v t p s 2 p i /.$setResult($_CVTPS2PI);./
+    Keyword ::= c v t s d 2 s i /.$setResult($_CVTSD2SI);./
+    Keyword ::= c v t s d 2 s s /.$setResult($_CVTSD2SS);./
+    Keyword ::= c v t s i 2 s d /.$setResult($_CVTSI2SD);./
+    Keyword ::= c v t s i 2 s s /.$setResult($_CVTSI2SS);./
+    Keyword ::= c v t s s 2 s d /.$setResult($_CVTSS2SD);./
+    Keyword ::= c v t s s 2 s i /.$setResult($_CVTSS2SI);./
     Keyword ::= f c m o v n b e /.$setResult($_FCMOVNBE);./
     Keyword ::= f u n c t i o n /.$setResult($_FUNCTION);./
+    Keyword ::= f x s a v e 6 4 /.$setResult($_FXSAVE64);./
     Keyword ::= i n s e r t p s /.$setResult($_INSERTPS);./
     Keyword ::= i n t e r n a l /.$setResult($_INTERNAL);./
     Keyword ::= k o r t e s t b /.$setResult($_KORTESTB);./
@@ -2156,6 +3156,9 @@
     Keyword ::= p a c k u s d w /.$setResult($_PACKUSDW);./
     Keyword ::= p a c k u s w b /.$setResult($_PACKUSWB);./
     Keyword ::= p b l e n d v b /.$setResult($_PBLENDVB);./
+    Keyword ::= p f r c p i t 1 /.$setResult($_PFRCPIT1);./
+    Keyword ::= p f r c p i t 2 /.$setResult($_PFRCPIT2);./
+    Keyword ::= p f r s q i t 1 /.$setResult($_PFRSQIT1);./
     Keyword ::= p f r s q r t v /.$setResult($_PFRSQRTV);./
     Keyword ::= p m a c h r i w /.$setResult($_PMACHRIW);./
     Keyword ::= p m o v m s k b /.$setResult($_PMOVMSKB);./
@@ -2186,6 +3189,8 @@
     Keyword ::= s e g m e n t s /.$setResult($_SEGMENTS);./
     Keyword ::= s e n d u i p i /.$setResult($_SENDUIPI);./
     Keyword ::= s e t s s b s y /.$setResult($_SETSSBSY);./
+    Keyword ::= s h a 1 m s g 1 /.$setResult($_SHA1MSG1);./
+    Keyword ::= s h a 1 m s g 2 /.$setResult($_SHA1MSG2);./
     Keyword ::= s m i n t o l d /.$setResult($_SMINTOLD);./
     Keyword ::= s y s e n t e r /.$setResult($_SYSENTER);./
     Keyword ::= t i l e z e r o /.$setResult($_TILEZERO);./
@@ -2194,6 +3199,7 @@
     Keyword ::= u n p c k h p s /.$setResult($_UNPCKHPS);./
     Keyword ::= u n p c k l p d /.$setResult($_UNPCKLPD);./
     Keyword ::= u n p c k l p s /.$setResult($_UNPCKLPS);./
+    Keyword ::= v 4 d p w s s d /.$setResult($_V4DPWSSD);./
     Keyword ::= v b l e n d p d /.$setResult($_VBLENDPD);./
     Keyword ::= v b l e n d p s /.$setResult($_VBLENDPS);./
     Keyword ::= v c m p e q p d /.$setResult($_VCMPEQPD);./
@@ -2216,6 +3222,8 @@
     Keyword ::= v c m p l t p s /.$setResult($_VCMPLTPS);./
     Keyword ::= v c m p l t s d /.$setResult($_VCMPLTSD);./
     Keyword ::= v c m p l t s s /.$setResult($_VCMPLTSS);./
+    Keyword ::= v c v t p h 2 w /.$setResult($_VCVTPH2W);./
+    Keyword ::= v c v t w 2 p h /.$setResult($_VCVTW2PH);./
     Keyword ::= v f m a d d p d /.$setResult($_VFMADDPD);./
     Keyword ::= v f m a d d p s /.$setResult($_VFMADDPS);./
     Keyword ::= v f m a d d s d /.$setResult($_VFMADDSD);./
@@ -2229,6 +3237,7 @@
     Keyword ::= v l d m x c s r /.$setResult($_VLDMXCSR);./
     Keyword ::= v m l a u n c h /.$setResult($_VMLAUNCH);./
     Keyword ::= v m o v d d u p /.$setResult($_VMOVDDUP);./
+    Keyword ::= v m o v d q u 8 /.$setResult($_VMOVDQU8);./
     Keyword ::= v m o v h l p s /.$setResult($_VMOVHLPS);./
     Keyword ::= v m o v l h p s /.$setResult($_VMOVLHPS);./
     Keyword ::= v m o v n t d q /.$setResult($_VMOVNTDQ);./
@@ -2267,6 +3276,14 @@
     Keyword ::= v p d p b u s d /.$setResult($_VPDPBUSD);./
     Keyword ::= v p d p b u u d /.$setResult($_VPDPBUUD);./
     Keyword ::= v p d p w s s d /.$setResult($_VPDPWSSD);./
+    Keyword ::= v p e r m i 2 b /.$setResult($_VPERMI2B);./
+    Keyword ::= v p e r m i 2 d /.$setResult($_VPERMI2D);./
+    Keyword ::= v p e r m i 2 q /.$setResult($_VPERMI2Q);./
+    Keyword ::= v p e r m i 2 w /.$setResult($_VPERMI2W);./
+    Keyword ::= v p e r m t 2 b /.$setResult($_VPERMT2B);./
+    Keyword ::= v p e r m t 2 d /.$setResult($_VPERMT2D);./
+    Keyword ::= v p e r m t 2 q /.$setResult($_VPERMT2Q);./
+    Keyword ::= v p e r m t 2 w /.$setResult($_VPERMT2W);./
     Keyword ::= v p h a d d b d /.$setResult($_VPHADDBD);./
     Keyword ::= v p h a d d b q /.$setResult($_VPHADDBQ);./
     Keyword ::= v p h a d d b w /.$setResult($_VPHADDBW);./
@@ -2284,12 +3301,20 @@
     Keyword ::= v p m a c s w d /.$setResult($_VPMACSWD);./
     Keyword ::= v p m a c s w w /.$setResult($_VPMACSWW);./
     Keyword ::= v p m a d d w d /.$setResult($_VPMADDWD);./
+    Keyword ::= v p m o v b 2 m /.$setResult($_VPMOVB2M);./
+    Keyword ::= v p m o v d 2 m /.$setResult($_VPMOVD2M);./
+    Keyword ::= v p m o v m 2 b /.$setResult($_VPMOVM2B);./
+    Keyword ::= v p m o v m 2 d /.$setResult($_VPMOVM2D);./
+    Keyword ::= v p m o v m 2 q /.$setResult($_VPMOVM2Q);./
+    Keyword ::= v p m o v m 2 w /.$setResult($_VPMOVM2W);./
+    Keyword ::= v p m o v q 2 m /.$setResult($_VPMOVQ2M);./
     Keyword ::= v p m o v s d b /.$setResult($_VPMOVSDB);./
     Keyword ::= v p m o v s d w /.$setResult($_VPMOVSDW);./
     Keyword ::= v p m o v s q b /.$setResult($_VPMOVSQB);./
     Keyword ::= v p m o v s q d /.$setResult($_VPMOVSQD);./
     Keyword ::= v p m o v s q w /.$setResult($_VPMOVSQW);./
     Keyword ::= v p m o v s w b /.$setResult($_VPMOVSWB);./
+    Keyword ::= v p m o v w 2 m /.$setResult($_VPMOVW2M);./
     Keyword ::= v p m u l h u w /.$setResult($_VPMULHUW);./
     Keyword ::= v p m u l u d q /.$setResult($_VPMULUDQ);./
     Keyword ::= v p o p c n t b /.$setResult($_VPOPCNTB);./
@@ -2314,6 +3339,14 @@
     Keyword ::= v r a n g e p s /.$setResult($_VRANGEPS);./
     Keyword ::= v r a n g e s d /.$setResult($_VRANGESD);./
     Keyword ::= v r a n g e s s /.$setResult($_VRANGESS);./
+    Keyword ::= v r c p 1 4 p d /.$setResult($_VRCP14PD);./
+    Keyword ::= v r c p 1 4 p s /.$setResult($_VRCP14PS);./
+    Keyword ::= v r c p 1 4 s d /.$setResult($_VRCP14SD);./
+    Keyword ::= v r c p 1 4 s s /.$setResult($_VRCP14SS);./
+    Keyword ::= v r c p 2 8 p d /.$setResult($_VRCP28PD);./
+    Keyword ::= v r c p 2 8 p s /.$setResult($_VRCP28PS);./
+    Keyword ::= v r c p 2 8 s d /.$setResult($_VRCP28SD);./
+    Keyword ::= v r c p 2 8 s s /.$setResult($_VRCP28SS);./
     Keyword ::= v r o u n d p d /.$setResult($_VROUNDPD);./
     Keyword ::= v r o u n d p s /.$setResult($_VROUNDPS);./
     Keyword ::= v r o u n d s d /.$setResult($_VROUNDSD);./
@@ -2330,7 +3363,10 @@
     Keyword ::= w b n o i n v d /.$setResult($_WBNOINVD);./
     Keyword ::= w r f s b a s e /.$setResult($_WRFSBASE);./
     Keyword ::= w r g s b a s e /.$setResult($_WRGSBASE);./
+    Keyword ::= x r s t o r 6 4 /.$setResult($_XRSTOR64);./
+    Keyword ::= x s a v e c 6 4 /.$setResult($_XSAVEC64);./
     Keyword ::= x s a v e o p t /.$setResult($_XSAVEOPT);./
+    Keyword ::= x s a v e s 6 4 /.$setResult($_XSAVES64);./
     Keyword ::= z e r o f i l l /.$setResult($_ZEROFILL);./
     Keyword ::= b l c f i l l /.$setResult($_BLCFILL);./
     Keyword ::= b l e n d p d /.$setResult($_BLENDPD);./
@@ -2354,6 +3390,8 @@
     Keyword ::= c m p l t s s /.$setResult($_CMPLTSS);./
     Keyword ::= c m p x c h g /.$setResult($_CMPXCHG);./
     Keyword ::= d e f a u l t /.$setResult($_DEFAULT);./
+    Keyword ::= e n d b r 3 2 /.$setResult($_ENDBR32);./
+    Keyword ::= e n d b r 6 4 /.$setResult($_ENDBR64);./
     Keyword ::= e n q c m d s /.$setResult($_ENQCMDS);./
     Keyword ::= f c m o v b e /.$setResult($_FCMOVBE);./
     Keyword ::= f c m o v n b /.$setResult($_FCMOVNB);./
@@ -2369,6 +3407,7 @@
     Keyword ::= f u c o m p p /.$setResult($_FUCOMPP);./
     Keyword ::= f x r s t o r /.$setResult($_FXRSTOR);./
     Keyword ::= f x t r a c t /.$setResult($_FXTRACT);./
+    Keyword ::= f y l 2 x p 1 /.$setResult($_FYL2XP1);./
     Keyword ::= i n c s s p d /.$setResult($_INCSSPD);./
     Keyword ::= i n c s s p q /.$setResult($_INCSSPQ);./
     Keyword ::= i n s e r t q /.$setResult($_INSERTQ);./
@@ -2384,6 +3423,7 @@
     Keyword ::= m o n t m u l /.$setResult($_MONTMUL);./
     Keyword ::= m o v d d u p /.$setResult($_MOVDDUP);./
     Keyword ::= m o v d i r i /.$setResult($_MOVDIRI);./
+    Keyword ::= m o v d q 2 q /.$setResult($_MOVDQ2Q);./
     Keyword ::= m o v h l p s /.$setResult($_MOVHLPS);./
     Keyword ::= m o v l h p s /.$setResult($_MOVLHPS);./
     Keyword ::= m o v n t d q /.$setResult($_MOVNTDQ);./
@@ -2391,6 +3431,7 @@
     Keyword ::= m o v n t p s /.$setResult($_MOVNTPS);./
     Keyword ::= m o v n t s d /.$setResult($_MOVNTSD);./
     Keyword ::= m o v n t s s /.$setResult($_MOVNTSS);./
+    Keyword ::= m o v q 2 d q /.$setResult($_MOVQ2DQ);./
     Keyword ::= m p s a d b w /.$setResult($_MPSADBW);./
     Keyword ::= n o a l l o c /.$setResult($_NOALLOC);./
     Keyword ::= n o w r i t e /.$setResult($_NOWRITE);./
@@ -2460,6 +3501,8 @@
     Keyword ::= v c o m i s d /.$setResult($_VCOMISD);./
     Keyword ::= v c o m i s h /.$setResult($_VCOMISH);./
     Keyword ::= v c o m i s s /.$setResult($_VCOMISS);./
+    Keyword ::= v e x p 2 p d /.$setResult($_VEXP2PD);./
+    Keyword ::= v e x p 2 p s /.$setResult($_VEXP2PS);./
     Keyword ::= v f r c z p d /.$setResult($_VFRCZPD);./
     Keyword ::= v f r c z p s /.$setResult($_VFRCZPS);./
     Keyword ::= v f r c z s d /.$setResult($_VFRCZSD);./
@@ -2581,6 +3624,8 @@
     Keyword ::= w a r n i n g /.$setResult($_WARNING);./
     Keyword ::= w r m s r n s /.$setResult($_WRMSRNS);./
     Keyword ::= x r s t o r s /.$setResult($_XRSTORS);./
+    Keyword ::= x s a v e 6 4 /.$setResult($_XSAVE64);./
+    Keyword ::= x s h a 2 5 6 /.$setResult($_XSHA256);./
     Keyword ::= a e s d e c /.$setResult($_AESDEC);./
     Keyword ::= a e s e n c /.$setResult($_AESENC);./
     Keyword ::= a e s i m c /.$setResult($_AESIMC);./
@@ -2627,6 +3672,10 @@
     Keyword ::= f i s t t p /.$setResult($_FISTTP);./
     Keyword ::= f i s u b r /.$setResult($_FISUBR);./
     Keyword ::= f l d e n v /.$setResult($_FLDENV);./
+    Keyword ::= f l d l 2 e /.$setResult($_FLDL2E);./
+    Keyword ::= f l d l 2 t /.$setResult($_FLDL2T);./
+    Keyword ::= f l d l g 2 /.$setResult($_FLDLG2);./
+    Keyword ::= f l d l n 2 /.$setResult($_FLDLN2);./
     Keyword ::= f n c l e x /.$setResult($_FNCLEX);./
     Keyword ::= f n d i s i /.$setResult($_FNDISI);./
     Keyword ::= f n i n i t /.$setResult($_FNINIT);./
@@ -2634,6 +3683,7 @@
     Keyword ::= f n s t c w /.$setResult($_FNSTCW);./
     Keyword ::= f n s t s w /.$setResult($_FNSTSW);./
     Keyword ::= f p a t a n /.$setResult($_FPATAN);./
+    Keyword ::= f p r e m 1 /.$setResult($_FPREM1);./
     Keyword ::= f r s t o r /.$setResult($_FRSTOR);./
     Keyword ::= f s c a l e /.$setResult($_FSCALE);./
     Keyword ::= f s e t p m /.$setResult($_FSETPM);./
@@ -2770,6 +3820,7 @@
     Keyword ::= s t r o n g /.$setResult($_STRONG);./
     Keyword ::= s w a p g s /.$setResult($_SWAPGS);./
     Keyword ::= s y s r e t /.$setResult($_SYSRET);./
+    Keyword ::= t 1 m s k c /.$setResult($_T1MSKC);./
     Keyword ::= t e s t u i /.$setResult($_TESTUI);./
     Keyword ::= t p a u s e /.$setResult($_TPAUSE);./
     Keyword ::= u m w a i t /.$setResult($_UMWAIT);./
@@ -2938,6 +3989,7 @@
     Keyword ::= c m p s s /.$setResult($_CMPSS);./
     Keyword ::= c m p s w /.$setResult($_CMPSW);./
     Keyword ::= c p u i d /.$setResult($_CPUID);./
+    Keyword ::= c r c 3 2 /.$setResult($_CRC32);./
     Keyword ::= d e b u g /.$setResult($_DEBUG);./
     Keyword ::= d i v p d /.$setResult($_DIVPD);./
     Keyword ::= d i v p s /.$setResult($_DIVPS);./
@@ -2950,6 +4002,7 @@
     Keyword ::= e n c l v /.$setResult($_ENCLV);./
     Keyword ::= e n t e r /.$setResult($_ENTER);./
     Keyword ::= e x t r q /.$setResult($_EXTRQ);./
+    Keyword ::= f 2 x m 1 /.$setResult($_F2XM1);./
     Keyword ::= f a d d p /.$setResult($_FADDP);./
     Keyword ::= f b s t p /.$setResult($_FBSTP);./
     Keyword ::= f c l e x /.$setResult($_FCLEX);./
@@ -2982,8 +4035,11 @@
     Keyword ::= f s u b r /.$setResult($_FSUBR);./
     Keyword ::= f u c o m /.$setResult($_FUCOM);./
     Keyword ::= f w a i t /.$setResult($_FWAIT);./
+    Keyword ::= f y l 2 x /.$setResult($_FYL2X);./
     Keyword ::= g r o u p /.$setResult($_GROUP);./
     Keyword ::= i c e b p /.$setResult($_ICEBP);./
+    Keyword ::= i n t 0 1 /.$setResult($_INT01);./
+    Keyword ::= i n t 0 3 /.$setResult($_INT03);./
     Keyword ::= i r e t d /.$setResult($_IRETD);./
     Keyword ::= i r e t q /.$setResult($_IRETQ);./
     Keyword ::= i r e t w /.$setResult($_IRETW);./
@@ -3062,6 +4118,8 @@
     Keyword ::= p a v e b /.$setResult($_PAVEB);./
     Keyword ::= p a v g b /.$setResult($_PAVGB);./
     Keyword ::= p a v g w /.$setResult($_PAVGW);./
+    Keyword ::= p f 2 i d /.$setResult($_PF2ID);./
+    Keyword ::= p f 2 i w /.$setResult($_PF2IW);./
     Keyword ::= p f a c c /.$setResult($_PFACC);./
     Keyword ::= p f a d d /.$setResult($_PFADD);./
     Keyword ::= p f m a x /.$setResult($_PFMAX);./
@@ -3069,6 +4127,8 @@
     Keyword ::= p f m u l /.$setResult($_PFMUL);./
     Keyword ::= p f r c p /.$setResult($_PFRCP);./
     Keyword ::= p f s u b /.$setResult($_PFSUB);./
+    Keyword ::= p i 2 f d /.$setResult($_PI2FD);./
+    Keyword ::= p i 2 f w /.$setResult($_PI2FW);./
     Keyword ::= p m a g w /.$setResult($_PMAGW);./
     Keyword ::= p m v z b /.$setResult($_PMVZB);./
     Keyword ::= p o p a d /.$setResult($_POPAD);./
@@ -3111,6 +4171,8 @@
     Keyword ::= s c a s d /.$setResult($_SCASD);./
     Keyword ::= s c a s q /.$setResult($_SCASQ);./
     Keyword ::= s c a s w /.$setResult($_SCASW);./
+    Keyword ::= s e g r 6 /.$setResult($_SEGR6);./
+    Keyword ::= s e g r 7 /.$setResult($_SEGR7);./
     Keyword ::= s e t a e /.$setResult($_SETAE);./
     Keyword ::= s e t b e /.$setResult($_SETBE);./
     Keyword ::= s e t g e /.$setResult($_SETGE);./
@@ -3144,6 +4206,8 @@
     Keyword ::= t z c n t /.$setResult($_TZCNT);./
     Keyword ::= t z m s k /.$setResult($_TZMSK);./
     Keyword ::= u i r e t /.$setResult($_UIRET);./
+    Keyword ::= u s e 1 6 /.$setResult($_USE16);./
+    Keyword ::= u s e 3 2 /.$setResult($_USE32);./
     Keyword ::= v d p p d /.$setResult($_VDPPD);./
     Keyword ::= v d p p s /.$setResult($_VDPPS);./
     Keyword ::= v m o v d /.$setResult($_VMOVD);./
@@ -3163,11 +4227,78 @@
     Keyword ::= w r s s d /.$setResult($_WRSSD);./
     Keyword ::= w r s s q /.$setResult($_WRSSQ);./
     Keyword ::= x l a t b /.$setResult($_XLATB);./
+    Keyword ::= x m m 1 0 /.$setResult($_XMM10);./
+    Keyword ::= x m m 1 1 /.$setResult($_XMM11);./
+    Keyword ::= x m m 1 2 /.$setResult($_XMM12);./
+    Keyword ::= x m m 1 3 /.$setResult($_XMM13);./
+    Keyword ::= x m m 1 4 /.$setResult($_XMM14);./
+    Keyword ::= x m m 1 5 /.$setResult($_XMM15);./
+    Keyword ::= x m m 1 6 /.$setResult($_XMM16);./
+    Keyword ::= x m m 1 7 /.$setResult($_XMM17);./
+    Keyword ::= x m m 1 8 /.$setResult($_XMM18);./
+    Keyword ::= x m m 1 9 /.$setResult($_XMM19);./
+    Keyword ::= x m m 2 0 /.$setResult($_XMM20);./
+    Keyword ::= x m m 2 1 /.$setResult($_XMM21);./
+    Keyword ::= x m m 2 2 /.$setResult($_XMM22);./
+    Keyword ::= x m m 2 3 /.$setResult($_XMM23);./
+    Keyword ::= x m m 2 4 /.$setResult($_XMM24);./
+    Keyword ::= x m m 2 5 /.$setResult($_XMM25);./
+    Keyword ::= x m m 2 6 /.$setResult($_XMM26);./
+    Keyword ::= x m m 2 7 /.$setResult($_XMM27);./
+    Keyword ::= x m m 2 8 /.$setResult($_XMM28);./
+    Keyword ::= x m m 2 9 /.$setResult($_XMM29);./
+    Keyword ::= x m m 3 0 /.$setResult($_XMM30);./
+    Keyword ::= x m m 3 1 /.$setResult($_XMM31);./
     Keyword ::= x o r p d /.$setResult($_XORPD);./
     Keyword ::= x o r p s /.$setResult($_XORPS);./
     Keyword ::= x s a v e /.$setResult($_XSAVE);./
+    Keyword ::= x s h a 1 /.$setResult($_XSHA1);./
     Keyword ::= x t e s t /.$setResult($_XTEST);./
+    Keyword ::= y m m 1 0 /.$setResult($_YMM10);./
+    Keyword ::= y m m 1 1 /.$setResult($_YMM11);./
+    Keyword ::= y m m 1 2 /.$setResult($_YMM12);./
+    Keyword ::= y m m 1 3 /.$setResult($_YMM13);./
+    Keyword ::= y m m 1 4 /.$setResult($_YMM14);./
+    Keyword ::= y m m 1 5 /.$setResult($_YMM15);./
+    Keyword ::= y m m 1 6 /.$setResult($_YMM16);./
+    Keyword ::= y m m 1 7 /.$setResult($_YMM17);./
+    Keyword ::= y m m 1 8 /.$setResult($_YMM18);./
+    Keyword ::= y m m 1 9 /.$setResult($_YMM19);./
+    Keyword ::= y m m 2 0 /.$setResult($_YMM20);./
+    Keyword ::= y m m 2 1 /.$setResult($_YMM21);./
+    Keyword ::= y m m 2 2 /.$setResult($_YMM22);./
+    Keyword ::= y m m 2 3 /.$setResult($_YMM23);./
+    Keyword ::= y m m 2 4 /.$setResult($_YMM24);./
+    Keyword ::= y m m 2 5 /.$setResult($_YMM25);./
+    Keyword ::= y m m 2 6 /.$setResult($_YMM26);./
+    Keyword ::= y m m 2 7 /.$setResult($_YMM27);./
+    Keyword ::= y m m 2 8 /.$setResult($_YMM28);./
+    Keyword ::= y m m 2 9 /.$setResult($_YMM29);./
+    Keyword ::= y m m 3 0 /.$setResult($_YMM30);./
+    Keyword ::= y m m 3 1 /.$setResult($_YMM31);./
     Keyword ::= y w o r d /.$setResult($_YWORD);./
+    Keyword ::= z m m 1 0 /.$setResult($_ZMM10);./
+    Keyword ::= z m m 1 1 /.$setResult($_ZMM11);./
+    Keyword ::= z m m 1 2 /.$setResult($_ZMM12);./
+    Keyword ::= z m m 1 3 /.$setResult($_ZMM13);./
+    Keyword ::= z m m 1 4 /.$setResult($_ZMM14);./
+    Keyword ::= z m m 1 5 /.$setResult($_ZMM15);./
+    Keyword ::= z m m 1 6 /.$setResult($_ZMM16);./
+    Keyword ::= z m m 1 7 /.$setResult($_ZMM17);./
+    Keyword ::= z m m 1 8 /.$setResult($_ZMM18);./
+    Keyword ::= z m m 1 9 /.$setResult($_ZMM19);./
+    Keyword ::= z m m 2 0 /.$setResult($_ZMM20);./
+    Keyword ::= z m m 2 1 /.$setResult($_ZMM21);./
+    Keyword ::= z m m 2 2 /.$setResult($_ZMM22);./
+    Keyword ::= z m m 2 3 /.$setResult($_ZMM23);./
+    Keyword ::= z m m 2 4 /.$setResult($_ZMM24);./
+    Keyword ::= z m m 2 5 /.$setResult($_ZMM25);./
+    Keyword ::= z m m 2 6 /.$setResult($_ZMM26);./
+    Keyword ::= z m m 2 7 /.$setResult($_ZMM27);./
+    Keyword ::= z m m 2 8 /.$setResult($_ZMM28);./
+    Keyword ::= z m m 2 9 /.$setResult($_ZMM29);./
+    Keyword ::= z m m 3 0 /.$setResult($_ZMM30);./
+    Keyword ::= z m m 3 1 /.$setResult($_ZMM31);./
     Keyword ::= z w o r d /.$setResult($_ZWORD);./
     Keyword ::= a a d d /.$setResult($_AADD);./
     Keyword ::= a a n d /.$setResult($_AAND);./
@@ -3181,6 +4312,10 @@
     Keyword ::= b l c s /.$setResult($_BLCS);./
     Keyword ::= b l s i /.$setResult($_BLSI);./
     Keyword ::= b l s r /.$setResult($_BLSR);./
+    Keyword ::= b n d 0 /.$setResult($_BND0);./
+    Keyword ::= b n d 1 /.$setResult($_BND1);./
+    Keyword ::= b n d 2 /.$setResult($_BND2);./
+    Keyword ::= b n d 3 /.$setResult($_BND3);./
     Keyword ::= b y t e /.$setResult($_BYTE);./
     Keyword ::= b z h i /.$setResult($_BZHI);./
     Keyword ::= c a l l /.$setResult($_CALL);./
@@ -3191,11 +4326,23 @@
     Keyword ::= c l u i /.$setResult($_CLUI);./
     Keyword ::= c l w b /.$setResult($_CLWB);./
     Keyword ::= c o d e /.$setResult($_CODE);./
+    Keyword ::= c r 1 0 /.$setResult($_CR10);./
+    Keyword ::= c r 1 1 /.$setResult($_CR11);./
+    Keyword ::= c r 1 2 /.$setResult($_CR12);./
+    Keyword ::= c r 1 3 /.$setResult($_CR13);./
+    Keyword ::= c r 1 4 /.$setResult($_CR14);./
+    Keyword ::= c r 1 5 /.$setResult($_CR15);./
     Keyword ::= c w d e /.$setResult($_CWDE);./
     Keyword ::= d a t a /.$setResult($_DATA);./
     Keyword ::= d o w n /.$setResult($_DOWN);./
     Keyword ::= d p p d /.$setResult($_DPPD);./
     Keyword ::= d p p s /.$setResult($_DPPS);./
+    Keyword ::= d r 1 0 /.$setResult($_DR10);./
+    Keyword ::= d r 1 1 /.$setResult($_DR11);./
+    Keyword ::= d r 1 2 /.$setResult($_DR12);./
+    Keyword ::= d r 1 3 /.$setResult($_DR13);./
+    Keyword ::= d r 1 4 /.$setResult($_DR14);./
+    Keyword ::= d r 1 5 /.$setResult($_DR15);./
     Keyword ::= e m m s /.$setResult($_EMMS);./
     Keyword ::= e x e c /.$setResult($_EXEC);./
     Keyword ::= f a b s /.$setResult($_FABS);./
@@ -3209,6 +4356,7 @@
     Keyword ::= f i l d /.$setResult($_FILD);./
     Keyword ::= f i s t /.$setResult($_FIST);./
     Keyword ::= f l a t /.$setResult($_FLAT);./
+    Keyword ::= f l d 1 /.$setResult($_FLD1);./
     Keyword ::= f l d z /.$setResult($_FLDZ);./
     Keyword ::= f m u l /.$setResult($_FMUL);./
     Keyword ::= f n o p /.$setResult($_FNOP);./
@@ -3225,6 +4373,8 @@
     Keyword ::= i n s b /.$setResult($_INSB);./
     Keyword ::= i n s d /.$setResult($_INSD);./
     Keyword ::= i n s w /.$setResult($_INSW);./
+    Keyword ::= i n t 1 /.$setResult($_INT1);./
+    Keyword ::= i n t 3 /.$setResult($_INT3);./
     Keyword ::= i n t o /.$setResult($_INTO);./
     Keyword ::= i n v d /.$setResult($_INVD);./
     Keyword ::= i r e t /.$setResult($_IRET);./
@@ -3264,6 +4414,24 @@
     Keyword ::= p o p f /.$setResult($_POPF);./
     Keyword ::= p u s h /.$setResult($_PUSH);./
     Keyword ::= p x o r /.$setResult($_PXOR);./
+    Keyword ::= r 1 0 b /.$setResult($_R10B);./
+    Keyword ::= r 1 0 d /.$setResult($_R10D);./
+    Keyword ::= r 1 0 w /.$setResult($_R10W);./
+    Keyword ::= r 1 1 b /.$setResult($_R11B);./
+    Keyword ::= r 1 1 d /.$setResult($_R11D);./
+    Keyword ::= r 1 1 w /.$setResult($_R11W);./
+    Keyword ::= r 1 2 b /.$setResult($_R12B);./
+    Keyword ::= r 1 2 d /.$setResult($_R12D);./
+    Keyword ::= r 1 2 w /.$setResult($_R12W);./
+    Keyword ::= r 1 3 b /.$setResult($_R13B);./
+    Keyword ::= r 1 3 d /.$setResult($_R13D);./
+    Keyword ::= r 1 3 w /.$setResult($_R13W);./
+    Keyword ::= r 1 4 b /.$setResult($_R14B);./
+    Keyword ::= r 1 4 d /.$setResult($_R14D);./
+    Keyword ::= r 1 4 w /.$setResult($_R14W);./
+    Keyword ::= r 1 5 b /.$setResult($_R15B);./
+    Keyword ::= r 1 5 d /.$setResult($_R15D);./
+    Keyword ::= r 1 5 w /.$setResult($_R15W);./
     Keyword ::= r e s b /.$setResult($_RESB);./
     Keyword ::= r e s d /.$setResult($_RESD);./
     Keyword ::= r e s o /.$setResult($_RESO);./
@@ -3308,6 +4476,16 @@
     Keyword ::= s v t s /.$setResult($_SVTS);./
     Keyword ::= t e s t /.$setResult($_TEST);./
     Keyword ::= t e x t /.$setResult($_TEXT);./
+    Keyword ::= t m m 0 /.$setResult($_TMM0);./
+    Keyword ::= t m m 1 /.$setResult($_TMM1);./
+    Keyword ::= t m m 2 /.$setResult($_TMM2);./
+    Keyword ::= t m m 3 /.$setResult($_TMM3);./
+    Keyword ::= t m m 4 /.$setResult($_TMM4);./
+    Keyword ::= t m m 5 /.$setResult($_TMM5);./
+    Keyword ::= t m m 6 /.$setResult($_TMM6);./
+    Keyword ::= t m m 7 /.$setResult($_TMM7);./
+    Keyword ::= u d 2 a /.$setResult($_UD2A);./
+    Keyword ::= u d 2 b /.$setResult($_UD2B);./
     Keyword ::= u m o v /.$setResult($_UMOV);./
     Keyword ::= v e r r /.$setResult($_VERR);./
     Keyword ::= v e r w /.$setResult($_VERW);./
@@ -3319,7 +4497,37 @@
     Keyword ::= x c h g /.$setResult($_XCHG);./
     Keyword ::= x e n d /.$setResult($_XEND);./
     Keyword ::= x l a t /.$setResult($_XLAT);./
+    Keyword ::= x m m 0 /.$setResult($_XMM0);./
+    Keyword ::= x m m 1 /.$setResult($_XMM1);./
+    Keyword ::= x m m 2 /.$setResult($_XMM2);./
+    Keyword ::= x m m 3 /.$setResult($_XMM3);./
+    Keyword ::= x m m 4 /.$setResult($_XMM4);./
+    Keyword ::= x m m 5 /.$setResult($_XMM5);./
+    Keyword ::= x m m 6 /.$setResult($_XMM6);./
+    Keyword ::= x m m 7 /.$setResult($_XMM7);./
+    Keyword ::= x m m 8 /.$setResult($_XMM8);./
+    Keyword ::= x m m 9 /.$setResult($_XMM9);./
+    Keyword ::= y m m 0 /.$setResult($_YMM0);./
+    Keyword ::= y m m 1 /.$setResult($_YMM1);./
+    Keyword ::= y m m 2 /.$setResult($_YMM2);./
+    Keyword ::= y m m 3 /.$setResult($_YMM3);./
+    Keyword ::= y m m 4 /.$setResult($_YMM4);./
+    Keyword ::= y m m 5 /.$setResult($_YMM5);./
+    Keyword ::= y m m 6 /.$setResult($_YMM6);./
+    Keyword ::= y m m 7 /.$setResult($_YMM7);./
+    Keyword ::= y m m 8 /.$setResult($_YMM8);./
+    Keyword ::= y m m 9 /.$setResult($_YMM9);./
     Keyword ::= z e r o /.$setResult($_ZERO);./
+    Keyword ::= z m m 0 /.$setResult($_ZMM0);./
+    Keyword ::= z m m 1 /.$setResult($_ZMM1);./
+    Keyword ::= z m m 2 /.$setResult($_ZMM2);./
+    Keyword ::= z m m 3 /.$setResult($_ZMM3);./
+    Keyword ::= z m m 4 /.$setResult($_ZMM4);./
+    Keyword ::= z m m 5 /.$setResult($_ZMM5);./
+    Keyword ::= z m m 6 /.$setResult($_ZMM6);./
+    Keyword ::= z m m 7 /.$setResult($_ZMM7);./
+    Keyword ::= z m m 8 /.$setResult($_ZMM8);./
+    Keyword ::= z m m 9 /.$setResult($_ZMM9);./
     Keyword ::= a a a /.$setResult($_AAA);./
     Keyword ::= a a d /.$setResult($_AAD);./
     Keyword ::= a a m /.$setResult($_AAM);./
@@ -3346,6 +4554,16 @@
     Keyword ::= c m p /.$setResult($_CMP);./
     Keyword ::= c p u /.$setResult($_CPU);./
     Keyword ::= c q o /.$setResult($_CQO);./
+    Keyword ::= c r 0 /.$setResult($_CR0);./
+    Keyword ::= c r 1 /.$setResult($_CR1);./
+    Keyword ::= c r 2 /.$setResult($_CR2);./
+    Keyword ::= c r 3 /.$setResult($_CR3);./
+    Keyword ::= c r 4 /.$setResult($_CR4);./
+    Keyword ::= c r 5 /.$setResult($_CR5);./
+    Keyword ::= c r 6 /.$setResult($_CR6);./
+    Keyword ::= c r 7 /.$setResult($_CR7);./
+    Keyword ::= c r 8 /.$setResult($_CR8);./
+    Keyword ::= c r 9 /.$setResult($_CR9);./
     Keyword ::= c w d /.$setResult($_CWD);./
     Keyword ::= d a a /.$setResult($_DAA);./
     Keyword ::= d a s /.$setResult($_DAS);./
@@ -3353,6 +4571,16 @@
     Keyword ::= d e c /.$setResult($_DEC);./
     Keyword ::= d i l /.$setResult($_DIL);./
     Keyword ::= d i v /.$setResult($_DIV);./
+    Keyword ::= d r 0 /.$setResult($_DR0);./
+    Keyword ::= d r 1 /.$setResult($_DR1);./
+    Keyword ::= d r 2 /.$setResult($_DR2);./
+    Keyword ::= d r 3 /.$setResult($_DR3);./
+    Keyword ::= d r 4 /.$setResult($_DR4);./
+    Keyword ::= d r 5 /.$setResult($_DR5);./
+    Keyword ::= d r 6 /.$setResult($_DR6);./
+    Keyword ::= d r 7 /.$setResult($_DR7);./
+    Keyword ::= d r 8 /.$setResult($_DR8);./
+    Keyword ::= d r 9 /.$setResult($_DR9);./
     Keyword ::= d u p /.$setResult($_DUP);./
     Keyword ::= e a x /.$setResult($_EAX);./
     Keyword ::= e b p /.$setResult($_EBP);./
@@ -3398,6 +4626,14 @@
     Keyword ::= l s s /.$setResult($_LSS);./
     Keyword ::= l t r /.$setResult($_LTR);./
     Keyword ::= m a p /.$setResult($_MAP);./
+    Keyword ::= m m 0 /.$setResult($_MM0);./
+    Keyword ::= m m 1 /.$setResult($_MM1);./
+    Keyword ::= m m 2 /.$setResult($_MM2);./
+    Keyword ::= m m 3 /.$setResult($_MM3);./
+    Keyword ::= m m 4 /.$setResult($_MM4);./
+    Keyword ::= m m 5 /.$setResult($_MM5);./
+    Keyword ::= m m 6 /.$setResult($_MM6);./
+    Keyword ::= m m 7 /.$setResult($_MM7);./
     Keyword ::= m o v /.$setResult($_MOV);./
     Keyword ::= m u l /.$setResult($_MUL);./
     Keyword ::= n e g /.$setResult($_NEG);./
@@ -3407,6 +4643,18 @@
     Keyword ::= o u t /.$setResult($_OUT);./
     Keyword ::= p o p /.$setResult($_POP);./
     Keyword ::= p o r /.$setResult($_POR);./
+    Keyword ::= r 1 0 /.$setResult($_R10);./
+    Keyword ::= r 1 1 /.$setResult($_R11);./
+    Keyword ::= r 1 2 /.$setResult($_R12);./
+    Keyword ::= r 1 3 /.$setResult($_R13);./
+    Keyword ::= r 1 4 /.$setResult($_R14);./
+    Keyword ::= r 1 5 /.$setResult($_R15);./
+    Keyword ::= r 8 b /.$setResult($_R8B);./
+    Keyword ::= r 8 d /.$setResult($_R8D);./
+    Keyword ::= r 8 w /.$setResult($_R8W);./
+    Keyword ::= r 9 b /.$setResult($_R9B);./
+    Keyword ::= r 9 d /.$setResult($_R9D);./
+    Keyword ::= r 9 w /.$setResult($_R9W);./
     Keyword ::= r a x /.$setResult($_RAX);./
     Keyword ::= r b p /.$setResult($_RBP);./
     Keyword ::= r b x /.$setResult($_RBX);./
@@ -3432,12 +4680,31 @@
     Keyword ::= s i l /.$setResult($_SIL);./
     Keyword ::= s m i /.$setResult($_SMI);./
     Keyword ::= s p l /.$setResult($_SPL);./
+    Keyword ::= s t 0 /.$setResult($_ST0);./
+    Keyword ::= s t 1 /.$setResult($_ST1);./
+    Keyword ::= s t 2 /.$setResult($_ST2);./
+    Keyword ::= s t 3 /.$setResult($_ST3);./
+    Keyword ::= s t 4 /.$setResult($_ST4);./
+    Keyword ::= s t 5 /.$setResult($_ST5);./
+    Keyword ::= s t 6 /.$setResult($_ST6);./
+    Keyword ::= s t 7 /.$setResult($_ST7);./
     Keyword ::= s t c /.$setResult($_STC);./
     Keyword ::= s t d /.$setResult($_STD);./
     Keyword ::= s t i /.$setResult($_STI);./
     Keyword ::= s t r /.$setResult($_STR);./
     Keyword ::= s u b /.$setResult($_SUB);./
     Keyword ::= t l s /.$setResult($_TLS);./
+    Keyword ::= t r 0 /.$setResult($_TR0);./
+    Keyword ::= t r 1 /.$setResult($_TR1);./
+    Keyword ::= t r 2 /.$setResult($_TR2);./
+    Keyword ::= t r 3 /.$setResult($_TR3);./
+    Keyword ::= t r 4 /.$setResult($_TR4);./
+    Keyword ::= t r 5 /.$setResult($_TR5);./
+    Keyword ::= t r 6 /.$setResult($_TR6);./
+    Keyword ::= t r 7 /.$setResult($_TR7);./
+    Keyword ::= u d 0 /.$setResult($_UD0);./
+    Keyword ::= u d 1 /.$setResult($_UD1);./
+    Keyword ::= u d 2 /.$setResult($_UD2);./
     Keyword ::= w r t /.$setResult($_WRT);./
     Keyword ::= x o r /.$setResult($_XOR);./
     Keyword ::= a h /.$setResult($_AH);./
@@ -3480,7 +4747,17 @@
     Keyword ::= j p /.$setResult($_JP);./
     Keyword ::= j s /.$setResult($_JS);./
     Keyword ::= j z /.$setResult($_JZ);./
+    Keyword ::= k 0 /.$setResult($_K0);./
+    Keyword ::= k 1 /.$setResult($_K1);./
+    Keyword ::= k 2 /.$setResult($_K2);./
+    Keyword ::= k 3 /.$setResult($_K3);./
+    Keyword ::= k 4 /.$setResult($_K4);./
+    Keyword ::= k 5 /.$setResult($_K5);./
+    Keyword ::= k 6 /.$setResult($_K6);./
+    Keyword ::= k 7 /.$setResult($_K7);./
     Keyword ::= o r /.$setResult($_OR);./
+    Keyword ::= r 8 /.$setResult($_R8);./
+    Keyword ::= r 9 /.$setResult($_R9);./
     Keyword ::= s i /.$setResult($_SI);./
     Keyword ::= s p /.$setResult($_SP);./
     Keyword ::= s s /.$setResult($_SS);./

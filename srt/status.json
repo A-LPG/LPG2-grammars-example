@@ -5,10 +5,9 @@
   "status": "ported",
   "blockers": [],
   "tier": "A",
-  "quality": "language_port",
+  "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "mirrors_srt.g4_file_subtitles_subtitle_NUMBER_TIMESTAMP_TEXT"
+    "heuristic_default_subset"
   ],
   "parser_bytes": 786,
   "start": "file_"

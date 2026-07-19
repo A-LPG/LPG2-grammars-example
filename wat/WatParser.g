@@ -6,7 +6,7 @@
 %options package=lpg.grammars.wat
 %options template=dtParserTemplateF.gi
 %options import_terminals=WatLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -173,7 +173,9 @@
            | elem
            | data
            | start_
-           | s module_ LPAR MODULE opt_80 list_81 RPAR
+           | export_
+
+    module_ ::= LPAR MODULE opt_80 list_81 RPAR
 
     script_module ::= module_
            | LPAR MODULE opt_82 grp_83 list_84 RPAR
@@ -403,5 +405,9 @@
     list_95 ::= module_field | list_95 module_field
 
     list_96 ::= $empty | list_96 module_field
+
+    LPAR ::= LPAREN
+    RPAR ::= RPAREN
+    STRING_ ::= STRING
 
 %End

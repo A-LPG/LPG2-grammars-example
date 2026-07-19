@@ -16,7 +16,9 @@
 %End
 
 %Export
-    IDENTIFIER
+            STRING_LITERAL
+STRING_LITERAL
+IDENTIFIER
     NUMBER
     STRING
     LPAREN
@@ -49,6 +51,78 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    ABSTRACT
+    ANALYSIS
+    AND
+    ANY
+    ASSIGN
+    ATTACHEDPORTS
+    ATTACHEDROLES
+    ATTACHMENT
+    BINDINGS
+    COLLECT
+    COMPONENT
+    COMPONENTS
+    CONNECTOR
+    CONNECTORS
+    CONTAINASSIGN
+    DESIGN
+    DISTINCT
+    DOUBLE
+    ELEMENT
+    ENUM
+    EXISTS
+    EXTENDED
+    EXTENDS
+    EXTERNAL
+    FALSE
+    FAMILY
+    FINAL
+    FLOAT
+    FORALL
+    GE
+    GROUP
+    GROUPS
+    HEURISTIC
+    IFF
+    IMPLIES
+    IMPORT
+    IN
+    INT
+    INVARIANT
+    LE
+    MEMBERS
+    NE
+    NEW
+    OR
+    PORT
+    PORTS
+    POWER
+    PRIVATE
+    PROPBEGIN
+    PROPEND
+    PROPERTIES
+    PROPERTY
+    PUBLIC
+    RECORD
+    REM
+    REPRESENTATION
+    REPRESENTATIONS
+    ROLE
+    ROLES
+    RULE
+    SELECT
+    SEMICOLON
+    SEQUENCE
+    SET
+    STYLE
+    SYSTEM
+    TO
+    TRUE
+    TYPE
+    UNIQUE
+    VIEW
+    WITH
 %End
 
 %Terminals
@@ -109,9 +183,9 @@
 %End
 
 %Rules
-    Token ::= STRING /. makeToken($_STRING); ./
+    Token ::= STRING /. makeToken($_STRING_LITERAL); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
@@ -123,7 +197,7 @@
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./
-            | '=' /. makeToken($_EQ); ./
+            | '=' /. makeToken($_ASSIGN); ./
             | '+' /. makeToken($_PLUS); ./
             | '-' /. makeToken($_MINUS); ./
             | '*' /. makeToken($_STAR); ./
@@ -138,7 +212,7 @@
             | '%' /. makeToken($_PERCENT); ./
             | '~' /. makeToken($_TILDE); ./
             | '`' /. makeToken($_BACKTICK); ./
-            | ';' /. makeToken($_SEMI); ./
+            | ';' /. makeToken($_SEMICOLON); ./
             | '#' /. makeToken($_HASH); ./
             | "'" /. makeToken($_QUOTE); ./
             | BackSlash /. makeToken($_BACKSLASH); ./

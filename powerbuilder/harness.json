@@ -3,6 +3,7 @@
   "lexer": "PowerbuilderLexer",
   "parser": "PowerbuilderParser",
   "example_globs": [
-    "examples/**/*"
-  ]
+    "examples-curated/**/*"
+  ],
+  "parser_template": "btParserTemplateF.gi"
 }

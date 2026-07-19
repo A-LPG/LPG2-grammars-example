@@ -7,10 +7,7 @@
   "tier": "A",
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "tiny_upstream_g4_full_structural_port",
-    "curated_SK_combinator_programs_multiline",
-    "not_full_BCL_runtime_semantics"
+    "heuristic_default_subset"
   ],
   "parser_bytes": 470
 }

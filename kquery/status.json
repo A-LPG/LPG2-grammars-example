@@ -1,16 +1,13 @@
 {
   "id": "kquery",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
   "blockers": [],
-  "quality_notes": [
-    "antlr2lpg_structural_port",
-    "language_subset",
-    "harsh1_true_port_fix"
-  ],
+  "quality_notes": [],
   "parser_lines": 183,
   "example_count": 3,
-  "tier": "A",
-  "start": "kqueryExpression"
+  "tier": "B",
+  "start": "kqueryExpression",
+  "parser_bytes": 3994
 }

@@ -4,7 +4,7 @@
 %options fp=VbaVba71KWLexer
 
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
 
 %Export
@@ -21,6 +21,7 @@
     ASSERT
     ATTRIBUTE
     BASE
+    BEEP
     BEGIN
     BEGINPROPERTY
     BINARY
@@ -209,6 +210,7 @@
 
 %Terminals
     a b c d e f g h i j k l m n o p q r s t u v w x y z
+    Minus ::= '-'
 %End
 
 %Start
@@ -333,6 +335,7 @@
     Keyword ::= w i d t h /.$setResult($_WIDTH);./
     Keyword ::= w r i t e /.$setResult($_WRITE);./
     Keyword ::= b a s e /.$setResult($_BASE);./
+    Keyword ::= b e e p /.$setResult($_BEEP);./
     Keyword ::= b y t e /.$setResult($_BYTE);./
     Keyword ::= c a l l /.$setResult($_CALL);./
     Keyword ::= c a s e /.$setResult($_CASE);./

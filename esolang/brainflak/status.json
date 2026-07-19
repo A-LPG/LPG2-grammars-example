@@ -5,8 +5,7 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "real_g4_port",
-    "curated_multiline_brainflak"
+    "limited_examples_or_rules"
   ],
   "notes": "Brain-Flak paren/brace/bracket/angle nesting from brainflak.g4.",
   "example_count": 3,

@@ -6,10 +6,9 @@
   "blockers": [],
   "example_count": 3,
   "quality_notes": [
-    "real_g4_port",
-    "language_subset",
-    "folded_case_kw_lexer",
-    "no_token_stream_soup"
+    "curated_subset",
+    "real_g4_port"
   ],
-  "tier": "A"
+  "tier": "B",
+  "parser_bytes": 20765
 }

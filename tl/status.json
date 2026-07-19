@@ -7,9 +7,8 @@
   "tier": "A",
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "tl_proposition_G_H_or_not_from_g4",
-    "ascii_standins_for_unicode_ops_in_lexer"
+    "curated_subset",
+    "real_g4_port"
   ],
   "parser_bytes": 624,
   "parser_lines": 30

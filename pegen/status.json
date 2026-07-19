@@ -1,13 +1,16 @@
 {
   "id": "pegen",
   "quality": "language_subset",
-  "parse_ok": false,
-  "status": "regenerated_from_g4",
+  "parse_ok": true,
+  "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port"
+    "curated_subset",
+    "real_g4_port"
   ],
-  "parser_bytes": 2322,
+  "parser_bytes": 2353,
   "rule_approx": 43,
-  "start": "start"
+  "start": "start",
+  "tier": "D",
+  "example_count": 3
 }

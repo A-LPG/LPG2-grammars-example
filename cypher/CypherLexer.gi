@@ -17,20 +17,8 @@
     STRING NUMBER
     LPAREN RPAREN LBRACE RBRACE LBRACKET RBRACKET
     COMMA DOT COLON SEMI EQ PLUS MINUS STAR SLASH LT GT
-    MATCH
-    RETURN
-    WHERE
-    CREATE
-    DELETE
-    SET
-    WITH
-    AS
-    AND
-    OR
-    NOT
-    NULLLITERAL
-    TRUE
-    FALSE
+    MOD DOLLAR CARET STICK
+    LE GE NOT_EQUAL ADD_ASSIGN RANGE
 %End
 %Terminals
     CtlCharNotWS
@@ -95,10 +83,19 @@
             | ':' /. makeToken($_COLON); ./
             | ';' /. makeToken($_SEMI); ./
             | '=' /. makeToken($_EQ); ./
+            | AddAssign /. makeToken($_ADD_ASSIGN); ./
+            | LessEqual /. makeToken($_LE); ./
+            | GreaterEqual /. makeToken($_GE); ./
+            | NotEqual /. makeToken($_NOT_EQUAL); ./
+            | RangeDot /. makeToken($_RANGE); ./
             | '+' /. makeToken($_PLUS); ./
             | '-' /. makeToken($_MINUS); ./
             | '*' /. makeToken($_STAR); ./
             | '/' /. makeToken($_SLASH); ./
+            | '%' /. makeToken($_MOD); ./
+            | '^' /. makeToken($_CARET); ./
+            | '|' /. makeToken($_STICK); ./
+            | '$' /. makeToken($_DOLLAR); ./
             | '<' /. makeToken($_LT); ./
             | '>' /. makeToken($_GT); ./
             | STRING /. makeToken($_STRING); ./
@@ -125,6 +122,11 @@
     NUMBER ::= DigitPlus OptFrac
     DigitPlus ::= Digit | DigitPlus Digit
     OptFrac -> $empty | '.' DigitPlus
+    RangeDot ::= Dot Dot
+    AddAssign ::= Plus Equal
+    LessEqual ::= LessThan Equal
+    GreaterEqual ::= GreaterThan Equal
+    NotEqual ::= LessThan GreaterThan
     line_comment ::= '/' '/' NotNLStar
     hash_comment ::= '#' NotNLStar
     NotNLStar -> $empty | NotNLStar NotNL

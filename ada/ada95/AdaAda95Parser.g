@@ -1,12 +1,12 @@
 -- AUTO-GENERATED from antlr/grammars-v4 ada/ada95 by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=AdaAda95Parser
 %options package=lpg.grammars.ada.ada95
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=AdaAda95Lexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -14,7 +14,7 @@
 %End
 
 %Start
-    identifier
+    compilation_unit
 %End
 
 %Rules

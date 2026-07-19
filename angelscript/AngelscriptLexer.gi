@@ -19,6 +19,7 @@
     IDENTIFIER
     NUMBER
     STRING
+    LITERAL
     LPAREN
     RPAREN
     LBRACE
@@ -50,6 +51,54 @@
     QUOTE
     CHARLIT
     BACKSLASH
+    ABSTRACT
+    ASSIGNOP
+    AUTO
+    BITOP
+    BREAK
+    CASE
+    CAST
+    CATCH
+    CLASS
+    COLONCOLON
+    COMPOP
+    CONST
+    CONTINUE
+    DEFAULT
+    DO
+    ELSE
+    ENUM
+    EXPRPREOP
+    EXTERNAL
+    FINAL
+    FOR
+    FROM
+    FUNCATTR
+    FUNCDEF
+    FUNCTION
+    GET
+    IF
+    IMPORT
+    IN
+    INOUT
+    INTERFACE
+    LOGICOP
+    MATHOP
+    MINUSMINUS
+    MIXIN
+    NAMESPACE
+    OUT
+    PLUSPLUS
+    PRIMTYPE
+    VOID
+    PROTECTED
+    RETURN
+    SET
+    SHARED
+    SWITCH
+    TRY
+    TYPEDEF
+    WHILE
 %End
 
 %Terminals
@@ -110,39 +159,72 @@
 %End
 
 %Rules
-    Token ::= STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+    Token ::= STRING /. makeToken($_LITERAL); ./
+            | NUMBER /. makeToken($_LITERAL); ./
+            | IDENTIFIER /. checkForKeyWord($_IDENTIFIER); ./
+            | '>' '>' '>' /.$BeginJava makeToken($_BITOP);$EndJava./
+            | '>' '>' '=' /.$BeginJava makeToken($_ASSIGNOP);$EndJava./
+            | '<' '<' '=' /.$BeginJava makeToken($_ASSIGNOP);$EndJava./
+            | '*' '*' '=' /.$BeginJava makeToken($_ASSIGNOP);$EndJava./
+            | '!' '=' /.$BeginJava makeToken($_COMPOP);$EndJava./
+            | '=' '=' /.$BeginJava makeToken($_COMPOP);$EndJava./
+            | '<' '=' /.$BeginJava makeToken($_COMPOP);$EndJava./
+            | '>' '=' /.$BeginJava makeToken($_COMPOP);$EndJava./
+            | '&' '&' /.$BeginJava makeToken($_LOGICOP);$EndJava./
+            | '|' '|' /.$BeginJava makeToken($_LOGICOP);$EndJava./
+            | '^' '^' /.$BeginJava makeToken($_LOGICOP);$EndJava./
+            | '*' '*' /.$BeginJava makeToken($_MATHOP);$EndJava./
+            | '+' '+' /.$BeginJava makeToken($_PLUSPLUS);$EndJava./
+            | '-' '-' /.$BeginJava makeToken($_MINUSMINUS);$EndJava./
+            | '<' '<' /.$BeginJava makeToken($_BITOP);$EndJava./
+            | '>' '>' /.$BeginJava makeToken($_BITOP);$EndJava./
+            | ':' ':' /.$BeginJava makeToken($_COLONCOLON);$EndJava./
+            | 'i' 's' /.$BeginJava makeToken($_COMPOP);$EndJava./
+            | '!' 'i' 's' /.$BeginJava makeToken($_COMPOP);$EndJava./
+            | 'a' 'n' 'd' /.$BeginJava makeToken($_LOGICOP);$EndJava./
+            | 'o' 'r' /.$BeginJava makeToken($_LOGICOP);$EndJava./
+            | 'x' 'o' 'r' /.$BeginJava makeToken($_LOGICOP);$EndJava./
+            | 'o' 'v' 'e' 'r' 'r' 'i' 'd' 'e' /.$BeginJava makeToken($_FUNCATTR);$EndJava./
+            | 'e' 'x' 'p' 'l' 'i' 'c' 'i' 't' /.$BeginJava makeToken($_FUNCATTR);$EndJava./
+            | 'p' 'r' 'o' 'p' 'e' 'r' 't' 'y' /.$BeginJava makeToken($_FUNCATTR);$EndJava./
+            | '+' '=' /.$BeginJava makeToken($_ASSIGNOP);$EndJava./
+            | '-' '=' /.$BeginJava makeToken($_ASSIGNOP);$EndJava./
+            | '*' '=' /.$BeginJava makeToken($_ASSIGNOP);$EndJava./
+            | '/' '=' /.$BeginJava makeToken($_ASSIGNOP);$EndJava./
+            | '|' '=' /.$BeginJava makeToken($_ASSIGNOP);$EndJava./
+            | '&' '=' /.$BeginJava makeToken($_ASSIGNOP);$EndJava./
+            | '^' '=' /.$BeginJava makeToken($_ASSIGNOP);$EndJava./
+            | '%' '=' /.$BeginJava makeToken($_ASSIGNOP);$EndJava./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./
-            | '=' /. makeToken($_EQ); ./
-            | '+' /. makeToken($_PLUS); ./
-            | '-' /. makeToken($_MINUS); ./
-            | '*' /. makeToken($_STAR); ./
-            | '/' /. makeToken($_SLASH); ./
-            | '&' /. makeToken($_AMP); ./
-            | '|' /. makeToken($_BAR); ./
-            | '^' /. makeToken($_CARET); ./
-            | '!' /. makeToken($_BANG); ./
+            | '=' /. makeToken($_ASSIGNOP); ./
+            | '+' /. makeToken($_MATHOP); ./
+            | '-' /. makeToken($_MATHOP); ./
+            | '*' /. makeToken($_MATHOP); ./
+            | '/' /. makeToken($_MATHOP); ./
+            | '&' /. makeToken($_BITOP); ./
+            | '|' /. makeToken($_BITOP); ./
+            | '^' /. makeToken($_BITOP); ./
+            | '!' /. makeToken($_EXPRPREOP); ./
             | '?' /. makeToken($_QUEST); ./
-            | '@' /. makeToken($_AT); ./
+            | '@' /. makeToken($_EXPRPREOP); ./
             | '$' /. makeToken($_DOLLAR); ./
             | '%' /. makeToken($_PERCENT); ./
-            | '~' /. makeToken($_TILDE); ./
+            | '~' /. makeToken($_EXPRPREOP); ./
             | '`' /. makeToken($_BACKTICK); ./
             | ';' /. makeToken($_SEMI); ./
             | '#' /. makeToken($_HASH); ./
             | "'" /. makeToken($_QUOTE); ./
             | BackSlash /. makeToken($_BACKSLASH); ./
+            | '<' /. makeToken($_COMPOP); ./
+            | '>' /. makeToken($_COMPOP); ./
             | SLComment     /. skipToken(); ./ | MLComment     /. skipToken(); ./
             | white /. skipToken(); ./
 

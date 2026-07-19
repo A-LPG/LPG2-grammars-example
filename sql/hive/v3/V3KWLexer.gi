@@ -3,7 +3,7 @@
 %options template=KeywordTemplateF.gi
 %options fp=V3KWLexer
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
 %Export
     X

@@ -262,4 +262,8 @@
 
     seq_52 ::= opt_48 opt_51
 
+    ID ::= IDENTIFIER
+    LCB ::= LBRACE
+    RCB ::= RBRACE
+
 %End

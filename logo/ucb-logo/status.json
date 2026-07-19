@@ -5,14 +5,12 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "UCBLogo_parser_rules_port",
-    "g4_mostly_arity_table_plus_lexer",
-    "predicates_omitted_LALR",
-    "language_subset",
-    "harsh1_true_port_fix"
+    "curated_subset",
+    "real_g4_port"
   ],
   "parser_lines": 87,
   "example_count": 4,
-  "tier": "A",
-  "start": "parse"
+  "tier": "B",
+  "start": "parse",
+  "parser_bytes": 2513
 }

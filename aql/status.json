@@ -7,8 +7,8 @@
   "blockers": [],
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "language_subset"
+    "heuristic_default_subset"
   ],
-  "notes": "real_g4_port of ArangoDbParser.g4 FOR/LET/FILTER/RETURN/INSERT subset"
+  "notes": "real_g4_port of ArangoDbParser.g4 FOR/LET/FILTER/RETURN/INSERT subset",
+  "parser_bytes": 4771
 }

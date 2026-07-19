@@ -1,18 +1,16 @@
 {
   "id": "joss",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "real_g4_port",
-    "antlr2lpg_structural_port",
-    "curated_type_set_go_page_line_cancel"
+    "real_g4_port"
   ],
   "parser_bytes": 4518,
   "rule_approx": 74,
   "start": "prog",
   "example_count": 3,
-  "tier": "A",
+  "tier": "B",
   "parser_lines": 244
 }

@@ -1,19 +1,15 @@
 {
   "id": "squirrel",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
   "blockers": [],
-  "quality_notes": [
-    "antlr2lpg_structural_port",
-    "real_g4_port",
-    "language_subset"
-  ],
-  "parser_bytes": 11898,
+  "quality_notes": [],
+  "parser_bytes": 11853,
   "rule_approx": 224,
   "start": "nut",
   "example_count": 4,
-  "tier": "A",
+  "tier": "B",
   "parser_lines": 538,
   "notes": "local/function/class/table/while"
 }

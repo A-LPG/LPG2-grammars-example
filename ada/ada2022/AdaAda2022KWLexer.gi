@@ -4,7 +4,7 @@
 %options fp=AdaAda2022KWLexer
 
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
 
 %Export

@@ -1,1 +1,1 @@
-main = putStrLn "ok"
+module Main where {}

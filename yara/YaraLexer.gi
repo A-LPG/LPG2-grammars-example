@@ -111,7 +111,7 @@
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | identifier /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
@@ -146,9 +146,9 @@
             | MLComment     /. skipToken(); ./
             | white /. skipToken(); ./
 
-    IDENTIFIER ::= IdStart
-                 | IDENTIFIER IdStart
-                 | IDENTIFIER Digit
+    identifier ::= IdStart
+                 | identifier IdStart
+                 | identifier Digit
 
     IdStart -> Letter | '_' | AfterASCII
     Letter -> LowerCaseLetter | UpperCaseLetter

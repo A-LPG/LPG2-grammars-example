@@ -5,7 +5,7 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "real_g4_port"
+    "heuristic_default_subset"
   ],
   "parser_bytes": 938,
   "start": "barrous",

@@ -8,12 +8,7 @@
   "parser_lines": 44,
   "parser_bytes": 851,
   "quality_notes": [
-    "antlr2lpg_structural_port",
-    "real_g4_port",
-    "language_subset",
-    "harsh3_real_multiline_examples",
-    "no_token_stream_soup",
-    "repair3_fixed_kwlexer"
+    "heuristic_default_subset"
   ],
-  "tier": "A"
+  "tier": "B"
 }

@@ -2,13 +2,13 @@
   "id": "xpath/xpath1",
   "parse_ok": true,
   "status": "ported",
-  "tier": "A",
+  "tier": "B",
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "mirrors_xpath.g4_main_locationPath_orExpr"
+    "heuristic_default_subset"
   ],
   "blockers": [],
   "start": "main",
-  "example_count": 3
+  "example_count": 3,
+  "parser_bytes": 3731
 }

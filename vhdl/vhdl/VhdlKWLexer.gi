@@ -4,7 +4,7 @@
 %options fp=VhdlKWLexer
 
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
 
 %Export

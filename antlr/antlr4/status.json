@@ -5,16 +5,14 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port",
-    "real_g4_port",
-    "language_subset",
-    "antlr4_parser_g4_subset_not_examples_dump"
+    "curated_subset",
+    "real_g4_port"
   ],
   "parser_bytes": 8515,
   "rule_approx": 146,
   "start": "grammarSpec",
   "example_count": 4,
   "notes": "real_g4_port of ANTLRv4Parser.g4 (~416 lines); not the nested examples/** dump (~329k lines)",
-  "tier": "A",
+  "tier": "D",
   "parser_lines": 422
 }

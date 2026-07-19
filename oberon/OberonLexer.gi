@@ -50,6 +50,51 @@
     QUOTE
     CHARLIT
     BACKSLASH
+    ARRAY
+    BEGIN
+    BY
+    CASE
+    CONST
+    DIGIT
+    DIV
+    DO
+    DOTDOT
+    ELSE
+    ELSIF
+    END
+    FALSE
+    FOR
+    HEXDIGIT
+    IDENT
+    IF
+    IMPORT
+    IN
+    IS
+    MOD
+    MODULE
+    NIL
+    OF
+    OR
+    PIPE
+    POINTER
+    PROCEDURE
+    RECORD
+    REPEAT
+    RETURN
+    THEN
+    TO
+    TRUE
+    TYPE
+    UNTIL
+    VAR
+    WHILE
+    COLONEQ
+    LTEQ
+    GTEQ
+    LT
+    GT
+    E
+    H
 %End
 
 %Terminals
@@ -112,17 +157,23 @@
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
             | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
+            | 'H' /. makeToken($_H); ./
+            | 'E' /. makeToken($_E); ./
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | ',' /. makeToken($_COMMA); ./
             | '.' /. makeToken($_DOT); ./
+            | ':' '=' /. makeToken($_COLONEQ); ./
+            | '.' '.' /. makeToken($_DOTDOT); ./
+            | '<' '=' /. makeToken($_LTEQ); ./
+            | '>' '=' /. makeToken($_GTEQ); ./
             | ':' /. makeToken($_COLON); ./
             | '=' /. makeToken($_EQ); ./
             | '+' /. makeToken($_PLUS); ./

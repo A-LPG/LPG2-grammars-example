@@ -1,12 +1,13 @@
 -- AUTO-GENERATED from antlr/grammars-v4 trapc by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
+-- Extended with minimal C stubs for trap/return examples (OverridesParser + C subset).
 
 %Options la=3
 %Options fp=TrapcParser
 %options package=lpg.grammars.trapc
 %options template=dtParserTemplateF.gi
 %options import_terminals=TrapcLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -14,10 +15,12 @@
 %End
 
 %Start
-    structOrUnion
+    file_
 %End
 
 %Rules
+    file_ ::= statement | structOrUnion
+
     structOrUnion ::= STRUCT
 
     jumpStatement ::= grp_1 SEMI
@@ -32,6 +35,28 @@
            | trapStatement
 
     trapStatement ::= TRAP compoundStatement
+
+    compoundStatement ::= LBRACE opt_stmts RBRACE
+
+    opt_stmts ::= $empty | statement | opt_stmts statement
+
+    expressionStatement ::= expression SEMI | SEMI
+
+    labeledStatement ::= IDENTIFIER COLON statement
+
+    selectionStatement ::= IF LPAREN expression RPAREN statement
+
+    iterationStatement ::= WHILE LPAREN expression RPAREN statement
+
+    expression ::= logicalOrExpression
+
+    logicalOrExpression ::= logicalAndExpression
+           | logicalOrExpression BARBAR logicalAndExpression
+
+    logicalAndExpression ::= primaryExpression
+           | logicalAndExpression AMPAMP primaryExpression
+
+    primaryExpression ::= NUMBER | IDENTIFIER | LPAREN expression RPAREN
 
     opt_2 ::= expression | $empty
 

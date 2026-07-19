@@ -1,17 +1,16 @@
 {
   "id": "toml",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "real_g4_port",
-    "antlr2lpg_structural_port"
+    "real_g4_port"
   ],
-  "parser_bytes": 2297,
+  "parser_bytes": 2357,
   "rule_approx": 42,
   "start": "document",
   "example_count": 1,
   "notes": "real_g4_port",
-  "tier": "A"
+  "tier": "D"
 }

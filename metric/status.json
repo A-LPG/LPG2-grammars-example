@@ -5,12 +5,10 @@
   "tier": "A",
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "mirrors_metric.g4_file_uom_measure_prefix_unit",
-    "ohm_ascii_for_omega",
-    "no_micro_or_celsius"
+    "heuristic_default_subset"
   ],
   "blockers": [],
   "start": "file_",
-  "example_count": 5
+  "example_count": 5,
+  "parser_bytes": 1356
 }

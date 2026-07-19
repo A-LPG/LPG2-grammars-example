@@ -1,17 +1,15 @@
 {
   "id": "turtle-doc",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
-  "tier": "A",
+  "tier": "B",
   "quality_notes": [
-    "real_g4_port",
-    "mirrors_turtleDoc_statement_triples",
-    "PName_via_IDENTIFIER_COLON_LetterA",
-    "curated_blank_collection_literals_prefix"
+    "real_g4_port"
   ],
   "blockers": [],
   "example_count": 3,
   "parser_lines": 105,
-  "start": "turtleDoc"
+  "start": "turtleDoc",
+  "parser_bytes": 2447
 }

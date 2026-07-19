@@ -7,9 +7,7 @@
   "blockers": [],
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "micro_language",
-    "curated_multiline_framed"
+    "heuristic_default_subset"
   ],
   "parser_bytes": 1532,
   "parser_lines": 32

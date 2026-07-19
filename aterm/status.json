@@ -5,10 +5,9 @@
   "status": "ported",
   "blockers": [],
   "tier": "A",
-  "quality": "language_subset",
+  "quality": "language_port",
   "quality_notes": [
-    "real_g4_port",
-    "aterm_term_list_placeholder_annotation_from_g4"
+    "real_g4_port"
   ],
   "parser_bytes": 1110,
   "parser_lines": 53

@@ -1,12 +1,12 @@
 -- AUTO-GENERATED from antlr/grammars-v4 vb6 by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=Vb6Parser
 %options package=lpg.grammars.vb6
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=Vb6Lexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -42,7 +42,7 @@
 
     moduleOption ::= OPTION_BASE WS integerLiteral
            | OPTION_COMPARE WS grp_39
-           | OPTION_EXPLICIT
+           | OPTION WS EXPLICIT
            | OPTION_PRIVATE_MODULE
 
     moduleBody ::= moduleBodyElement list_42
@@ -318,7 +318,7 @@
 
     stopStmt ::= STOP
 
-    subStmt ::= opt_401 opt_403 SUB WS ambiguousIdentifier opt_406 list_407 opt_410 END_SUB
+    subStmt ::= opt_401 opt_403 SUB WS ambiguousIdentifier opt_406 list_407 opt_410 END WS SUB
 
     timeStmt ::= TIME opt_411 EQ opt_412 valueStmt
 

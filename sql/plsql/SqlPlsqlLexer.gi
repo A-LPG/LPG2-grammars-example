@@ -2610,9 +2610,9 @@
 %End
 
 %Rules
-    Token ::= identifier /. checkForKeyWord(); ./
-            | number     /. makeToken($_NUMBER); ./
-            | string     /. makeToken($_STRING); ./
+    Token ::= identifier /. checkForKeyWord($_REGULAR_ID); ./
+            | number     /. makeToken($_UNSIGNED_INTEGER); ./
+            | string     /. makeToken($_CHAR_STRING); ./
             | charlit    /. makeToken($_CHAR_LITERAL); ./
             | LineComment /. skipToken(); ./
             | white /. skipToken(); ./
@@ -2674,7 +2674,7 @@
             | '.' /. makeToken($_DOT); ./
             | '/' /. makeToken($_SLASH); ./
             | ':' /. makeToken($_COLON); ./
-            | ';' /. makeToken($_SEMI); ./
+            | ';' /. makeToken($_SEMICOLON); ./
             | '<' /. makeToken($_LT); ./
             | '=' /. makeToken($_EQ); ./
             | '>' /. makeToken($_GT); ./

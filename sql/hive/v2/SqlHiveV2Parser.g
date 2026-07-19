@@ -6,7 +6,7 @@
 %options package=lpg.grammars.sql.hive.v2
 %options template=dtParserTemplateF.gi
 %options import_terminals=SqlHiveV2Lexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof

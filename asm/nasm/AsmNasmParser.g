@@ -1,12 +1,12 @@
 -- AUTO-GENERATED from antlr/grammars-v4 asm/nasm by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=AsmNasmParser
 %options package=lpg.grammars.asm.nasm
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=AsmNasmLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -20,7 +20,9 @@
 %Rules
     program ::= list_1
 
-    line ::= opt_2 opt_6 EOL
+    line ::= opt_2 opt_6 opt_eol
+
+    opt_eol ::= EOL | $empty
 
     label ::= name COLON
 
@@ -2960,7 +2962,7 @@
 
     list_80 ::= $empty | list_80 grp_78
 
-    grp_82 ::= LESS_THAN | LESS_THAN_EQUAL | GREATER_THAN | GREATER_THAN | SIGNED_COMPARISON
+    grp_82 ::= LESS_THAN | LESS_THAN_EQUAL | GREATER_THAN | SIGNED_COMPARISON
 
     grp_81 ::= grp_82 shiftExpression
 

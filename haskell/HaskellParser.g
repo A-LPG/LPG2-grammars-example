@@ -1,16 +1,22 @@
 -- AUTO-GENERATED from antlr/grammars-v4 haskell by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=HaskellParser
 %options package=lpg.grammars.haskell
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=HaskellLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
     EOF_TOKEN
+%End
+
+
+%Define
+    $ast_class /.Object./
+    $ast_type /.Object./
 %End
 
 %Start
@@ -18,7 +24,7 @@
 %End
 
 %Rules
-    module ::= opt_1 list_2 opt_3 list_4 grp_5 opt_6 opt_7
+    module ::= opt_1 list_2 opt_3 list_4 grp_5 opt_6 opt_7 opt_trailing_nl
 
     module_content ::= MODULE modid opt_8 where_module
 
@@ -775,9 +781,11 @@
 
     open_ ::= VOCURLY
            | OCURLY
+           | LBRACE
 
     close ::= VCCURLY
            | CCURLY
+           | RBRACE
 
     semi ::= SEMI
 
@@ -875,7 +883,9 @@
 
     grp_23 ::= impdecl | NEWLINE | semi
 
-    list_24 ::= grp_23 | list_24 grp_23
+    list_24 ::= $empty
+           | grp_23
+           | list_24 grp_23
 
     seq_25 ::= COMMA exprt
 
@@ -947,7 +957,9 @@
 
     grp_58 ::= topdecl list_59 | NEWLINE | semi
 
-    list_60 ::= grp_58 | list_60 grp_58
+    list_60 ::= $empty
+           | grp_58
+           | list_60 grp_58
 
     opt_61 ::= comma_types | $empty
 
@@ -1740,5 +1752,8 @@
     list_455 ::= COMMA | list_455 COMMA
 
     list_456 ::= PIPE | list_456 PIPE
+
+    opt_trailing_nl ::= $empty
+           | NEWLINE opt_trailing_nl
 
 %End

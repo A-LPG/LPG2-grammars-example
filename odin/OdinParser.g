@@ -1,12 +1,12 @@
 -- AUTO-GENERATED from antlr/grammars-v4 odin by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=OdinParser
 %options package=lpg.grammars.odin
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=OdinLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -430,7 +430,7 @@
 
     expr_list ::= expr list_178
 
-    id ::= ID
+    id ::= IDENTIFIER
 
     opt_1 ::= package_decl | $empty
 

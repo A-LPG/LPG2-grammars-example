@@ -5,13 +5,12 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "classify_g4_parser_tiny_by_design",
-    "lexer_ASCII_Latin1_GC_subset",
-    "language_subset",
-    "harsh1_true_port_fix"
+    "curated_subset",
+    "real_g4_port"
   ],
   "parser_lines": 60,
   "example_count": 5,
-  "tier": "A",
-  "start": "file_"
+  "tier": "D",
+  "start": "file_",
+  "parser_bytes": 1655
 }

@@ -259,11 +259,13 @@
 %End
 
 %Rules
-    Token ::= identifier /. checkForKeyWord(); ./
+    Token ::= LF /. makeToken($_EOL); ./
+            | CR /. makeToken($_EOL); ./
+            | identifier /. checkForKeyWord(); ./
             | number     /. makeToken($_NUMBER); ./
             | string     /. makeToken($_STRING); ./
-            | charlit    /. makeToken($_CHAR_LITERAL); ./
             | LineComment /. skipToken(); ./
+            | HashComment /. skipToken(); ./
             | white /. skipToken(); ./
             | 'y' 'i' 'e' 'l' 'd' '*' /. makeToken($_YIELDSTAR); ./
             | '>' '>' '>' '=' /. makeToken($_URSHIFTEQ); ./
@@ -342,6 +344,8 @@
     identifier -> Letter
                 | identifier Letter
                 | identifier Digit
+                | identifier '-' Letter
+                | identifier '-' Digit
 
     Letter -> LowerCaseLetter
             | UpperCaseLetter
@@ -378,26 +382,27 @@
 
     NotDQ -> Letter | Digit | Space | HT | SingleQuote | ',' | '.' | ':' | ';' | '+' | '-' |
              '*' | '/' | '=' | '_' | '!' | '?' | '@' | '#' | '$' | '%' | '&' | '|' |
-             '^' | '~' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' | Escape
+             '^' | '~' | '`' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' | Escape
 
     NotSQ -> Letter | Digit | Space | HT | DoubleQuote | ',' | '.' | ':' | ';' | '+' | '-' |
              '*' | '/' | '=' | '_' | '!' | '?' | '@' | '#' | '$' | '%' | '&' | '|' |
-             '^' | '~' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' | Escape
+             '^' | '~' | '`' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' | Escape
 
     Escape ::= BackSlash EscapeChar
     EscapeChar -> DoubleQuote | SingleQuote | BackSlash | '/' | n | r | t | b | f
 
-    charlit ::= SingleQuote NotSQ SingleQuote
-
     LineComment ::= '/' '/' LineCommentBody
+    HashComment ::= Sharp HashCommentBody
+    HashCommentBody -> $empty
+                     | HashCommentBody NotNL
     LineCommentBody -> $empty
                      | LineCommentBody NotNL
     NotNL -> Letter | Digit | Space | HT | SpecialNotNL
-    SpecialNotNL -> '+' | '-' | '/' | '*' | '(' | ')' | '!' | '@' | '~' |
+    SpecialNotNL -> '+' | '-' | '/' | '*' | '(' | ')' | '!' | '@' | '`' | '~' |
                     '%' | '&' | '^' | ':' | ';' | DoubleQuote | SingleQuote | '|' | '{' | '}' |
                     '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_' | BackSlash
 
     white -> WSChar
            | white WSChar
-    WSChar -> Space | LF | CR | HT | FF
+    WSChar -> Space | HT | FF
 %End

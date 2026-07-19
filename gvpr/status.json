@@ -1,13 +1,15 @@
 {
   "id": "gvpr",
-  "quality": "language_subset",
-  "parse_ok": false,
-  "status": "regenerated_from_g4",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port"
+    "real_g4_port"
   ],
-  "parser_bytes": 6063,
+  "parser_bytes": 6157,
   "rule_approx": 101,
-  "start": "preds"
+  "start": "preds",
+  "tier": "B",
+  "example_count": 3
 }

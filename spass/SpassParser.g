@@ -1,12 +1,12 @@
 -- AUTO-GENERATED from antlr/grammars-v4 spass by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=SpassParser
 %options package=lpg.grammars.spass
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=SpassLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -181,7 +181,7 @@
            | SETHEO
            | SPASS
 
-    identifier ::= Identifier
+    identifier ::= IDENTIFIER
 
     arity ::= _1
            | number

@@ -41,6 +41,7 @@
     BACKTICK
     BANG
     BASE
+    BEEP
     BEGIN
     BEGINPROPERTY
     BINARY
@@ -412,14 +413,17 @@
 %End
 
 %Rules
-    Token ::= identifier /. checkForKeyWord(); ./
+    Token ::= Space /. makeToken($_WS); ./
+            | HT /. makeToken($_WS); ./
+            | VbNameTok /. makeToken($_VB_NAME); ./
+            | identifier /. checkForKeyWord(); ./
             | number     /. makeToken($_NUMBER); ./
-            | string     /. makeToken($_STRING); ./
-            | charlit    /. makeToken($_CHAR_LITERAL); ./
+            | string     /. makeToken($_STRINGLITERAL); ./
             | LineComment /. skipToken(); ./
-            | white /. skipToken(); ./
-            | 'V' 'B' '_' 'V' 'A' 'R' 'U' 'S' 'E' 'R' 'M' 'E' 'M' 'I' 'D' /. makeToken($_VB_VARUSERMEMID); ./
-            | 'V' 'B' '_' 'U' 'S' 'E' 'R' 'M' 'E' 'M' 'I' 'D' /. makeToken($_VB_USERMEMID); ./
+            | HashComment /. skipToken(); ./
+            | SpaceSpace /. skipToken(); ./
+            | LF /. makeToken($_NEWLINE); ./
+            | CR /. makeToken($_NEWLINE); ./
             | 'y' 'i' 'e' 'l' 'd' '*' /. makeToken($_YIELDSTAR); ./
             | '>' '>' '>' '=' /. makeToken($_URSHIFTEQ); ./
             | '!' '=' '=' /. makeToken($_NOTEQEQ); ./
@@ -497,6 +501,8 @@
     identifier -> Letter
                 | identifier Letter
                 | identifier Digit
+                | identifier '-' Letter
+                | identifier '-' Digit
 
     Letter -> LowerCaseLetter
             | UpperCaseLetter
@@ -522,6 +528,8 @@
     Digits ::= Digit
              | Digits Digit
 
+    VbNameTok ::= 'V' 'B' '_' 'N' 'a' 'm' 'e'
+
     string ::= '"' SLBody '"'
              | SingleQuote SLBodySQ SingleQuote
 
@@ -533,26 +541,28 @@
 
     NotDQ -> Letter | Digit | Space | HT | SingleQuote | ',' | '.' | ':' | ';' | '+' | '-' |
              '*' | '/' | '=' | '_' | '!' | '?' | '@' | '#' | '$' | '%' | '&' | '|' |
-             '^' | '~' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' | Escape
+             '^' | '~' | '`' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' | Escape
 
     NotSQ -> Letter | Digit | Space | HT | DoubleQuote | ',' | '.' | ':' | ';' | '+' | '-' |
              '*' | '/' | '=' | '_' | '!' | '?' | '@' | '#' | '$' | '%' | '&' | '|' |
-             '^' | '~' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' | Escape
+             '^' | '~' | '`' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' | Escape
 
     Escape ::= BackSlash EscapeChar
     EscapeChar -> DoubleQuote | SingleQuote | BackSlash | '/' | n | r | t | b | f
 
-    charlit ::= SingleQuote NotSQ SingleQuote
-
     LineComment ::= '/' '/' LineCommentBody
+    HashComment ::= Sharp HashCommentBody
+    HashCommentBody -> $empty
+                     | HashCommentBody NotNL
     LineCommentBody -> $empty
                      | LineCommentBody NotNL
     NotNL -> Letter | Digit | Space | HT | SpecialNotNL
-    SpecialNotNL -> '+' | '-' | '/' | '*' | '(' | ')' | '!' | '@' | '~' |
+    SpecialNotNL -> '+' | '-' | '/' | '*' | '(' | ')' | '!' | '@' | '`' | '~' |
                     '%' | '&' | '^' | ':' | ';' | DoubleQuote | SingleQuote | '|' | '{' | '}' |
                     '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_' | BackSlash
 
-    white -> WSChar
-           | white WSChar
-    WSChar -> Space | LF | CR | HT | FF
+    white -> Space | HT | FF
+           | white Space
+           | white HT
+           | white FF
 %End

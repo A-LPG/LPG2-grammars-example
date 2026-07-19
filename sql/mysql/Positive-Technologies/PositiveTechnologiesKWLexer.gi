@@ -3,7 +3,7 @@
 %options template=KeywordTemplateF.gi
 %options fp=PositiveTechnologiesKWLexer
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
 %Export
     X

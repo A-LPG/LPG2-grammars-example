@@ -1,4 +1,4 @@
--- Generated parse-level lexer
+-- Snobol lexer (port of grammars-v4 snobol/snobol.g4 lexer rules)
 %Options list
 %Options fp=SnobolLexer
 %options single_productions
@@ -17,55 +17,71 @@
 
 %Export
     IDENTIFIER
-    NUMBER
     STRING
+    STRINGLITERAL1
+    STRINGLITERAL2
+    INTEGER
     LPAREN
     RPAREN
-    LBRACE
-    RBRACE
     LBRACKET
     RBRACKET
-    LANGLE
-    RANGLE
     COMMA
     DOT
     COLON
-    SEMI
     EQ
     PLUS
     MINUS
     STAR
     SLASH
     AMP
-    BAR
     CARET
-    BANG
-    QUEST
-    AT
-    HASH
-    DOLLAR
-    PERCENT
-    TILDE
-    BACKTICK
-    QUOTE
-    CHARLIT
-    BACKSLASH
+    GT
+    LT
+    TIMES
+    DIV
+    COMMENT
+    END
+    COMMENT
+    EOL
+    F
+    S
+    ARRAY
+    ATAN
+    BREAK
+    CHOP
+    CONVERT
+    COS
+    DATE
+    DIFFER
+    DUPL
+    EXP
+    GE
+    GT
+    IDENT
+    LE
+    LN
+    LGT
+    NE
+    REMDR
+    REPLACE
+    REVERSE
+    SIN
+    SIZE
+    SORT
+    TABLE
+    TAN
+    TRIM
 %End
 
 %Terminals
     CtlCharNotWS
-
     LF   CR   HT   FF
-
     a    b    c    d    e    f    g    h    i    j    k    l    m
     n    o    p    q    r    s    t    u    v    w    x    y    z
     _
-
     A    B    C    D    E    F    G    H    I    J    K    L    M
     N    O    P    Q    R    S    T    U    V    W    X    Y    Z
-
     0    1    2    3    4    5    6    7    8    9
-
     AfterASCII   ::= '\u0080..\ufffe'
     Space        ::= ' '
     LF           ::= NewLine
@@ -110,19 +126,17 @@
 %End
 
 %Rules
-    Token ::= STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+    Token ::= STRINGLITERAL1 /. makeToken($_STRINGLITERAL1); ./
+            | STRINGLITERAL2 /. makeToken($_STRINGLITERAL2); ./
+            | COMMENT /. makeToken($_COMMENT); ./
+            | EOLTok /. makeToken($_EOL); ./
+            | INTEGER /. makeToken($_INTEGER); ./
+            | SnobolIdent /. checkForKeyWord($_STRING); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
-            | '{' /. makeToken($_LBRACE); ./
-            | '}' /. makeToken($_RBRACE); ./
             | '[' /. makeToken($_LBRACKET); ./
             | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
             | ',' /. makeToken($_COMMA); ./
-            | '.' /. makeToken($_DOT); ./
             | ':' /. makeToken($_COLON); ./
             | '=' /. makeToken($_EQ); ./
             | '+' /. makeToken($_PLUS); ./
@@ -130,27 +144,36 @@
             | '*' /. makeToken($_STAR); ./
             | '/' /. makeToken($_SLASH); ./
             | '&' /. makeToken($_AMP); ./
-            | '|' /. makeToken($_BAR); ./
             | '^' /. makeToken($_CARET); ./
-            | '!' /. makeToken($_BANG); ./
-            | '?' /. makeToken($_QUEST); ./
-            | '@' /. makeToken($_AT); ./
-            | '$' /. makeToken($_DOLLAR); ./
-            | '%' /. makeToken($_PERCENT); ./
-            | '~' /. makeToken($_TILDE); ./
-            | '`' /. makeToken($_BACKTICK); ./
-            | ';' /. makeToken($_SEMI); ./
-            | '#' /. makeToken($_HASH); ./
-            | "'" /. makeToken($_QUOTE); ./
-            | BackSlash /. makeToken($_BACKSLASH); ./
-            
+            | '<' /. makeToken($_LT); ./
+            | '>' /. makeToken($_GT); ./
             | white /. skipToken(); ./
 
-    IDENTIFIER ::= IdStart
-                 | IDENTIFIER IdStart
-                 | IDENTIFIER Digit
+    STRINGLITERAL1 ::= DoubleQuote SL1Body DoubleQuote
+    SL1Body -> $empty | SL1Body NotDQ1
+    NotDQ1 -> Letter | Digit | Space | HT | Special1 | AfterASCII | '_' | QuestionMark | SingleQuote
+    Special1 -> Plus | Minus | Slash | LeftParen | RightParen | Star | Colon | Comma | Ampersand | Caret | Equal | Exclamation | Dot
 
-    IdStart -> Letter | '_' | AfterASCII
+    STRINGLITERAL2 ::= SingleQuote SL2Body SingleQuote
+    SL2Body -> $empty | SL2Body NotSQ2
+    NotSQ2 -> Letter | Digit | Space | HT | Special2 | AfterASCII | '_'
+    Special2 -> Plus | Minus | Slash | LeftParen | RightParen | Star | Colon | Comma | Ampersand | Caret | Equal | DoubleQuote
+
+    COMMENT ::= Star CommentBody
+    CommentBody -> $empty | CommentBody CommentChar
+    CommentChar -> Letter | Digit | Space | HT | Special1 | AfterASCII | '_'
+
+    EOLTok ::= LF | CR LF | CR
+
+    INTEGER ::= OptSign Digits
+    OptSign -> $empty | Plus | Minus
+    Digits ::= Digit | Digits Digit
+
+    SnobolIdent ::= Letter IdentSuffix
+    IdentSuffix -> $empty | IdentSuffix IdentChar
+    IdentChar -> Letter | Digit | Exclamation | Star | UnderscoreChar
+    UnderscoreChar -> _
+
     Letter -> LowerCaseLetter | UpperCaseLetter
     LowerCaseLetter -> a | b | c | d | e | f | g | h | i | j | k | l | m |
                        n | o | p | q | r | s | t | u | v | w | x | y | z
@@ -158,43 +181,6 @@
                        N | O | P | Q | R | S | T | U | V | W | X | Y | Z
     Digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
-    NUMBER ::= Digits
-             | Digits '.' Digits
-             | 0 x HexDigits
-             | 0 X HexDigits
-
-    HexDigits ::= HexDigit | HexDigits HexDigit
-    HexDigit -> Digit | a | b | c | d | e | f | A | B | C | D | E | F
-    Digits ::= Digit | Digits Digit
-
-    STRING ::= '"' SLBody '"'
-    SLBody -> $empty | SLBody NotDQ | SLBody Escape
-    Escape ::= BackSlash EscapeAny
-    EscapeAny -> Letter | Digit | DoubleQuote | SingleQuote | BackSlash | Space | '/' | SpecialEsc
-    SpecialEsc -> '+' | '-' | '(' | ')' | '*' | '!' | '@' | '`' | '~' |
-                  '%' | '&' | '^' | ':' | ';' | '|' | '{' | '}' |
-                  '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$'
-    NotDQ -> Letter | Digit | SpecialNotDQ | Space | HT | FF | LF | CR | AfterASCII | '_'
-    SpecialNotDQ -> '+' | '-' | '/' | '(' | ')' | '*' | '!' | '@' | '`' | '~' |
-                    '%' | '&' | '^' | ':' | ';' | "'" | '|' | '{' | '}' |
-                    '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$'
-
-
-
-    NotNL -> Letter | Digit | SpecialNotNL | Space | HT | FF | AfterASCII | '_'
-    NotStar -> Letter | Digit | SpecialNotStar | Space | HT | FF | LF | CR | AfterASCII | '_' | "'" | '"'
-    NotSlash -> Letter | Digit | SpecialNotSlash | Space | HT | FF | LF | CR | AfterASCII | '_' | '*' | "'" | '"'
-
-    SpecialNotNL -> '+' | '-' | '/' | '(' | ')' | '*' | '!' | '@' | '`' | '~' |
-                    '%' | '&' | '^' | ':' | ';' | "'" | '"' | '|' | '{' | '}' |
-                    '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | BackSlash
-    SpecialNotStar -> '+' | '-' | '/' | '(' | ')' | '!' | '@' | '`' | '~' |
-                      '%' | '&' | '^' | ':' | ';' | "'" | '"' | '|' | '{' | '}' |
-                      '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | BackSlash
-    SpecialNotSlash -> '+' | '-' | '(' | ')' | '!' | '@' | '`' | '~' |
-                       '%' | '&' | '^' | ':' | ';' | "'" | '"' | '|' | '{' | '}' |
-                       '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | BackSlash
-
     white -> WSChar | white WSChar
-    WSChar -> Space | LF | CR | HT | FF
+    WSChar -> Space | HT | FF
 %End

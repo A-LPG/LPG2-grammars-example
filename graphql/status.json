@@ -5,16 +5,12 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port",
-    "real_g4_port",
-    "NAME_to_IDENTIFIER",
-    "language_subset",
-    "examples_still_too_thin_for_harsh_bar"
+    "limited_examples_or_rules"
   ],
-  "parser_bytes": 9030,
+  "parser_bytes": 9036,
   "rule_approx": 151,
   "start": "document",
   "example_count": 1,
-  "tier": "A",
+  "tier": "B",
   "parser_lines": 382
 }

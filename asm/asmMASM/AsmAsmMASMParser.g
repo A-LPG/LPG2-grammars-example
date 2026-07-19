@@ -159,58 +159,80 @@
 
     rep ::= REP
 
-    list_1 ::= $empty | list_1 line
+    list_1 ::= $empty
+           | list_1 line
 
-    grp_2 ::= lbl | endlbl
+    grp_2 ::= lbl
+           | endlbl
 
-    opt_3 ::= grp_2 | $empty
+    opt_3 ::= grp_2
+           | $empty
 
-    grp_4 ::= assemblerdirective | masmdirectives | instruction
+    grp_4 ::= assemblerdirective
+           | masmdirectives
+           | instruction
 
-    opt_5 ::= grp_4 | $empty
+    opt_5 ::= grp_4
+           | $empty
 
-    opt_6 ::= rep | $empty
+    opt_6 ::= rep
+           | $empty
 
-    opt_7 ::= expressionlist | $empty
+    opt_7 ::= expressionlist
+           | $empty
 
-    opt_8 ::= COLON | $empty
+    opt_8 ::= COLON
+           | $empty
 
-    opt_9 ::= name | $empty
+    opt_9 ::= name
+           | $empty
 
-    list_10 ::= expressionlist | list_10 expressionlist
+    list_10 ::= expressionlist
+           | list_10 expressionlist
 
-    list_11 ::= masmdirective | list_11 masmdirective
+    list_11 ::= masmdirective
+           | list_11 masmdirective
 
-    opt_12 ::= expressionlist | $empty
+    opt_12 ::= expressionlist
+           | $empty
 
     seq_13 ::= COMMA register_ COLON name
 
-    list_14 ::= $empty | list_14 seq_13
+    list_14 ::= $empty
+           | list_14 seq_13
 
     seq_15 ::= COMMA name
 
-    list_16 ::= $empty | list_16 seq_15
+    list_16 ::= $empty
+           | list_16 seq_15
 
-    opt_17 ::= align | $empty
+    opt_17 ::= align
+           | $empty
 
     seq_18 ::= COMMA expression
 
-    list_19 ::= $empty | list_19 seq_18
+    list_19 ::= $empty
+           | list_19 seq_18
 
     seq_20 ::= SIGN multiplyingExpression
 
-    list_21 ::= $empty | list_21 seq_20
+    list_21 ::= $empty
+           | list_21 seq_20
 
-    grp_23 ::= STAR | SLASH
+    grp_23 ::= STAR
+           | SLASH
 
     grp_22 ::= grp_23 argument
 
-    list_24 ::= $empty | list_24 grp_22
+    list_24 ::= $empty
+           | list_24 grp_22
 
     seq_25 ::= name COLON
 
-    opt_26 ::= seq_25 | $empty
+    opt_26 ::= seq_25
+           | $empty
 
-    opt_27 ::= SIGN | $empty
+    opt_27 ::= SIGN
+           | $empty
 
 %End

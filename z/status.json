@@ -5,15 +5,13 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port",
-    "real_g4_port",
-    "language_subset",
-    "ascii_box_standins_"
+    "curated_subset",
+    "real_g4_port"
   ],
   "parser_bytes": 16789,
   "rule_approx": 188,
   "start": "specification",
   "example_count": 3,
-  "tier": "A",
+  "tier": "D",
   "notes": "real_g4_port"
 }

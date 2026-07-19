@@ -4,7 +4,7 @@
 %options fp=SqlDrillKWLexer
 
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
 
 %Export

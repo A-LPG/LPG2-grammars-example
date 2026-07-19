@@ -5,12 +5,9 @@
   "status": "ported",
   "blockers": [],
   "tier": "A",
-  "quality": "language_subset",
+  "quality": "language_port",
   "quality_notes": [
-    "real_g4_port",
-    "tiny_upstream_g4_full_structural_port",
-    "curated_canadian_FSA_LDU_multiline",
-    "single_code_per_file_no_list_form"
+    "real_g4_port"
   ],
   "parser_bytes": 408
 }

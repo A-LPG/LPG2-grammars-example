@@ -1,19 +1,15 @@
 {
   "id": "tinyos_nesc",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
   "blockers": [],
-  "quality_notes": [
-    "antlr2lpg_structural_port",
-    "real_g4_port",
-    "language_subset"
-  ],
-  "parser_bytes": 11551,
+  "quality_notes": [],
+  "parser_bytes": 11539,
   "rule_approx": 203,
   "start": "compilationUnit",
   "example_count": 3,
-  "tier": "A",
+  "tier": "B",
   "parser_lines": 486,
   "notes": "module/configuration implementation"
 }

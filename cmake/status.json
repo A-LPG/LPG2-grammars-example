@@ -5,11 +5,9 @@
   "status": "ported",
   "blockers": [],
   "tier": "A",
-  "quality": "language_port",
+  "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "mirrors_CMake.g4_file_command_invocation_single_compound_argument",
-    "lexer_IDENTIFIER_vs_UNQUOTED_BRACKET_QUOTED"
+    "heuristic_default_subset"
   ],
   "parser_bytes": 841,
   "start": "file_"

@@ -1,0 +1,8 @@
+system top = {
+  component c1 = {
+    port p1;
+  };
+  component c2 = {
+    port p1;
+  };
+}

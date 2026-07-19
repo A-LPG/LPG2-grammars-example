@@ -6,7 +6,7 @@
 %options package=lpg.grammars.snobol
 %options template=dtParserTemplateF.gi
 %options import_terminals=SnobolLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -177,13 +177,13 @@
 
     list_21 ::= $empty | list_21 grp_19
 
-    grp_23 ::= TIMES | DIV
+    grp_23 ::= STAR | SLASH
 
     grp_22 ::= grp_23 powExpression
 
     list_24 ::= $empty | list_24 grp_22
 
-    seq_25 ::= POW expression
+    seq_25 ::= CARET expression
 
     opt_26 ::= seq_25 | $empty
 
@@ -201,6 +201,6 @@
 
     opt_33 ::= grp_30 | $empty
 
-    grp_34 ::= F | F | S | S
+    grp_34 ::= F | S
 
 %End

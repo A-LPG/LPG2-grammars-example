@@ -6,7 +6,7 @@
 %options package=lpg.grammars.corundum
 %options template=dtParserTemplateF.gi
 %options import_terminals=CorundumLexer.gi
-%options automatic_ast=none
+%options automatic_ast=nested
 %options conflicts
 
 %Eof
@@ -20,9 +20,11 @@
 %Rules
     prog ::= expression_list
 
-    expression_list ::= expression terminator
-           | expression_list expression terminator
-           | terminator
+    expression_list ::= expression terminator_opt
+           | expression_list expression terminator_opt
+           | terminator_opt
+
+    terminator_opt ::= terminator | $empty
 
     expression ::= function_definition
            | function_inline_call
@@ -35,9 +37,9 @@
            | for_statement
            | pir_inline
 
-    global_get ::= lvalue EQ id_global
+    global_get ::= lvalue ASSIGN id_global
 
-    global_set ::= id_global EQ all_result
+    global_set ::= id_global ASSIGN all_result
 
     global_result ::= id_global
 
@@ -59,8 +61,8 @@
     function_name ::= id_function
            | id_
 
-    function_definition_params ::= LPAREN RPAREN
-           | LPAREN function_definition_params_list RPAREN
+    function_definition_params ::= LEFT_RBRACKET RIGHT_RBRACKET
+           | LEFT_RBRACKET function_definition_params_list RIGHT_RBRACKET
            | function_definition_params_list
 
     function_definition_params_list ::= function_definition_param_id
@@ -70,9 +72,9 @@
 
     return_statement ::= RETURN all_result
 
-    function_call ::= function_name LPAREN function_call_param_list RPAREN
+    function_call ::= function_name LEFT_RBRACKET function_call_param_list RIGHT_RBRACKET
            | function_name function_call_param_list
-           | function_name LPAREN RPAREN
+           | function_name LEFT_RBRACKET RIGHT_RBRACKET
 
     function_call_param_list ::= function_call_params
 
@@ -83,7 +85,7 @@
 
     function_unnamed_param ::= grp_2
 
-    function_named_param ::= id_ EQ grp_3
+    function_named_param ::= id_ ASSIGN grp_3
 
     function_call_assignment ::= function_call
 
@@ -105,8 +107,8 @@
 
     while_statement ::= WHILE cond_expression crlf statement_body END
 
-    for_statement ::= FOR LPAREN init_expression SEMI cond_expression SEMI loop_expression RPAREN crlf statement_body END
-           | FOR init_expression SEMI cond_expression SEMI loop_expression crlf statement_body END
+    for_statement ::= FOR LEFT_RBRACKET init_expression SEMICOLON cond_expression SEMICOLON loop_expression RIGHT_RBRACKET crlf statement_body END
+           | FOR init_expression SEMICOLON cond_expression SEMICOLON loop_expression crlf statement_body END
 
     init_expression ::= for_init_list
 
@@ -131,47 +133,47 @@
            | statement_expression_list RETRY terminator
            | statement_expression_list break_expression terminator
 
-    assignment ::= lvalue EQ rvalue
+    assignment ::= lvalue ASSIGN rvalue
            | lvalue grp_6 rvalue
 
-    dynamic_assignment ::= lvalue EQ dynamic_result
+    dynamic_assignment ::= lvalue ASSIGN dynamic_result
            | lvalue grp_7 dynamic_result
 
-    int_assignment ::= lvalue EQ int_result
+    int_assignment ::= lvalue ASSIGN int_result
            | lvalue grp_8 int_result
 
-    float_assignment ::= lvalue EQ float_result
+    float_assignment ::= lvalue ASSIGN float_result
            | lvalue grp_9 float_result
 
-    string_assignment ::= lvalue EQ string_result
-           | lvalue PLUSEQ string_result
+    string_assignment ::= lvalue ASSIGN string_result
+           | lvalue PLUS_ASSIGN string_result
 
-    initial_array_assignment ::= lvalue EQ LBRACKET RBRACKET
-           | lvalue EQ array_definition
+    initial_array_assignment ::= lvalue ASSIGN LEFT_SBRACKET RIGHT_SBRACKET
+           | lvalue ASSIGN array_definition
 
-    array_assignment ::= array_selector EQ all_result
+    array_assignment ::= array_selector ASSIGN all_result
 
-    array_definition ::= LBRACKET array_definition_elements RBRACKET
+    array_definition ::= LEFT_SBRACKET array_definition_elements RIGHT_SBRACKET
 
     array_definition_elements ::= grp_10
            | array_definition_elements COMMA grp_11
 
-    array_selector ::= id_ LBRACKET grp_12 RBRACKET
-           | id_global LBRACKET grp_13 RBRACKET
+    array_selector ::= id_ LEFT_SBRACKET grp_12 RIGHT_SBRACKET
+           | id_global LEFT_SBRACKET grp_13 RIGHT_SBRACKET
 
     dynamic_result ::= dynamic_result grp_14 int_result
            | int_result grp_15 dynamic_result
            | dynamic_result grp_16 float_result
            | float_result grp_17 dynamic_result
            | dynamic_result grp_18 dynamic_result
-           | dynamic_result STAR string_result
-           | string_result STAR dynamic_result
+           | dynamic_result MUL string_result
+           | string_result MUL dynamic_result
            | dynamic_result grp_19 int_result
            | int_result grp_20 dynamic_result
            | dynamic_result grp_21 float_result
            | float_result grp_22 dynamic_result
            | dynamic_result grp_23 dynamic_result
-           | LPAREN dynamic_result RPAREN
+           | LEFT_RBRACKET dynamic_result RIGHT_RBRACKET
            | dynamic_
 
     dynamic_ ::= id_
@@ -180,7 +182,7 @@
 
     int_result ::= int_result grp_24 int_result
            | int_result grp_25 int_result
-           | LPAREN int_result RPAREN
+           | LEFT_RBRACKET int_result RIGHT_RBRACKET
            | int_t
 
     float_result ::= float_result grp_26 float_result
@@ -189,11 +191,11 @@
            | float_result grp_29 float_result
            | int_result grp_30 float_result
            | float_result grp_31 int_result
-           | LPAREN float_result RPAREN
+           | LEFT_RBRACKET float_result RIGHT_RBRACKET
            | float_t
 
-    string_result ::= string_result STAR int_result
-           | int_result STAR string_result
+    string_result ::= string_result MUL int_result
+           | int_result MUL string_result
            | string_result PLUS string_result
            | literal_t
 
@@ -201,7 +203,7 @@
            | comparison AND comparison_list
            | comparison BIT_OR comparison_list
            | comparison OR comparison_list
-           | LPAREN comparison_list RPAREN
+           | LEFT_RBRACKET comparison_list RIGHT_RBRACKET
            | comparison
 
     comparison ::= comp_var grp_32 comp_var
@@ -232,7 +234,7 @@
            | float_t
            | int_t
            | nil_t
-           | rvalue STARSTAR rvalue
+           | rvalue EXP rvalue
            | grp_34 rvalue
            | rvalue grp_35 rvalue
            | rvalue grp_36 rvalue
@@ -242,116 +244,196 @@
            | rvalue grp_39 rvalue
            | rvalue grp_40 rvalue
            | rvalue grp_41 rvalue
-           | LPAREN rvalue RPAREN
+           | LEFT_RBRACKET rvalue RIGHT_RBRACKET
 
     break_expression ::= BREAK
 
-    literal_t ::= STRING
+    literal_t ::= LITERAL
 
-    float_t ::= NUMBER
+    float_t ::= FLOAT
 
-    int_t ::= NUMBER
+    int_t ::= INT
 
     bool_t ::= TRUE
            | FALSE
 
     nil_t ::= NIL
 
-    id_ ::= IDENTIFIER
+    id_ ::= ID
 
     id_global ::= ID_GLOBAL
 
     id_function ::= ID_FUNCTION
 
-    terminator ::= terminator SEMI
+    terminator ::= terminator SEMICOLON
            | terminator crlf
-           | SEMI
+           | SEMICOLON
            | crlf
 
     else_token ::= ELSE
 
     crlf ::= CRLF
 
-    grp_1 ::= function_unnamed_param | function_named_param
+    grp_1 ::= function_unnamed_param
+           | function_named_param
 
-    grp_2 ::= int_result | float_result | string_result | dynamic_result
+    grp_2 ::= int_result
+           | float_result
+           | string_result
+           | dynamic_result
 
-    grp_3 ::= int_result | float_result | string_result | dynamic_result
+    grp_3 ::= int_result
+           | float_result
+           | string_result
+           | dynamic_result
 
-    grp_4 ::= int_result | float_result | string_result | dynamic_result | global_result
+    grp_4 ::= int_result
+           | float_result
+           | string_result
+           | dynamic_result
+           | global_result
 
-    grp_5 ::= int_assignment | float_assignment | string_assignment | dynamic_assignment
+    grp_5 ::= int_assignment
+           | float_assignment
+           | string_assignment
+           | dynamic_assignment
 
-    grp_6 ::= PLUSEQ | MINUSEQ | STAREQ | SLASHEQ | PERCENTEQ | STARSTAREQ
+    grp_6 ::= PLUS_ASSIGN
+           | MINUS_ASSIGN
+           | MUL_ASSIGN
+           | DIV_ASSIGN
+           | MOD_ASSIGN
+           | EXP_ASSIGN
 
-    grp_7 ::= PLUSEQ | MINUSEQ | STAREQ | SLASHEQ | PERCENTEQ | STARSTAREQ
+    grp_7 ::= PLUS_ASSIGN
+           | MINUS_ASSIGN
+           | MUL_ASSIGN
+           | DIV_ASSIGN
+           | MOD_ASSIGN
+           | EXP_ASSIGN
 
-    grp_8 ::= PLUSEQ | MINUSEQ | STAREQ | SLASHEQ | PERCENTEQ | STARSTAREQ
+    grp_8 ::= PLUS_ASSIGN
+           | MINUS_ASSIGN
+           | MUL_ASSIGN
+           | DIV_ASSIGN
+           | MOD_ASSIGN
+           | EXP_ASSIGN
 
-    grp_9 ::= PLUSEQ | MINUSEQ | STAREQ | SLASHEQ | PERCENTEQ | STARSTAREQ
+    grp_9 ::= PLUS_ASSIGN
+           | MINUS_ASSIGN
+           | MUL_ASSIGN
+           | DIV_ASSIGN
+           | MOD_ASSIGN
+           | EXP_ASSIGN
 
-    grp_10 ::= int_result | dynamic_result
+    grp_10 ::= int_result
+           | dynamic_result
 
-    grp_11 ::= int_result | dynamic_result
+    grp_11 ::= int_result
+           | dynamic_result
 
-    grp_12 ::= int_result | dynamic_result
+    grp_12 ::= int_result
+           | dynamic_result
 
-    grp_13 ::= int_result | dynamic_result
+    grp_13 ::= int_result
+           | dynamic_result
 
-    grp_14 ::= STAR | SLASH | PERCENT
+    grp_14 ::= MUL
+           | DIV
+           | MOD
 
-    grp_15 ::= STAR | SLASH | PERCENT
+    grp_15 ::= MUL
+           | DIV
+           | MOD
 
-    grp_16 ::= STAR | SLASH | PERCENT
+    grp_16 ::= MUL
+           | DIV
+           | MOD
 
-    grp_17 ::= STAR | SLASH | PERCENT
+    grp_17 ::= MUL
+           | DIV
+           | MOD
 
-    grp_18 ::= STAR | SLASH | PERCENT
+    grp_18 ::= MUL
+           | DIV
+           | MOD
 
-    grp_19 ::= PLUS | MINUS
+    grp_19 ::= PLUS
+           | MINUS
 
-    grp_20 ::= PLUS | MINUS
+    grp_20 ::= PLUS
+           | MINUS
 
-    grp_21 ::= PLUS | MINUS
+    grp_21 ::= PLUS
+           | MINUS
 
-    grp_22 ::= PLUS | MINUS
+    grp_22 ::= PLUS
+           | MINUS
 
-    grp_23 ::= PLUS | MINUS
+    grp_23 ::= PLUS
+           | MINUS
 
-    grp_24 ::= STAR | SLASH | PERCENT
+    grp_24 ::= MUL
+           | DIV
+           | MOD
 
-    grp_25 ::= PLUS | MINUS
+    grp_25 ::= PLUS
+           | MINUS
 
-    grp_26 ::= STAR | SLASH | PERCENT
+    grp_26 ::= MUL
+           | DIV
+           | MOD
 
-    grp_27 ::= STAR | SLASH | PERCENT
+    grp_27 ::= MUL
+           | DIV
+           | MOD
 
-    grp_28 ::= STAR | SLASH | PERCENT
+    grp_28 ::= MUL
+           | DIV
+           | MOD
 
-    grp_29 ::= PLUS | MINUS
+    grp_29 ::= PLUS
+           | MINUS
 
-    grp_30 ::= PLUS | MINUS
+    grp_30 ::= PLUS
+           | MINUS
 
-    grp_31 ::= PLUS | MINUS
+    grp_31 ::= PLUS
+           | MINUS
 
-    grp_32 ::= LESS | GREATER | LESS_EQUAL | GREATER_EQUAL
+    grp_32 ::= LESS
+           | GREATER
+           | LESS_EQUAL
+           | GREATER_EQUAL
 
-    grp_33 ::= EQ | NOT_EQUAL
+    grp_33 ::= EQUAL
+           | NOT_EQUAL
 
-    grp_34 ::= NOT | BIT_NOT
+    grp_34 ::= NOT
+           | BIT_NOT
 
-    grp_35 ::= STAR | SLASH | PERCENT
+    grp_35 ::= MUL
+           | DIV
+           | MOD
 
-    grp_36 ::= PLUS | MINUS
+    grp_36 ::= PLUS
+           | MINUS
 
-    grp_37 ::= BIT_SHL | BIT_SHR
+    grp_37 ::= BIT_SHL
+           | BIT_SHR
 
-    grp_38 ::= BIT_OR | BIT_XOR
+    grp_38 ::= BIT_OR
+           | BIT_XOR
 
-    grp_39 ::= LESS | GREATER | LESS_EQUAL | GREATER_EQUAL
+    grp_39 ::= LESS
+           | GREATER
+           | LESS_EQUAL
+           | GREATER_EQUAL
 
-    grp_40 ::= EQ | NOT_EQUAL
+    grp_40 ::= EQUAL
+           | NOT_EQUAL
 
-    grp_41 ::= OR | AND
+    grp_41 ::= OR
+           | AND
 
 %End

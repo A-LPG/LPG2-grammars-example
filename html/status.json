@@ -5,9 +5,7 @@
   "status": "ported",
   "example_count": 4,
   "blockers": [],
-  "quality": "language_subset",
-  "quality_notes": [
-    "real_g4_port"
-  ],
+  "quality": "language_port",
+  "quality_notes": [],
   "parser_bytes": 2123
 }

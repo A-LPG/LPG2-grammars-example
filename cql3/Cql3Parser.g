@@ -1,12 +1,12 @@
 -- AUTO-GENERATED from antlr/grammars-v4 cql3 by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=Cql3Parser
 %options package=lpg.grammars.cql3
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=Cql3Lexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -235,7 +235,7 @@
     tableOptionItem ::= tableOptionName OPERATOR_EQ tableOptionValue
            | tableOptionName OPERATOR_EQ optionHash
 
-    tableOptionName ::= OBJECT_NAME
+    tableOptionName ::= IDENTIFIER
 
     tableOptionValue ::= stringLiteral
            | floatLiteral
@@ -301,7 +301,7 @@
 
     createIndex ::= kwCreate kwIndex opt_165 opt_166 kwOn opt_168 table syntaxBracketLr indexColumnSpec syntaxBracketRr
 
-    indexName ::= OBJECT_NAME
+    indexName ::= IDENTIFIER
            | stringLiteral
 
     indexColumnSpec ::= column
@@ -309,18 +309,18 @@
            | indexEntriesSSpec
            | indexFullSpec
 
-    indexKeysSpec ::= kwKeys syntaxBracketLr OBJECT_NAME syntaxBracketRr
+    indexKeysSpec ::= kwKeys syntaxBracketLr IDENTIFIER syntaxBracketRr
 
-    indexEntriesSSpec ::= kwEntries syntaxBracketLr OBJECT_NAME syntaxBracketRr
+    indexEntriesSSpec ::= kwEntries syntaxBracketLr IDENTIFIER syntaxBracketRr
 
-    indexFullSpec ::= kwFull syntaxBracketLr OBJECT_NAME syntaxBracketRr
+    indexFullSpec ::= kwFull syntaxBracketLr IDENTIFIER syntaxBracketRr
 
     delete_ ::= opt_169 kwDelete opt_170 fromSpec opt_171 whereSpec opt_173
 
     deleteColumnList ::= deleteColumnItem list_175
 
-    deleteColumnItem ::= OBJECT_NAME
-           | OBJECT_NAME LS_BRACKET grp_176 RS_BRACKET
+    deleteColumnItem ::= IDENTIFIER
+           | IDENTIFIER LS_BRACKET grp_176 RS_BRACKET
 
     update ::= opt_177 kwUpdate opt_179 table opt_180 kwSet assignments whereSpec opt_182
 
@@ -328,19 +328,19 @@
 
     ifConditionList ::= ifCondition list_184
 
-    ifCondition ::= OBJECT_NAME OPERATOR_EQ constant
+    ifCondition ::= IDENTIFIER OPERATOR_EQ constant
 
     assignments ::= assignmentElement list_186
 
-    assignmentElement ::= OBJECT_NAME OPERATOR_EQ grp_187
-           | OBJECT_NAME OPERATOR_EQ OBJECT_NAME grp_188 decimalLiteral
-           | OBJECT_NAME OPERATOR_EQ OBJECT_NAME grp_189 assignmentSet
-           | OBJECT_NAME OPERATOR_EQ assignmentSet grp_190 OBJECT_NAME
-           | OBJECT_NAME OPERATOR_EQ OBJECT_NAME grp_191 assignmentMap
-           | OBJECT_NAME OPERATOR_EQ assignmentMap grp_192 OBJECT_NAME
-           | OBJECT_NAME OPERATOR_EQ OBJECT_NAME grp_193 assignmentList
-           | OBJECT_NAME OPERATOR_EQ assignmentList grp_194 OBJECT_NAME
-           | OBJECT_NAME syntaxBracketLs decimalLiteral syntaxBracketRs OPERATOR_EQ constant
+    assignmentElement ::= IDENTIFIER OPERATOR_EQ grp_187
+           | IDENTIFIER OPERATOR_EQ IDENTIFIER grp_188 decimalLiteral
+           | IDENTIFIER OPERATOR_EQ IDENTIFIER grp_189 assignmentSet
+           | IDENTIFIER OPERATOR_EQ assignmentSet grp_190 IDENTIFIER
+           | IDENTIFIER OPERATOR_EQ IDENTIFIER grp_191 assignmentMap
+           | IDENTIFIER OPERATOR_EQ assignmentMap grp_192 IDENTIFIER
+           | IDENTIFIER OPERATOR_EQ IDENTIFIER grp_193 assignmentList
+           | IDENTIFIER OPERATOR_EQ assignmentList grp_194 IDENTIFIER
+           | IDENTIFIER syntaxBracketLs decimalLiteral syntaxBracketRs OPERATOR_EQ constant
 
     assignmentSet ::= syntaxBracketLc opt_198 syntaxBracketRc
 
@@ -391,12 +391,12 @@
 
     fromSpec ::= kwFrom fromSpecElement
 
-    fromSpecElement ::= OBJECT_NAME
-           | OBJECT_NAME DOT OBJECT_NAME
+    fromSpecElement ::= IDENTIFIER
+           | IDENTIFIER DOT IDENTIFIER
 
     orderSpec ::= kwOrder kwBy orderSpecElement
 
-    orderSpecElement ::= OBJECT_NAME opt_224
+    orderSpecElement ::= IDENTIFIER opt_224
 
     whereSpec ::= kwWhere relationElements
 
@@ -404,33 +404,33 @@
 
     selectElements ::= grp_225 list_227
 
-    selectElement ::= OBJECT_NAME DOT STAR
-           | OBJECT_NAME opt_229
+    selectElement ::= IDENTIFIER DOT STAR
+           | IDENTIFIER opt_229
            | functionCall opt_231
 
     relationElements ::= relationElement list_233
 
-    relationElement ::= OBJECT_NAME grp_234 constant
-           | OBJECT_NAME DOT OBJECT_NAME grp_235 constant
+    relationElement ::= IDENTIFIER grp_234 constant
+           | IDENTIFIER DOT IDENTIFIER grp_235 constant
            | functionCall grp_236 constant
            | functionCall grp_237 functionCall
-           | OBJECT_NAME kwIn LPAREN opt_238 RPAREN
-           | LPAREN OBJECT_NAME list_240 RPAREN kwIn LPAREN assignmentTuple list_242 RPAREN
-           | LPAREN OBJECT_NAME list_244 RPAREN grp_245 seq_248
+           | IDENTIFIER kwIn LPAREN opt_238 RPAREN
+           | LPAREN IDENTIFIER list_240 RPAREN kwIn LPAREN assignmentTuple list_242 RPAREN
+           | LPAREN IDENTIFIER list_244 RPAREN grp_245 seq_248
            | relalationContainsKey
            | relalationContains
 
-    relalationContains ::= OBJECT_NAME kwContains constant
+    relalationContains ::= IDENTIFIER kwContains constant
 
-    relalationContainsKey ::= OBJECT_NAME seq_249 constant
+    relalationContainsKey ::= IDENTIFIER seq_249 constant
 
-    functionCall ::= OBJECT_NAME LPAREN STAR RPAREN
-           | OBJECT_NAME LPAREN opt_250 RPAREN
+    functionCall ::= IDENTIFIER LPAREN STAR RPAREN
+           | IDENTIFIER LPAREN opt_250 RPAREN
            | K_UUID LPAREN RPAREN
 
     functionArgs ::= grp_251 list_254
 
-    constant ::= UUID
+    constant ::= K_UUID
            | stringLiteral
            | decimalLiteral
            | floatLiteral
@@ -451,18 +451,18 @@
 
     hexadecimalLiteral ::= HEXADECIMAL_LITERAL
 
-    keyspace ::= OBJECT_NAME
-           | DQUOTE OBJECT_NAME DQUOTE
+    keyspace ::= IDENTIFIER
+           | DQUOTE IDENTIFIER DQUOTE
 
-    table ::= OBJECT_NAME
-           | DQUOTE OBJECT_NAME DQUOTE
+    table ::= IDENTIFIER
+           | DQUOTE IDENTIFIER DQUOTE
 
-    column ::= OBJECT_NAME
-           | DQUOTE OBJECT_NAME DQUOTE
+    column ::= IDENTIFIER
+           | DQUOTE IDENTIFIER DQUOTE
 
     dataType ::= dataTypeName opt_255
 
-    dataTypeName ::= OBJECT_NAME
+    dataTypeName ::= IDENTIFIER
            | K_TIMESTAMP
            | K_SET
            | K_ASCII
@@ -495,31 +495,31 @@
     orderDirection ::= kwAsc
            | kwDesc
 
-    role ::= OBJECT_NAME
+    role ::= IDENTIFIER
 
-    trigger ::= OBJECT_NAME
+    trigger ::= IDENTIFIER
 
     triggerClass ::= stringLiteral
 
-    materializedView ::= OBJECT_NAME
+    materializedView ::= IDENTIFIER
 
-    type_ ::= OBJECT_NAME
+    type_ ::= IDENTIFIER
 
-    aggregate ::= OBJECT_NAME
+    aggregate ::= IDENTIFIER
 
-    function_ ::= OBJECT_NAME
+    function_ ::= IDENTIFIER
 
-    language ::= OBJECT_NAME
+    language ::= IDENTIFIER
 
-    user ::= OBJECT_NAME
+    user ::= IDENTIFIER
 
     password ::= stringLiteral
 
-    hashKey ::= OBJECT_NAME
+    hashKey ::= IDENTIFIER
 
     param ::= paramName dataType
 
-    paramName ::= OBJECT_NAME
+    paramName ::= IDENTIFIER
            | K_INPUT
 
     kwAdd ::= K_ADD
@@ -1186,11 +1186,11 @@
 
     list_227 ::= $empty | list_227 seq_226
 
-    seq_228 ::= kwAs OBJECT_NAME
+    seq_228 ::= kwAs IDENTIFIER
 
     opt_229 ::= seq_228 | $empty
 
-    seq_230 ::= kwAs OBJECT_NAME
+    seq_230 ::= kwAs IDENTIFIER
 
     opt_231 ::= seq_230 | $empty
 
@@ -1208,7 +1208,7 @@
 
     opt_238 ::= functionArgs | $empty
 
-    seq_239 ::= syntaxComma OBJECT_NAME
+    seq_239 ::= syntaxComma IDENTIFIER
 
     list_240 ::= $empty | list_240 seq_239
 
@@ -1216,7 +1216,7 @@
 
     list_242 ::= $empty | list_242 seq_241
 
-    seq_243 ::= syntaxComma OBJECT_NAME
+    seq_243 ::= syntaxComma IDENTIFIER
 
     list_244 ::= $empty | list_244 seq_243
 
@@ -1232,9 +1232,9 @@
 
     opt_250 ::= functionArgs | $empty
 
-    grp_251 ::= constant | OBJECT_NAME | functionCall
+    grp_251 ::= constant | IDENTIFIER | functionCall
 
-    grp_253 ::= constant | OBJECT_NAME | functionCall
+    grp_253 ::= constant | IDENTIFIER | functionCall
 
     grp_252 ::= syntaxComma grp_253
 

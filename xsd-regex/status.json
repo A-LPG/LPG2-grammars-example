@@ -4,13 +4,11 @@
   "example_count": 4,
   "status": "ported",
   "blockers": [],
-  "tier": "A",
+  "tier": "D",
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "mirrors_regexParser_g4_structure",
-    "mode_free_lexer_subset",
-    "v4_examples_any_chargroup_quant_alt"
+    "curated_subset",
+    "real_g4_port"
   ],
   "parser_bytes": 2748,
   "parser_lines": 114,

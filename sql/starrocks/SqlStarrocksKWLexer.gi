@@ -4,7 +4,7 @@
 %options fp=SqlStarrocksKWLexer
 
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
 
 %Export

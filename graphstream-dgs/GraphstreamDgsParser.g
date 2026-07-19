@@ -1,16 +1,22 @@
 -- AUTO-GENERATED from antlr/grammars-v4 graphstream-dgs by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=GraphstreamDgsParser
 %options package=lpg.grammars.graphstream_dgs
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=GraphstreamDgsLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
     EOF_TOKEN
+%End
+
+
+%Define
+    $ast_class /.Object./
+    $ast_type /.Object./
 %End
 
 %Start

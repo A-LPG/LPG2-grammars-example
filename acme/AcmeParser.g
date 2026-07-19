@@ -6,7 +6,7 @@
 %options package=lpg.grammars.acme
 %options template=dtParserTemplateF.gi
 %options import_terminals=AcmeLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof

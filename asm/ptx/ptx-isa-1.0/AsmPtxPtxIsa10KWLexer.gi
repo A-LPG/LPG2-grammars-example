@@ -4,7 +4,7 @@
 %options fp=AsmPtxPtxIsa10KWLexer
 
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
 
 %Export
@@ -24,18 +24,22 @@
     DEBUG
     DIV
     DOT
+    EX2
     EXIT
     EXTRACT
     FMA
     FRC
     INSERT
     LD
+    LG2
     MAD
+    MAD24
     MAX
     MEMBAR
     MIN
     MOV
     MUL
+    MUL24
     NEG
     NOP
     NOT
@@ -52,6 +56,9 @@
     SHR
     SIN
     SLCT
+    SM_10
+    SM_11
+    SM_20
     SQRT
     ST
     SUB
@@ -65,6 +72,7 @@
 
 %Terminals
     a b c d e f g h i j k l m n o p q r s t u v w x y z
+    Minus ::= '-'
 %End
 
 %Start
@@ -78,6 +86,8 @@
     Keyword ::= b r k p t /.$setResult($_BRKPT);./
     Keyword ::= c r o s s /.$setResult($_CROSS);./
     Keyword ::= d e b u g /.$setResult($_DEBUG);./
+    Keyword ::= m a d 2 4 /.$setResult($_MAD24);./
+    Keyword ::= m u l 2 4 /.$setResult($_MUL24);./
     Keyword ::= r s q r t /.$setResult($_RSQRT);./
     Keyword ::= a d d c /.$setResult($_ADDC);./
     Keyword ::= a t o m /.$setResult($_ATOM);./
@@ -101,8 +111,10 @@
     Keyword ::= c v t /.$setResult($_CVT);./
     Keyword ::= d i v /.$setResult($_DIV);./
     Keyword ::= d o t /.$setResult($_DOT);./
+    Keyword ::= e x 2 /.$setResult($_EX2);./
     Keyword ::= f m a /.$setResult($_FMA);./
     Keyword ::= f r c /.$setResult($_FRC);./
+    Keyword ::= l g 2 /.$setResult($_LG2);./
     Keyword ::= m a d /.$setResult($_MAD);./
     Keyword ::= m a x /.$setResult($_MAX);./
     Keyword ::= m i n /.$setResult($_MIN);./
@@ -118,6 +130,9 @@
     Keyword ::= s e t /.$setResult($_SET);./
     Keyword ::= s h l /.$setResult($_SHL);./
     Keyword ::= s h r /.$setResult($_SHR);./
+    Keyword ::= s m _ 1 1 /.$setResult($_SM_11);./
+    Keyword ::= s m _ 1 0 /.$setResult($_SM_10);./
+    Keyword ::= s m _ 2 0 /.$setResult($_SM_20);./
     Keyword ::= s i n /.$setResult($_SIN);./
     Keyword ::= s u b /.$setResult($_SUB);./
     Keyword ::= t e x /.$setResult($_TEX);./

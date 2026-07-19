@@ -1,12 +1,12 @@
 -- AUTO-GENERATED from antlr/grammars-v4 powerbuilder by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=PowerbuilderParser
 %options package=lpg.grammars.powerbuilder
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=PowerbuilderLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof

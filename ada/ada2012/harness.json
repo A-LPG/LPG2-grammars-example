@@ -3,6 +3,7 @@
   "lexer": "AdaAda2012Lexer",
   "parser": "AdaAda2012Parser",
   "example_globs": [
-    "examples/**/*"
-  ]
+    "examples-curated/**/*"
+  ],
+  "parser_template": "btParserTemplateF.gi"
 }

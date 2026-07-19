@@ -6,7 +6,7 @@
 %options package=lpg.grammars.angelscript
 %options template=dtParserTemplateF.gi
 %options import_terminals=AngelscriptLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -34,7 +34,7 @@
 
     var_ ::= opt_32 type_ IDENTIFIER opt_35 list_40 SEMI
 
-    import_ ::= IMPORT type_ opt_41 IDENTIFIER paramlist FUNCATTR FROM STRING SEMI
+    import_ ::= IMPORT type_ opt_41 IDENTIFIER paramlist FUNCATTR FROM LITERAL SEMI
 
     enum_ ::= list_43 ENUM IDENTIFIER grp_44
 

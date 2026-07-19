@@ -5,9 +5,7 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "real_g4_port",
-    "left_factored_root_length",
-    "curated_multiline_trees"
+    "heuristic_default_subset"
   ],
   "notes": "Newick trees with names/lengths; left-factored for root length suffix.",
   "example_count": 3,

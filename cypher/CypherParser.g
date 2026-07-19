@@ -6,7 +6,7 @@
 %options package=lpg.grammars.cypher
 %options template=dtParserTemplateF.gi
 %options import_terminals=CypherLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -562,5 +562,16 @@
     seq_126 ::= mapPair list_125
 
     opt_127 ::= seq_126 | $empty
+
+    -- Token aliases (lexer exports -> ANTLR parser names)
+    ID ::= IDENTIFIER
+    DIGIT ::= NUMBER
+    STRING_LITERAL ::= STRING
+    LBRACK ::= LBRACKET
+    RBRACK ::= RBRACKET
+    SUB ::= MINUS
+    MULT ::= STAR
+    DIV ::= SLASH
+    ASSIGN ::= EQ
 
 %End

@@ -2,7 +2,8 @@
   "package": "lpg.grammars.verilog.systemverilog",
   "lexer": "VerilogSystemverilogLexer",
   "parser": "VerilogSystemverilogParser",
+  "parser_template": "btParserTemplateF.gi",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

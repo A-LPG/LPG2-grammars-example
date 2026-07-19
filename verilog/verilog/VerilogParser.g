@@ -6,7 +6,7 @@
 %options package=lpg.grammars.verilog.verilog
 %options template=dtParserTemplateF.gi
 %options import_terminals=VerilogLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -1139,8 +1139,6 @@
     octal_base ::= OCTAL_BASE
 
     hex_base ::= HEX_BASE
-
-    string_ ::= STRING
 
     attribute_instance ::= LPAREN STAR attr_spec list_495 STAR RPAREN
 

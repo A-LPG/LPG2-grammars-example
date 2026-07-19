@@ -1,2 +1,2 @@
-mov eax, 1
-ret
+section .text
+global main

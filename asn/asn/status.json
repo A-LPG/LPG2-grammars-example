@@ -1,19 +1,14 @@
 {
   "id": "asn/asn",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
   "blockers": [],
-  "quality_notes": [
-    "antlr2lpg_structural_port",
-    "real_g4_port",
-    "language_subset",
-    "lexer_token_remap"
-  ],
-  "parser_bytes": 17216,
+  "quality_notes": [],
+  "parser_bytes": 16943,
   "rule_approx": 321,
   "start": "modules",
   "parser_lines": 724,
-  "tier": "A",
+  "tier": "B",
   "example_count": 2
 }

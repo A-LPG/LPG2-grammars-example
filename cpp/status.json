@@ -1,19 +1,14 @@
 {
   "id": "cpp",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
   "blockers": [],
-  "quality_notes": [
-    "real_g4_port",
-    "parses_real_functions_and_empty_classes",
-    "curated_funcs_control_class_vars_namespace",
-    "not_semi_only"
-  ],
+  "quality_notes": [],
   "parser_bytes": 30303,
   "rule_approx": 482,
   "start": "translationUnit",
   "example_count": 5,
-  "tier": "A",
+  "tier": "C",
   "parser_lines": 1223
 }

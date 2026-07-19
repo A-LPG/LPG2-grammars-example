@@ -4,11 +4,9 @@
   "status": "ported",
   "tier": "A",
   "quality": "language_port",
-  "quality_notes": [
-    "real_g4_port",
-    "mirrors_creole.g4_document_line_markup"
-  ],
+  "quality_notes": [],
   "blockers": [],
   "start": "document",
-  "example_count": 3
+  "example_count": 3,
+  "parser_bytes": 1606
 }

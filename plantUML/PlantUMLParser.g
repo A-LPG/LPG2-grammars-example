@@ -40,7 +40,7 @@
 
     extension_dclr ::= EXTENDS ident
 
-    ident ::= IDENT
+    ident ::= IDENTIFIER
 
     enum_dclr ::= ENUM ident opt_17 opt_18
 
@@ -63,7 +63,7 @@
 
     list_2 ::= $empty | list_2 grp_1
 
-    opt_3 ::= IDENT | $empty
+    opt_3 ::= IDENTIFIER | $empty
 
     grp_4 ::= NEWLINE | class_dclr | enum_dclr | association_dclr | associative_class_dclr | COMMENT
 

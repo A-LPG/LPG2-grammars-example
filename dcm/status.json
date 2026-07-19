@@ -5,9 +5,9 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port"
+    "heuristic_default_subset"
   ],
-  "parser_bytes": 6165,
+  "parser_bytes": 1409,
   "rule_approx": 123,
   "start": "konservierung",
   "example_count": 1,

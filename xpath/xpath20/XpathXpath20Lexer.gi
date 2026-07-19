@@ -239,8 +239,8 @@
 
 %Rules
     Token ::= identifier /. checkForKeyWord(); ./
-            | number     /. makeToken($_NUMBER); ./
-            | string     /. makeToken($_STRING); ./
+            | number     /. makeToken($_DecimalLiteral); ./
+            | string     /. makeToken($_StringLiteral); ./
             | charlit    /. makeToken($_CHAR_LITERAL); ./
             | LineComment /. skipToken(); ./
             | HashComment /. skipToken(); ./

@@ -1,13 +1,13 @@
 {
   "id": "ada/ada2022",
-  "quality": "language_subset",
-  "parse_ok": false,
-  "status": "regenerated_from_g4",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
   "blockers": [],
-  "quality_notes": [
-    "antlr2lpg_structural_port"
-  ],
-  "parser_bytes": 52017,
+  "quality_notes": [],
+  "parser_bytes": 52031,
   "rule_approx": 823,
-  "start": "identifier"
+  "start": "identifier",
+  "tier": "D",
+  "example_count": 3
 }

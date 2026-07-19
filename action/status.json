@@ -1,13 +1,15 @@
 {
   "id": "action",
-  "quality": "language_subset",
-  "parse_ok": false,
-  "status": "regenerated_from_g4",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port"
+    "real_g4_port"
   ],
-  "parser_bytes": 6342,
+  "parser_bytes": 6364,
   "rule_approx": 141,
-  "start": "file_"
+  "start": "file_",
+  "tier": "B",
+  "example_count": 3
 }

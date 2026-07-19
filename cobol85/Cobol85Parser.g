@@ -1,12 +1,12 @@
 -- AUTO-GENERATED from antlr/grammars-v4 cobol85 by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=Cobol85Parser
 %options package=lpg.grammars.cobol85
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=Cobol85Lexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -18,7 +18,7 @@
 %End
 
 %Rules
-    startRule ::= list_2
+    startRule ::= compilationUnit
 
     compilerOptions ::= grp_3 list_6
 
@@ -171,11 +171,11 @@
            | grp_127 LPARENCHAR literal RPARENCHAR
            | ZWB
 
-    execCicsStatement ::= EXEC CICS charData END_EXEC opt_128
+    execCicsStatement ::= list_854
 
-    execSqlStatement ::= EXEC SQL charDataSql END_EXEC opt_129
+    execSqlStatement ::= list_855
 
-    execSqlImsStatement ::= EXEC SQLIMS charData END_EXEC opt_130
+    execSqlImsStatement ::= list_856
 
     copyStatement ::= COPY copySource list_134 list_135 DOT
 
@@ -224,9 +224,137 @@
 
     cobolWord ::= IDENTIFIER
            | charDataKeyword
+           | COBOL
+           | PROGRAM
+           | ABORT
+           | AS
+           | ASCII
+           | ASSOCIATED_DATA
+           | ASSOCIATED_DATA_LENGTH
+           | ATTRIBUTE
+           | AUTO
+           | AUTO_SKIP
+           | BACKGROUND_COLOR
+           | BACKGROUND_COLOUR
+           | BEEP
+           | BELL
+           | BINARY
+           | BIT
+           | BLINK
+           | BOUNDS
+           | CAPABLE
+           | CCSVERSION
+           | CHANGED
+           | CHANNEL
+           | CLOSE_DISPOSITION
+           | COMMITMENT
+           | CONTROL_POINT
+           | CONVENTION
+           | CRUNCH
+           | CURSOR
+           | DEFAULT
+           | DEFAULT_DISPLAY
+           | DEFINITION
+           | DFHRESP
+           | DFHVALUE
+           | DISK
+           | DONTCARE
+           | DOUBLE
+           | EBCDIC
+           | EMPTY_CHECK
+           | ENTER
+           | ENTRY_PROCEDURE
+           | EOL
+           | EOS
+           | ERASE
+           | ESCAPE
+           | EVENT
+           | EXCLUSIVE
+           | EXPORT
+           | EXTENDED
+           | FOREGROUND_COLOR
+           | FOREGROUND_COLOUR
+           | FULL
+           | FUNCTIONNAME
+           | FUNCTION_POINTER
+           | GRID
+           | HIGHLIGHT
+           | IMPLICIT
+           | IMPORT
+           | INTEGER
+           | KEPT
+           | KEYBOARD
+           | LANGUAGE
+           | LB
+           | LD
+           | LEFTLINE
+           | LENGTH_CHECK
+           | LIBACCESS
+           | LIBPARAMETER
+           | LIBRARY
+           | LIST
+           | LOCAL
+           | LONG_DATE
+           | LONG_TIME
+           | LOWER
+           | LOWLIGHT
+           | MMDDYYYY
+           | NAMED
+           | NATIONAL
+           | NATIONAL_EDITED
+           | NETWORK
+           | NO_ECHO
+           | NUMERIC_DATE
+           | NUMERIC_TIME
+           | ODT
+           | ORDERLY
+           | OVERLINE
+           | OWN
+           | PASSWORD
+           | PORT
+           | PRINTER
+           | PRIVATE
+           | PROCESS
+           | PROMPT
+           | READER
+           | REAL
+           | RECEIVED
+           | RECURSIVE
+           | REF
+           | REMOTE
+           | REMOVE
+           | REQUIRED
+           | REVERSE_VIDEO
+           | SAVE
+           | SECURE
+           | SHARED
+           | SHAREDBYALL
+           | SHAREDBYRUNUNIT
+           | SHARING
+           | SHORT_DATE
+           | SYMBOL
+           | TASK
+           | THREAD
+           | THREAD_LOCAL
+           | TIMER
+           | TODAYS_DATE
+           | TODAYS_NAME
+           | TRUNCATED
+           | TYPEDEF
+           | UNDERLINE
+           | VIRTUAL
+           | WAIT
+           | YEAR
+           | YYYYMMDD
+           | YYYYDDD
+           | ZERO_FILL
 
     literal ::= NONNUMERICLITERAL
-           | NUMERICLITERAL
+           | figurativeConstant
+           | numericLiteral
+           | booleanLiteral
+           | cicsDfhRespLiteral
+           | cicsDfhValueLiteral
 
     filename ::= FILENAME
 
@@ -494,8 +622,6 @@
            | U_CHAR
            | W_CHAR
            | X_CHAR
-
-    startRule ::= compilationUnit
 
     compilationUnit ::= list_174
 
@@ -1343,12 +1469,6 @@
            | literal
            | arithmeticExpression
 
-    execCicsStatement ::= list_854
-
-    execSqlStatement ::= list_855
-
-    execSqlImsStatement ::= list_856
-
     exhibitStatement ::= EXHIBIT opt_857 opt_858 list_859
 
     exhibitOperand ::= identifier
@@ -1897,139 +2017,6 @@
     symbolicCharacter ::= cobolWord
 
     textName ::= cobolWord
-
-    cobolWord ::= IDENTIFIER
-           | COBOL
-           | PROGRAM
-           | ABORT
-           | AS
-           | ASCII
-           | ASSOCIATED_DATA
-           | ASSOCIATED_DATA_LENGTH
-           | ATTRIBUTE
-           | AUTO
-           | AUTO_SKIP
-           | BACKGROUND_COLOR
-           | BACKGROUND_COLOUR
-           | BEEP
-           | BELL
-           | BINARY
-           | BIT
-           | BLINK
-           | BOUNDS
-           | CAPABLE
-           | CCSVERSION
-           | CHANGED
-           | CHANNEL
-           | CLOSE_DISPOSITION
-           | COMMITMENT
-           | CONTROL_POINT
-           | CONVENTION
-           | CRUNCH
-           | CURSOR
-           | DEFAULT
-           | DEFAULT_DISPLAY
-           | DEFINITION
-           | DFHRESP
-           | DFHVALUE
-           | DISK
-           | DONTCARE
-           | DOUBLE
-           | EBCDIC
-           | EMPTY_CHECK
-           | ENTER
-           | ENTRY_PROCEDURE
-           | EOL
-           | EOS
-           | ERASE
-           | ESCAPE
-           | EVENT
-           | EXCLUSIVE
-           | EXPORT
-           | EXTENDED
-           | FOREGROUND_COLOR
-           | FOREGROUND_COLOUR
-           | FULL
-           | FUNCTIONNAME
-           | FUNCTION_POINTER
-           | GRID
-           | HIGHLIGHT
-           | IMPLICIT
-           | IMPORT
-           | INTEGER
-           | KEPT
-           | KEYBOARD
-           | LANGUAGE
-           | LB
-           | LD
-           | LEFTLINE
-           | LENGTH_CHECK
-           | LIBACCESS
-           | LIBPARAMETER
-           | LIBRARY
-           | LIST
-           | LOCAL
-           | LONG_DATE
-           | LONG_TIME
-           | LOWER
-           | LOWLIGHT
-           | MMDDYYYY
-           | NAMED
-           | NATIONAL
-           | NATIONAL_EDITED
-           | NETWORK
-           | NO_ECHO
-           | NUMERIC_DATE
-           | NUMERIC_TIME
-           | ODT
-           | ORDERLY
-           | OVERLINE
-           | OWN
-           | PASSWORD
-           | PORT
-           | PRINTER
-           | PRIVATE
-           | PROCESS
-           | PROMPT
-           | READER
-           | REAL
-           | RECEIVED
-           | RECURSIVE
-           | REF
-           | REMOTE
-           | REMOVE
-           | REQUIRED
-           | REVERSE_VIDEO
-           | SAVE
-           | SECURE
-           | SHARED
-           | SHAREDBYALL
-           | SHAREDBYRUNUNIT
-           | SHARING
-           | SHORT_DATE
-           | SYMBOL
-           | TASK
-           | THREAD
-           | THREAD_LOCAL
-           | TIMER
-           | TODAYS_DATE
-           | TODAYS_NAME
-           | TRUNCATED
-           | TYPEDEF
-           | UNDERLINE
-           | VIRTUAL
-           | WAIT
-           | YEAR
-           | YYYYMMDD
-           | YYYYDDD
-           | ZERO_FILL
-
-    literal ::= NONNUMERICLITERAL
-           | figurativeConstant
-           | numericLiteral
-           | booleanLiteral
-           | cicsDfhRespLiteral
-           | cicsDfhValueLiteral
 
     booleanLiteral ::= TRUE
            | FALSE

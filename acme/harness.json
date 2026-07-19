@@ -3,6 +3,6 @@
   "lexer": "AcmeLexer",
   "parser": "AcmeParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

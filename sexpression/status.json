@@ -1,15 +1,11 @@
 {
   "id": "sexpression",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "real_g4_port",
-    "sexpr_item_list_atom_dotted_pair_from_g4",
-    "natural_sexpr_item_atom_from_g4_not_token_stream_soup",
-    "DOT_not_bare_atom_for_LALR",
-    "curated_multiline_sexpr"
+    "real_g4_port"
   ],
   "notes": "Real sexpression.g4 port (item/atom/list/dotted); DOT only as dotted-pair marker.",
   "example_count": 3,

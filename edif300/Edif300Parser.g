@@ -1,12 +1,12 @@
 -- AUTO-GENERATED from antlr/grammars-v4 edif300 by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=Edif300Parser
 %options package=lpg.grammars.edif300
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=Edif300Lexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -1678,7 +1678,7 @@
 
     yNumberValue ::= numberValue
 
-    integerToken ::= DECIMAL_LITERAL
+    integerToken ::= NUMBER
 
     stringToken ::= STRING_LITERAL
 

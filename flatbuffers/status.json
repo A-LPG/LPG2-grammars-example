@@ -7,8 +7,8 @@
   "blockers": [],
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "language_subset"
+    "heuristic_default_subset"
   ],
-  "notes": "real_g4_port of FlatBuffers.g4 schema/table/struct/enum/union/rpc subset"
+  "notes": "real_g4_port of FlatBuffers.g4 schema/table/struct/enum/union/rpc subset",
+  "parser_bytes": 3623
 }

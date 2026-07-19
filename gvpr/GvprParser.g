@@ -1,16 +1,22 @@
 -- AUTO-GENERATED from antlr/grammars-v4 gvpr by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=GvprParser
 %options package=lpg.grammars.gvpr
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=GvprLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
     EOF_TOKEN
+%End
+
+
+%Define
+    $ast_class /.Object./
+    $ast_type /.Object./
 %End
 
 %Start
@@ -51,7 +57,8 @@
            | CONTINUE opt_36
            | RETURN opt_37
 
-    switch_list ::= switch_list switch_item
+    switch_list ::= $empty
+           | switch_list switch_item
 
     switch_item ::= case_list opt_38
 

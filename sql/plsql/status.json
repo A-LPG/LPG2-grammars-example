@@ -1,13 +1,16 @@
 {
   "id": "sql/plsql",
   "quality": "language_subset",
-  "parse_ok": false,
-  "status": "regenerated_from_g4",
+  "parse_ok": true,
+  "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port"
+    "curated_subset",
+    "real_g4_port"
   ],
-  "parser_bytes": 370791,
+  "parser_bytes": 370799,
   "rule_approx": 5638,
-  "start": "sql_script"
+  "start": "sql_script",
+  "tier": "D",
+  "example_count": 3
 }

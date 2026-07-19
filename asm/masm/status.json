@@ -1,19 +1,15 @@
 {
   "id": "asm/masm",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
   "blockers": [],
-  "quality_notes": [
-    "antlr2lpg_structural_port",
-    "real_g4_port",
-    "language_subset"
-  ],
+  "quality_notes": [],
   "parser_bytes": 8742,
   "rule_approx": 81,
   "start": "compilationUnit",
   "example_count": 2,
   "notes": "real_g4_port",
-  "tier": "A",
+  "tier": "D",
   "parser_lines": 480
 }

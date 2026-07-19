@@ -1,7 +1,7 @@
 <?php
 $flag = true;
 if ($flag) {
-    echo "yes";
+    echo 'yes';
 } else {
-    echo "no";
+    echo 'no';
 }

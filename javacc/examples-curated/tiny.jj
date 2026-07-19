@@ -1,1 +1,3 @@
-PARSER_BEGIN(X) class X {} PARSER_END(X)
+PARSER_BEGIN(X)
+class X {}
+PARSER_END(X)

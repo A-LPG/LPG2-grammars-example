@@ -5,15 +5,14 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port",
-    "real_g4_port",
-    "language_subset"
+    "curated_subset",
+    "real_g4_port"
   ],
-  "parser_bytes": 14308,
+  "parser_bytes": 14335,
   "rule_approx": 267,
   "start": "ql",
   "example_count": 3,
-  "tier": "A",
+  "tier": "B",
   "parser_lines": 684,
   "notes": "from/where/select + predicates"
 }

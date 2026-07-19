@@ -1,17 +1,14 @@
 {
   "id": "turing",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
   "blockers": [],
-  "quality_notes": [
-    "real_g4_port",
-    "antlr2lpg_structural_port"
-  ],
-  "parser_bytes": 8074,
+  "quality_notes": [],
+  "parser_bytes": 8101,
   "rule_approx": 142,
   "start": "program",
   "example_count": 3,
   "notes": "real_g4_port",
-  "tier": "A"
+  "tier": "B"
 }

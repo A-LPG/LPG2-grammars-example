@@ -4,7 +4,7 @@
 %options fp=SqlHiveV3KWLexer
 
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
 
 %Export

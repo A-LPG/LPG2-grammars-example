@@ -50,6 +50,40 @@
     QUOTE
     CHARLIT
     BACKSLASH
+    ADDOP
+    ARRAY
+    BYTE
+    CARD
+    CHAR
+    DEFINE
+    DO
+    ELSE
+    ELSEIF
+    EXIT
+    FI
+    FOR
+    FUNC
+    IF
+    INT
+    MODULE
+    MUL
+    MULTOP
+    NUMCONST
+    OD
+    POINTER
+    PROC
+    RELOP
+    RETURN
+    SPECIALOP
+    STEP
+    STRCONST
+    THEN
+    TO
+    TYPE
+    UNTIL
+    WHILE
+    AssignPlus
+    AssignMinus
 %End
 
 %Terminals
@@ -110,9 +144,11 @@
 %End
 
 %Rules
-    Token ::= STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+    Token ::= StrConstTok /. makeToken($_STRCONST); ./
+            | NumConstTok /. makeToken($_NUMCONST); ./
+            | AssignPlusTok /. makeToken($_AssignPlus); ./
+            | AssignMinusTok /. makeToken($_AssignMinus); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
@@ -167,6 +203,15 @@
     Digits ::= Digit | Digits Digit
 
     STRING ::= '"' SLBody '"'
+    StrConstTok -> STRING
+
+    AssignPlusTok ::= Equal Equal Plus
+    AssignMinusTok ::= Equal Equal Minus
+
+    NumConstTok ::= Digits
+                  | HexDigits
+                  | Dollar HexDigits
+
     SLBody -> $empty | SLBody NotDQ | SLBody Escape
     Escape ::= BackSlash EscapeAny
     EscapeAny -> Letter | Digit | DoubleQuote | SingleQuote | BackSlash | Space | '/' | SpecialEsc

@@ -5,9 +5,7 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "real_g4_port",
-    "left_factored_app_and_dot",
-    "curated_multiline_cayenne"
+    "heuristic_default_subset"
   ],
   "notes": "Structural subset of cayenne.g4 (lambda/data/case/sig/struct/dot); not full Cayenne.",
   "example_count": 3,

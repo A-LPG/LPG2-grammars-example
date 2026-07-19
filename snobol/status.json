@@ -1,13 +1,15 @@
 {
   "id": "snobol",
-  "quality": "language_subset",
-  "parse_ok": false,
-  "status": "regenerated_from_g4",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port"
+    "real_g4_port"
   ],
-  "parser_bytes": 4010,
+  "parser_bytes": 4003,
   "rule_approx": 76,
-  "start": "prog"
+  "start": "prog",
+  "tier": "B",
+  "example_count": 3
 }

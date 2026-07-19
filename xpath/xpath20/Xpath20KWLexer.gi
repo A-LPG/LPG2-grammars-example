@@ -3,7 +3,7 @@
 %options template=KeywordTemplateF.gi
 %options fp=Xpath20KWLexer
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
 %Export
     AND

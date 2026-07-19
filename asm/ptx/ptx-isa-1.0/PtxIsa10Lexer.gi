@@ -9,10 +9,28 @@
 
 %Define
     $kw_lexer_class /.$PtxIsa10KWLexer./
+
+    masmdirective ::= '.' dirBody
+    dirBody -> Letter | dirBody Letter | dirBody Digit
+    name_token -> UpperCaseLetter nameRest | '_' nameRest
+    nameRest -> $empty | nameRest nameChar
+    nameChar -> UpperCaseLetter | Digit | '_' | '.' | '@'
+
+    eol_token ::= LF /. makeToken($_EOL); ./
+              | CR /. makeToken($_EOL); ./
 %End
 
 %Include
     LexerBasicMapF.gi
+
+    masmdirective ::= '.' dirBody
+    dirBody -> Letter | dirBody Letter | dirBody Digit
+    name_token -> UpperCaseLetter nameRest | '_' nameRest
+    nameRest -> $empty | nameRest nameChar
+    nameChar -> UpperCaseLetter | Digit | '_' | '.' | '@'
+
+    eol_token ::= LF /. makeToken($_EOL); ./
+              | CR /. makeToken($_EOL); ./
 %End
 
 %Export
@@ -49,6 +67,16 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    MASMDIRECTIVE
+    NAME
+    EOL
+    masmdirective ::= '.' dirBody
+    dirBody -> Letter | dirBody Letter | dirBody Digit
+    name_token -> UpperCaseLetter nameRest | '_' nameRest
+    nameRest -> $empty | nameRest nameChar
+    nameChar -> UpperCaseLetter | Digit | '_' | '.' | '@'
+    eol_token ::= LF /. makeToken($_EOL); ./
+              | CR /. makeToken($_EOL); ./
 %End
 
 %Terminals
@@ -102,10 +130,28 @@
     Equal        ::= '='
     LeftParen    ::= '('
     RightParen   ::= ')'
+
+    masmdirective ::= '.' dirBody
+    dirBody -> Letter | dirBody Letter | dirBody Digit
+    name_token -> UpperCaseLetter nameRest | '_' nameRest
+    nameRest -> $empty | nameRest nameChar
+    nameChar -> UpperCaseLetter | Digit | '_' | '.' | '@'
+
+    eol_token ::= LF /. makeToken($_EOL); ./
+              | CR /. makeToken($_EOL); ./
 %End
 
 %Start
     Token
+
+    masmdirective ::= '.' dirBody
+    dirBody -> Letter | dirBody Letter | dirBody Digit
+    name_token -> UpperCaseLetter nameRest | '_' nameRest
+    nameRest -> $empty | nameRest nameChar
+    nameChar -> UpperCaseLetter | Digit | '_' | '.' | '@'
+
+    eol_token ::= LF /. makeToken($_EOL); ./
+              | CR /. makeToken($_EOL); ./
 %End
 
 %Rules
@@ -199,5 +245,14 @@
                        '%' | '&' | '^' | ':' | ';' | "'" | '"' | '|' | '{' | '}' |
                        '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | BackSlash
     white -> WSChar | white WSChar
-    WSChar -> Space | LF | CR | HT | FF
+    WSChar -> Space | HT | FF
+
+    masmdirective ::= '.' dirBody
+    dirBody -> Letter | dirBody Letter | dirBody Digit
+    name_token -> UpperCaseLetter nameRest | '_' nameRest
+    nameRest -> $empty | nameRest nameChar
+    nameChar -> UpperCaseLetter | Digit | '_' | '.' | '@'
+
+    eol_token ::= LF /. makeToken($_EOL); ./
+              | CR /. makeToken($_EOL); ./
 %End

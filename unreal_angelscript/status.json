@@ -5,18 +5,13 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port",
-    "real_g4_port",
-    "language_subset",
-    "ClassKw_ast_fix",
-    "curated_examples_import_subset_class_body_still_lalr_hard",
-    "import_only_subset",
-    "examples_still_too_thin_for_harsh_bar"
+    "curated_subset",
+    "real_g4_port"
   ],
-  "parser_bytes": 18676,
+  "parser_bytes": 17987,
   "rule_approx": 307,
   "start": "script",
   "parser_lines": 780,
-  "tier": "A",
+  "tier": "B",
   "example_count": 2
 }

@@ -1,12 +1,12 @@
 -- AUTO-GENERATED from antlr/grammars-v4 swift-fin by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=SwiftFinParser
 %options package=lpg.grammars.swift_fin
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=SwiftFinLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -22,9 +22,9 @@
 
     message ::= block1 opt_2 opt_3 opt_4 opt_5
 
-    block1 ::= BLOCK1 value V_END
+    block1 ::= BLOCK1 value block_close
 
-    block2 ::= BLOCK2 value V_END
+    block2 ::= BLOCK2 value block_close
 
     block3 ::= BLOCK3 map_ RBRACE
 
@@ -43,6 +43,8 @@
     block5 ::= BLOCK5 map_ RBRACE
 
     value ::= list_19
+
+    block_close ::= V_END | RBRACE
 
     map_ ::= list_20
 
@@ -88,7 +90,9 @@
 
     list_18 ::= $empty | list_18 B4_COLON
 
-    list_19 ::= V_VALUE | list_19 V_VALUE
+    list_19 ::= valueTok | list_19 valueTok
+
+    valueTok ::= V_VALUE | B4_VALUE
 
     list_20 ::= keyValue | list_20 keyValue
 

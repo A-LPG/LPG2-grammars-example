@@ -1,12 +1,12 @@
 -- AUTO-GENERATED from antlr/grammars-v4 sql/plsql by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=SqlPlsqlParser
 %options package=lpg.grammars.sql.plsql
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=SqlPlsqlLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof

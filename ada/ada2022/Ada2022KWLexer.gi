@@ -3,7 +3,7 @@
 %options template=KeywordTemplateF.gi
 %options fp=Ada2022KWLexer
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
 %Export
     X

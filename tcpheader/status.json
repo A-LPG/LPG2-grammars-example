@@ -5,8 +5,7 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "real_g4_port",
-    "curated_20byte_tcp_headers"
+    "heuristic_default_subset"
   ],
   "notes": "Fixed 20-octet TCP segment header from tcp.g4; curated octets avoid lexer WS bytes.",
   "example_count": 3,

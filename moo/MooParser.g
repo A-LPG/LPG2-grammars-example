@@ -1,16 +1,22 @@
 -- AUTO-GENERATED from antlr/grammars-v4 moo by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=MooParser
 %options package=lpg.grammars.moo
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=MooLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
     EOF_TOKEN
+%End
+
+
+%Define
+    $ast_class /.Object./
+    $ast_type /.Object./
 %End
 
 %Start
@@ -35,12 +41,12 @@
            | editdecl
            | addaliasdecl
 
-    programdecl ::= _PROGRAM programname COLON name list_2 DOT
+    programdecl ::= AT_PROGRAM programname COLON name list_2 DOT
 
     programname ::= name
            | stringliteral
 
-    verbdecl ::= _VERB seq_3 list_4 opt_5
+    verbdecl ::= AT_VERB seq_3 list_4 opt_5
 
     verbname ::= name
            | stringliteral
@@ -49,25 +55,25 @@
 
     rmpropertydecl ::= grp_10 name
 
-    setpropertydecl ::= _SET property_ TO expression
+    setpropertydecl ::= AT_SET property_ TO expression
 
     displaypropertydecl ::= grp_11 property_
 
-    kidsdecl ::= _KIDS name
+    kidsdecl ::= AT_KIDS name
 
-    parentdecl ::= _PARENT name
+    parentdecl ::= AT_PARENT name
 
-    describedecl ::= _DESCRIBE property_ AS expression
+    describedecl ::= AT_DESCRIBE property_ AS expression
 
-    contentsdecl ::= _CONTENTS name
+    contentsdecl ::= AT_CONTENTS name
 
-    noteditdecl ::= _NOTEDIT property_
+    noteditdecl ::= AT_NOTEDIT property_
 
-    createdecl ::= _CREATE sysname CALLED expressionlist
+    createdecl ::= AT_CREATE sysname CALLED expressionlist
 
-    editdecl ::= _EDIT property_
+    editdecl ::= AT_EDIT property_
 
-    addaliasdecl ::= _ADDALIAS name list_13 TO expression
+    addaliasdecl ::= AT_ADDALIAS name list_13 TO expression
 
     statement ::= ifblock
            | whileblock
@@ -75,7 +81,7 @@
            | forblock
            | assignblock
            | tryblock
-           | command SEMICOLON
+           | command SEMI
 
     ifblock ::= IF condition list_14 opt_17 opt_20 ENDIF opt_21
 
@@ -87,7 +93,7 @@
 
     tryblock ::= TRY list_25 EXCEPT property_ list_26 ENDTRY
 
-    assignblock ::= property_ ASSIGN expression SEMICOLON
+    assignblock ::= property_ ASSIGN expression SEMI
 
     condition ::= LPAREN expression list_28 RPAREN
 
@@ -168,17 +174,17 @@
 
     opt_5 ::= permissions | $empty
 
-    grp_6 ::= _PROPERTY | _PROP
+    grp_6 ::= AT_PROPERTY | AT_PROP
 
-    opt_7 ::= EQ | $empty
+    opt_7 ::= ASSIGN | $empty
 
     opt_8 ::= expression | $empty
 
     opt_9 ::= permissions | $empty
 
-    grp_10 ::= _RMPROPERTY | _RMPROP
+    grp_10 ::= AT_RMPROPERTY | AT_RMPROP
 
-    grp_11 ::= _DISPLAY | _DISP
+    grp_11 ::= AT_DISPLAY | AT_DISP
 
     seq_12 ::= COMMA name
 

@@ -7,10 +7,7 @@
   "tier": "A",
   "quality": "language_port",
   "quality_notes": [
-    "real_g4_port",
-    "mirrors_edn.g4_value_list_vector_map_set_tag_keyword",
-    "IDENTIFIER_is_Symbol",
-    "curated_deps_serializability_config"
+    "real_g4_port"
   ],
   "parser_bytes": 1365,
   "parser_lines": 66

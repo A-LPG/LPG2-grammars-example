@@ -5,13 +5,9 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port",
-    "real_g4_port",
-    "language_subset",
-    "clear2_multiline_examples",
-    "no_token_stream_soup"
+    "heuristic_default_subset"
   ],
-  "parser_bytes": 2769,
+  "parser_bytes": 4028,
   "rule_approx": 23,
   "start": "prog",
   "example_count": 3,

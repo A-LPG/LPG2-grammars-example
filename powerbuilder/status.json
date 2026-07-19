@@ -1,13 +1,16 @@
 {
   "id": "powerbuilder",
   "quality": "language_subset",
-  "parse_ok": false,
-  "status": "regenerated_from_g4",
+  "parse_ok": true,
+  "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port"
+    "curated_subset",
+    "real_g4_port"
   ],
-  "parser_bytes": 26241,
+  "parser_bytes": 26249,
   "rule_approx": 474,
-  "start": "start_rule"
+  "start": "start_rule",
+  "tier": "B",
+  "example_count": 3
 }

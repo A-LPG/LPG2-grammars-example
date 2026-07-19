@@ -1,21 +1,15 @@
 {
   "id": "jpa",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
   "blockers": [],
-  "quality_notes": [
-    "antlr2lpg_structural_port",
-    "real_g4_port",
-    "language_subset",
-    "clear2_multiline_examples",
-    "no_token_stream_soup"
-  ],
-  "parser_bytes": 14122,
+  "quality_notes": [],
+  "parser_bytes": 14275,
   "rule_approx": 190,
   "start": "file_",
   "example_count": 3,
-  "tier": "A",
+  "tier": "B",
   "parser_lines": 570,
   "notes": "filled g4 stubs; folded keywords; SELECT/DELETE WHERE numerics; real_g4_port"
 }

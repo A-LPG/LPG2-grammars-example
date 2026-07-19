@@ -160,44 +160,60 @@
            | IRSS
            | DSM
 
-    opt_1 ::= line | $empty
+    opt_1 ::= line
+           | $empty
 
     seq_2 ::= opt_1 eol
 
-    list_3 ::= seq_2 | list_3 seq_2
+    list_3 ::= seq_2
+           | list_3 seq_2
 
-    opt_4 ::= line | $empty
+    opt_4 ::= line
+           | $empty
 
-    opt_5 ::= comment | $empty
+    opt_5 ::= comment
+           | $empty
 
-    opt_6 ::= declaration | $empty
+    opt_6 ::= declaration
+           | $empty
 
     seq_7 ::= SEMI opt_6
 
-    list_8 ::= $empty | list_8 seq_7
+    list_8 ::= $empty
+           | list_8 seq_7
 
-    list_9 ::= label | list_9 label
+    list_9 ::= label
+           | list_9 label
 
-    list_10 ::= $empty | list_10 declarationRight
+    list_10 ::= $empty
+           | list_10 declarationRight
 
-    list_11 ::= declarationRight | list_11 declarationRight
+    list_11 ::= declarationRight
+           | list_11 declarationRight
 
-    list_12 ::= $empty | list_12 argument
+    list_12 ::= $empty
+           | list_12 argument
 
-    grp_14 ::= PLUS | MINUS
+    grp_14 ::= PLUS
+           | MINUS
 
     grp_13 ::= grp_14 multiplyingExpression
 
-    list_15 ::= $empty | list_15 grp_13
+    list_15 ::= $empty
+           | list_15 grp_13
 
-    grp_17 ::= TIMES | DIV
+    grp_17 ::= TIMES
+           | DIV
 
     grp_16 ::= grp_17 atom
 
-    list_18 ::= $empty | list_18 grp_16
+    list_18 ::= $empty
+           | list_18 grp_16
 
-    list_19 ::= $empty | list_19 NUMERIC_LITERAL
+    list_19 ::= $empty
+           | list_19 NUMERIC_LITERAL
 
-    opt_20 ::= GT | $empty
+    opt_20 ::= GT
+           | $empty
 
 %End

@@ -5,11 +5,10 @@
   "tier": "A",
   "quality": "language_port",
   "quality_notes": [
-    "real_g4_port",
-    "mirrors_tsv.g4_tsvFile_hdr_row_field",
-    "lexer_TEXT_STRING_TAB_EOL"
+    "real_g4_port"
   ],
   "blockers": [],
   "start": "tsvFile",
-  "example_count": 6
+  "example_count": 6,
+  "parser_bytes": 741
 }

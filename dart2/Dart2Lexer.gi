@@ -1,4 +1,4 @@
--- Generated parse-level lexer (generic token stream)
+-- Real lexer for Dart2Parser (not token-stream soup). Keywords via Dart2KWLexer.
 %Options list
 %Options fp=Dart2Lexer
 %options single_productions
@@ -16,39 +16,204 @@
 %End
 
 %Export
-    IDENTIFIER
-    NUMBER
-    STRING
-    LPAREN
-    RPAREN
-    LBRACE
-    RBRACE
-    LBRACKET
-    RBRACKET
-    LANGLE
-    RANGLE
-    COMMA
-    DOT
-    COLON
-    SEMI
-    EQ
-    PLUS
-    MINUS
-    STAR
-    SLASH
+    A
+    AA
+    ABSTRACT_
+    AE
     AMP
-    BAR
-    CARET
-    BANG
-    QUEST
+    AMPEQ
+    ANDAND
+    ARROW
+    ARROWSTAR
+    ASSERT_
+    ASYNC_
+    AS_
     AT
-    HASH
-    DOLLAR
-    PERCENT
-    TILDE
-    BACKTICK
-    QUOTE
+    ATEQ
+    AWAIT_
     BACKSLASH
+    BACKTICK
+    BANG
+    BITCLEAR
+    BREAK_
+    C
+    CARET
+    CARETEQ
+    CASE_
+    CATCH_
+    CB
+    CBC
+    CHAR_LITERAL
+    CIR
+    CIRE
+    CLASS_
+    CO
+    COLON
+    COLONCOLON
+    COLONEQ
+    COMMA
+    CONST_
+    CONTINUE_
+    COVARIANT_
+    CP
+    D
+    DD
+    DDD
+    DDDQ
+    DEFAULT_
+    DEFERRED_
+    DOLLAR
+    DOT
+    DOTDOT
+    DOTSTAR
+    DO_
+    DQUOTE
+    DYNAMIC_
+    EE
+    EG
+    ELLIPSIS
+    ELSE_
+    ENUM_
+    EQ
+    EQEQ
+    EQEQEQ
+    EXPORT_
+    EXTENDS_
+    EXTENSION_
+    EXTERNAL_
+    FACTORY_
+    FALSE_
+    FATARROW
+    FINALLY_
+    FINAL_
+    FOR_
+    FUNCTION_
+    GET_
+    GT
+    GTEQ
+    GTILDE_
+    HASH
+    HEX_NUMBER
+    HIDE_
+    IDENTIFIER
+    IF_
+    IMPLEMENTS_
+    IMPORT_
+    INTERFACE_
+    IN_
+    IS_
+    LATE_
+    LBRACE
+    LBRACKET
+    LET_
+    LIBRARY_
+    LPAREN
+    LSHIFT
+    LSHIFTEQ
+    LT
+    LTE
+    LTEQ
+    LTGT
+    LTLT
+    LTLTE
+    ME
+    MINUS
+    MINUSEQ
+    MINUSMINUS
+    MIXIN_
+    MM
+    MultiLineString
+    NATIVE_
+    NE
+    NEW_
+    NOT
+    NOTEQ
+    NOTEQEQ
+    NULL_
+    NUMBER
+    OB
+    OBC
+    OF_
+    ON_
+    OP
+    OPERATOR_
+    OROR
+    P
+    PART_
+    PC
+    PE
+    PERCENT
+    PERCENTEQ
+    PIPE
+    PIPEEQ
+    PL
+    PLE
+    PLPL
+    PLUS
+    PLUSEQ
+    PLUSPLUS
+    PO
+    POE
+    PP
+    QU
+    QUD
+    QUDD
+    QUESTDOT
+    QUESTION
+    QUESTQUEST
+    QUESTQUESTEQ
+    QUQU
+    QUQUEQ
+    RBRACE
+    RBRACKET
+    RECEIVE
+    REQUIRED_
+    RETHROW_
+    RETURN_
+    RPAREN
+    RSHIFT
+    RSHIFTEQ
+    SC
+    SE
+    SEMI
+    SET_
+    SHOW_
+    SL
+    SLASH
+    SLASHEQ
+    SLASHSLASH
+    SLASHSLASHEQ
+    SQS
+    SQSE
+    SQUIG
+    SQUOTE
+    ST
+    STAR
+    STAREQ
+    STARSTAR
+    STARSTAREQ
+    STATIC_
+    STE
+    STRING
+    SUPER_
+    SWITCH_
+    SYNC_
+    SingleLineString
+    THIS_
+    THROW_
+    TILDE
+    TRUE_
+    TRY_
+    TYPEDEF_
+    UNDERSCORE
+    URSHIFT
+    URSHIFTEQ
+    VAR_
+    VOID_
+    WHILE_
+    WITH_
+    YIELDSTAR
+    YIELD_
 %End
 
 %Terminals
@@ -109,97 +274,148 @@
 %End
 
 %Rules
-    Token ::= STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
-            | '(' /. makeToken($_LPAREN); ./
-            | ')' /. makeToken($_RPAREN); ./
-            | '{' /. makeToken($_LBRACE); ./
-            | '}' /. makeToken($_RBRACE); ./
-            | '[' /. makeToken($_LBRACKET); ./
-            | ']' /. makeToken($_RBRACKET); ./
-            | '<' /. makeToken($_LANGLE); ./
-            | '>' /. makeToken($_RANGLE); ./
-            | ',' /. makeToken($_COMMA); ./
-            | '.' /. makeToken($_DOT); ./
-            | ':' /. makeToken($_COLON); ./
-            | '=' /. makeToken($_EQ); ./
-            | '+' /. makeToken($_PLUS); ./
-            | '-' /. makeToken($_MINUS); ./
-            | '*' /. makeToken($_STAR); ./
-            | '/' /. makeToken($_SLASH); ./
-            | '&' /. makeToken($_AMP); ./
-            | '|' /. makeToken($_BAR); ./
-            | '^' /. makeToken($_CARET); ./
-            | '!' /. makeToken($_BANG); ./
-            | '?' /. makeToken($_QUEST); ./
-            | '@' /. makeToken($_AT); ./
-            | '$' /. makeToken($_DOLLAR); ./
-            | '%' /. makeToken($_PERCENT); ./
-            | '~' /. makeToken($_TILDE); ./
-            | '`' /. makeToken($_BACKTICK); ./
-            | ';' /. makeToken($_SEMI); ./
-            | '#' /. makeToken($_HASH); ./
-            | "'" /. makeToken($_QUOTE); ./
-            | BackSlash /. makeToken($_BACKSLASH); ./
-            | SLComment     /. skipToken(); ./
-            | MLComment     /. skipToken(); ./
-
+    Token ::= identifier /. checkForKeyWord(); ./
+            | number     /. makeToken($_NUMBER); ./
+            | string     /. makeToken($_SingleLineString); ./
+            | LineComment /. skipToken(); ./
+            | HashComment /. skipToken(); ./
             | white /. skipToken(); ./
+            | 'y' 'i' 'e' 'l' 'd' '*' /. makeToken($_YIELDSTAR); ./
+            | '>' '>' '>' '=' /. makeToken($_URSHIFTEQ); ./
+            | '!' '=' '=' /. makeToken($_NOTEQEQ); ./
+            | '*' '*' '=' /. makeToken($_STARSTAREQ); ./
+            | '-' '>' '*' /. makeToken($_ARROWSTAR); ./
+            | '.' '.' '.' /. makeToken($_ELLIPSIS); ./
+            | '/' '/' '=' /. makeToken($_SLASHSLASHEQ); ./
+            | '<' '<' '=' /. makeToken($_LSHIFTEQ); ./
+            | '=' '=' '=' /. makeToken($_EQEQEQ); ./
+            | '>' '>' '=' /. makeToken($_RSHIFTEQ); ./
+            | '>' '>' '>' /. makeToken($_URSHIFT); ./
+            | '?' '?' '=' /. makeToken($_QUESTQUESTEQ); ./
+            | '!' '=' /. makeToken($_NOTEQ); ./
+            | '%' '=' /. makeToken($_PERCENTEQ); ./
+            | '&' '&' /. makeToken($_ANDAND); ./
+            | '&' '=' /. makeToken($_AMPEQ); ./
+            | '&' '^' /. makeToken($_BITCLEAR); ./
+            | '*' '*' /. makeToken($_STARSTAR); ./
+            | '*' '=' /. makeToken($_STAREQ); ./
+            | '+' '+' /. makeToken($_PLUSPLUS); ./
+            | '+' '=' /. makeToken($_PLUSEQ); ./
+            | '-' '-' /. makeToken($_MINUSMINUS); ./
+            | '-' '=' /. makeToken($_MINUSEQ); ./
+            | '-' '>' /. makeToken($_ARROW); ./
+            | '.' '*' /. makeToken($_DOTSTAR); ./
+            | '.' '.' /. makeToken($_DOTDOT); ./
+            | '/' '/' /. makeToken($_SLASHSLASH); ./
+            | '/' '=' /. makeToken($_SLASHEQ); ./
+            | ':' ':' /. makeToken($_COLONCOLON); ./
+            | ':' '=' /. makeToken($_COLONEQ); ./
+            | '<' '-' /. makeToken($_RECEIVE); ./
+            | '<' '<' /. makeToken($_LSHIFT); ./
+            | '<' '=' /. makeToken($_LTEQ); ./
+            | '<' '>' /. makeToken($_LTGT); ./
+            | '=' '=' /. makeToken($_EQEQ); ./
+            | '=' '>' /. makeToken($_EG); ./
+            | '>' '=' /. makeToken($_GTEQ); ./
+            | '>' '>' /. makeToken($_RSHIFT); ./
+            | '?' '.' /. makeToken($_QUESTDOT); ./
+            | '?' '?' /. makeToken($_QUESTQUEST); ./
+            | '@' '=' /. makeToken($_ATEQ); ./
+            | '^' '=' /. makeToken($_CARETEQ); ./
+            | '|' '=' /. makeToken($_PIPEEQ); ./
+            | '|' '|' /. makeToken($_OROR); ./
+            | '!' /. makeToken($_BANG); ./
+            | '"' /. makeToken($_DQUOTE); ./
+            | '#' /. makeToken($_HASH); ./
+            | '%' /. makeToken($_PERCENT); ./
+            | '&' /. makeToken($_AMP); ./
+            | '(' /. makeToken($_OP); ./
+            | ')' /. makeToken($_CP); ./
+            | '*' /. makeToken($_ST); ./
+            | '+' /. makeToken($_PL); ./
+            | ',' /. makeToken($_C); ./
+            | '-' /. makeToken($_MINUS); ./
+            | '.' /. makeToken($_D); ./
+            | '/' /. makeToken($_SLASH); ./
+            | ':' /. makeToken($_CO); ./
+            | ';' /. makeToken($_SC); ./
+            | '<' /. makeToken($_LT); ./
+            | '=' /. makeToken($_EQ); ./
+            | '>' /. makeToken($_GT); ./
+            | '?' /. makeToken($_QUESTION); ./
+            | '@' /. makeToken($_AT); ./
+            | '[' /. makeToken($_OB); ./
+            | '\' /. makeToken($_BACKSLASH); ./
+            | ']' /. makeToken($_CB); ./
+            | '^' /. makeToken($_CARET); ./
+            | '`' /. makeToken($_BACKTICK); ./
+            | '{' /. makeToken($_OBC); ./
+            | '|' /. makeToken($_PIPE); ./
+            | '}' /. makeToken($_CBC); ./
+            | '~' /. makeToken($_TILDE); ./
 
-    IDENTIFIER ::= IdStart
-                 | IDENTIFIER IdStart
-                 | IDENTIFIER Digit
+    identifier -> Letter
+                | identifier Letter
+                | identifier Digit
+                | identifier '-' Letter
+                | identifier '-' Digit
 
-    IdStart -> Letter | '_' | AfterASCII
-    Letter -> LowerCaseLetter | UpperCaseLetter
+    Letter -> LowerCaseLetter
+            | UpperCaseLetter
+            | _
+            | AfterASCII
+            | DollarSign
+
     LowerCaseLetter -> a | b | c | d | e | f | g | h | i | j | k | l | m |
                        n | o | p | q | r | s | t | u | v | w | x | y | z
+
     UpperCaseLetter -> A | B | C | D | E | F | G | H | I | J | K | L | M |
                        N | O | P | Q | R | S | T | U | V | W | X | Y | Z
+
     Digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
-    NUMBER ::= Digits
-             | Digits '.' Digits
-             | 0 x HexDigits
-             | 0 X HexDigits
+    number ::= Digit
+             | number Digit
+             | number '_' Digit
+             | number '.' Digit
+             | number '.' Digits
+             | '.' Digits
 
-    HexDigits ::= HexDigit | HexDigits HexDigit
-    HexDigit -> Digit | a | b | c | d | e | f | A | B | C | D | E | F
-    Digits ::= Digit | Digits Digit
+    Digits ::= Digit
+             | Digits Digit
 
-    STRING ::= '"' SLBody '"'
-    SLBody -> $empty | SLBody NotDQ | SLBody Escape
-    Escape ::= BackSlash EscapeAny
-    EscapeAny -> Letter | Digit | DoubleQuote | SingleQuote | BackSlash | Space | '/' | SpecialEsc
-    SpecialEsc -> '+' | '-' | '(' | ')' | '*' | '!' | '@' | '`' | '~' |
-                  '%' | '&' | '^' | ':' | ';' | '|' | '{' | '}' |
-                  '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$'
-    NotDQ -> Letter | Digit | SpecialNotDQ | Space | HT | FF | LF | CR | AfterASCII | '_'
-    SpecialNotDQ -> '+' | '-' | '/' | '(' | ')' | '*' | '!' | '@' | '`' | '~' |
-                    '%' | '&' | '^' | ':' | ';' | "'" | '|' | '{' | '}' |
-                    '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$'
+    string ::= '"' SLBody '"'
+             | SingleQuote SLBodySQ SingleQuote
 
-    SLComment ::= '/' '/' SLCBody
-    SLCBody -> $empty | SLCBody NotNL
+    SLBody -> $empty
+            | SLBody NotDQ
 
-    MLComment ::= '/' '*' MLCBody '*' '/'
-    MLCBody -> $empty | MLCBody NotStar | MLCBody '*' NotSlash
+    SLBodySQ -> $empty
+              | SLBodySQ NotSQ
 
-    NotNL -> Letter | Digit | SpecialNotNL | Space | HT | FF | AfterASCII | '_'
-    NotStar -> Letter | Digit | SpecialNotStar | Space | HT | FF | LF | CR | AfterASCII | '_' | "'" | '"'
-    NotSlash -> Letter | Digit | SpecialNotSlash | Space | HT | FF | LF | CR | AfterASCII | '_' | '*' | "'" | '"'
+    NotDQ -> Letter | Digit | Space | HT | SingleQuote | ',' | '.' | ':' | ';' | '+' | '-' |
+             '*' | '/' | '=' | '_' | '!' | '?' | '@' | '#' | '$' | '%' | '&' | '|' |
+             '^' | '~' | '`' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' | Escape
 
-    SpecialNotNL -> '+' | '-' | '/' | '(' | ')' | '*' | '!' | '@' | '`' | '~' |
-                    '%' | '&' | '^' | ':' | ';' | "'" | '"' | '|' | '{' | '}' |
-                    '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | BackSlash
-    SpecialNotStar -> '+' | '-' | '/' | '(' | ')' | '!' | '@' | '`' | '~' |
-                      '%' | '&' | '^' | ':' | ';' | "'" | '"' | '|' | '{' | '}' |
-                      '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | BackSlash
-    SpecialNotSlash -> '+' | '-' | '(' | ')' | '!' | '@' | '`' | '~' |
-                       '%' | '&' | '^' | ':' | ';' | "'" | '"' | '|' | '{' | '}' |
-                       '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | BackSlash
+    NotSQ -> Letter | Digit | Space | HT | DoubleQuote | ',' | '.' | ':' | ';' | '+' | '-' |
+             '*' | '/' | '=' | '_' | '!' | '?' | '@' | '#' | '$' | '%' | '&' | '|' |
+             '^' | '~' | '`' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' | Escape
 
-    white -> WSChar | white WSChar
+    Escape ::= BackSlash EscapeChar
+    EscapeChar -> DoubleQuote | SingleQuote | BackSlash | '/' | n | r | t | b | f
+
+    LineComment ::= '/' '/' LineCommentBody
+    HashComment ::= Sharp HashCommentBody
+    HashCommentBody -> $empty
+                     | HashCommentBody NotNL
+    LineCommentBody -> $empty
+                     | LineCommentBody NotNL
+    NotNL -> Letter | Digit | Space | HT | SpecialNotNL
+    SpecialNotNL -> '+' | '-' | '/' | '*' | '(' | ')' | '!' | '@' | '`' | '~' |
+                    '%' | '&' | '^' | ':' | ';' | DoubleQuote | SingleQuote | '|' | '{' | '}' |
+                    '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_' | BackSlash
+
+    white -> WSChar
+           | white WSChar
     WSChar -> Space | LF | CR | HT | FF
 %End

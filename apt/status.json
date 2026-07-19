@@ -5,11 +5,10 @@
   "tier": "A",
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "mirrors_apt.g4_record_optionsR_uri_components",
-    "lexer_deb_deb-src_OptionName_WSS"
+    "heuristic_default_subset"
   ],
   "blockers": [],
   "start": "apt_record",
-  "example_count": 3
+  "example_count": 3,
+  "parser_bytes": 1455
 }

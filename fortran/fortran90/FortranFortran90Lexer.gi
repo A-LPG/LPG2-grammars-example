@@ -331,8 +331,8 @@
 %End
 
 %Rules
-    Token ::= identifier /. checkForKeyWord(); ./
-            | number     /. makeToken($_NUMBER); ./
+    Token ::= identifier /. checkForKeyWord($_NAME); ./
+            | number     /. makeToken($_ICON); ./
             | string     /. makeToken($_STRING); ./
             | charlit    /. makeToken($_CHAR_LITERAL); ./
             | LineComment /. skipToken(); ./
@@ -365,7 +365,7 @@
             | '.' '.' /. makeToken($_DOTDOT); ./
             | '/' '/' /. makeToken($_SLASHSLASH); ./
             | '/' '=' /. makeToken($_SLASHEQ); ./
-            | ':' ':' /. makeToken($_COLONCOLON); ./
+            | ':' ':' /. makeToken($_DOUBLECOLON); ./
             | ':' '=' /. makeToken($_COLONEQ); ./
             | '<' '-' /. makeToken($_RECEIVE); ./
             | '<' '<' /. makeToken($_LSHIFT); ./

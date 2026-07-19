@@ -1,20 +1,25 @@
--- Keyword filter
+-- Keyword filter for Css3 (from grammars-v4 lexer keywords + parser literals)
 %options package=lpg.grammars.css3
 %options template=KeywordTemplateF.gi
 %options fp=Css3KWLexer
+
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
+
 %Export
-    IMPORTANT
+    X
 %End
+
 %Terminals
-    a    b    c    d    e    f    g    h    i    j    k    l    m
-    n    o    p    q    r    s    t    u    v    w    x    y    z
+    a b c d e f g h i j k l m n o p q r s t u v w x y z
+    Minus ::= '-'
 %End
+
 %Start
     Keyword
 %End
+
 %Rules
-    Keyword ::= i m p o r t a n t /.$setResult($_IMPORTANT);./
+    Keyword ::= x x x /.$setResult($_X);./
 %End

@@ -3,6 +3,7 @@
   "lexer": "ScssLexer",
   "parser": "ScssParser",
   "example_globs": [
-    "examples/**/*"
-  ]
+    "examples-curated/**/*"
+  ],
+  "parser_template": "btParserTemplateF.gi"
 }

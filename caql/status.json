@@ -5,11 +5,9 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "real_g4_port",
-    "antlr2lpg_structural_port",
-    "curated_smoke"
+    "limited_examples_or_rules"
   ],
   "parser_bytes": 3780,
   "example_count": 1,
-  "tier": "A"
+  "tier": "B"
 }

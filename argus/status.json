@@ -1,17 +1,15 @@
 {
   "id": "argus",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
-  "tier": "A",
+  "tier": "B",
   "quality_notes": [
-    "real_g4_port",
-    "antlr2lpg_structural_port",
-    "left_factored_file_start",
-    "curated_proc_iter_equates"
+    "real_g4_port"
   ],
   "blockers": [],
   "example_count": 4,
   "parser_lines": 937,
-  "start": "file_"
+  "start": "file_",
+  "parser_bytes": 18968
 }

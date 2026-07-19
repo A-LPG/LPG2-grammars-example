@@ -17,6 +17,10 @@
 
 %Export
     IDENTIFIER
+    SIMPLE_IDENTIFIER
+    UNSIGNED_NUMBER
+    FIXED_POINT_NUMBER
+    EXPONENTIAL_NUMBER
     NUMBER
     STRING
     LPAREN
@@ -49,6 +53,122 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    ALWAYS
+    AND
+    ANDAND
+    ASSIGN
+    AUTOMATIC
+    BEGIN
+    BUF
+    CASE
+    CASEX
+    CASEZ
+    CELL
+    CMOS
+    CO
+    CONFIG
+    DEASSIGN
+    DEFAULT
+    DEFPARAM
+    DESIGN
+    DISABLE
+    DQ
+    EDGE
+    ELSE
+    END
+    ENDCASE
+    ENDCONFIG
+    ENDFUNCTION
+    ENDGENERATE
+    ENDMODULE
+    ENDPRIMITIVE
+    ENDSPECIFY
+    ENDTABLE
+    ENDTASK
+    EVENT
+    FATARROW
+    FILENAME
+    FOR
+    FORCE
+    FOREVER
+    FORK
+    FUNCTION
+    GA
+    GENERATE
+    GENVAR
+    IF
+    IFNONE
+    INCLUDE
+    INITIAL
+    INOUT
+    INPUT
+    INSTANCE
+    INTEGER
+    JOIN
+    LARGE
+    LIBLIST
+    LIBRARY
+    LOCALPARAM
+    LP
+    LSHIFT
+    MACROMODULE
+    MEDIUM
+    MODULE
+    NAND
+    NEGEDGE
+    NMOS
+    NOR
+    NOSHOWCANCELLED
+    NOT
+    OR
+    OROR
+    OUTPUT
+    PARAMETER
+    PATHPULSE_
+    PIPE
+    PMOS
+    POSEDGE
+    PRIMITIVE
+    PULLDOWN
+    PULLUP
+    RCMOS
+    REAL
+    REALTIME
+    REG
+    RELEASE
+    REPEAT
+    RNMOS
+    RP
+    RPMOS
+    RSHIFT
+    RTRAN
+    SCALARED
+    SHOWCANCELLED
+    SIGNED
+    SL
+    SMALL
+    SPECIFY
+    SPECPARAM
+    STARSTAR
+    TABLE
+    TASK
+    TIME
+    TRAN
+    TRI
+    TRIAND
+    TRIOR
+    TRIREG
+    URSHIFT
+    USE
+    UWIRE
+    VECTORED
+    WAIT
+    WAND
+    WHILE
+    WIRE
+    WOR
+    XNOR
+    XOR
 %End
 
 %Terminals
@@ -110,8 +230,8 @@
 
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | NUMBER /. makeToken($_UNSIGNED_NUMBER); ./
+            | IDENTIFIER /. checkForKeyWord($_SIMPLE_IDENTIFIER); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
@@ -137,7 +257,7 @@
             | '$' /. makeToken($_DOLLAR); ./
             | '%' /. makeToken($_PERCENT); ./
             | '~' /. makeToken($_TILDE); ./
-            | '`' /. makeToken($_BACKTICK); ./
+            | '`' /. makeToken($_GA); ./
             | ';' /. makeToken($_SEMI); ./
             | '#' /. makeToken($_HASH); ./
             | "'" /. makeToken($_QUOTE); ./

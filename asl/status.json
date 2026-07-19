@@ -1,20 +1,14 @@
 {
   "id": "asl",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
   "blockers": [],
-  "quality_notes": [
-    "antlr2lpg_structural_port",
-    "real_g4_port",
-    "language_subset",
-    "id_token_collapse",
-    "assignment_rules_simplified_for_lalr_curated_vars"
-  ],
-  "parser_bytes": 15861,
+  "quality_notes": [],
+  "parser_bytes": 15213,
   "rule_approx": 248,
   "start": "asl",
   "parser_lines": 623,
-  "tier": "A",
+  "tier": "B",
   "example_count": 2
 }

@@ -1,19 +1,14 @@
 {
   "id": "asm/asm8086",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
   "blockers": [],
-  "quality_notes": [
-    "antlr2lpg_structural_port",
-    "real_g4_port",
-    "language_subset",
-    "eol_lexer_fix"
-  ],
-  "parser_bytes": 5633,
+  "quality_notes": [],
+  "parser_bytes": 5666,
   "rule_approx": 65,
   "start": "prog",
   "example_count": 2,
-  "tier": "A",
+  "tier": "D",
   "parser_lines": 323
 }

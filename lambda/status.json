@@ -7,9 +7,7 @@
   "tier": "A",
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "lambda_abs_app_variable_from_g4",
-    "ascii_backslash_standin_for_lambda_glyph"
+    "heuristic_default_subset"
   ],
   "parser_bytes": 563,
   "parser_lines": 31

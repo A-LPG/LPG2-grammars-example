@@ -5,11 +5,9 @@
   "status": "ported",
   "blockers": [],
   "tier": "A",
-  "quality": "language_subset",
+  "quality": "language_port",
   "quality_notes": [
-    "real_g4_port",
-    "lcc_topic_subclass_cutter_date_from_g4",
-    "g4_tiny_library_call_number_grammar"
+    "real_g4_port"
   ],
   "parser_bytes": 938,
   "parser_lines": 51

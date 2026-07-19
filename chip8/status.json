@@ -5,11 +5,10 @@
   "tier": "A",
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "mirrors_chip8.g4_file_instruction_opcodes",
-    "lexer_REGISTER_ADDR_BYTE_DIGIT_mnemonics"
+    "heuristic_default_subset"
   ],
   "blockers": [],
   "start": "file_",
-  "example_count": 3
+  "example_count": 3,
+  "parser_bytes": 2056
 }

@@ -21,29 +21,34 @@
     qif ::= list_1
 
     -- qif_record (not record): Java 14+ forbids type name "record"
-    qif_record ::= list_3 eor
+    qif_record ::= list_3 qif_eor
 
     recordtype ::= TYPE TEXT
 
-    date ::= D DATE
+    date ::= DATED
 
-    total ::= T NUM
+    total ::= TAMOUNT
 
-    check ::= N NUM
+    check ::= NAMOUNT
 
-    state_ ::= C STATE
+    memo ::= MTEXT
 
-    memo ::= M TEXT
+    payee ::= PTEXT
 
-    payee ::= P TEXT
+    -- legacy two-token shapes (unused by curated examples)
+    grp_date ::= DATE | TEXT
+
+    grp_num ::= NUM | TEXT
+
+    state_ ::= C XMARK
 
     accountorcategory ::= L grp_4
 
-    account ::= LB ACCNTCATNAME RB
+    account ::= LB TEXT RB
 
-    category ::= ACCNTCATNAME
+    category ::= TEXT
 
-    eor ::= EOR
+    qif_eor ::= CARET
 
     list_1 ::= $empty | list_1 qif_record
 

@@ -5,15 +5,14 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "real_g4_port",
-    "antlr2lpg_structural_port",
-    "curated_alt_quant_anchor_examples"
+    "curated_subset",
+    "real_g4_port"
   ],
   "parser_bytes": 8375,
   "rule_approx": 143,
   "start": "pcre",
   "example_count": 3,
-  "tier": "A",
+  "tier": "B",
   "notes": "char-level lexer; quant/group/alt/anchor",
   "parser_lines": 403
 }

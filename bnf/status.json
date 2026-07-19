@@ -7,7 +7,8 @@
   "tier": "B",
   "quality": "language_subset",
   "quality_notes": [
-    "heuristic_default_subset"
+    "curated_subset",
+    "real_g4_port"
   ],
   "parser_bytes": 810
 }

@@ -4,5 +4,6 @@
   "parser": "Cql3Parser",
   "example_globs": [
     "examples-curated/**/*"
-  ]
+  ],
+  "parser_template": "btParserTemplateF.gi"
 }

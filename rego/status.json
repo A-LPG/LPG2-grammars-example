@@ -2,14 +2,14 @@
   "id": "rego",
   "parse_ok": true,
   "status": "ported",
-  "tier": "A",
+  "tier": "B",
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "mirrors_RegoParser.g4_root_stmt_rules_query",
-    "lexer_Name_String_UnsignedNumber_EqOper"
+    "curated_subset",
+    "real_g4_port"
   ],
   "blockers": [],
   "start": "root",
-  "example_count": 3
+  "example_count": 3,
+  "parser_bytes": 3899
 }

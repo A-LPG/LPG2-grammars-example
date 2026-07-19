@@ -331,9 +331,9 @@
 %End
 
 %Rules
-    Token ::= identifier /. checkForKeyWord(); ./
-            | number     /. makeToken($_NUMBER); ./
-            | string     /. makeToken($_STRING); ./
+    Token ::= identifier /. checkForKeyWord($_ID); ./
+            | number     /. makeToken($_DECIMAL_LITERAL); ./
+            | string     /. makeToken($_STRING_LITERAL); ./
             | charlit    /. makeToken($_CHAR_LITERAL); ./
             | LineComment /. skipToken(); ./
             | white /. skipToken(); ./

@@ -1,2 +1,5 @@
 [Desktop Entry]
-Name=Smoke
+Type=Application
+Name=Example
+Exec=foo
+Version=1.0

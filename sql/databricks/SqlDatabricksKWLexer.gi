@@ -4,7 +4,7 @@
 %options fp=SqlDatabricksKWLexer
 
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
 
 %Export

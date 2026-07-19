@@ -1,12 +1,12 @@
 -- AUTO-GENERATED from antlr/grammars-v4 scss by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=ScssParser
 %options package=lpg.grammars.scss
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=ScssLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -145,7 +145,7 @@
 
     pseudo ::= Colon opt_90 grp_91
 
-    functionalPseudo ::= Ident Lparen list_92 Rparen
+    functionalPseudo ::= IDENTIFIER Lparen list_92 Rparen
 
     pseudoParameter ::= grp_93
 
@@ -321,7 +321,7 @@
 
     number ::= opt_156 Number
 
-    identifier ::= opt_158 Ident
+    identifier ::= opt_158 IDENTIFIER
            | From
            | To
 
@@ -631,7 +631,7 @@
 
     opt_153 ::= plusMinus | $empty
 
-    grp_154 ::= Number | Ident
+    grp_154 ::= Number | IDENTIFIER
 
     list_155 ::= grp_154 | list_155 grp_154
 

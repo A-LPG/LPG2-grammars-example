@@ -4,9 +4,10 @@
 %Options la=3
 %Options fp=ActionParser
 %options package=lpg.grammars.action
-%options template=dtParserTemplateF.gi
+%options backtrack
+%options template=btParserTemplateF.gi
 %options import_terminals=ActionLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -313,7 +314,7 @@
 
     list_50 ::= stmt | list_50 stmt
 
-    grp_51 ::= EQ | OP_68815 | OP_34137
+    grp_51 ::= EQ | AssignPlus | AssignMinus
 
     opt_52 ::= stmtlist | $empty
 

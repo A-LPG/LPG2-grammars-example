@@ -5,9 +5,8 @@
   "tier": "C",
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "structural_subset_from_g4",
-    "curated_func_struct_class_control"
+    "curated_subset",
+    "real_g4_port"
   ],
   "parser_bytes": 10839,
   "parser_lines": 314,

@@ -6,7 +6,7 @@
 %options package=lpg.grammars.sql.clickhouse
 %options template=dtParserTemplateF.gi
 %options import_terminals=SqlClickhouseLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof

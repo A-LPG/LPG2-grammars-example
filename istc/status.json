@@ -7,8 +7,7 @@
   "tier": "A",
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "istc_registration_year_work_check_from_g4"
+    "heuristic_default_subset"
   ],
   "parser_bytes": 553,
   "parser_lines": 32

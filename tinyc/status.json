@@ -6,12 +6,7 @@
   "blockers": [],
   "tier": "A",
   "quality": "language_port",
-  "quality_notes": [
-    "real_g4_port",
-    "mirrors_tinyc.g4_program_statement_expr_id_integer",
-    "curated_multiline_tinyc_programs",
-    "dangling_else_shift_reduce_as_g4"
-  ],
+  "quality_notes": [],
   "parser_bytes": 1312,
   "parser_lines": 58
 }

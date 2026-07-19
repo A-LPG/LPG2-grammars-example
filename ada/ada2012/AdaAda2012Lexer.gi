@@ -252,9 +252,9 @@
 %End
 
 %Rules
-    Token ::= identifier /. checkForKeyWord(); ./
-            | number     /. makeToken($_NUMBER); ./
-            | string     /. makeToken($_STRING); ./
+    Token ::= identifier /. checkForKeyWord($_IDENTIFIER_); ./
+            | number     /. makeToken($_NUMERIC_LITERAL_); ./
+            | string     /. makeToken($_STRING_LITERAL_); ./
             | charlit    /. makeToken($_CHAR_LITERAL); ./
             | LineComment /. skipToken(); ./
             | white /. skipToken(); ./

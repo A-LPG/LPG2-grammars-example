@@ -5,12 +5,8 @@
   "status": "ported",
   "blockers": [],
   "tier": "A",
-  "quality": "language_subset",
-  "quality_notes": [
-    "real_g4_port",
-    "vba_like_pattern_charlist_wildcard_from_g4",
-    "multiline_examples_use_LF_as_CHAR_per_g4"
-  ],
+  "quality": "language_port",
+  "quality_notes": [],
   "parser_bytes": 1832,
   "parser_lines": 68
 }

@@ -5,17 +5,14 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "real_g4_port",
-    "antlr2lpg_structural_port",
-    "language_subset",
-    "hand_fixed_lexer_ops_strings_comments",
-    "left_factored_column_ref"
+    "curated_subset",
+    "real_g4_port"
   ],
   "parser_bytes": 27034,
   "rule_approx": 532,
   "start": "parse",
   "example_count": 7,
-  "tier": "A",
+  "tier": "D",
   "parser_lines": 1227,
   "notes": "real_g4_port; structural SQLite subset; curated SELECT/INSERT/UPDATE/JOIN/WITH examples"
 }

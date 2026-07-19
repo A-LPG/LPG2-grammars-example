@@ -6,7 +6,7 @@
 %options package=lpg.grammars.ada.ada83
 %options template=dtParserTemplateF.gi
 %options import_terminals=AdaAda83Lexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -14,7 +14,7 @@
 %End
 
 %Start
-    identifier
+    compilation_unit
 %End
 
 %Rules

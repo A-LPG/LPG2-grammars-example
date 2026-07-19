@@ -4,5 +4,6 @@
   "parser": "Cobol85Parser",
   "example_globs": [
     "examples-curated/**/*"
-  ]
+  ],
+  "parser_template": "btParserTemplateF.gi"
 }

@@ -331,66 +331,91 @@
 
     number ::= NUMBER
 
-    list_1 ::= $empty | list_1 line
+    list_1 ::= $empty
+           | list_1 line
 
-    opt_2 ::= lbl | $empty
+    opt_2 ::= lbl
+           | $empty
 
-    grp_3 ::= assemblerdirective | instruction
+    grp_3 ::= assemblerdirective
+           | instruction
 
-    opt_4 ::= grp_3 | $empty
+    opt_4 ::= grp_3
+           | $empty
 
-    grp_5 ::= extensionsorfullarch | label
+    grp_5 ::= extensionsorfullarch
+           | label
 
-    grp_6 ::= _TEXT | _DATA | _RODATA | _BSS
+    grp_6 ::= _TEXT
+           | _DATA
+           | _RODATA
+           | _BSS
 
-    opt_7 ::= grp_6 | $empty
+    opt_7 ::= grp_6
+           | $empty
 
     seq_8 ::= COMMA number
 
-    list_9 ::= $empty | list_9 seq_8
+    list_9 ::= $empty
+           | list_9 seq_8
 
     seq_10 ::= COMMA number
 
-    list_11 ::= $empty | list_11 seq_10
+    list_11 ::= $empty
+           | list_11 seq_10
 
-    grp_12 ::= number | label
+    grp_12 ::= number
+           | label
 
-    grp_13 ::= number | label
+    grp_13 ::= number
+           | label
 
     seq_14 ::= COMMA label
 
-    list_15 ::= $empty | list_15 seq_14
+    list_15 ::= $empty
+           | list_15 seq_14
 
     seq_16 ::= COMMA number
 
-    opt_17 ::= seq_16 | $empty
+    opt_17 ::= seq_16
+           | $empty
 
-    grp_18 ::= number | label
+    grp_18 ::= number
+           | label
 
-    opt_19 ::= COLON | $empty
+    opt_19 ::= COLON
+           | $empty
 
     seq_20 ::= COMMA expression
 
-    list_21 ::= $empty | list_21 seq_20
+    list_21 ::= $empty
+           | list_21 seq_20
 
-    grp_23 ::= OP | STAR
+    grp_23 ::= OP
+           | STAR
 
     grp_22 ::= grp_23 expression_
 
-    list_24 ::= $empty | list_24 grp_22
+    list_24 ::= $empty
+           | list_24 grp_22
 
-    grp_25 ::= number | number P number
+    grp_25 ::= number
+           | number P number
 
-    opt_26 ::= grp_25 | $empty
+    opt_26 ::= grp_25
+           | $empty
 
-    opt_27 ::= number | $empty
+    opt_27 ::= number
+           | $empty
 
     seq_28 ::= xregs COMMA
 
-    opt_29 ::= seq_28 | $empty
+    opt_29 ::= seq_28
+           | $empty
 
     seq_30 ::= COMMA xregs
 
-    opt_31 ::= seq_30 | $empty
+    opt_31 ::= seq_30
+           | $empty
 
 %End

@@ -5,10 +5,10 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "real_g4_port"
+    "limited_examples_or_rules"
   ],
   "parser_bytes": 837,
   "start": "proposition",
   "example_count": 3,
-  "tier": "A"
+  "tier": "B"
 }

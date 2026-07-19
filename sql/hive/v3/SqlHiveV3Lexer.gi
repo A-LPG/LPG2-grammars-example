@@ -514,8 +514,8 @@
 %End
 
 %Rules
-    Token ::= identifier /. checkForKeyWord(); ./
-            | number     /. makeToken($_NUMBER); ./
+    Token ::= identifier /. checkForKeyWord($_Identifier); ./
+            | number     /. makeToken($_Number); ./
             | string     /. makeToken($_STRING); ./
             | charlit    /. makeToken($_CHAR_LITERAL); ./
             | LineComment /. skipToken(); ./
@@ -578,7 +578,7 @@
             | '.' /. makeToken($_DOT); ./
             | '/' /. makeToken($_SLASH); ./
             | ':' /. makeToken($_COLON); ./
-            | ';' /. makeToken($_SEMI); ./
+            | ';' /. makeToken($_SEMICOLON); ./
             | '<' /. makeToken($_LT); ./
             | '=' /. makeToken($_EQ); ./
             | '>' /. makeToken($_GT); ./

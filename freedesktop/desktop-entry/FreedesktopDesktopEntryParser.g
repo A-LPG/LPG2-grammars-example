@@ -1,16 +1,22 @@
 -- AUTO-GENERATED from antlr/grammars-v4 freedesktop/desktop-entry by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=FreedesktopDesktopEntryParser
 %options package=lpg.grammars.freedesktop.desktop_entry
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=FreedesktopDesktopEntryLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
     EOF_TOKEN
+%End
+
+
+%Define
+    $ast_class /.Object./
+    $ast_type /.Object./
 %End
 
 %Start
@@ -53,30 +59,30 @@
 
     false_ ::= FALSE
 
-    list_1 ::= $empty | list_1 group
+    list_1 ::= %Empty | list_1 group
 
-    list_2 ::= $empty | list_2 entry
+    list_2 ::= %Empty | list_2 entry
 
-    opt_3 ::= locale | $empty
+    opt_3 ::= locale | %Empty
 
-    opt_4 ::= value | $empty
+    opt_4 ::= value | %Empty
 
     seq_5 ::= SEMICOLON value
 
-    list_6 ::= $empty | list_6 seq_5
+    list_6 ::= %Empty | list_6 seq_5
 
-    opt_7 ::= SEMICOLON | $empty
+    opt_7 ::= SEMICOLON | %Empty
 
     seq_8 ::= UNDERSCORE country
 
-    opt_9 ::= seq_8 | $empty
+    opt_9 ::= seq_8 | %Empty
 
     seq_10 ::= DOT encoding
 
-    opt_11 ::= seq_10 | $empty
+    opt_11 ::= seq_10 | %Empty
 
     seq_12 ::= AT modifier
 
-    opt_13 ::= seq_12 | $empty
+    opt_13 ::= seq_12 | %Empty
 
 %End

@@ -5,10 +5,10 @@
   "tier": "A",
   "quality": "language_port",
   "quality_notes": [
-    "real_g4_port",
-    "mirrors_calculator.g4_equation_expression_pow_func"
+    "real_g4_port"
   ],
   "blockers": [],
   "start": "equation",
-  "example_count": 3
+  "example_count": 3,
+  "parser_bytes": 1713
 }

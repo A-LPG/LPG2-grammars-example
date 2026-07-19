@@ -7,9 +7,7 @@
   "blockers": [],
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "mirrors_PGN.g4_tags_movetext_san_rav_termination",
-    "san_move_optional_SUFFIX_ANNOTATION"
+    "heuristic_default_subset"
   ],
   "parser_bytes": 1637,
   "start": "parse"

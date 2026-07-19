@@ -1,13 +1,16 @@
 {
   "id": "sql/cockroachdb",
   "quality": "language_subset",
-  "parse_ok": false,
-  "status": "regenerated_from_g4",
+  "parse_ok": true,
+  "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port"
+    "curated_subset",
+    "real_g4_port"
   ],
-  "parser_bytes": 138765,
+  "parser_bytes": 138763,
   "rule_approx": 1827,
-  "start": "cockroachdb_file"
+  "start": "cockroachdb_file",
+  "tier": "D",
+  "example_count": 3
 }

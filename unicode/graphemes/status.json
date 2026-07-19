@@ -5,11 +5,10 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "real_g4_port",
-    "unicode_property_subset"
+    "heuristic_default_subset"
   ],
-  "parser_bytes": 611,
+  "parser_bytes": 475,
   "start": "graphemes",
   "example_count": 3,
-  "tier": "A"
+  "tier": "D"
 }

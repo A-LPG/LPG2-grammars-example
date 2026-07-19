@@ -1,12 +1,12 @@
 -- AUTO-GENERATED from antlr/grammars-v4 sysml-v2 by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=SysmlV2Parser
 %options package=lpg.grammars.sysml_v2
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=SysmlV2Lexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -14,7 +14,7 @@
 %End
 
 %Start
-    ownedExpression
+    rootNamespace
 %End
 
 %Rules

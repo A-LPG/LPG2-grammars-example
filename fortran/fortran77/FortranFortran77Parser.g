@@ -6,11 +6,17 @@
 %options package=lpg.grammars.fortran.fortran77
 %options template=dtParserTemplateF.gi
 %options import_terminals=FortranFortran77Lexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
     EOF_TOKEN
+%End
+
+
+%Define
+    $ast_class /.Object./
+    $ast_type /.Object./
 %End
 
 %Start

@@ -4,9 +4,10 @@
 %Options la=3
 %Options fp=PegenParser
 %options package=lpg.grammars.pegen
-%options template=dtParserTemplateF.gi
+%options backtrack
+%options template=btParserTemplateF.gi
 %options import_terminals=PegenLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -76,11 +77,11 @@
 
     action ::= ACTION
 
-    name ::= NAME
+    name ::= IDENTIFIER
 
     string ::= STRING
 
-    newline ::= $empty
+    newline ::= NEWLINE | $empty
 
     indent ::= $empty
 
@@ -106,11 +107,11 @@
 
     seq_9 ::= LBRACKET name opt_8 RBRACKET
 
-    grp_10 ::= PIPE alt
+    grp_10 ::= BAR alt
 
     list_11 ::= $empty | list_11 grp_10
 
-    grp_12 ::= PIPE alts newline
+    grp_12 ::= BAR alts newline
 
     list_13 ::= grp_12 | list_13 grp_12
 

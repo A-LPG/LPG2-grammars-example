@@ -1,13 +1,13 @@
 {
   "id": "trapc",
-  "quality": "language_subset",
-  "parse_ok": false,
-  "status": "regenerated_from_g4",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
   "blockers": [],
-  "quality_notes": [
-    "antlr2lpg_structural_port"
-  ],
-  "parser_bytes": 1336,
+  "quality_notes": [],
+  "parser_bytes": 2138,
   "rule_approx": 18,
-  "start": "structOrUnion"
+  "start": "structOrUnion",
+  "tier": "B",
+  "example_count": 3
 }

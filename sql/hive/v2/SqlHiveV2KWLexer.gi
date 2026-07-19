@@ -4,7 +4,7 @@
 %options fp=SqlHiveV2KWLexer
 
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
 
 %Export
@@ -138,6 +138,7 @@
     KW_INSERT
     KW_INTERSECT
     KW_INTERVAL
+    KW_INT
     KW_INTO
     KW_IS
     KW_ISOLATION
@@ -411,6 +412,8 @@
     Keyword ::= f u n c t i o n /.$setResult($_KW_FUNCTION);./
     Keyword ::= g r o u p i n g /.$setResult($_KW_GROUPING);./
     Keyword ::= i n t e r v a l /.$setResult($_KW_INTERVAL);./
+    Keyword ::= i n t e g e r /.$setResult($_KW_INT);./
+    Keyword ::= i n t /.$setResult($_KW_INT);./
     Keyword ::= l o c a t i o n /.$setResult($_KW_LOCATION);./
     Keyword ::= m e t a d a t a /.$setResult($_KW_METADATA);./
     Keyword ::= o p e r a t o r /.$setResult($_KW_OPERATOR);./

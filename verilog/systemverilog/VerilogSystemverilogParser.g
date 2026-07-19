@@ -1,12 +1,12 @@
 -- AUTO-GENERATED from antlr/grammars-v4 verilog/systemverilog by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=VerilogSystemverilogParser
 %options package=lpg.grammars.verilog.systemverilog
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=VerilogSystemverilogLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -18,7 +18,7 @@
 %End
 
 %Rules
-    source_text ::= list_1
+    compiler_directive_list ::= list_1
 
     compiler_directive ::= begin_keywords_directive
            | celldefine_directive
@@ -2306,8 +2306,6 @@
     hex_base ::= HEX_BASE
 
     unbased_unsized_literal ::= UNBASED_UNSIZED_LITERAL
-
-    string_literal ::= STRING_LITERAL
 
     attribute_instance ::= LPAREN STAR attr_spec list_1160 STAR RPAREN
 

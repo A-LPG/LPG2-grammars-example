@@ -7,8 +7,7 @@
   "tier": "A",
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "beep_frame_examples"
+    "heuristic_default_subset"
   ],
   "parser_bytes": 726,
   "parser_lines": 31

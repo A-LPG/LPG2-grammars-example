@@ -1,16 +1,13 @@
 {
   "id": "matlab",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
   "blockers": [],
-  "quality_notes": [
-    "real_g4_port",
-    "statements_expr_if_assign_array"
-  ],
+  "quality_notes": [],
   "parser_bytes": 5506,
   "start": "file_",
   "example_count": 4,
   "notes": "real_g4_port",
-  "tier": "A"
+  "tier": "B"
 }

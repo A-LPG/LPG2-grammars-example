@@ -5,16 +5,13 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "real_g4_port",
-    "language_subset",
-    "structural_subset_from_g4",
-    "antlr2lpg_structural_port",
-    "FIX_7_true_port"
+    "curated_subset",
+    "real_g4_port"
   ],
-  "parser_bytes": 6367,
+  "parser_bytes": 8964,
   "rule_approx": 722,
   "start": "kotlinFile",
   "parser_lines": 305,
   "example_count": 4,
-  "tier": "A"
+  "tier": "D"
 }

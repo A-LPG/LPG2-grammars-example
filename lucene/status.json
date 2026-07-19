@@ -5,12 +5,11 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "real_g4_port",
-    "query_boolean_field_quoted_fuzzy"
+    "heuristic_default_subset"
   ],
   "parser_bytes": 2012,
   "start": "topLevelQuery",
   "example_count": 5,
   "notes": "real_g4_port",
-  "tier": "A"
+  "tier": "D"
 }

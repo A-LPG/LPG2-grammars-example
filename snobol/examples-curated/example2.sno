@@ -1,0 +1,4 @@
+           OUTPUT = "What is your name?"
+           Username = INPUT
+           OUTPUT = "Hi, " Username                                    :(END)
+ END

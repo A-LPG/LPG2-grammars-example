@@ -1,16 +1,22 @@
 -- AUTO-GENERATED from antlr/grammars-v4 hypertalk by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=HypertalkParser
 %options package=lpg.grammars.hypertalk
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=HypertalkLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
     EOF_TOKEN
+%End
+
+
+%Define
+    $ast_class /.Object./
+    $ast_type /.Object./
 %End
 
 %Start
@@ -22,7 +28,8 @@
 
     start_scriptlet ::= scriptlet
 
-    script ::= handler script
+    script ::= $empty
+           | handler script
            | function_ script
            | NEWLINE script
 
@@ -112,9 +119,9 @@
            | EXIT REPEAT
            | EXIT TO HYPERCARD
            | EXPORT PAINT TO FILE expression
-           | FIND opt_28 opt_29 expression of expression of MARKED cards
+           | FIND opt_28 opt_29 expression of expression of MARKED nt_cards
            | FIND opt_30 opt_31 expression of expression
-           | FIND opt_32 opt_33 expression of MARKED cards
+           | FIND opt_32 opt_33 expression of MARKED nt_cards
            | FIND opt_34 opt_35 expression
            | GET expression
            | GO opt_36 expression WITH VISUAL expression
@@ -122,9 +129,9 @@
            | GO BACK
            | GO BACK WITH VISUAL expression
            | HIDE expression
-           | HIDE card picture
-           | HIDE background picture
-           | HIDE picture of expression
+           | HIDE nt_card nt_picture
+           | HIDE background nt_picture
+           | HIDE nt_picture of expression
            | HIDE TITLEBAR
            | IMPORT PAINT FROM FILE expression
            | LOCK SCREEN
@@ -133,8 +140,8 @@
            | OPEN FILE expression
            | PASS handlerName
            | PLAY musicExpression
-           | POP card
-           | PUSH card
+           | POP nt_card
+           | PUSH nt_card
            | PUSH expression
            | PUT listExpression
            | PUT listExpression preposition expression
@@ -154,19 +161,19 @@
            | SET property TO propertyValue
            | SEND listExpression TO expression
            | SHOW expression
-           | SHOW card picture
-           | SHOW background picture
-           | SHOW picture of expression
+           | SHOW nt_card nt_picture
+           | SHOW background nt_picture
+           | SHOW nt_picture of expression
            | SHOW TITLEBAR
            | SORT sortChunkType expression sortDirection sortStyle
            | SORT sortChunkType expression sortDirection sortStyle BY expression
            | SORT sortDirection sortStyle BY expression
            | SORT opt_39 STACK sortDirection sortStyle BY expression
-           | SORT opt_40 cards opt_42 sortDirection sortStyle BY expression
-           | SORT opt_43 MARKED cards opt_45 sortDirection sortStyle BY expression
+           | SORT opt_40 nt_cards opt_42 sortDirection sortStyle BY expression
+           | SORT opt_43 MARKED nt_cards opt_45 sortDirection sortStyle BY expression
            | SORT expression sortDirection sortStyle BY expression
-           | SORT opt_46 cards of expression sortDirection sortStyle BY expression
-           | SORT opt_47 MARKED cards of expression sortDirection sortStyle BY expression
+           | SORT opt_46 nt_cards of expression sortDirection sortStyle BY expression
+           | SORT opt_47 MARKED nt_cards of expression sortDirection sortStyle BY expression
            | SPEAK expression
            | SPEAK expression WITH grp_48 VOICE
            | SPEAK expression WITH VOICE expression
@@ -203,9 +210,9 @@
     sortDirection ::= ASCENDING
            | DESCENDING
 
-    sortChunkType ::= opt_53 line of
-           | opt_54 item of
-           | opt_55 word of
+    sortChunkType ::= opt_53 nt_line of
+           | opt_54 nt_item of
+           | opt_55 nt_word of
            | opt_56 character of
 
     sortStyle ::= TEXT
@@ -233,15 +240,15 @@
            | ordinal character of
            | character expression TO expression of
            | character expression of
-           | ordinal word of
-           | word expression TO expression of
-           | word expression of
-           | ordinal item of
-           | item expression TO expression of
-           | item expression of
-           | ordinal line of
-           | line expression TO expression of
-           | line expression of
+           | ordinal nt_word of
+           | nt_word expression TO expression of
+           | nt_word expression of
+           | ordinal nt_item of
+           | nt_item expression TO expression of
+           | nt_item expression of
+           | ordinal nt_line of
+           | nt_line expression TO expression of
+           | nt_line expression of
 
     menu ::= MENU factor
            | ordinal MENU
@@ -258,7 +265,7 @@
            | opt_59 length propertyName of factor
 
     part ::= message
-           | card PART factor
+           | nt_card PART factor
            | background PART factor
            | ME
            | buttonPart
@@ -268,8 +275,8 @@
            | stackPart
            | windowPart
 
-    stackPart ::= opt_60 stack
-           | stack factor
+    stackPart ::= opt_60 nt_stack
+           | nt_stack factor
 
     buttonPart ::= opt_61 button ID factor
            | background button ID factor
@@ -279,19 +286,19 @@
            | ordinal background button
            | buttonPart of cardPart
 
-    fieldPart ::= card field ID factor
+    fieldPart ::= nt_card field ID factor
            | opt_64 field ID factor
-           | card field factor
+           | nt_card field factor
            | opt_65 field factor
-           | ordinal card field
+           | ordinal nt_card field
            | ordinal opt_66 field
            | fieldPart of cardPart
 
-    cardPart ::= opt_67 card
-           | card ID factor
-           | position card
-           | ordinal card
-           | card factor
+    cardPart ::= opt_67 nt_card
+           | nt_card ID factor
+           | position nt_card
+           | ordinal nt_card
+           | nt_card factor
            | cardPart of bkgndPart
            | cardPart of stackPart
 
@@ -302,7 +309,7 @@
            | position background
            | bkgndPart of stackPart
 
-    windowPart ::= opt_69 card WINDOW
+    windowPart ::= opt_69 nt_card WINDOW
            | opt_70 TOOL WINDOW
            | opt_71 PATTERN WINDOW
            | opt_72 MESSAGE WATCHER
@@ -387,11 +394,11 @@
            | NUMBER OF background PARTS
            | NUMBER OF opt_95 button
            | NUMBER OF background button
-           | NUMBER OF card field
+           | NUMBER OF nt_card field
            | NUMBER OF opt_96 field
-           | NUMBER OF cards
+           | NUMBER OF nt_cards
            | NUMBER OF background
-           | NUMBER OF MARKED cards
+           | NUMBER OF MARKED nt_cards
            | NUMBER OF MENUS
            | NUMBER OF WINDOWS
            | MENUS
@@ -412,15 +419,15 @@
            | NUMBER OF background PARTS
            | NUMBER OF opt_98 button
            | NUMBER OF background button
-           | NUMBER OF card field
+           | NUMBER OF nt_card field
            | NUMBER OF opt_99 field
-           | NUMBER OF cards
+           | NUMBER OF nt_cards
            | NUMBER OF background
-           | NUMBER OF MARKED cards
+           | NUMBER OF MARKED nt_cards
            | NUMBER OF character
-           | NUMBER OF word
-           | NUMBER OF item
-           | NUMBER OF line
+           | NUMBER OF nt_word
+           | NUMBER OF nt_item
+           | NUMBER OF nt_line
            | NUMBER OF MENUITEMS
            | NUMBER
            | RANDOM
@@ -451,7 +458,7 @@
 
     literal ::= constant
            | modifierKey
-           | mouseState
+           | nt_mouseState
            | knownType
            | findType
            | LITERAL
@@ -500,7 +507,7 @@
            | LAST
            | ANY
 
-    mouseState ::= UP
+    nt_mouseState ::= UP
            | DOWN
 
     modifierKey ::= COMMANDKEY
@@ -591,7 +598,7 @@
            | IMPORT
            | EXPORT
 
-    picture ::= PICTURE
+    nt_picture ::= PICTURE
            | PICT
 
     seconds ::= SECONDS
@@ -651,10 +658,10 @@
 
     message ::= opt_108 grp_109 grp_110
 
-    cards ::= CARDS
+    nt_cards ::= CARDS
            | CDS
 
-    card ::= CARD
+    nt_card ::= CARD
            | CD
 
     background ::= BACKGROUND
@@ -674,20 +681,20 @@
            | FLD
            | FLDS
 
-    stack ::= STACK
+    nt_stack ::= STACK
 
     character ::= CHARACTER
            | CHARACTERS
            | CHAR
            | CHARS
 
-    word ::= WORD
+    nt_word ::= WORD
            | WORDS
 
-    line ::= LINE
+    nt_line ::= LINE
            | LINES
 
-    item ::= ITEM
+    nt_item ::= ITEM
            | ITEMS
 
     of ::= OF
@@ -814,11 +821,11 @@
 
     opt_60 ::= THIS | $empty
 
-    opt_61 ::= card | $empty
+    opt_61 ::= nt_card | $empty
 
-    opt_62 ::= card | $empty
+    opt_62 ::= nt_card | $empty
 
-    opt_63 ::= card | $empty
+    opt_63 ::= nt_card | $empty
 
     opt_64 ::= background | $empty
 
@@ -880,15 +887,15 @@
 
     grp_93 ::= COMMANDKEY | CMDKEY
 
-    opt_94 ::= card | $empty
+    opt_94 ::= nt_card | $empty
 
-    opt_95 ::= card | $empty
+    opt_95 ::= nt_card | $empty
 
     opt_96 ::= background | $empty
 
-    opt_97 ::= card | $empty
+    opt_97 ::= nt_card | $empty
 
-    opt_98 ::= card | $empty
+    opt_98 ::= nt_card | $empty
 
     opt_99 ::= background | $empty
 

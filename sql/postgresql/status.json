@@ -5,14 +5,13 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "real_g4_port",
-    "antlr2lpg_structural_port",
-    "honest_subset: curated SELECT/INSERT examples; restored c_expr + optional target/qual_op; not full PG dialect"
+    "curated_subset",
+    "real_g4_port"
   ],
   "parser_bytes": 143294,
   "rule_approx": 1741,
   "start": "root",
   "parser_lines": 5512,
   "example_count": 3,
-  "tier": "A"
+  "tier": "D"
 }

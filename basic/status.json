@@ -1,18 +1,14 @@
 {
   "id": "basic",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
   "blockers": [],
-  "quality_notes": [
-    "antlr2lpg_structural_port",
-    "real_g4_port",
-    "language_subset"
-  ],
-  "parser_bytes": 9876,
+  "quality_notes": [],
+  "parser_bytes": 9880,
   "rule_approx": 183,
   "start": "prog",
   "parser_lines": 496,
-  "tier": "A",
+  "tier": "B",
   "example_count": 3
 }

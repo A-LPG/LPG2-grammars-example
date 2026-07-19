@@ -1,13 +1,15 @@
 {
   "id": "cql3",
   "quality": "language_subset",
-  "parse_ok": false,
-  "status": "regenerated_from_g4",
+  "parse_ok": true,
+  "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port"
+    "limited_examples_or_rules"
   ],
-  "parser_bytes": 27655,
+  "parser_bytes": 27602,
   "rule_approx": 538,
-  "start": "root"
+  "start": "root",
+  "tier": "B",
+  "example_count": 1
 }

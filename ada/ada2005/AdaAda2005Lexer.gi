@@ -18,7 +18,9 @@
 %Export
     IDENTIFIER
     NUMBER
+    NUMERIC_LITERAL_
     STRING
+    STRING_LITERAL_
     LPAREN
     RPAREN
     LBRACE
@@ -49,6 +51,84 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    ABORT
+    ABS
+    ABSTRACT
+    ACCEPT_
+    ACCESS
+    ALIASED
+    ALL
+    AND
+    ARRAY
+    BEGIN
+    BODY_
+    CASE
+    DECLARE
+    DELAY
+    DELTA
+    DIGITS
+    DO
+    DOTDOT
+    ELSE
+    ELSIF
+    END
+    ENTRY
+    EXCEPTION
+    EXIT
+    FATARROW
+    FOR
+    FUNCTION
+    GENERIC
+    GOTO
+    IDENTIFIER_
+    IF
+    IN
+    INTERFACE
+    IS
+    LIMITED
+    LOOP
+    LSHIFT
+    LTGT
+    MOD
+    NEW
+    NOT
+    NULL_
+    OF
+    OR
+    OTHERS
+    OUT
+    OVERRIDING
+    PACKAGE
+    PIPE
+    PRIVATE
+    PROCEDURE
+    PROTECTED
+    RAISE
+    RANGE_
+    RECORD
+    REM
+    RENAMES
+    REQUEUE
+    RETURN
+    REVERSE
+    RSHIFT
+    SELECT
+    SEPARATE
+    SQ
+    STARSTAR
+    SUBTYPE
+    SYNCHRONIZED
+    TAGGED
+    TASK
+    TERMINATE
+    THEN
+    TYPE
+    UNTIL
+    USE
+    WHEN
+    WHILE
+    WITH
+    XOR
 %End
 
 %Terminals
@@ -109,9 +189,9 @@
 %End
 
 %Rules
-    Token ::= STRING /. makeToken($_STRING); ./
-            | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+    Token ::= STRING /. makeToken($_STRING_LITERAL_); ./
+            | NUMBER /. makeToken($_NUMERIC_LITERAL_); ./
+            | IDENTIFIER /. checkForKeyWord($_IDENTIFIER_); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./

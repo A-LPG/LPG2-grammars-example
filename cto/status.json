@@ -7,8 +7,8 @@
   "blockers": [],
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "language_subset"
+    "heuristic_default_subset"
   ],
-  "notes": "real_g4_port of CtoParser.g4 modelUnit/namespace/asset/concept subset"
+  "notes": "real_g4_port of CtoParser.g4 modelUnit/namespace/asset/concept subset",
+  "parser_bytes": 4682
 }

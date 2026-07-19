@@ -3,6 +3,7 @@
   "lexer": "ArdenLexer",
   "parser": "ArdenParser",
   "example_globs": [
-    "examples/**/*"
-  ]
+    "examples-curated/**/*"
+  ],
+  "parser_template": "btParserTemplateF.gi"
 }

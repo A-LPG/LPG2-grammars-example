@@ -1,16 +1,22 @@
 -- AUTO-GENERATED from antlr/grammars-v4 icalendar by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=IcalendarParser
 %options package=lpg.grammars.icalendar
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=IcalendarLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
     EOF_TOKEN
+%End
+
+
+%Define
+    $ast_class /.Object./
+    $ast_type /.Object./
 %End
 
 %Start
@@ -1134,7 +1140,9 @@
 
     list_6 ::= $empty | list_6 calprop
 
-    list_7 ::= component | list_7 component
+    list_7 ::= $empty
+           | component
+           | list_7 component
 
     seq_8 ::= SCOL other_param
 
@@ -1534,7 +1542,27 @@
 
     grp_206 ::= CRLF | CONTROL | DQUOTE
 
-    grp_207 ::= CRLF | CONTROL | DQUOTE | SCOL | COL | BSLASH | COMMA
+    grp_207 ::= alpha
+           | digit
+           | WSP
+           | EXCLAMATION
+           | HASH
+           | DOLLAR
+           | AMP
+           | FSLASH
+           | PLUS
+           | MINUS
+           | USCORE
+           | LPAREN
+           | RPAREN
+           | STAR
+           | ASSIGN
+           | AT
+           | PERCENT
+           | TILDE
+           | VERTICAL_BAR
+           | COMMA
+           | DOT
 
     grp_208 ::= PLUS | MINUS
 

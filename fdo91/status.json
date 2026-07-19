@@ -5,9 +5,9 @@
   "status": "ported",
   "blockers": [],
   "tier": "A",
-  "quality": "language_subset",
+  "quality": "language_port",
   "quality_notes": [
-    "heuristic_default_subset"
+    "real_g4_port"
   ],
   "parser_bytes": 1069
 }

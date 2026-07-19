@@ -1,10 +1,10 @@
 -- AUTO-GENERATED from antlr/grammars-v4 elixir by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=ElixirParser
 %options package=lpg.grammars.elixir
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=ElixirLexer.gi
 %options automatic_ast=none
 %options conflicts
@@ -202,7 +202,7 @@
 
     bitstring ::= LSHIFT opt_100 RSHIFT
 
-    module_def ::= DEFMODULE ALIAS do_block
+    module_def ::= DEFMODULE IDENTIFIER do_block
 
     function_def ::= grp_101 variable list_104 opt_106 do_block
            | grp_107 variable list_110 opt_112 COMMA DO COLON expression

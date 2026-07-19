@@ -6,7 +6,7 @@
 %options package=lpg.grammars.vhdl.vhdl2008
 %options template=dtParserTemplateF.gi
 %options import_terminals=VhdlVhdl2008Lexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -14,7 +14,7 @@
 %End
 
 %Start
-    abstract_literal
+    design_file
 %End
 
 %Rules

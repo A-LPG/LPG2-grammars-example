@@ -1,20 +1,14 @@
 {
   "id": "wren",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
   "blockers": [],
-  "quality_notes": [
-    "antlr2lpg_structural_port",
-    "real_g4_port",
-    "curated_bool_literal",
-    "language_subset",
-    "examples_still_too_thin_for_harsh_bar"
-  ],
-  "parser_bytes": 7519,
+  "quality_notes": [],
+  "parser_bytes": 7593,
   "rule_approx": 135,
   "start": "script",
   "example_count": 3,
-  "tier": "A",
+  "tier": "B",
   "parser_lines": 381
 }

@@ -3,7 +3,7 @@
 %options template=KeywordTemplateF.gi
 %options fp=Fortran90KWLexer
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
 %Export
     X

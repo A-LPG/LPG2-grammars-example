@@ -7,7 +7,8 @@
   "blockers": [],
   "quality": "language_subset",
   "quality_notes": [
-    "curated_subset"
+    "curated_subset",
+    "real_g4_port"
   ],
   "parser_bytes": 4010
 }

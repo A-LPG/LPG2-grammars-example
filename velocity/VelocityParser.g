@@ -1,12 +1,12 @@
 -- AUTO-GENERATED from antlr/grammars-v4 velocity by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=VelocityParser
 %options package=lpg.grammars.velocity
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=VelocityLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -62,9 +62,9 @@
 
     expressions ::= expression list_9
 
-    set_directive ::= SET expression ASSIGN expression CPAR
+    set_directive ::= SET OPAR expression ASSIGN expression CPAR
 
-    if_directive ::= IF expression CPAR block list_10 opt_11 end
+    if_directive ::= IF OPAR expression CPAR block list_10 opt_11 end
 
     elseif_directive ::= ELSEIF expression CPAR block
 
@@ -119,7 +119,7 @@
 
     map_entry ::= expression COLON expression
 
-    id ::= ID
+    id ::= IDENTIFIER
            | K_LT
            | K_LE
            | K_GT

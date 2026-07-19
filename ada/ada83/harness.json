@@ -3,6 +3,6 @@
   "lexer": "AdaAda83Lexer",
   "parser": "AdaAda83Parser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

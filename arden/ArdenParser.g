@@ -1,12 +1,12 @@
 -- AUTO-GENERATED from antlr/grammars-v4 arden by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=ArdenParser
 %options package=lpg.grammars.arden
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=ArdenLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
@@ -28,53 +28,53 @@
 
     resourcesCategory ::= RESOURCES COLON defaultSlot list_5
 
-    titleSlot ::= TITLE TEXTMODECOLON slotText ADSC
+    titleSlot ::= TITLE textModeColon slotText ADSC
 
     slotText ::= list_7
 
-    mlmNameSlot ::= grp_8 MlMCOLON MLMID DSC
+    mlmNameSlot ::= grp_8 mlmColon mlmId slotEnd
 
-    ardenVersionSlot ::= ARDEN COLON ARDEN_VERSION DSC
+    ardenVersionSlot ::= ARDEN COLON ARDEN_VERSION slotEnd
 
-    versionSlot ::= VERSION TEXTMODECOLON slotText ADSC
+    versionSlot ::= VERSION textModeColon slotText ADSC
 
-    institutionSlot ::= INSTITUTION_SLOT slotText ADSC
+    institutionSlot ::= institutionHeader slotText ADSC
 
-    authorSlot ::= AUTHOR TEXTMODECOLON slotText ADSC
+    authorSlot ::= AUTHOR textModeColon slotText ADSC
 
-    specialistSlot ::= SPECIALIST TEXTMODECOLON slotText ADSC
+    specialistSlot ::= SPECIALIST textModeColon slotText ADSC
 
-    dateSlot ::= DATE COLON grp_9 DSC
+    dateSlot ::= DATE COLON grp_9 slotEnd
 
-    validationSlot ::= VALIDATION COLON VALIDATION_CODE DSC
+    validationSlot ::= VALIDATION COLON VALIDATION_CODE slotEnd
 
-    purposeSlot ::= PURPOSE TEXTMODECOLON slotText ADSC
+    purposeSlot ::= PURPOSE textModeColon slotText ADSC
 
-    explanationSlot ::= EXPLANATION TEXTMODECOLON slotText ADSC
+    explanationSlot ::= EXPLANATION textModeColon slotText ADSC
 
-    keywordsSlot ::= KEYWORDS TEXTMODECOLON slotText ADSC
+    keywordsSlot ::= KEYWORDS textModeColon slotText ADSC
 
-    citationsSlot ::= CITATIONS TEXTMODECOLON slotText ADSC
+    citationsSlot ::= CITATIONS textModeColon slotText ADSC
 
-    linksSlot ::= LINKS TEXTMODECOLON slotText ADSC
+    linksSlot ::= LINKS textModeColon slotText ADSC
 
-    typeSlot ::= TYPE COLON TYPE_CODE DSC
+    typeSlot ::= TYPE COLON TYPE_CODE slotEnd
 
-    dataSlot ::= DATA COLON opt_10 list_12 opt_13 DSC
+    dataSlot ::= DATA COLON opt_10 list_12 opt_13 slotEnd
 
-    prioritySlot ::= PRIORITY COLON NUMBER DSC
+    prioritySlot ::= PRIORITY COLON NUMBER slotEnd
 
-    evokeSlot ::= EVOKE COLON opt_14 list_16 opt_17 DSC
+    evokeSlot ::= EVOKE COLON opt_14 list_16 opt_17 slotEnd
 
-    logicSlot ::= LOGIC COLON opt_18 list_20 opt_21 DSC
+    logicSlot ::= LOGIC COLON opt_18 list_20 opt_21 slotEnd
 
-    actionSlot ::= ACTION COLON opt_22 list_24 opt_25 DSC
+    actionSlot ::= ACTION COLON opt_22 list_24 opt_25 slotEnd
 
-    urgencySlot ::= URGENCY COLON grp_26 DSC
+    urgencySlot ::= URGENCY COLON grp_26 slotEnd
 
-    defaultSlot ::= DEFAULT_SLOT TWOCHARCODE DSC
+    defaultSlot ::= defaultHeader twoCharCode slotEnd
 
-    languageSlot ::= LANGUAGE TWOCHARCOLON TWOCHARCODE opt_28 list_30 opt_31 DSC
+    languageSlot ::= LANGUAGE twoCharColon twoCharCode opt_28 list_30 opt_31 slotEnd
 
     dataStatement ::= identifierBecomes grp_32
            | grp_33 dataIdentifierAssign
@@ -345,7 +345,7 @@
 
     list_5 ::= languageSlot | list_5 languageSlot
 
-    grp_6 ::= UTEXT | TEXTMODECOLON | TEXT
+    grp_6 ::= UTEXT | textModeColon | TEXT | IDENTIFIER | NUMBER | STRING
 
     list_7 ::= grp_6 | list_7 grp_6
 
@@ -882,5 +882,22 @@
     grp_273 ::= YEAR | MONTH | WEEK | DAY | HOUR | MINUTE | SECOND
 
     grp_274 ::= YEAR | MONTH | DAY | HOUR | MINUTE | SECOND
+
+    textModeColon ::= TEXTMODECOLON | COLON
+
+    mlmColon ::= MlMCOLON | COLON
+
+    twoCharColon ::= TWOCHARCOLON | COLON
+
+    slotEnd ::= DSC | ADSC
+
+    mlmId ::= MLMID | IDENTIFIER
+
+    institutionHeader ::= INSTITUTION_SLOT | INSTITUTION COLON
+
+    defaultHeader ::= DEFAULT_SLOT | DEFAULT COLON
+
+    twoCharCode ::= TWOCHARCODE | IDENTIFIER
+
 
 %End

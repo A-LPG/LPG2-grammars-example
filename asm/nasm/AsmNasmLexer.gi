@@ -2764,11 +2764,16 @@
 %End
 
 %Rules
-    Token ::= identifier /. checkForKeyWord(); ./
+    Token ::= LF /. makeToken($_EOL); ./
+            | CR /. makeToken($_EOL); ./
+            | 's' 'e' 'c' 't' 'i' 'o' 'n' /. makeToken($_SECTION); ./
+            | 'g' 'l' 'o' 'b' 'a' 'l' /. makeToken($_GLOBAL); ./
+            | identifier /. checkForKeyWord($_NAME); ./
+            | name_token /. makeToken($_NAME); ./
             | number     /. makeToken($_NUMBER); ./
             | string     /. makeToken($_STRING); ./
-            | charlit    /. makeToken($_CHAR_LITERAL); ./
             | LineComment /. skipToken(); ./
+            | HashComment /. skipToken(); ./
             | white /. skipToken(); ./
             | 'y' 'i' 'e' 'l' 'd' '*' /. makeToken($_YIELDSTAR); ./
             | '>' '>' '>' '=' /. makeToken($_URSHIFTEQ); ./
@@ -2847,6 +2852,8 @@
     identifier -> Letter
                 | identifier Letter
                 | identifier Digit
+                | identifier '-' Letter
+                | identifier '-' Digit
 
     Letter -> LowerCaseLetter
             | UpperCaseLetter
@@ -2883,26 +2890,35 @@
 
     NotDQ -> Letter | Digit | Space | HT | SingleQuote | ',' | '.' | ':' | ';' | '+' | '-' |
              '*' | '/' | '=' | '_' | '!' | '?' | '@' | '#' | '$' | '%' | '&' | '|' |
-             '^' | '~' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' | Escape
+             '^' | '~' | '`' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' | Escape
 
     NotSQ -> Letter | Digit | Space | HT | DoubleQuote | ',' | '.' | ':' | ';' | '+' | '-' |
              '*' | '/' | '=' | '_' | '!' | '?' | '@' | '#' | '$' | '%' | '&' | '|' |
-             '^' | '~' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' | Escape
+             '^' | '~' | '`' | '(' | ')' | '[' | ']' | '{' | '}' | '<' | '>' | Escape
 
     Escape ::= BackSlash EscapeChar
     EscapeChar -> DoubleQuote | SingleQuote | BackSlash | '/' | n | r | t | b | f
 
-    charlit ::= SingleQuote NotSQ SingleQuote
-
     LineComment ::= '/' '/' LineCommentBody
+    HashComment ::= Sharp HashCommentBody
+    HashCommentBody -> $empty
+                     | HashCommentBody NotNL
     LineCommentBody -> $empty
                      | LineCommentBody NotNL
     NotNL -> Letter | Digit | Space | HT | SpecialNotNL
-    SpecialNotNL -> '+' | '-' | '/' | '*' | '(' | ')' | '!' | '@' | '~' |
+    SpecialNotNL -> '+' | '-' | '/' | '*' | '(' | ')' | '!' | '@' | '`' | '~' |
                     '%' | '&' | '^' | ':' | ';' | DoubleQuote | SingleQuote | '|' | '{' | '}' |
                     '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | '_' | BackSlash
 
+    name_token -> NameStart NameRest
+    NameStart -> LowerCaseLetter | UpperCaseLetter | Dot | QMark | Underscore
+    NameRest -> $empty | NameRest NameChar
+    NameChar -> LowerCaseLetter | UpperCaseLetter | Digit | Dot | DollarSign | Sharp |
+                AtSign | Tilde | QMark | Underscore
+    QMark -> ?
+    Underscore -> _
+
     white -> WSChar
            | white WSChar
-    WSChar -> Space | LF | CR | HT | FF
+    WSChar -> Space | HT | FF
 %End

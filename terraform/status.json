@@ -1,15 +1,11 @@
 {
   "id": "terraform",
-  "quality": "language_subset",
+  "quality": "language_port",
   "parse_ok": true,
   "status": "ported",
   "blockers": [],
-  "quality_notes": [
-    "real_g4_port",
-    "antlr2lpg_structural_port",
-    "curated_smoke"
-  ],
+  "quality_notes": [],
   "parser_bytes": 3617,
   "example_count": 4,
-  "tier": "A"
+  "tier": "B"
 }

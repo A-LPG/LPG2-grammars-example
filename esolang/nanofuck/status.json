@@ -7,10 +7,7 @@
   "tier": "A",
   "quality": "language_subset",
   "quality_notes": [
-    "real_g4_port",
-    "tiny_upstream_g4_full_structural_port",
-    "curated_esolang_programs_toggle_swap_toffoli",
-    "left_rec_exp_as_atom_sequence"
+    "heuristic_default_subset"
   ],
   "parser_bytes": 551
 }

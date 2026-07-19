@@ -16,6 +16,9 @@
 %End
 
 %Export
+    NEWLINE
+    ACTION
+    MEMO
     IDENTIFIER
     NUMBER
     STRING
@@ -49,6 +52,8 @@
     BACKTICK
     QUOTE
     BACKSLASH
+    ACTION
+    MEMO
 %End
 
 %Terminals
@@ -111,7 +116,7 @@
 %Rules
     Token ::= STRING /. makeToken($_STRING); ./
             | NUMBER /. makeToken($_NUMBER); ./
-            | IDENTIFIER /. makeToken($_IDENTIFIER); ./
+            | IDENTIFIER /. checkForKeyWord(); ./
             | '(' /. makeToken($_LPAREN); ./
             | ')' /. makeToken($_RPAREN); ./
             | '{' /. makeToken($_LBRACE); ./
@@ -145,6 +150,9 @@
             | SLComment     /. skipToken(); ./
             | MLComment     /. skipToken(); ./
             | white /. skipToken(); ./
+            | NewlineTok /. makeToken($_NEWLINE); ./
+
+    NewlineTok ::= LF | CR | LF CR | CR LF
 
     IDENTIFIER ::= IdStart
                  | IDENTIFIER IdStart
@@ -199,6 +207,6 @@
                        '%' | '&' | '^' | ':' | ';' | "'" | '"' | '|' | '{' | '}' |
                        '[' | ']' | '?' | ',' | '.' | '<' | '>' | '=' | '#' | '$' | BackSlash
 
-    white -> WSChar | white WSChar
-    WSChar -> Space | LF | CR | HT | FF
+    white -> SpaceWS | HT | FF
+    SpaceWS -> Space | SpaceWS Space
 %End

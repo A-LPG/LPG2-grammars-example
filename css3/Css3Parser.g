@@ -1,10 +1,10 @@
 -- AUTO-GENERATED from antlr/grammars-v4 css3 by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=Css3Parser
 %options package=lpg.grammars.css3
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=Css3Lexer.gi
 %options automatic_ast=none
 %options conflicts
@@ -197,7 +197,7 @@
 
     generalEnclosed ::= grp_104 EMPTY_LIT
 
-    STRING ::= Url_ ws STRING ws RPAREN
+    cssString ::= Url_ ws STRING ws RPAREN
            | Url
 
     var_ ::= Var ws Variable ws RPAREN ws
@@ -233,7 +233,7 @@
 
     fontFamilyNameList ::= fontFamilyName list_127
 
-    fontFamilyName ::= STRING
+    fontFamilyName ::= cssString
            | IDENTIFIER list_129
 
     featureValueBlock ::= featureType ws LBRACE ws opt_130 list_133 RBRACE ws
@@ -242,7 +242,7 @@
 
     featureValueDefinition ::= IDENTIFIER ws COLON ws number list_135
 
-    IDENTIFIER ::= Ident
+    cssIdent ::= IDENTIFIER
            | MediaOnly
            | Not
            | And
@@ -252,7 +252,7 @@
 
     ws ::= list_137
 
-    grp_2 ::= comment_tok | space_tok | IDENTIFIER | IDENTIFIER
+    grp_2 ::= comment_tok | space_tok | IDENTIFIER
 
     list_3 ::= $empty | list_3 grp_2
 
@@ -260,7 +260,7 @@
 
     list_4 ::= $empty | list_4 grp_1
 
-    grp_6 ::= comment_tok | space_tok | IDENTIFIER | IDENTIFIER
+    grp_6 ::= comment_tok | space_tok | IDENTIFIER
 
     list_7 ::= $empty | list_7 grp_6
 
@@ -268,7 +268,7 @@
 
     list_8 ::= $empty | list_8 grp_5
 
-    grp_10 ::= comment_tok | space_tok | IDENTIFIER | IDENTIFIER
+    grp_10 ::= comment_tok | space_tok | IDENTIFIER
 
     list_11 ::= $empty | list_11 grp_10
 
@@ -276,7 +276,7 @@
 
     list_12 ::= $empty | list_12 grp_9
 
-    grp_14 ::= comment_tok | space_tok | IDENTIFIER | IDENTIFIER
+    grp_14 ::= comment_tok | space_tok | IDENTIFIER
 
     list_15 ::= $empty | list_15 grp_14
 
@@ -284,25 +284,25 @@
 
     list_16 ::= $empty | list_16 grp_13
 
-    grp_17 ::= STRING | STRING
+    grp_17 ::= STRING
 
-    grp_18 ::= STRING | STRING
+    grp_18 ::= STRING
 
-    grp_19 ::= STRING | STRING
+    grp_19 ::= STRING
 
-    grp_20 ::= STRING | STRING
+    grp_20 ::= STRING
 
     seq_21 ::= namespacePrefix ws
 
     opt_22 ::= seq_21 | $empty
 
-    grp_23 ::= STRING | STRING
+    grp_23 ::= STRING
 
     seq_24 ::= namespacePrefix ws
 
     opt_25 ::= seq_24 | $empty
 
-    grp_26 ::= STRING | STRING
+    grp_26 ::= STRING
 
     seq_27 ::= Comma ws mediaQuery
 
@@ -366,7 +366,7 @@
 
     opt_57 ::= typeNamespacePrefix | $empty
 
-    grp_59 ::= PrefixMatch | SuffixMatch | SubstringMatch | EQ | IDENTIFIER | IDENTIFIER
+    grp_59 ::= PrefixMatch | SuffixMatch | SubstringMatch | EQ | IDENTIFIER
 
     grp_60 ::= IDENTIFIER | STRING
 
@@ -378,7 +378,7 @@
 
     grp_63 ::= IDENTIFIER | functionalPseudo
 
-    grp_65 ::= Plus | Minus | IDENTIFIER | UnknownDimension | NUMBER | STRING | IDENTIFIER
+    grp_65 ::= Plus | Minus | IDENTIFIER | UnknownDimension | NUMBER | STRING
 
     grp_64 ::= grp_65 ws
 

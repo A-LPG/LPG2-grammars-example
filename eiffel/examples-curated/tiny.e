@@ -1,4 +1,4 @@
 class TINY
 feature
-  n: INTEGER
+  f
 end

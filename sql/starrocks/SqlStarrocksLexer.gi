@@ -642,8 +642,8 @@
 %End
 
 %Rules
-    Token ::= identifier /. checkForKeyWord(); ./
-            | number     /. makeToken($_NUMBER); ./
+    Token ::= identifier /. checkForKeyWord($_LETTER_IDENTIFIER); ./
+            | number     /. makeToken($_DECIMAL_VALUE); ./
             | string     /. makeToken($_STRING); ./
             | charlit    /. makeToken($_CHAR_LITERAL); ./
             | LineComment /. skipToken(); ./
@@ -706,7 +706,7 @@
             | '.' /. makeToken($_DOT); ./
             | '/' /. makeToken($_SLASH); ./
             | ':' /. makeToken($_COLON); ./
-            | ';' /. makeToken($_SEMI); ./
+            | ';' /. makeToken($_SEMICOLON); ./
             | '<' /. makeToken($_LT); ./
             | '=' /. makeToken($_EQ); ./
             | '>' /. makeToken($_GT); ./

@@ -4,7 +4,7 @@
 %options fp=SqlAthenaKWLexer
 
 %Include
-    KWLexerLowerCaseMapF.gi
+    KWLexerFoldedCaseMapF.gi
 %End
 
 %Export

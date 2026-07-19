@@ -3,6 +3,6 @@
   "lexer": "SnobolLexer",
   "parser": "SnobolParser",
   "example_globs": [
-    "examples/**/*"
+    "examples-curated/**/*"
   ]
 }

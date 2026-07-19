@@ -1,17 +1,15 @@
 {
   "id": "modelica",
   "quality": "language_subset",
-  "parse_ok": false,
-  "status": "failed",
-  "blockers": [
-    "parse_examples_failed"
-  ],
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
   "quality_notes": [
-    "antlr2lpg_structural_port"
+    "limited_examples_or_rules"
   ],
-  "parser_bytes": 12775,
+  "parser_bytes": 12879,
   "rule_approx": 260,
   "start": "stored_definition",
   "example_count": 1,
-  "tier": "A"
+  "tier": "B"
 }

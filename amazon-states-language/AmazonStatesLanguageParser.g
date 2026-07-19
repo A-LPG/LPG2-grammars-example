@@ -1,10 +1,10 @@
 -- AUTO-GENERATED from antlr/grammars-v4 amazon-states-language by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=AmazonStatesLanguageParser
 %options package=lpg.grammars.amazon_states_language
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=AmazonStatesLanguageLexer.gi
 %options automatic_ast=none
 %options conflicts
@@ -563,7 +563,7 @@
 
     list_46 ::= $empty | list_46 seq_45
 
-    grp_47 ::= NUMBER | NUMBER
+    grp_47 ::= NUMBER | INT
 
     grp_48 ::= FULL | NONE
 

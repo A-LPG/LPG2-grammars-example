@@ -5,9 +5,7 @@
   "status": "ported",
   "blockers": [],
   "quality_notes": [
-    "real_g4_port",
-    "lexer_identifier_number",
-    "curated_multiline_prefix_programs"
+    "heuristic_default_subset"
   ],
   "notes": "Prefix-arithmetic / fun / assign from scotty.g4; IDENTIFIER/NUMBER lexed for LALR.",
   "example_count": 3,

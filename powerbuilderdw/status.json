@@ -3,15 +3,13 @@
   "quality": "language_subset",
   "parse_ok": true,
   "status": "ported",
-  "tier": "A",
+  "tier": "B",
   "quality_notes": [
-    "real_g4_port",
-    "dw_header_table_column_subset",
-    "folded_case_keywords",
-    "curated_release_header_column"
+    "heuristic_default_subset"
   ],
   "blockers": [],
   "example_count": 3,
   "parser_lines": 81,
-  "start": "start_rule"
+  "start": "start_rule",
+  "parser_bytes": 2357
 }

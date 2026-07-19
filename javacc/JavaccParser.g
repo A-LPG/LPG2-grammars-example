@@ -1,16 +1,21 @@
 -- AUTO-GENERATED from antlr/grammars-v4 javacc by tools/antlr2lpg.py
 -- Structural port + LALR fixups (expression layering). Not token-stream soup.
 
-%Options la=3
+%Options la=3,backtrack
 %Options fp=JavaccParser
 %options package=lpg.grammars.javacc
-%options template=dtParserTemplateF.gi
+%options template=btParserTemplateF.gi
 %options import_terminals=JavaccLexer.gi
-%options automatic_ast=nested
+%options automatic_ast=none
 %options conflicts
 
 %Eof
     EOF_TOKEN
+%End
+
+%Define
+    $ast_class /.Object./
+    $ast_type /.Object./
 %End
 
 %Start
@@ -22,13 +27,13 @@
 
     rsignedshift ::= GT GT
 
-    javacc_input ::= javacc_options _PARSER_BEGIN_ OP_47131 identifier OP_50862 compilationUnit _PARSER_END_ OP_47131 identifier OP_50862 list_1
+    javacc_input ::= javacc_options PARSER_BEGIN LPAREN identifier RPAREN compilationUnit PARSER_END LPAREN identifier RPAREN list_1
 
     javacc_options ::= opt_3
 
-    option_binding ::= grp_4 OP_71408 grp_5 OP_83965
+    option_binding ::= grp_4 EQ grp_5 SEMI
 
-    stringList ::= OP_47131 stringLiteral list_7 OP_50862
+    stringList ::= LPAREN stringLiteral list_7 RPAREN
 
     production ::= javacode_production
            | cppcode_production
@@ -36,20 +41,20 @@
            | token_manager_decls
            | bnf_production
 
-    javacode_production ::= _JAVACODE_ resultType identifier formalParameters opt_11 opt_12 block
+    javacode_production ::= JAVACODE resultType identifier formalParameters opt_11 opt_12 block
 
-    cppcode_production ::= _CPPCODE_ accessModifier resultType identifier formalParameters opt_16 block
+    cppcode_production ::= CPPCODE accessModifier resultType identifier formalParameters opt_16 block
 
-    bnf_production ::= resultType identifier formalParameters opt_20 opt_21 OP_97517 block LIT_83859
+    bnf_production ::= resultType identifier formalParameters opt_20 opt_21 COLON block LBRACE
 
     accessModifier ::= opt_23
 
-    regular_expr_production ::= opt_27 regexpr_kind opt_29 OP_97517 LIT_83859
+    regular_expr_production ::= opt_27 regexpr_kind opt_29 COLON LBRACE
 
-    token_manager_decls ::= _TOKEN_MGR_DECLS_ OP_97517 opt_30
+    token_manager_decls ::= TOKENMGR_DECLS_ COLON opt_30
 
-    regexpr_kind ::= _TOKEN_
-           | _SPECIAL_TOKEN_
+    regexpr_kind ::= TOKEN
+           | _SPECIALTOKEN
            | _SKIP_
            | _MORE_
 
@@ -61,76 +66,76 @@
 
     local_lookahead ::= opt_41 opt_42 opt_43 opt_44 opt_45
 
-    expansion_unit ::= _LOOKAHEAD_ OP_47131 local_lookahead OP_50862
+    expansion_unit ::= LOOKAHEAD LPAREN local_lookahead RPAREN
            | block
-           | OP_48184 expansion_choices OP_43701
-           | _TRY_ LIT_83859 list_49 opt_51
+           | LBRACKET expansion_choices RBRACKET
+           | TRY LBRACE list_49 opt_51
            | opt_53 grp_54
-           | OP_47131 expansion_choices OP_50862 opt_59
+           | LPAREN expansion_choices RPAREN opt_59
 
     regular_expression ::= stringLiteral
            | LT opt_62 complex_regular_expression_choices GT
-           | OP_47647 identifier OP_47054
-           | OP_47647 _EOF_ OP_47054
+           | LT identifier GT
+           | LT _EOF_ GT
 
     complex_regular_expression_choices ::= complex_regular_expression list_64
 
     complex_regular_expression ::= list_65
 
     complex_regular_expression_unit ::= stringLiteral
-           | OP_47647 identifier OP_47054
+           | LT identifier GT
            | character_list
-           | OP_47131 complex_regular_expression_choices OP_50862 opt_67
+           | LPAREN complex_regular_expression_choices RPAREN opt_67
 
-    character_list ::= opt_68 OP_48184 opt_72 OP_43701
+    character_list ::= opt_68 LBRACKET opt_72 RBRACKET
 
     character_descriptor ::= stringLiteral opt_74
 
     identifier ::= IDENTIFIER
 
-    node_descriptor ::= OP_89694 grp_75 opt_78
+    node_descriptor ::= LT grp_75 opt_78
 
-    node_descriptor_expression ::= OP_47131
-           | OP_47131 node_descriptor_expression OP_50862
+    node_descriptor_expression ::= LPAREN
+           | LPAREN node_descriptor_expression RPAREN
 
     javaIdentifier ::= grp_79
 
     compilationUnit ::= opt_80 list_81 list_82
 
-    packageDeclaration ::= modifiers _PACKAGE_ name OP_83965
+    packageDeclaration ::= modifiers PACKAGE name SEMI
 
-    importDeclaration ::= LIT_83859
+    importDeclaration ::= LBRACE
 
     modifiers ::= list_85
 
-    typeDeclaration ::= OP_83965
+    typeDeclaration ::= SEMI
            | modifiers grp_86
 
     classOrInterfaceDeclaration ::= grp_87 javaIdentifier opt_88 opt_89 opt_90 classOrInterfaceBody
 
-    extendsList ::= _EXTENDS_ classOrInterfaceType list_92
+    extendsList ::= EXTENDS classOrInterfaceType list_92
 
-    implementsList ::= _IMPLEMENTS_ classOrInterfaceType list_94
+    implementsList ::= IMPLEMENTS classOrInterfaceType list_94
 
-    enumDeclaration ::= _ENUM_ javaIdentifier opt_95 enumBody
+    enumDeclaration ::= ENUM javaIdentifier opt_95 enumBody
 
-    enumBody ::= LIT_83859
+    enumBody ::= LBRACE
 
     enumConstant ::= modifiers javaIdentifier opt_96 opt_97
 
-    typeParameters ::= OP_47647 typeParameter list_99 OP_47054
+    typeParameters ::= LT typeParameter list_99 GT
 
     typeParameter ::= javaIdentifier opt_100
 
-    typeBound ::= _EXTENDS_ classOrInterfaceType list_102
+    typeBound ::= EXTENDS classOrInterfaceType list_102
 
-    classOrInterfaceBody ::= LIT_83859
+    classOrInterfaceBody ::= LBRACE list_244 RBRACE
 
     classOrInterfaceBodyDeclaration ::= initializer
            | modifiers grp_103
-           | OP_83965
+           | SEMI
 
-    fieldDeclaration ::= type variableDeclarator list_105 OP_83965
+    fieldDeclaration ::= type variableDeclarator list_105 SEMI
 
     variableDeclarator ::= variableDeclaratorId opt_107
 
@@ -139,20 +144,20 @@
     variableInitializer ::= arrayInitializer
            | expression
 
-    arrayInitializer ::= LIT_83859
+    arrayInitializer ::= LBRACE
 
     methodDeclaration ::= opt_110 resultType methodDeclarator opt_112 grp_113
 
     methodDeclarator ::= javaIdentifier formalParameters list_115
 
-    formalParameters ::= OP_47131 opt_119 OP_50862
+    formalParameters ::= LPAREN opt_119 RPAREN
 
     formalParameter ::= modifiers type opt_122 variableDeclaratorId
 
-    constructorDeclaration ::= opt_123 javaIdentifier formalParameters opt_125 LIT_83859
+    constructorDeclaration ::= opt_123 javaIdentifier formalParameters opt_125 LBRACE
 
-    explicitConstructorInvocation ::= _THIS_ arguments OP_83965
-           | opt_127 _SUPER_ arguments OP_83965
+    explicitConstructorInvocation ::= THIS arguments SEMI
+           | opt_127 SUPER arguments SEMI
 
     initializer ::= opt_128 block
 
@@ -162,31 +167,31 @@
     referenceType ::= primitiveType list_130
            | seq_132 list_134
 
-    template ::= _TEMPLATE_ OP_47647 templateBase list_136 OP_47054
+    template ::= TEMPLATE LT templateBase list_136 GT
 
-    templateBase ::= templatePack opt_137 IDENTIFIER
+    templateBase ::= tplPack opt_137 IDENTIFIER
 
-    templatePack ::= _CLASS_
-           | _TYPENAME_
+    tplPack ::= CLASS
+           | TYPENAME
 
     classOrInterfaceType ::= opt_138 IDENTIFIER opt_139 list_143
 
-    typeArguments ::= OP_47647 opt_148 OP_47054
+    typeArguments ::= LT opt_148 GT
 
     typeArgument ::= referenceType
-           | OP_70700 opt_149
+           | BANG opt_149
 
-    wildcardBounds ::= _EXTENDS_ referenceType
-           | _SUPER_ referenceType
+    wildcardBounds ::= EXTENDS referenceType
+           | SUPER referenceType
 
-    primitiveType ::= _BOOLEAN_
-           | _CHAR_
-           | _BYTE_
-           | _SHORT_
-           | _INT_
-           | _LONG_
-           | _FLOAT_
-           | _DOUBLE_
+    primitiveType ::= BOOLEAN
+           | CHAR
+           | BYTE
+           | SHORT
+           | INT
+           | LONG
+           | FLOAT
+           | DOUBLE
 
     resultType ::= grp_150
 
@@ -196,18 +201,18 @@
 
     expression ::= conditionalExpression opt_160
 
-    assignmentOperator ::= OP_71408
-           | OP_4999
-           | OP_37746
-           | OP_77930
-           | OP_90669
-           | OP_46464
-           | OP_80307
-           | OP_36984
-           | OP_47757
-           | OP_56685
-           | OP_43667
-           | OP_24129
+    assignmentOperator ::= EQ
+           | PLUSEQ
+           | MINUSEQ
+           | STAREQ
+           | SLASHEQ
+           | AMPEQ
+           | PIPEEQ
+           | CARETEQ
+           | LSHIFTEQ
+           | RSHIFTEQ
+           | URSHIFTEQ
+           | STARSTAREQ
 
     conditionalExpression ::= conditionalOrExpression opt_162
 
@@ -238,64 +243,64 @@
            | preDecrementExpression
            | unaryExpressionNotPlusMinus
 
-    preIncrementExpression ::= OP_63090 primaryExpression
+    preIncrementExpression ::= PLUSPLUS primaryExpression
 
-    preDecrementExpression ::= OP_10792 primaryExpression
+    preDecrementExpression ::= MINUSMINUS primaryExpression
 
     unaryExpressionNotPlusMinus ::= grp_191 unaryExpression
            | castExpression
            | postfixExpression
 
-    castLookahead ::= OP_47131 primitiveType
-           | OP_47131 type OP_48184 OP_43701
-           | OP_47131 type OP_50862 grp_192
+    castLookahead ::= LPAREN primitiveType
+           | LPAREN type LBRACKET RBRACKET
+           | LPAREN type RPAREN grp_192
 
     postfixExpression ::= primaryExpression opt_194
 
-    castExpression ::= OP_47131 type OP_50862 unaryExpression
-           | OP_47131 type OP_50862 unaryExpressionNotPlusMinus
+    castExpression ::= LPAREN type RPAREN unaryExpression
+           | LPAREN type RPAREN unaryExpressionNotPlusMinus
 
     primaryExpression ::= primaryPrefix list_195
 
-    memberSelector ::= OP_99395 typeArguments javaIdentifier
+    memberSelector ::= DOT typeArguments javaIdentifier
 
     primaryPrefix ::= literal
-           | _THIS_
-           | _SUPER_ OP_99395 javaIdentifier
-           | OP_47131 expression OP_50862
+           | THIS
+           | SUPER DOT javaIdentifier
+           | LPAREN expression RPAREN
            | allocationExpression
-           | resultType OP_99395 _CLASS_
+           | resultType DOT CLASS
            | name
 
-    primarySuffix ::= OP_99395 _THIS_
-           | OP_99395 allocationExpression
+    primarySuffix ::= DOT THIS
+           | DOT allocationExpression
            | memberSelector
-           | OP_48184 expression OP_43701
-           | OP_99395 javaIdentifier
+           | LBRACKET expression RBRACKET
+           | DOT javaIdentifier
            | arguments
 
     literal ::= INTEGER_LITERAL
            | FLOATING_POINT_LITERAL
            | CHARACTER_LITERAL
            | STRING_LITERAL
-           | booleanLiteral
-           | nullLiteral
+           | boolLit
+           | nullLit
 
     integerLiteral ::= INTEGER_LITERAL
 
-    booleanLiteral ::= _TRUE_
-           | _FALSE_
+    boolLit ::= TRUE
+           | FALSE
 
     stringLiteral ::= STRING_LITERAL
 
-    nullLiteral ::= _NULL_
+    nullLit ::= NULL
 
-    arguments ::= OP_47131 opt_196 OP_50862
+    arguments ::= LPAREN opt_196 RPAREN
 
     argumentList ::= expression list_198
 
-    allocationExpression ::= _NEW_ primitiveType arrayDimsAndInits
-           | _NEW_ classOrInterfaceType opt_199 grp_200
+    allocationExpression ::= NEW primitiveType arrayDimsAndInits
+           | NEW classOrInterfaceType opt_199 grp_200
 
     arrayDimsAndInits ::= list_203 list_205
            | list_207 arrayInitializer
@@ -304,7 +309,7 @@
            | assertStatement
            | block
            | emptyStatement_
-           | statementExpression OP_83965
+           | statementExpression SEMI
            | switchStatement
            | ifStatement
            | whileStatement
@@ -317,36 +322,36 @@
            | synchronizedStatement
            | tryStatement
 
-    assertStatement ::= _ASSERT_ expression opt_209 OP_83965
+    assertStatement ::= ASSERT expression opt_209 SEMI
 
-    labeledStatement ::= javaIdentifier OP_97517 statement
+    labeledStatement ::= javaIdentifier COLON statement
 
-    block ::= LIT_83859
+    block ::= LBRACE list_245 RBRACE
 
-    blockStatement ::= localVariableDeclaration OP_83965
+    blockStatement ::= localVariableDeclaration SEMI
            | statement
            | classOrInterfaceDeclaration
 
     localVariableDeclaration ::= modifiers type variableDeclarator list_211
 
-    emptyStatement_ ::= OP_83965
+    emptyStatement_ ::= SEMI
 
     statementExpression ::= preIncrementExpression
            | preDecrementExpression
            | primaryExpression opt_213
 
-    switchStatement ::= _SWITCH_ OP_47131 expression OP_50862 LIT_83859
+    switchStatement ::= SWITCH LPAREN expression RPAREN LBRACE
 
-    switchLabel ::= _CASE_ expression OP_97517
-           | _DEFAULT_ OP_97517
+    switchLabel ::= CASE expression COLON
+           | DEFAULT COLON
 
-    ifStatement ::= _IF_ OP_47131 expression OP_50862 statement opt_215
+    ifStatement ::= IF LPAREN expression RPAREN statement opt_215
 
-    whileStatement ::= _WHILE_ OP_47131 expression OP_50862 statement
+    whileStatement ::= WHILE LPAREN expression RPAREN statement
 
-    doStatement ::= _DO_ statement _WHILE_ OP_47131 expression OP_50862 OP_83965
+    doStatement ::= DO statement WHILE LPAREN expression RPAREN SEMI
 
-    forStatement ::= _FOR_ OP_47131 grp_216 OP_50862 statement
+    forStatement ::= FOR LPAREN grp_216 RPAREN statement
 
     forInit ::= localVariableDeclaration
            | statementExpressionList
@@ -355,535 +360,762 @@
 
     forUpdate ::= statementExpressionList
 
-    breakStatement ::= _BREAK_ opt_222 OP_83965
+    breakStatement ::= BREAK opt_222 SEMI
 
-    continueStatement ::= _CONTINUE_ opt_223 OP_83965
+    continueStatement ::= CONTINUE opt_223 SEMI
 
-    returnStatement ::= _RETURN_ opt_224 OP_83965
+    returnStatement ::= RETURN opt_224 SEMI
 
-    throwStatement ::= _THROW_ expression OP_83965
+    throwStatement ::= THROW expression SEMI
 
-    synchronizedStatement ::= _SYNCHRONIZED_ OP_47131 expression OP_50862 block
+    synchronizedStatement ::= SYNCHRONIZED LPAREN expression RPAREN block
 
-    resourceDeclaration ::= type variableDeclaratorId OP_71408 expression
+    resourceDeclaration ::= type variableDeclaratorId EQ expression
 
     catchParameter ::= modifiers type opt_227 list_229 variableDeclaratorId
 
-    tryStatement ::= _TRY_ opt_234 block list_236 opt_238
+    tryStatement ::= TRY opt_234 block list_236 opt_238
 
     annotation ::= normalAnnotation
            | singleMemberAnnotation
            | markerAnnotation
 
-    normalAnnotation ::= OP_35412 name OP_47131 opt_239 OP_50862
+    normalAnnotation ::= AT name LPAREN opt_239 RPAREN
 
-    markerAnnotation ::= OP_35412 name
+    markerAnnotation ::= AT name
 
-    singleMemberAnnotation ::= OP_35412 name OP_47131 memberValue OP_50862
+    singleMemberAnnotation ::= AT name LPAREN memberValue RPAREN
 
     memberValuePairs ::= memberValuePair list_241
 
-    memberValuePair ::= javaIdentifier OP_71408 memberValue
+    memberValuePair ::= javaIdentifier EQ memberValue
 
     memberValue ::= annotation
            | memberValueArrayInitializer
            | conditionalExpression
 
-    memberValueArrayInitializer ::= LIT_83859
+    memberValueArrayInitializer ::= LBRACE
 
-    annotationTypeDeclaration ::= OP_35412 _INTERFACE_ javaIdentifier annotationTypeBody
+    annotationTypeDeclaration ::= AT INTERFACE javaIdentifier annotationTypeBody
 
-    annotationTypeBody ::= LIT_83859
+    annotationTypeBody ::= LBRACE
 
     annotationTypeMemberDeclaration ::= modifiers grp_242
-           | OP_83965
+           | SEMI
 
     defaultValue ::= _DEFAULT memberValue
 
-    list_1 ::= production | list_1 production
+    list_1 ::= $empty | list_1 production
 
-    seq_2 ::= IDENTIFIER LIT_83859
+    seq_2 ::= IDENTIFIER LBRACE
 
-    opt_3 ::= seq_2 | $empty
+    opt_3 ::= seq_2
+           | $empty
 
-    grp_4 ::= IDENTIFIER | _LOOKAHEAD_ | _IGNORE_CASE_ | _STATIC_ | _PARSER_BEGIN_
+    grp_4 ::= IDENTIFIER
+           | LOOKAHEAD
+           | IGNORE_CASE
+           | STATIC
+           | PARSER_BEGIN
 
-    grp_5 ::= integerLiteral | booleanLiteral | stringLiteral | stringList
+    grp_5 ::= integerLiteral
+           | boolLit
+           | stringLiteral
+           | stringList
 
-    seq_6 ::= OP_63968 stringLiteral
+    seq_6 ::= COMMA stringLiteral
 
-    list_7 ::= $empty | list_7 seq_6
+    list_7 ::= $empty
+           | list_7 seq_6
 
-    seq_8 ::= OP_63968 name
+    seq_8 ::= COMMA name
 
-    list_9 ::= $empty | list_9 seq_8
+    list_9 ::= $empty
+           | list_9 seq_8
 
-    seq_10 ::= _THROWS_ name list_9
+    seq_10 ::= THROWS name list_9
 
-    opt_11 ::= seq_10 | $empty
+    opt_11 ::= seq_10
+           | $empty
 
-    opt_12 ::= node_descriptor | $empty
+    opt_12 ::= node_descriptor
+           | $empty
 
-    seq_13 ::= OP_63968 name
+    seq_13 ::= COMMA name
 
-    list_14 ::= $empty | list_14 seq_13
+    list_14 ::= $empty
+           | list_14 seq_13
 
-    seq_15 ::= _THROWS_ name list_14
+    seq_15 ::= THROWS name list_14
 
-    opt_16 ::= seq_15 | $empty
+    opt_16 ::= seq_15
+           | $empty
 
-    seq_17 ::= OP_63968 name
+    seq_17 ::= COMMA name
 
-    list_18 ::= $empty | list_18 seq_17
+    list_18 ::= $empty
+           | list_18 seq_17
 
-    seq_19 ::= _THROWS_ name list_18
+    seq_19 ::= THROWS name list_18
 
-    opt_20 ::= seq_19 | $empty
+    opt_20 ::= seq_19
+           | $empty
 
-    opt_21 ::= node_descriptor | $empty
+    opt_21 ::= node_descriptor
+           | $empty
 
-    grp_22 ::= _PUBLIC_ | _PROTECTED_ | _PRIVATE_
+    grp_22 ::= PUBLIC
+           | PROTECTED
+           | PRIVATE
 
-    opt_23 ::= grp_22 | $empty
+    opt_23 ::= grp_22
+           | $empty
 
-    seq_25 ::= OP_63968 IDENTIFIER
+    seq_25 ::= COMMA IDENTIFIER
 
-    list_26 ::= $empty | list_26 seq_25
+    list_26 ::= $empty
+           | list_26 seq_25
 
-    grp_24 ::= OP_47647 OP_58697 OP_47054 | OP_47647 IDENTIFIER list_26 OP_47054
+    grp_24 ::= LT SLASH GT
+           | LT IDENTIFIER list_26 GT
 
-    opt_27 ::= grp_24 | $empty
+    opt_27 ::= grp_24
+           | $empty
 
-    seq_28 ::= OP_48184 _IGNORE_CASE_ OP_43701
+    seq_28 ::= LBRACKET IGNORE_CASE RBRACKET
 
-    opt_29 ::= seq_28 | $empty
+    opt_29 ::= seq_28
+           | $empty
 
-    opt_30 ::= classOrInterfaceBody | $empty
+    opt_30 ::= classOrInterfaceBody
+           | $empty
 
-    opt_31 ::= block | $empty
+    opt_31 ::= block
+           | $empty
 
-    seq_32 ::= OP_97517 IDENTIFIER
+    seq_32 ::= COLON IDENTIFIER
 
-    opt_33 ::= seq_32 | $empty
+    opt_33 ::= seq_32
+           | $empty
 
-    grp_34 ::= OP_12055 expansion
+    grp_34 ::= PIPE expansion
 
-    list_35 ::= $empty | list_35 grp_34
+    list_35 ::= $empty
+           | list_35 grp_34
 
-    seq_36 ::= _LOOKAHEAD_ OP_47131 local_lookahead OP_50862
+    seq_36 ::= LOOKAHEAD LPAREN local_lookahead RPAREN
 
-    opt_37 ::= seq_36 | $empty
+    opt_37 ::= seq_36
+           | $empty
 
-    opt_38 ::= node_descriptor | $empty
+    opt_38 ::= node_descriptor
+           | $empty
 
     seq_39 ::= expansion_unit opt_38
 
-    list_40 ::= seq_39 | list_40 seq_39
+    list_40 ::= seq_39
+           | list_40 seq_39
 
-    opt_41 ::= integerLiteral | $empty
+    opt_41 ::= integerLiteral
+           | $empty
 
-    opt_42 ::= OP_63968 | $empty
+    opt_42 ::= COMMA
+           | $empty
 
-    opt_43 ::= expansion_choices | $empty
+    opt_43 ::= expansion_choices
+           | $empty
 
-    opt_44 ::= OP_63968 | $empty
+    opt_44 ::= COMMA
+           | $empty
 
-    opt_45 ::= LIT_83859 | $empty
+    opt_45 ::= LBRACE
+           | $empty
 
     seq_46 ::= name IDENTIFIER
 
-    opt_47 ::= seq_46 | $empty
+    opt_47 ::= seq_46
+           | $empty
 
-    seq_48 ::= _CATCH_ OP_47131 opt_47 OP_50862 block
+    seq_48 ::= CATCH LPAREN opt_47 RPAREN block
 
-    list_49 ::= $empty | list_49 seq_48
+    list_49 ::= $empty
+           | list_49 seq_48
 
-    seq_50 ::= _FINALLY_ block
+    seq_50 ::= FINALLY block
 
-    opt_51 ::= seq_50 | $empty
+    opt_51 ::= seq_50
+           | $empty
 
-    seq_52 ::= primaryExpression OP_71408
+    seq_52 ::= primaryExpression EQ
 
-    opt_53 ::= seq_52 | $empty
+    opt_53 ::= seq_52
+           | $empty
 
-    opt_55 ::= typeArguments | $empty
+    opt_55 ::= typeArguments
+           | $empty
 
-    seq_56 ::= OP_99395 IDENTIFIER
+    seq_56 ::= DOT IDENTIFIER
 
-    opt_57 ::= seq_56 | $empty
+    opt_57 ::= seq_56
+           | $empty
 
-    grp_54 ::= identifier opt_55 arguments | regular_expression opt_57
+    grp_54 ::= identifier opt_55 arguments
+           | regular_expression opt_57
 
-    grp_58 ::= OP_24064 | OP_58697 | OP_70700
+    grp_58 ::= STAR
+           | SLASH
+           | BANG
 
-    opt_59 ::= grp_58 | $empty
+    opt_59 ::= grp_58
+           | $empty
 
-    opt_60 ::= OP_89694 | $empty
+    opt_60 ::= LT
+           | $empty
 
-    seq_61 ::= opt_60 identifier OP_97517
+    seq_61 ::= opt_60 identifier COLON
 
-    opt_62 ::= seq_61 | $empty
+    opt_62 ::= seq_61
+           | $empty
 
-    grp_63 ::= OP_12055 complex_regular_expression
+    grp_63 ::= PIPE complex_regular_expression
 
-    list_64 ::= $empty | list_64 grp_63
+    list_64 ::= $empty
+           | list_64 grp_63
 
-    list_65 ::= complex_regular_expression_unit | list_65 complex_regular_expression_unit
+    list_65 ::= complex_regular_expression_unit
+           | list_65 complex_regular_expression_unit
 
-    grp_66 ::= OP_24064 | OP_58697 | OP_70700 | LIT_83859
+    grp_66 ::= STAR
+           | SLASH
+           | BANG
+           | LBRACE
 
-    opt_67 ::= grp_66 | $empty
+    opt_67 ::= grp_66
+           | $empty
 
-    opt_68 ::= OP_4452 | $empty
+    opt_68 ::= PLUS
+           | $empty
 
-    seq_69 ::= OP_63968 character_descriptor
+    seq_69 ::= COMMA character_descriptor
 
-    list_70 ::= $empty | list_70 seq_69
+    list_70 ::= $empty
+           | list_70 seq_69
 
     seq_71 ::= character_descriptor list_70
 
-    opt_72 ::= seq_71 | $empty
+    opt_72 ::= seq_71
+           | $empty
 
-    seq_73 ::= OP_38267 stringLiteral
+    seq_73 ::= PERCENT stringLiteral
 
-    opt_74 ::= seq_73 | $empty
+    opt_74 ::= seq_73
+           | $empty
 
-    grp_75 ::= IDENTIFIER | VOID
+    grp_75 ::= IDENTIFIER
+           | VOID
 
-    opt_76 ::= OP_47054 | $empty
+    opt_76 ::= GT
+           | $empty
 
-    seq_77 ::= OP_47131 opt_76 node_descriptor_expression OP_50862
+    seq_77 ::= LPAREN opt_76 node_descriptor_expression RPAREN
 
-    opt_78 ::= seq_77 | $empty
+    opt_78 ::= seq_77
+           | $empty
 
-    grp_79 ::= IDENTIFIER | _LOOKAHEAD_ | _IGNORE_CASE_ | _PARSER_BEGIN_ | _PARSER_END_ | _JAVACODE_ | _TOKEN_ | _SPECIAL_TOKEN_ | _MORE_ | _SKIP_ | _TOKEN_MGR_DECLS_ | _EOF_ | _TEMPLATE_ | _DCL_PARSER_BEGIN_ | _DCL_PARSER_END_ | _INC_PARSER_BEGIN_ | _INC_PARSER_END_ | _DEF_PARSER_BEGIN_ | _DEF_PARSER_END_
+    grp_79 ::= IDENTIFIER
+           | LOOKAHEAD
+           | IGNORE_CASE
+           | PARSER_BEGIN
+           | PARSER_END
+           | JAVACODE
+           | TOKEN
+           | _SPECIALTOKEN
+           | _MORE_
+           | _SKIP_
+           | TOKENMGR_DECLS_
+           | _EOF_
+           | TEMPLATE
+           | _DCLPARSER_BEGIN
+           | _DCLPARSER_END
+           | _INCPARSER_BEGIN
+           | _INCPARSER_END
+           | _DEFPARSER_BEGIN
+           | _DEFPARSER_END
 
-    opt_80 ::= packageDeclaration | $empty
+    opt_80 ::= packageDeclaration
+           | $empty
 
-    list_81 ::= $empty | list_81 importDeclaration
+    list_81 ::= $empty
+           | list_81 importDeclaration
 
-    list_82 ::= $empty | list_82 typeDeclaration
+    list_82 ::= $empty
+           | list_82 typeDeclaration
 
-    grp_84 ::= _PUBLIC_ | _STATIC_ | _PROTECTED_ | _PRIVATE_ | _FINAL_ | _ABSTRACT_ | _SYNCHRONIZED_ | _NATIVE_ | _TRANSIENT_ | _VOLATILE_ | _STRICTFP_ | annotation
+    grp_84 ::= PUBLIC
+           | STATIC
+           | PROTECTED
+           | PRIVATE
+           | FINAL
+           | ABSTRACT
+           | SYNCHRONIZED
+           | NATIVE
+           | TRANSIENT
+           | VOLATILE
+           | STRICTFP
+           | annotation
 
     grp_83 ::= grp_84
 
-    list_85 ::= $empty | list_85 grp_83
+    list_85 ::= $empty
+           | list_85 grp_83
 
-    grp_86 ::= classOrInterfaceDeclaration | enumDeclaration | annotationTypeDeclaration
+    grp_86 ::= classOrInterfaceDeclaration
+           | enumDeclaration
+           | annotationTypeDeclaration
 
-    grp_87 ::= _CLASS_ | _INTERFACE_
+    grp_87 ::= CLASS
+           | INTERFACE
 
-    opt_88 ::= typeParameters | $empty
+    opt_88 ::= typeParameters
+           | $empty
 
-    opt_89 ::= extendsList | $empty
+    opt_89 ::= extendsList
+           | $empty
 
-    opt_90 ::= implementsList | $empty
+    opt_90 ::= implementsList
+           | $empty
 
-    seq_91 ::= OP_63968 classOrInterfaceType
+    seq_91 ::= COMMA classOrInterfaceType
 
-    list_92 ::= $empty | list_92 seq_91
+    list_92 ::= $empty
+           | list_92 seq_91
 
-    seq_93 ::= OP_63968 classOrInterfaceType
+    seq_93 ::= COMMA classOrInterfaceType
 
-    list_94 ::= $empty | list_94 seq_93
+    list_94 ::= $empty
+           | list_94 seq_93
 
-    opt_95 ::= implementsList | $empty
+    opt_95 ::= implementsList
+           | $empty
 
-    opt_96 ::= arguments | $empty
+    opt_96 ::= arguments
+           | $empty
 
-    opt_97 ::= classOrInterfaceBody | $empty
+    opt_97 ::= classOrInterfaceBody
+           | $empty
 
-    seq_98 ::= OP_63968 typeParameter
+    seq_98 ::= COMMA typeParameter
 
-    list_99 ::= $empty | list_99 seq_98
+    list_99 ::= $empty
+           | list_99 seq_98
 
-    opt_100 ::= typeBound | $empty
+    opt_100 ::= typeBound
+           | $empty
 
-    seq_101 ::= OP_87954 classOrInterfaceType
+    seq_101 ::= LSHIFT classOrInterfaceType
 
-    list_102 ::= $empty | list_102 seq_101
+    list_102 ::= $empty
+           | list_102 seq_101
 
-    grp_103 ::= classOrInterfaceDeclaration | enumDeclaration | constructorDeclaration | fieldDeclaration | methodDeclaration
+    grp_103 ::= classOrInterfaceDeclaration
+           | enumDeclaration
+           | constructorDeclaration
+           | fieldDeclaration
+           | methodDeclaration
 
-    seq_104 ::= OP_63968 variableDeclarator
+    seq_104 ::= COMMA variableDeclarator
 
-    list_105 ::= $empty | list_105 seq_104
+    list_105 ::= $empty
+           | list_105 seq_104
 
-    seq_106 ::= OP_71408 variableInitializer
+    seq_106 ::= EQ variableInitializer
 
-    opt_107 ::= seq_106 | $empty
+    opt_107 ::= seq_106
+           | $empty
 
-    seq_108 ::= OP_48184 OP_43701
+    seq_108 ::= LBRACKET RBRACKET
 
-    list_109 ::= $empty | list_109 seq_108
+    list_109 ::= $empty
+           | list_109 seq_108
 
-    opt_110 ::= typeParameters | $empty
+    opt_110 ::= typeParameters
+           | $empty
 
-    seq_111 ::= _THROWS_ nameList
+    seq_111 ::= THROWS nameList
 
-    opt_112 ::= seq_111 | $empty
+    opt_112 ::= seq_111
+           | $empty
 
-    grp_113 ::= block | OP_83965
+    grp_113 ::= block
+           | SEMI
 
-    seq_114 ::= OP_48184 OP_43701
+    seq_114 ::= LBRACKET RBRACKET
 
-    list_115 ::= $empty | list_115 seq_114
+    list_115 ::= $empty
+           | list_115 seq_114
 
-    seq_116 ::= OP_63968 formalParameter
+    seq_116 ::= COMMA formalParameter
 
-    list_117 ::= $empty | list_117 seq_116
+    list_117 ::= $empty
+           | list_117 seq_116
 
     seq_118 ::= formalParameter list_117
 
-    opt_119 ::= seq_118 | $empty
+    opt_119 ::= seq_118
+           | $empty
 
-    grp_121 ::= OP_87954 | OP_58697
+    grp_121 ::= LSHIFT
+           | SLASH
 
-    grp_120 ::= grp_121 | OP_41365
+    grp_120 ::= grp_121
+           | QUESTION
 
-    opt_122 ::= grp_120 | $empty
+    opt_122 ::= grp_120
+           | $empty
 
-    opt_123 ::= typeParameters | $empty
+    opt_123 ::= typeParameters
+           | $empty
 
-    seq_124 ::= _THROWS_ nameList
+    seq_124 ::= THROWS nameList
 
-    opt_125 ::= seq_124 | $empty
+    opt_125 ::= seq_124
+           | $empty
 
-    seq_126 ::= primaryExpression OP_99395
+    seq_126 ::= primaryExpression DOT
 
-    opt_127 ::= seq_126 | $empty
+    opt_127 ::= seq_126
+           | $empty
 
-    opt_128 ::= _STATIC_ | $empty
+    opt_128 ::= STATIC
+           | $empty
 
-    seq_129 ::= OP_48184 OP_43701
+    seq_129 ::= LBRACKET RBRACKET
 
-    list_130 ::= seq_129 | list_130 seq_129
+    list_130 ::= seq_129
+           | list_130 seq_129
 
-    opt_131 ::= template | $empty
+    opt_131 ::= template
+           | $empty
 
     seq_132 ::= opt_131 classOrInterfaceType
 
-    seq_133 ::= OP_48184 OP_43701
+    seq_133 ::= LBRACKET RBRACKET
 
-    list_134 ::= $empty | list_134 seq_133
+    list_134 ::= $empty
+           | list_134 seq_133
 
-    seq_135 ::= OP_63968 templateBase
+    seq_135 ::= COMMA templateBase
 
-    list_136 ::= $empty | list_136 seq_135
+    list_136 ::= $empty
+           | list_136 seq_135
 
-    opt_137 ::= OP_41365 | $empty
+    opt_137 ::= QUESTION
+           | $empty
 
-    opt_138 ::= OP_16069 | $empty
+    opt_138 ::= GT
+           | $empty
 
-    opt_139 ::= typeArguments | $empty
+    opt_139 ::= typeArguments
+           | $empty
 
-    grp_141 ::= OP_99395 | OP_16069
+    grp_141 ::= DOT
+           | GT
 
-    opt_142 ::= typeArguments | $empty
+    opt_142 ::= typeArguments
+           | $empty
 
     grp_140 ::= grp_141 IDENTIFIER opt_142
 
-    list_143 ::= $empty | list_143 grp_140
+    list_143 ::= $empty
+           | list_143 grp_140
 
-    opt_144 ::= OP_41365 | $empty
+    opt_144 ::= QUESTION
+           | $empty
 
-    seq_145 ::= OP_63968 typeArgument opt_144
+    seq_145 ::= COMMA typeArgument opt_144
 
-    list_146 ::= $empty | list_146 seq_145
+    list_146 ::= $empty
+           | list_146 seq_145
 
     seq_147 ::= typeArgument list_146
 
-    opt_148 ::= seq_147 | $empty
+    opt_148 ::= seq_147
+           | $empty
 
-    opt_149 ::= wildcardBounds | $empty
+    opt_149 ::= wildcardBounds
+           | $empty
 
-    opt_151 ::= OP_58697 | $empty
+    opt_151 ::= SLASH
+           | $empty
 
-    opt_152 ::= _CONST_ | $empty
+    opt_152 ::= CONST
+           | $empty
 
-    grp_153 ::= OP_58697 | OP_87954
+    grp_153 ::= SLASH
+           | LSHIFT
 
-    opt_154 ::= grp_153 | $empty
+    opt_154 ::= grp_153
+           | $empty
 
-    grp_150 ::= _VOID_ opt_151 | opt_152 type opt_154
+    grp_150 ::= VOID opt_151
+           | opt_152 type opt_154
 
-    seq_155 ::= OP_99395 javaIdentifier
+    seq_155 ::= DOT javaIdentifier
 
-    list_156 ::= $empty | list_156 seq_155
+    list_156 ::= $empty
+           | list_156 seq_155
 
-    seq_157 ::= OP_63968 name
+    seq_157 ::= COMMA name
 
-    list_158 ::= $empty | list_158 seq_157
+    list_158 ::= $empty
+           | list_158 seq_157
 
     seq_159 ::= assignmentOperator expression
 
-    opt_160 ::= seq_159 | $empty
+    opt_160 ::= seq_159
+           | $empty
 
-    seq_161 ::= OP_70700 expression OP_97517 expression
+    seq_161 ::= BANG expression COLON expression
 
-    opt_162 ::= seq_161 | $empty
+    opt_162 ::= seq_161
+           | $empty
 
-    grp_163 ::= OP_24261 conditionalAndExpression
+    grp_163 ::= ANDAND conditionalAndExpression
 
-    list_164 ::= $empty | list_164 grp_163
+    list_164 ::= $empty
+           | list_164 grp_163
 
-    seq_165 ::= OP_57012 inclusiveOrExpression
+    seq_165 ::= PIPE inclusiveOrExpression
 
-    list_166 ::= $empty | list_166 seq_165
+    list_166 ::= $empty
+           | list_166 seq_165
 
-    grp_167 ::= OP_12055 exclusiveOrExpression
+    grp_167 ::= PIPE exclusiveOrExpression
 
-    list_168 ::= $empty | list_168 grp_167
+    list_168 ::= $empty
+           | list_168 grp_167
 
-    seq_169 ::= OP_59057 andExpression
+    seq_169 ::= ANDAND andExpression
 
-    list_170 ::= $empty | list_170 seq_169
+    list_170 ::= $empty
+           | list_170 seq_169
 
-    seq_171 ::= OP_87954 equalityExpression
+    seq_171 ::= LSHIFT equalityExpression
 
-    list_172 ::= $empty | list_172 seq_171
+    list_172 ::= $empty
+           | list_172 seq_171
 
-    grp_174 ::= OP_11552 | OP_45312
+    grp_174 ::= EQEQ
+           | NOTEQ
 
     grp_173 ::= grp_174 instanceOfExpression
 
-    list_175 ::= $empty | list_175 grp_173
+    list_175 ::= $empty
+           | list_175 grp_173
 
-    seq_176 ::= _INSTANCEOF_ type
+    seq_176 ::= INSTANCEOF type
 
-    opt_177 ::= seq_176 | $empty
+    opt_177 ::= seq_176
+           | $empty
 
-    grp_179 ::= OP_47647 | OP_47054 | OP_56061 | OP_8579
+    grp_179 ::= LT
+           | GT
+           | COLON
+           | COMMA
 
     grp_178 ::= grp_179 shiftExpression
 
-    list_180 ::= $empty | list_180 grp_178
+    list_180 ::= $empty
+           | list_180 grp_178
 
-    grp_182 ::= OP_64262 | rsignedshift | runsignedshift
+    grp_182 ::= LT
+           | rsignedshift
+           | runsignedshift
 
     grp_181 ::= grp_182 additiveExpression
 
-    list_183 ::= $empty | list_183 grp_181
+    list_183 ::= $empty
+           | list_183 grp_181
 
-    grp_185 ::= OP_24064 | OP_38267
+    grp_185 ::= STAR
+           | PERCENT
 
     grp_184 ::= grp_185 multiplicativeExpression
 
-    list_186 ::= $empty | list_186 grp_184
+    list_186 ::= $empty
+           | list_186 grp_184
 
-    grp_188 ::= OP_58697 | OP_34868 | OP_9904
+    grp_188 ::= SLASH
+           | RSHIFT
+           | URSHIFT
 
     grp_187 ::= grp_188 unaryExpression
 
-    list_189 ::= $empty | list_189 grp_187
+    list_189 ::= $empty
+           | list_189 grp_187
 
-    grp_190 ::= OP_24064 | OP_38267
+    grp_190 ::= STAR
+           | PERCENT
 
-    grp_191 ::= OP_4452 | OP_35296
+    grp_191 ::= PLUS
+           | MINUS
 
-    grp_192 ::= OP_4452 | OP_35296 | OP_47131 | javaIdentifier | _THIS_ | _SUPER_ | _NEW_ | literal
+    grp_192 ::= PLUS
+           | MINUS
+           | LPAREN
+           | javaIdentifier
+           | THIS
+           | SUPER
+           | NEW
+           | literal
 
-    grp_193 ::= OP_63090 | OP_10792
+    grp_193 ::= PLUSPLUS
+           | MINUSMINUS
 
-    opt_194 ::= grp_193 | $empty
+    opt_194 ::= grp_193
+           | $empty
 
-    list_195 ::= $empty | list_195 primarySuffix
+    list_195 ::= $empty
+           | list_195 primarySuffix
 
-    opt_196 ::= argumentList | $empty
+    opt_196 ::= argumentList
+           | $empty
 
-    seq_197 ::= OP_63968 expression
+    seq_197 ::= COMMA expression
 
-    list_198 ::= $empty | list_198 seq_197
+    list_198 ::= $empty
+           | list_198 seq_197
 
-    opt_199 ::= typeArguments | $empty
+    opt_199 ::= typeArguments
+           | $empty
 
-    opt_201 ::= classOrInterfaceBody | $empty
+    opt_201 ::= classOrInterfaceBody
+           | $empty
 
-    grp_200 ::= arrayDimsAndInits | arguments opt_201
+    grp_200 ::= arrayDimsAndInits
+           | arguments opt_201
 
-    seq_202 ::= OP_48184 expression OP_43701
+    seq_202 ::= LBRACKET expression RBRACKET
 
-    list_203 ::= seq_202 | list_203 seq_202
+    list_203 ::= seq_202
+           | list_203 seq_202
 
-    seq_204 ::= OP_48184 OP_43701
+    seq_204 ::= LBRACKET RBRACKET
 
-    list_205 ::= $empty | list_205 seq_204
+    list_205 ::= $empty
+           | list_205 seq_204
 
-    seq_206 ::= OP_48184 OP_43701
+    seq_206 ::= LBRACKET RBRACKET
 
-    list_207 ::= seq_206 | list_207 seq_206
+    list_207 ::= seq_206
+           | list_207 seq_206
 
-    seq_208 ::= OP_97517 expression
+    seq_208 ::= COLON expression
 
-    opt_209 ::= seq_208 | $empty
+    opt_209 ::= seq_208
+           | $empty
 
-    seq_210 ::= OP_63968 variableDeclarator
+    seq_210 ::= COMMA variableDeclarator
 
-    list_211 ::= $empty | list_211 seq_210
+    list_211 ::= $empty
+           | list_211 seq_210
 
-    grp_212 ::= OP_63090 | OP_10792 | assignmentOperator expression
+    grp_212 ::= PLUSPLUS
+           | MINUSMINUS
+           | assignmentOperator expression
 
-    opt_213 ::= grp_212 | $empty
+    opt_213 ::= grp_212
+           | $empty
 
-    seq_214 ::= _ELSE_ statement
+    seq_214 ::= ELSE statement
 
-    opt_215 ::= seq_214 | $empty
+    opt_215 ::= seq_214
+           | $empty
 
-    opt_217 ::= forInit | $empty
+    opt_217 ::= forInit
+           | $empty
 
-    opt_218 ::= expression | $empty
+    opt_218 ::= expression
+           | $empty
 
-    opt_219 ::= forUpdate | $empty
+    opt_219 ::= forUpdate
+           | $empty
 
-    grp_216 ::= modifiers type javaIdentifier OP_97517 expression | opt_217 OP_83965 opt_218 OP_83965 opt_219
+    grp_216 ::= modifiers type javaIdentifier COLON expression
+           | opt_217 SEMI opt_218 SEMI opt_219
 
-    seq_220 ::= OP_63968 statementExpression
+    seq_220 ::= COMMA statementExpression
 
-    list_221 ::= $empty | list_221 seq_220
+    list_221 ::= $empty
+           | list_221 seq_220
 
-    opt_222 ::= javaIdentifier | $empty
+    opt_222 ::= javaIdentifier
+           | $empty
 
-    opt_223 ::= javaIdentifier | $empty
+    opt_223 ::= javaIdentifier
+           | $empty
 
-    opt_224 ::= expression | $empty
+    opt_224 ::= expression
+           | $empty
 
-    grp_226 ::= OP_87954 | OP_58697
+    grp_226 ::= LSHIFT
+           | SLASH
 
-    grp_225 ::= grp_226 | OP_41365
+    grp_225 ::= grp_226
+           | QUESTION
 
-    opt_227 ::= grp_225 | $empty
+    opt_227 ::= grp_225
+           | $empty
 
-    grp_228 ::= OP_12055 type
+    grp_228 ::= PIPE type
 
-    list_229 ::= $empty | list_229 grp_228
+    list_229 ::= $empty
+           | list_229 grp_228
 
-    seq_230 ::= OP_83965 resourceDeclaration
+    seq_230 ::= SEMI resourceDeclaration
 
-    list_231 ::= $empty | list_231 seq_230
+    list_231 ::= $empty
+           | list_231 seq_230
 
-    opt_232 ::= OP_83965 | $empty
+    opt_232 ::= SEMI
+           | $empty
 
-    seq_233 ::= OP_47131 resourceDeclaration list_231 opt_232 OP_50862
+    seq_233 ::= LPAREN resourceDeclaration list_231 opt_232 RPAREN
 
-    opt_234 ::= seq_233 | $empty
+    opt_234 ::= seq_233
+           | $empty
 
-    seq_235 ::= _CATCH_ OP_47131 catchParameter OP_50862 block
+    seq_235 ::= CATCH LPAREN catchParameter RPAREN block
 
-    list_236 ::= $empty | list_236 seq_235
+    list_236 ::= $empty
+           | list_236 seq_235
 
-    seq_237 ::= _FINALLY_ block
+    seq_237 ::= FINALLY block
 
-    opt_238 ::= seq_237 | $empty
+    opt_238 ::= seq_237
+           | $empty
 
-    opt_239 ::= memberValuePairs | $empty
+    opt_239 ::= memberValuePairs
+           | $empty
 
-    seq_240 ::= OP_63968 memberValuePair
+    seq_240 ::= COMMA memberValuePair
 
-    list_241 ::= $empty | list_241 seq_240
+    list_241 ::= $empty
+           | list_241 seq_240
 
-    opt_243 ::= defaultValue | $empty
+    opt_243 ::= defaultValue
+           | $empty
 
-    grp_242 ::= type javaIdentifier OP_47131 OP_50862 opt_243 OP_83965 | classOrInterfaceDeclaration | enumDeclaration | annotationTypeDeclaration | fieldDeclaration
+    grp_242 ::= type javaIdentifier LPAREN RPAREN opt_243 SEMI
+           | classOrInterfaceDeclaration
+           | enumDeclaration
+           | annotationTypeDeclaration
+           | fieldDeclaration
+
+    list_244 ::= $empty
+           | list_244 classOrInterfaceBodyDeclaration
+
+    list_245 ::= $empty
+           | list_245 blockStatement
 
 %End
