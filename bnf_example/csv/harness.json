@@ -1,0 +1,9 @@
+{
+  "package": "lpg.grammars.csv",
+  "lexer": "CsvLexer",
+  "parser": "CsvParser",
+  "example_globs": [
+    "examples-curated/**/*.csv",
+    "examples/**/*.csv"
+  ]
+}

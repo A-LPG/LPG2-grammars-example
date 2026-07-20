@@ -1,1 +1,0 @@
-clamp(node_load1{job="example_job"}, 0, 10)

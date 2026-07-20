@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.webidl",
+  "lexer": "WebidlLexer",
+  "parser": "WebidlParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

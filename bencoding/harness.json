@@ -1,6 +1,0 @@
-{
-  "package": "lpg.grammars.bencoding",
-  "lexer": "BencodingLexer",
-  "parser": "BencodingParser",
-  "example_globs": ["examples/**/*.txt"]
-}

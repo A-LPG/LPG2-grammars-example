@@ -1,4 +1,0 @@
-LSNR =
-  (DESCRIPTION =
-    (ADDRESS = (PROTOCOL = TCP)(HOST = bedrock)(PORT = 1524))
-  )

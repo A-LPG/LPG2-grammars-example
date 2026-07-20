@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.thrift",
-  "lexer": "ThriftLexer",
-  "parser": "ThriftParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

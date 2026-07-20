@@ -1,1 +1,0 @@
-States.ArrayContains($.FunctionInput.fst, $.FunctionInput.snd)

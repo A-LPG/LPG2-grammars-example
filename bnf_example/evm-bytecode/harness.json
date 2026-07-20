@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.evm_bytecode",
+  "lexer": "EvmBytecodeLexer",
+  "parser": "EvmBytecodeParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

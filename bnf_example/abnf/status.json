@@ -1,0 +1,14 @@
+{
+  "id": "abnf",
+  "parse_ok": true,
+  "example_count": 3,
+  "status": "ported",
+  "blockers": [],
+  "tier": "B",
+  "quality": "language_port",
+  "quality_notes": [
+    "real_g4_port"
+  ],
+  "parser_bytes": 1591,
+  "parser_lines": 64
+}

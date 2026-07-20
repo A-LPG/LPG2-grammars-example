@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.quakemap",
-  "lexer": "QuakemapLexer",
-  "parser": "QuakemapParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

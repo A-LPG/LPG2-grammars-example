@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.ply",
-  "lexer": "PlyLexer",
-  "parser": "PlyParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

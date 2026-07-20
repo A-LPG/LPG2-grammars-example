@@ -1,0 +1,2 @@
+ SET X=1
+ WRITE X

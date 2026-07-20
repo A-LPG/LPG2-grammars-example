@@ -1,0 +1,14 @@
+{
+  "id": "propcalc",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "real_g4_port"
+  ],
+  "parser_bytes": 837,
+  "start": "proposition",
+  "example_count": 8,
+  "tier": "B"
+}

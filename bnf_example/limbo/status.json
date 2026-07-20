@@ -1,0 +1,15 @@
+{
+  "id": "limbo",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "real_g4_port"
+  ],
+  "parser_bytes": 8658,
+  "rule_approx": 101,
+  "start": "program",
+  "tier": "B",
+  "example_count": 3
+}

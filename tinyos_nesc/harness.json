@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.tinyos_nesc",
-  "lexer": "TinyosNescLexer",
-  "parser": "TinyosNescParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

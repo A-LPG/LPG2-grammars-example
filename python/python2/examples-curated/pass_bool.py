@@ -1,2 +1,0 @@
-x = True
-y = False

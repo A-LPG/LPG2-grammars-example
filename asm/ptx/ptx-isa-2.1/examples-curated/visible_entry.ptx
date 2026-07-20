@@ -1,8 +1,0 @@
-.version 2.1
-.target sm_10
-.visible .entry kernel()
-{
-	.reg .u32 %r<2>;
-	mov.u32 %r0, %r1;
-	ret;
-}

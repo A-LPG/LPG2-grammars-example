@@ -1,1 +1,0 @@
-index="your_index" | search field_name LIKE "%pattern%"

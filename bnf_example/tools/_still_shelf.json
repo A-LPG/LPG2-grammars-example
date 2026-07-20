@@ -1,0 +1,455 @@
+[
+  {
+    "id": "stringtemplate",
+    "why": [
+      "THIN",
+      "UNDERSIZED",
+      "WEAK_EX"
+    ],
+    "lpg": 104,
+    "g4": 1421,
+    "ex": 2
+  },
+  {
+    "id": "unicode/unicode16",
+    "why": [
+      "THIN",
+      "UNDERSIZED"
+    ],
+    "lpg": 61,
+    "g4": 3100,
+    "ex": 3
+  },
+  {
+    "id": "logo/ucb-logo",
+    "why": [
+      "THIN",
+      "UNDERSIZED"
+    ],
+    "lpg": 88,
+    "g4": 877,
+    "ex": 3
+  },
+  {
+    "id": "robotwars",
+    "why": [
+      "PORT_OVERCLAIM",
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 60,
+    "g4": 325,
+    "ex": 3
+  },
+  {
+    "id": "pl0",
+    "why": [
+      "PORT_OVERCLAIM",
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 44,
+    "g4": 283,
+    "ex": 3
+  },
+  {
+    "id": "logo/logo",
+    "why": [
+      "PORT_OVERCLAIM",
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 72,
+    "g4": 241,
+    "ex": 3
+  },
+  {
+    "id": "calculator",
+    "why": [
+      "PORT_OVERCLAIM",
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 72,
+    "g4": 238,
+    "ex": 3
+  },
+  {
+    "id": "edn",
+    "why": [
+      "PORT_OVERCLAIM",
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 67,
+    "g4": 221,
+    "ex": 3
+  },
+  {
+    "id": "creole",
+    "why": [
+      "PORT_OVERCLAIM",
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 63,
+    "g4": 167,
+    "ex": 3
+  },
+  {
+    "id": "abnf",
+    "why": [
+      "PORT_OVERCLAIM",
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 65,
+    "g4": 162,
+    "ex": 3
+  },
+  {
+    "id": "d2",
+    "why": [
+      "PORT_OVERCLAIM",
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 73,
+    "g4": 158,
+    "ex": 3
+  },
+  {
+    "id": "json5",
+    "why": [
+      "PORT_OVERCLAIM",
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 72,
+    "g4": 153,
+    "ex": 3
+  },
+  {
+    "id": "gff3",
+    "why": [
+      "PORT_OVERCLAIM",
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 52,
+    "g4": 135,
+    "ex": 3
+  },
+  {
+    "id": "datalog",
+    "why": [
+      "PORT_OVERCLAIM",
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 68,
+    "g4": 133,
+    "ex": 3
+  },
+  {
+    "id": "tinyc",
+    "why": [
+      "PORT_OVERCLAIM",
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 59,
+    "g4": 115,
+    "ex": 3
+  },
+  {
+    "id": "microc",
+    "why": [
+      "PORT_OVERCLAIM",
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 62,
+    "g4": 109,
+    "ex": 3
+  },
+  {
+    "id": "gml",
+    "why": [
+      "PORT_OVERCLAIM",
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 40,
+    "g4": 105,
+    "ex": 3
+  },
+  {
+    "id": "esolang/bio",
+    "why": [
+      "PORT_OVERCLAIM",
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 50,
+    "g4": 77,
+    "ex": 3
+  },
+  {
+    "id": "tsv",
+    "why": [
+      "PORT_OVERCLAIM",
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 39,
+    "g4": 72,
+    "ex": 3
+  },
+  {
+    "id": "csv",
+    "why": [
+      "PORT_OVERCLAIM",
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 39,
+    "g4": 58,
+    "ex": 3
+  },
+  {
+    "id": "asm/ptx/ptx-isa-2.1",
+    "why": [
+      "WEAK_EX"
+    ],
+    "lpg": 1909,
+    "g4": 3505,
+    "ex": 2
+  },
+  {
+    "id": "python/python2-js",
+    "why": [
+      "WEAK_EX"
+    ],
+    "lpg": 633,
+    "g4": 693,
+    "ex": 2
+  },
+  {
+    "id": "iri",
+    "why": [
+      "WEAK_EX"
+    ],
+    "lpg": 408,
+    "g4": 614,
+    "ex": 2
+  },
+  {
+    "id": "iso8601",
+    "why": [
+      "WEAK_EX"
+    ],
+    "lpg": 378,
+    "g4": 551,
+    "ex": 2
+  },
+  {
+    "id": "smiles",
+    "why": [
+      "WEAK_EX"
+    ],
+    "lpg": 323,
+    "g4": 549,
+    "ex": 2
+  },
+  {
+    "id": "r",
+    "why": [
+      "THIN"
+    ],
+    "lpg": 120,
+    "g4": 484,
+    "ex": 3
+  },
+  {
+    "id": "jpa",
+    "why": [
+      "WEAK_EX"
+    ],
+    "lpg": 487,
+    "g4": 475,
+    "ex": 2
+  },
+  {
+    "id": "asm/asm6502",
+    "why": [
+      "THIN"
+    ],
+    "lpg": 75,
+    "g4": 438,
+    "ex": 3
+  },
+  {
+    "id": "argus",
+    "why": [
+      "WEAK_EX"
+    ],
+    "lpg": 776,
+    "g4": 433,
+    "ex": 2
+  },
+  {
+    "id": "turtle-doc",
+    "why": [
+      "THIN"
+    ],
+    "lpg": 115,
+    "g4": 417,
+    "ex": 3
+  },
+  {
+    "id": "powerbuilderdw",
+    "why": [
+      "WEAK_EX"
+    ],
+    "lpg": 248,
+    "g4": 389,
+    "ex": 2
+  },
+  {
+    "id": "orwell",
+    "why": [
+      "WEAK_EX"
+    ],
+    "lpg": 326,
+    "g4": 381,
+    "ex": 2
+  },
+  {
+    "id": "rego",
+    "why": [
+      "TRIVIAL_EX"
+    ],
+    "lpg": 219,
+    "g4": 373,
+    "ex": 1
+  },
+  {
+    "id": "xpath/xpath1",
+    "why": [
+      "TRIVIAL_EX"
+    ],
+    "lpg": 177,
+    "g4": 369,
+    "ex": 1
+  },
+  {
+    "id": "smalltalk",
+    "why": [
+      "TRIVIAL_EX"
+    ],
+    "lpg": 300,
+    "g4": 359,
+    "ex": 1
+  },
+  {
+    "id": "lucene",
+    "why": [
+      "WEAK_EX"
+    ],
+    "lpg": 126,
+    "g4": 356,
+    "ex": 2
+  },
+  {
+    "id": "matlab",
+    "why": [
+      "WEAK_EX"
+    ],
+    "lpg": 154,
+    "g4": 352,
+    "ex": 2
+  },
+  {
+    "id": "esolang/cool",
+    "why": [
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 85,
+    "g4": 322,
+    "ex": 3
+  },
+  {
+    "id": "xsd-regex",
+    "why": [
+      "TRIVIAL_EX"
+    ],
+    "lpg": 108,
+    "g4": 269,
+    "ex": 1
+  },
+  {
+    "id": "gtin",
+    "why": [
+      "WEAK_EX"
+    ],
+    "lpg": 45,
+    "g4": 261,
+    "ex": 2
+  },
+  {
+    "id": "morsecode",
+    "why": [
+      "WEAK_EX"
+    ],
+    "lpg": 60,
+    "g4": 239,
+    "ex": 2
+  },
+  {
+    "id": "html",
+    "why": [
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 99,
+    "g4": 224,
+    "ex": 3
+  },
+  {
+    "id": "romannumerals",
+    "why": [
+      "TRIVIAL_EX"
+    ],
+    "lpg": 68,
+    "g4": 188,
+    "ex": 1
+  },
+  {
+    "id": "xml",
+    "why": [
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 94,
+    "g4": 171,
+    "ex": 3
+  },
+  {
+    "id": "wln",
+    "why": [
+      "TRIVIAL_EX"
+    ],
+    "lpg": 26,
+    "g4": 170,
+    "ex": 1
+  },
+  {
+    "id": "metric",
+    "why": [
+      "TRIVIAL_EX"
+    ],
+    "lpg": 43,
+    "g4": 121,
+    "ex": 1
+  },
+  {
+    "id": "esolang/dgol",
+    "why": [
+      "PORT_NO_NOTES"
+    ],
+    "lpg": 92,
+    "g4": 118,
+    "ex": 3
+  },
+  {
+    "id": "ltl",
+    "why": [
+      "TRIVIAL_EX"
+    ],
+    "lpg": 28,
+    "g4": 103,
+    "ex": 1
+  }
+]

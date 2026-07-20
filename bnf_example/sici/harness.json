@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.sici",
+  "lexer": "SiciLexer",
+  "parser": "SiciParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

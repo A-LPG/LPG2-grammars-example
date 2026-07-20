@@ -1,0 +1,13 @@
+{
+  "id": "ebnf",
+  "tier": "A",
+  "status": "ported",
+  "parse_ok": true,
+  "blockers": [],
+  "example_count": 1,
+  "quality": "language_subset",
+  "quality_notes": [
+    "limited_examples_or_rules"
+  ],
+  "parser_bytes": 960
+}

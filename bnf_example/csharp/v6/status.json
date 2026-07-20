@@ -1,0 +1,14 @@
+{
+  "id": "csharp/v6",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [],
+  "parser_bytes": 9516,
+  "rule_approx": 606,
+  "start": "compilation_unit",
+  "parser_lines": 300,
+  "example_count": 4,
+  "tier": "D"
+}

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.vba.vba_cc",
+  "lexer": "VbaVbaCcLexer",
+  "parser": "VbaVbaCcParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

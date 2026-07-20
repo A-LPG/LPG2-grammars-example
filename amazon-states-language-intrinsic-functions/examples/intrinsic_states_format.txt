@@ -1,1 +1,0 @@
-States.Format('Formatting arguments fst={} and snd={}.', $.FunctionInput.fst, $.FunctionInput.snd)

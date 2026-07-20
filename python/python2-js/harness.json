@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.python.python2_js",
-  "lexer": "PythonPython2JsLexer",
-  "parser": "PythonPython2JsParser",
-  "example_globs": [
-    "examples-curated/**/*.py"
-  ]
-}

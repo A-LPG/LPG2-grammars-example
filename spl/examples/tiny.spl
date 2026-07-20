@@ -1,2 +1,0 @@
-search index=main error
-| stats count by host

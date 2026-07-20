@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.atl",
-  "lexer": "AtlLexer",
-  "parser": "AtlParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

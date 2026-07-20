@@ -1,0 +1,14 @@
+{
+  "id": "geekcode",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [],
+  "parser_bytes": 2326,
+  "rule_approx": 23,
+  "start": "file_",
+  "example_count": 3,
+  "notes": "real_g4_port",
+  "tier": "B"
+}

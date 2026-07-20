@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.pl0",
-  "lexer": "Pl0Lexer",
-  "parser": "Pl0Parser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

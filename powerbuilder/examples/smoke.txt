@@ -1,2 +1,0 @@
-integer li_x
-li_x = 1

@@ -1,6 +1,0 @@
-# classic syllogism
-mortal(X) :- human(X).
-human("Socrates").
-human("Plato").
-mortal("Socrates")?
-mortal(X)?

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.brainflak",
+  "lexer": "BrainflakLexer",
+  "parser": "BrainflakParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

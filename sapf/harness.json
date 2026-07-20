@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.sapf",
-  "lexer": "SapfLexer",
-  "parser": "SapfParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

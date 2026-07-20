@@ -1,0 +1,20 @@
+-- Dummy keyword filter for vba/vba7_1
+%options package=lpg.grammars.vba.vba7_1
+%options template=KeywordTemplateF.gi
+%options fp=Vba71KWLexer
+%Include
+    KWLexerFoldedCaseMapF.gi
+%End
+%Export
+    X
+%End
+%Terminals
+    a    b    c    d    e    f    g    h    i    j    k    l    m
+    n    o    p    q    r    s    t    u    v    w    x    y    z
+%End
+%Start
+    Keyword
+%End
+%Rules
+    Keyword ::= x x x /.$setResult($_X);./
+%End

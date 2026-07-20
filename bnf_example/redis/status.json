@@ -1,0 +1,14 @@
+{
+  "id": "redis",
+  "parse_ok": true,
+  "status": "ported",
+  "quality": "language_subset",
+  "blockers": [],
+  "example_count": 3,
+  "quality_notes": [
+    "curated_subset",
+    "real_g4_port"
+  ],
+  "tier": "B",
+  "parser_bytes": 20765
+}

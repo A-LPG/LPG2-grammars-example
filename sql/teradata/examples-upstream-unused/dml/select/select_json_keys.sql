@@ -1,3 +1,0 @@
-SELECT *
-  FROM JSON_KEYS (ON (SELECT json_data FROM tbl) USING DEPTH(1) QUOTES ('Y')) AS t
-;

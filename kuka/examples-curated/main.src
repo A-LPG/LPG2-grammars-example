@@ -1,4 +1,0 @@
-DEF main()
-DECL INT i
-DECL INT j
-END

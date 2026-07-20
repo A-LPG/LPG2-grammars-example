@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.esolang.dgol",
-  "lexer": "DgolLexer",
-  "parser": "DgolParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

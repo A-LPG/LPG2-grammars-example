@@ -1,0 +1,17 @@
+{
+  "id": "rexx",
+  "quality": "language_subset",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "curated_subset",
+    "real_g4_port"
+  ],
+  "parser_bytes": 11557,
+  "rule_approx": 207,
+  "start": "file_",
+  "example_count": 1,
+  "tier": "B",
+  "notes": "real_g4_port"
+}

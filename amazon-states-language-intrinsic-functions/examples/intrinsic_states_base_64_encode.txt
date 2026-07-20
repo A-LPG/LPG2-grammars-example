@@ -1,1 +1,0 @@
-States.Base64Encode($.FunctionInput)

@@ -1,0 +1,18 @@
+{
+  "id": "v",
+  "quality": "language_subset",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "curated_subset",
+    "real_g4_port"
+  ],
+  "parser_bytes": 8697,
+  "rule_approx": 153,
+  "start": "sourceFile",
+  "example_count": 2,
+  "notes": "real_g4_port",
+  "tier": "B",
+  "parser_lines": 457
+}

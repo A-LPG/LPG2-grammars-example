@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.logo.ucb_logo",
-  "lexer": "LogoLexer",
-  "parser": "LogoParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

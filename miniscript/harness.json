@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.miniscript",
-  "lexer": "MiniscriptLexer",
-  "parser": "MiniscriptParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

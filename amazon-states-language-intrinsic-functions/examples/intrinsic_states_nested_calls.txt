@@ -1,1 +1,0 @@
-States.ArrayGetItem(States.StringSplit($$.StateMachine.Name, '-'), States.MathAdd(States.ArrayLength(States.StringSplit($$.StateMachine.Name, '-')), -1))

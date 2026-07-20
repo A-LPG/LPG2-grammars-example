@@ -1,6 +1,0 @@
-{
-  "package": "lpg.grammars.semver",
-  "lexer": "SemverLexer",
-  "parser": "SemverParser",
-  "example_globs": ["examples/**/*"]
-}

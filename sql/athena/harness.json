@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.sql.athena",
-  "lexer": "SqlAthenaLexer",
-  "parser": "SqlAthenaParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

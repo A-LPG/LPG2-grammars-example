@@ -1,0 +1,12 @@
+{
+  "id": "logo/logo",
+  "parse_ok": true,
+  "status": "ported",
+  "tier": "A",
+  "quality": "language_port",
+  "quality_notes": [],
+  "blockers": [],
+  "start": "prog",
+  "example_count": 16,
+  "parser_bytes": 3039
+}

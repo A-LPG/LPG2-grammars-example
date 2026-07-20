@@ -1,3 +1,0 @@
-start: R0 = R1 + R2, R3 = R4 - R5;
-mid: R1 = R0 + R2, R4 = R3 - R5;
-done: R2 = R1 + R3, R5 = R4 - R0;

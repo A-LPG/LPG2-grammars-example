@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.unicode.graphemes",
-  "lexer": "GraphemesLexer",
-  "parser": "GraphemesParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

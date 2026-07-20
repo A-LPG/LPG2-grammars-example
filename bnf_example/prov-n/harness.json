@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.prov_n",
+  "lexer": "ProvNLexer",
+  "parser": "ProvNParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

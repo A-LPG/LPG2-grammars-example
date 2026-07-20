@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.zig",
+  "lexer": "ZigLexer",
+  "parser": "ZigParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

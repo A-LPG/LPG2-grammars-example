@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.kotlin.kotlin_formal",
+  "lexer": "KotlinFormalLexer",
+  "parser": "KotlinFormalParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

@@ -1,5 +1,0 @@
-namespace MyGame;
-table HelloReply {
-  message:string;
-}
-root_type HelloReply;

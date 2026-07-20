@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.swift.swift3",
+  "lexer": "Swift3Lexer",
+  "parser": "Swift3Parser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

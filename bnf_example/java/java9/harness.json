@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.java.java9",
+  "lexer": "Java9Lexer",
+  "parser": "Java9Parser",
+  "example_globs": [
+    "examples-curated/**/*.java"
+  ]
+}

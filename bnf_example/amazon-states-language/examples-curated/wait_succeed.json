@@ -1,0 +1,1 @@
+{ "Comment" : "wait succeed" , "StartAt" : "W" , "States" : { "W" : { "Type" : "Wait" , "Seconds" : 5 , "Next" : "D" } , "D" : { "Type" : "Succeed" } } }

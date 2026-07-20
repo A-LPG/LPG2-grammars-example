@@ -1,1 +1,0 @@
-RENAME DATABASE own.olddb TO nwdb;

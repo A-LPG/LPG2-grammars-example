@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.capnproto",
+  "lexer": "CapnprotoLexer",
+  "parser": "CapnprotoParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

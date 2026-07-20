@@ -1,0 +1,15 @@
+{
+  "id": "gtin",
+  "parse_ok": true,
+  "example_count": 12,
+  "status": "ported",
+  "blockers": [],
+  "tier": "A",
+  "quality": "language_port",
+  "quality_notes": [
+    "real_g4_port"
+  ],
+  "parser_bytes": 3415,
+  "parser_lines": 114,
+  "start": "gtin"
+}

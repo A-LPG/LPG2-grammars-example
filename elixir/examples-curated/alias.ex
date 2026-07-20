@@ -1,2 +1,0 @@
-defmodule Alias do
-end

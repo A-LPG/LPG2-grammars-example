@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.bicep",
-  "lexer": "BicepLexer",
-  "parser": "BicepParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

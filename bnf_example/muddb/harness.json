@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.muddb",
+  "lexer": "MuddbLexer",
+  "parser": "MuddbParser",
+  "example_globs": [
+    "examples/minimal.db"
+  ]
+}

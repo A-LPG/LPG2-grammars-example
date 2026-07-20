@@ -1,1 +1,0 @@
-RENAME TRUSTED CONTEXT cntx1 TO cntx2;

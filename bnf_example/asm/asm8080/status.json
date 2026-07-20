@@ -1,0 +1,13 @@
+{
+  "id": "asm/asm8080",
+  "tier": "D",
+  "parse_ok": true,
+  "status": "ported",
+  "example_count": 1,
+  "blockers": [],
+  "quality": "language_subset",
+  "quality_notes": [
+    "limited_examples_or_rules"
+  ],
+  "parser_bytes": 1880
+}

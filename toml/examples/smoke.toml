@@ -1,7 +1,0 @@
-title = "demo"
-count = 42
-flag = true
-[owner]
-name = "Tom"
-[[fruit]]
-name = "apple"

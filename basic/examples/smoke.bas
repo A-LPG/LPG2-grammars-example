@@ -1,2 +1,0 @@
-10 PRINT "HI"
-20 END

@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.asm.asm6502",
-  "lexer": "Asm6502Lexer",
-  "parser": "Asm6502Parser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

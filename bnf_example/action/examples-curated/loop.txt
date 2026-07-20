@@ -1,0 +1,6 @@
+PROC main()
+
+   CARD i
+   i = 0
+
+RETURN

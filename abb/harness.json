@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.abb",
-  "lexer": "AbbLexer",
-  "parser": "AbbParser",
-  "example_globs": [
-    "examples/**/*.sys"
-  ]
-}

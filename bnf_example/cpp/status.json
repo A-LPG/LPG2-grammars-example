@@ -1,0 +1,14 @@
+{
+  "id": "cpp",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [],
+  "parser_bytes": 30303,
+  "rule_approx": 482,
+  "start": "translationUnit",
+  "example_count": 5,
+  "tier": "C",
+  "parser_lines": 1223
+}

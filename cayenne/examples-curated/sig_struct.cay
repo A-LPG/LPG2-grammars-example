@@ -1,3 +1,0 @@
-sig
-  foo :: Nat;
-  bar :: Nat = x;

@@ -1,3 +1,0 @@
-java.lang.Error
-at com.example.Foo.work(Native Method)
-at com.example.X.<init>(Unknown Source)

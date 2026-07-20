@@ -1,3 +1,0 @@
-java.lang.NullPointerException: boom
-at com.example.Foo.bar(Foo.java:42)
-at com.example.Foo.main(Foo.java:10)

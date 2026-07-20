@@ -1,3 +1,0 @@
-      subroutine sub
-      return
-      end

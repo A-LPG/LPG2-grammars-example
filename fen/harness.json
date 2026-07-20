@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.fen",
-  "lexer": "FenLexer",
-  "parser": "FenParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

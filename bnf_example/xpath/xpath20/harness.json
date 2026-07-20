@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.xpath.xpath20",
+  "lexer": "XpathXpath20Lexer",
+  "parser": "XpathXpath20Parser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

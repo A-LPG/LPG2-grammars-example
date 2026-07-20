@@ -1,6 +1,0 @@
-{
-  "package": "lpg.grammars.arithmetic",
-  "lexer": "ArithmeticLexer",
-  "parser": "ArithmeticParser",
-  "example_globs": ["examples-curated/**/*"]
-}

@@ -1,2 +1,0 @@
--- Revoking the CONNECT THROUGH Privilege
-REVOKE CONNECT THROUGH pls FROM PERMANENT sbd WITH ROLE admin;

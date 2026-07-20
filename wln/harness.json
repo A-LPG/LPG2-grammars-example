@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.wln",
-  "lexer": "WlnLexer",
-  "parser": "WlnParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

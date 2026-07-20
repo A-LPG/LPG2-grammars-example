@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.wavefront",
-  "lexer": "WavefrontLexer",
-  "parser": "WavefrontParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

@@ -1,0 +1,15 @@
+{
+  "id": "thrift",
+  "quality": "language_subset",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "limited_examples_or_rules"
+  ],
+  "parser_bytes": 4850,
+  "rule_approx": 96,
+  "start": "document",
+  "example_count": 1,
+  "tier": "B"
+}

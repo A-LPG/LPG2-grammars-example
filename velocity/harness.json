@@ -1,9 +1,0 @@
-{
-  "package": "lpg.grammars.velocity",
-  "lexer": "VelocityLexer",
-  "parser": "VelocityParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ],
-  "parser_template": "btParserTemplateF.gi"
-}

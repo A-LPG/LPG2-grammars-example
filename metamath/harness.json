@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.metamath",
-  "lexer": "MetamathLexer",
-  "parser": "MetamathParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

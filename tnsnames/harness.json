@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.tnsnames",
-  "lexer": "TnsnamesLexer",
-  "parser": "TnsnamesParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

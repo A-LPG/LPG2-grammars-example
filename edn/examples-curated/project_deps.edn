@@ -1,9 +1,0 @@
-;; Minimal deps.edn-style project map
-{:paths ["src" "resources"]
- :deps {org.clojure/clojure {:mvn/version "1.11.1"}
-        org.clojure/tools.logging {:mvn/version "1.2.4"}}
- :aliases {:test {:extra-paths ["test"]
-                  :extra-deps {io.github.cognitect-labs/test-runner
-                               {:git/tag "v0.5.1"
-                                :git/sha "dfb30dd"}}}
-           :build {:ns-default build}}}

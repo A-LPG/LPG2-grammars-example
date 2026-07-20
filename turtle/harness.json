@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.turtle",
-  "lexer": "TurtleLexer",
-  "parser": "TurtleParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

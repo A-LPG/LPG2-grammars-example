@@ -1,7 +1,0 @@
-(cl-text http://example.org/mod.clif
-
-(cl-module ring (cl-imports http://example.org/ring.clif))
-
-(forall (x) (not (ring x)))
-
-)

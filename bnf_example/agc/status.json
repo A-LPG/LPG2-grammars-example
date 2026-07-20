@@ -1,0 +1,14 @@
+{
+  "id": "agc",
+  "parse_ok": true,
+  "status": "ported",
+  "quality": "language_subset",
+  "blockers": [],
+  "example_count": 3,
+  "parser_lines": 44,
+  "parser_bytes": 851,
+  "quality_notes": [
+    "heuristic_default_subset"
+  ],
+  "tier": "B"
+}

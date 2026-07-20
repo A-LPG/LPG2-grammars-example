@@ -1,0 +1,15 @@
+{
+  "id": "kirikiri-tjs",
+  "parse_ok": true,
+  "status": "ported",
+  "quality": "language_subset",
+  "blockers": [],
+  "example_count": 3,
+  "parser_lines": 103,
+  "parser_bytes": 2984,
+  "quality_notes": [
+    "curated_subset",
+    "real_g4_port"
+  ],
+  "tier": "B"
+}

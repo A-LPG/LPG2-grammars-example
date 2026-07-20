@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.verilog.verilog",
-  "lexer": "VerilogLexer",
-  "parser": "VerilogParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

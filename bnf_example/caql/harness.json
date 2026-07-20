@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.caql",
+  "lexer": "CaqlLexer",
+  "parser": "CaqlParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

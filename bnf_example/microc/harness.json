@@ -1,0 +1,6 @@
+{
+  "package": "lpg.grammars.microc",
+  "lexer": "MicrocLexer",
+  "parser": "MicrocParser",
+  "example_globs": ["examples-curated/**/*"]
+}

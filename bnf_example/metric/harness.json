@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.metric",
+  "lexer": "MetricLexer",
+  "parser": "MetricParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

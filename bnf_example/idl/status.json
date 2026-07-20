@@ -1,0 +1,15 @@
+{
+  "id": "idl",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [],
+  "parser_bytes": 19321,
+  "rule_approx": 304,
+  "start": "specification",
+  "example_count": 2,
+  "notes": "real_g4_port",
+  "tier": "B",
+  "parser_lines": 844
+}

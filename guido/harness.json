@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.guido",
-  "lexer": "GuidoLexer",
-  "parser": "GuidoParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

@@ -1,0 +1,13 @@
+{
+  "package": "lpg.grammars.dice",
+  "lexer": "DiceLexer",
+  "parser": "DiceParser",
+  "example_globs": [
+    "examples/arithmetic_*.txt",
+    "examples/big_*.txt",
+    "examples/dice.txt",
+    "examples/negative_*.txt",
+    "examples/no_dice.txt",
+    "examples/number.txt"
+  ]
+}

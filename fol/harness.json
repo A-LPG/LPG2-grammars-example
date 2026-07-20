@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.fol",
-  "lexer": "FolLexer",
-  "parser": "FolParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

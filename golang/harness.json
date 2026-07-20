@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.golang",
-  "lexer": "GolangLexer",
-  "parser": "GolangParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

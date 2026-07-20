@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.angelscript",
+  "lexer": "AngelscriptLexer",
+  "parser": "AngelscriptParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

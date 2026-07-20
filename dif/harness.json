@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.dif",
-  "lexer": "DifLexer",
-  "parser": "DifParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

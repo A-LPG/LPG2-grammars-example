@@ -1,0 +1,3 @@
+-- type synonym then nullary def
+Num == Int
+zero = 0

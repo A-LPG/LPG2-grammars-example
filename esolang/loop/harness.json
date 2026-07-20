@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.loop",
-  "lexer": "LoopLexer",
-  "parser": "LoopParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

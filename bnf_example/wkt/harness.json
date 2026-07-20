@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.wkt",
+  "lexer": "WktLexer",
+  "parser": "WktParser",
+  "example_globs": [
+    "examples/**/*.txt"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.szf",
+  "lexer": "SzfLexer",
+  "parser": "SzfParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

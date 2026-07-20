@@ -1,0 +1,15 @@
+{
+  "id": "javascript/javascript",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [],
+  "parser_bytes": 16642,
+  "rule_approx": 227,
+  "start": "program",
+  "example_count": 9,
+  "tier": "D",
+  "parser_lines": 716,
+  "notes": "functions/control/members/modules"
+}

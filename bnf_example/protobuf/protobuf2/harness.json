@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.protobuf.protobuf2",
+  "lexer": "ProtobufProtobuf2Lexer",
+  "parser": "ProtobufProtobuf2Parser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

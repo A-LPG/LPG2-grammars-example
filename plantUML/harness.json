@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.plantUML",
-  "lexer": "PlantUMLLexer",
-  "parser": "PlantUMLParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

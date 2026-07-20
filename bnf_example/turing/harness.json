@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.turing",
+  "lexer": "TuringLexer",
+  "parser": "TuringParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.javadoc",
-  "lexer": "JavadocLexer",
-  "parser": "JavadocParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

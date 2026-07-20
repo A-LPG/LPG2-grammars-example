@@ -1,3 +1,0 @@
-array arr[1] : w32 -> w8 = symbolic
-array arr_1[1] : w32 -> w8 = symbolic
-array const_arr1[5] : w32 -> w8 = [0 0 0 0 0]

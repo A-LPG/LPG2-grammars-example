@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.kquery",
-  "lexer": "KqueryLexer",
-  "parser": "KqueryParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

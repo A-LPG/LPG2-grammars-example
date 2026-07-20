@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.corundum",
+  "lexer": "CorundumLexer",
+  "parser": "CorundumParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "bibcode",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "real_g4_port"
+  ],
+  "parser_bytes": 787,
+  "start": "bibcode",
+  "example_count": 4,
+  "tier": "A"
+}

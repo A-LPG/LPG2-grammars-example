@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.cayenne",
-  "lexer": "CayenneLexer",
-  "parser": "CayenneParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

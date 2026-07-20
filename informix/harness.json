@@ -1,9 +1,0 @@
-{
-  "package": "lpg.grammars.informix",
-  "lexer": "InformixLexer",
-  "parser": "InformixParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ],
-  "parser_template": "btParserTemplateF.gi"
-}

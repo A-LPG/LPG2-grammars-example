@@ -1,3 +1,0 @@
-hi(name) ::= "Hello!"
-bye() ::= "Goodbye"
-thanks(x) ::= "Thanks <x>"

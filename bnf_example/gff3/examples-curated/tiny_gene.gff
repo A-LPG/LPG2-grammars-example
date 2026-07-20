@@ -1,0 +1,6 @@
+##gff-version 3
+##sequence-region chr1 1 1000
+chr1	.	gene	100	400	.	+	.	ID=gene1;Name=demo
+chr1	.	CDS	100	250	.	+	0	ID=cds1;Parent=gene1
+chr1	.	CDS	300	400	.	+	0	ID=cds1;Parent=gene1
+###

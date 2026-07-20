@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.esolang.snowball",
-  "lexer": "SnowballLexer",
-  "parser": "SnowballParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

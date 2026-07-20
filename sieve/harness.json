@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.sieve",
-  "lexer": "SieveLexer",
-  "parser": "SieveParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

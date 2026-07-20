@@ -1,1 +1,0 @@
-# esolang/cool (LPG)

@@ -1,5 +1,0 @@
-cstype bmatrix
-deg 3
-step 2
-bmat u 1 0 -3 2 0 0  3 -2 \
-     0 1 -2 1 0 0 -1  1

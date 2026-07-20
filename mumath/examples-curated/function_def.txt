@@ -1,5 +1,0 @@
-FUNCTION SQR(X),
-  Y: X * X,
-ENDFUN;
-
-Y: SQR(3);

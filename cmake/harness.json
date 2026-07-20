@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.cmake",
-  "lexer": "CmakeLexer",
-  "parser": "CmakeParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

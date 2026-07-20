@@ -1,0 +1,6 @@
+{
+  "package": "lpg.grammars.bdf",
+  "lexer": "BdfLexer",
+  "parser": "BdfParser",
+  "example_globs": ["examples/**/*"]
+}

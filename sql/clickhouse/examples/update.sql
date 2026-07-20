@@ -1,1 +1,0 @@
-UPDATE hits SET Title = 'Updated Title' WHERE EventDate = today();

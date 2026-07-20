@@ -1,8 +1,0 @@
-##gff-version 3
-#!processor curated
-seqA	RefSeq	region	1	500	.	+	.	ID=reg0;Is_circular=false
-seqA	RefSeq	gene	10	200	.	+	.	ID=gene0;Name=repA
-seqA	RefSeq	CDS	10	200	.	+	0	ID=cds0;Parent=gene0;product=replicase
-seqA	RefSeq	gene	220	480	.	-	.	ID=gene1;Name=cap
-seqA	RefSeq	CDS	220	480	.	-	0	ID=cds1;Parent=gene1;product=capsid
-###

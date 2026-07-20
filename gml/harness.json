@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.gml",
-  "lexer": "GmlLexer",
-  "parser": "GmlParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

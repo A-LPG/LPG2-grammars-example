@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+  <book id="bk101">
+    <author>Gambardella, Matthew</author>
+    <title>XML Developer Guide</title>
+    <price>44.95</price>
+  </book>
+  <book id="bk102">
+    <author>Ralls, Kim</author>
+    <title>Midnight Rain</title>
+  </book>
+</catalog>

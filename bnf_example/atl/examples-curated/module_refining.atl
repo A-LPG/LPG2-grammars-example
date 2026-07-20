@@ -1,0 +1,2 @@
+module Refine;
+create OUT : Persons refining INM : Families;

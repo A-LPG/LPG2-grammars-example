@@ -1,5 +1,0 @@
-module M {
-  interface I {
-    attribute long x;
-  };
-};

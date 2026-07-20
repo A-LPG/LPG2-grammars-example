@@ -1,6 +1,0 @@
-# freedesktop/desktop-entry
-
-Auto-ported from antlr/grammars-v4 `freedesktop/desktop-entry` via `tools/antlr2lpg.py`.
-
-Structural rule transfer (EBNF expanded). May need LALR conflict fixes.
-Start symbol: `desktop_entry`.

@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.eiffel",
-  "lexer": "EiffelLexer",
-  "parser": "EiffelParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

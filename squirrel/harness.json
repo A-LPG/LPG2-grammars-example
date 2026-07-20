@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.squirrel",
-  "lexer": "SquirrelLexer",
-  "parser": "SquirrelParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

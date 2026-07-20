@@ -1,5 +1,0 @@
-LPUSH q a
-LPUSH q b
-LRANGE q 0 1
-EXISTS q
-DEL q

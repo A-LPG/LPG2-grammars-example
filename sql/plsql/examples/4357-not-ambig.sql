@@ -1,1 +1,0 @@
-select interval '0 02:30:00' day to second;

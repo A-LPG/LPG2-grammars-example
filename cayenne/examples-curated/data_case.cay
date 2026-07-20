@@ -1,4 +1,0 @@
-case x of
-  (Cons a b) -> a;
-  Nil -> #;
-  :: List

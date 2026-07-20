@@ -1,9 +1,0 @@
-{
-  "package": "lpg.grammars.langium",
-  "lexer": "LangiumLexer",
-  "parser": "LangiumParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ],
-  "parser_template": "btParserTemplateF.gi"
-}

@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.orwell",
-  "lexer": "OrwellLexer",
-  "parser": "OrwellParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

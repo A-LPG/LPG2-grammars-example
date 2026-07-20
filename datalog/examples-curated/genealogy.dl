@@ -1,8 +1,0 @@
-# parent facts, ancestor rules, query + retraction
-parent(john, douglas).
-parent(john, mary).
-parent(douglas, alice).
-ancestor(X, Y) :- parent(X, Y).
-ancestor(X, Y) :- parent(X, Z), ancestor(Z, Y).
-ancestor(john, alice)?
-parent(john, mary)~

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.sql.informix_sql",
+  "lexer": "SqlLexer",
+  "parser": "SqlParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

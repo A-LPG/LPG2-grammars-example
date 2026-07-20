@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.fdo91",
-  "lexer": "Fdo91Lexer",
-  "parser": "Fdo91Parser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

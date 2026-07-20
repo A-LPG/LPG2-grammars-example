@@ -1,5 +1,0 @@
-@prefix ex: <http://example.org/> .
-
-ex:item ex:name "widget" .
-ex:item ex:count 42 .
-ex:item ex:ok true .

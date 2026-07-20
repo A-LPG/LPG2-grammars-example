@@ -1,1 +1,0 @@
-sig FSObject { parent: lone Dir }

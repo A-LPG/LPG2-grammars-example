@@ -1,0 +1,14 @@
+{
+  "id": "rfc822/rfc822-datetime",
+  "quality": "language_subset",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "heuristic_default_subset"
+  ],
+  "parser_bytes": 1007,
+  "start": "date_time",
+  "example_count": 3,
+  "tier": "A"
+}

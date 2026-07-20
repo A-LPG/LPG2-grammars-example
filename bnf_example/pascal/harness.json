@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.pascal",
+  "lexer": "PascalLexer",
+  "parser": "PascalParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

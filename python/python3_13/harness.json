@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.python.python3_13",
-  "lexer": "PythonPython313Lexer",
-  "parser": "PythonPython313Parser",
-  "example_globs": [
-    "examples-curated/**/*.py"
-  ]
-}

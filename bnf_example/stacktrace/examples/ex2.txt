@@ -1,0 +1,5 @@
+java.lang.RuntimeException: outer
+at com.example.A.m(A.java:1)
+Caused by: java.lang.Exception: inner
+at com.example.B.n(B.java:2)
+... 3 more

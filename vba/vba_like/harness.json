@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.vba.vba_like",
-  "lexer": "VbaLikeLexer",
-  "parser": "VbaLikeParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

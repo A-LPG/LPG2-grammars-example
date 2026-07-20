@@ -1,0 +1,13 @@
+{
+  "id": "acme",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [],
+  "parser_bytes": 25014,
+  "rule_approx": 442,
+  "start": "acmeCompUnit",
+  "tier": "B",
+  "example_count": 3
+}

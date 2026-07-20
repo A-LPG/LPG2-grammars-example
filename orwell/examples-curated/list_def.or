@@ -1,2 +1,0 @@
--- list-valued definition
-roots a b c = [x, y]

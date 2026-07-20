@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.gdscript",
+  "lexer": "GdscriptLexer",
+  "parser": "GdscriptParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

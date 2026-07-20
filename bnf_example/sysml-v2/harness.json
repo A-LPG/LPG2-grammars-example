@@ -1,0 +1,9 @@
+{
+  "package": "lpg.grammars.sysml_v2",
+  "lexer": "SysmlV2Lexer",
+  "parser": "SysmlV2Parser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ],
+  "parser_template": "btParserTemplateF.gi"
+}

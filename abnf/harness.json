@@ -1,7 +1,0 @@
-{
-  "package": "lpg.grammars.abnf",
-  "lexer": "AbnfLexer",
-  "parser": "AbnfParser",
-  "kwlexer": "AbnfKWLexer.gi",
-  "example_globs": ["examples-curated/**/*.abnf"]
-}

@@ -1,0 +1,14 @@
+{
+  "id": "flatbuffers",
+  "tier": "B",
+  "parse_ok": true,
+  "status": "ported",
+  "example_count": 19,
+  "blockers": [],
+  "quality": "language_port",
+  "quality_notes": [
+    "real_g4_port"
+  ],
+  "notes": "real_g4_port of FlatBuffers.g4 schema/table/struct/enum/union/rpc subset",
+  "parser_bytes": 3623
+}

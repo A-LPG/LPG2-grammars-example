@@ -1,0 +1,15 @@
+{
+  "id": "rego",
+  "parse_ok": true,
+  "status": "ported",
+  "tier": "B",
+  "quality": "language_subset",
+  "quality_notes": [
+    "curated_subset",
+    "real_g4_port"
+  ],
+  "blockers": [],
+  "start": "root",
+  "example_count": 3,
+  "parser_bytes": 3899
+}

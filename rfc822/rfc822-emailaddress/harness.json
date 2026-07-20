@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.rfc822.rfc822_emailaddress",
-  "lexer": "EmailLexer",
-  "parser": "EmailParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

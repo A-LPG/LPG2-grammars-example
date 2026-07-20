@@ -1,3 +1,0 @@
-class Smoke {
-  void m() {}
-}

@@ -1,0 +1,13 @@
+{
+  "id": "pike",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "real_g4_port"
+  ],
+  "parser_bytes": 7391,
+  "example_count": 1,
+  "tier": "B"
+}

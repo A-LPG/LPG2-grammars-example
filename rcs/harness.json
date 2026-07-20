@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.rcs",
-  "lexer": "RcsLexer",
-  "parser": "RcsParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

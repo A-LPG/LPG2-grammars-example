@@ -1,3 +1,0 @@
-
-analog_bubbles.out +/ 5 T 100 0 sgram		; plot spectrogram. +/ to mix to mono
-

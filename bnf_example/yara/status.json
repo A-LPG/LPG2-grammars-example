@@ -1,0 +1,15 @@
+{
+  "id": "yara",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "real_g4_port"
+  ],
+  "parser_bytes": 5374,
+  "rule_approx": 85,
+  "start": "startRule",
+  "example_count": 1,
+  "tier": "D"
+}

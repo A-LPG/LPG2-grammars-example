@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.parkingsign",
-  "lexer": "ParkingsignLexer",
-  "parser": "ParkingsignParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

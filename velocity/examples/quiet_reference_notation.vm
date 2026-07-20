@@ -1,5 +1,0 @@
-<input type="text" name="email" value="$email"/>
-
-<input type="text" name="email" value="$!email"/>
-
-<input type="text" name="email" value="$!{email}"/>

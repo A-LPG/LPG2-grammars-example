@@ -1,3 +1,0 @@
-exam(<appl(<term>,9)>,<int>,<str>)
-
-

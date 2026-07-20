@@ -1,4 +1,0 @@
-package demo
-
-func hello() {
-}

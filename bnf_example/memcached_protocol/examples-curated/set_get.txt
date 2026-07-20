@@ -1,0 +1,2 @@
+set Test 0 100 10
+get Test

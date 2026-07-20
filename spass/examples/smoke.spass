@@ -1,3 +1,0 @@
-begin_problem ( P ) .
-formula ( true ) .
-end_problem .

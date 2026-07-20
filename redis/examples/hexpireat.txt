@@ -1,1 +1,0 @@
-HEXPIREAT test 1 FIELDS 1 key1

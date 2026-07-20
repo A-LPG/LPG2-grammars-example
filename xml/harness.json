@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.xml",
-  "lexer": "XmlLexer",
-  "parser": "XmlParser",
-  "example_globs": [
-    "examples/*.xml"
-  ]
-}

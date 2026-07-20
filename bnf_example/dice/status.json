@@ -1,0 +1,14 @@
+{
+  "id": "dice",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "real_g4_port"
+  ],
+  "parser_bytes": 773,
+  "start": "file_",
+  "example_count": 12,
+  "tier": "B"
+}

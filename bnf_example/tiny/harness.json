@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.tiny",
+  "lexer": "TinyLexer",
+  "parser": "TinyParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

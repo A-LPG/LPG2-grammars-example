@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.kuka",
+  "lexer": "KukaLexer",
+  "parser": "KukaParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

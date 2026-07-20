@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.antlr.antlr4",
+  "lexer": "AntlrAntlr4Lexer",
+  "parser": "AntlrAntlr4Parser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

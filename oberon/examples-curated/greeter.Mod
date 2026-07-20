@@ -1,2 +1,0 @@
-MODULE Greeter;
-END Greeter.

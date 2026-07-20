@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.pmmn",
-  "lexer": "PmmnLexer",
-  "parser": "PmmnParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

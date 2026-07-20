@@ -1,6 +1,0 @@
-\x
-\u
-\Q...\E
-\Qabc$xyz\E
-\Qabc\$xyz\E
-\Qabc\E\$\Qxyz\E

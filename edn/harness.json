@@ -1,6 +1,0 @@
-{
-  "package": "lpg.grammars.edn",
-  "lexer": "EdnLexer",
-  "parser": "EdnParser",
-  "example_globs": ["examples-curated/**/*.edn"]
-}

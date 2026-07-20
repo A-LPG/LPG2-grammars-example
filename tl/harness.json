@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.tl",
-  "lexer": "TlLexer",
-  "parser": "TlParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

@@ -1,2 +1,0 @@
--- Disable Incremental Restore
-LOGGING INCREMENTAL ARCHIVE OFF FOR MyDB;

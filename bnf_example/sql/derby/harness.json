@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.sql.derby",
+  "lexer": "SqlDerbyLexer",
+  "parser": "SqlDerbyParser",
+  "example_globs": [
+    "examples/**/*.sql"
+  ]
+}

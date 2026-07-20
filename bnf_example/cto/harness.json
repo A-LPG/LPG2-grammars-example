@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.cto",
+  "lexer": "CtoLexer",
+  "parser": "CtoParser",
+  "example_globs": [
+    "examples-curated/**/*.cto"
+  ]
+}

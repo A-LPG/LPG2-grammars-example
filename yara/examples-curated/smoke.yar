@@ -1,1 +1,0 @@
-rule Smoke { condition: true }

@@ -1,3 +1,0 @@
-PARSER_BEGIN(Toy)
-class Toy {}
-PARSER_END(Toy)

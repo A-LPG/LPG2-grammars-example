@@ -1,9 +1,0 @@
-{
-  "package": "lpg.grammars.spass",
-  "lexer": "SpassLexer",
-  "parser": "SpassParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ],
-  "parser_template": "btParserTemplateF.gi"
-}

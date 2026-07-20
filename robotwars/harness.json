@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.robotwars",
-  "lexer": "RobotwarsLexer",
-  "parser": "RobotwarsParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

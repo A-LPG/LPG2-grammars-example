@@ -1,0 +1,12 @@
+{
+  "id": "smalltalk",
+  "parse_ok": true,
+  "status": "ported",
+  "tier": "B",
+  "quality": "language_port",
+  "quality_notes": [],
+  "blockers": [],
+  "start": "script",
+  "example_count": 3,
+  "parser_bytes": 4067
+}

@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.ocl",
-  "lexer": "OclLexer",
-  "parser": "OclParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

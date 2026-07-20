@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.iso8601",
+  "lexer": "Iso8601Lexer",
+  "parser": "Iso8601Parser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

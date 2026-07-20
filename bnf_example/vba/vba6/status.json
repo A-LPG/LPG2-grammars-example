@@ -1,0 +1,16 @@
+{
+  "id": "vba/vba6",
+  "quality": "language_subset",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "curated_subset",
+    "real_g4_port"
+  ],
+  "parser_bytes": 36870,
+  "rule_approx": 715,
+  "start": "startRule",
+  "tier": "B",
+  "example_count": 3
+}

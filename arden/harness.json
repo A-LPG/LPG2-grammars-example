@@ -1,9 +1,0 @@
-{
-  "package": "lpg.grammars.arden",
-  "lexer": "ArdenLexer",
-  "parser": "ArdenParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ],
-  "parser_template": "btParserTemplateF.gi"
-}

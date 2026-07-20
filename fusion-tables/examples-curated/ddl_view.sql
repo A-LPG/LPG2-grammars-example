@@ -1,3 +1,0 @@
-CREATE TABLE copy AS SELECT * FROM people;
-CREATE VIEW v AS (SELECT name FROM people);
-DROP TABLE copy;

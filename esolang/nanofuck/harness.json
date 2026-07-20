@@ -1,6 +1,0 @@
-{
-  "package": "lpg.grammars.esolang.nanofuck",
-  "lexer": "NanofuckLexer",
-  "parser": "NanofuckParser",
-  "example_globs": ["examples-curated/**/*"]
-}

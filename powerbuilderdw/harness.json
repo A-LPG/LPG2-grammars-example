@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.powerbuilderdw",
-  "lexer": "PowerbuilderdwLexer",
-  "parser": "PowerbuilderdwParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

@@ -1,9 +1,0 @@
-{
-  "package": "lpg.grammars.vba.vba6",
-  "lexer": "VbaVba6Lexer",
-  "parser": "VbaVba6Parser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ],
-  "parser_template": "btParserTemplateF.gi"
-}

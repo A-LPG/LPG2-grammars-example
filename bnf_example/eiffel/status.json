@@ -1,0 +1,13 @@
+{
+  "id": "eiffel",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [],
+  "parser_bytes": 26223,
+  "rule_approx": 740,
+  "start": "class_declaration",
+  "tier": "B",
+  "example_count": 3
+}

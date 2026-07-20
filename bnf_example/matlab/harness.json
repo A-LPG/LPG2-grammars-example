@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.matlab",
+  "lexer": "MatlabLexer",
+  "parser": "MatlabParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

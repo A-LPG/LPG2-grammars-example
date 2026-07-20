@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.vmf",
-  "lexer": "VmfLexer",
-  "parser": "VmfParser",
-  "example_globs": [
-    "examples/**/*.txt"
-  ]
-}

@@ -1,5 +1,0 @@
-{
-  dq: "line\nbreak\tand\u0020space",
-  sq: 'it\'s fine',
-  hex: 0xFF,
-}

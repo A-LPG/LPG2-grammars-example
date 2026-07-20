@@ -1,9 +1,0 @@
-      PROGRAM MAIN
-
-      IMPLICIT NONE
-
-      CONTINUE
-      PRINT *, 'Hello, world!'
-10    CONTINUE
-
-      END

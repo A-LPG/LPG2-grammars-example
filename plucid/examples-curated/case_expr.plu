@@ -1,5 +1,0 @@
-case x of
-  1: a;
-  2: b;
-  default: c
-end

@@ -1,0 +1,10 @@
+to spiral :n :len
+	repeat :n [
+		fd :len
+		rt 90
+		make "len :len + 5
+	]
+end
+
+cs
+spiral 20 10

@@ -1,9 +1,0 @@
-{
-  "package": "lpg.grammars.tsv",
-  "lexer": "TsvLexer",
-  "parser": "TsvParser",
-  "example_globs": [
-    "examples-curated/**/*",
-    "examples/**/*"
-  ]
-}

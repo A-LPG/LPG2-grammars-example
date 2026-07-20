@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.guitartab",
+  "lexer": "GuitartabLexer",
+  "parser": "GuitartabParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

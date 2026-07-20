@@ -1,6 +1,0 @@
-{
-  "package": "lpg.grammars.amazon_states_language_intrinsic_functions",
-  "lexer": "AslIntrinsicLexer",
-  "parser": "AslIntrinsicParser",
-  "example_globs": ["examples/**/*"]
-}

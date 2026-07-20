@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.ctl",
+  "lexer": "CtlLexer",
+  "parser": "CtlParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

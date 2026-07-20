@@ -1,1 +1,0 @@
-RENAME DICTIONARY db0.dict_A TO db1.dict_B, db2.dict_C TO db3.dict_D ON CLUSTER cluster

@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.promql",
-  "lexer": "PromqlLexer",
-  "parser": "PromqlParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

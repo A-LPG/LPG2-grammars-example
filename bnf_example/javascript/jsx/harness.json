@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.javascript.jsx",
+  "lexer": "JavascriptJsxLexer",
+  "parser": "JavascriptJsxParser",
+  "example_globs": [
+    "examples-curated/**/*.js"
+  ]
+}

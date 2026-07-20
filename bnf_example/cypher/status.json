@@ -1,0 +1,15 @@
+{
+  "id": "cypher",
+  "quality": "language_subset",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "limited_examples_or_rules"
+  ],
+  "parser_bytes": 11762,
+  "rule_approx": 219,
+  "start": "script",
+  "example_count": 1,
+  "tier": "B"
+}

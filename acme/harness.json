@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.acme",
-  "lexer": "AcmeLexer",
-  "parser": "AcmeParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

@@ -1,8 +1,0 @@
-.version 2.1
-.target sm_20
-.entry main()
-{
-	.reg .u32 %r<1>;
-	mov.u32 %r0, %r0;
-	ret;
-}

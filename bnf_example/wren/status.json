@@ -1,0 +1,14 @@
+{
+  "id": "wren",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [],
+  "parser_bytes": 7593,
+  "rule_approx": 135,
+  "start": "script",
+  "example_count": 3,
+  "tier": "B",
+  "parser_lines": 381
+}

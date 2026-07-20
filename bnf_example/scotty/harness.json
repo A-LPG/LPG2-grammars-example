@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.scotty",
+  "lexer": "ScottyLexer",
+  "parser": "ScottyParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

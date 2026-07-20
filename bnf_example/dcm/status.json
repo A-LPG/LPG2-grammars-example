@@ -1,0 +1,15 @@
+{
+  "id": "dcm",
+  "quality": "language_subset",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "heuristic_default_subset"
+  ],
+  "parser_bytes": 1409,
+  "rule_approx": 123,
+  "start": "konservierung",
+  "example_count": 1,
+  "tier": "A"
+}

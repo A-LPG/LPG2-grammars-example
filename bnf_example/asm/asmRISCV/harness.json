@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.asm.asmRISCV",
+  "lexer": "AsmAsmRISCVLexer",
+  "parser": "AsmAsmRISCVParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

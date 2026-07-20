@@ -1,2 +1,0 @@
-entity smoke is
-end;

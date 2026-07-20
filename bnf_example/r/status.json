@@ -1,0 +1,17 @@
+{
+  "id": "r",
+  "quality": "language_subset",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "heuristic_default_subset"
+  ],
+  "parser_bytes": 4028,
+  "rule_approx": 23,
+  "start": "prog",
+  "example_count": 3,
+  "tier": "A",
+  "parser_lines": 153,
+  "notes": "precedence-layered R.g4 port; multi-line assign/function/control; real_g4_port"
+}

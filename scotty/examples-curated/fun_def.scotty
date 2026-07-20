@@ -1,4 +1,0 @@
-fun add x =
-  + x 1
-+ (add 2)
-  3

@@ -1,0 +1,5 @@
+LET a = 1
+FOR i IN items
+  FILTER a == 1
+  INSERT { value: i, flag: false } INTO coll
+  RETURN NEW

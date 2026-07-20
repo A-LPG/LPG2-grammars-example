@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.rfc1960",
-  "lexer": "FilterLexer",
-  "parser": "FilterParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

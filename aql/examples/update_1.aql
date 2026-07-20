@@ -1,3 +1,0 @@
-FOR u IN users
-  FILTER u.active == false
-  UPDATE u WITH { status: "inactive" } IN backup

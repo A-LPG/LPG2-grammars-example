@@ -1,1 +1,0 @@
-RENAME TABLE own.old_table TO newitems;

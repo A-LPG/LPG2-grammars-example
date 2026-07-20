@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.pcre",
-  "lexer": "PcreLexer",
-  "parser": "PcreParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

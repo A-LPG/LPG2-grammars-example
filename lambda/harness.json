@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.lambda",
-  "lexer": "LambdaLexer",
-  "parser": "LambdaParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

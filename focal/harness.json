@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.focal",
-  "lexer": "FocalLexer",
-  "parser": "FocalParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

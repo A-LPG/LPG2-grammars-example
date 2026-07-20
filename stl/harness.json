@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.stl",
-  "lexer": "StlLexer",
-  "parser": "StlParser",
-  "example_globs": [
-    "examples-curated/**/*.stl"
-  ]
-}

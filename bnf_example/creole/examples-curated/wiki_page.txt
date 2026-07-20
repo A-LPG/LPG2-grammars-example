@@ -1,0 +1,8 @@
+= Project Notes =
+This page mixes **bold** and //italic// markup.
+
+== Links ==
+[[http://www.wikicreole.org|WikiCreole]]
+----
+* first item
+* second item

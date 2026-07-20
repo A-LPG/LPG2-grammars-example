@@ -1,5 +1,0 @@
-pg: PostgreSQL
-Cloud: my cloud
-Cloud.shape: cloud
-SQLite
-Cassandra

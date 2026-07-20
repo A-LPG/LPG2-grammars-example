@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.wkt_crs_v1",
+  "lexer": "WktCrsV1Lexer",
+  "parser": "WktCrsV1Parser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

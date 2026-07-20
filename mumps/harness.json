@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.mumps",
-  "lexer": "MumpsLexer",
-  "parser": "MumpsParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

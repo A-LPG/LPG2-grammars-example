@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.rpn",
-  "lexer": "RpnLexer",
-  "parser": "RpnParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

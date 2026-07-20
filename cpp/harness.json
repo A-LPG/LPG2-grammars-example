@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.cpp",
-  "lexer": "CppLexer",
-  "parser": "CppParser",
-  "example_globs": [
-    "examples-curated/**/*.cpp"
-  ]
-}

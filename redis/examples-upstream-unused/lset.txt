@@ -1,1 +1,0 @@
-LSET test -1 key

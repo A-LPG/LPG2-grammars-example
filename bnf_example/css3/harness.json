@@ -1,0 +1,9 @@
+{
+  "package": "lpg.grammars.css3",
+  "lexer": "Css3Lexer",
+  "parser": "Css3Parser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ],
+  "parser_template": "btParserTemplateF.gi"
+}

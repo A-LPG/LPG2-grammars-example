@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.refal",
-  "lexer": "RefalLexer",
-  "parser": "RefalParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

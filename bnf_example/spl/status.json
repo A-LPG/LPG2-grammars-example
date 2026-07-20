@@ -1,0 +1,13 @@
+{
+  "id": "spl",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [],
+  "parser_lines": 165,
+  "example_count": 3,
+  "tier": "B",
+  "start": "query",
+  "parser_bytes": 3260
+}

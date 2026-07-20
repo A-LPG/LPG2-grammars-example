@@ -1,9 +1,0 @@
-{
-  "package": "lpg.grammars.json5",
-  "lexer": "Json5Lexer",
-  "parser": "Json5Parser",
-  "example_globs": [
-    "examples/**/*",
-    "examples-curated/**/*"
-  ]
-}

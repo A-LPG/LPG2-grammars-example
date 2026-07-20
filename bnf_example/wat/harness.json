@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.wat",
+  "lexer": "WatLexer",
+  "parser": "WatParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

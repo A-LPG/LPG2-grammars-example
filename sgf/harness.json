@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.sgf",
-  "lexer": "SgfLexer",
-  "parser": "SgfParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

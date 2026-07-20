@@ -1,0 +1,9 @@
+; smoke test for asmZ80 LPG port
+MEM	EQU	62
+IOBYTE	EQU	3
+	ORG	100H
+START:	LD	A,0
+	LD	B,A
+	JP	START
+TBUFF	DS	80
+	END

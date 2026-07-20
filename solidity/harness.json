@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.solidity",
-  "lexer": "SolidityLexer",
-  "parser": "SolidityParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

@@ -1,7 +1,0 @@
-{
-  "package": "lpg.grammars.lpg",
-  "lexer": "LPGLexer",
-  "parser": "LPGParser",
-  "kwlexer": "LPGKWLexer.gi",
-  "example_globs": ["examples/**/*"]
-}

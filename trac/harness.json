@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.trac",
-  "lexer": "TracLexer",
-  "parser": "TracParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.recfile",
-  "lexer": "RecfileLexer",
-  "parser": "RecfileParser",
-  "example_globs": [
-    "examples/**/*.txt"
-  ]
-}

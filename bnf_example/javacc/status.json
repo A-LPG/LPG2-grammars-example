@@ -1,0 +1,13 @@
+{
+  "id": "javacc",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [],
+  "parser_bytes": 23683,
+  "rule_approx": 384,
+  "start": "javacc_input",
+  "tier": "B",
+  "example_count": 3
+}

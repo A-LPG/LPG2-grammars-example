@@ -1,9 +1,0 @@
-{
-  "package": "lpg.grammars.erlang",
-  "lexer": "ErlangLexer",
-  "parser": "ErlangParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ],
-  "parser_template": "btParserTemplateF.gi"
-}

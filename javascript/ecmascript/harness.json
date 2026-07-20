@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.javascript.ecmascript",
-  "lexer": "JavascriptEcmascriptLexer",
-  "parser": "JavascriptEcmascriptParser",
-  "example_globs": [
-    "examples-curated/**/*.js"
-  ]
-}

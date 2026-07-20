@@ -1,1 +1,0 @@
-States.Hash($.FunctionInput.fst, $.FunctionInput.snd)

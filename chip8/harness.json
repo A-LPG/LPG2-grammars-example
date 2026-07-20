@@ -1,6 +1,0 @@
-{
-  "package": "lpg.grammars.chip8",
-  "lexer": "Chip8Lexer",
-  "parser": "Chip8Parser",
-  "example_globs": ["examples-curated/**/*"]
-}

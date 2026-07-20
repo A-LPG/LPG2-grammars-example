@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.stacktrace",
-  "lexer": "StacktraceLexer",
-  "parser": "StacktraceParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

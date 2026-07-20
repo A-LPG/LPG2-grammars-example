@@ -1,6 +1,0 @@
-{
-  "package": "lpg.grammars.clif",
-  "lexer": "ClifLexer",
-  "parser": "ClifParser",
-  "example_globs": ["examples/**/*"]
-}

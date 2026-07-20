@@ -1,4 +1,0 @@
-FOR i IN 1..1000
-  REPLACE CONCAT("test", i)
-  WITH { foobar: true } IN users
-  OPTIONS { ignoreErrors: true }

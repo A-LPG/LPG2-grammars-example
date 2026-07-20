@@ -1,0 +1,6 @@
+{
+  "package": "lpg.grammars.racket_isl",
+  "lexer": "RacketIslLexer",
+  "parser": "RacketIslParser",
+  "example_globs": ["examples/**/*"]
+}

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.codeql",
+  "lexer": "CodeqlLexer",
+  "parser": "CodeqlParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.janus",
-  "lexer": "JanusLexer",
-  "parser": "JanusParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

@@ -1,0 +1,13 @@
+{
+  "id": "prolog",
+  "quality": "language_subset",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "limited_examples_or_rules"
+  ],
+  "parser_bytes": 2300,
+  "example_count": 1,
+  "tier": "B"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "istc",
+  "parse_ok": true,
+  "example_count": 3,
+  "status": "ported",
+  "blockers": [],
+  "tier": "A",
+  "quality": "language_subset",
+  "quality_notes": [
+    "heuristic_default_subset"
+  ],
+  "parser_bytes": 553,
+  "parser_lines": 32
+}

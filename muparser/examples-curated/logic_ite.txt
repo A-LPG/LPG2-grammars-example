@@ -1,5 +1,0 @@
-t = true
-f = false
-r = t && !f
-v = r ? 1 : 0
-w = min(v, 2, 3)

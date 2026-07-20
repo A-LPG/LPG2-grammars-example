@@ -1,0 +1,14 @@
+{
+  "id": "apt",
+  "parse_ok": true,
+  "status": "ported",
+  "tier": "A",
+  "quality": "language_subset",
+  "quality_notes": [
+    "heuristic_default_subset"
+  ],
+  "blockers": [],
+  "start": "apt_record",
+  "example_count": 3,
+  "parser_bytes": 1455
+}

@@ -1,2 +1,0 @@
-module Families2Persons;
-create OUT : Persons from INM : Families;

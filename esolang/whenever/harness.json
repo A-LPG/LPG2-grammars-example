@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.esolang.whenever",
-  "lexer": "WheneverLexer",
-  "parser": "WheneverParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

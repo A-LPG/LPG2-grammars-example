@@ -1,0 +1,9 @@
+{
+  "package": "lpg.grammars.freedesktop.desktop_entry",
+  "lexer": "FreedesktopDesktopEntryLexer",
+  "parser": "FreedesktopDesktopEntryParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ],
+  "parser_template": "btParserTemplateF.gi"
+}

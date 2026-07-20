@@ -1,1 +1,0 @@
-States.Array($.FunctionInput.fst, $.FunctionInput.snd)

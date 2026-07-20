@@ -1,2 +1,0 @@
-# ISO 8601 datetime (basic)
-19850412T101530

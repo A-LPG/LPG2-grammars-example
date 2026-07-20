@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.infosapient",
-  "lexer": "InfosapientLexer",
-  "parser": "InfosapientParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

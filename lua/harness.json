@@ -1,6 +1,0 @@
-{
-  "package": "lpg.grammars.lua",
-  "lexer": "LuaLexer",
-  "parser": "LuaParser",
-  "example_globs": ["examples/**/*.lua"]
-}

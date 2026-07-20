@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.telephone",
+  "lexer": "TelephoneLexer",
+  "parser": "TelephoneParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

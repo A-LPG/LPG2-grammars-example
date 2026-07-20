@@ -1,0 +1,5 @@
+system world = {
+  component c1 = {
+    port p1;
+  };
+}

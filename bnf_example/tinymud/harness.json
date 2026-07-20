@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.tinymud",
+  "lexer": "TinymudLexer",
+  "parser": "TinymudParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

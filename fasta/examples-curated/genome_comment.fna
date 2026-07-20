@@ -1,6 +1,0 @@
-; curated FASTA smoke with comment + two sequences
->seqA|demo chromosome fragment
-ACGTACGTACGTACGTACGT
-TTGCAATTGGCCAA
->seqB|second locus
-GGGAAATTTCCC

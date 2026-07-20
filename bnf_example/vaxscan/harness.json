@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.vaxscan",
+  "lexer": "VaxscanLexer",
+  "parser": "VaxscanParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

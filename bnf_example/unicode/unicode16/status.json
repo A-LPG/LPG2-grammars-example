@@ -1,0 +1,16 @@
+{
+  "id": "unicode/unicode16",
+  "quality": "language_subset",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "curated_subset",
+    "real_g4_port"
+  ],
+  "parser_lines": 60,
+  "example_count": 5,
+  "tier": "D",
+  "start": "file_",
+  "parser_bytes": 1655
+}

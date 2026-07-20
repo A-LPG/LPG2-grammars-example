@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.flatbuffers",
-  "lexer": "FlatbuffersLexer",
-  "parser": "FlatbuffersParser",
-  "example_globs": [
-    "examples-curated/**/*.fbs"
-  ]
-}

@@ -1,6 +1,0 @@
-{
-  "package": "lpg.grammars.databank",
-  "lexer": "DatabankLexer",
-  "parser": "DatabankParser",
-  "example_globs": ["examples/**/*"]
-}

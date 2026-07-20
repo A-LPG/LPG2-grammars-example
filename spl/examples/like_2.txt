@@ -1,1 +1,0 @@
-index="your_index" | search like(field_name, "%pattern%")

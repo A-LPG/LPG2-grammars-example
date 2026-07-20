@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.creole",
-  "lexer": "CreoleLexer",
-  "parser": "CreoleParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

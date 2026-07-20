@@ -1,0 +1,14 @@
+{
+  "id": "http",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [],
+  "parser_bytes": 3591,
+  "rule_approx": 46,
+  "start": "http_message",
+  "example_count": 3,
+  "notes": "real_g4_port",
+  "tier": "B"
+}

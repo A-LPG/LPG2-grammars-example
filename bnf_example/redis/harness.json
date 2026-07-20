@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.redis",
+  "lexer": "RedisLexer",
+  "parser": "RedisParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

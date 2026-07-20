@@ -1,0 +1,4 @@
+SET mykey hello
+GET mykey
+APPEND mykey world
+STRLEN mykey

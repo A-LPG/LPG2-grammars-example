@@ -1,6 +1,0 @@
-{
-  "package": "lpg.grammars.asm.asmZ80",
-  "lexer": "AsmZ80Lexer",
-  "parser": "AsmZ80Parser",
-  "example_globs": ["examples/**/*.asm", "examples/**/*.ASM"]
-}

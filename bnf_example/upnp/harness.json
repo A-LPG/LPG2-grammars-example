@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.upnp",
+  "lexer": "UpnpLexer",
+  "parser": "UpnpParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

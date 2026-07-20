@@ -1,0 +1,15 @@
+{
+  "id": "iso8601",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [],
+  "parser_bytes": 8628,
+  "rule_approx": 147,
+  "start": "iso",
+  "example_count": 3,
+  "tier": "B",
+  "parser_lines": 415,
+  "notes": "Digit-per-char lexer; date/datetime/interval examples; real_g4_port"
+}

@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.bcpl",
-  "lexer": "BcplLexer",
-  "parser": "BcplParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

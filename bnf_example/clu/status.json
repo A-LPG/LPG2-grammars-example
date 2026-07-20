@@ -1,0 +1,13 @@
+{
+  "id": "clu",
+  "quality": "language_subset",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "limited_examples_or_rules"
+  ],
+  "parser_bytes": 7952,
+  "example_count": 1,
+  "tier": "B"
+}

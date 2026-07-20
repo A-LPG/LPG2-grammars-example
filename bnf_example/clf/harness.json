@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.clf",
+  "lexer": "ClfLexer",
+  "parser": "ClfParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

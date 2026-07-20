@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.argus",
+  "lexer": "ArgusLexer",
+  "parser": "ArgusParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

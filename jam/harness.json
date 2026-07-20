@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.jam",
-  "lexer": "JamLexer",
-  "parser": "JamParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

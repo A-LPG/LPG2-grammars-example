@@ -1,0 +1,1 @@
+UPSERT INTO MYTABLE VALUES (1, "alpha");

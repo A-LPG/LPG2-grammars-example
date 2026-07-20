@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.ebnf",
+  "lexer": "EbnfLexer",
+  "parser": "EbnfParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

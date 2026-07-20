@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.esolang.sickbay",
+  "lexer": "SickbayLexer",
+  "parser": "SickbayParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "sexpression",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "real_g4_port"
+  ],
+  "notes": "Real sexpression.g4 port (item/atom/list/dotted); DOT only as dotted-pair marker.",
+  "example_count": 3,
+  "tier": "A",
+  "parser_bytes": 997,
+  "parser_lines": 45,
+  "start": "sexpr",
+  "rule_approx": 6
+}

@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.suokif",
-  "lexer": "SuokifLexer",
-  "parser": "SuokifParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

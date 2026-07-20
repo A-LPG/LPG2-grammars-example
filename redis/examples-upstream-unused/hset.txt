@@ -1,1 +1,0 @@
-HSET test key1 val1

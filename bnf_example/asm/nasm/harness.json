@@ -1,0 +1,9 @@
+{
+  "package": "lpg.grammars.asm.nasm",
+  "lexer": "AsmNasmLexer",
+  "parser": "AsmNasmParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ],
+  "parser_template": "btParserTemplateF.gi"
+}

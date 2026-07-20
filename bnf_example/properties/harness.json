@@ -1,0 +1,6 @@
+{
+  "package": "lpg.grammars.properties",
+  "lexer": "PropertiesLexer",
+  "parser": "PropertiesParser",
+  "example_globs": ["examples/**/*.txt"]
+}

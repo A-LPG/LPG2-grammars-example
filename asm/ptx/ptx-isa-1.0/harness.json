@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.asm.ptx.ptx_isa_1_0",
-  "lexer": "AsmPtxPtxIsa10Lexer",
-  "parser": "AsmPtxPtxIsa10Parser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

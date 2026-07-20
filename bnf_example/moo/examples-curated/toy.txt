@@ -1,0 +1,3 @@
+@program ping:run
+player:tell("ping");
+.

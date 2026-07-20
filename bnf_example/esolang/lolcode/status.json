@@ -1,0 +1,15 @@
+{
+  "id": "esolang/lolcode",
+  "quality": "language_subset",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "limited_examples_or_rules"
+  ],
+  "parser_bytes": 1066,
+  "rule_approx": 43,
+  "start": "program",
+  "example_count": 1,
+  "tier": "A"
+}

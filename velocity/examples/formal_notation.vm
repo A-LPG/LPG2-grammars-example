@@ -1,7 +1,0 @@
-${mudSlinger}
-${customer.Address}
-${purchase.getTotal()}
-
-Jack is a $vicemaniac.
-
-Jack is a ${vice}maniac.

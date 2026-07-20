@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.terraform",
+  "lexer": "TerraformLexer",
+  "parser": "TerraformParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

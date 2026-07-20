@@ -1,3 +1,0 @@
-PARSER_BEGIN(Z)
-class Z {}
-PARSER_END(Z)

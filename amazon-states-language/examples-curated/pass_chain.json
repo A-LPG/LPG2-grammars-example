@@ -1,1 +1,0 @@
-{ "Comment" : "pass chain" , "StartAt" : "S0" , "States" : { "S0" : { "Type" : "Pass" , "Next" : "S1" } , "S1" : { "Type" : "Pass" , "End" : true } } }

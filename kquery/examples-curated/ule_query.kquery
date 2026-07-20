@@ -1,3 +1,0 @@
-(query [(Ule 1 2)
-         (Ule 3 4)]
-        false)

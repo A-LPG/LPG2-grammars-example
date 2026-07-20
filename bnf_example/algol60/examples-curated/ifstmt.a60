@@ -1,0 +1,5 @@
+begin
+  integer x;
+  x := 1;
+  if x then x := 2
+end

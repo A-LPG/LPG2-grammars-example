@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.rexx",
+  "lexer": "RexxLexer",
+  "parser": "RexxParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.doiurl",
-  "lexer": "DoiurlLexer",
-  "parser": "DoiurlParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

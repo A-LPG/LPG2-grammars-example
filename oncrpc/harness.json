@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.oncrpc",
-  "lexer": "OncrpcLexer",
-  "parser": "OncrpcParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

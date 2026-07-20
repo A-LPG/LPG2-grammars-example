@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.scala.scala3",
+  "lexer": "Scala3Lexer",
+  "parser": "Scala3Parser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

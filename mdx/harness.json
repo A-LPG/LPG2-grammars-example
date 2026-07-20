@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.mdx",
-  "lexer": "MdxLexer",
-  "parser": "MdxParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

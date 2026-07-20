@@ -1,1 +1,0 @@
-TRUNCATE TABLE example_db.tbl;

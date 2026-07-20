@@ -1,0 +1,2 @@
+grammar Hello;
+r : 'hello' ;

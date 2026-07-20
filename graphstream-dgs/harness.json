@@ -1,9 +1,0 @@
-{
-  "package": "lpg.grammars.graphstream_dgs",
-  "lexer": "GraphstreamDgsLexer",
-  "parser": "GraphstreamDgsParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ],
-  "parser_template": "btParserTemplateF.gi"
-}

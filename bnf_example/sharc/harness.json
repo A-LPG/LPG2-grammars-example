@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.sharc",
+  "lexer": "SharcLexer",
+  "parser": "SharcParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

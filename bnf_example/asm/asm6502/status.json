@@ -1,0 +1,15 @@
+{
+  "id": "asm/asm6502",
+  "quality": "language_subset",
+  "parse_ok": true,
+  "status": "ported",
+  "tier": "D",
+  "quality_notes": [
+    "heuristic_default_subset"
+  ],
+  "blockers": [],
+  "example_count": 3,
+  "parser_lines": 69,
+  "start": "prog",
+  "parser_bytes": 1578
+}

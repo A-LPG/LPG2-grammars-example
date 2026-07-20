@@ -1,0 +1,16 @@
+{
+  "id": "scala/scala2",
+  "quality": "language_subset",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "curated_subset"
+  ],
+  "parser_bytes": 5353,
+  "rule_approx": 339,
+  "start": "compilationUnit",
+  "example_count": 4,
+  "tier": "C",
+  "parser_lines": 232
+}

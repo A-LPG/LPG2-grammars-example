@@ -1,6 +1,0 @@
-{
-  "package": "lpg.grammars.lark",
-  "lexer": "LarkLexer",
-  "parser": "LarkParser",
-  "example_globs": ["examples/**/*"]
-}

@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.csharp.v6",
-  "lexer": "CsharpV6Lexer",
-  "parser": "CsharpV6Parser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

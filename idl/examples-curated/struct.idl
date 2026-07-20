@@ -1,6 +1,0 @@
-module Geo {
-  struct Point {
-    long x;
-    long y;
-  };
-};

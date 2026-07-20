@@ -1,0 +1,15 @@
+{
+  "id": "argus",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "tier": "B",
+  "quality_notes": [
+    "real_g4_port"
+  ],
+  "blockers": [],
+  "example_count": 4,
+  "parser_lines": 937,
+  "start": "file_",
+  "parser_bytes": 18968
+}

@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.ruleworks",
-  "lexer": "RuleworksLexer",
-  "parser": "RuleworksParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

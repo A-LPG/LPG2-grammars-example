@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.llvm_ir",
+  "lexer": "LlvmIrLexer",
+  "parser": "LlvmIrParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

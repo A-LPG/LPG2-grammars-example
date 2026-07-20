@@ -1,6 +1,0 @@
-{
-  "package": "lpg.grammars.alloy",
-  "lexer": "AlloyLexer",
-  "parser": "AlloyParser",
-  "example_globs": ["examples/**/*"]
-}

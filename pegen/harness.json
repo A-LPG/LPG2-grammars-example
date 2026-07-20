@@ -1,9 +1,0 @@
-{
-  "package": "lpg.grammars.pegen",
-  "lexer": "PegenLexer",
-  "parser": "PegenParser",
-  "parser_template": "btParserTemplateF.gi",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

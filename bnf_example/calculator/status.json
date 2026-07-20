@@ -1,0 +1,14 @@
+{
+  "id": "calculator",
+  "parse_ok": true,
+  "status": "ported",
+  "tier": "A",
+  "quality": "language_port",
+  "quality_notes": [
+    "real_g4_port"
+  ],
+  "blockers": [],
+  "start": "equation",
+  "example_count": 3,
+  "parser_bytes": 1713
+}

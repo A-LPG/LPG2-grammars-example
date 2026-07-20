@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.vhdl.vhdl",
+  "lexer": "VhdlLexer",
+  "parser": "VhdlParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

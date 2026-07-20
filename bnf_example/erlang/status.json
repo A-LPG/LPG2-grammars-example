@@ -1,0 +1,13 @@
+{
+  "id": "erlang",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [],
+  "parser_bytes": 12195,
+  "rule_approx": 212,
+  "start": "forms",
+  "example_count": 3,
+  "tier": "B"
+}

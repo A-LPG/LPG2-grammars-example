@@ -1,9 +1,0 @@
-{
-  "package": "lpg.grammars.sql.mariadb",
-  "lexer": "SqlMariadbLexer",
-  "parser": "SqlMariadbParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ],
-  "parser_template": "dtParserTemplateF.gi"
-}

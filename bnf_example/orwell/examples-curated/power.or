@@ -1,0 +1,2 @@
+-- power (grammars-v4 example1 shape)
+power x n = 1

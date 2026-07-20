@@ -1,3 +1,0 @@
-source="/var/log/app.log"
-level=error
-user=admin

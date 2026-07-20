@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.pddl",
+  "lexer": "PddlLexer",
+  "parser": "PddlParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

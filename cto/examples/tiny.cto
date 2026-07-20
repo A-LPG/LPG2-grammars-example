@@ -1,7 +1,0 @@
-namespace org.sample
-enum Foo {
-  o BAR
-}
-asset Thing identified by id {
-  o String id
-}

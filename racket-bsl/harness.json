@@ -1,6 +1,0 @@
-{
-  "package": "lpg.grammars.racket_bsl",
-  "lexer": "RacketBslLexer",
-  "parser": "RacketBslParser",
-  "example_globs": ["examples/**/*"]
-}

@@ -1,0 +1,6 @@
+{
+  "package": "lpg.grammars.cql",
+  "lexer": "CqlLexer",
+  "parser": "CqlParser",
+  "example_globs": ["examples/**/*"]
+}

@@ -1,1 +1,0 @@
-ALTER FUNCTION my_schema.my_fun EDITIONABLE;

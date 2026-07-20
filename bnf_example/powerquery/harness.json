@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.powerquery",
+  "lexer": "PowerqueryLexer",
+  "parser": "PowerqueryParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

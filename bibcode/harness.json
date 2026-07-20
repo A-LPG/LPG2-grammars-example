@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.bibcode",
-  "lexer": "BibcodeLexer",
-  "parser": "BibcodeParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

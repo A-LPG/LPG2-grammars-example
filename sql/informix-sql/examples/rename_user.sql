@@ -1,1 +1,0 @@
-RENAME USER bill TO bob;

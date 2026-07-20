@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.prolog",
-  "lexer": "PrologLexer",
-  "parser": "PrologParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

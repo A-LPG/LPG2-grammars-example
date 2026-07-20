@@ -1,4 +1,0 @@
-energy = m * c ^ 2
-ratio = (p + q) / (r - s)
-bound < limit
-score > 0

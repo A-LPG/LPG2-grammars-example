@@ -1,4 +1,0 @@
-HSET user name alice
-HGET user name
-HKEYS user
-HDEL user name

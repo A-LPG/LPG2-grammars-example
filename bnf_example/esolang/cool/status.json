@@ -1,0 +1,11 @@
+{
+  "id": "esolang/cool",
+  "parse_ok": true,
+  "example_count": 19,
+  "status": "ported",
+  "blockers": [],
+  "tier": "A",
+  "quality": "language_port",
+  "quality_notes": [],
+  "parser_bytes": 2563
+}

@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.skull",
-  "lexer": "SkullLexer",
-  "parser": "SkullParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

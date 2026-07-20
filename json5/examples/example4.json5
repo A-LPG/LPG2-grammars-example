@@ -1,9 +1,0 @@
-/* block comment */
-{
-  a: true,
-  b: false,
-  c: null,
-  d: -Infinity,
-  e: +NaN,
-  arr: [1, 2, 3,],
-}

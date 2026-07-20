@@ -1,3 +1,0 @@
-foo_bar-42
-(x+y)
-a=b+c

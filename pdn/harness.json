@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.pdn",
-  "lexer": "PdnLexer",
-  "parser": "PdnParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

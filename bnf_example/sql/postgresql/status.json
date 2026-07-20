@@ -1,0 +1,17 @@
+{
+  "id": "sql/postgresql",
+  "quality": "language_subset",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "curated_subset",
+    "real_g4_port"
+  ],
+  "parser_bytes": 143294,
+  "rule_approx": 1741,
+  "start": "root",
+  "parser_lines": 5512,
+  "example_count": 3,
+  "tier": "D"
+}

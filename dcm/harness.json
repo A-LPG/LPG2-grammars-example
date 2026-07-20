@@ -1,6 +1,0 @@
-{
-  "package": "lpg.grammars.dcm",
-  "lexer": "DcmLexer",
-  "parser": "DcmParser",
-  "example_globs": ["examples/**/*"]
-}

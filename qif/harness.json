@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.qif",
-  "lexer": "QifLexer",
-  "parser": "QifParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

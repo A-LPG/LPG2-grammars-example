@@ -1,0 +1,4 @@
+@startuml
+enum Color
+class Box
+@enduml

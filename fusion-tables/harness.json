@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.fusion_tables",
-  "lexer": "FusionTablesLexer",
-  "parser": "FusionTablesParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

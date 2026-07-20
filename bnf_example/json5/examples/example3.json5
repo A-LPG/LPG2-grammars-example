@@ -1,0 +1,10 @@
+{
+  // line comment
+  unquoted: 'ok',
+  trailing: 1,
+  inf: Infinity,
+  nan: NaN,
+  hex: 0xFF,
+  signed: +1.5,
+  leadDot: .25,
+}

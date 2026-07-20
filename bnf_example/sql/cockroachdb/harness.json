@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.sql.cockroachdb",
+  "lexer": "SqlCockroachdbLexer",
+  "parser": "SqlCockroachdbParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

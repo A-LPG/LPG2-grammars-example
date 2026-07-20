@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.smtlibv2",
-  "lexer": "Smtlibv2Lexer",
-  "parser": "Smtlibv2Parser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

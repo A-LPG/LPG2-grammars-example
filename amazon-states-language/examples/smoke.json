@@ -1,1 +1,0 @@
-{ "Comment" : "demo" , "StartAt" : "A" , "States" : { "A" : { "Type" : "Pass" , "End" : true } } }

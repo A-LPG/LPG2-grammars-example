@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.flowmatic",
+  "lexer": "FlowmaticLexer",
+  "parser": "FlowmaticParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

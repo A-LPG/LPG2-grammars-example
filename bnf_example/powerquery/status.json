@@ -1,0 +1,12 @@
+{
+  "id": "powerquery",
+  "parse_ok": true,
+  "status": "ported",
+  "quality": "language_port",
+  "blockers": [],
+  "example_count": 3,
+  "parser_lines": 349,
+  "parser_bytes": 9893,
+  "quality_notes": [],
+  "tier": "B"
+}

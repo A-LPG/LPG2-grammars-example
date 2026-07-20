@@ -1,0 +1,7 @@
+BEGIN {
+  int i;
+  string s1, s2;
+  s2="123456789012";
+  i=index(s2,"4");
+  print("index: ", i);
+}

@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.mps",
-  "lexer": "MpsLexer",
-  "parser": "MpsParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

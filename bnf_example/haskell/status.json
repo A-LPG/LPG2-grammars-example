@@ -1,0 +1,13 @@
+{
+  "id": "haskell",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [],
+  "parser_bytes": 33912,
+  "rule_approx": 710,
+  "start": "module",
+  "tier": "D",
+  "example_count": 3
+}

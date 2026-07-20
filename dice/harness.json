@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.dice",
-  "lexer": "DiceLexer",
-  "parser": "DiceParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

@@ -1,0 +1,15 @@
+{
+  "id": "pddl",
+  "quality": "language_subset",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "limited_examples_or_rules"
+  ],
+  "parser_bytes": 9354,
+  "rule_approx": 136,
+  "start": "pddlDoc",
+  "tier": "B",
+  "example_count": 1
+}

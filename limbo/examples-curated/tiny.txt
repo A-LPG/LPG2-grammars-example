@@ -1,5 +1,0 @@
-implement Tiny;
-
-init()
-{
-}

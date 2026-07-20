@@ -1,1 +1,0 @@
-index="your_index" NOT field_name="value_to_exclude"

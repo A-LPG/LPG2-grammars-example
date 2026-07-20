@@ -1,1 +1,0 @@
-index=* sourcetype=access_combined | stats count by status

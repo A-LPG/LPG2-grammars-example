@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.sexpression",
+  "lexer": "SexpressionLexer",
+  "parser": "SexpressionParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

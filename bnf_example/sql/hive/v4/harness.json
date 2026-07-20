@@ -1,0 +1,9 @@
+{
+  "package": "lpg.grammars.sql.hive.v4",
+  "lexer": "SqlHiveV4Lexer",
+  "parser": "SqlHiveV4Parser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ],
+  "parser_template": "btParserTemplateF.gi"
+}

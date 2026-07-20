@@ -1,0 +1,16 @@
+{
+  "id": "sql/trino",
+  "quality": "language_subset",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "curated_subset",
+    "real_g4_port"
+  ],
+  "parser_lines": 2139,
+  "example_count": 3,
+  "tier": "D",
+  "start": "parse",
+  "parser_bytes": 50010
+}

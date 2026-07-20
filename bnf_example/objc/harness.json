@@ -1,0 +1,9 @@
+{
+  "package": "lpg.grammars.objc",
+  "lexer": "ObjcLexer",
+  "parser": "ObjcParser",
+  "example_globs": [
+    "examples-curated/**/*.m",
+    "examples-curated/**/*.h"
+  ]
+}

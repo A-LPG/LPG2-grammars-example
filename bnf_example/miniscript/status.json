@@ -1,0 +1,13 @@
+{
+  "id": "miniscript",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "real_g4_port"
+  ],
+  "parser_bytes": 4354,
+  "example_count": 3,
+  "tier": "B"
+}

@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.asm.asmMASM",
-  "lexer": "AsmAsmMASMLexer",
-  "parser": "AsmAsmMASMParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

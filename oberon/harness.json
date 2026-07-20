@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.oberon",
-  "lexer": "OberonLexer",
-  "parser": "OberonParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

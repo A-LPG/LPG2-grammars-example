@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.asl",
-  "lexer": "AslLexer",
-  "parser": "AslParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

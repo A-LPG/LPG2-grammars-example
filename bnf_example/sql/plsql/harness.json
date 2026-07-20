@@ -1,0 +1,9 @@
+{
+  "package": "lpg.grammars.sql.plsql",
+  "lexer": "SqlPlsqlLexer",
+  "parser": "SqlPlsqlParser",
+  "parser_template": "btParserTemplateF.gi",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

@@ -1,1 +1,0 @@
-# esolang/snowball (LPG)

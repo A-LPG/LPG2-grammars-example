@@ -1,1 +1,0 @@
-index=my_index "login failure" earliest=-24h@h latest=@h

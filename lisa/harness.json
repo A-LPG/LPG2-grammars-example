@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.lisa",
-  "lexer": "LisaLexer",
-  "parser": "LisaParser",
-  "example_globs": [
-    "examples/**/*"
-  ]
-}

@@ -1,9 +1,0 @@
-{
-  "package": "lpg.grammars.ada.ada2022",
-  "lexer": "AdaAda2022Lexer",
-  "parser": "AdaAda2022Parser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ],
-  "parser_template": "btParserTemplateF.gi"
-}

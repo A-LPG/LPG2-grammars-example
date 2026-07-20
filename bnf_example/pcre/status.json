@@ -1,0 +1,18 @@
+{
+  "id": "pcre",
+  "quality": "language_subset",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "curated_subset",
+    "real_g4_port"
+  ],
+  "parser_bytes": 8375,
+  "rule_approx": 143,
+  "start": "pcre",
+  "example_count": 3,
+  "tier": "B",
+  "notes": "char-level lexer; quant/group/alt/anchor",
+  "parser_lines": 403
+}

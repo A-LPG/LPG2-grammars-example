@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.clu",
+  "lexer": "CluLexer",
+  "parser": "CluParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

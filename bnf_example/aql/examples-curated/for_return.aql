@@ -1,0 +1,5 @@
+FOR u IN users
+  FILTER u.active == true
+  SORT u.name ASC
+  LIMIT 10
+  RETURN u

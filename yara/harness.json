@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.yara",
-  "lexer": "YaraLexer",
-  "parser": "YaraParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}

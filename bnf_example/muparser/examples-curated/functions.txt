@@ -1,0 +1,4 @@
+a = sin(_pi / 6)
+b = cos(0.0)
+c = sqrt(abs(-16))
+d = max(a, b, c)

@@ -1,7 +1,0 @@
-syntax = "proto3";
-message TestMess {
-    repeated TestMessage value = 1;
-}
-message TestMessage {
-        repeated TestMess value = 1;
-}

@@ -1,8 +1,0 @@
-{
-  "package": "lpg.grammars.plucid",
-  "lexer": "PlucidLexer",
-  "parser": "PlucidParser",
-  "example_globs": [
-    "examples-curated/**/*"
-  ]
-}
