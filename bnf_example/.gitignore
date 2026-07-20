@@ -18,3 +18,4 @@ _audit_bak/
 **/__pycache__/
 tools/_audit*_bak*/
 tools/_audit_bak*/
+**/out-java-test/
