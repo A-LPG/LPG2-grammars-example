@@ -6,11 +6,13 @@
   "blockers": [],
   "quality_notes": [
     "curated_subset",
-    "real_g4_port"
+    "real_g4_port",
+    "full_port_in_SqlPlsqlParser.g.full_linux_tablegen_abort"
   ],
-  "parser_bytes": 370799,
-  "rule_approx": 5638,
+  "parser_bytes": 1772,
+  "rule_approx": 15,
   "start": "sql_script",
   "tier": "D",
-  "example_count": 3
+  "example_count": 3,
+  "parser_lines": 74
 }
