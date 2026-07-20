@@ -1,0 +1,10 @@
+FUNCTION ADD(A, B),
+  R: A + B,
+ENDFUN;
+
+FUNCTION MULADD(A, B, C),
+  T: ADD(A, B),
+  U: T * C,
+ENDFUN;
+
+R: MULADD(1, 2, 3);

@@ -1,0 +1,15 @@
+{
+  "id": "rpn",
+  "parse_ok": true,
+  "example_count": 13,
+  "status": "ported",
+  "blockers": [],
+  "tier": "A",
+  "quality": "language_port",
+  "quality_notes": [
+    "real_g4_port",
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 628,
+  "parser_lines": 24
+}

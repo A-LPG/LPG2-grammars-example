@@ -1,0 +1,9 @@
+{
+  "package": "lpg.grammars.gtin",
+  "lexer": "GtinLexer",
+  "parser": "GtinParser",
+  "example_globs": [
+    "examples/**/*"
+  ],
+  "parser_template": "btParserTemplateF.gi"
+}

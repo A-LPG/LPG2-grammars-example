@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.mumath",
+  "lexer": "MumathLexer",
+  "parser": "MumathParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

@@ -1,0 +1,5 @@
+inc(0);
+inc(1);
+while (dec(0)) {
+  inc(2);
+}

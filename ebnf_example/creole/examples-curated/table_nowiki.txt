@@ -1,0 +1,10 @@
+= Code Sample =
+Here is a nowiki block:
+
+{{{
+**not bold**
+//not italic//
+}}}
+
+And a horizontal rule:
+----

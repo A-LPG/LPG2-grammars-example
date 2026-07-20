@@ -1,0 +1,15 @@
+{
+  "id": "doiurl",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "real_g4_port",
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 892,
+  "start": "doiuri",
+  "example_count": 14,
+  "tier": "A"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "fasta",
+  "parse_ok": true,
+  "status": "ported",
+  "tier": "A",
+  "quality": "language_port",
+  "quality_notes": [
+    "real_g4_port",
+    "ebnf_sugar"
+  ],
+  "blockers": [],
+  "start": "sequence",
+  "example_count": 4,
+  "parser_bytes": 756
+}

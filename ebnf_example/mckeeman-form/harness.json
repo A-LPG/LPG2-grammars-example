@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.mckeeman_form",
+  "lexer": "McKeemanFormLexer",
+  "parser": "McKeemanFormParser",
+  "example_globs": [
+    "examples/**/*.txt"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "pmmn",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "real_g4_port",
+    "ebnf_sugar"
+  ],
+  "notes": "PMMN inc/dec/if/while counter language from PMMN.g4.",
+  "example_count": 3,
+  "tier": "A",
+  "parser_bytes": 768,
+  "parser_lines": 37
+}

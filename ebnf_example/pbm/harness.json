@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.pbm",
+  "lexer": "PbmLexer",
+  "parser": "PbmParser",
+  "example_globs": [
+    "examples-curated/**/*.pbm"
+  ]
+}

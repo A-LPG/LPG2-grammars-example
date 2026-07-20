@@ -1,0 +1,14 @@
+{
+  "id": "microc",
+  "parse_ok": true,
+  "example_count": 3,
+  "status": "ported",
+  "blockers": [],
+  "tier": "A",
+  "quality": "language_port",
+  "quality_notes": [
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 1355,
+  "parser_lines": 61
+}

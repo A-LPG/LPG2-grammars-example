@@ -1,0 +1,18 @@
+(
+  cond
+  (
+    (zerop n)
+    one
+  )
+  (
+    t
+    (
+      times
+      n
+      (
+        fact
+        (sub1 n)
+      )
+    )
+  )
+)

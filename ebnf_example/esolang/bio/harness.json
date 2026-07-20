@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.esolang.bio",
+  "lexer": "BioLexer",
+  "parser": "BioParser",
+  "example_globs": [
+    "examples/**/*.txt"
+  ]
+}

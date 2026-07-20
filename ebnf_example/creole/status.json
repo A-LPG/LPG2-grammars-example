@@ -1,0 +1,14 @@
+{
+  "id": "creole",
+  "parse_ok": true,
+  "status": "ported",
+  "tier": "A",
+  "quality": "language_port",
+  "quality_notes": [
+    "ebnf_sugar"
+  ],
+  "blockers": [],
+  "start": "document",
+  "example_count": 3,
+  "parser_bytes": 1606
+}

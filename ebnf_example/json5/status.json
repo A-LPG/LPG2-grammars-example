@@ -1,0 +1,15 @@
+{
+  "id": "json5",
+  "parse_ok": true,
+  "status": "ported",
+  "tier": "A",
+  "quality": "language_port",
+  "quality_notes": [
+    "real_g4_port",
+    "ebnf_sugar"
+  ],
+  "blockers": [],
+  "start": "json5",
+  "example_count": 11,
+  "parser_bytes": 1652
+}

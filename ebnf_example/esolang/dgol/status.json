@@ -1,0 +1,13 @@
+{
+  "id": "esolang/dgol",
+  "tier": "A",
+  "status": "ported",
+  "parse_ok": true,
+  "blockers": [],
+  "example_count": 2,
+  "quality": "language_port",
+  "quality_notes": [
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 2625
+}

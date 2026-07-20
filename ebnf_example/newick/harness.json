@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.newick",
+  "lexer": "NewickLexer",
+  "parser": "NewickParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

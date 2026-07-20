@@ -1,0 +1,16 @@
+{
+  "id": "newick",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "real_g4_port",
+    "ebnf_sugar"
+  ],
+  "notes": "Newick trees with names/lengths; left-factored for root length suffix.",
+  "example_count": 8,
+  "tier": "A",
+  "parser_bytes": 822,
+  "parser_lines": 38
+}

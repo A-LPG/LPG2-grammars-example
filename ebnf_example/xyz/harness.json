@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.xyz",
+  "lexer": "XyzLexer",
+  "parser": "XyzParser",
+  "example_globs": [
+    "examples/**/*.txt"
+  ]
+}

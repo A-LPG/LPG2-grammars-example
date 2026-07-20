@@ -1,0 +1,1 @@
+while(dec(0)){inc(1);}

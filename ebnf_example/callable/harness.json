@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.callable",
+  "lexer": "CallableLexer",
+  "parser": "CallableParser",
+  "example_globs": [
+    "examples/**/*.txt"
+  ]
+}

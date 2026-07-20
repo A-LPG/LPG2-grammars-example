@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.wheel",
+  "lexer": "WheelLexer",
+  "parser": "WheelParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

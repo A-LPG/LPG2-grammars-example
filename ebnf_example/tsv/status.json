@@ -1,0 +1,15 @@
+{
+  "id": "tsv",
+  "parse_ok": true,
+  "status": "ported",
+  "tier": "A",
+  "quality": "language_port",
+  "quality_notes": [
+    "real_g4_port",
+    "ebnf_sugar"
+  ],
+  "blockers": [],
+  "start": "tsvFile",
+  "example_count": 6,
+  "parser_bytes": 741
+}

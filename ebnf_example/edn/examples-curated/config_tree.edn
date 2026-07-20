@@ -1,0 +1,10 @@
+;; Nested maps / vectors / sets as application config
+{:app {:name "shelf-demo"
+       :version "0.1.0"
+       :features #{:auth :cache :metrics}}
+ :db {:host "localhost"
+      :port 5432
+      :flags {:ssl true
+              :pool 8}}
+ :workers [{:id worker-a :queue jobs}
+           {:id worker-b :queue jobs}]}

@@ -1,0 +1,9 @@
+= Heading =
+You can make things **bold** or //italic//.
+[[http://www.wikicreole.org|external links]]
+----
+* item a
+* item b
+{{{
+nowiki block
+}}}

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.calculator",
+  "lexer": "CalculatorLexer",
+  "parser": "CalculatorParser",
+  "example_globs": [
+    "examples-curated/**/*.txt"
+  ]
+}

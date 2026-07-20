@@ -1,0 +1,14 @@
+{
+  "id": "robotwars",
+  "parse_ok": true,
+  "status": "ported",
+  "tier": "A",
+  "quality": "language_port",
+  "quality_notes": [
+    "ebnf_sugar"
+  ],
+  "blockers": [],
+  "start": "program",
+  "example_count": 9,
+  "parser_bytes": 2479
+}
