@@ -2,5 +2,7 @@
   "package": "lpg.grammars.bnf",
   "lexer": "BnfLexer",
   "parser": "BnfParser",
-  "example_globs": ["examples/**/*"]
+  "example_globs": [
+    "examples/**/*"
+  ]
 }

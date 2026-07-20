@@ -108,8 +108,10 @@ gen() {
   local src="$1"
   local tpl="$2"
   echo "==> lpg $src"
+  # Include templates/java so filter KW files can resolve
+  # `%options template=KeywordTemplateF.gi` (basename) on Linux.
   "$LPG_BIN" -programming_language=java -table -quiet \
-    -include-directory="$INC_JAVA;$UNIT" \
+    -include-directory="$INC_JAVA;$TPL_JAVA;$UNIT" \
     -template="$tpl" \
     -out_directory="$OUT" \
     "$UNIT/$src"

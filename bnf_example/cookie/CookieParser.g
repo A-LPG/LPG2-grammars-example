@@ -22,7 +22,7 @@
 
     av_pairs ::= av_pair (SEMICOLON av_pair)*
 
-    av_pair ::= attr [EQUAL value]
+    av_pair ::= attr (EQUAL value)?
 
     attr ::= TOKEN
 
