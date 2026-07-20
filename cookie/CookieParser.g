@@ -1,7 +1,8 @@
 -- Cookie Parser (LPG)
 -- Ported from antlr/grammars-v4 cookie/cookie.g4
+-- Uses opt-in EBNF sugar for optional/list shapes (equivalent to prior BNF).
 
-%Options la=2
+%Options la=2,ebnf
 %Options fp=CookieParser
 %options package=lpg.grammars.cookie
 %options template=dtParserTemplateF.gi
@@ -17,17 +18,11 @@
 %End
 
 %Rules
-    cookie ::= $empty
-             | av_pairs_list
+    cookie ::= av_pairs*
 
-    av_pairs_list ::= av_pairs
-                    | av_pairs_list av_pairs
+    av_pairs ::= av_pair (SEMICOLON av_pair)*
 
-    av_pairs ::= av_pair
-               | av_pairs SEMICOLON av_pair
-
-    av_pair ::= attr
-              | attr EQUAL value
+    av_pair ::= attr [EQUAL value]
 
     attr ::= TOKEN
 

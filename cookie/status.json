@@ -7,7 +7,8 @@
   "tier": "A",
   "quality": "language_port",
   "quality_notes": [
-    "real_g4_port"
+    "real_g4_port",
+    "ebnf_sugar"
   ],
-  "parser_bytes": 655
+  "parser_bytes": 593
 }
