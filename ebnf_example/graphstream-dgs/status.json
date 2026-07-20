@@ -1,0 +1,16 @@
+{
+  "id": "graphstream-dgs",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "real_g4_port",
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 2159,
+  "rule_approx": 43,
+  "start": "dgs",
+  "tier": "D",
+  "example_count": 4
+}

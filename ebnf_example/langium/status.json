@@ -1,0 +1,16 @@
+{
+  "id": "langium",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "real_g4_port",
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 8579,
+  "rule_approx": 180,
+  "start": "file_",
+  "tier": "B",
+  "example_count": 3
+}

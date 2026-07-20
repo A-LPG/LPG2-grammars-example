@@ -1,0 +1,4 @@
+PARSER_BEGIN(Simple)
+class Simple {}
+PARSER_END(Simple)
+void Start() : {} { "hi" }

@@ -1,0 +1,9 @@
+{
+  "package": "lpg.grammars.action",
+  "lexer": "ActionLexer",
+  "parser": "ActionParser",
+  "parser_template": "btParserTemplateF.gi",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

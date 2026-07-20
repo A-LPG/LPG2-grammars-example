@@ -1,0 +1,9 @@
+{
+  "package": "lpg.grammars.edif300",
+  "lexer": "Edif300Lexer",
+  "parser": "Edif300Parser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ],
+  "parser_template": "btParserTemplateF.gi"
+}

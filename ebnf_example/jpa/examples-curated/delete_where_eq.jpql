@@ -1,0 +1,2 @@
+DELETE FROM Country c
+WHERE 1 = 1

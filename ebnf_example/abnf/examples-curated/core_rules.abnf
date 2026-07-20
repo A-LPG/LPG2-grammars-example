@@ -1,0 +1,10 @@
+ALPHA          =  %x41-5A / %x61-7A
+BIT            =  "0" / "1"
+CR             =  %x0D
+LF             =  %x0A
+CRLF           =  CR LF
+DIGIT          =  %x30-39
+HEXDIG         =  DIGIT / "A" / "B" / "C" / "D" / "E" / "F"
+SP             =  %x20
+HTAB           =  %x09
+WSP            =  SP / HTAB

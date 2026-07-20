@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.smiles",
+  "lexer": "SmilesLexer",
+  "parser": "SmilesParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

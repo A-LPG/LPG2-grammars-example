@@ -1,0 +1,17 @@
+{
+  "id": "squirrel",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 11853,
+  "rule_approx": 224,
+  "start": "nut",
+  "example_count": 4,
+  "tier": "B",
+  "parser_lines": 538,
+  "notes": "local/function/class/table/while"
+}

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.trapc",
+  "lexer": "TrapcLexer",
+  "parser": "TrapcParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

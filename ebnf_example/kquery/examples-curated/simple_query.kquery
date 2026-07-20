@@ -1,0 +1,3 @@
+(query [(Eq false
+             (Eq 1 2))]
+        false)

@@ -1,0 +1,14 @@
+{
+  "id": "semver",
+  "parse_ok": true,
+  "example_count": 13,
+  "status": "ported",
+  "blockers": [],
+  "tier": "B",
+  "quality": "language_port",
+  "quality_notes": [
+    "real_g4_port",
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 1234
+}

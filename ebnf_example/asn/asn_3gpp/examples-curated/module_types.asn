@@ -1,0 +1,6 @@
+PersonModule DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+  Person ::= SEQUENCE {
+    id INTEGER
+  }
+  IdList ::= SEQUENCE OF INTEGER
+END

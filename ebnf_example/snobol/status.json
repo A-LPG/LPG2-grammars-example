@@ -1,0 +1,16 @@
+{
+  "id": "snobol",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "real_g4_port",
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 4003,
+  "rule_approx": 76,
+  "start": "prog",
+  "tier": "B",
+  "example_count": 3
+}

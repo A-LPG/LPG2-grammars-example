@@ -1,0 +1,3 @@
+SELECT c
+FROM Country c
+WHERE 1000 > 0

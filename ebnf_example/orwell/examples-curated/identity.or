@@ -1,0 +1,2 @@
+-- identity function
+f x = x

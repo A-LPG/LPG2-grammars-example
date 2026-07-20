@@ -1,0 +1,9 @@
+{
+  "package": "lpg.grammars.javacc",
+  "lexer": "JavaccLexer",
+  "parser": "JavaccParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ],
+  "parser_template": "btParserTemplateF.gi"
+}

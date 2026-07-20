@@ -1,0 +1,15 @@
+{
+  "id": "informix",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 41966,
+  "rule_approx": 797,
+  "start": "compilation_unit",
+  "tier": "D",
+  "example_count": 3
+}

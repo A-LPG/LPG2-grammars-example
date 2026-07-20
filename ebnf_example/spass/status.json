@@ -1,0 +1,16 @@
+{
+  "id": "spass",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "real_g4_port",
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 7665,
+  "rule_approx": 135,
+  "start": "problem",
+  "tier": "D",
+  "example_count": 3
+}

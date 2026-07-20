@@ -1,0 +1,6 @@
+{
+  "package": "lpg.grammars.stellaris",
+  "lexer": "StellarisLexer",
+  "parser": "StellarisParser",
+  "example_globs": ["examples/**/*"]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "jpa",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 14275,
+  "rule_approx": 190,
+  "start": "file_",
+  "example_count": 3,
+  "tier": "B",
+  "parser_lines": 570,
+  "notes": "filled g4 stubs; folded keywords; SELECT/DELETE WHERE numerics; real_g4_port"
+}

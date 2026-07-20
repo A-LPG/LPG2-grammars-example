@@ -2,12 +2,15 @@
   "version": 1,
   "source": "grammars-v4",
   "style": "ebnf",
-  "unit_count": 54,
+  "unit_count": 147,
   "tier_counts": {
-    "A": 54
+    "B": 60,
+    "D": 26,
+    "A": 54,
+    "C": 7
   },
   "quality_counts": {
-    "language_port": 53,
+    "language_port": 146,
     "token_stream_smoke": 1
   },
   "quality_schema": {
@@ -18,6 +21,120 @@
   },
   "grammars": [
     {
+      "id": "abnf",
+      "source_path": "grammars-v4/abnf",
+      "source_ref": "grammars-v4/abnf",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": null,
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "acme",
+      "source_path": "grammars-v4/acme",
+      "source_ref": "grammars-v4/acme",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "acmeCompUnit",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "action",
+      "source_path": "grammars-v4/action",
+      "source_ref": "grammars-v4/action",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "file_",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "ada/ada2005",
+      "source_path": "grammars-v4/ada/ada2005",
+      "source_ref": "grammars-v4/ada/ada2005",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "identifier",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "ada/ada2012",
+      "source_path": "grammars-v4/ada/ada2012",
+      "source_ref": "grammars-v4/ada/ada2012",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "identifier",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "ada/ada2022",
+      "source_path": "grammars-v4/ada/ada2022",
+      "source_ref": "grammars-v4/ada/ada2022",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "identifier",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "ada/ada83",
+      "source_path": "grammars-v4/ada/ada83",
+      "source_ref": "grammars-v4/ada/ada83",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "identifier",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "ada/ada95",
+      "source_path": "grammars-v4/ada/ada95",
+      "source_ref": "grammars-v4/ada/ada95",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "identifier",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
       "id": "alloy",
       "source_path": "grammars-v4/alloy",
       "source_ref": "grammars-v4/alloy",
@@ -26,6 +143,50 @@
       "parse_ok": true,
       "example_count": 3,
       "entry_point": null,
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "angelscript",
+      "source_path": "grammars-v4/angelscript",
+      "source_ref": "grammars-v4/angelscript",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 2,
+      "entry_point": "start_",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "apex",
+      "source_path": "grammars-v4/apex",
+      "source_ref": "grammars-v4/apex",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "compilationUnit",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "argus",
+      "source_path": "grammars-v4/argus",
+      "source_ref": "grammars-v4/argus",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 4,
+      "entry_point": "file_",
       "quality": "language_port",
       "quality_notes": [
         "real_g4_port",
@@ -44,6 +205,104 @@
       "quality": "language_port",
       "quality_notes": [
         "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "asl",
+      "source_path": "grammars-v4/asl",
+      "source_ref": "grammars-v4/asl",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 2,
+      "entry_point": "asl",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "asm/asm8086",
+      "source_path": "grammars-v4/asm/asm8086",
+      "source_ref": "grammars-v4/asm/asm8086",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 2,
+      "entry_point": "prog",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "asm/masm",
+      "source_path": "grammars-v4/asm/masm",
+      "source_ref": "grammars-v4/asm/masm",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 2,
+      "entry_point": "compilationUnit",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "asm/nasm",
+      "source_path": "grammars-v4/asm/nasm",
+      "source_ref": "grammars-v4/asm/nasm",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 4,
+      "entry_point": "program",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "asm/ptx/ptx-isa-2.1",
+      "source_path": "grammars-v4/asm/ptx/ptx-isa-2.1",
+      "source_ref": "grammars-v4/asm/ptx/ptx-isa-2.1",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "prog",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "asn/asn",
+      "source_path": "grammars-v4/asn/asn",
+      "source_ref": "grammars-v4/asn/asn",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 2,
+      "entry_point": "modules",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "asn/asn_3gpp",
+      "source_path": "grammars-v4/asn/asn_3gpp",
+      "source_ref": "grammars-v4/asn/asn_3gpp",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 2,
+      "entry_point": "modules",
+      "quality": "language_port",
+      "quality_notes": [
         "ebnf_sugar"
       ]
     },
@@ -71,6 +330,34 @@
       "parse_ok": true,
       "example_count": 7,
       "entry_point": null,
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "basic",
+      "source_path": "grammars-v4/basic",
+      "source_ref": "grammars-v4/basic",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "prog",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "bcpl",
+      "source_path": "grammars-v4/bcpl",
+      "source_ref": "grammars-v4/bcpl",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "program",
       "quality": "language_port",
       "quality_notes": [
         "ebnf_sugar"
@@ -122,6 +409,20 @@
       ]
     },
     {
+      "id": "cobol85",
+      "source_path": "grammars-v4/cobol85",
+      "source_ref": "grammars-v4/cobol85",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "startRule",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
       "id": "cookie",
       "source_path": "grammars-v4/cookie",
       "source_ref": "grammars-v4/cookie",
@@ -137,6 +438,34 @@
       ]
     },
     {
+      "id": "corundum",
+      "source_path": "grammars-v4/corundum",
+      "source_ref": "grammars-v4/corundum",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "prog",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "cpp",
+      "source_path": "grammars-v4/cpp",
+      "source_ref": "grammars-v4/cpp",
+      "tier": "C",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 5,
+      "entry_point": "translationUnit",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
       "id": "creole",
       "source_path": "grammars-v4/creole",
       "source_ref": "grammars-v4/creole",
@@ -145,6 +474,34 @@
       "parse_ok": true,
       "example_count": 3,
       "entry_point": "document",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "csharp/v6",
+      "source_path": "grammars-v4/csharp/v6",
+      "source_ref": "grammars-v4/csharp/v6",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 4,
+      "entry_point": "compilation_unit",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "csharp/v7",
+      "source_path": "grammars-v4/csharp/v7",
+      "source_ref": "grammars-v4/csharp/v7",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 4,
+      "entry_point": "compilation_unit",
       "quality": "language_port",
       "quality_notes": [
         "ebnf_sugar"
@@ -180,6 +537,20 @@
       ]
     },
     {
+      "id": "dart2",
+      "source_path": "grammars-v4/dart2",
+      "source_ref": "grammars-v4/dart2",
+      "tier": "C",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "additiveExpression",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
       "id": "datalog",
       "source_path": "grammars-v4/datalog",
       "source_ref": "grammars-v4/datalog",
@@ -190,6 +561,21 @@
       "entry_point": null,
       "quality": "language_port",
       "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "dice",
+      "source_path": "grammars-v4/dice",
+      "source_ref": "grammars-v4/dice",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 12,
+      "entry_point": "file_",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
         "ebnf_sugar"
       ]
     },
@@ -209,6 +595,20 @@
       ]
     },
     {
+      "id": "edif300",
+      "source_path": "grammars-v4/edif300",
+      "source_ref": "grammars-v4/edif300",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "goal",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
       "id": "edn",
       "source_path": "grammars-v4/edn",
       "source_ref": "grammars-v4/edn",
@@ -220,6 +620,48 @@
       "quality": "language_port",
       "quality_notes": [
         "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "eiffel",
+      "source_path": "grammars-v4/eiffel",
+      "source_ref": "grammars-v4/eiffel",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "class_declaration",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "elixir",
+      "source_path": "grammars-v4/elixir",
+      "source_ref": "grammars-v4/elixir",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "parse",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "erlang",
+      "source_path": "grammars-v4/erlang",
+      "source_ref": "grammars-v4/erlang",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "forms",
+      "quality": "language_port",
+      "quality_notes": [
         "ebnf_sugar"
       ]
     },
@@ -312,6 +754,63 @@
       ]
     },
     {
+      "id": "flatbuffers",
+      "source_path": "grammars-v4/flatbuffers",
+      "source_ref": "grammars-v4/flatbuffers",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 19,
+      "entry_point": null,
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "fortran/fortran77",
+      "source_path": "grammars-v4/fortran/fortran77",
+      "source_ref": "grammars-v4/fortran/fortran77",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "program",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "fortran/fortran90",
+      "source_path": "grammars-v4/fortran/fortran90",
+      "source_ref": "grammars-v4/fortran/fortran90",
+      "tier": "C",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "program",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "geekcode",
+      "source_path": "grammars-v4/geekcode",
+      "source_ref": "grammars-v4/geekcode",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "file_",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
       "id": "gff3",
       "source_path": "grammars-v4/gff3",
       "source_ref": "grammars-v4/gff3",
@@ -326,6 +825,20 @@
       ]
     },
     {
+      "id": "glsl",
+      "source_path": "grammars-v4/glsl",
+      "source_ref": "grammars-v4/glsl",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 2,
+      "entry_point": "translation_unit",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
       "id": "gml",
       "source_path": "grammars-v4/gml",
       "source_ref": "grammars-v4/gml",
@@ -334,6 +847,49 @@
       "parse_ok": true,
       "example_count": 5,
       "entry_point": null,
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "golang",
+      "source_path": "grammars-v4/golang",
+      "source_ref": "grammars-v4/golang",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 2,
+      "entry_point": "sourceFile",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "gql",
+      "source_path": "grammars-v4/gql",
+      "source_ref": "grammars-v4/gql",
+      "tier": "C",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "gqlProgram",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "graphstream-dgs",
+      "source_path": "grammars-v4/graphstream-dgs",
+      "source_ref": "grammars-v4/graphstream-dgs",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 4,
+      "entry_point": "dgs",
       "quality": "language_port",
       "quality_notes": [
         "real_g4_port",
@@ -356,6 +912,161 @@
       ]
     },
     {
+      "id": "gvpr",
+      "source_path": "grammars-v4/gvpr",
+      "source_ref": "grammars-v4/gvpr",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "preds",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "haskell",
+      "source_path": "grammars-v4/haskell",
+      "source_ref": "grammars-v4/haskell",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "module",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "hexpat",
+      "source_path": "grammars-v4/hexpat",
+      "source_ref": "grammars-v4/hexpat",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "hexpat",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "html",
+      "source_path": "grammars-v4/html",
+      "source_ref": "grammars-v4/html",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 4,
+      "entry_point": null,
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "http",
+      "source_path": "grammars-v4/http",
+      "source_ref": "grammars-v4/http",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "http_message",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "hypertalk",
+      "source_path": "grammars-v4/hypertalk",
+      "source_ref": "grammars-v4/hypertalk",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "start_script",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "icalendar",
+      "source_path": "grammars-v4/icalendar",
+      "source_ref": "grammars-v4/icalendar",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "parse",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "idl",
+      "source_path": "grammars-v4/idl",
+      "source_ref": "grammars-v4/idl",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 2,
+      "entry_point": "specification",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "informix",
+      "source_path": "grammars-v4/informix",
+      "source_ref": "grammars-v4/informix",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "compilation_unit",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "iri",
+      "source_path": "grammars-v4/iri",
+      "source_ref": "grammars-v4/iri",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "parse",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "iso8601",
+      "source_path": "grammars-v4/iso8601",
+      "source_ref": "grammars-v4/iso8601",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "iso",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
       "id": "itn",
       "source_path": "grammars-v4/itn",
       "source_ref": "grammars-v4/itn",
@@ -367,6 +1078,92 @@
       "quality": "language_port",
       "quality_notes": [
         "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "java/java",
+      "source_path": "grammars-v4/java/java",
+      "source_ref": "grammars-v4/java/java",
+      "tier": "C",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 5,
+      "entry_point": "compilationUnit",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "javacc",
+      "source_path": "grammars-v4/javacc",
+      "source_ref": "grammars-v4/javacc",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "javacc_input",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "javascript/javascript",
+      "source_path": "grammars-v4/javascript/javascript",
+      "source_ref": "grammars-v4/javascript/javascript",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 9,
+      "entry_point": "program",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "javascript/typescript",
+      "source_path": "grammars-v4/javascript/typescript",
+      "source_ref": "grammars-v4/javascript/typescript",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 8,
+      "entry_point": "program",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "joss",
+      "source_path": "grammars-v4/joss",
+      "source_ref": "grammars-v4/joss",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "prog",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "jpa",
+      "source_path": "grammars-v4/jpa",
+      "source_ref": "grammars-v4/jpa",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "file_",
+      "quality": "language_port",
+      "quality_notes": [
         "ebnf_sugar"
       ]
     },
@@ -401,6 +1198,20 @@
       ]
     },
     {
+      "id": "kquery",
+      "source_path": "grammars-v4/kquery",
+      "source_ref": "grammars-v4/kquery",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "kqueryExpression",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
       "id": "lambda",
       "source_path": "grammars-v4/lambda",
       "source_ref": "grammars-v4/lambda",
@@ -416,6 +1227,35 @@
       ]
     },
     {
+      "id": "langium",
+      "source_path": "grammars-v4/langium",
+      "source_ref": "grammars-v4/langium",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "file_",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "lark",
+      "source_path": "grammars-v4/lark",
+      "source_ref": "grammars-v4/lark",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 27,
+      "entry_point": null,
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
       "id": "lcc",
       "source_path": "grammars-v4/lcc",
       "source_ref": "grammars-v4/lcc",
@@ -424,6 +1264,21 @@
       "parse_ok": true,
       "example_count": 3,
       "entry_point": null,
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "limbo",
+      "source_path": "grammars-v4/limbo",
+      "source_ref": "grammars-v4/limbo",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "program",
       "quality": "language_port",
       "quality_notes": [
         "real_g4_port",
@@ -454,6 +1309,35 @@
       "parse_ok": true,
       "example_count": 16,
       "entry_point": "prog",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "lrc",
+      "source_path": "grammars-v4/lrc",
+      "source_ref": "grammars-v4/lrc",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "lrc",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "matlab",
+      "source_path": "grammars-v4/matlab",
+      "source_ref": "grammars-v4/matlab",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 4,
+      "entry_point": "file_",
       "quality": "language_port",
       "quality_notes": [
         "ebnf_sugar"
@@ -500,6 +1384,21 @@
       "entry_point": null,
       "quality": "language_port",
       "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "miniscript",
+      "source_path": "grammars-v4/miniscript",
+      "source_ref": "grammars-v4/miniscript",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": null,
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
         "ebnf_sugar"
       ]
     },
@@ -563,6 +1462,35 @@
       ]
     },
     {
+      "id": "oberon",
+      "source_path": "grammars-v4/oberon",
+      "source_ref": "grammars-v4/oberon",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "module",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "orwell",
+      "source_path": "grammars-v4/orwell",
+      "source_ref": "grammars-v4/orwell",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 4,
+      "entry_point": "program",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
       "id": "pbm",
       "source_path": "grammars-v4/pbm",
       "source_ref": "grammars-v4/pbm",
@@ -578,10 +1506,53 @@
       ]
     },
     {
+      "id": "php",
+      "source_path": "grammars-v4/php",
+      "source_ref": "grammars-v4/php",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 4,
+      "entry_point": "htmlDocument",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "pike",
+      "source_path": "grammars-v4/pike",
+      "source_ref": "grammars-v4/pike",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 1,
+      "entry_point": null,
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
       "id": "pl0",
       "source_path": "grammars-v4/pl0",
       "source_ref": "grammars-v4/pl0",
       "tier": "A",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "program",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "plucid",
+      "source_path": "grammars-v4/plucid",
+      "source_ref": "grammars-v4/plucid",
+      "tier": "B",
       "status": "ported",
       "parse_ok": true,
       "example_count": 3,
@@ -622,6 +1593,64 @@
       ]
     },
     {
+      "id": "powerquery",
+      "source_path": "grammars-v4/powerquery",
+      "source_ref": "grammars-v4/powerquery",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": null,
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "propcalc",
+      "source_path": "grammars-v4/propcalc",
+      "source_ref": "grammars-v4/propcalc",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 8,
+      "entry_point": "proposition",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "python/python3",
+      "source_path": "grammars-v4/python/python3",
+      "source_ref": "grammars-v4/python/python3",
+      "tier": "C",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 5,
+      "entry_point": "file_input",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "qif",
+      "source_path": "grammars-v4/qif",
+      "source_ref": "grammars-v4/qif",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "qif",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
       "id": "recfile",
       "source_path": "grammars-v4/recfile",
       "source_ref": "grammars-v4/recfile",
@@ -630,6 +1659,21 @@
       "parse_ok": true,
       "example_count": 2,
       "entry_point": null,
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "restructuredtext",
+      "source_path": "grammars-v4/restructuredtext",
+      "source_ref": "grammars-v4/restructuredtext",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "parse",
       "quality": "language_port",
       "quality_notes": [
         "real_g4_port",
@@ -666,6 +1710,35 @@
       ]
     },
     {
+      "id": "rust",
+      "source_path": "grammars-v4/rust",
+      "source_ref": "grammars-v4/rust",
+      "tier": "C",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 4,
+      "entry_point": "crate",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "semver",
+      "source_path": "grammars-v4/semver",
+      "source_ref": "grammars-v4/semver",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 13,
+      "entry_point": null,
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
       "id": "sexpression",
       "source_path": "grammars-v4/sexpression",
       "source_ref": "grammars-v4/sexpression",
@@ -674,6 +1747,107 @@
       "parse_ok": true,
       "example_count": 3,
       "entry_point": "sexpr",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "smalltalk",
+      "source_path": "grammars-v4/smalltalk",
+      "source_ref": "grammars-v4/smalltalk",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "script",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "smiles",
+      "source_path": "grammars-v4/smiles",
+      "source_ref": "grammars-v4/smiles",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "smiles_file",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "snobol",
+      "source_path": "grammars-v4/snobol",
+      "source_ref": "grammars-v4/snobol",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "prog",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "spass",
+      "source_path": "grammars-v4/spass",
+      "source_ref": "grammars-v4/spass",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "problem",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "spl",
+      "source_path": "grammars-v4/spl",
+      "source_ref": "grammars-v4/spl",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "query",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "squirrel",
+      "source_path": "grammars-v4/squirrel",
+      "source_ref": "grammars-v4/squirrel",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 4,
+      "entry_point": "nut",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "stellaris",
+      "source_path": "grammars-v4/stellaris",
+      "source_ref": "grammars-v4/stellaris",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 9,
+      "entry_point": null,
       "quality": "language_port",
       "quality_notes": [
         "real_g4_port",
@@ -711,6 +1885,20 @@
       ]
     },
     {
+      "id": "terraform",
+      "source_path": "grammars-v4/terraform",
+      "source_ref": "grammars-v4/terraform",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 4,
+      "entry_point": null,
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
       "id": "tinyc",
       "source_path": "grammars-v4/tinyc",
       "source_ref": "grammars-v4/tinyc",
@@ -719,6 +1907,20 @@
       "parse_ok": true,
       "example_count": 4,
       "entry_point": null,
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "tinyos_nesc",
+      "source_path": "grammars-v4/tinyos_nesc",
+      "source_ref": "grammars-v4/tinyos_nesc",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "compilationUnit",
       "quality": "language_port",
       "quality_notes": [
         "ebnf_sugar"
@@ -739,6 +1941,21 @@
       ]
     },
     {
+      "id": "toml",
+      "source_path": "grammars-v4/toml",
+      "source_ref": "grammars-v4/toml",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 1,
+      "entry_point": "document",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
       "id": "trac",
       "source_path": "grammars-v4/trac",
       "source_ref": "grammars-v4/trac",
@@ -754,6 +1971,20 @@
       ]
     },
     {
+      "id": "trapc",
+      "source_path": "grammars-v4/trapc",
+      "source_ref": "grammars-v4/trapc",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "structOrUnion",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
       "id": "tsv",
       "source_path": "grammars-v4/tsv",
       "source_ref": "grammars-v4/tsv",
@@ -762,6 +1993,49 @@
       "parse_ok": true,
       "example_count": 6,
       "entry_point": "tsvFile",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "turing",
+      "source_path": "grammars-v4/turing",
+      "source_ref": "grammars-v4/turing",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "program",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "turtle",
+      "source_path": "grammars-v4/turtle",
+      "source_ref": "grammars-v4/turtle",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 4,
+      "entry_point": "turtleDoc",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "turtle-doc",
+      "source_path": "grammars-v4/turtle-doc",
+      "source_ref": "grammars-v4/turtle-doc",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "turtleDoc",
       "quality": "language_port",
       "quality_notes": [
         "real_g4_port",
@@ -783,6 +2057,21 @@
       ]
     },
     {
+      "id": "velocity",
+      "source_path": "grammars-v4/velocity",
+      "source_ref": "grammars-v4/velocity",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "parse",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
       "id": "wln",
       "source_path": "grammars-v4/wln",
       "source_ref": "grammars-v4/wln",
@@ -798,6 +2087,34 @@
       ]
     },
     {
+      "id": "wren",
+      "source_path": "grammars-v4/wren",
+      "source_ref": "grammars-v4/wren",
+      "tier": "B",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "script",
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "xml",
+      "source_path": "grammars-v4/xml",
+      "source_ref": "grammars-v4/xml",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": null,
+      "quality": "language_port",
+      "quality_notes": [
+        "ebnf_sugar"
+      ]
+    },
+    {
       "id": "xyz",
       "source_path": "grammars-v4/xyz",
       "source_ref": "grammars-v4/xyz",
@@ -806,6 +2123,21 @@
       "parse_ok": true,
       "example_count": 2,
       "entry_point": null,
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "yara",
+      "source_path": "grammars-v4/yara",
+      "source_ref": "grammars-v4/yara",
+      "tier": "D",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 1,
+      "entry_point": "startRule",
       "quality": "language_port",
       "quality_notes": [
         "real_g4_port",

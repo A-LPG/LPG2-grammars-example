@@ -1,0 +1,15 @@
+{
+  "id": "plucid",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "ebnf_sugar"
+  ],
+  "parser_lines": 199,
+  "example_count": 3,
+  "tier": "B",
+  "start": "program",
+  "parser_bytes": 4387
+}

@@ -1,0 +1,15 @@
+{
+  "id": "fortran/fortran77",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 20319,
+  "rule_approx": 423,
+  "start": "program",
+  "tier": "B",
+  "example_count": 3
+}

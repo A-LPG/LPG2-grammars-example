@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.jpa",
+  "lexer": "JpaLexer",
+  "parser": "JpaParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

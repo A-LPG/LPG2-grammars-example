@@ -1,0 +1,13 @@
+{
+  "id": "xml",
+  "tier": "D",
+  "parse_ok": true,
+  "status": "ported",
+  "example_count": 3,
+  "blockers": [],
+  "quality": "language_port",
+  "quality_notes": [
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 2088
+}

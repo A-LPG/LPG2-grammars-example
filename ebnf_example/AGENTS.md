@@ -8,7 +8,7 @@ Upstream Antlr source: [antlr/grammars-v4](https://github.com/antlr/grammars-v4)
 
 LPG v2 ports that keep grammars-v4 **EBNF shapes** via `%Options ebnf` instead of expanding to `opt_` / `list_` aux rules.
 
-Current focus: **all tier-A `language_port`** twins from `bnf_example` (see `catalog.json`). Acceptance is the same as bnf_example: structural nonterminals, language lexer, multi-line examples, honest `quality` in `status.json`. Additionally:
+Current focus: **all `language_port`** twins from `bnf_example` (tiers A–D; see `catalog.json`). `language_subset` / `legacy` not yet migrated. Acceptance is the same as bnf_example: structural nonterminals, language lexer, multi-line examples, honest `quality` in `status.json`. Additionally:
 
 - Every `*Parser.g` must include `%Options ebnf` (may share a line with `la=`).
 - `quality_notes` should include `ebnf_sugar`.

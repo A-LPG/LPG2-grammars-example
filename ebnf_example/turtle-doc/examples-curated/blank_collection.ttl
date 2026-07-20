@@ -1,0 +1,5 @@
+@prefix ex: <http://example.org/> .
+
+ex:s ex:p _:node1 .
+_:node1 ex:q (ex:one ex:two) .
+[] ex:r "anon" .

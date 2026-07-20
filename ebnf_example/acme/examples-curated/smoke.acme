@@ -1,0 +1,5 @@
+system smoke = {
+  component world = {
+    port p1;
+  };
+}

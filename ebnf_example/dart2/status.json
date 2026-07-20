@@ -1,0 +1,15 @@
+{
+  "id": "dart2",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 28270,
+  "rule_approx": 476,
+  "start": "additiveExpression",
+  "tier": "C",
+  "example_count": 3
+}

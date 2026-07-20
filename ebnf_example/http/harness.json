@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.http",
+  "lexer": "HttpLexer",
+  "parser": "HttpParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

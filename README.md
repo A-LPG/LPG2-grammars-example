@@ -5,7 +5,7 @@ Two parallel corpora of LPG v2 grammar ports (mostly from [antlr/grammars-v4](ht
 | Tree | Style | Status |
 |------|--------|--------|
 | [`bnf_example/`](bnf_example/) | Classic BNF (EBNF expanded to aux rules) | Full harness corpus + CI gate |
-| [`ebnf_example/`](ebnf_example/) | `%Options ebnf` native sugar | Tier-A `language_port` wave (+ `nested` smoke) + CI gate |
+| [`ebnf_example/`](ebnf_example/) | `%Options ebnf` native sugar | All `language_port` (A–D) + `nested` smoke + CI gate |
 
 ```bash
 # from an LPG2 checkout

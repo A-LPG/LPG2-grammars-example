@@ -1,0 +1,17 @@
+{
+  "id": "smiles",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 6230,
+  "rule_approx": 42,
+  "start": "smiles_file",
+  "example_count": 3,
+  "tier": "B",
+  "parser_lines": 349,
+  "notes": "element letter tokens; multi-molecule curated files; real_g4_port"
+}

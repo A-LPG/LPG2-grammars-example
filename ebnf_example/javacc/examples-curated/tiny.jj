@@ -1,0 +1,3 @@
+PARSER_BEGIN(X)
+class X {}
+PARSER_END(X)

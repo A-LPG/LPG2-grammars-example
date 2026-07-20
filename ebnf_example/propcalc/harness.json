@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.propcalc",
+  "lexer": "PropcalcLexer",
+  "parser": "PropcalcParser",
+  "example_globs": [
+    "examples/**/*"
+  ]
+}

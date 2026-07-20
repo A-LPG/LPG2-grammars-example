@@ -1,0 +1,17 @@
+{
+  "id": "toml",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "real_g4_port",
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 2357,
+  "rule_approx": 42,
+  "start": "document",
+  "example_count": 1,
+  "notes": "real_g4_port",
+  "tier": "D"
+}

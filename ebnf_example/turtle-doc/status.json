@@ -1,0 +1,16 @@
+{
+  "id": "turtle-doc",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "tier": "B",
+  "quality_notes": [
+    "real_g4_port",
+    "ebnf_sugar"
+  ],
+  "blockers": [],
+  "example_count": 3,
+  "parser_lines": 105,
+  "start": "turtleDoc",
+  "parser_bytes": 2447
+}

@@ -1,0 +1,16 @@
+{
+  "id": "basic",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 9880,
+  "rule_approx": 183,
+  "start": "prog",
+  "parser_lines": 496,
+  "tier": "B",
+  "example_count": 3
+}

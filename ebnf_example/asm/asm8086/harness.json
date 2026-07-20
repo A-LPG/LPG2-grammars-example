@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.asm.asm8086",
+  "lexer": "AsmAsm8086Lexer",
+  "parser": "AsmAsm8086Parser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

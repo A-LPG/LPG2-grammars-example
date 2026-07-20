@@ -1,0 +1,16 @@
+{
+  "id": "restructuredtext",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "real_g4_port",
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 10261,
+  "rule_approx": 175,
+  "start": "parse",
+  "tier": "B",
+  "example_count": 3
+}

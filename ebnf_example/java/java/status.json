@@ -1,0 +1,17 @@
+{
+  "id": "java/java",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "real_g4_port",
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 24828,
+  "rule_approx": 397,
+  "start": "compilationUnit",
+  "example_count": 5,
+  "tier": "C",
+  "parser_lines": 1019
+}

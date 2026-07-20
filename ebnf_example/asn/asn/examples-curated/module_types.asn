@@ -1,0 +1,7 @@
+PersonModule DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+  Person ::= SEQUENCE {
+    id INTEGER,
+    name OCTET STRING OPTIONAL
+  }
+  IdList ::= SEQUENCE OF INTEGER
+END

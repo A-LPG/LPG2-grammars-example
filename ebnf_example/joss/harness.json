@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.joss",
+  "lexer": "JossLexer",
+  "parser": "JossParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}

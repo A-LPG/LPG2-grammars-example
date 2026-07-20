@@ -6,14 +6,14 @@ Sibling corpus [`../bnf_example/`](../bnf_example/) keeps the same units in clas
 
 CI (`.github/workflows/grammars-example.yml`) uses [`catalog.json`](catalog.json): `quality-gate` for `language_port` / `language_subset`; `smoke-optional` for `token_stream_smoke` (same pattern as `bnf_example`).
 
-## Coverage (tier-A wave)
+## Coverage
 
 | Quality | Count | Notes |
 |---------|------:|--------|
-| `language_port` | 53 | All remaining **tier-A** ports from `bnf_example` + original pilot (`json`, `cookie`, `arithmetic`, `csv`, …) |
-| `token_stream_smoke` | 1 | `nested` (L0 nested parens/braces/brackets) |
+| `language_port` | 146 | Full `bnf_example` language_port set (tiers A–D) |
+| `token_stream_smoke` | 1 | `nested` (L0) |
 
-Not yet migrated: `language_subset` and tier B/C/D `language_port` units.
+Not yet migrated: `language_subset` and `legacy` units.
 
 ## Quick verify
 
@@ -33,6 +33,8 @@ cd grammars-example/ebnf_example
 python3 tools/port_from_bnf.py <id>…          # copy twin + stamp ebnf + catalog
 python3 tools/rewrite_common_ebnf.py <id>…    # conservative list/optional rewrites
 python3 tools/port_from_bnf.py --refresh-catalog
+# wave lists used for B/C/D language_port migration:
+# tools/remaining_language_port_waves.json
 ```
 
 ## Layout

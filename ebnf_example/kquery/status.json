@@ -1,0 +1,15 @@
+{
+  "id": "kquery",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "ebnf_sugar"
+  ],
+  "parser_lines": 183,
+  "example_count": 3,
+  "tier": "B",
+  "start": "kqueryExpression",
+  "parser_bytes": 3994
+}

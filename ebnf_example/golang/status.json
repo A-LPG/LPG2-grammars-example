@@ -1,0 +1,17 @@
+{
+  "id": "golang",
+  "quality": "language_port",
+  "parse_ok": true,
+  "status": "ported",
+  "blockers": [],
+  "quality_notes": [
+    "ebnf_sugar"
+  ],
+  "parser_bytes": 12334,
+  "rule_approx": 236,
+  "start": "sourceFile",
+  "example_count": 2,
+  "tier": "D",
+  "parser_lines": 581,
+  "notes": "real_g4_port; curated examples exercise package/func/if/calls; subset omits bare Type{...} composites and type_-leading call args"
+}

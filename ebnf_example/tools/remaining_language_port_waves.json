@@ -1,0 +1,568 @@
+{
+  "w1": [
+    "lrc",
+    "dice",
+    "propcalc",
+    "stellaris",
+    "qif",
+    "semver",
+    "abnf",
+    "orwell",
+    "turtle",
+    "xml",
+    "html",
+    "trapc",
+    "lark",
+    "graphstream-dgs",
+    "geekcode",
+    "toml",
+    "turtle-doc",
+    "spl",
+    "http",
+    "terraform",
+    "flatbuffers",
+    "kquery",
+    "snobol",
+    "smalltalk",
+    "velocity",
+    "miniscript",
+    "plucid",
+    "joss"
+  ],
+  "w2": [
+    "yara",
+    "matlab",
+    "asm/asm8086",
+    "gvpr",
+    "smiles",
+    "action",
+    "oberon",
+    "pike",
+    "wren",
+    "spass",
+    "turing",
+    "angelscript",
+    "langium",
+    "iri",
+    "iso8601",
+    "limbo",
+    "asm/masm",
+    "csharp/v6",
+    "csharp/v7",
+    "basic",
+    "powerquery",
+    "restructuredtext",
+    "corundum",
+    "elixir",
+    "tinyos_nesc",
+    "squirrel",
+    "erlang",
+    "golang",
+    "glsl",
+    "bcpl",
+    "hexpat",
+    "jpa",
+    "asl",
+    "javascript/javascript",
+    "asn/asn",
+    "asn/asn_3gpp",
+    "python/python3",
+    "argus",
+    "idl"
+  ],
+  "w3": [
+    "fortran/fortran77",
+    "apex",
+    "ada/ada83",
+    "hypertalk",
+    "javacc",
+    "java/java",
+    "acme",
+    "eiffel",
+    "dart2",
+    "javascript/typescript",
+    "cpp",
+    "php",
+    "ada/ada95",
+    "icalendar",
+    "rust",
+    "haskell",
+    "ada/ada2005",
+    "informix",
+    "asm/ptx/ptx-isa-2.1",
+    "fortran/fortran90",
+    "ada/ada2012",
+    "ada/ada2022",
+    "asm/nasm",
+    "gql",
+    "edif300",
+    "cobol85"
+  ],
+  "meta": [
+    {
+      "id": "lrc",
+      "bytes": 577,
+      "tier": "D"
+    },
+    {
+      "id": "dice",
+      "bytes": 773,
+      "tier": "B"
+    },
+    {
+      "id": "propcalc",
+      "bytes": 837,
+      "tier": "B"
+    },
+    {
+      "id": "stellaris",
+      "bytes": 904,
+      "tier": "B"
+    },
+    {
+      "id": "qif",
+      "bytes": 1121,
+      "tier": "D"
+    },
+    {
+      "id": "semver",
+      "bytes": 1234,
+      "tier": "B"
+    },
+    {
+      "id": "abnf",
+      "bytes": 1591,
+      "tier": "B"
+    },
+    {
+      "id": "orwell",
+      "bytes": 1726,
+      "tier": "B"
+    },
+    {
+      "id": "turtle",
+      "bytes": 1886,
+      "tier": "B"
+    },
+    {
+      "id": "xml",
+      "bytes": 2088,
+      "tier": "D"
+    },
+    {
+      "id": "html",
+      "bytes": 2123,
+      "tier": "D"
+    },
+    {
+      "id": "trapc",
+      "bytes": 2138,
+      "tier": "B"
+    },
+    {
+      "id": "lark",
+      "bytes": 2140,
+      "tier": "B"
+    },
+    {
+      "id": "graphstream-dgs",
+      "bytes": 2159,
+      "tier": "D"
+    },
+    {
+      "id": "geekcode",
+      "bytes": 2326,
+      "tier": "B"
+    },
+    {
+      "id": "toml",
+      "bytes": 2357,
+      "tier": "D"
+    },
+    {
+      "id": "turtle-doc",
+      "bytes": 2447,
+      "tier": "B"
+    },
+    {
+      "id": "spl",
+      "bytes": 3260,
+      "tier": "B"
+    },
+    {
+      "id": "http",
+      "bytes": 3591,
+      "tier": "B"
+    },
+    {
+      "id": "terraform",
+      "bytes": 3617,
+      "tier": "B"
+    },
+    {
+      "id": "flatbuffers",
+      "bytes": 3623,
+      "tier": "B"
+    },
+    {
+      "id": "kquery",
+      "bytes": 3994,
+      "tier": "B"
+    },
+    {
+      "id": "snobol",
+      "bytes": 4003,
+      "tier": "B"
+    },
+    {
+      "id": "smalltalk",
+      "bytes": 4067,
+      "tier": "B"
+    },
+    {
+      "id": "velocity",
+      "bytes": 4310,
+      "tier": "D"
+    },
+    {
+      "id": "miniscript",
+      "bytes": 4354,
+      "tier": "B"
+    },
+    {
+      "id": "plucid",
+      "bytes": 4387,
+      "tier": "B"
+    },
+    {
+      "id": "joss",
+      "bytes": 4518,
+      "tier": "B"
+    },
+    {
+      "id": "yara",
+      "bytes": 5374,
+      "tier": "D"
+    },
+    {
+      "id": "matlab",
+      "bytes": 5506,
+      "tier": "B"
+    },
+    {
+      "id": "asm/asm8086",
+      "bytes": 5666,
+      "tier": "D"
+    },
+    {
+      "id": "gvpr",
+      "bytes": 6157,
+      "tier": "B"
+    },
+    {
+      "id": "smiles",
+      "bytes": 6230,
+      "tier": "B"
+    },
+    {
+      "id": "action",
+      "bytes": 6364,
+      "tier": "B"
+    },
+    {
+      "id": "oberon",
+      "bytes": 7213,
+      "tier": "B"
+    },
+    {
+      "id": "pike",
+      "bytes": 7391,
+      "tier": "B"
+    },
+    {
+      "id": "wren",
+      "bytes": 7593,
+      "tier": "B"
+    },
+    {
+      "id": "spass",
+      "bytes": 7665,
+      "tier": "D"
+    },
+    {
+      "id": "turing",
+      "bytes": 8101,
+      "tier": "B"
+    },
+    {
+      "id": "angelscript",
+      "bytes": 8476,
+      "tier": "B"
+    },
+    {
+      "id": "langium",
+      "bytes": 8579,
+      "tier": "B"
+    },
+    {
+      "id": "iri",
+      "bytes": 8618,
+      "tier": "B"
+    },
+    {
+      "id": "iso8601",
+      "bytes": 8628,
+      "tier": "B"
+    },
+    {
+      "id": "limbo",
+      "bytes": 8658,
+      "tier": "B"
+    },
+    {
+      "id": "asm/masm",
+      "bytes": 8742,
+      "tier": "D"
+    },
+    {
+      "id": "csharp/v6",
+      "bytes": 9516,
+      "tier": "D"
+    },
+    {
+      "id": "csharp/v7",
+      "bytes": 9516,
+      "tier": "D"
+    },
+    {
+      "id": "basic",
+      "bytes": 9880,
+      "tier": "B"
+    },
+    {
+      "id": "powerquery",
+      "bytes": 9893,
+      "tier": "B"
+    },
+    {
+      "id": "restructuredtext",
+      "bytes": 10261,
+      "tier": "B"
+    },
+    {
+      "id": "corundum",
+      "bytes": 11058,
+      "tier": "B"
+    },
+    {
+      "id": "elixir",
+      "bytes": 11309,
+      "tier": "B"
+    },
+    {
+      "id": "tinyos_nesc",
+      "bytes": 11539,
+      "tier": "B"
+    },
+    {
+      "id": "squirrel",
+      "bytes": 11853,
+      "tier": "B"
+    },
+    {
+      "id": "erlang",
+      "bytes": 12195,
+      "tier": "B"
+    },
+    {
+      "id": "golang",
+      "bytes": 12334,
+      "tier": "D"
+    },
+    {
+      "id": "glsl",
+      "bytes": 12399,
+      "tier": "D"
+    },
+    {
+      "id": "bcpl",
+      "bytes": 12899,
+      "tier": "B"
+    },
+    {
+      "id": "hexpat",
+      "bytes": 13360,
+      "tier": "B"
+    },
+    {
+      "id": "jpa",
+      "bytes": 14275,
+      "tier": "B"
+    },
+    {
+      "id": "asl",
+      "bytes": 15213,
+      "tier": "B"
+    },
+    {
+      "id": "javascript/javascript",
+      "bytes": 16642,
+      "tier": "D"
+    },
+    {
+      "id": "asn/asn",
+      "bytes": 16943,
+      "tier": "B"
+    },
+    {
+      "id": "asn/asn_3gpp",
+      "bytes": 17315,
+      "tier": "B"
+    },
+    {
+      "id": "python/python3",
+      "bytes": 17400,
+      "tier": "C"
+    },
+    {
+      "id": "argus",
+      "bytes": 18968,
+      "tier": "B"
+    },
+    {
+      "id": "idl",
+      "bytes": 19321,
+      "tier": "B"
+    },
+    {
+      "id": "fortran/fortran77",
+      "bytes": 20319,
+      "tier": "B"
+    },
+    {
+      "id": "apex",
+      "bytes": 20631,
+      "tier": "B"
+    },
+    {
+      "id": "ada/ada83",
+      "bytes": 22096,
+      "tier": "B"
+    },
+    {
+      "id": "hypertalk",
+      "bytes": 22118,
+      "tier": "B"
+    },
+    {
+      "id": "javacc",
+      "bytes": 23683,
+      "tier": "B"
+    },
+    {
+      "id": "java/java",
+      "bytes": 24828,
+      "tier": "C"
+    },
+    {
+      "id": "acme",
+      "bytes": 25014,
+      "tier": "B"
+    },
+    {
+      "id": "eiffel",
+      "bytes": 26223,
+      "tier": "B"
+    },
+    {
+      "id": "dart2",
+      "bytes": 28270,
+      "tier": "C"
+    },
+    {
+      "id": "javascript/typescript",
+      "bytes": 29453,
+      "tier": "D"
+    },
+    {
+      "id": "cpp",
+      "bytes": 30303,
+      "tier": "C"
+    },
+    {
+      "id": "php",
+      "bytes": 31507,
+      "tier": "D"
+    },
+    {
+      "id": "ada/ada95",
+      "bytes": 32347,
+      "tier": "B"
+    },
+    {
+      "id": "icalendar",
+      "bytes": 32373,
+      "tier": "B"
+    },
+    {
+      "id": "rust",
+      "bytes": 33191,
+      "tier": "C"
+    },
+    {
+      "id": "haskell",
+      "bytes": 33912,
+      "tier": "D"
+    },
+    {
+      "id": "ada/ada2005",
+      "bytes": 37739,
+      "tier": "B"
+    },
+    {
+      "id": "informix",
+      "bytes": 41966,
+      "tier": "D"
+    },
+    {
+      "id": "asm/ptx/ptx-isa-2.1",
+      "bytes": 42031,
+      "tier": "D"
+    },
+    {
+      "id": "fortran/fortran90",
+      "bytes": 42634,
+      "tier": "C"
+    },
+    {
+      "id": "ada/ada2012",
+      "bytes": 44676,
+      "tier": "D"
+    },
+    {
+      "id": "ada/ada2022",
+      "bytes": 52031,
+      "tier": "D"
+    },
+    {
+      "id": "asm/nasm",
+      "bytes": 63818,
+      "tier": "D"
+    },
+    {
+      "id": "gql",
+      "bytes": 67753,
+      "tier": "C"
+    },
+    {
+      "id": "edif300",
+      "bytes": 97853,
+      "tier": "D"
+    },
+    {
+      "id": "cobol85",
+      "bytes": 108088,
+      "tier": "D"
+    }
+  ]
+}

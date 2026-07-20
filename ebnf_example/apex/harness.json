@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.apex",
+  "lexer": "ApexLexer",
+  "parser": "ApexParser",
+  "example_globs": [
+    "examples-curated/**/*"
+  ]
+}
