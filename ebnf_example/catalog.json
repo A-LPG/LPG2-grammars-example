@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "source": "grammars-v4",
+  "style": "ebnf",
+  "unit_count": 5,
+  "tier_counts": {
+    "A": 5
+  },
+  "quality_counts": {
+    "language_port": 4,
+    "token_stream_smoke": 1
+  },
+  "quality_schema": {
+    "language_port": "Real language-shaped ports with structural parser + harness examples",
+    "language_subset": "Curated subsets (not full language)",
+    "token_stream_smoke": "Generic nested token-stream smoke only",
+    "legacy": "Pre-v4 LPG grammars"
+  },
+  "grammars": [
+    {
+      "id": "arithmetic",
+      "source_path": "grammars-v4/arithmetic",
+      "source_ref": "grammars-v4/arithmetic",
+      "tier": "A",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 4,
+      "entry_point": "file_",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "cookie",
+      "source_path": "grammars-v4/cookie",
+      "source_ref": "grammars-v4/cookie",
+      "tier": "A",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 4,
+      "entry_point": "cookie",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "csv",
+      "source_path": "grammars-v4/csv",
+      "source_ref": "grammars-v4/csv",
+      "tier": "A",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 8,
+      "entry_point": "csvFile",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "json",
+      "source_path": "grammars-v4/json",
+      "source_ref": "grammars-v4/json",
+      "tier": "A",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 5,
+      "entry_point": "json",
+      "quality": "language_port",
+      "quality_notes": [
+        "real_g4_port",
+        "ebnf_sugar"
+      ]
+    },
+    {
+      "id": "nested",
+      "source_path": "ebnf_example/nested",
+      "source_ref": "synthetic-l0-smoke",
+      "tier": "A",
+      "status": "ported",
+      "parse_ok": true,
+      "example_count": 3,
+      "entry_point": "file_",
+      "quality": "token_stream_smoke",
+      "quality_notes": [
+        "ebnf_sugar",
+        "intentional_l0_smoke"
+      ]
+    }
+  ]
+}

@@ -20,8 +20,8 @@ Tiers A/B/C/D in `catalog.json` are **size/migration buckets**, orthogonal to L0
 
 | Job | Selects | Required? |
 |-----|---------|-----------|
-| `quality-gate` | L1 + L2 (`language_subset`, `language_port`) with `parse_ok` | Yes |
-| `smoke-optional` | L0 (`token_stream_smoke`) with `parse_ok` | Optional |
+| `quality-gate` | L1 + L2 (`language_subset`, `language_port`) with `parse_ok` in `bnf_example` **and** `ebnf_example` | Yes |
+| `smoke-optional` | L0 (`token_stream_smoke`) with `parse_ok` in `bnf_example` **and** `ebnf_example` | Optional |
 
 ## How to improve a unit
 

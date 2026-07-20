@@ -1,0 +1,21 @@
+**/out-java/
+**/*.l
+.DS_Store
+**/.antlr/
+*.class
+
+# examples-upstream-unused/ is KEPT in-tree by default (quarantine of harness-unused
+# upstream dumps; see QUALITY.md and tools/quarantine_unused_examples.py).
+# If a local clone's aggregate quarantine trees are huge, uncomment to skip them:
+# **/examples-upstream-unused/
+
+# local agent backups / alternate out dirs
+_audit_bak/
+**/out-java-tmp/
+**/out-java-bt/
+**/out-java2/
+**/*.lpg2-tmp-*
+**/__pycache__/
+tools/_audit*_bak*/
+tools/_audit_bak*/
+**/out-java-test/

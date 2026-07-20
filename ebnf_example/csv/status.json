@@ -1,0 +1,15 @@
+{
+  "id": "csv",
+  "parse_ok": true,
+  "status": "ported",
+  "tier": "A",
+  "quality": "language_port",
+  "quality_notes": [
+    "real_g4_port",
+    "ebnf_sugar"
+  ],
+  "blockers": [],
+  "start": "csvFile",
+  "example_count": 8,
+  "parser_bytes": 723
+}

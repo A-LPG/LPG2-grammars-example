@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.nested",
+  "lexer": "NestedLexer",
+  "parser": "NestedParser",
+  "example_globs": [
+    "examples/**/*.txt"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "package": "lpg.grammars.cookie",
+  "lexer": "CookieLexer",
+  "parser": "CookieParser",
+  "example_globs": [
+    "examples/**/*.txt"
+  ]
+}
